@@ -13,11 +13,11 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Äänilähde: Kajanus / LSO 1932, siirto
 |---|---|---|
 | 0 | Perustus (CLAUDE.md, suunnitelma, git) | ✅ 1.11.2026 |
 | 1 | Lähteet ja työkalut | 🔶 arvio tekeillä 1.11.2026, kopiointi odottaa |
-| 2 | Teos: tutkimusdokumentti | 🔶 aloitettu 1.11.2026 (+ visuaalisten viitteiden katsaus vaihetta 6 varten) |
+| 2 | Teos: tutkimusdokumentti | 🔶 verkkotutkimus valmis 1.11.2026; auki: jaksokartta kirjaimin partituurista, Salmenhaara 1970 |
 | 3 | Ääni: kuuntelukopio ja totuus | ⬜ |
 | 4 | Kuuntelutyökalu ja kanavakortti | ⬜ |
 | 5 | Kuunteluopas ja teemakartta | ⬜ |
-| 6 | Visuaalinen tyyli (haastattelu) | ⬜ |
+| 6 | Visuaalinen tyyli (haastattelu) | 🔶 haastattelu alkoi 1.11.2026 (docs/haastattelu_tyyli.md); tyyliohjetta ei kirjoiteta ennen vaiheita 3–5 |
 | 7 | Ohjaus ja kuvakäsikirjoitus | ⬜ |
 | 8 | Tekniikka ja mittarit | ⬜ |
 | 9 | Perusta, sitten osat | ⬜ |

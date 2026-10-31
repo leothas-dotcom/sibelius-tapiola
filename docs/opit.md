@@ -2,6 +2,22 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Tutkimus (vaihe 2) ja käyttäjän korjaukset
+
+**Ei toiminut**
+- Agentin käännös englannista tuotti "B-molli" (= b-molli) ja "mykistin". Käyttäjä korjasi: h-molli, sordiino.
+  Sääntö CLAUDE.md:hen ja briefeihin: sävelnimet H/B tarkistetaan aina; musiikkisanasto muusikon suomeksi.
+- Ohjaaja ja agentit kirjoittivat ristiriitoja (patarumpuavaus, sordiinot) "tarkistettaviksi", vaikka käyttäjällä
+  on partituuri. Nopeampi tapa: kysyä käyttäjältä partituurista heti, kun lähteet ovat eri mieltä.
+
+**Toimi**
+- Kuusi Sonnet-agenttia briefeistä: teos, levytys, viitteet, työkaluarvio, auringonsäde, soittimet. Jokainen
+  kirjoitti tiedostoon ja raportoi epävarmat. Kolme kohdennettua hakua vastasi käyttäjän kysymyksiin samana päivänä.
+- Äänilähteen tarkistussumma verrattiin Internet Archiveen: tiedosto on alkuperäinen.
+- Tekoälyn vastaus (Gemini) tallennettiin tarkistuslistana, ei lähteenä.
+- "Ei löytynyt" sanottiin suoraan (väärä toivo, vuoret, Tapio kuvana, animaatiot). Aukot ovat nyt tiedossa:
+  Salmenhaara 1970 on tärkein lukematon lähde.
+
 ## 1.11.2026 – Käyttäjän ensimmäinen palaute ja tutkimuksen aloitus
 
 **Ei toiminut**

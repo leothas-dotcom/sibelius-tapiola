@@ -54,8 +54,10 @@ puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät".
 Verkkolähteistä **ei löytynyt kokonaista tahtinumeroitua jaksokarttaa**. Löydetyt tahtinumerot (kaikki
 [tarkista partituurista]): Grimley: oktatoninen "tuulenpuuska" t. 21–25, "huuto" t. 586–587. Wilker: myrsky alkaa
 t. 523, loppu-H-duuri t. 624–634; teos on 634 tahtia. Del Mar: sordiinot alttoviuluun t. 130, jousiin t. 208,
-uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. Käyttäjä: myrsky alkaa kirjaimesta M, eli M on
-todennäköisesti t. 523 [tarkista], ja C-duuri on noin t. 518–522 [tarkista]. Jaksokartta täydennetään
+uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. **Käyttäjä partituurista 1.11.2026: alussa ei sordiinoja,
+ensimmäinen con sord. on kirjaimen J jälkeen.** Del Marin t. 130 on tämän kanssa ristiriidassa, ellei J ole ennen
+t. 130 [tarkista: kirjaimen J tahtinumero]. Grimley: myrskyjakso t. 513–577 (eri alku kuin Wilkerin 523) [tarkista].
+Käyttäjä: myrsky alkaa kirjaimesta M; M:n tahtinumero ja C-duurin tahdit tulevat käyttäjän partituurista. Jaksokartta täydennetään
 partituurista käyttäjän kanssa vaiheissa 2–5. (`docs/tutkimus/soittimet.md`)
 
 Sibelius-klubin kuvaama kulku:
@@ -85,6 +87,16 @@ läpi". Tämä on videon avainkohta. Aika kuuntelukopiossa mitataan vaiheessa 5 
 Huomio: C-duuri ei ole h-mollin rinnakkaisduuri (se on D-duuri), joten kohta on tonaalisesti vieras, ei
 "kotiin palaava" kirkastus. Tämä tukee käyttäjän luentaa "toivo on turha".
 
+**Kohdennettu haku "väärä / sairas toivo"** (`docs/tutkimus/auringonsade.md`): ilmausta **ei löytynyt
+keneltäkään** (Tovey luettu kokonaan; Salmenhaara 1970, Taylor 2018, Howell, Grimley 2011, Tawaststjerna ja
+Del Mar jäivät maksumuurin tai digitoimattomuuden taakse, joten haku ei kumoa muistoa). Kallio (2022): kooda on
+teoksen ensimmäinen ja ainoa siirtymä mollista duuriin, eli myrskyä edeltävä C-duuri on korkeintaan
+paikallinen sointu, ei sävellajin vaihdos. Grimley (Cambridge Companion 2004, vain hakuote): myrskyjakso
+t. 513–577, sen alku "kahisevaa jousifiguraatiota ilman selvää tahtilajin tuntua", ja myrsky on paikallisesti
+"terrifyingly unmotivated". Tämä on dramaturgisesti sama asia kuin käyttäjän "toivo on turha: siitä alkaakin
+myrsky": myrskyllä ei ole syytä. Hypoteesi sekaannuksesta: 7. sinfoniassa c-mollin myrsky edeltää C-duurin
+"täyttä päivänvaloa" (Simpson 1965?), ja muisto voi yhdistää kaksi teosta [tarkista].
+
 ### Soitinryhmät kuvina kirjallisuudessa (`docs/tutkimus/soittimet.md`)
 Haku suomeksi, englanniksi, saksaksi ja ruotsiksi. Käyttäjän muistama "puhaltimet nousevat kuin vuoret" **ei
 löytynyt keneltäkään**; vuoret esiintyvät vain 7. sinfonian vastakohtana Tapiolalle (Yungkans). Lähimmät:
@@ -104,7 +116,7 @@ Pitkät urkupisteet, runsaat jousitremolot, ostinatot. Dissonanssi säästeliäs
 
 | Ryhmä | Lähteiden mukaan kuultavissa | Tarkistettava |
 |---|---|---|
-| Jouset | avaus; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi pp | sordiinokohdat t. 130–359 |
+| Jouset | avaus ilman sordiinoa; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi pp | ensimmäinen con sord. kirjaimen J jälkeen (käyttäjä); Del Marin tahdit [tarkista] |
 | Puupuhaltimet | vastaus avaukseen; "peikkojakso"; kuviot kirjaimesta G; pikkolo ja huilu | englannintorvi, bassoklarinetti, kontrafagotti: ei lähdekuvausta |
 | Vaskit | isku Allegro moderaton alkuun; "salama ja ukkonen"; myrskyn huuto | käyrätorvien soinnut: ei lähdekuvausta |
 | Patarummut | **Avaus on patarumpusoolo** (käyttäjä partituurista 1.11.2026; Judd). Muut lähteet ohittavat sen ja aloittavat jousista. | ensimmäinen kanavakortin testikohta |
@@ -139,7 +151,12 @@ liikkumattomuus, yksi motiivi) ja (2) ihminen sen sisällä (vaeltaja, tuska, ku
 - Kajanus (1856–1933) johti Suomen ensiesityksen 1927 ja on Sibeliuksen pitkäaikainen esitaistelija. Walter Legge
   perusti HMV:n Sibelius Societyn 1932; Vol. 1 sisälsi 5. sinfonian, *Pohjolan tyttären* ja *Tapiolan* (neljä
   levypuolta, albumin viimeinen teos). Kajanus kuoli heinäkuussa 1933.
-- Sibeliuksen omaa vahvistettua lausuntoa Kajanuksen tulkinnoista ei löytynyt; mitään ei lainata.
+- **Sibeliuksen oma mielipide tästä levystä** (Jussi Jalaksen muistiinpanot, siteerattu Jani A. Suominen 2017,
+  *Finland Suomi 100*, s. 253–267, [tarkista alkuperäisestä]): Kajanuksen Tapiola-levy oli hänestä liian hidas
+  (9.4.1943) ja liian eloton, sen olisi pitänyt olla paljon dramaattisempi (4.1.1944); Kajanus ei tuntenut Tapiolaa
+  kyllin hyvin (7.12.1943). Layton (2001) sanoo päinvastoin: Kajanuksen hidas myrsky lisää kauhua ja
+  majesteettisuutta. Erimielisyys kirjataan tulkinnaksi. Videon dramaturgialle tämä on kiinnostava: kuva voi
+  antaa myrskylle sen dramatiikan, jota Sibelius levyltä kaipasi, tai kunnioittaa Kajanuksen hitautta.
 - Kajanus on yksi nopeimmista Sibelius-johtajista levyllä (Vänskä ykkösen finaalista). Tempo ja siirtonopeus
   sekoittuvat korvakuulolta: **vire mitataan vaiheessa 3** (avauksen h-molli A=440:aa vasten; LSO:n 1932 vire
   voi olla hieman alle 440 [tarkista]).
@@ -161,7 +178,11 @@ Ilman partituuria tahtinumerot jäävät pois, ja jaksokartta tehdään korvilla
    kuuntelukopiota).
 4. Tahtinumeroitu jaksokartta: partituurista käyttäjän kanssa (kirjaimet A–N ja niiden tahdit).
 5. Sibelius–Rodziński-kirje (FMQ 1991) tempo-ohjeista: paras tempolähde, jos saatavilla.
-6. Grimley 2011, Hepokoski, Howell 2001, Tawaststjerna, Tovey 1939: painettua kirjallisuutta, jota ei luettu.
+6. Painettu kirjallisuus, jota ei saatu luettua: **Salmenhaara 1970** (tärkein suomenkielinen; Finna / kirjasto),
+   Taylor 2018, Grimley 2011, Howell 2001, Tawaststjerna, Del Mar 2023. Tovey 1939 on luettu kokonaan.
+7. "Väärä toivo" -luennan alkuperä: ei löytynyt verkosta; voi olla Salmenhaarassa tai Tawaststjernassa.
+8. Ristiriidat partituurista ratkaistaviksi: Del Marin sordiinotahti 130 vs. käyttäjän "ensimmäinen con sord. J:n
+   jälkeen"; myrskyn alku 513 (Grimley) vs. 523 (Wilker) vs. kirjain M (käyttäjä).
 
 ## 9. Visuaaliset viitteet (katsaus `docs/tutkimus/viitteet.md`)
 

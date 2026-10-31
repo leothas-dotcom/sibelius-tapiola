@@ -44,6 +44,11 @@ päätetty.*
 > vähän erikoinen aloitus. Patarummut sanovat tututum, ja sitten jouset alkavat ja sitten puhaltimet tulevat
 > mukaan. Tee sellaiset analyysityökalut että KUULET NÄMÄ ASIAT niin ei tarvitse arvailla.
 
+> Mykistin ei ole sana. Suomeksi se on sordiino.
+
+> Minulla on tässä partituuri, niin ei tarvitse kiistellä. Alussa ei ole sordinoja, ensimmäinen "con sord"
+> on harjoituskirjain J jälkeen.
+
 Ohjaajan merkintä: tämä on käyttäjän oma partituurihavainto ja tulkinta, ei kirjallisuuslähde. Se menee
 teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta M) ja myrskyn alku ankkurina
 `myrsky_alku` (kirjain M). Ajat kuuntelukopiossa mitataan vaiheessa 5. Käyttäjällä on partituuri käytössään.
@@ -62,5 +67,20 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
   eloon → kuvakäsikirjoitus minuutti minuutilta. Haastattelu jatkuu, kunnes jokaisen elementin
   visualisointi on päätetty.
 
-## Avoimet haastattelukysymykset
-*(täytetään tutkimuksen jälkeen; vastaukset kirjataan yllä olevaan tapaan käyttäjän sanoin)*
+## Haastattelu, kierros 1 (esitetty 1.11.2026 tutkimuksen jälkeen)
+*Vastaukset kirjataan käyttäjän sanoin omaan lukuunsa. Tarina ennen tekniikkaa: kysymykset ovat tarinasta.*
+
+1. **Kuka on kuvassa?** Onko Sibelius hahmona metsässä (ihminen, "yksinäinen vaeltaja" kuten Madetoja kuuli),
+   vai onko hän läsnä vain metsän kautta, niin että metsä itse on hänen mielensä? Vai molemmat eri hetkinä?
+2. **Millainen metsä?** Kuusikko vai sekametsä, talvi alusta asti vai muuttuva vuodenaika, lunta, usvaa, pimeyttä.
+   Onko se Ainolan metsä, suomalainen sisämaa vai myyttinen Tapiola, jossa mittakaava ei ole ihmisen?
+3. **Tapio.** Näkyykö metsän jumala koskaan? Jos näkyy, miten: kasvot puussa, hahmo kaukana, vain merkki
+   (havuhattu, naavaturkki, halliparta), vai pelkkä poissaolo, joka tuntuu? Ja onko myrsky Tapio?
+4. **Patarumpusoolo.** Mitä se on tarinassa: sydämenlyönti, askel, kaukainen rumpu, maan kumina, ovi?
+5. **Auringonsäde ja petos.** Mistä valo tulee, mitä se valaisee, mitä se lupaa, ja miten petos näkyy: sammuuko
+   valo, muuttuuko se vääräksi, vai alkaako myrsky sen sisältä?
+6. **Myrsky.** Onko se luonnonmyrsky, säveltäjän sisäinen, vai "muuttuva maailma" (modernismi, aika), joka
+   tunkeutuu metsään? Mitä myrsky tekee metsälle ja ihmiselle?
+7. **Loppu, H-duuri.** Rauha, kuolema, hiljaisuus, jäähyväiset, luovutus? Jääkö ihminen metsään vai lähteekö hän?
+8. **Tonaliteetin taistelu kuvana.** Mikä on "muuttuva maailma" kuvassa: jokin, mikä ei kuulu metsään?
+9. **Vapaa kuva.** Kun suljet silmät ja kuulet avauksen, mitä näet ensimmäisenä?
