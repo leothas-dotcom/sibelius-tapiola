@@ -12,8 +12,8 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Äänilähde: Kajanus / LSO 1932, siirto
 | Vaihe | Nimi | Tila |
 |---|---|---|
 | 0 | Perustus (CLAUDE.md, suunnitelma, git) | ✅ 1.11.2026 |
-| 1 | Lähteet ja työkalut | ⬜ |
-| 2 | Teos: tutkimusdokumentti | ⬜ |
+| 1 | Lähteet ja työkalut | 🔶 arvio tekeillä 1.11.2026, kopiointi odottaa |
+| 2 | Teos: tutkimusdokumentti | 🔶 aloitettu 1.11.2026 (+ visuaalisten viitteiden katsaus vaihetta 6 varten) |
 | 3 | Ääni: kuuntelukopio ja totuus | ⬜ |
 | 4 | Kuuntelutyökalu ja kanavakortti | ⬜ |
 | 5 | Kuunteluopas ja teemakartta | ⬜ |
@@ -63,8 +63,7 @@ Tarkistuslista:
 - [ ] Jokaisella väitteellä on lähde; epävarmat merkitty **[tarkista]**.
 - [ ] Jaksot ja teemat kuvattu tahtinumeroin ja harjoituskirjaimin partituurista, ei muistista.
 - [ ] Soitinnus listattu soittimittain (mitä kukin soittaa, missä se on yksin kuultavissa).
-- [ ] Levytyksen tiedot: päivämäärä, paikka, orkesteri, matriisit/levynumerot, puolten jaot ja niiden
-  liitokset siirrossa **[tarkista]**.
+- [ ] Levytyksen tiedot: päivämäärä, paikka, orkesteri, julkaisu, siirron tekijä ja lähde **[tarkista]**.
 - [ ] Partituuri projektissa, sivut renderöitävissä tarkistusta varten.
 - [ ] Ei tulkintaa visuaaliksi vielä: dokumentti on musiikista.
 - [ ] Opit ja commit.
@@ -80,14 +79,17 @@ Tarkistuslista:
   `kellot.py` mittaa sen alkuperäistä vasten ja tulos on 0 ms.
 - [ ] Puhdistettu monokopio analyysiin; sen aika mitattu kuuntelukopiota vasten (afftdn-viive korjattu).
 - [ ] Ääniraita videolle alkuperäisestä (48 kHz, ei muuta käsittelyä), aika mitattu.
-- [ ] 78-kierroksen puolten liitoskohdat paikannettu ja kirjattu (ne voivat näkyä rahinan vaihtumisena
-  ja vaikuttaa analyysiin) **[tarkista]**.
+- [ ] Lähde on yksi tiedosto. Mahdolliset siirron liitoskohdat tai katkokset etsitään mittaamalla (rahinan
+  ja tason muutokset), ei oleteta.
 - [ ] Käyttäjä kuuntelee kuuntelukopiota ja vahvistaa, että soittimen kello näyttää samaa.
 - [ ] Opit ja commit.
 
 ## Vaihe 4: Kuuntelutyökalu ja kanavakortti
 
+Suunnitelma: `docs/analyysisuunnitelma.md` (varmat kohdat V1–V8, uudet kanavat, kuuntelupöytäkirja).
+
 Tarkistuslista:
+- [ ] Varmat kohdat V1–V8 mitattu pöytäkirjalla ja käyttäjä on kuullut otteet.
 - [ ] prepare → analyze → listen → interpret → segments → aksentit ajettu koko teokselle paketteina;
   `check_package.py` vihreä jokaiselle.
 - [ ] `docs/kanavakortti.md`: taulukko soitin → mitattu kanava → luotettavuus varmassa kohdassa
@@ -95,7 +97,7 @@ Tarkistuslista:
 - [ ] Jokainen kanava, jota kuva saattaa käyttää, on testattu vähintään yhdessä varmassa kohdassa.
 - [ ] Kuolleet kanavat merkitty, eikä niitä ole saatavilla kuvan ajoitukseen (koodi hylkää ne).
 - [ ] Korvaava lähde määritelty: partituuri + mitatut tahdinalut + spektrogrammi.
-- [ ] Rahinan ja puolten liitosten vaikutus kanaviin tarkistettu.
+- [ ] Rahinan vaikutus kanaviin tarkistettu.
 - [ ] Opit ja commit.
 
 ## Vaihe 5: Kuunteluopas ja teemakartta
@@ -203,8 +205,7 @@ Tarkistuslista:
 ---
 
 ## Avoimet kysymykset (1.11.2026)
-- Äänilähde: onko mp3 ainoa versio vai onko häviötön siirto saatavilla? Onko kuva albumikannesta käyttäjän
-  oma levysetti? Puolten jaot ja liitokset siirrossa **[tarkista]**.
+- Äänilähde: onko mp3 ainoa versio vai onko häviötön siirto saatavilla?
 - Milloin käyttäjä haluaa pitää vaiheen 6 haastattelun?
 - Mitkä edellisen projektin työkalut saa kopioida sellaisenaan (vaihe 1).
 - Tutkimus (vaihe 2) alkaa vasta pyynnöstä; käyttäjän ensimmäinen viesti pyysi sitä ensimmäiseksi,

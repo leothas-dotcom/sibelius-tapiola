@@ -2,6 +2,18 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Käyttäjän ensimmäinen palaute ja tutkimuksen aloitus
+
+**Ei toiminut**
+- Oletin äänilähteen rakenteen edellisen projektin mukaan (LP, puolet, liitokset) ja kysyin siitä.
+  Käyttäjä: "Tämä ei ole LP. Miksi teet oletuksia edellisten projektien perusteella." Sääntö: aineisto
+  luetaan ja mitataan ensin, kirjoitetaan vasta sitten. Myös työkalutarve arvioidaan itse, ei kysytä listaa.
+
+**Toimi**
+- Käyttäjän ideat kirjattiin heti omin sanoin `docs/haastattelu_tyyli.md`:hen, erillään tulkinnasta.
+- Tutkimus jaettiin neljäksi briefiksi (`docs/briefit/`), ja jokainen Sonnet-agentti lukee briefinsä
+  tiedostosta. Chatissa ei annettu yhtään ohjetta, jota brief ei sisällä.
+
 ## 1.11.2026 – Perustus (vaihe 0)
 
 **Toimi**

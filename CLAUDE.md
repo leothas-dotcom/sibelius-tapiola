@@ -2,7 +2,8 @@
 
 Teos: Jean Sibelius, *Tapiola*, sinfoninen runo op. 112 (1926).
 Äänilähde: Robert Kajanus / London Symphony Orchestra, Lontoo 1932, RCA Victrola 11503–11509,
-siirto Bob Varney. Tiedosto `audio/05_Tapiola.mp3` (17:43, 44,1 kHz, stereo, 320 kbps) [tarkista lähde].
+siirto Bob Varney. Lähde on **yksi tiedosto** `audio/05_Tapiola.mp3` (17:43, 44,1 kHz, stereo, 320 kbps). Ei LP, ei puolia.
+Aineistosta ei tehdä oletuksia edellisen projektin perusteella: se luetaan ja mitataan.
 
 Käyttäjä on orkesterimuusikko ja kirjoittaa suomeksi. Vastaa suomeksi.
 
@@ -36,6 +37,9 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 - Kanavat eivät ole totuus. Kanavakortti (`docs/kanavakortti.md`): soitin → mitattu kanava → luotettavuus
   varmassa kohdassa → korvaava lähde. **Kuollutta kanavaa ei käytetä kuvan ajoitukseen.**
 - Partituuri on tarkistusta varten, ei kellona. Tahtinumeroita ei lasketa äänestä.
+- **Sävelnimet suomeksi:** H = englannin B (h-molli = B minor, H-duuri = B major), B = englannin B♭.
+  Tapiolan perussävellaji on h-molli, rinnakkaisduuri D-duuri. Englanninkielisestä lähteestä käännettäessä
+  tarkistetaan aina, kumpaa tarkoitetaan.
 - Lainauksia tai viittauksia ei keksitä. Sallittu viittaus lähteistetään ja merkitään tulkinnaksi.
 
 ## Tyyli ja ohjaus
