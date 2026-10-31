@@ -1,0 +1,45 @@
+# Isot ja generoidut tiedostot eivät mene gittiin. Vain docs/, analysis/, render/,
+# annotations/, visual/ ja manifestit versioidaan.
+
+# Ajot: renderit, stillit, kontaktiarkit, WhatsApp-versiot. Vain brief.md, run.json,
+# storyboard.md ja tarkistus.md saavat olla gitissä (ks. poikkeukset alla).
+runs/*
+!runs/.gitkeep
+!runs/*/
+runs/*/*
+!runs/*/brief.md
+!runs/*/run.json
+!runs/*/storyboard.md
+!runs/*/tarkistus.md
+!runs/*/kriitikko.md
+!runs/*/palaute_*.md
+
+# Äänilähde ja johdetut äänet
+audio/
+build/
+output/
+
+# Mallipainot (haetaan fetch_models.py:llä tarkistussummin)
+models/
+
+# Ympäristöt
+.venv/
+node_modules/
+__pycache__/
+*.pyc
+
+# Mediatiedostot missä tahansa
+*.mp3
+*.wav
+*.flac
+*.mp4
+*.mkv
+*.mov
+*.webm
+*.f32
+*.npz
+
+# Käyttöjärjestelmä ja editorit
+Thumbs.db
+.DS_Store
+*.log
