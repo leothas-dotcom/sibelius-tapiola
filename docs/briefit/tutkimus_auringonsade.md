@@ -52,3 +52,4 @@ light", "glimpse", "the calm before the storm", "C major", "Letter M", "bar 5xx"
 - Tahtinumeroita ei lasketa itse.
 - Ei visuaalisia ehdotuksia.
 - Suomeksi, 800–2000 sanaa.
+- Musiikkisanasto muusikon suomeksi: sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain; epävarma termi italiaksi.

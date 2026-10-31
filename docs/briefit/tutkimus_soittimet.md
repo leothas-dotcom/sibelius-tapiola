@@ -7,7 +7,7 @@ Lue ensin `CLAUDE.md` kokonaan ja `docs/tutkimus/teos.md` luvut 5 ja 6. Kirjoita
 Käyttäjä muistaa lukeneensa: "alun jousiteemat on kuin Tapion metsät, ja sitten eri puhaltimet nousevat
 taustalta kuin vuoret." Tehtävä: **löydä, kuka on kirjoittanut Tapiolan soitinryhmistä kuvina**, ja mitä kukin
 soitinryhmä kirjallisuuden mukaan "tarkoittaa" tai kuvaa. Soitinryhmät: jouset (ydinmotiivi, tremolot, divisi,
-mykistimet), puupuhaltimet (huilut, oboet, englannintorvi, klarinetit, bassoklarinetti, fagotit, kontrafagotti),
+sordiinot), puupuhaltimet (huilut, oboet, englannintorvi, klarinetit, bassoklarinetti, fagotit, kontrafagotti),
 käyrätorvet, trumpetit, pasuunat, patarummut, kontrabassojen urkupisteet.
 
 Hakusanoja: "Tapiola" + metsä / forest / vuoret / mountains / horisontti / horizon / peikot / sprites / goblins /
@@ -34,3 +34,4 @@ Google Books- ja JSTOR-esikatselut sallittuja.
 - Sävelnimet suomeksi: englannin B minor on h-molli, B major H-duuri; suomen B on englannin B♭.
 - Ei visuaalisia ehdotuksia tähän dokumenttiin. Vain mitä kirjallisuus sanoo.
 - Suomeksi, 1000–2000 sanaa.
+- Musiikkisanasto muusikon suomeksi: sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain; epävarma termi italiaksi.

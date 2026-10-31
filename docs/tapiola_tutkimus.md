@@ -51,9 +51,12 @@ puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät".
 
 ## 3. Rakenne lähteiden mukaan (ilman tahtinumeroita)
 
-Verkkolähteistä **ei löytynyt tahtinumeroitua jaksokarttaa**. Ainoat tahtinumerot ovat Del Marin
-editorihuomioista: mykistimet alttoviuluun t. 130, jousiin t. 208, uusinta t. 290 ja 296, pois t. 359; sävelvirhe
-t. 25. Jaksokartta tehdään partituurista ja korvilla vaiheissa 2–5.
+Verkkolähteistä **ei löytynyt kokonaista tahtinumeroitua jaksokarttaa**. Löydetyt tahtinumerot (kaikki
+[tarkista partituurista]): Grimley: oktatoninen "tuulenpuuska" t. 21–25, "huuto" t. 586–587. Wilker: myrsky alkaa
+t. 523, loppu-H-duuri t. 624–634; teos on 634 tahtia. Del Mar: sordiinot alttoviuluun t. 130, jousiin t. 208,
+uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. Käyttäjä: myrsky alkaa kirjaimesta M, eli M on
+todennäköisesti t. 523 [tarkista], ja C-duuri on noin t. 518–522 [tarkista]. Jaksokartta täydennetään
+partituurista käyttäjän kanssa vaiheissa 2–5. (`docs/tutkimus/soittimet.md`)
 
 Sibelius-klubin kuvaama kulku:
 1. **Largamente, h-molli.** Patarumpusoolo avaa teoksen ("tututum"; käyttäjä, partituuri; Judd). Sitten ydinmotiivi jousissa, sitten puhaltimet mukaan; Sibelius-klubi kutsuu puhaltimien vastausta autiudeksi.
@@ -82,6 +85,18 @@ läpi". Tämä on videon avainkohta. Aika kuuntelukopiossa mitataan vaiheessa 5 
 Huomio: C-duuri ei ole h-mollin rinnakkaisduuri (se on D-duuri), joten kohta on tonaalisesti vieras, ei
 "kotiin palaava" kirkastus. Tämä tukee käyttäjän luentaa "toivo on turha".
 
+### Soitinryhmät kuvina kirjallisuudessa (`docs/tutkimus/soittimet.md`)
+Haku suomeksi, englanniksi, saksaksi ja ruotsiksi. Käyttäjän muistama "puhaltimet nousevat kuin vuoret" **ei
+löytynyt keneltäkään**; vuoret esiintyvät vain 7. sinfonian vastakohtana Tapiolalle (Yungkans). Lähimmät:
+Goodwin (BSO): pitkät pidetyt puhallinsävelet ovat staattinen tausta, joka huomataan vasta kun se katkeaa;
+Whitman (Cleveland): "monoliittiset" taustasoinnut; Tovey: värit pysyvät pitkään saman sointitaustan päällä.
+Kirjallisuuden kolme kuvaa: jouset = ydinmotiivi ja metsä, sitten tuuli (Goodwin) ja myrskyn tremolot, lopuksi
+"huuto"; puupuhaltimet = metsän olennot (Jalas, Europadisc) tai autio tausta; vasket = salama ja ukkonen, myrskyn
+huuto, Grimleyn mukaan koko teoksen läpi kulkevan vaskimotiivin yhteenvetopaluu. Tovey: lopun hirmumyrsky
+taivuttaa latvat ja uhkaa metsän jättiläisiä, sitten kirkkaiden duurisointujen "aamen". Wilker torjuu
+luontokuvat: Sibelius kertoo kasvun ja rappion tarinaa. Käyrätorvia, trumpetteja, pasuunoita, englannintorvea,
+bassoklarinettia, kontrafagottia ja kontrabassoja ei kuvaa erikseen mikään lähde.
+
 ## 4. Soitinnus kanavakorttia varten
 
 Hayes: Sibelius ei sekoita ryhmiä vaan kerrostaa puupuhaltimet, vaskit, patarummut ja jouset erillisinä lohkoina.
@@ -89,7 +104,7 @@ Pitkät urkupisteet, runsaat jousitremolot, ostinatot. Dissonanssi säästeliäs
 
 | Ryhmä | Lähteiden mukaan kuultavissa | Tarkistettava |
 |---|---|---|
-| Jouset | avaus; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi pp | mykistinkohdat t. 130–359 |
+| Jouset | avaus; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi pp | sordiinokohdat t. 130–359 |
 | Puupuhaltimet | vastaus avaukseen; "peikkojakso"; kuviot kirjaimesta G; pikkolo ja huilu | englannintorvi, bassoklarinetti, kontrafagotti: ei lähdekuvausta |
 | Vaskit | isku Allegro moderaton alkuun; "salama ja ukkonen"; myrskyn huuto | käyrätorvien soinnut: ei lähdekuvausta |
 | Patarummut | **Avaus on patarumpusoolo** (käyttäjä partituurista 1.11.2026; Judd). Muut lähteet ohittavat sen ja aloittavat jousista. | ensimmäinen kanavakortin testikohta |
@@ -144,7 +159,7 @@ Ilman partituuria tahtinumerot jäävät pois, ja jaksokartta tehdään korvilla
 2. Myrskyn alku: kirjain M (käyttäjä). Huipun tahti ja molempien ajat mittaamatta.
 3. Siirron nopeus ja vire: mitataan; päätetään, korjataanko (muuttaa kaikkia aikoja, joten päätös ennen
    kuuntelukopiota).
-4. Tahtinumeroitu jaksokartta: partituurista.
+4. Tahtinumeroitu jaksokartta: partituurista käyttäjän kanssa (kirjaimet A–N ja niiden tahdit).
 5. Sibelius–Rodziński-kirje (FMQ 1991) tempo-ohjeista: paras tempolähde, jos saatavilla.
 6. Grimley 2011, Hepokoski, Howell 2001, Tawaststjerna, Tovey 1939: painettua kirjallisuutta, jota ei luettu.
 

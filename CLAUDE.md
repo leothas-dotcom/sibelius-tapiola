@@ -40,6 +40,8 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 - **Sävelnimet suomeksi:** H = englannin B (h-molli = B minor, H-duuri = B major), B = englannin B♭.
   Tapiolan perussävellaji on h-molli, rinnakkaisduuri D-duuri. Englanninkielisestä lähteestä käännettäessä
   tarkistetaan aina, kumpaa tarkoitetaan.
+- **Musiikkisanasto muusikon suomeksi:** sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain.
+  Epävarma termi jätetään italiaksi (con sord., senza sord.). Käännetyt dokumentit tarkistetaan sanastolta.
 - Lainauksia tai viittauksia ei keksitä. Sallittu viittaus lähteistetään ja merkitään tulkinnaksi.
 
 ## Tyyli ja ohjaus

@@ -49,3 +49,4 @@ ennen talvimyrskyä aurinko hetkellisesti valaisee (c-duuri). ... toivo on turha
 - Suomeksi, 1500–3000 sanaa.
 
 - Sävelnimet suomeksi: englannin B minor on h-molli ja B major H-duuri; suomen B on englannin B♭. Tarkista joka kerta.
+- Musiikkisanasto muusikon suomeksi: sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain; epävarma termi italiaksi.

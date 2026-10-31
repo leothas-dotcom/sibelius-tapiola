@@ -49,3 +49,4 @@ musiikkivideon ja kuunteluoppaan pohja, joten tarkkuus ja lähteet ratkaisevat.
 - Kirjoita suomeksi, rakenteisesti, pituus mieluummin 1500–3000 sanaa kuin lyhyempi.
 
 - Sävelnimet suomeksi: englannin B minor on h-molli ja B major H-duuri; suomen B on englannin B♭. Tarkista joka kerta.
+- Musiikkisanasto muusikon suomeksi: sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain; epävarma termi italiaksi.

@@ -33,3 +33,4 @@ albumikannesta: "Sibelius Society Album No. 1, Victor Musical Masterpiece, RCA" 
 - Suomeksi, 800–1500 sanaa.
 
 - Sävelnimet suomeksi: englannin B minor on h-molli ja B major H-duuri; suomen B on englannin B♭. Tarkista joka kerta.
+- Musiikkisanasto muusikon suomeksi: sordiino (ei "mykistin"), divisi, tremolo, urkupiste, harjoituskirjain; epävarma termi italiaksi.
