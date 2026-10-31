@@ -35,6 +35,16 @@ Nämä ovat kanavakortin testikohdat. Jokainen aika mitataan kuuntelukopiosta; t
 Kohtia lisätään, kun käyttäjä antaa partituurista lisää (kirjaimet ja tahdit). Jokaisen varman kohdan aika
 kirjataan teemakarttaan ankkurina vasta, kun käyttäjä on kuullut sen kuuntelukopiosta.
 
+## 2b. Painotus käyttäjän ohjeen mukaan (1.11.2026)
+Käyttäjä: "missä siinä on nopeita tempoja, hitaita tempoja, sforzattoja, yllättäviä asioita, muutoksia, ja mitkä
+instrumentit on milläkin hetkellä äänessä." Ei raskasta sointuanalyysiä: "se on varmaankin melko mahdotonta siitä
+audiosta." Tärkeysjärjestys:
+1. **Soittimet äänessä** (perheet ja patarumpu) hetken tarkkuudella.
+2. **Sforzatot ja yllätykset**: iskut (`aksentit`), äkilliset voimakkuuden, rekisterin ja tekstuurin muutokset.
+3. **Tempo ja liike**: nopea vai hidas, liiketiheys, tremolo vai pitkä ääni. Ei tahtinumeroita.
+4. **Muutokset ja jaksot**: jaksorajat, soittimien tulot ja lähdöt.
+5. Sävellaji vain karkeana duuri/molli-vihjeenä (V6 ja V8), ei sointuanalyysinä.
+
 ## 3. Kanavat, jotka rakennetaan
 
 ### 3.1 Säilyvät edellisestä (korjattuina, ks. `docs/tyokalut.md`)

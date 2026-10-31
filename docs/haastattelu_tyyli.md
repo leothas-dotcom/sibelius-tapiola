@@ -84,3 +84,38 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
 7. **Loppu, H-duuri.** Rauha, kuolema, hiljaisuus, jäähyväiset, luovutus? Jääkö ihminen metsään vai lähteekö hän?
 8. **Tonaliteetin taistelu kuvana.** Mikä on "muuttuva maailma" kuvassa: jokin, mikä ei kuulu metsään?
 9. **Vapaa kuva.** Kun suljet silmät ja kuulet avauksen, mitä näet ensimmäisenä?
+
+## 1.11.2026 – käyttäjän vastaus kierrokseen 1 (saneltu, käyttäjän sanat)
+
+> Minun mielestä tämä voisi olla siis sellainen enemmän niin kuin semmoinen niin kuin, vähän niin kuin abstrakti
+> taideteos. Niin kuin, elävää ääntä sellaista niin kuin valon ja varjon ja luonnon ja luonnonvoimien kuvausta
+> niin kuin tällaisten niin kuin abstraktien asioiden avulla. Että ei missään nimessä sinne mitään ihmishahmoja
+> vaeltamaan ja ei mitään semmoisia keijukaisia pomppimaan sinne sen lapsellista vaan että mitä siitä saa
+> semmoisen niin kuin abstraktin elävän taideteoksen joka eläisi niin kuin musiikin tahdissa siinä ja just noita
+> mitä tuossa taustoissa haettiin eli ne, eri soittimet niin kuin kuvailisit siellä aina niin kuin eri asioita
+> semmoisia mietit että mitähän Sibelius on mahdollisesti tarkoittanut niillä eri instrumenteilla. Se on
+> tosissaan minun oma tulkinta se, valonsäde siellä synkkyyden lomassa. Ja ei siihen tarvitse etsiä mitään
+> kirjallisia viitteitä. Keskityn nyt siihen, että ensiksi luot semmoiset työkalut, millä niin kuin luotettavasti
+> kuulet nämä eri asiat sieltä. En nyt niin kuin ajattele, että sun tarvii tehdä jotain niin kuin tosi vahvaa
+> ääni kautta sointuanalyysiä, se on varmaankin melko mahdotonta. Siitä audiosta mutta että niin kuin sellaisia
+> asioita mietit, että missä siinä on niin kuin nopeita tempoja, hitaita tempoja. Sforzattoja, yllättäviä
+> asioita, muutoksia, ja että niin kuin mitkä instrumentit on milläkin hetkellä äänessä. Että me voidaan
+> luotettavasti luoda sitten se kuunteluopas. Ja kuunteluoppaan jälkeen sitten me luodaan niin kuin visuaalinen
+> tyyli, joka tukee sitä kuunteluopasta. Mutta ne on siis kaksi eri dokumenttia, missä on eri päämäärät, että se
+> kuunteluoppaan idea on olla vähän niin kuin vaikka kuuntelijalle semmoisena tukena, että mitä nyt tapahtuu,
+> kun hän kuuntelee sitä. Sitten sen jälkeen me yhdessä suunnittelemme sen kuunteluoppaan päälle sitten
+> semmoiset niin kuin visuaaliset elementit, mitkä sitten tukee sitä. Eli toimit vähän niin kuin ohjaajana
+> siinä, että olet niin kuin elokuvaohjaaja, että mietit, että
+
+### Ohjaajan poiminnat vastauksesta (sitovat päätökset)
+- **Abstrakti elävä taideteos**, joka elää musiikin tahdissa. Valo, varjo, luonto ja luonnonvoimat abstraktein
+  keinoin.
+- **Ei ihmishahmoja** (ei vaeltajaa, ei säveltäjää hahmona). **Ei keijukaisia tai peikkoja** pomppimaan; se on
+  lapsellista. Kysymykset 1 ja 3 ratkaistu: kuvassa ei ole ketään.
+- **Jokainen soitin kuvaa jotakin.** Soitin → elementti -taulukko on ydin; mietitään, mitä Sibelius saattoi
+  tarkoittaa kullakin soittimella. Lähteistä ei tarvitse hakea tukea auringonsäteelle: se on käyttäjän tulkinta.
+- **Järjestys:** (1) työkalut, joilla kuullaan luotettavasti: nopeat ja hitaat tempot, sforzatot, yllätykset,
+  muutokset, mitkä soittimet ovat äänessä milloinkin. Ei raskasta sointuanalyysiä. (2) Kuunteluopas: tuki
+  kuuntelijalle, "mitä nyt tapahtuu". (3) Visuaalinen tyyli, joka tukee opasta; eri dokumentti, eri päämäärä.
+  (4) Visuaaliset elementit suunnitellaan yhdessä oppaan päälle. Ohjaaja toimii kuin elokuvaohjaaja.
+- Kysymykset 2, 4–9 jäävät myöhempään kierrokseen, kun kuunteluopas on olemassa.
