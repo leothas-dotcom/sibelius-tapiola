@@ -141,3 +141,27 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
   (Tapio, Tapiola, metsänväki) innoituksena, ei hahmoina: haltiat "väikkyvät", eivät pompi.
 - **Edellisen projektin vaikutteet (Disney, japanilainen viiva) eivät siirry.** Käyttäjä sanoi sen itse.
 - Järjestys pysyy: kuunteluopas ensin, sitten tyyli.
+
+## 1.11.2026 – käyttäjän täydennys: taistelu ja loppu (saneltu, käyttäjän sanat)
+
+> Sitten se visuaalisen kielen olisi mielenkiintoista saada jonkunnäköinen niin kuin taistelu myös. Sen luomisen
+> tuskan mitä Sibelius koki kun maailma muuttui siitä mikä hänelle oli tuttua eli niin kuin tonaalisesta niin kuin
+> siihen atonaaliseen suuntaan silloin 1900-luvun taitteessa ja miten se vaikutti sitten muuhun taiteeseen ja
+> maailman tilaan tietysti siihen aikaan sotien välissä ja olisi kiinnostavaa ajatella myös sitä, että miksi tämä
+> oli niin kuin Sibeliuksen viimeinen teos, mitä hän teki. Ja se kuitenkin loppuu siihen H-duuriin, mikä on
+> mielestäni jotenkin koskettavaa. Että onko se niin kuin toivo kiitos hiljaisuus se on semmoinen hellä
+> metsäfortte, se ei ole semmoinen niin kuin normaalista kappaleet loppuu niin kuin hirveäseen tykitykseen vaan
+> se tuntuu enemmän sellaiselta huokaukselta, semmoiselta pehmeydeltä. Ja miten niin kuin Sibelius on sen myös
+> niin kuin soinnuttanut, eli niin kuin voisittanut on sillä tavalla, että se on hyvin semmoinen massiivinen
+> niin kuin ikään kuin päätöspiste. Mutta se ei ole mikään semmoinen julistava, vaan hellä ja just nimenomaan se
+> mezzoforte-sävy. Mikä tekee siitä mun mielestä niin kuitenkin koskettavaa.
+
+### Ohjaajan poiminnat
+- **Taistelu on toinen kerros** abstraktin luonnon rinnalla: luomisen tuska, maailma muuttuu tonaalisesta
+  atonaaliseen, sotien välinen aika, muu taide muuttuu. Miten se näkyy abstraktina kuvana, on haastattelun
+  seuraava aihe (kysymys 8).
+- **Miksi viimeinen teos:** käyttäjä haluaa tämän kysymyksen mukaan tarinaan. Tutkitaan.
+- **Loppu, H-duuri (kysymys 7):** käyttäjän luenta: toivo, kiitos, hiljaisuus; hellä, huokaus, pehmeys; massiivinen
+  päätöspiste mutta ei julistava; **mezzoforte-sävy** ("hellä metsäfortte" sanelussa = mezzoforte). Kuvan loppu
+  ei saa olla tykitys eikä fanfaari. Lopun dynamiikka ja soinnutus tarkistetaan partituurista (käyttäjä) ja
+  kuuntelukopiosta (mittaus).
