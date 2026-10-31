@@ -119,3 +119,25 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
   kuuntelijalle, "mitä nyt tapahtuu". (3) Visuaalinen tyyli, joka tukee opasta; eri dokumentti, eri päämäärä.
   (4) Visuaaliset elementit suunnitellaan yhdessä oppaan päälle. Ohjaaja toimii kuin elokuvaohjaaja.
 - Kysymykset 2, 4–9 jäävät myöhempään kierrokseen, kun kuunteluopas on olemassa.
+
+## 1.11.2026 – käyttäjän täydennys: esipuhe ja mytologia (saneltu, käyttäjän sanat)
+
+> Joo, ja tosissaan niin kuin tietysti just näin niin kuin äsken sanoin, että tee ensiksi se kuunteluopas,
+> mutta että visuaalisen tyylin pohjalla mun mielestä voisi olla tämä suomennos tästä niin kuin Sibeliuksen
+> esipuheesta. On metsät Pohjolassa sankat tummat, ne ikisalat haaveet hurjat loi. Asunnot tapion on siellä
+> kummat, haltijat väikkyy hämyn äänet soi. Ja sä löydät sen myöskin tuolta teoksen teos.md:stä. Mutta niin kun
+> Sibelius halusi kuvata luontoa tällä teoksella. Luontoa, suomalaista luontoa. Ja sitten me halutaan kuitenkin
+> jollakin tavalla sitten sitoossa siihen suomalaiseen mytologiaan. Eli voit vähän tutkia sitä mytologiaa kanssa,
+> että mitä siellä on jos sit saisi niinku innostuksia siihen visuaaliseen kieleen. Joo, abstrakti siis
+> visuaalinen teos, joka auttaa kuuntelijaa sitten niin kuin tulkitsemaan sitä kuulemaansa. Ja tuossa
+> edellisessä projektissa me otettiin oppeja vähän Disneystä ja sitten me otettiin oppeja myöskin sä voit
+> tarkistaa sieltä nyt tähän ei varmaan niitä viivajuttuja oteta. Japanilaista viivajuttua, että nyt ollaan ihan
+> tässä suomalaisessa mytologiassa ja sen tulkitsemisessa. Eli kuunteluopassa sitten se visuaalinen tyyli.
+
+### Ohjaajan poiminnat (sitovat)
+- **Tyylin pohja on esipuheen suomennos:** sankat tummat metsät, ikisalat, hurjat haaveet, Tapion kummat asunnot,
+  väikkyvät haltiat, hämyn äänet. Nämä ovat kuvan sanat.
+- **Suomalainen luonto** on se, mitä Sibelius halusi kuvata. Siihen sidotaan **suomalainen mytologia**
+  (Tapio, Tapiola, metsänväki) innoituksena, ei hahmoina: haltiat "väikkyvät", eivät pompi.
+- **Edellisen projektin vaikutteet (Disney, japanilainen viiva) eivät siirry.** Käyttäjä sanoi sen itse.
+- Järjestys pysyy: kuunteluopas ensin, sitten tyyli.
