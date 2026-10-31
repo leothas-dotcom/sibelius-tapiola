@@ -165,3 +165,16 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
   päätöspiste mutta ei julistava; **mezzoforte-sävy** ("hellä metsäfortte" sanelussa = mezzoforte). Kuvan loppu
   ei saa olla tykitys eikä fanfaari. Lopun dynamiikka ja soinnutus tarkistetaan partituurista (käyttäjä) ja
   kuuntelukopiosta (mittaus).
+
+## 1.11.2026 – käyttäjän täydennys: 1920-luvun taide (saneltu, käyttäjän sanat)
+
+> [Sanelussa alku epäselvä.] ... tämmöiseksi niin kuin inspiraatiokselle visuaaliselle kielelle hakee vähän sitä
+> kaskiluvun [= kaksikymmenluvun] taidetta internetistä, että minkälaista se taide oli siihen aikaan ja mitä
+> murrosta siinä oli havaittavissa ja onko siinä havaittavissa tätä samaa niin kuin kipuilua tämmöisten niin
+> kuin abstraktien ja ei-abstraktia asioiden välillä, mihin suuntaan taide oli menossa silloin 20-luvulla,
+> että sekin on ehkä kiinnostava.
+
+### Ohjaajan poiminta
+- **1920-luvun kuvataide innoittajana:** mitä se oli, mikä murros, kipuilu abstraktin ja esittävän välillä, mihin
+  suuntaan taide meni. Sama kipuilu kuin Sibeliuksen tonaalisuuden ja atonaalisuuden välillä. Tutkitaan omana
+  hakuna (`docs/briefit/tutkimus_taide1920.md`). Periaatteita, ei jäljennöksiä.
