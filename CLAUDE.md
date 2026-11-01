@@ -32,6 +32,10 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
   aliagenteilla, **aina `model: sonnet`**. Osa saa briefin tiedostona `docs/brief_malli.md`:n mukaan.
   Chatissa sanottu ei siirry osille: kaikki sitova kirjoitetaan tiedostoon, jonka osa lukee.
 - Tarina ennen tekniikkaa. Kun olet epävarma, kysy käyttäjän tarinaa, älä arvaa tekniikkaa.
+- **Merkittävyyden testi (1.11.2026):** ennen jokaista hakua, analyysia, dokumenttia tai agenttia yksi lause: mihin
+  kuvan päätökseen tämä vaikuttaa? Merkitsee: tunnelma, tempo, iskut, muutokset, se mitä videolla halutaan tuoda
+  esiin. Ei merkitse: soitinkohtaiset pikkudetaljit (sordiinot, painosten erot), sivuittaiset luettelot. Jos lausetta
+  ei synny, ei tehdä.
 
 ## Aika ja musiikki
 - **Aikojen ainoa totuus on kuuntelukopio** (`build/kuuntelu/`, `analysis/config.json`), jota käyttäjä

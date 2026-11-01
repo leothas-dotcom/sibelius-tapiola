@@ -2,6 +2,13 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Merkittävyys
+
+**Käyttäjän kritiikki:** en aina erota merkittävää merkityksettömästä. Sordiinot, painosten erot ja sivuittaiset
+luettelot eivät vaikuta kuvaan; tunnelma, tempo, iskut ja se, mitä halutaan tuoda esiin, vaikuttavat.
+
+**Oppi:** merkittävyyden testi ennen jokaista tehtävää (CLAUDE.md). Teemakartasta poistettiin sordiino-ankkuri.
+
 ## 1.11.2026 – Partituuri-PDF päätyi gittiin
 
 **Ei toiminut**

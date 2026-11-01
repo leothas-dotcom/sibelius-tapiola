@@ -1328,39 +1328,6 @@
      "huom": "jaksoraja: vaskit pois, sellot ja kontrabassot sisään"
     }
    ]
-  },
-  {
-   "id": "con_sord_J",
-   "ankkuri": "con_sord_J",
-   "t": null,
-   "theme": "soitin",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "nimi": "Ensimmäinen sordiino",
-   "kirjain": "J",
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "kirjaimen J jälkeen",
-   "soi": "ensimmäinen con sord. (sordiino)",
-   "soittimet": [],
-   "tarina": "Käyttäjä: alussa ei ole sordiinoja, ensimmäinen con sord. J:n jälkeen. Ohjaaja: sordiino ei himmennä vain ääntä vaan etäisyyttä: metsä on nyt kaukana, tai kuuntelija on syvällä sen sisällä, eikä niitä voi erottaa toisistaan.",
-   "lahde": "käyttäjä, partituuri",
-   "varmuus": "arvio",
-   "lahde_aika": "arvio",
-   "luottamus": "ei",
-   "peruste": "Sordiinoa ei voi mitata luotettavasti: sordiinoitu jousisointi tummentaa spektriä, mutta spektrin painopiste riippuu myös rekisteristä ja voimakkuudesta. Jousivaltaisissa lohkoissa (jouset-kanava > 0,6 vähintään 2,5 s) painopiste vaihtelee 0,10–0,79 ilman että sordiinoa voisi erottaa: 334,5 s 0,16; 496,3 s 0,10 (teoksen matalin, rekisteri 0,42); 519,9 s 0,29; 637,5 s 0,34; 62,2 s 0,55; 871,9 s 0,79. Kirjain J:n paikkaa ei voi päätellä sekunneista. Ehdokkaat (ei perusteltu): 519,9–524,7 s (jouset 0,70–0,80, rekisteri 0,51–0,53, edellä hiljaisuus 516 s) ja 496,3–502,4 s.",
-   "vahvistettu": false,
-   "tarkista": true,
-   "ehdokkaat": [
-    {
-     "t": 519.9,
-     "huom": "jousilohko hiljaisuuden jälkeen, painopiste 0,29"
-    },
-    {
-     "t": 496.3,
-     "huom": "matalin painopiste (0,10), urkupiste E"
-    }
-   ]
   }
  ],
  "iskut": [
@@ -2547,8 +2514,7 @@
  "puuttuu": {
   "ilman_aikaa": [
    "tuulenpuuska",
-   "askeleet_B",
-   "con_sord_J"
+   "askeleet_B"
   ],
   "jaksot_ilman_rajoja": []
  }

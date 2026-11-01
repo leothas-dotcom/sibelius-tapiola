@@ -371,3 +371,16 @@ kohdat (noin 10 sivua) ja kirjata, mitä painoksessa lukee. Ei sivuittaista luet
 > tällaisia hommia, että mitä sieltä kaivetaan. ... Pyysin sinua miettimään, en pysäyttämään sitä työtä.
 
 Ohjaajan merkintä: agentti herätetty; se kirjoittaa jo lukemansa ulos lukematta enempää. Oppi `docs/opit.md`:ssä.
+
+## 1.11.2026 – käyttäjän kritiikki: merkittävyys (käyttäjän sanat)
+
+> Tehnyt aivan älyttömän hienoa työtä tämän kappaleen kanssa ja olet mielestäni saanut sieltä tosi hienoja
+> nyansseja irti ja todella upeasti olet tehnyt taustatutkimuksen mutta kritiikki nyt kohdistuu siihen, että myös
+> et välillä osaa erottaa sitä, että mikä on merkittävää ja mikä ei. Meidän videossa haluamme visualisoida sitä
+> musiikkikieltä niin jollakin onko tietyllä soitinryhmällä sordino niin ei ole mitään merkitystä sen
+> visualisoinnin kannalta. Eli mieti, että mitkä asiat oikeasti on merkittäviä. Se on sen musiikin tunnelma, se on
+> se musiikin tempo, ne on ne iskut, ja mitä me haluamme tuoda esiin sillä videolla. Älä jatkossa keskity
+> mihinkään yksittäisiin pikkudetaileihin, vaan että ajattelet, että mitkä on niinku sen kaiken taustalla pitää
+> olla se ajatus, että onko tämän visualisoinnin kannalta merkitystä. Sitä me teemme nyt tässä.
+
+Ohjaajan merkintä: merkittävyyden testi CLAUDE.md:hen ja muistiin. Sordiino-ankkuri poistettu teemakartasta.

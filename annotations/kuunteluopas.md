@@ -98,7 +98,6 @@ Levytys: **Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc
 
 - **Tuulenpuuska** (`tuulenpuuska`, t. 21–25): oktatoninen "tuulenpuuska". Ehdokkaat: 0:48.0 (nopea kuviointi, liiketiheys 4,0/s kohdassa 49 s; aksentti 48,79 s (z 6,4); ei oktatonista mittaa).
 - **Matalat äänet "askeleina"** (`askeleet_B`, kirjain B, t. 69): matalat äänet tulevat eri tahtiin kuin muu orkesteri. Ehdokkaat: 2:09.7 (bassolinjan H1-sävelet erillisinä iskuina); 2:04.6 (jaksoraja: vaskit pois, sellot ja kontrabassot sisään).
-- **Ensimmäinen sordiino** (`con_sord_J`, kirjain J, kirjaimen J jälkeen): ensimmäinen con sord. (sordiino). Ehdokkaat: 8:39.9 (jousilohko hiljaisuuden jälkeen, painopiste 0,29); 8:16.3 (matalin painopiste (0,10), urkupiste E).
 <!-- /GEN:ankkurit -->
 
 ## Minuutti minuutilta
@@ -301,7 +300,6 @@ Jaksot: **H-duuri-loppu** 17:04.7–17:31.4 (H-duurisointu monijakoisissa jousis
 **1. Ei aikaa (mittaus ei riitä): etsi korvalla**
 - `tuulenpuuska` (t. 21–25): oktatoninen "tuulenpuuska". Ehdokkaat: 0:48.0 (nopea kuviointi, liiketiheys 4,0/s kohdassa 49 s; aksentti 48,79 s (z 6,4); ei oktatonista mittaa).
 - `askeleet_B` (kirjain B, t. 69): matalat äänet tulevat eri tahtiin kuin muu orkesteri. Ehdokkaat: 2:09.7 (bassolinjan H1-sävelet erillisinä iskuina); 2:04.6 (jaksoraja: vaskit pois, sellot ja kontrabassot sisään).
-- `con_sord_J` (kirjain J, kirjaimen J jälkeen): ensimmäinen con sord. (sordiino). Ehdokkaat: 8:39.9 (jousilohko hiljaisuuden jälkeen, painopiste 0,29); 8:16.3 (matalin painopiste (0,10), urkupiste E).
 
 **2. Heikko luottamus: kuuntele ensin** (mitattu piirre vastaa kuvausta huonosti tai ehdokkaita on useita)
 - **6:23.0** `peikot_G_alku` (kirjain G). Vaihtoehdot: 4:42.2 (V5-ehdokas 2 (kuuluu osin nopea_liike_1-jaksoon)); 5:49.2 (V5-ehdokas 3)

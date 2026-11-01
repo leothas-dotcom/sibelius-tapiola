@@ -357,24 +357,6 @@
       "esitysmerkinta": ""
     },
     {
-      "id": "con_sord_J",
-      "nimi": "Ensimmäinen sordiino",
-      "kirjain": "J",
-      "tahti": null,
-      "tahti_loppu": null,
-      "tahti_suhde": "kirjaimen J jälkeen",
-      "luokka": "soitin",
-      "tyyppi": "hetki",
-      "soi": "ensimmäinen con sord. (sordiino)",
-      "soittimet": [],
-      "tarina": "Käyttäjä: alussa ei ole sordiinoja, ensimmäinen con sord. J:n jälkeen. Ohjaaja: sordiino ei himmennä vain ääntä vaan etäisyyttä: metsä on nyt kaukana, tai kuuntelija on syvällä sen sisällä, eikä niitä voi erottaa toisistaan.",
-      "lahde": "käyttäjä, partituuri",
-      "tarkista": true,
-      "etuala": "jouset sordiinolla kaukana",
-      "tunnelma": "etäinen, himmeä",
-      "esitysmerkinta": "J ≈ t. 274 (s. 31): huilu III mf, bassoklarinetti pp sempre, morendo, sellot ja bassot pp sempre; ei con sord. J:ssä. K = t. 290 (s. 32): viulut I con sord. div., viulut II senza sord., sellot con sord. mezza, ppp sempre, Flag. mf. Huom: sellot con sord. jo ~t. 40 (s. 6), viulut ~t. 85 (s. 9)."
-    },
-    {
       "id": "jousijakso_urkupiste_E_alku",
       "nimi": "Jousijakso urkupisteen päällä alkaa",
       "kirjain": null,
