@@ -241,3 +241,10 @@ myrsky noin 14:21–15:21. Juuri ennen 10:54 on voimakas jakso ilman tremoloa (1
 ehdokas C-duurin "auringonsäteelle". Kaikki tämä on tulkintaa ja odottaa käyttäjän korvaa. Otteet:
 `build/kuuntelu/otteet/ehdokas_M_ja_sitä_edeltävä_10m10-11m40.wav` ja `ehdokas_suuri_myrsky_14m10-15m35.wav`.
 Kuva: `build/rattle_koko_cpu_myrskyt.png`.
+
+> Mutta siis, olit oikeassa. M ei ole vielä talvimyrsky. Siinä ehkä ennakoidaan sitä. Se alkaa oikeasti tahdissa 540.
+
+Ohjaajan merkintä (käyttäjä partituurista 1.11.2026): **talvimyrsky alkaa t. 540.** Kirjain M (t. 397) ennakoi sitä:
+ensimmäinen aalto, ei vielä myrsky. C-duuri (noin t. 392–396) edeltää M:ää, ei myrskyä suoraan. Dramaturgia
+muuttuu: auringonsäde → ennakko (M) → ... → talvimyrsky (540) → huuto (586–587) → H-duuri (624–634). Kirjallisuuden
+t. 513–577 ja käyttäjän 540 ovat samaa jaksoa eri rajauksella. Rattlessa myrskyehdokas 14:21–15:21.

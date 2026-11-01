@@ -58,8 +58,8 @@ uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. **Käyttäjä partituuris
 ensimmäinen con sord. on kirjaimen J jälkeen.** Del Marin t. 130 on tämän kanssa ristiriidassa, ellei J ole ennen
 t. 130 [tarkista: kirjaimen J tahtinumero]. Grimley: myrskyjakso t. 513–577 (eri alku kuin Wilkerin 523) [tarkista].
 **Käyttäjä partituurista 1.11.2026: kirjain B = t. 69, kirjain M = t. 397, O:n jälkeen Allegro moderato = t. 462.**
-Talvimyrsky alkaa käyttäjän mukaan M:stä (t. 397), C-duuri noin t. 392–396. Kirjallisuuden "myrskyjakso" t. 513–577
-on siis myöhempi kohta tai eri laskenta [tarkista korvalla aikajanasta]. Jaksokartta täydennetään
+C-duuri noin t. 392–396 ennen M:ää. **Käyttäjä 1.11.2026 (kuunneltuaan Rattlen ehdokkaat): M (t. 397) ei ole vielä
+talvimyrsky vaan sen ennakko; talvimyrsky alkaa t. 540.** Kirjallisuuden 513–577 on sama jakso eri rajauksella. Jaksokartta täydennetään
 partituurista käyttäjän kanssa vaiheissa 2–5. (`docs/tutkimus/soittimet.md`)
 
 Sibelius-klubin kuvaama kulku:
