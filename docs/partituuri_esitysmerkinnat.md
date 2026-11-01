@@ -1,0 +1,45 @@
+# Partituurin esitysmerkinnät nimetyissä kohdissa
+
+*1.11.2026. Luettu Breitkopf 1926 -painoksesta (IMSLP #15925, "Revised and edited by Carl Ettler"; merkinnät ovat
+painoksen, eivät varmasti kaikki Sibeliuksen omia, ks. `docs/tapiola_tutkimus.md` luku 13). Vain lähteiden ja
+käyttäjän nimeämät kohdat, painettujen tahtinumeroiden avulla; ei nuotti nuotilta, ei tahtien laskentaa.
+Sivu = painettu sivunumero (pdf-sivu = painettu − 2).*
+
+| Kohta | Tahti (painettu) | Sivu | Mitä partituurissa lukee | Ankkuri |
+|---|---|---|---|---|
+| Alku | 1–20 | 3–4 | [s. 3 ei luettu: Largamente, patarumpusoolo käyttäjän mukaan.] S. 4, t. 10–20: puupuhaltimet *poco f* → *p*; käyrätorvet *dim.*, *dim. molto*; trumpetit ja pasuunat *pp* → *ppp*; patarummut t. ~20 tremolo *pp* → *mp*. | avaus_patarumpu, jouset_tulevat, puhaltimet_tulevat |
+| Allegro moderato, 1. kerta | **21** | 4 | **Allegro moderato (♩ = puolinuotti suluissa)**. Vasket ja patarummut *fp*, *cresc. molto al*; viulut *div.* *p* kuudestoistaosakuvioin *cresc. molto al*; alttoviulut, sellot, bassot tulevat *p cresc. molto al*. | tuulenpuuska |
+| Tuulenpuuskan huippu | 25 | 5 | Kaikki **ff**: jousten kuudestoistaosajuoksut *ff*, vasket *a 2 ff*, patarummut *ff*; sitten *poco f* ja aksentit >. | vaskien_isku |
+| Kirjain A | ~36 | 6 | **A**; puupuhaltimet *f*, *fz*, *dolce*; sellot *div.* **con sord.** ~t. 40, bassot *mf*. | – |
+| Kirjain B | **69** | 8 | **B**; fagotit pitkät äänet; alttoviulut *mf*, *fz* >, *dolce*, *p*; sellot pitkät; **kontrabassot toistuvat kahdeksasosat, *poco a poco cresc.*** (= käyttäjän "askeleet"); patarummut *p* (t. 59–). | askeleet_B |
+| Sordiinot viuluissa | ~85 | 9 | Viulut I ja II **con sord. div.** *ppp* / *p*, *poco a poco cresc.*; trumpetit ja pasuunat *ppp*, *poco a poco meno p al*; myöhemmin *pp*, *div.*, *mf*, *dim.*, *mp*. | con_sord_J (ristiriita: ei J:n jälkeen) |
+| C-duuri ennen M:ää | 385–396 | 38 | Huilut *f*; jouset *div.* **f**; englannintorvi *messa [di voce?]* [epäselvä]; bassoklarinetti ja fagotit *mf*; bassot *mf*. Sointu on **forte**, ei hiljainen. | auringonsade |
+| Kirjain M | **397** | 39 | **M**; jouset *ff* **pizz.** → *arco* **fff**; käyrätorvet *sfz*; trumpetit *fp*, *cresc.*, *ff*; pasuunat *fz*, *mf cresc.*, *ff*; patarummut *sfz*, **ff tremolo**; puupuhaltimet *ff* juoksut. | M_ennakko |
+| Ennen Allegro moderatoa | 455–461 | 45 | **poco rallentando al**; puupuhaltimet *f*, *poco a poco più f*, *al fff*; vasket *poco f*. | allegro_moderato_O_alku (edeltävä) |
+| Allegro moderato, O:n jälkeen | **462** | 46 | **Allegro moderato (puolinuotti)**; vasket *poco a poco meno f*; jouset **con sord.** t. 462, sitten *arco* *f* ~t. 465 nousevin kuvioin; bassot *poco a poco meno f*. | allegro_moderato_O_alku |
+| Allegro | **513** | 51 | **Allegro (puolinuotti)**; vasket lyhyet äänet; viulut *pp*, **poco a poco senza sordini**; alttoviulut *pp*, *senza sord.*; bassot *pp*. | (myrsky_nakyy edeltävä) |
+| Myrsky näkyy | **523** | 51 | Viulut ja alttoviulut **ppp**, kromaattiset kuviot; sellot *senza sord.* *ppp*; *cresc.* ~t. 530. **Vain jouset.** | myrsky_nakyy |
+| Myrskyn kasvu | 532–539 | 52 | Jouset *cresc. molto*, 8va. **Vain jouset, ei vaskia, ei patarumpuja.** | myrsky_kasvu |
+| Myrsky iskee | **540** | 52 | Jouset **fff**, 8va, kromaattiset kuviot jatkuvat. Edelleen vain jouset. | myrsky_iskee |
+| Kirjain Q | **550** | 53 | **Q**; trumpetit, pasuunat, patarummut *p cresc. molto* → *ff*; bassoklarinetti, fagotit *mf cresc. molto*; jouset tremolokuviot jatkuvat. Koko orkesteri liittyy tässä. | (uusi: Q_vasket_liittyvat) |
+| Huuto | 586–587 | 57 | Puupuhaltimet *ff* juoksut; jouset *mf* nousevat juoksut → **ff** korkeat pitkät äänet (587–); patarummut *ff* → *mf* → *p*; käyrätorvet pitkät. | huuto |
+| Loppu, H-duuri | 618–634 | 60 | T. 618: kaikki **ff dim. pp** fermaatein; jouset: viulut I ja II **mf sempre**, alttoviulut, sellot ja bassot **mp**, *div.*; viimeinen sointu fermaatilla. **Mezzoforte on painettu.** Patarummut *ff dim. pp* ja pois. | loppu_Hduuri_alku |
+
+## Mitä tämä muuttaa
+- **Askeleet B:ssä ovat kontrabassojen toistuvat kahdeksasosat** *poco a poco cresc.* (s. 8), fagotit pitkinä yllä.
+- **C-duuri (385–396) on forte**, ei hiljainen: "groteski valo" on äänekäs. Chroma mittasi sen rauhallisena
+  (liike nolla), mutta dynamiikka on *f*. Käyttäjän "aurinko" paistaa kovaa.
+- **M on isku monessa kerroksessa:** pizzicato *ff* → arco *fff*, patarummut *sfz* + *ff* tremolo, vasket *sfz*/*ff*.
+- **Myrsky t. 523–549 on pelkkiä jousia:** ppp → cresc. molto → fff (540). Vasket ja patarummut liittyvät vasta
+  **Q = t. 550** *p cresc. molto* → *ff*. Käyttäjän "aluksi se vain näkyy, ja iskee sitten päälle" on partituurissa:
+  näkyy = jouset ppp 523, iskee = jouset fff 540, ja koko metsä vastaa Q:ssa 550.
+- **Loppu on mf sempre viuluissa, mp muissa.** Käyttäjän mezzoforte-luenta on painettu partituuriin.
+- **Sordiinot:** sellot con sord. ~t. 40 (s. 6), viulut con sord. ~t. 85 (s. 9), jouset con sord. t. 462, senza
+  sord. 513–523. Käyttäjän "ensimmäinen con sord. J:n jälkeen" ei pidä tässä painoksessa [käyttäjä tarkistaa].
+- **Tempomerkinnät järjestyksessä (luetut):** Largamente (t. 1, [ei luettu]); Allegro moderato t. 21; poco
+  rallentando al t. 455; Allegro moderato t. 462; Allegro t. 513. Väliltä 25–455 ja 550–618 ei luettu.
+- **Kirjaimet:** A ≈ 36, B = 69, M = 397, Q = 550. Muut: käyttäjältä.
+
+## Mitä ei luettu (tahallaan)
+Sivut 3, 7, 10–37, 40–44, 47–50 (osittain), 54–56, 58–59. Kirjaimet C–L, N–P, R–. Kirjaimet G ja J eivät löytyneet
+lukematta sivuja läpi; käyttäjä antaa ne.

@@ -198,12 +198,12 @@ def gen_minutes(m, td, rec):
         if not evs:
             out.append("*(ei ankkureita: edellinen jatkuu)*\n")
             continue
-        out.append("| Aika | Mitä | Mitä kuuluu | Etuala / tausta | Tunnelma | Tarina (Lähteet / Käyttäjä / Ohjaaja) | Varmuus |\n|---|---|---|---|---|---|---|")
+        out.append("| Aika | Mitä | Mitä kuuluu | Partituurin merkinnät (1926 painos) | Etuala / tausta | Tunnelma | Tarina (Lähteet / Käyttäjä / Ohjaaja) | Varmuus |\n|---|---|---|---|---|---|---|---|")
         for t, an, e, label in evs:
             if an is None:
                 an = e.get("_ankkuri", {})
             nimi = an.get("nimi", label) if label == "" else label
-            out.append(f"| **{mm(t)}** | {nimi} | {an.get('soi', '')} ({partituuri(an)}) | {an.get('etuala', '')} | {an.get('tunnelma', '')} | {an.get('tarina', '')} | {varmuus_teksti(e, an)} |")
+            out.append(f"| **{mm(t)}** | {nimi} | {an.get('soi', '')} ({partituuri(an)}) | {an.get('esitysmerkinta', '')} | {an.get('etuala', '')} | {an.get('tunnelma', '')} | {an.get('tarina', '')} | {varmuus_teksti(e, an)} |")
         out.append("")
     return "\n".join(out)
 

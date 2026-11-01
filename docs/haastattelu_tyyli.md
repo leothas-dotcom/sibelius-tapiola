@@ -356,3 +356,12 @@ Ohjaajan merkintä: partituuri `docs/references/IMSLP15925-...pdf` (58 s.). Esit
 kirjainten ja soitinten tulojen avulla (ei nuotti nuotilta, ei tahtien laskentaa) ja viedään ankkureihin kenttään
 `esitysmerkinta`. Rinnalle haku: mitä Sibelius tarkoitti tempo- ja esitysmerkinnöillään (Rodziński-kirje,
 metronomit, hänen omat sanansa).
+
+> No niin, nyt ymmärsit vähän väärin. En nimenomaan toivonut sitä, että käyt läpi sen partituurin niin kuin
+> tahti tahdilta ja ääni ääneltä, koska tiedän, että se kuluttaa ihan jäätävän määrän AI-krediittejä ... Sinun piti
+> vaan katsoa sieltä tuohon lähdemateriaaliin viitaten ne Sibeliuksen omat merkinnät ja silläkään en tarkoittanut,
+> että jotain urtekstiä pitäisi kaivaa vaan että mitä tuossa partsikassa sanotaan. ... pohdi kannattaako toi
+> nykyinen yli tunnin kestänyt homma hoitaa loppuun, mikä sen lopputulos on, ja miksi teet sitä.
+
+Ohjaajan merkintä: agentti pysäytetty. Oikea laajuus: katsoa partituurista vain lähteiden ja käyttäjän nimeämät
+kohdat (noin 10 sivua) ja kirjata, mitä painoksessa lukee. Ei sivuittaista luetteloa, ei urtext-kaivuuta.

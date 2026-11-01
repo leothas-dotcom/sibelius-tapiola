@@ -59,7 +59,8 @@
       "lahde": "käyttäjä, partituuri; kirjallisuus: Judd",
       "tarkista": false,
       "etuala": "patarummut yksin; ei taustaa",
-      "tunnelma": "pimeä, odottava"
+      "tunnelma": "pimeä, odottava",
+      "esitysmerkinta": "Largamente [s. 3 ei luettu]; t. 10–20 puupuhaltimet poco f → p, käyrätorvet dim. molto, vasket pp → ppp, patarummut tremolo pp → mp (s. 4)."
     },
     {
       "id": "jouset_tulevat",
@@ -78,7 +79,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "jouset edessä",
-      "tunnelma": "staattinen, synkkä"
+      "tunnelma": "staattinen, synkkä",
+      "esitysmerkinta": "[s. 3 ei luettu]"
     },
     {
       "id": "kayratorvet_vastaavat",
@@ -97,7 +99,8 @@
       "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
       "tarkista": true,
       "etuala": "jouset edessä, käyrätorvet takana (kaukana)",
-      "tunnelma": "syvyys avautuu"
+      "tunnelma": "syvyys avautuu",
+      "esitysmerkinta": ""
     },
     {
       "id": "puhaltimet_tulevat",
@@ -116,7 +119,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "puupuhaltimet nousevat etualalle, jouset taakse",
-      "tunnelma": "autius"
+      "tunnelma": "autius",
+      "esitysmerkinta": "t. 10–20: puupuhaltimet poco f → p (s. 4)."
     },
     {
       "id": "tuulenpuuska",
@@ -133,7 +137,8 @@
       "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
       "tarkista": true,
       "etuala": "[tarkista partituurista]",
-      "tunnelma": "levoton"
+      "tunnelma": "levoton",
+      "esitysmerkinta": "t. 21 Allegro moderato (puolinuotti): vasket ja patarummut fp, cresc. molto al; viulut div. p kuudestoistaosin cresc. molto al; alttoviulut, sellot, bassot p cresc. molto al (s. 4)."
     },
     {
       "id": "vaskien_isku",
@@ -152,7 +157,8 @@
       "lahde": "kirjallisuus: Tapiola-tutkimus luku 3 (vaskien isku avaa Allegro moderaton)",
       "tarkista": true,
       "etuala": "vasket ja patarummut edessä, jouset vastaavat",
-      "tunnelma": "uhka"
+      "tunnelma": "uhka",
+      "esitysmerkinta": "t. 25: kaikki ff (jousten juoksut ff, vasket a 2 ff, patarummut ff), sitten poco f ja aksentit (s. 5). Huom: ensimmäinen Allegro moderato on jo t. 21."
     },
     {
       "id": "hiljaisuus_1_alku",
@@ -171,7 +177,8 @@
       "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
       "tarkista": true,
       "etuala": "ei mitään",
-      "tunnelma": "pidätetty hengitys"
+      "tunnelma": "pidätetty hengitys",
+      "esitysmerkinta": ""
     },
     {
       "id": "hiljaisuus_1_loppu",
@@ -192,7 +199,8 @@
       "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
       "tarkista": true,
       "etuala": "jouset edessä",
-      "tunnelma": "helpotus, joka ei kestä"
+      "tunnelma": "helpotus, joka ei kestä",
+      "esitysmerkinta": ""
     },
     {
       "id": "askeleet_B",
@@ -211,7 +219,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": false,
       "etuala": "sellot ja kontrabassot omassa ajassaan muun orkesterin alla",
-      "tunnelma": "painava, näkymätön läsnäolo"
+      "tunnelma": "painava, näkymätön läsnäolo",
+      "esitysmerkinta": "B = t. 69: kontrabassot toistuvat kahdeksasosat poco a poco cresc.; fagotit pitkät äänet; alttoviulut mf, fz >, dolce, p; patarummut p (s. 8)."
     },
     {
       "id": "urkupiste_H1_alku",
@@ -232,7 +241,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "kontrabassot pohjana, kaikki muu sen päällä",
-      "tunnelma": "staattinen syvyys"
+      "tunnelma": "staattinen syvyys",
+      "esitysmerkinta": ""
     },
     {
       "id": "urkupiste_H1_loppu",
@@ -253,7 +263,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "pohja väistyy",
-      "tunnelma": "vapautuva"
+      "tunnelma": "vapautuva",
+      "esitysmerkinta": ""
     },
     {
       "id": "nopea_liike_1_alku",
@@ -275,7 +286,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "puupuhaltimet ja nopea kuviointi edessä; jouset ja vasket kaukana",
-      "tunnelma": "väike, levoton leikki"
+      "tunnelma": "väike, levoton leikki",
+      "esitysmerkinta": ""
     },
     {
       "id": "nopea_liike_1_loppu",
@@ -297,7 +309,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "kuviot väistyvät",
-      "tunnelma": "tyhjenevä"
+      "tunnelma": "tyhjenevä",
+      "esitysmerkinta": ""
     },
     {
       "id": "peikot_G_alku",
@@ -318,7 +331,8 @@
       "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
       "tarkista": true,
       "etuala": "huilut ja klarinetit edessä",
-      "tunnelma": "väike, hämyn äänet"
+      "tunnelma": "väike, hämyn äänet",
+      "esitysmerkinta": ""
     },
     {
       "id": "peikot_G_loppu",
@@ -339,7 +353,8 @@
       "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
       "tarkista": true,
       "etuala": "käyrätorvipulssit takana, puupuhaltimet välissä",
-      "tunnelma": "hidas hengitys"
+      "tunnelma": "hidas hengitys",
+      "esitysmerkinta": ""
     },
     {
       "id": "con_sord_J",
@@ -356,7 +371,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "jouset sordiinolla kaukana",
-      "tunnelma": "etäinen, himmeä"
+      "tunnelma": "etäinen, himmeä",
+      "esitysmerkinta": "Painoksessa sellot con sord. jo ~t. 40 (s. 6) ja viulut con sord. div. ppp ~t. 85 (s. 9): ristiriita 'J:n jälkeen' kanssa [käyttäjä tarkistaa]."
     },
     {
       "id": "jousijakso_urkupiste_E_alku",
@@ -377,7 +393,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "matalat jouset edessä urkupisteen päällä; muu orkesteri poissa",
-      "tunnelma": "syvä, tumma, kaukainen"
+      "tunnelma": "syvä, tumma, kaukainen",
+      "esitysmerkinta": ""
     },
     {
       "id": "jousijakso_urkupiste_E_loppu",
@@ -398,7 +415,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "kaikki väistyy",
-      "tunnelma": "pimenevä"
+      "tunnelma": "pimenevä",
+      "esitysmerkinta": ""
     },
     {
       "id": "hiljainen_jakso_alku",
@@ -417,7 +435,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "heikot jouset, ei etualaa",
-      "tunnelma": "tyhjyys, odotus"
+      "tunnelma": "tyhjyys, odotus",
+      "esitysmerkinta": ""
     },
     {
       "id": "hiljainen_jakso_loppu",
@@ -439,7 +458,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "vasket ja patarummut nousevat takaa",
-      "tunnelma": "lähestyvä"
+      "tunnelma": "lähestyvä",
+      "esitysmerkinta": ""
     },
     {
       "id": "vaski_tutti_620",
@@ -459,7 +479,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "vasket ja patarummut edessä",
-      "tunnelma": "vyöryvä, levoton"
+      "tunnelma": "vyöryvä, levoton",
+      "esitysmerkinta": ""
     },
     {
       "id": "auringonsade",
@@ -476,7 +497,8 @@
       "lahde": "käyttäjä, partituuri; avainkohta",
       "tarkista": false,
       "etuala": "korkeat jouset edessä, hymnimäisesti; vasket ja puupuhaltimet taustalla hiljaa",
-      "tunnelma": "väärä toivo, groteski valo, pysähtynyt"
+      "tunnelma": "väärä toivo, groteski valo, pysähtynyt",
+      "esitysmerkinta": "t. 385–396: huilut f, jouset div. f, bassoklarinetti ja fagotit mf, bassot mf; englannintorvi 'messa' [epäselvä] (s. 38). Sointu on forte, ei hiljainen."
     },
     {
       "id": "M_ennakko",
@@ -495,7 +517,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": false,
       "etuala": "vasket ja patarummut edessä; jouset katoavat kokonaan niiden alle",
-      "tunnelma": "isku, pelottava"
+      "tunnelma": "isku, pelottava",
+      "esitysmerkinta": "M = t. 397: jouset ff pizz. → arco fff; käyrätorvet sfz; trumpetit fp cresc. ff; pasuunat fz, mf cresc., ff; patarummut sfz, ff tremolo; puupuhaltimet ff (s. 39)."
     },
     {
       "id": "jannitejakso_alku",
@@ -516,7 +539,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "jouset edessä nopeassa kuvioinnissa; vasket ja patarummut takana",
-      "tunnelma": "ahdistava, hermostunut"
+      "tunnelma": "ahdistava, hermostunut",
+      "esitysmerkinta": ""
     },
     {
       "id": "jannitejakso_loppu",
@@ -537,7 +561,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "jouset väistyvät, vasket nousevat",
-      "tunnelma": "vaihtuva"
+      "tunnelma": "vaihtuva",
+      "esitysmerkinta": ""
     },
     {
       "id": "allegro_moderato_O_alku",
@@ -559,7 +584,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "käyrätorvet ja trumpetit vuorotellen edessä; muu takana",
-      "tunnelma": "hidas hengitys, painava"
+      "tunnelma": "hidas hengitys, painava",
+      "esitysmerkinta": "t. 455 poco rallentando al, puupuhaltimet poco a poco più f al fff (s. 45); t. 462 Allegro moderato (puolinuotti): vasket poco a poco meno f; jouset con sord., sitten arco f ~465 (s. 46)."
     },
     {
       "id": "allegro_moderato_O_loppu",
@@ -581,7 +607,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "jouset palaavat edessä",
-      "tunnelma": "laskeva"
+      "tunnelma": "laskeva",
+      "esitysmerkinta": ""
     },
     {
       "id": "hiljaisuus_2_alku",
@@ -600,7 +627,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "ei mitään",
-      "tunnelma": "tyhjä, uhkaava hiljaisuus"
+      "tunnelma": "tyhjä, uhkaava hiljaisuus",
+      "esitysmerkinta": ""
     },
     {
       "id": "hiljaisuus_2_loppu",
@@ -621,7 +649,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "jouset nousevat takaa",
-      "tunnelma": "kasvava"
+      "tunnelma": "kasvava",
+      "esitysmerkinta": ""
     },
     {
       "id": "myrsky_nakyy",
@@ -640,7 +669,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": false,
       "etuala": "jouset ppp hyvin kaukana",
-      "tunnelma": "etäinen uhka, näkyvä mutta ei vielä kuultava"
+      "tunnelma": "etäinen uhka, näkyvä mutta ei vielä kuultava",
+      "esitysmerkinta": "t. 513 Allegro (puolinuotti): viulut pp poco a poco senza sordini, bassot pp; t. 523: viulut ja alttoviulut ppp kromaattiset kuviot, sellot senza sord. ppp, cresc. ~530. Vain jouset (s. 51)."
     },
     {
       "id": "myrsky_kasvu",
@@ -659,7 +689,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "jouset tulevat edestä, vasket vastaavat",
-      "tunnelma": "lähestyvä, vyöryvä"
+      "tunnelma": "lähestyvä, vyöryvä",
+      "esitysmerkinta": "t. 532–539: jouset cresc. molto, 8va; ei vaskia eikä patarumpuja (s. 52)."
     },
     {
       "id": "myrsky_iskee",
@@ -679,7 +710,8 @@
       "lahde": "käyttäjä, partituuri",
       "tarkista": false,
       "etuala": "koko orkesteri edessä; kerrokset romahtavat yhdeksi",
-      "tunnelma": "pelottava, velloava, vyöryvä"
+      "tunnelma": "pelottava, velloava, vyöryvä",
+      "esitysmerkinta": "t. 540: jouset fff, 8va, kromaattiset kuviot; edelleen vain jouset (s. 52). Vasket ja patarummut liittyvät Q = t. 550 p cresc. molto → ff (s. 53)."
     },
     {
       "id": "myrsky_huippu",
@@ -698,7 +730,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "kaikki edessä",
-      "tunnelma": "huippu, ylivoima"
+      "tunnelma": "huippu, ylivoima",
+      "esitysmerkinta": "Q = t. 550 –: trumpetit, pasuunat, patarummut p cresc. molto → ff; bassoklarinetti, fagotit mf cresc. molto (s. 53)."
     },
     {
       "id": "toinen_paisunta",
@@ -715,7 +748,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "vasket nousevat takaa edelle",
-      "tunnelma": "velloava"
+      "tunnelma": "velloava",
+      "esitysmerkinta": ""
     },
     {
       "id": "huuto",
@@ -734,7 +768,8 @@
       "lahde": "kirjallisuus: Grimley (tahdit), Europadisc (luonnehdinta) [tarkista partituurista]",
       "tarkista": false,
       "etuala": "korkeat jouset yksin edessä",
-      "tunnelma": "yksinäinen, paljas"
+      "tunnelma": "yksinäinen, paljas",
+      "esitysmerkinta": "t. 586–587: puupuhaltimet ff juoksut; jouset mf nousevat juoksut → ff korkeat pitkät äänet; patarummut ff → mf → p (s. 57)."
     },
     {
       "id": "loppuhuipennus",
@@ -753,7 +788,8 @@
       "lahde": "analyysi: aikajana",
       "tarkista": true,
       "etuala": "koko orkesteri edessä, sitten ei mitään",
-      "tunnelma": "viimeinen aalto, sitten pimeys"
+      "tunnelma": "viimeinen aalto, sitten pimeys",
+      "esitysmerkinta": ""
     },
     {
       "id": "loppu_Hduuri_alku",
@@ -774,7 +810,8 @@
       "lahde": "kirjallisuus: Wilker (tahdit); käyttäjä (dynamiikka mezzoforte-sävyinen) [tarkista partituurista]",
       "tarkista": false,
       "etuala": "divisi-jouset edessä, ei taustaa",
-      "tunnelma": "hellä, koskettava, avoin"
+      "tunnelma": "hellä, koskettava, avoin",
+      "esitysmerkinta": "t. 618: kaikki ff dim. pp fermaatein; jouset: viulut I ja II mf sempre, alttoviulut, sellot ja bassot mp, div.; viimeinen sointu fermaatilla (s. 60). Mezzoforte on painettu."
     },
     {
       "id": "loppu_Hduuri_loppu",
@@ -795,7 +832,8 @@
       "lahde": "kirjallisuus: Wilker (tahdit)",
       "tarkista": false,
       "etuala": "jouset hiljenevät",
-      "tunnelma": "hiljenevä"
+      "tunnelma": "hiljenevä",
+      "esitysmerkinta": "viimeinen sointu fermaatilla; patarummut ff dim. pp ja pois (s. 60)."
     },
     {
       "id": "musiikki_loppuu",
@@ -812,7 +850,8 @@
       "lahde": "kirjallisuus: Wilker (634 tahtia)",
       "tarkista": false,
       "etuala": "ei mitään",
-      "tunnelma": "hiljaisuus, joka jäi"
+      "tunnelma": "hiljaisuus, joka jäi",
+      "esitysmerkinta": ""
     }
   ]
 }

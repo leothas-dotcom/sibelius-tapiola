@@ -2,6 +2,19 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Kaniinkuoppa: partituurin sivuittainen luettelo
+
+**Ei toiminut**
+- Käyttäjä pyysi katsomaan partituurista esitysmerkinnät lähteiden nimeämissä kohdissa. Ohjaaja briefasi agentin
+  lukemaan kaikki 58 sivua ja tekemään kolme taulukkoa, ja haki rinnalla urtext-kysymyksiä. Yli tunti ja paljon
+  krediittejä tulokseen, jota ei pyydetty. Käyttäjä pysäytti.
+
+**Oppi**
+- Ennen agentin käynnistystä: kuinka monta sivua tai kohtaa tehtävä oikeasti vaatii? Jos vastaus on "ne 10 kohtaa,
+  jotka jo tiedetään", ohjaaja katsoo ne itse, eikä briefaa luetteloa.
+- "Mitä partituurissa lukee" on eri kysymys kuin "mitä Sibelius tarkoitti"; käyttäjä kysyi ensimmäistä ja lähteistä
+  toista, ei urtext-vertailua.
+
 ## 1.11.2026 – Opas sekuntilistaksi
 
 **Toimi**
