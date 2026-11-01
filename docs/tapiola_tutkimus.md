@@ -300,3 +300,27 @@ mytologia antaa sille kaiun, ei lähteen.
 
 Aukot: kuvataideluku ohut; Gallen-Kallelan ornamentit, Simbergin metsät, Tapiola-ryijyt ja Aalto varmistamatta;
 kaiun haltiaa ei löytynyt SKVR:stä.
+
+## 12. Sibeliuksen tehokeinot Tapiolassa (`docs/tutkimus/tehokeinot.md`)
+
+Viisi tehokeinoa, jotka kirjallisuus liittää nimenomaan Tapiolaan (lähteet tiedostossa, luotettavuus A–C):
+1. **Alun patarumputremolo tonikalla**, samaan tapaan kuin 7. sinfoniassa (Boyer, DMA 2012, A). Vahvistaa käyttäjän
+   partituurihavainnon; Sibelius-klubi ja de-Wikipedia aloittavat jousista.
+2. **Yhden motiivin ituminen:** Wilker (A): pääajatus asetetaan **t. 13** ja koko teos on sen "rönsyilyä" (Wucherung);
+   Salmenhaara: 4 + noin 30 motiivia; Murtomäki; Hayes; Europadisc.
+3. **Asteikkokokoelmat ja oktatoninen puuska:** Grimley (A): harhautettu kadenssi (E7), jonka oktatoninen
+   "tuulenpuuska" pyyhkäisee pois t. 21–25. Taylor 2018: sävelkieli asteikkokokoelmista, ei funktionaalista harmoniaa.
+4. **Kerrostetut lohkot ja pitkät taustasoinnut:** Hayes (sekoittumattomat kerrokset, kaksi tempoa 2:1), Whitman
+   ("monoliittiset"), Tovey (väri pysyy samalla sointitaustalla "hämmästyttävän pitkään"), laskevat urkupisteet.
+   Tämä on käyttäjän kerrosajatuksen kirjallinen tuki.
+5. **Jousitremolojen myrsky ja huuto:** Wilker: kromaattinen tremolokenttä alkaa t. 523; Grimley: myrsky on koko
+   teoksen alla kulkevan vaskimotiivin yhteenvetopaluu, huuto t. 586–587; H-duuri t. 624–634, Toveyn "aamen".
+
+**Hiljaisuus:** yksikään lähde ei mainitse yleistaukoa alussa; käyttäjän partituuri on ainoa lähde. Goodwin (BSO):
+pitkät puhallintaustat katkeavat äkkiä ja jättävät "aavemaisen tyhjän hiljaisuuden", jonka huilujen ja viulujen
+juoksut täyttävät (ei tahtia). Judd: äänet "juuri hiljaisuuden yläpuolella". Grimley ja Tovey: lasku hiljaisuuteen
+lopussa. 7. sinfoniassa yksi fermaatti ja yksi Luftpause (Boyer); 5. sinfonian lopun iskut hiljaisuuden erottamia.
+**Yhteyttä Tapiolan hiljaisuuksien ja Ainolan hiljaisuuden välillä ei löytynyt lähteestä: se on meidän tulkintamme.**
+Wilker pohtii, oliko Myrskyn alkusoitto viimeinen mahdollinen sinfoninen kehittely.
+
+Ei löytynyt: "Sibelius-aalto" nimityksenä, "kaukaa tuleva" -efekti Tapiolassa, terssikulut, "luontoääni".
