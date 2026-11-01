@@ -2,6 +2,19 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Kuunteluoppaan tarina
+
+**Toimi**
+- Käyttäjä antoi vuoron ohjaajalle: tarina on ohjaajan luova tulkinta, lähteet ja käyttäjän kuvat merkittyinä
+  erikseen. Kolme ääntä (Lähteet / Käyttäjä / Ohjaaja) samassa tekstissä pitää tulkinnan rehellisenä.
+- Tarina viittaa ankkureihin hakasulkeissa, ei sekunteihin; ajat ovat vain generoiduissa osissa.
+- Hiljaisuus tehokeinona kulkee oppaan läpi lankana (käyttäjän ehdotus) ja antaa dramaturgialle syyn: viimeinen
+  teos, jonka jälkeen hiljaisuus jatkui.
+
+**Varottavaa**
+- Oppaan tarina on kirjoitettu ennen kuin yhtään aikaa on kuultu. Jos korva siirtää ankkurin, tarina pysyy, koska se
+  ei sisällä aikoja; mutta jaksojen järjestys (esim. "huuto" 16:10) voi muuttua.
+
 ## 1.11.2026 – Teemakartta (vaihe 5, luonnos)
 
 **Toimi**

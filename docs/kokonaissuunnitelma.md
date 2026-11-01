@@ -16,7 +16,7 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 2 | Teos: tutkimusdokumentti | 🔶 verkkotutkimus valmis 1.11.2026; auki: jaksokartta kirjaimin partituurista, Salmenhaara 1970 |
 | 3 | Ääni: kuuntelukopio ja totuus | ✅ Rattle-kuuntelukopio `build/kuuntelu/rattle_kuuntelu.wav`, kellot 0,00 ms, vire +5,6 c (ei korjattu); Kajanus arkisto |
 | 4 | Kuuntelutyökalu ja kanavakortti | 🔶 koko teos analysoitu (`build/rattle_koko`, 105 jaksoa, 18 pöytäkirjaa); V1–V8 ehdokasajat `varmat_kohdat.md`; kanavakortti täydennetty; **mitään ei vielä kuultu** |
-| 5 | Kuunteluopas ja teemakartta | 🔶 teemakartta 39 ankkuria (`annotations/teemat.json`), ajat Rattlesta analyysinä (36/39), cues ja oppaan GEN-osat generoituvat; **tarina ja kuulluksi vahvistus puuttuvat** |
+| 5 | Kuunteluopas ja teemakartta | 🔶 teemakartta 39 ankkuria (`annotations/teemat.json`), ajat Rattlesta analyysinä (36/39), cues ja oppaan GEN-osat generoituvat; **tarina kirjoitettu (ohjaajan tulkinta, 1.11.2026); kuulluksi vahvistus puuttuu**; partituuritarkistuslista `docs/partituuritarkistus.md` |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 haastattelu alkoi 1.11.2026 (docs/haastattelu_tyyli.md); tyyliohjetta ei kirjoiteta ennen vaiheita 3–5 |
 | 7 | Ohjaus ja kuvakäsikirjoitus | ⬜ |
 | 8 | Tekniikka ja mittarit | ⬜ |
