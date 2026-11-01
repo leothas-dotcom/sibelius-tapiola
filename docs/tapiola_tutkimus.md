@@ -57,7 +57,9 @@ t. 523, loppu-H-duuri t. 624–634; teos on 634 tahtia. Del Mar: sordiinot altto
 uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. **Käyttäjä partituurista 1.11.2026: alussa ei sordiinoja,
 ensimmäinen con sord. on kirjaimen J jälkeen.** Del Marin t. 130 on tämän kanssa ristiriidassa, ellei J ole ennen
 t. 130 [tarkista: kirjaimen J tahtinumero]. Grimley: myrskyjakso t. 513–577 (eri alku kuin Wilkerin 523) [tarkista].
-Käyttäjä: myrsky alkaa kirjaimesta M; M:n tahtinumero ja C-duurin tahdit tulevat käyttäjän partituurista. Jaksokartta täydennetään
+**Käyttäjä partituurista 1.11.2026: kirjain B = t. 69, kirjain M = t. 397, O:n jälkeen Allegro moderato = t. 462.**
+Talvimyrsky alkaa käyttäjän mukaan M:stä (t. 397), C-duuri noin t. 392–396. Kirjallisuuden "myrskyjakso" t. 513–577
+on siis myöhempi kohta tai eri laskenta [tarkista korvalla aikajanasta]. Jaksokartta täydennetään
 partituurista käyttäjän kanssa vaiheissa 2–5. (`docs/tutkimus/soittimet.md`)
 
 Sibelius-klubin kuvaama kulku:

@@ -219,3 +219,13 @@ hitaat vuorottelut käyrätorvien (crescendo–diminuendo, "svellari" <>) ja pas
 (1) mitattava kanava `vaskiaalto`: vaskien pitkät paisutukset (< >) ja niiden vuorottelu kahden vaskiryhmän
 välillä, varma kohta loppupuolella (kirjain kysytään); (2) kuvakielessä hidas hengitys tai aalto, joka vaihtaa
 puolta. Käyrätorvi ja pasuuna pitää siis erottaa toisistaan, mikä on juuri luvun 7 kysymys (yksittäiset soittimet).
+
+> B = 69 ja M = 397. V10 esiintyy Allegro moderato kohdassa O:n jälkeen (tahti 462 on allegro moderato). Se olikin
+> trumpetin ja cornon, kuulin väärin.
+
+Ohjaajan merkintä (partituurista, käyttäjä 1.11.2026): **kirjain B = t. 69, kirjain M = t. 397, O:n jälkeen
+Allegro moderato = t. 462.** V10 on käyrätorvien ja **trumpettien** vuorottelu (ei pasuunoiden). C-duuri on siis
+noin t. 392–396. Huomio ohjaajalta: kirjallisuus antaa "myrskyjaksolle" tahdit 513–577 (Grimley) tai 523 (Wilker),
+käyttäjä aloittaa talvimyrskyn kirjaimesta M = 397. Joko kirjallisuus tarkoittaa myöhempää huipennusta tai
+tahtilaskenta eroaa; tarkistetaan korvalla Rattlen aikajanasta, kun molemmat kohdat on paikannettu. Ei kiistellä:
+partituuri ja käyttäjän korva ratkaisevat.
