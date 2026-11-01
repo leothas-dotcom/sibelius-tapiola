@@ -40,6 +40,37 @@ Sivu = painettu sivunumero (pdf-sivu = painettu − 2).*
   rallentando al t. 455; Allegro moderato t. 462; Allegro t. 513. Väliltä 25–455 ja 550–618 ei luettu.
 - **Kirjaimet:** A ≈ 36, B = 69, M = 397, Q = 550. Muut: käyttäjältä.
 
+## Täydennys agentin pelastetuista sivuista (25 sivua, `docs/partituuri_esitysmerkinnat_agentti.md`) ja ohjaajan luvuista s. 31 ja 43
+
+| Kohta | Tahti | Sivu | Mitä partituurissa lukee |
+|---|---|---|---|
+| Alku | 1–9 | 3 | **Largamente** (puolinuotti), 2/2. Patarummut **mf** heti 1. tahdissa (kolmen nopean nuotin kuvio); jouset *f*; käyrätorvet *mf* > *f* > *pp*; trumpetit *poco f* > *pp*; patarummut trilli *poco f dim.* > *p*; huilut *p < f*. **Ei fermaattia eikä G.P.-merkintää sivulla.** Otsikko: "Revised and edited by Carl Ettler". |
+| Kirjain J | ~274 | 31 | **J**; huilu III *mf*; bassoklarinetti *pp sempre*, *morendo*; sellot ja bassot *pp sempre*; käyrätorvet *ppp*; viulut ja alttoviulut tauolla. Ei con sord. -merkintää tällä sivulla. |
+| Kirjain K | 290 | 32 | **K**; viulut I **con sord.** (div.), viulut II *senza sord.*, sellot **con sord.** *mezza*; *ppp sempre*, *Flag.* *mf*; patarummut *ppp* > *pp* (t. 302). Todennäköisesti käyttäjän "ensimmäinen con sord. J:n jälkeen" (viulut I). |
+| Kirjain L | 342 | 34 | **L**; bassoklarinetti, fagotit, kontrafagotti *p cresc. possibile*; käyrätorvet *poco f cresc. molto*; trumpetit, pasuunat, patarummut *fp cresc. possibile*. |
+| Allegro, 1. kerta | ~359 | 35 | Kolme tahtia *fff dim. molto* kaikilla, sitten **Allegro** (puolinuotti): huilut, fagotit *mp poco cresc.*; alttoviulut ja viulut *senza sord.*; trumpetit *ppp*; *fz*, *rfz*. |
+| Kirjain O | 442 | 43 | **O**; oboet ja klarinetit *poco f*; bassoklarinetti ja kontrafagotti *mf*, *fz*; trumpetit ja pasuunat *p*, *mp*; jouset lyhyet; *f* rivin lopussa. (Ennen O:ta t. 435: trumpetit *ppp*, viulut II *sempre mf*.) |
+| Kirjain P | 490 | 48 | **P**; käyrätorvet, trumpetit, pasuunat *fp cresc. molto* > *ff*; patarummut *f cresc. molto* > *ff*; jouset *ff*; sitten puupuhaltimet yhtä aikaa *f*. |
+| Ennen myrskyä | 505 | 50 | Vasket *dim. possibile*; jouset *espress.* > *p*. |
+| Myrskyn huippu | 559–569 | 54–55 | t. 559 klarinetit, bassoklarinetti, trumpetit, pasuunat, patarummut *ff*; puolivälistä kaikki puupuhaltimet ja vasket **poco ff cresc. possibile**; noin t. 569 **Allegro moderato**: koko orkesteri **fff**, jouset *fffz*, kontrabassot *fff saltato*; sitten *dim. molto* > *p*; klarinetti *2. Solo p*. |
+| Kirjain R | 577 | 56 | **R**; vasket *poco f <* / *mf <* > *ff* R:n edellä; jouset *ff*; huilu ja klarinetti *fff* > *p*; kontrafagotti ja patarummut *ppp*. |
+| Huuto | 587 | 57 | Puupuhaltimet *ff* yhden tahdin laskeva kuvio; jouset nouseva asteikko *mf* → **ff** 8va pitkät; patarummut *ff* > *mf* > *p*. |
+| Jälkeen | 593 | 58 | Pikkolo *mf <>*; klarinetti *1. Solo p <>*, *marc.*; bassoklarinetti *mf <>*; käyrätorvet *poco f dim.*; jouset *meno f*. |
+| Kirjain S | 605 | 59 | **S**; viulut I ja II **mf, sempre mf**; bassot *p <* > *mf*; patarummut *p* trilli; S:n jälkeen koko orkesteri *pp cresc.*. **Koodan "sempre mf" alkaa tässä.** |
+| Loppu | 618–634 | 60 | Puhaltimet, vasket, patarummut *ff dim. pp* ja pois; jouset *mf sempre* / *mp* loppuun, fermaatti. |
+
+**Tempomerkinnät järjestyksessä (luetut sivut):** Largamente t. 1; Allegro moderato t. 21; Allegro ~t. 359;
+poco rallentando al t. 455; Allegro moderato t. 462; Allegro t. 513; Allegro moderato ~t. 569. Välit 25–270,
+303–341 ja 360–434 lukematta (kirjaimet C–I, N).
+
+**Kirjaimet:** A ≈ 36, B = 69, J ≈ 274, K = 290, L = 342, M = 397, O = 442, P = 490, Q = 550, R = 577, S = 605.
+Puuttuvat: C–I ja N (lukemattomilla sivuilla 7, 10–30, 36–37, 40–42).
+
+**Sordiinot painoksessa:** sellot con sord. ~t. 40 (s. 6); viulut con sord. div. ~t. 85 (s. 9); viulut I ja sellot
+con sord. K = 290 (s. 32), viulut II senza; senza sord. alttoviulut ja viulut Allegrossa ~359 (s. 35); jouset con sord.
+t. 462 (s. 46); poco a poco senza sordini 513–523 (s. 51). Käyttäjän "ensimmäinen con sord. J:n jälkeen" vastaa
+viulujen I sordiinoa K:ssa, mutta sellot ja viulut ovat sordiinolla jo aiemmin [käyttäjä tarkistaa].
+
 ## Mitä ei luettu (tahallaan)
-Sivut 3, 7, 10–37, 40–44, 47–50 (osittain), 54–56, 58–59. Kirjaimet C–L, N–P, R–. Kirjaimet G ja J eivät löytyneet
-lukematta sivuja läpi; käyttäjä antaa ne.
+Painetut sivut 7, 10–30, 36–37, 40–42 (ja osa sivujen 32, 53, 54, 56 alapuoliskoista). Kirjaimet C–I ja N. Kirjain G
+(puupuhallinkuviot) on lukemattomilla sivuilla; käyttäjä antaa sen.

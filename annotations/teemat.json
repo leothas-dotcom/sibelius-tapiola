@@ -60,7 +60,7 @@
       "tarkista": false,
       "etuala": "patarummut yksin; ei taustaa",
       "tunnelma": "pimeä, odottava",
-      "esitysmerkinta": "Largamente [s. 3 ei luettu]; t. 10–20 puupuhaltimet poco f → p, käyrätorvet dim. molto, vasket pp → ppp, patarummut tremolo pp → mp (s. 4)."
+      "esitysmerkinta": "t. 1 Largamente (puolinuotti), 2/2: patarummut mf heti 1. tahdissa (kolmen nopean nuotin kuvio), jouset f, käyrätorvet mf > f > pp, trumpetit poco f > pp, patarummut trilli poco f dim. > p (s. 3). Ei fermaattia eikä G.P.-merkintää s. 3:lla."
     },
     {
       "id": "jouset_tulevat",
@@ -80,7 +80,7 @@
       "tarkista": true,
       "etuala": "jouset edessä",
       "tunnelma": "staattinen, synkkä",
-      "esitysmerkinta": "[s. 3 ei luettu]"
+      "esitysmerkinta": "t. 1–9: jouset f heti patarumpujen perään (s. 3)."
     },
     {
       "id": "kayratorvet_vastaavat",
@@ -120,7 +120,7 @@
       "tarkista": true,
       "etuala": "puupuhaltimet nousevat etualalle, jouset taakse",
       "tunnelma": "autius",
-      "esitysmerkinta": "t. 10–20: puupuhaltimet poco f → p (s. 4)."
+      "esitysmerkinta": "t. 1–9: huilut p < f, oboet ja klarinetit poco f; t. 10–20 poco f → p (s. 3–4)."
     },
     {
       "id": "tuulenpuuska",
@@ -372,7 +372,7 @@
       "tarkista": true,
       "etuala": "jouset sordiinolla kaukana",
       "tunnelma": "etäinen, himmeä",
-      "esitysmerkinta": "Painoksessa sellot con sord. jo ~t. 40 (s. 6) ja viulut con sord. div. ppp ~t. 85 (s. 9): ristiriita 'J:n jälkeen' kanssa [käyttäjä tarkistaa]."
+      "esitysmerkinta": "J ≈ t. 274 (s. 31): huilu III mf, bassoklarinetti pp sempre, morendo, sellot ja bassot pp sempre; ei con sord. J:ssä. K = t. 290 (s. 32): viulut I con sord. div., viulut II senza sord., sellot con sord. mezza, ppp sempre, Flag. mf. Huom: sellot con sord. jo ~t. 40 (s. 6), viulut ~t. 85 (s. 9)."
     },
     {
       "id": "jousijakso_urkupiste_E_alku",
@@ -585,7 +585,7 @@
       "tarkista": true,
       "etuala": "käyrätorvet ja trumpetit vuorotellen edessä; muu takana",
       "tunnelma": "hidas hengitys, painava",
-      "esitysmerkinta": "t. 455 poco rallentando al, puupuhaltimet poco a poco più f al fff (s. 45); t. 462 Allegro moderato (puolinuotti): vasket poco a poco meno f; jouset con sord., sitten arco f ~465 (s. 46)."
+      "esitysmerkinta": "O = t. 442 (s. 43): oboet ja klarinetit poco f, trumpetit ja pasuunat p → mp, bassoklarinetti ja kontrafagotti mf, fz. t. 455 poco rallentando al, puupuhaltimet poco a poco più f al fff (s. 45). t. 462 Allegro moderato (puolinuotti): vasket poco a poco meno f; jouset con sord., sitten arco f ~465 (s. 46)."
     },
     {
       "id": "allegro_moderato_O_loppu",
@@ -731,7 +731,7 @@
       "tarkista": true,
       "etuala": "kaikki edessä",
       "tunnelma": "huippu, ylivoima",
-      "esitysmerkinta": "Q = t. 550 –: trumpetit, pasuunat, patarummut p cresc. molto → ff; bassoklarinetti, fagotit mf cresc. molto (s. 53)."
+      "esitysmerkinta": "Q = t. 550: trumpetit, pasuunat, patarummut p cresc. molto → ff (s. 53); t. 559 ff, puolivälistä kaikki puupuhaltimet ja vasket poco ff cresc. possibile (s. 54); ~t. 569 Allegro moderato: koko orkesteri fff, jouset fffz, kontrabassot fff saltato, sitten dim. molto > p, klarinetti 2. Solo p (s. 55). R = t. 577: vasket < > ff, jouset ff (s. 56)."
     },
     {
       "id": "toinen_paisunta",
@@ -749,7 +749,7 @@
       "tarkista": true,
       "etuala": "vasket nousevat takaa edelle",
       "tunnelma": "velloava",
-      "esitysmerkinta": ""
+      "esitysmerkinta": "R = t. 577 (s. 56): vasket poco f < / mf < > ff R:n edellä; jouset ff; huilu ja klarinetti fff > p; kontrafagotti ja patarummut ppp."
     },
     {
       "id": "huuto",
@@ -789,7 +789,7 @@
       "tarkista": true,
       "etuala": "koko orkesteri edessä, sitten ei mitään",
       "tunnelma": "viimeinen aalto, sitten pimeys",
-      "esitysmerkinta": ""
+      "esitysmerkinta": "S = t. 605 (s. 59): viulut I ja II mf, sempre mf; bassot p < > mf; patarummut p trilli; S:n jälkeen koko orkesteri pp cresc.; t. 618 kaikki ff dim. pp fermaatein (s. 60)."
     },
     {
       "id": "loppu_Hduuri_alku",
@@ -811,7 +811,7 @@
       "tarkista": false,
       "etuala": "divisi-jouset edessä, ei taustaa",
       "tunnelma": "hellä, koskettava, avoin",
-      "esitysmerkinta": "t. 618: kaikki ff dim. pp fermaatein; jouset: viulut I ja II mf sempre, alttoviulut, sellot ja bassot mp, div.; viimeinen sointu fermaatilla (s. 60). Mezzoforte on painettu."
+      "esitysmerkinta": "S = t. 605: viulut sempre mf (s. 59). t. 618: puhaltimet, vasket ja patarummut ff dim. pp fermaatein ja pois; jouset: viulut I ja II mf sempre, alttoviulut, sellot ja bassot mp, div.; viimeinen sointu fermaatilla (s. 60). Mezzoforte on painettu."
     },
     {
       "id": "loppu_Hduuri_loppu",

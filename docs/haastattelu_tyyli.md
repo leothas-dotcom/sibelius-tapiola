@@ -365,3 +365,9 @@ metronomit, hänen omat sanansa).
 
 Ohjaajan merkintä: agentti pysäytetty. Oikea laajuus: katsoa partituurista vain lähteiden ja käyttäjän nimeämät
 kohdat (noin 10 sivua) ja kirjata, mitä painoksessa lukee. Ei sivuittaista luetteloa, ei urtext-kaivuuta.
+
+> Käytit aivan jäätävän määrän krediittejä, ja aikaa, ja hylkäät sen koko työn. ... Otetaan siitä irti se, mitä
+> siitä on irti otettavissa, koska on jo ne krediitit käytetty, mutta jatkossa niin pohdi, että ennen kuin aloitat
+> tällaisia hommia, että mitä sieltä kaivetaan. ... Pyysin sinua miettimään, en pysäyttämään sitä työtä.
+
+Ohjaajan merkintä: agentti herätetty; se kirjoittaa jo lukemansa ulos lukematta enempää. Oppi `docs/opit.md`:ssä.

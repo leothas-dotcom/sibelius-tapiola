@@ -9,7 +9,16 @@
   lukemaan kaikki 58 sivua ja tekemään kolme taulukkoa, ja haki rinnalla urtext-kysymyksiä. Yli tunti ja paljon
   krediittejä tulokseen, jota ei pyydetty. Käyttäjä pysäytti.
 
+- Toinen virhe perään: käyttäjä pyysi *miettimään*, kannattaako työ viedä loppuun, ja ohjaaja pysäytti agentin
+  heti. Käyttäjä: "Pyysin sinua miettimään, en pysäyttämään sitä työtä." Krediitit oli jo käytetty; oikea liike
+  oli ottaa talteen kaikki, mitä agentti ehti lukea, ja päättää vasta sitten. Agentti herätettiin ja pyydettiin
+  kirjoittamaan jo luettu ulos lukematta enempää.
+
+- Pelastus onnistui: agentti kirjoitti 25 luettua sivua ulos (kirjaimet J–S, tempot, sordiinot, loppu), ja ohjaaja luki
+  itse 11 kohdesivua. Yhdessä ne kattavat kaikki nimetyt kohdat paitsi kirjaimet C–I ja N.
+
 **Oppi**
+- Kun työ on jo maksettu, älä hylkää sitä: ota siitä irti se, mitä on. Pysäytys on päätös, ei refleksi.
 - Ennen agentin käynnistystä: kuinka monta sivua tai kohtaa tehtävä oikeasti vaatii? Jos vastaus on "ne 10 kohtaa,
   jotka jo tiedetään", ohjaaja katsoo ne itse, eikä briefaa luetteloa.
 - "Mitä partituurissa lukee" on eri kysymys kuin "mitä Sibelius tarkoitti"; käyttäjä kysyi ensimmäistä ja lähteistä
