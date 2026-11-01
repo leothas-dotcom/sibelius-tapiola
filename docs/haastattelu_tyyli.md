@@ -384,3 +384,48 @@ Ohjaajan merkintä: agentti herätetty; se kirjoittaa jo lukemansa ulos lukematt
 > olla se ajatus, että onko tämän visualisoinnin kannalta merkitystä. Sitä me teemme nyt tässä.
 
 Ohjaajan merkintä: merkittävyyden testi CLAUDE.md:hen ja muistiin. Sordiino-ankkuri poistettu teemakartasta.
+
+## 1.11.2026 – käyttäjän visuaalinen ydinidea: maailmoja maailmojen sisällä (saneltu, käyttäjän sanat)
+
+> Niin, mulla olisi semmoinen idea siihen visualisointiin ja se olisi ehkä sopia ihan hyvin. Tämän musiikin
+> teemoihin, että miten se olisi niin kuin elementit, mitä siinä näkyy siinä videolla, niin kuin kuvastaa niitä
+> erilaisia asioita, mitä musiikissa tapahtuu, mutta että kameralla sitten voitaisiin tehdä tämmöisiä vähän niin
+> kuin tulkinnallisempia elementtejä, esimerkiksi vaikka semmoista vääjäämättömyyttä, mitä tässä biisissä
+> tapahtuu, että mieti tämmöistä musiikkivideo-ohjausta. Eli siinä harvoin on staattista kameraa, vaan se kamera
+> ajaa koko ajan johonkin suuntaan. Eli sun täytyy miettiä nyt useita elementtejä, että kamera valaistus,
+> visuaaliset elementit ja näin poispäin. Ja mulla oli semmoinen ajatus, että mitäs jos siellä olisi vähän niin
+> kuin maailma, maailmojen sisällä olisi niin kuin se teema. Ja niin kuin tyyliin, että ne voisi olla sellaisia ne
+> leikkaukset, että vaikka mitä niin kuin jonkun toisen asian sisältä löytyy, eli niin kuin kamera ajaa johonkin
+> sisällä se suurenee ja sitten sieltä löytyy tavallaan uusi maailma, ja sitten siinä voisi olla tällaisia just
+> näitä valoja ja varjoja ja niitä syvyyksiä, me halutaan tuoda useilla kerroksilla sitä syvyyksellisyyttä esille.
+> Ja ne kerrokset voisi olla niin kuin sitä niin kuin taiteessa on niin kuin vaikka kuvataiteessa on niin kuin eri
+> kerroksia, niin että jotkut on kaukana ja jotkut lähellä, ja sitten tavallaan että mennään sitten sinne kaukana
+> olevaan maisemaan ja just sitä, että se myrsky välillä näkyy ensiksi kaukana ja sitten se lähestyy ja että
+> tuleeko myrsky päälle vai meneekö katsoja sitä myrskyä päin, niin ne on niin kuin niitä dramaattisia valintoja,
+> mitä sun ohjaajana pitää tehdä. Eli siirrytään siis seuraavaan vaiheeseen, mikä on kuvakirjoituksen
+> kuvakäsikirjoituksen tekeminen. Ja siinä pitää ottaa huomioon siis nämä kuunteluoppaan pointit, ja ensiksi luoda
+> se niin kuin visuaalinen tyyli, ja se kuvakäsikirjoituksen pitää noudattaa sitä visuaalista tyyliä,
+> sataprosenttisesti ja koko ajan.
+
+### Ohjaajan poiminnat (sitovat, tyyliohjeen ydin)
+- **Elementit kuvastavat musiikin tapahtumia; kamera tekee tulkinnan** (vääjäämättömyys).
+- **Kamera ajaa koko ajan** johonkin suuntaan; harvoin staattinen.
+- **Maailmoja maailmojen sisällä:** leikkaus on ajo jonkin sisään; se suurenee ja sieltä löytyy uusi maailma.
+- **Kerrokset:** kaukana ja lähellä, kuten kuvataiteessa; valot, varjot, syvyys useilla kerroksilla; mennään
+  kaukana olevaan maisemaan.
+- **Myrsky:** näkyy ensin kaukana, lähestyy; tuleeko myrsky päälle vai meneekö katsoja sitä päin on ohjaajan
+  dramaattinen valinta.
+- **Järjestys:** tyyli ensin, sitten kuvakäsikirjoitus, joka noudattaa tyyliä 100 % koko ajan; kuunteluoppaan
+  pointit otetaan huomioon.
+- Ohjaajan huomautus (sääntö: sano ääneen): kerrokset syvyyden tekijänä muistuttavat teknisesti edellisen
+  projektin monitasoa. Ero kirjataan tyyliohjeeseen: ei paperia, ei leikkeitä, ei litteitä tasoja, vaan jatkuva
+  tila, jonka sisään kamera ajaa; kerros on etäisyys ja valo, ei pahvi.
+
+> [Ja] lisäys tuohon, että totta kai voi olla välillä myös staattisia hetkiä, että joko sitten se liike pysähtyy
+> aletaan seuraamaan jotain yksittäistä elementtiä mutta niiden täytyy olla taiteellisia ja tarkoituksellisia
+> valintoja. Ei siis vahinkoja. Eli missä kohtaa kamera liikkuu, missä kohtaa elementit liikkuu, ja miten me
+> tuodaan se kokonaistarina esille siinä. Eli tällaista sun täytyy nyt ohjaajana ruveta miettimään. Eli ohjaat
+> nyt sen jutun, mutta ensiksi luodaan se visuaalinen ilme.
+
+Ohjaajan merkintä: staattinen hetki on valinta, ei vahinko: kamera pysähtyy ja seuraa yhtä elementtiä. Tyyliohje
+sanoo, milloin kamera liikkuu ja milloin elementit, ja miten kokonaistarina kulkee.

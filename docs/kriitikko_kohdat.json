@@ -1,0 +1,27 @@
+{
+  "_ohje": "Kriitikon tarkistuskohdat, johdettu docs/visuaalinen_tyyli.md:stä ja docs/kuvasaannot.md:stä (1.11.2026). Kriitikko lukee ensin tyyliohjeen kokonaan ja kuvasäännöt, sitten ruutusarjat. Jokainen kohta vastataan: OK / BUGI (ruutu, aika, mitä näkyy) / TARKOITETTU (perustelu kuvakäsikirjoituksesta). Bugilista tyhjä = renderi kelpaa.",
+  "kohdat": [
+    {"id": "kamera_liikkuu", "sääntö": 1, "kysymys": "Liikkuuko kamera koko ajan paitsi nimetyissä pysähdyksissä (C-duuri, H-duuri)? Onko pysähdys, jota kuvakäsikirjoitus ei nimeä?"},
+    {"id": "kamera_suunta", "sääntö": 1, "kysymys": "Meneekö kamera sisään ja eteen? Peruuttaako tai palaako se jossain?"},
+    {"id": "kamera_nopeus", "sääntö": 3, "kysymys": "Pyöriikö tai kallistuuko kamera? Ylittääkö 20 °/s (camcheck)? Onko suunnanvaihto epäjatkuva?"},
+    {"id": "kamera_ei_reagoi", "sääntö": 4, "kysymys": "Reagoiko kamera iskuun (nykäys, hyppy)? Sen pitää reagoida elementtien, ei kameran."},
+    {"id": "siirtyma_kulku", "sääntö": 5, "kysymys": "Onko jokainen maailmasta toiseen siirtyminen kulku jonkin läpi, vähintään 4 s, jatkuva mittakaava? Näkyykö leikkaus?"},
+    {"id": "kerrokset_kolme", "sääntö": 6, "kysymys": "Onko kuvassa aina vähintään kolme syvyyskerrosta, ja ovatko ne erotettavissa (kaukana sinisempi, himmeämpi, hitaampi)?"},
+    {"id": "etuala_puhuu", "sääntö": 7, "kysymys": "Onko etualalla se elementti, jonka soitin musiikissa puhuu (teemakartan etuala-kenttä)? Tuleeko se lähemmäs vai kasvaako paikallaan?"},
+    {"id": "kerros_ei_pahvi", "sääntö": 8, "kysymys": "Näyttääkö jokin kerros litteältä tasolta, pahvilta tai leikkeeltä? Vuotaako reuna (kohtauscheck)? Onko tyhjää taustaa?"},
+    {"id": "elementti_ei_esine", "sääntö": 9, "kysymys": "Onko kuvassa mitään tunnistettavaa esinettä: soitin, nuotti, kasvot, eläin, ihminen, puu lehtineen, lumihiutale? Elementin pitää olla liikettä, valoa, massaa tai jälkeä."},
+    {"id": "isku_ymparistossa", "sääntö": 10, "kysymys": "Onko iskun elementti ympäristössä (pohjan tärähdys, valon leikkaus, kerrosten etääntyminen) ja näkyykö se iskun ruudussa (videotarkistus)?"},
+    {"id": "ei_ilmesty_iskussa", "sääntö": 11, "kysymys": "Ilmestyykö, katoaako tai loikkaako jokin elementti iskussa?"},
+    {"id": "enintaan_kolme", "sääntö": 12, "kysymys": "Liikkuuko yhtä aikaa enemmän kuin kolme elementtiä?"},
+    {"id": "valon_lahde", "sääntö": 14, "kysymys": "Onko kaikella valolla lähde jossain kerroksessa? Onko hehkua tai bloomia ilman lähdettä?"},
+    {"id": "vari_tumma", "sääntö": 15, "kysymys": "Onko kuva tumma (hämy, salo, halla, noki)? Onko punaista tai lämpöä ennen loppua?"},
+    {"id": "taottu_aurinko", "sääntö": 16, "kysymys": "Näkyykö messinki/rikinkeltainen muualla kuin C-duurissa (11:20–11:25 Rattle)? Näkyykö kajo muualla kuin H-duurissa?"},
+    {"id": "vari_ei_iskussa", "sääntö": 17, "kysymys": "Vaihtuuko väri iskussa? Sen pitää vaihtua kerroksen tullessa etualalle."},
+    {"id": "hiljaisuus_kuva", "sääntö": 18, "kysymys": "Hiljaisuuksissa (yleistauko, ennen myrskyä, loppu): jatkaako kamera ja lakkaavatko elementit? Pimeneekö kuva vahingossa tai jatkaako se entistä?"},
+    {"id": "myrsky_jarjestys", "sääntö": "tyyliohje 5", "kysymys": "Myrsky: näkyykö se ensin kaukana (523), lähestyykö, iskeekö (540, kerrokset romahtavat), ajaako kamera sen läpi Q:sta, nouseeko kamera huudossa?"},
+    {"id": "loppu_pysahdys", "sääntö": "tyyliohje 5", "kysymys": "Pysähtyykö kamera H-duurissa ensimmäisen kerran, tuleeko kajo kerrosten takaa, jääkö kuva paikalleen hiljaisuuteen pimenemättä?"},
+    {"id": "jatkuvuus", "sääntö": "yleinen", "kysymys": "Onko välkettä, yhden ruudun hyppyjä tai tilan epäjatkuvuuksia (jatkuvuusmittari)? Tarkoitettu vai bugi?"},
+    {"id": "edellinen_projekti", "sääntö": 19, "kysymys": "Muistuttaako jokin paperia, mustetta, rasteria, nukkeja, leikattuja tasoja tai hahmoja?"},
+    {"id": "ajoitus_korvalla", "sääntö": "yleinen", "kysymys": "Kuuntele kohta: osuuko elementin liike musiikin tapahtumaan korvalla, ei vain ruutunumerolla?"}
+  ]
+}

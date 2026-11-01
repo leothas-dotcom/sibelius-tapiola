@@ -2,6 +2,16 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Tyyliohje v1
+
+**Toimi**
+- Tyyliohje kirjoitettiin vasta, kun käyttäjä antoi ydinidean (maailmoja maailmojen sisällä, kamera ajaa koko ajan,
+  kerrokset, myrsky kaukaa). Ohjaajan omat valinnat merkittiin **[ohjaajan valinta]**, jotta käyttäjä näkee, mikä on
+  hänen ja mikä ohjaajan.
+- Yksi lähde, kolme näkymää: kuvasäännöt, soitinroolit ja kriitikon kohdat johdettiin samalla kertaa.
+- Sääntö "sano ääneen, jos ehdotat edellisen tyyliä" toimi: kerrosajatuksen tekninen sukulaisuus edellisen
+  monitasoon sanottiin ja ero kirjattiin (kerros on etäisyys ja valo, ei taso).
+
 ## 1.11.2026 – Merkittävyys
 
 **Käyttäjän kritiikki:** en aina erota merkittävää merkityksettömästä. Sordiinot, painosten erot ja sivuittaiset
