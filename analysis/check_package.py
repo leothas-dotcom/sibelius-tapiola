@@ -1,7 +1,7 @@
 r"""Tarkistaa analyysipaketin ja merkinnät: JSON kelpaa, binääridata vastaa metatietoja.
 
-  .venvScriptspython.exe -I analysis/check_package.py build/testi60     paketti + annotations/cues.json (jos on)
-  .venvScriptspython.exe -I analysis/check_package.py --cues-only       vain merkinnät
+  .venv\Scripts\python.exe -I analysis/check_package.py build/testi60     paketti + annotations/cues.json (jos on)
+  .venv\Scripts\python.exe -I analysis/check_package.py --cues-only       vain merkinnät (teemat.json, ajat_<levytys>.json, cues.json)
 Tarkistaa myös kanavat.json/kanavat.f32 (analysis/kanavat.py): 30 fps, ruutumäärä sama kuin analysis ja
 listen, ei NaN/inf-arvoja. Palauttaa virhekoodin 1, jos jokin tarkistus ei mene läpi.
 """
@@ -96,22 +96,53 @@ def check_cues():
     path = ROOT / "annotations" / "cues.json"
     print(f"--- {path.relative_to(ROOT)}")
     if not path.exists():
-        print("OHITETTU cues.json (ei vielä: teemakartta tulee vaiheessa 5, sitten analysis/make_cues.py)")
+        print("OHITETTU cues.json (ei vielä: aja analysis/make_cues.py --levytys <id>)")
         return
     c = load_json(path)
     if c is None:
         return
-    for key in ("recording", "themes", "sections", "cues", "bars"):
+    for key in ("recording", "themes", "sections", "cues", "iskut", "analyses"):
         check(key in c, f"avain '{key}'")
-    ids = [x.get("id") for x in c.get("cues", []) + c.get("sections", [])]
+    if errors:
+        return
+    rec = c["recording"]
+    kesto = rec.get("kesto_s") or 1e9
+    ids = [x.get("id") for x in c["cues"] + c["sections"]]
     check(None not in ids and len(ids) == len(set(ids)), "tunnisteet (id) olemassa ja yksilöllisiä")
-    bad = [x["id"] for x in c.get("cues", []) if not (x.get("t") is None or isinstance(x["t"], (int, float)))]
-    check(not bad, f"tapahtumien t kelvollisia {bad if bad else ''}")
-    themes = set(c.get("themes", {})) | {"rakenteen_muutos"}
-    unknown = sorted({x["theme"] for x in c.get("cues", []) if x.get("theme") not in themes})
-    check(not unknown, f"teemat tunnettuja {unknown if unknown else ''}")
-    t = [b["t"] for b in c.get("bars", [])]
-    check(t == sorted(t), f"tahdit: {len(t)} kpl järjestyksessä")
+    bad = [x["id"] for x in c["cues"] if not (x.get("t") is None or (isinstance(x["t"], (int, float)) and 0 <= x["t"] <= kesto))]
+    check(not bad, f"tapahtumien t kelvollisia (null tai 0–{kesto} s) {bad if bad else ''}")
+    themes = set(c["themes"])
+    unknown = sorted({x["theme"] for x in c["cues"] if x.get("theme") not in themes})
+    check(not unknown, f"teemat (luokat) tunnettuja {unknown if unknown else ''}")
+    inconsistent = [x["id"] for x in c["cues"] if (x["t"] is None) != (x["varmuus"] == "arvio") or x["varmuus"] not in ("vahvistettu", "analyysi", "arvio")]
+    check(not inconsistent, f"varmuus ja t vastaavat toisiaan (arvio <=> t null) {inconsistent if inconsistent else ''}")
+    secbad = [s["id"] for s in c["sections"] if not (0 <= s["start"] < s["end"] <= kesto)]
+    check(not secbad, f"{len(c['sections'])} jaksoa: 0 <= alku < loppu {secbad if secbad else ''}")
+    t = [b["t"] for b in c["iskut"]]
+    check(t == sorted(t) and all(isinstance(x, (int, float)) for x in t), f"iskut: {len(t)} kpl järjestyksessä")
+    # ristiintarkistus lähteisiin: cues.json ei saa olla vanhentunut
+    tm_path = ROOT / "annotations" / "teemat.json"
+    at_path = ROOT / "annotations" / f"ajat_{rec.get('levytys')}.json"
+    if check(tm_path.exists() and at_path.exists(), f"teemat.json ja {at_path.name} löytyvät"):
+        tm, at = load_json(tm_path), load_json(at_path)
+        if tm is not None and at is not None:
+            aid = [a["id"] for a in tm["ankkurit"]]
+            check(len(aid) == len(set(aid)), f"teemat.json: {len(aid)} ankkuria, id:t yksilöllisiä")
+            check(sorted(aid) == sorted(at["ajat"]), "ajat-tiedostossa täsmälleen teemakartan ankkurit")
+            check(sorted(aid) == sorted(x["ankkuri"] for x in c["cues"]), "cues.json sisältää täsmälleen teemakartan ankkurit")
+            stale = [x["id"] for x in c["cues"] if x["id"] in at["ajat"] and (x["t"] != at["ajat"][x["id"]]["t"] or x["varmuus"] != at["ajat"][x["id"]]["varmuus"])]
+            check(not stale, f"cues.json vastaa ajat-tiedostoa (muuten aja make_cues.py) {stale if stale else ''}")
+            nosec = [a["id"] for a in tm["ankkurit"] if a.get("tarina")]
+            print(f"INFO    tarina täytetty {len(nosec)} ankkurilla (käyttäjän kirjoitettavaa)")
+            jak = {}
+            for a in tm["ankkurit"]:
+                if a.get("tyyppi") == "jakso":
+                    jak.setdefault(a["jakso"], set()).add(a["reuna"])
+            check(all(v == {"alku", "loppu"} for v in jak.values()), f"{len(jak)} jaksoa: alku- ja loppuankkuri molemmat")
+            n = len(aid)
+            check(30 <= n <= 60, f"ankkureita {n} (tavoite 30–60)")
+            nulls = [x["id"] for x in c["cues"] if x["t"] is None]
+            print(f"INFO    ilman aikaa: {nulls if nulls else 'ei yhtään'}")
 
 
 def main():

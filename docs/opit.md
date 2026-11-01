@@ -2,6 +2,21 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Teemakartta (vaihe 5, luonnos)
+
+**Toimi**
+- Levytysriippumaton rakenne (ankkurit partituurista, ajat per levytys) toteutui: `make_cues.py --levytys` ja
+  `kuunteluopas.py --levytys` lukevat sen, `check_package --cues-only` tarkistaa. 39 ankkuria, 36 ajalla.
+- Agentti poisti cues.jsonista tahtiruudukon ja events-tapahtumat, koska ne sisälsivät äänestä laskettuja tahteja.
+  Oikea tulkinta säännöstä.
+- Käyttörajaan pysähtynyt agentti jatkoi `SendMessage`llä siitä mihin jäi; työ ei hävinnyt.
+
+**Varottavaa**
+- Kolme ankkuria (myrsky_iskee 890,5 s, allegro_moderato_O, huuto) valittiin tahtimäärän suhteella mitattujen
+  ankkurien väliin. Sama arvio osui aiemmin 25 s pieleen, joten nämä ovat heikkoja ja vaativat korvan.
+- Kolme ankkuria ilman aikaa (tuulenpuuska, askeleet_B, con_sord_J): kanavaa ei ole (askel) tai piirre ei näy
+  spektristä (sordiino, oktatonisuus). Nämä tulevat käyttäjän korvalta tai partituuripohjaisesta kohdistuksesta.
+
 ## 1.11.2026 – Koko teos Rattlesta (vaiheet 3–4)
 
 **Toimi**

@@ -1,0 +1,2555 @@
+{
+ "_ohje": "Merkinnät, koneluettava vastine kuunteluoppaalle (annotations/kuunteluopas.md). GENEROITU: älä muokkaa käsin. Sisältö: annotations/teemat.json; ajat: annotations/ajat_<levytys>.json (ainoa paikka, jossa aikoja kirjoitetaan käsin); iskut: <paketti>/aksentit.json. Ajat sekunteina kuuntelukopion alusta. varmuus: vahvistettu / analyysi / arvio (t = null). Luotu: .venv\\Scripts\\python.exe -I analysis/make_cues.py --levytys <id>.",
+ "recording": {
+  "levytys": "rattle2022",
+  "nimi": "Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc0e3TQ)",
+  "lahde": "audio/vertailu/rattle_lso_2022.webm",
+  "kuuntelukopio": "build/kuuntelu/rattle_kuuntelu.wav",
+  "kesto_s": 1078.016,
+  "rooli": "työ"
+ },
+ "themes": {
+  "soitin": "soittimen tulo tai soittimien kerrostuminen",
+  "tunnelma": "tunnelman tai dynamiikan muutos",
+  "soolo": "soolo",
+  "huippu": "huipennus tai avainkohta",
+  "tauko": "hiljaisuus tai tauko",
+  "isku": "isku tai tutti-isku",
+  "jakso": "jakso (alku ja loppu omina ankkureinaan)"
+ },
+ "sections": [
+  {
+   "id": "hiljaisuus_1",
+   "nimi": "Ensimmäinen hiljaisuus",
+   "start": 58.1,
+   "end": 61.4,
+   "kesto": 3.3,
+   "luokka": "tauko",
+   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen",
+   "soittimet": [],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "hiljaisuus_1_alku",
+   "ankkuri_loppu": "hiljaisuus_1_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "hyvä",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "urkupiste_H1",
+   "nimi": "Pitkä urkupiste H:lla",
+   "start": 179.33,
+   "end": 191.83,
+   "kesto": 12.5,
+   "luokka": "soitin",
+   "soi": "pitkä urkupiste H:lla (H1)",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "urkupiste_H1_alku",
+   "ankkuri_loppu": "urkupiste_H1_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "kohtalainen",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "nopea_liike_1",
+   "nimi": "Nopea kuviointi",
+   "start": 280.9,
+   "end": 303.7,
+   "kesto": 22.8,
+   "luokka": "jakso",
+   "soi": "nopea kuviointi, puupuhaltimia ja jousia",
+   "soittimet": [
+    "puupuhaltimet",
+    "jouset"
+   ],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "nopea_liike_1_alku",
+   "ankkuri_loppu": "nopea_liike_1_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "kohtalainen",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "peikot_G",
+   "nimi": "Puupuhallinkuviot (kirjain G)",
+   "start": 383.04,
+   "end": 390.3,
+   "kesto": 7.26,
+   "luokka": "jakso",
+   "soi": "puupuhallinkuviot, nopeat kahdeksasosat",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "kirjain": "G",
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "peikot_G_alku",
+   "ankkuri_loppu": "peikot_G_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "heikko",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "jousijakso_urkupiste_E",
+   "nimi": "Jousijakso urkupisteen päällä (E)",
+   "start": 496.3,
+   "end": 502.4,
+   "kesto": 6.1,
+   "luokka": "soitin",
+   "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+   "soittimet": [
+    "jouset"
+   ],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "jousijakso_urkupiste_E_alku",
+   "ankkuri_loppu": "jousijakso_urkupiste_E_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "kohtalainen",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljainen_jakso",
+   "nimi": "Hiljainen jakso",
+   "start": 597.2,
+   "end": 613.6,
+   "kesto": 16.4,
+   "luokka": "tunnelma",
+   "soi": "pitkä hiljainen jakso, vähän liikettä",
+   "soittimet": [],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "hiljainen_jakso_alku",
+   "ankkuri_loppu": "hiljainen_jakso_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "hyvä",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "jannitejakso",
+   "nimi": "Jännitteinen jousijakso",
+   "start": 711.0,
+   "end": 755.5,
+   "kesto": 44.5,
+   "luokka": "jakso",
+   "soi": "jousivaltainen jakso, korkea jännite ja nopea liike",
+   "soittimet": [
+    "jouset"
+   ],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "jannitejakso_alku",
+   "ankkuri_loppu": "jannitejakso_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "kohtalainen",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "allegro_moderato_O",
+   "nimi": "Vaskivuorottelu (Allegro moderato, O:n jälkeen)",
+   "start": 756.5,
+   "end": 768.9,
+   "kesto": 12.4,
+   "luokka": "jakso",
+   "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu",
+   "soittimet": [
+    "käyrätorvet",
+    "trumpetit"
+   ],
+   "kirjain": "O",
+   "tahti": 462,
+   "tahti_loppu": null,
+   "ankkuri_alku": "allegro_moderato_O_alku",
+   "ankkuri_loppu": "allegro_moderato_O_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "kohtalainen",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljaisuus_2",
+   "nimi": "Toinen hiljaisuus",
+   "start": 845.6,
+   "end": 865.2,
+   "kesto": 19.6,
+   "luokka": "tauko",
+   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen ennen myrskyä",
+   "soittimet": [],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "hiljaisuus_2_alku",
+   "ankkuri_loppu": "hiljaisuus_2_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "hyvä",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "loppu_Hduuri",
+   "nimi": "H-duuri-loppu",
+   "start": 1024.65,
+   "end": 1051.43,
+   "kesto": 26.78,
+   "luokka": "jakso",
+   "soi": "H-duurisointu monijakoisissa jousissa (divisi); dynamiikka partituurista [tarkista]",
+   "soittimet": [
+    "jouset"
+   ],
+   "kirjain": null,
+   "tahti": 624,
+   "tahti_loppu": 634,
+   "ankkuri_alku": "loppu_Hduuri_alku",
+   "ankkuri_loppu": "loppu_Hduuri_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "hyvä",
+   "vahvistettu": false,
+   "tarkista": false
+  }
+ ],
+ "cues": [
+  {
+   "id": "avaus_patarumpu",
+   "ankkuri": "avaus_patarumpu",
+   "t": 7.675,
+   "t_end": 8.68,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Avaus: patarumpusoolo",
+   "kirjain": null,
+   "tahti": 1,
+   "tahti_loppu": null,
+   "tahti_suhde": "teoksen alku",
+   "soi": "patarumpusoolo (\"tututum\"), ei muita soittimia",
+   "soittimet": [
+    "patarummut"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri; kirjallisuus: Judd",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "Ensimmäinen ääni: 5 ms RMS ylittää pintakohinan (−70,8 dBFS) + 20 dB kohdassa 7,675 s (V1). aksentit.py: iskut 7,732 s (z 12,0) ja 7,832 s (z 10,9). patarumpu_matala-kanava huippu 7,67 s (1,00). PANNs patarumpu huippu 7,70 s (0,18), laskee alle 0,02:n 8,68 s (soolo päättyy). Muut perheet lähellä nollaa soolon aikana (jouset 0,02, puupuhaltimet 0,01).",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
+   "id": "jouset_tulevat",
+   "ankkuri": "jouset_tulevat",
+   "t": 8.93,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Jouset tulevat",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "heti patarumpusoolon jälkeen, alku",
+   "soi": "ydinmotiivi tulee jousissa patarumpusoolon jälkeen",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "V2: taso nousee 5,8 dB 0,5 s mediaaniin verrattuna kohdassa 8,93 s, 0,25 s soolon päättymisen jälkeen; onset 8,9 s, spektrin painopiste ja rekisteri nousevat (painopiste 0,32 → 0,43, rekisteri 0,65 → 0,68), taso −33,8 → −28,0 dBFS. Soitinperhettä ei voi vahvistaa tämän hetken mittauksella: PANNs-viulu ylittää 0,05 vasta 11,5 s (ikkunan viive noin 2,5 s) ja jouset-kanava 0,5 kohdassa 11,8 s. Aika on siis hetki, jolloin uusi ääni alkaa; että se on jousi, perustuu viiveellisiin luokkiin.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "vaihtoehdot": [
+    {
+     "t": 9.9,
+     "huom": "interpret.py: jouset tulevat sisään"
+    },
+    {
+     "t": 11.5,
+     "huom": "PANNs viulu > 0,05"
+    }
+   ]
+  },
+  {
+   "id": "kayratorvet_vastaavat",
+   "ankkuri": "kayratorvet_vastaavat",
+   "t": 13.13,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Käyrätorvet vastaavat jousille",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "jousten jälkeen, alku",
+   "soi": "vaskipuhaltimet, ensin käyrätorvet, vastaavat jousille jousten jälkeen",
+   "soittimet": [
+    "käyrätorvet"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "V3-vaihtoehto: vaskikanava 0,30 → 0,45 kohdissa 13,0–13,2 s, PANNs käyrätorvi 0,10 kohdassa 13,5 s (huippu 0,17), vaski 0,24; jouset-kanava laskee 0,67 (12,0 s) → 0,21 (13,2 s). interpret.py: vaskipuhaltimet tulevat sisään 12,4 s (0,001 → 0,304). puupuhaltimet-kanavan nousu samassa kohdassa ei ole PANNs-puupuhaltimia (huilu 0,001, klarinetti 0,01).",
+   "vahvistettu": false,
+   "tarkista": true,
+   "vaihtoehdot": [
+    {
+     "t": 12.4,
+     "huom": "interpret.py: vaskipuhaltimet tulevat sisään"
+    }
+   ]
+  },
+  {
+   "id": "puhaltimet_tulevat",
+   "ankkuri": "puhaltimet_tulevat",
+   "t": 26.43,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Puupuhaltimet tulevat mukaan",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "jousten jälkeen, alku",
+   "soi": "puupuhaltimet tulevat mukaan jousten jälkeen",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "V3-sääntö: puupuhaltimet-kanava ylittää 0,5 kohdassa 26,43 s (0,59 → 0,86 kohdissa 27–29 s) ja PANNs klarinetti ylittää 0,05 kohdassa 27,3 s (ikkunassa 0,118). interpret.py: puupuhaltimet tulevat sisään 25,5 s (0,001 → 0,074, ×40); liiketiheys nousee 1,1 → 2,8 alkua/s kohdassa 27 s; aksentti 27,29 s (z 9,4). Kaksi eri 'puhaltimien tuloa' (vaskit 13,1 s, puupuhaltimet 26,4 s): kumpaa partituuri tarkoittaa, ratkaisevat korva ja partituuri. puupuhaltimet-kanava on 0,45 jo kohdassa 17 s, mutta PANNs ei tunnista huilua tai klarinettia siinä.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "vaihtoehdot": [
+    {
+     "t": 13.13,
+     "huom": "vaskipuhaltimet (kayratorvet_vastaavat)"
+    },
+    {
+     "t": 17.0,
+     "huom": "puupuhaltimet-kanava 0,45, PANNs ei tunnista"
+    }
+   ]
+  },
+  {
+   "id": "vaskien_isku",
+   "ankkuri": "vaskien_isku",
+   "t": 45.327,
+   "theme": "isku",
+   "luokka": "isku",
+   "tyyppi": "hetki",
+   "nimi": "Vaskien isku",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "Allegro moderaton alku",
+   "soi": "vaskien isku avaa Allegro moderaton",
+   "soittimet": [
+    "vaskipuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "kirjallisuus: Tapiola-tutkimus luku 3 (vaskien isku avaa Allegro moderaton)",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "aksentit.py: vahvin isku välillä 30–120 s kohdassa 45,327 s: z 32,9 (korkea isku), kontrasti 12,0 dB, taso −21,5 dBFS, kaistat matala/keski/korkea 1,5/32,6/99,0. Vaskikanava 0,07 → 0,49 kohdissa 44,4–45,0 s; interpret.py: vaskipuhaltimet tulevat sisään 44,0 s, jouset 45,1 s; jaksoraja 44,18 s (teoksen 8. vahvin, uutuus 18,6: käyrätorvet, trumpetit ja pasuunat, patarummut tulevat). PANNs-vaski 0,29 iskun jälkeen (V4).",
+   "vahvistettu": false,
+   "tarkista": true,
+   "isku": {
+    "t": 45.327,
+    "z": 32.9,
+    "tyyppi": "korkea isku",
+    "ero_s": 0.0
+   }
+  },
+  {
+   "id": "hiljaisuus_1_alku",
+   "ankkuri": "hiljaisuus_1_alku",
+   "t": 58.1,
+   "t_end": 61.4,
+   "theme": "tauko",
+   "luokka": "tauko",
+   "tyyppi": "jakso",
+   "jakso": "hiljaisuus_1",
+   "reuna": "alku",
+   "nimi": "Ensimmäinen hiljaisuus alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "aikajana.py hiljaiset kohdat: taso alle −60 dBFS vähintään 1,5 s: 58,1–61,4 s (3,3 s, keskitaso −66,6 dBFS = huoneen kohinan taso). Edellä äkillinen hiljeneminen 57,5 s (−25 dB/s; ff → p, jaksoraja 57,53 s). Kaikki perheet alle 0,02 ja liiketiheys 0,0.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljaisuus_1_loppu",
+   "ankkuri": "hiljaisuus_1_loppu",
+   "t": 61.4,
+   "theme": "tauko",
+   "luokka": "tauko",
+   "tyyppi": "jakso",
+   "jakso": "hiljaisuus_1",
+   "reuna": "loppu",
+   "nimi": "Ensimmäinen hiljaisuus päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "musiikki palaa; jouset aloittavat",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "Taso nousee −66,7 → −37,2 dBFS (1,5 s ennen/jälkeen). aksentit.py: 61,39 s (z 5,4), 61,59 s (z 9,4, kontrasti 15,0 dB), 61,79 s (z 8,4, kontrasti 18,8 dB). interpret.py: voimistuu äkkiä 61,67 s (+31 dB/s), jouset tulevat sisään 62,0 s. Jaksoraja 62,21 s on teoksen vahvin (uutuus 25,4): viulut, jouset, sellot ja kontrabassot tulevat.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "urkupiste_H1_alku",
+   "ankkuri": "urkupiste_H1_alku",
+   "t": 179.33,
+   "t_end": 191.83,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "jakso",
+   "jakso": "urkupiste_H1",
+   "reuna": "alku",
+   "nimi": "Pitkä urkupiste H:lla alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "pitkä urkupiste H:lla (H1)",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "kanavat.py urkupiste: sama sävel midi 35,1 (H1; englanniksi B1) yhtäjaksoisesti 179,33–191,83 s (12,5 s; vähimmäiskesto 4 s). Liiketiheys keskimäärin 0,1 alkua/s, taso −42…−28 dBFS (keskiarvo −34,1), jännite 0,0–0,7. Ei jaksorajaa eikä tapahtumaa alussa; ajan tarkkuus on kanavan ruutuväli (33 ms) ja sävelkorkeuden seurannan tarkkuus.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "urkupiste_H1_loppu",
+   "ankkuri": "urkupiste_H1_loppu",
+   "t": 191.83,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "jakso",
+   "jakso": "urkupiste_H1",
+   "reuna": "loppu",
+   "nimi": "Pitkä urkupiste H:lla päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "pitkä urkupiste H:lla (H1)",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "kanavat.py urkupiste päättyy kohdassa 191,83 s (sama sävel midi 35,1 yhtäjaksoisesti 179,33 s alkaen, 12,5 s). Jaksoraja 193,49 s (uutuus 8,2); jännite 0,04 (179,3 s) → 0,46 (191,8 s).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "nopea_liike_1_alku",
+   "ankkuri": "nopea_liike_1_alku",
+   "t": 280.9,
+   "t_end": 303.7,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "nopea_liike_1",
+   "reuna": "alku",
+   "nimi": "Nopean kuvioinnin jakso alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "nopea kuviointi, puupuhaltimia ja jousia",
+   "soittimet": [
+    "puupuhaltimet",
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "liiketiheys (0,5 s tasoitus) ylittää 2,5 alkua/s kohdassa 280,9 s ja pysyy sen yli 303,7 s asti (keskiarvo 3,8, suurin 5,5; 22,8 s). puupuhaltimet-kanava 0,76 kohdassa 282 s ja 0,85 kohdissa 287–289 s (PANNs huilu 0,20 kohdassa 287 s, klarinetti 0,05); aksentteja (z ≥ 5) 18 kpl 279,2–303,1 s; taso −29…−46 dBFS. V5:n toinen ehdokas (282,2–290,2 s: puu 0,59, liike 4,54/s) osuu sisään.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "nopea_liike_1_loppu",
+   "ankkuri": "nopea_liike_1_loppu",
+   "t": 303.7,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "nopea_liike_1",
+   "reuna": "loppu",
+   "nimi": "Nopean kuvioinnin jakso päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "nopea kuviointi päättyy",
+   "soittimet": [
+    "puupuhaltimet",
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "liiketiheys (0,5 s tasoitus) putoaa alle 2,5 alkua/s kohdassa 303,7 s (0,8 alkua/s 304 s, 0,0 alkua/s 308 s); puupuhaltimet-kanava 0,12 → 0,03; taso −42 → −48 dBFS 303–304 s; jännite 0,76–0,85.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "peikot_G_alku",
+   "ankkuri": "peikot_G_alku",
+   "t": 383.04,
+   "t_end": 390.3,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "peikot_G",
+   "reuna": "alku",
+   "nimi": "Puupuhallinkuviot G:ssä alkavat",
+   "kirjain": "G",
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "puupuhallinkuviot, nopeat kahdeksasosat",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "heikko",
+   "peruste": "V5-sääntö (puupuhaltimet-kanava × liiketiheys, 8 s ikkuna, haku V4:n ja V6:n välillä): paras ikkuna 382,2–390,2 s: puupuhaltimet 0,72, liiketiheys 5,29 alkua/s (teoksen suurin), PANNs huilu 0,37 (0,33 kohdassa 383 s), taso −40,4 dBFS; jakson alku = segments.py-raja 383,04 s (uutuus 9,3); interpret.py: puupuhaltimet tulevat sisään 382,3 s. Heikoin varmoista kohdista: kirjain G:n paikkaa ei voi päätellä sekunneista; muut ehdokkaat samalla säännöllä 282,2–290,2 s (puu 0,59, liike 4,54/s) ja 349,2–357,2 s (puu 0,62, liike 2,70/s).",
+   "vahvistettu": false,
+   "tarkista": true,
+   "vaihtoehdot": [
+    {
+     "t": 282.2,
+     "huom": "V5-ehdokas 2 (kuuluu osin nopea_liike_1-jaksoon)"
+    },
+    {
+     "t": 349.2,
+     "huom": "V5-ehdokas 3"
+    }
+   ]
+  },
+  {
+   "id": "peikot_G_loppu",
+   "ankkuri": "peikot_G_loppu",
+   "t": 390.3,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "peikot_G",
+   "reuna": "loppu",
+   "nimi": "Puupuhallinkuviot G:ssä päättyvät",
+   "kirjain": "G",
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "puupuhallinkuviot päättyvät",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "heikko",
+   "peruste": "segments.py-raja 390,3 s (uutuus 16,6): puupuhaltimet-kanava 0,72 (389 s) → 0,13 (390,3–392,3 s), taso −41,3 → −32,8 dBFS; interpret.py: voimistuu äkkiä 390,8 s; aksentti 390,51 s (z 5,7). V5-ikkunan loppu 390,2 s. Sama epävarmuus kuin alussa.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "jousijakso_urkupiste_E_alku",
+   "ankkuri": "jousijakso_urkupiste_E_alku",
+   "t": 496.3,
+   "t_end": 502.4,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "jakso",
+   "jakso": "jousijakso_urkupiste_E",
+   "reuna": "alku",
+   "nimi": "Jousijakso urkupisteen päällä alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "jouset-kanava > 0,6 yhtäjaksoisesti 496,3–502,4 s (6,1 s, keskiarvo 0,9). Urkupiste midi 52,0 (E3) 494,97–501,10 s. Spektrin painopiste 0,10 (jousilohkoista matalin), rekisteri 0,42, taso −35 dBFS, PANNs viulu 0,36 kohdassa 498 s, liiketiheys 0,0. Edellä taso −49 dBFS (492 s) ja nousu −48 → −36 dBFS 494–496 s; interpret.py: jouset tulevat sisään 496,7 s. Tämä on ehdokas sordiinoidulle jousisoinnille (ks. con_sord_J), mutta sordiinoa ei voi mitata.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "jousijakso_urkupiste_E_loppu",
+   "ankkuri": "jousijakso_urkupiste_E_loppu",
+   "t": 502.4,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "jakso",
+   "jakso": "jousijakso_urkupiste_E",
+   "reuna": "loppu",
+   "nimi": "Jousijakso urkupisteen päällä päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "jouset-kanava putoaa alle 0,6 kohdassa 502,4 s (0,36 → 0,19 kohdissa 502–504 s); interpret.py: jouset vaikenevat 502,0 s; taso −37 → −51 dBFS 502–504 s.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljainen_jakso_alku",
+   "ankkuri": "hiljainen_jakso_alku",
+   "t": 597.2,
+   "t_end": 613.6,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "jakso",
+   "jakso": "hiljainen_jakso",
+   "reuna": "alku",
+   "nimi": "Hiljainen jakso alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "pitkä hiljainen jakso, vähän liikettä",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso (1 s keskiarvo) alle −50 dBFS yhtäjaksoisesti 597,2–613,6 s (16,4 s; keskitaso −55,2 dBFS, minimi −69,3 dBFS). jouset-kanava keskiarvo 0,11, vaskikanava 0,03, liiketiheys keskimäärin 0,07 alkua/s. Edellä taso −42 dBFS (594 s).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljainen_jakso_loppu",
+   "ankkuri": "hiljainen_jakso_loppu",
+   "t": 613.6,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "jakso",
+   "jakso": "hiljainen_jakso",
+   "reuna": "loppu",
+   "nimi": "Hiljainen jakso päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "hiljainen jakso päättyy, vaskit ja patarummut kasvattavat",
+   "soittimet": [
+    "vaskipuhaltimet",
+    "patarummut"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso nousee yli −50 dBFS kohdassa 613,6 s ja −36 dBFS kohdassa 618 s; interpret.py: vaskipuhaltimet tulevat sisään 619,9 s ja patarummut 620,0 s (ks. vaski_tutti_620).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "vaski_tutti_620",
+   "ankkuri": "vaski_tutti_620",
+   "t": 621.607,
+   "theme": "isku",
+   "luokka": "isku",
+   "tyyppi": "hetki",
+   "nimi": "Vaskien ja patarumpujen tutti-isku",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "vaskien ja patarumpujen tutti-isku, jakson voimakkain kohta",
+   "soittimet": [
+    "vaskipuhaltimet",
+    "patarummut"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "aksentit.py: aksentti 621,607 s (z 8,5, kontrasti 9,6 dB, taso −21,3 dBFS); taso −33 → −25 dBFS kohdissa 621,0 → 621,5 s. interpret.py: vaskipuhaltimet tulevat sisään 619,9 s, patarummut 620,0 s. PANNs käyrätorvi 0,145, trumpetti 0,07, patarumpu 0,04 kohdassa 621,5 s. Jaksoraja 620,44 s (teoksen 3. vahvin, uutuus 20,4: käyrätorvet 0,08 → 0,92, trumpetit ja pasuunat 0,04 → 1,09, patarummut 0,01 → 0,96). Taso huipussaan −17,8 dBFS kohdassa 629,2 s.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "isku": {
+    "t": 621.607,
+    "z": 8.5,
+    "tyyppi": "aksentti",
+    "ero_s": 0.0
+   }
+  },
+  {
+   "id": "auringonsade",
+   "ankkuri": "auringonsade",
+   "t": 680.03,
+   "t_end": 685.13,
+   "theme": "huippu",
+   "luokka": "huippu",
+   "tyyppi": "hetki",
+   "nimi": "C-duuri ennen kirjainta M",
+   "kirjain": null,
+   "tahti": 392,
+   "tahti_loppu": 396,
+   "tahti_suhde": "noin 5 tahtia ennen kirjainta M",
+   "soi": "yllättävä C-duuri, noin viisi tahtia",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri; avainkohta",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "V6: pisin C-duuri-vihjejakso (vihje_Cduuri > 0,3, vähintään 3 s) 680,03–685,13 s (5,1 s). C, E ja G muodostavat 58 % chromasta, vihje keskiarvo 0,43 (huippu 0,52); jännite 0,14 ja sävellajin selkeys 0,81 (selkeä sävellaji, matala jännite); taso −29,2 dBFS; liiketiheys 0,0. Heti jakson jälkeen tekstuuri muuttuu (ks. M_ennakko). Toinen ehdokas 641,6–645,1 s (C+E+G 62 %), jonka jälkeen tekstuuri ei muutu; ei valittu. Kesto 5,1 s on vain suuruusluokaltaan 'noin viisi tahtia': tahteja ei lasketa äänestä. Kirjallisuus ei nimeä C-duuria.",
+   "vahvistettu": false,
+   "tarkista": false,
+   "vaihtoehdot": [
+    {
+     "t": 641.6,
+     "huom": "V6:n toinen ehdokas, ei tekstuurimuutosta jälkeen"
+    }
+   ]
+  },
+  {
+   "id": "M_ennakko",
+   "ankkuri": "M_ennakko",
+   "t": 685.13,
+   "t_end": 710.7,
+   "theme": "isku",
+   "luokka": "isku",
+   "tyyppi": "hetki",
+   "nimi": "Kirjain M: vaskien jyrinä",
+   "kirjain": "M",
+   "tahti": 397,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "vaskien jyrinä, myrskyn ennakko (ei vielä talvimyrsky)",
+   "soittimet": [
+    "vaskipuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "V7: C-duuri-jakson loppu; samassa kohdassa tekstuuri muuttuu: liiketiheys 0,05 → 2,21 alkua/s, PANNs-vaski 0,01 → 0,34, taso −28,6 → −23,8 dBFS, vaskikanava 0,54. interpret.py: vaskipuhaltimet tulevat sisään 683,6 s, jouset vaikenevat 684,9 s, patarummut tulevat 685,2 s; patarumpu_stemmi-piikki 685,23 s (0,80, teoksen ainoa yli 0,3). Jaksoraja 684,54 s (uutuus 9,9). aksentit.py ei listaa iskua (z ≥ 5): alku on paisuntaa. Vaskien jyrinä jatkuu noin 710,7 s asti (taso −19,0 → −31,3 dBFS kohdissa 710,5–711,0 s).",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
+   "id": "jannitejakso_alku",
+   "ankkuri": "jannitejakso_alku",
+   "t": 711.0,
+   "t_end": 755.5,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "jannitejakso",
+   "reuna": "alku",
+   "nimi": "Jännitteinen jousijakso alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "jousivaltainen jakso, korkea jännite ja nopea liike",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "Jännite > 0,7 ja sävellajin selkeys < 0,5 (2 s tasoitus) yhtäjaksoisesti 706,4–777,9 s; tässä rajattu jousivaltaiseen osaan: taso putoaa −19,0 → −31,3 dBFS kohdissa 710,5–711,0 s (vaskien jyrinän loppu), jouset-kanava 0,5–0,7 (5 s keskiarvot) kohdissa 725–755 s, liiketiheys 2,9–4,3 alkua/s, jännite 0,7–1,0, selkeys 0,3–0,5. aksentteja (z ≥ 5) 9 kpl 713,9–745,4 s (z 5,0–9,7); PANNs viulu 0,71 (730,9 s), jousisektio 0,09, pizzicato 0,08 (729–732 s). jousitremolo-kanava on kuollut (kanavakortti): tremoloa ei ole mitattu.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "jannitejakso_loppu",
+   "ankkuri": "jannitejakso_loppu",
+   "t": 755.5,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "jannitejakso",
+   "reuna": "loppu",
+   "nimi": "Jännitteinen jousijakso päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "jousijakso päättyy, vaskit tulevat",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "jouset-kanava putoaa 0,85 → 0,13 kohdissa 753,5–756,0 s, liiketiheys 3,3 (753 s) → 1,2 (756,5 s) alkua/s, vaskikanava 0,19 → 0,36 kohdassa 756,5 s; interpret.py: jouset vaikenevat 755,2 s, vaskipuhaltimet tulevat sisään 755,4 s; jaksoraja 756,2 s (uutuus 16,0).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "allegro_moderato_O_alku",
+   "ankkuri": "allegro_moderato_O_alku",
+   "t": 756.5,
+   "t_end": 768.9,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "allegro_moderato_O",
+   "reuna": "alku",
+   "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu alkaa",
+   "kirjain": "O",
+   "tahti": 462,
+   "tahti_loppu": null,
+   "tahti_suhde": "O:n jälkeen",
+   "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu",
+   "soittimet": [
+    "käyrätorvet",
+    "trumpetit"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "Jousten liike päättyy (liiketiheys 3,3 → 1,2 alkua/s) ja vaskikanava nousee 0,19 → 0,36 → 0,53 kohdissa 756,0–757,0 s; PANNs käyrätorvi 0,03 → 0,18 (757,5 s), trumpetti 0,07 ja pasuuna 0,09; jaksoraja 756,2 s (uutuus 16,0). Seuraavat vaskipaisunnat: 759,5–760,5 s, 762,0–766,5 s (käyrätorvi 0,31 kohdassa 763,5 s ensin, trumpetti 0,23 ja pasuuna 0,25 kohdassa 765,0 s) ja 767,5–768,5 s: käyrätorvi- ja trumpetti/pasuunapaisunnat vuorottelevat noin 4 s jaksoissa. Valinta: vaskipaisuntoja on muuallakin (436–461 s ennen kirjain M:ää, joten ei voi olla t. 462; 805–813 s). t. 462 on 65 tahtia kirjain M:n (t. 397, 685,13 s) jälkeen ja 61 tahtia ppp-alun (t. 523, 857,1 s) edellä; lineaarisesti näiden välillä se osuisi kohtaan 773,9 s. Valittu jakso 756,5–768,9 s on 5–17 s sen edellä, ja toinen vaskiehdokas 806–813 s on 32–39 s sen jälkeen. Sopivuus partituuriin on arvio; tahtinumeroita ei lasketa äänestä.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "vaihtoehdot": [
+    {
+     "t": 805.9,
+     "huom": "vaskipaisunta 806–813 s, taso nousee −26 → −17 dBFS"
+    }
+   ]
+  },
+  {
+   "id": "allegro_moderato_O_loppu",
+   "ankkuri": "allegro_moderato_O_loppu",
+   "t": 768.9,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "allegro_moderato_O",
+   "reuna": "loppu",
+   "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu päättyy",
+   "kirjain": "O",
+   "tahti": 462,
+   "tahti_loppu": null,
+   "tahti_suhde": "O:n jälkeen",
+   "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu päättyy",
+   "soittimet": [
+    "käyrätorvet",
+    "trumpetit"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "vaskikanava 0,60 → 0,16 kohdissa 768,5–769,5 s, jouset-kanava 0,05 → 0,49; interpret.py: jouset tulevat sisään 768,2 s, vaskipuhaltimet vaikenevat 769,3 s; jaksoraja 769,68 s (uutuus 15,1).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "hiljaisuus_2_alku",
+   "ankkuri": "hiljaisuus_2_alku",
+   "t": 845.6,
+   "t_end": 865.2,
+   "theme": "tauko",
+   "luokka": "tauko",
+   "tyyppi": "jakso",
+   "jakso": "hiljaisuus_2",
+   "reuna": "alku",
+   "nimi": "Toinen hiljaisuus alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen ennen myrskyä",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "aikajana.py hiljaiset kohdat: taso alle −60 dBFS vähintään 1,5 s: 845,6–865,2 s (19,6 s, keskitaso −64,3 dBFS). Edellä taso laskee −35 → −59 dBFS kohdissa 841–845 s; interpret.py: hiljenee äkkiä 845,13 s; jaksoraja 845,58 s. Soitinluokat 0,00 kohdissa 846–855 s; kohdissa 856–865 s soitetaan hyvin hiljaa (ks. myrsky_nakyy).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "myrsky_nakyy",
+   "ankkuri": "myrsky_nakyy",
+   "t": 857.1,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "hetki",
+   "nimi": "Myrsky näkyy",
+   "kirjain": null,
+   "tahti": 523,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "ppp, hiljainen jousten kuviointi, crescendo alkaa",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "Hiljaisuuden (845,6–856 s, taso −61…−69 dBFS, soitinluokat 0,00) jälkeen jouset-kanava ylittää 0,02 kohdassa 856,5 s ja 0,05 kohdassa 857,13 s; interpret.py: jouset tulevat sisään 856,3 s; PANNs viulu 0,02–0,09 kohdissa 857–861 s. Taso pysyy −65…−60 dBFS (huoneen kohinan taso −66 dBFS), joten alku on ppp:tä tai sen alla ja täsmällinen alkuhetki voi olla aiempi (ääni kohinan alla). Taso alkaa nousta selvästi vasta kohdassa 865 s (−60 → −43 dBFS kohdissa 865–869 s).",
+   "vahvistettu": false,
+   "tarkista": false,
+   "vaihtoehdot": [
+    {
+     "t": 856.5,
+     "huom": "jouset-kanava > 0,02"
+    },
+    {
+     "t": 865.2,
+     "huom": "taso alkaa nousta"
+    }
+   ]
+  },
+  {
+   "id": "hiljaisuus_2_loppu",
+   "ankkuri": "hiljaisuus_2_loppu",
+   "t": 865.2,
+   "theme": "tauko",
+   "luokka": "tauko",
+   "tyyppi": "jakso",
+   "jakso": "hiljaisuus_2",
+   "reuna": "loppu",
+   "nimi": "Toinen hiljaisuus päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "hiljaisuus päättyy; ppp-soitto on jo alkanut jakson sisällä",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso nousee yli −60 dBFS (3 s keskiarvo) kohdassa 865,2 s; jouset-kanava 0,09, liiketiheys 1,7 alkua/s, jännite 0,74; interpret.py: jouset tulevat sisään 866,4 s. Huom: ppp-soitto alkaa jo hiljaisuuden sisällä (myrsky_nakyy 857,1 s), taso −65…−60 dBFS.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "myrsky_kasvu",
+   "ankkuri": "myrsky_kasvu",
+   "t": 867.4,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "hetki",
+   "nimi": "Nopea voimistuminen alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "jouset tulevat selvästi esiin, nopea crescendo",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "jouset-kanava 0,10 → 0,74 kohdissa 866,5–867,5 s (ylittää 0,5 kohdassa 867,43 s); PANNs viulu 0,02 → 0,28; taso −56 → −46 dBFS kohdissa 867,0–868,5 s; liiketiheys 2,0 → 3,0 alkua/s; interpret.py: jouset tulevat sisään 866,4 s; jaksoraja 868,44 s (uutuus 8,5). Voimistuminen yhteensä +31 dB kohdissa 865–875 s (−60 → −29 dBFS).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "myrsky_iskee",
+   "ankkuri": "myrsky_iskee",
+   "t": 890.5,
+   "theme": "isku",
+   "luokka": "isku",
+   "tyyppi": "hetki",
+   "nimi": "Talvimyrsky iskee",
+   "kirjain": null,
+   "tahti": 540,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "talvimyrsky iskee: kromaattinen jousitremolo, vaskit täydellä voimalla",
+   "soittimet": [
+    "jouset",
+    "vaskipuhaltimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "heikko",
+   "peruste": "Taso nousee −28,9 → −16,8 dBFS kohdissa 890,0–892,0 s; jyrkin nousu +8,8 dB/s kohdassa 890,8 s (jakson 840–930 s suurin, lukuun ottamatta 924 s:n nousua hiljaisuuden jälkeen). Jouset- ja vaskikanavat putoavat samalla nollaan (jouset 0,82 → 0,01) ja PANNs-luokat vaikenevat (orkesteri 0,015–0,06): tiheä äänimassa, jota luokitus ei tunnista. interpret.py: patarummut tulevat sisään 890,6 s; jaksoraja 891,38 s (uutuus 8,0). aksentit.py ei listaa iskua (z ≥ 5): isku on paisunta, ei terävä alku. Samanlaisia nousuja on useita (896,5–899 s: −30 → −16,7 dBFS; 900–912 s), joten ehdokkaita on kolme: 867,4 s (jousten tulo), 890,5 s ja 897 s. Valintaperuste (ei tahtilaskentaa, vain käyttäjän tahtinumeroiden ja muiden ankkurien mitattujen aikojen suhde): t. 540 → t. 624 (84 tahtia) on 890,5 → 1024,65 s eli 134,2 s (1,6 s/tahti); samalla tahtipituudella 17 tahtia t. 523 → t. 540 on noin 27 s, jolloin ppp-alku olisi noin 863 s (mitattu 857,1 s). Ehdokkaalla 897 s vastaava ppp-alku olisi noin 871 s ja ehdokkaalla 867,4 s noin 835 s, joten 890,5 s sopii parhaiten. Tahtinumeroita ei lasketa äänestä.",
+   "vahvistettu": false,
+   "tarkista": false,
+   "vaihtoehdot": [
+    {
+     "t": 867.4,
+     "huom": "jousten tulo, ensimmäinen suuri nousu"
+    },
+    {
+     "t": 896.5,
+     "huom": "toinen vastaava nousu, −30 → −16,7 dBFS 896,5–899 s"
+    }
+   ]
+  },
+  {
+   "id": "myrsky_huippu",
+   "ankkuri": "myrsky_huippu",
+   "t": 910.6,
+   "theme": "huippu",
+   "luokka": "huippu",
+   "tyyppi": "hetki",
+   "nimi": "Myrskyn voimakkain kohta",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "koko äänitteen voimakkain jakso, tiheä tutti",
+   "soittimet": [
+    "koko orkesteri"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "1 s keskiarvon suurin taso koko äänitteessä: −15,2 dBFS kohdassa 910,6 s (huippunäyte −13,2 dBFS); 904–912 s taso −17…−21 dBFS yhtäjaksoisesti; vaskikanava 0,10, jouset 0,02 (tiheä tutti, luokitus ei tunnista); jännite 0,49.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "toinen_paisunta",
+   "ankkuri": "toinen_paisunta",
+   "t": 935.9,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "hetki",
+   "nimi": "Toinen paisunta myrskyn jälkeen",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "äkillinen voimistuminen hiljaisesta kohdasta",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso −50,4 dBFS (935,0 s) → −40,1 (936,0 s) → −32,3 (937,0 s); interpret.py: voimistuu äkkiä 935,9 s (+11 dB/s); jaksoraja 935,2 s (teoksen 5. vahvin, uutuus 19,9; voimakkuus 0,43 → 0,60); vaskikanava 0,07 → 0,20; liiketiheys 1,0 → 0,0 alkua/s. Edellä taso laskee −35 → −51 dBFS kohdissa 928–934 s.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "huuto",
+   "ankkuri": "huuto",
+   "t": 970.0,
+   "theme": "huippu",
+   "luokka": "huippu",
+   "tyyppi": "hetki",
+   "nimi": "Huuto",
+   "kirjain": null,
+   "tahti": 586,
+   "tahti_loppu": 587,
+   "tahti_suhde": null,
+   "soi": "korkeat jouset (\"huuto\") myrskyn jälkeen",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "kirjallisuus: Grimley (tahdit), Europadisc (luonnehdinta) [tarkista partituurista]",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "heikko",
+   "peruste": "Myrskyn laannuttua taso laskee −31 dBFS (964 s) → −41,7 dBFS (970 s), minkä jälkeen jouset-kanava nousee 0,15 → 0,64 ja PANNs viulu 0,03 → 0,21 kohdassa 970,0 s (jouset 0,2–0,5 vielä 976 s asti); rekisteri 0,81–0,86, liiketiheys 0,3–0,5 alkua/s. Korkeimman rekisterin kohta 950–955 s (rekisteri 0,99, taso −30 dBFS) on vaski- ja puupuhallinvaltainen (jouset 0,2), joten se ei sovi 'korkeisiin jousiin'. Ei yksiselitteinen mittari: kirjallisuus antaa tahdit (586–587) ja luonnehdinnan 'huuto korkeissa jousissa myrskyn jälkeen'; valinta tukeutuu siihen, että korkeat jouset nousevat esiin myrskyn laannuttua ja että kohta sijoittuu iskun (t. 540) ja H-duurin (t. 624) väliin: t. 586 on 46 tahtia iskun jälkeen, ja lineaarisesti välillä 890,5 → 1024,65 s se osuisi kohtaan 964,0 s (valittu 970,0 s on 6 s sen jälkeen; riippuu myrsky_iskee-ajan oikeellisuudesta). Tahtinumeroita ei lasketa äänestä.",
+   "vahvistettu": false,
+   "tarkista": false,
+   "vaihtoehdot": [
+    {
+     "t": 952.2,
+     "huom": "korkein rekisteri, mutta vaski- ja puupuhallinvaltainen"
+    },
+    {
+     "t": 901.4,
+     "huom": "jouset 0,68, rekisteri 0,97, mutta vielä myrskyn sisällä"
+    }
+   ]
+  },
+  {
+   "id": "loppuhuipennus",
+   "ankkuri": "loppuhuipennus",
+   "t": 1012.7,
+   "theme": "huippu",
+   "luokka": "huippu",
+   "tyyppi": "hetki",
+   "nimi": "Loppuhuipennus",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "viimeinen suuri huipennus ennen H-duuria",
+   "soittimet": [
+    "koko orkesteri"
+   ],
+   "tarina": "",
+   "lahde": "analyysi: aikajana",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso nousee −34 → −17 dBFS kohdissa 1008–1012 s ja saavuttaa −16,8 dBFS (1 s keskiarvo) kohdassa 1012,7 s (koko äänitteen 2. suurin); perheluokat vaikenevat (jouset 0,01, vaskikanava 0,01: tiheä tutti), jännite 0,95–0,98, selkeys 0,33; PANNs patarumpu 0,04; interpret.py: patarummut vaikenevat 1014,7 s; taso −27,6 dBFS 1015 s.",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
+   "id": "loppu_Hduuri_alku",
+   "ankkuri": "loppu_Hduuri_alku",
+   "t": 1024.65,
+   "t_end": 1051.43,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "loppu_Hduuri",
+   "reuna": "alku",
+   "nimi": "H-duuri-loppu alkaa",
+   "kirjain": null,
+   "tahti": 624,
+   "tahti_loppu": 634,
+   "tahti_suhde": null,
+   "soi": "H-duurisointu monijakoisissa jousissa (divisi); dynamiikka partituurista [tarkista]",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "kirjallisuus: Wilker (tahdit); käyttäjä (dynamiikka mezzoforte-sävyinen) [tarkista partituurista]",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "taso nousee −64,6 → −46,5 dBFS 0,2 s:ssa (1024,5 → 1024,7 s), flux 0,59; aksentit.py ei listaa iskua (z < 5); interpret.py: voimistuu äkkiä 1024,73 s. V8: vihje_Hduuri ylittää 0,5 kohdassa 1025,47 s (3 s tasoitus) ja pysyy sen yli 26,0 s; chroma jakson aikana H 0,37, Fis 0,28, Es 0,08 (perusääni, kvintti, suuri terssi); sävellajin selkeys 0,84, jännite 0,07; patarumpu 0; taso −41,0 dBFS. Edellä hiljenevä kohta 1020–1024,5 s (−39 → −65 dBFS).",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
+   "id": "loppu_Hduuri_loppu",
+   "ankkuri": "loppu_Hduuri_loppu",
+   "t": 1051.43,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "loppu_Hduuri",
+   "reuna": "loppu",
+   "nimi": "H-duuri-loppu päättyy",
+   "kirjain": null,
+   "tahti": 624,
+   "tahti_loppu": 634,
+   "tahti_suhde": null,
+   "soi": "H-duurisointu hiljenee",
+   "soittimet": [
+    "jouset"
+   ],
+   "tarina": "",
+   "lahde": "kirjallisuus: Wilker (tahdit)",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "V8: vihje_Hduuri laskee alle 0,5 kohdassa 1051,43 s (jakso 1025,47–1051,43 s, 26,0 s); taso −49,4 → −61,5 dBFS (1,5 s ennen/jälkeen); jaksoraja 1051,67 s; interpret.py: hiljenee äkkiä 1051,67 s.",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
+   "id": "musiikki_loppuu",
+   "ankkuri": "musiikki_loppuu",
+   "t": 1051.6,
+   "t_end": 1057.995,
+   "theme": "tauko",
+   "luokka": "tauko",
+   "tyyppi": "hetki",
+   "nimi": "Musiikki loppuu",
+   "kirjain": null,
+   "tahti": 634,
+   "tahti_loppu": null,
+   "tahti_suhde": "viimeinen ääni",
+   "soi": "teoksen viimeinen ääni",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "kirjallisuus: Wilker (634 tahtia)",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "kohinaikkuna.py: viimeinen 100 ms RMS, joka ylittää huoneen kohinan + 10 dB, on kohdassa 1051,6 s; taso sen jälkeen −59…−97 dBFS (hiljenemishäntä); viimeinen ei-nolla-näyte 1057,9946 s; digitaalinen hiljaisuus 1057,995 s alkaen (20,0 s tiedoston loppuun). Aplodeja ei ole.",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
+   "id": "tuulenpuuska",
+   "ankkuri": "tuulenpuuska",
+   "t": null,
+   "theme": "tunnelma",
+   "luokka": "tunnelma",
+   "tyyppi": "hetki",
+   "nimi": "Tuulenpuuska",
+   "kirjain": null,
+   "tahti": 21,
+   "tahti_loppu": 25,
+   "tahti_suhde": null,
+   "soi": "oktatoninen \"tuulenpuuska\"",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
+   "varmuus": "arvio",
+   "lahde_aika": "arvio",
+   "luottamus": "ei",
+   "peruste": "Kirjallisuus (Grimley) antaa vain tahdit 21–25, ja oktatonista piirrettä ei voi mitata: chroman sopivuus parhaaseen oktatoniseen kokoelmaan ei erottele diatonisesta (2 s ikkunat, oktatoninen vs diatoninen: 24 s 0,85 vs 0,79; 44 s 0,76 vs 0,67; 48 s 0,80 vs 0,70; 66 s 0,89 vs 0,79; mutta 26 s 0,89 vs 0,90 ja 28 s 0,81 vs 0,87). Tahtinumeroa ei lasketa äänestä. Ehdokasalue (ei perusteltu): 48–51 s, jossa liiketiheys nousee 4,0 alkua/s (kohta 49 s, alun suurin) heti vaskien iskun (45,33 s) jälkeen.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "ehdokkaat": [
+    {
+     "t": 48.0,
+     "huom": "nopea kuviointi, liiketiheys 4,0/s kohdassa 49 s; aksentti 48,79 s (z 6,4); ei oktatonista mittaa"
+    }
+   ]
+  },
+  {
+   "id": "askeleet_B",
+   "ankkuri": "askeleet_B",
+   "t": null,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Matalat äänet \"askeleina\"",
+   "kirjain": "B",
+   "tahti": 69,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "matalat äänet tulevat eri tahtiin kuin muu orkesteri",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "arvio",
+   "lahde_aika": "arvio",
+   "luottamus": "ei",
+   "peruste": "Askel-kanavaa (matalan rekisterin alut, jotka eivät osu muun orkesterin alkuihin) ei ole rakennettu, joten kohtaa ei voi mitata. Tahtinumeroa ei lasketa äänestä. Ehdokkaat (ei perusteltu): 129,67–136,2 s: CREPE-bassolinjan H1-sävelet (midi 35) erillisinä lyhyinä iskuina epäsäännöllisin välein (129,67 / 130,12 / 130,93 / 131,63 / 133,44 / 135,32 / 136,18 s), jouset-kanava 0,10–0,13 ja vaskikanava alle 0,06; mutta melodia_muu-nuotit osuvat osin samoihin hetkiin (130,98 s, 131,65 s), joten asynkronisuutta ei todennettu. 124,6 s: jaksoraja (uutuus 18,4, teoksen 9. vahvin): vaskit poistuvat, sellot ja kontrabassot tulevat.",
+   "vahvistettu": false,
+   "tarkista": false,
+   "ehdokkaat": [
+    {
+     "t": 129.67,
+     "huom": "bassolinjan H1-sävelet erillisinä iskuina"
+    },
+    {
+     "t": 124.6,
+     "huom": "jaksoraja: vaskit pois, sellot ja kontrabassot sisään"
+    }
+   ]
+  },
+  {
+   "id": "con_sord_J",
+   "ankkuri": "con_sord_J",
+   "t": null,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Ensimmäinen sordiino",
+   "kirjain": "J",
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "kirjaimen J jälkeen",
+   "soi": "ensimmäinen con sord. (sordiino)",
+   "soittimet": [],
+   "tarina": "",
+   "lahde": "käyttäjä, partituuri",
+   "varmuus": "arvio",
+   "lahde_aika": "arvio",
+   "luottamus": "ei",
+   "peruste": "Sordiinoa ei voi mitata luotettavasti: sordiinoitu jousisointi tummentaa spektriä, mutta spektrin painopiste riippuu myös rekisteristä ja voimakkuudesta. Jousivaltaisissa lohkoissa (jouset-kanava > 0,6 vähintään 2,5 s) painopiste vaihtelee 0,10–0,79 ilman että sordiinoa voisi erottaa: 334,5 s 0,16; 496,3 s 0,10 (teoksen matalin, rekisteri 0,42); 519,9 s 0,29; 637,5 s 0,34; 62,2 s 0,55; 871,9 s 0,79. Kirjain J:n paikkaa ei voi päätellä sekunneista. Ehdokkaat (ei perusteltu): 519,9–524,7 s (jouset 0,70–0,80, rekisteri 0,51–0,53, edellä hiljaisuus 516 s) ja 496,3–502,4 s.",
+   "vahvistettu": false,
+   "tarkista": true,
+   "ehdokkaat": [
+    {
+     "t": 519.9,
+     "huom": "jousilohko hiljaisuuden jälkeen, painopiste 0,29"
+    },
+    {
+     "t": 496.3,
+     "huom": "matalin painopiste (0,10), urkupiste E"
+    }
+   ]
+  }
+ ],
+ "iskut": [
+  {
+   "t": 7.732,
+   "z": 12.0,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 31.2,
+   "taso_db": -32.6,
+   "kaistat_z": {
+    "matala": 8.8,
+    "keski": 35.4,
+    "korkea": 0.0
+   },
+   "pisteet": 62.3
+  },
+  {
+   "t": 7.832,
+   "z": 10.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 28.7,
+   "taso_db": -27.4,
+   "kaistat_z": {
+    "matala": 1.2,
+    "keski": 24.6,
+    "korkea": 0.0
+   },
+   "pisteet": 52.2
+  },
+  {
+   "t": 20.483,
+   "z": 19.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 18.4,
+   "taso_db": -27.1,
+   "kaistat_z": {
+    "matala": 6.5,
+    "keski": 23.7,
+    "korkea": -0.1
+   },
+   "pisteet": 60.7
+  },
+  {
+   "t": 27.288,
+   "z": 9.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.0,
+   "taso_db": -32.8,
+   "kaistat_z": {
+    "matala": 1.8,
+    "keski": 13.3,
+    "korkea": 0.3
+   },
+   "pisteet": 9.4
+  },
+  {
+   "t": 27.408,
+   "z": 5.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.5,
+   "taso_db": -32.1,
+   "kaistat_z": {
+    "matala": 1.8,
+    "keski": 7.0,
+    "korkea": 0.9
+   },
+   "pisteet": 5.5
+  },
+  {
+   "t": 28.425,
+   "z": 9.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.0,
+   "taso_db": -35.3,
+   "kaistat_z": {
+    "matala": -0.0,
+    "keski": 8.1,
+    "korkea": 7.9
+   },
+   "pisteet": 9.1
+  },
+  {
+   "t": 32.466,
+   "z": 7.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.2,
+   "taso_db": -33.9,
+   "kaistat_z": {
+    "matala": 1.4,
+    "keski": 5.9,
+    "korkea": 4.4
+   },
+   "pisteet": 7.4
+  },
+  {
+   "t": 35.12,
+   "z": 12.6,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.0,
+   "taso_db": -40.5,
+   "kaistat_z": {
+    "matala": -0.7,
+    "keski": 14.2,
+    "korkea": 3.9
+   },
+   "pisteet": 12.6
+  },
+  {
+   "t": 35.38,
+   "z": 6.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.9,
+   "taso_db": -36.5,
+   "kaistat_z": {
+    "matala": 1.2,
+    "keski": 8.4,
+    "korkea": 1.1
+   },
+   "pisteet": 6.8
+  },
+  {
+   "t": 45.327,
+   "z": 32.9,
+   "tyyppi": "korkea isku",
+   "kontrasti_db": 12.0,
+   "taso_db": -21.5,
+   "kaistat_z": {
+    "matala": 1.5,
+    "keski": 32.6,
+    "korkea": 99.0
+   },
+   "pisteet": 65.8
+  },
+  {
+   "t": 48.789,
+   "z": 6.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.2,
+   "taso_db": -34.0,
+   "kaistat_z": {
+    "matala": -0.7,
+    "keski": 4.7,
+    "korkea": 7.1
+   },
+   "pisteet": 6.4
+  },
+  {
+   "t": 61.39,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 9.2,
+   "taso_db": -58.3,
+   "kaistat_z": {
+    "matala": 9.5,
+    "keski": 99.0,
+    "korkea": 0.0
+   },
+   "pisteet": 8.4
+  },
+  {
+   "t": 61.47,
+   "z": 5.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 8.0,
+   "taso_db": -58.2,
+   "kaistat_z": {
+    "matala": 2.3,
+    "keski": 40.9,
+    "korkea": -4.6
+   },
+   "pisteet": 7.0
+  },
+  {
+   "t": 61.59,
+   "z": 9.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 15.0,
+   "taso_db": -48.6,
+   "kaistat_z": {
+    "matala": 0.4,
+    "keski": 19.8,
+    "korkea": 13.9
+   },
+   "pisteet": 23.6
+  },
+  {
+   "t": 61.69,
+   "z": 7.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 17.9,
+   "taso_db": -42.1,
+   "kaistat_z": {
+    "matala": 3.1,
+    "keski": 7.0,
+    "korkea": 10.5
+   },
+   "pisteet": 21.1
+  },
+  {
+   "t": 61.79,
+   "z": 8.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 18.8,
+   "taso_db": -35.8,
+   "kaistat_z": {
+    "matala": -0.5,
+    "keski": 11.3,
+    "korkea": 9.4
+   },
+   "pisteet": 26.3
+  },
+  {
+   "t": 204.455,
+   "z": 6.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 8.0,
+   "taso_db": -33.6,
+   "kaistat_z": {
+    "matala": -1.0,
+    "keski": 7.6,
+    "korkea": 2.5
+   },
+   "pisteet": 8.2
+  },
+  {
+   "t": 205.104,
+   "z": 5.9,
+   "tyyppi": "matala isku (patarumpu/bassot)",
+   "kontrasti_db": 6.2,
+   "taso_db": -35.5,
+   "kaistat_z": {
+    "matala": 11.1,
+    "keski": 3.2,
+    "korkea": 4.3
+   },
+   "pisteet": 6.1
+  },
+  {
+   "t": 208.606,
+   "z": 8.9,
+   "tyyppi": "matala isku (patarumpu/bassot)",
+   "kontrasti_db": 4.7,
+   "taso_db": -34.9,
+   "kaistat_z": {
+    "matala": 7.6,
+    "keski": 6.4,
+    "korkea": 2.1
+   },
+   "pisteet": 8.9
+  },
+  {
+   "t": 216.498,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.7,
+   "taso_db": -39.3,
+   "kaistat_z": {
+    "matala": 2.8,
+    "keski": 5.9,
+    "korkea": 2.3
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 217.146,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.4,
+   "taso_db": -35.8,
+   "kaistat_z": {
+    "matala": 2.0,
+    "keski": 5.8,
+    "korkea": 2.4
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 223.662,
+   "z": 9.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 11.4,
+   "taso_db": -43.3,
+   "kaistat_z": {
+    "matala": 3.1,
+    "keski": 13.3,
+    "korkea": 2.8
+   },
+   "pisteet": 18.7
+  },
+  {
+   "t": 229.059,
+   "z": 7.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.3,
+   "taso_db": -38.2,
+   "kaistat_z": {
+    "matala": 5.0,
+    "keski": 5.3,
+    "korkea": 7.8
+   },
+   "pisteet": 7.5
+  },
+  {
+   "t": 231.025,
+   "z": 9.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.7,
+   "taso_db": -39.2,
+   "kaistat_z": {
+    "matala": 1.6,
+    "keski": 13.0,
+    "korkea": 2.1
+   },
+   "pisteet": 9.9
+  },
+  {
+   "t": 233.02,
+   "z": 5.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.4,
+   "taso_db": -37.9,
+   "kaistat_z": {
+    "matala": 1.9,
+    "keski": 5.5,
+    "korkea": 2.3
+   },
+   "pisteet": 5.2
+  },
+  {
+   "t": 240.254,
+   "z": 5.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 9.2,
+   "taso_db": -37.9,
+   "kaistat_z": {
+    "matala": 3.2,
+    "keski": 5.4,
+    "korkea": 0.9
+   },
+   "pisteet": 8.4
+  },
+  {
+   "t": 244.624,
+   "z": 5.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 12.5,
+   "taso_db": -32.8,
+   "kaistat_z": {
+    "matala": 0.6,
+    "keski": 6.6,
+    "korkea": 1.6
+   },
+   "pisteet": 12.1
+  },
+  {
+   "t": 279.166,
+   "z": 5.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.1,
+   "taso_db": -38.4,
+   "kaistat_z": {
+    "matala": -0.3,
+    "keski": 4.5,
+    "korkea": 4.4
+   },
+   "pisteet": 5.2
+  },
+  {
+   "t": 283.077,
+   "z": 6.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.3,
+   "taso_db": -30.8,
+   "kaistat_z": {
+    "matala": 0.2,
+    "keski": 3.5,
+    "korkea": 8.0
+   },
+   "pisteet": 6.8
+  },
+  {
+   "t": 283.995,
+   "z": 5.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.0,
+   "taso_db": -36.3,
+   "kaistat_z": {
+    "matala": 0.4,
+    "keski": 5.1,
+    "korkea": 2.6
+   },
+   "pisteet": 5.8
+  },
+  {
+   "t": 284.613,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.1,
+   "taso_db": -37.7,
+   "kaistat_z": {
+    "matala": -0.2,
+    "keski": 3.9,
+    "korkea": 4.0
+   },
+   "pisteet": 5.4
+  },
+  {
+   "t": 285.531,
+   "z": 6.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.0,
+   "taso_db": -31.9,
+   "kaistat_z": {
+    "matala": 0.2,
+    "keski": 4.2,
+    "korkea": 5.8
+   },
+   "pisteet": 6.1
+  },
+  {
+   "t": 285.651,
+   "z": 6.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.6,
+   "taso_db": -31.3,
+   "kaistat_z": {
+    "matala": -0.4,
+    "keski": 6.6,
+    "korkea": 3.7
+   },
+   "pisteet": 6.4
+  },
+  {
+   "t": 286.738,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.3,
+   "taso_db": -36.5,
+   "kaistat_z": {
+    "matala": 2.1,
+    "keski": 4.7,
+    "korkea": 5.1
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 287.038,
+   "z": 5.6,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 8.8,
+   "taso_db": -32.7,
+   "kaistat_z": {
+    "matala": -0.7,
+    "keski": 7.4,
+    "korkea": 2.9
+   },
+   "pisteet": 8.2
+  },
+  {
+   "t": 287.327,
+   "z": 7.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.6,
+   "taso_db": -32.5,
+   "kaistat_z": {
+    "matala": -0.7,
+    "keski": 5.7,
+    "korkea": 6.8
+   },
+   "pisteet": 7.1
+  },
+  {
+   "t": 289.153,
+   "z": 6.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.7,
+   "taso_db": -33.3,
+   "kaistat_z": {
+    "matala": -0.9,
+    "keski": 3.4,
+    "korkea": 8.9
+   },
+   "pisteet": 6.2
+  },
+  {
+   "t": 290.36,
+   "z": 8.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 8.4,
+   "taso_db": -31.6,
+   "kaistat_z": {
+    "matala": -0.6,
+    "keski": 7.0,
+    "korkea": 9.0
+   },
+   "pisteet": 11.5
+  },
+  {
+   "t": 294.92,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.2,
+   "taso_db": -37.5,
+   "kaistat_z": {
+    "matala": 1.0,
+    "keski": 3.5,
+    "korkea": 5.7
+   },
+   "pisteet": 5.4
+  },
+  {
+   "t": 295.219,
+   "z": 5.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.0,
+   "taso_db": -37.5,
+   "kaistat_z": {
+    "matala": 0.1,
+    "keski": 5.0,
+    "korkea": 3.6
+   },
+   "pisteet": 5.3
+  },
+  {
+   "t": 297.324,
+   "z": 7.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 7.1,
+   "taso_db": -35.1,
+   "kaistat_z": {
+    "matala": -1.2,
+    "keski": 6.7,
+    "korkea": 5.0
+   },
+   "pisteet": 8.6
+  },
+  {
+   "t": 299.15,
+   "z": 8.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.8,
+   "taso_db": -40.2,
+   "kaistat_z": {
+    "matala": 0.6,
+    "keski": 8.2,
+    "korkea": 4.4
+   },
+   "pisteet": 8.3
+  },
+  {
+   "t": 301.295,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.7,
+   "taso_db": -35.8,
+   "kaistat_z": {
+    "matala": -0.8,
+    "keski": 4.2,
+    "korkea": 6.6
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 302.792,
+   "z": 6.7,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.6,
+   "taso_db": -40.3,
+   "kaistat_z": {
+    "matala": 1.2,
+    "keski": 6.9,
+    "korkea": 4.2
+   },
+   "pisteet": 6.7
+  },
+  {
+   "t": 303.111,
+   "z": 5.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.1,
+   "taso_db": -39.5,
+   "kaistat_z": {
+    "matala": 0.1,
+    "keski": 4.4,
+    "korkea": 7.5
+   },
+   "pisteet": 5.2
+  },
+  {
+   "t": 348.478,
+   "z": 6.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.8,
+   "taso_db": -45.6,
+   "kaistat_z": {
+    "matala": 5.9,
+    "keski": 8.4,
+    "korkea": 1.6
+   },
+   "pisteet": 6.9
+  },
+  {
+   "t": 350.942,
+   "z": 6.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.8,
+   "taso_db": -43.8,
+   "kaistat_z": {
+    "matala": 2.8,
+    "keski": 5.2,
+    "korkea": 3.6
+   },
+   "pisteet": 6.2
+  },
+  {
+   "t": 351.292,
+   "z": 6.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.4,
+   "taso_db": -42.0,
+   "kaistat_z": {
+    "matala": -0.1,
+    "keski": 2.2,
+    "korkea": 7.4
+   },
+   "pisteet": 6.1
+  },
+  {
+   "t": 356.2,
+   "z": 8.0,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.6,
+   "taso_db": -36.0,
+   "kaistat_z": {
+    "matala": -0.4,
+    "keski": 8.9,
+    "korkea": 6.5
+   },
+   "pisteet": 8.0
+  },
+  {
+   "t": 356.36,
+   "z": 7.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.7,
+   "taso_db": -36.2,
+   "kaistat_z": {
+    "matala": 4.5,
+    "keski": 8.4,
+    "korkea": 3.5
+   },
+   "pisteet": 7.4
+  },
+  {
+   "t": 356.58,
+   "z": 6.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.3,
+   "taso_db": -33.3,
+   "kaistat_z": {
+    "matala": 1.7,
+    "keski": 8.0,
+    "korkea": 3.1
+   },
+   "pisteet": 6.5
+  },
+  {
+   "t": 362.636,
+   "z": 7.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.1,
+   "taso_db": -38.7,
+   "kaistat_z": {
+    "matala": 0.6,
+    "keski": 8.9,
+    "korkea": 4.4
+   },
+   "pisteet": 7.9
+  },
+  {
+   "t": 362.875,
+   "z": 9.6,
+   "tyyppi": "korkea isku",
+   "kontrasti_db": 2.7,
+   "taso_db": -38.4,
+   "kaistat_z": {
+    "matala": 0.7,
+    "keski": 7.0,
+    "korkea": 10.7
+   },
+   "pisteet": 9.6
+  },
+  {
+   "t": 364.202,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 7.5,
+   "taso_db": -40.7,
+   "kaistat_z": {
+    "matala": 2.7,
+    "keski": 6.6,
+    "korkea": 3.7
+   },
+   "pisteet": 7.5
+  },
+  {
+   "t": 364.362,
+   "z": 6.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 6.3,
+   "taso_db": -40.6,
+   "kaistat_z": {
+    "matala": -0.6,
+    "keski": 7.5,
+    "korkea": 4.3
+   },
+   "pisteet": 6.8
+  },
+  {
+   "t": 370.608,
+   "z": 5.8,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.7,
+   "taso_db": -36.9,
+   "kaistat_z": {
+    "matala": 0.9,
+    "keski": 8.2,
+    "korkea": 0.1
+   },
+   "pisteet": 5.8
+  },
+  {
+   "t": 385.015,
+   "z": 5.6,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.1,
+   "taso_db": -35.9,
+   "kaistat_z": {
+    "matala": -0.8,
+    "keski": 4.6,
+    "korkea": 6.9
+   },
+   "pisteet": 5.6
+  },
+  {
+   "t": 385.205,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.4,
+   "taso_db": -33.5,
+   "kaistat_z": {
+    "matala": 0.3,
+    "keski": 2.0,
+    "korkea": 11.0
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 385.893,
+   "z": 6.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.3,
+   "taso_db": -34.5,
+   "kaistat_z": {
+    "matala": 1.2,
+    "keski": 5.6,
+    "korkea": 7.3
+   },
+   "pisteet": 6.2
+  },
+  {
+   "t": 390.512,
+   "z": 5.7,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 6.5,
+   "taso_db": -34.6,
+   "kaistat_z": {
+    "matala": 2.3,
+    "keski": 5.2,
+    "korkea": 5.6
+   },
+   "pisteet": 6.2
+  },
+  {
+   "t": 460.813,
+   "z": 7.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 1.5,
+   "taso_db": -33.9,
+   "kaistat_z": {
+    "matala": 0.1,
+    "keski": 8.2,
+    "korkea": 3.7
+   },
+   "pisteet": 7.4
+  },
+  {
+   "t": 466.151,
+   "z": 10.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 8.2,
+   "taso_db": -24.3,
+   "kaistat_z": {
+    "matala": 0.1,
+    "keski": 16.0,
+    "korkea": 2.1
+   },
+   "pisteet": 14.1
+  },
+  {
+   "t": 467.428,
+   "z": 6.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.6,
+   "taso_db": -31.9,
+   "kaistat_z": {
+    "matala": 3.5,
+    "keski": 4.1,
+    "korkea": 4.3
+   },
+   "pisteet": 6.3
+  },
+  {
+   "t": 468.256,
+   "z": 7.0,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.1,
+   "taso_db": -29.9,
+   "kaistat_z": {
+    "matala": -1.3,
+    "keski": 5.4,
+    "korkea": 5.1
+   },
+   "pisteet": 7.0
+  },
+  {
+   "t": 475.479,
+   "z": 5.5,
+   "tyyppi": "korkea isku",
+   "kontrasti_db": 5.0,
+   "taso_db": -34.9,
+   "kaistat_z": {
+    "matala": -0.1,
+    "keski": 3.6,
+    "korkea": 5.4
+   },
+   "pisteet": 5.5
+  },
+  {
+   "t": 485.507,
+   "z": 5.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.9,
+   "taso_db": -40.4,
+   "kaistat_z": {
+    "matala": -0.1,
+    "keski": 4.7,
+    "korkea": 2.4
+   },
+   "pisteet": 5.1
+  },
+  {
+   "t": 487.223,
+   "z": 8.0,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.4,
+   "taso_db": -46.2,
+   "kaistat_z": {
+    "matala": 3.1,
+    "keski": 7.6,
+    "korkea": 3.9
+   },
+   "pisteet": 8.0
+  },
+  {
+   "t": 488.141,
+   "z": 8.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.8,
+   "taso_db": -46.6,
+   "kaistat_z": {
+    "matala": 4.4,
+    "keski": 7.1,
+    "korkea": 7.0
+   },
+   "pisteet": 8.1
+  },
+  {
+   "t": 489.029,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.0,
+   "taso_db": -46.8,
+   "kaistat_z": {
+    "matala": 1.9,
+    "keski": 5.4,
+    "korkea": 4.9
+   },
+   "pisteet": 5.4
+  },
+  {
+   "t": 489.937,
+   "z": 5.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.1,
+   "taso_db": -45.9,
+   "kaistat_z": {
+    "matala": -1.0,
+    "keski": 6.0,
+    "korkea": 11.3
+   },
+   "pisteet": 5.3
+  },
+  {
+   "t": 621.607,
+   "z": 8.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 9.6,
+   "taso_db": -21.3,
+   "kaistat_z": {
+    "matala": 1.8,
+    "keski": 9.1,
+    "korkea": 2.9
+   },
+   "pisteet": 13.5
+  },
+  {
+   "t": 713.907,
+   "z": 5.0,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.6,
+   "taso_db": -31.5,
+   "kaistat_z": {
+    "matala": 2.3,
+    "keski": 4.9,
+    "korkea": 2.4
+   },
+   "pisteet": 5.0
+  },
+  {
+   "t": 716.901,
+   "z": 6.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 2.6,
+   "taso_db": -34.5,
+   "kaistat_z": {
+    "matala": 1.3,
+    "keski": 6.7,
+    "korkea": 3.7
+   },
+   "pisteet": 6.1
+  },
+  {
+   "t": 723.386,
+   "z": 7.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.3,
+   "taso_db": -32.4,
+   "kaistat_z": {
+    "matala": 3.2,
+    "keski": 8.0,
+    "korkea": 3.5
+   },
+   "pisteet": 7.3
+  },
+  {
+   "t": 734.571,
+   "z": 9.7,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 6.8,
+   "taso_db": -31.4,
+   "kaistat_z": {
+    "matala": 3.1,
+    "keski": 9.1,
+    "korkea": 5.2
+   },
+   "pisteet": 11.0
+  },
+  {
+   "t": 735.429,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 1.6,
+   "taso_db": -29.5,
+   "kaistat_z": {
+    "matala": 3.0,
+    "keski": 5.0,
+    "korkea": 2.9
+   },
+   "pisteet": 5.4
+  },
+  {
+   "t": 738.282,
+   "z": 5.7,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.3,
+   "taso_db": -25.6,
+   "kaistat_z": {
+    "matala": 2.1,
+    "keski": 4.3,
+    "korkea": 6.6
+   },
+   "pisteet": 5.7
+  },
+  {
+   "t": 740.836,
+   "z": 5.9,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.8,
+   "taso_db": -25.1,
+   "kaistat_z": {
+    "matala": 2.9,
+    "keski": 6.0,
+    "korkea": 3.1
+   },
+   "pisteet": 5.9
+  },
+  {
+   "t": 743.82,
+   "z": 5.4,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 1.9,
+   "taso_db": -29.9,
+   "kaistat_z": {
+    "matala": 0.8,
+    "keski": 1.6,
+    "korkea": 7.2
+   },
+   "pisteet": 5.4
+  },
+  {
+   "t": 745.416,
+   "z": 5.3,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.7,
+   "taso_db": -28.9,
+   "kaistat_z": {
+    "matala": 5.4,
+    "keski": 3.7,
+    "korkea": 5.6
+   },
+   "pisteet": 5.3
+  },
+  {
+   "t": 789.396,
+   "z": 6.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.6,
+   "taso_db": -44.5,
+   "kaistat_z": {
+    "matala": 2.4,
+    "keski": 8.9,
+    "korkea": -0.5
+   },
+   "pisteet": 6.5
+  },
+  {
+   "t": 791.222,
+   "z": 5.5,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.0,
+   "taso_db": -35.7,
+   "kaistat_z": {
+    "matala": 3.9,
+    "keski": 4.9,
+    "korkea": 0.3
+   },
+   "pisteet": 5.5
+  },
+  {
+   "t": 792.968,
+   "z": 7.1,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.7,
+   "taso_db": -37.1,
+   "kaistat_z": {
+    "matala": -0.1,
+    "keski": 7.7,
+    "korkea": 2.2
+   },
+   "pisteet": 7.1
+  },
+  {
+   "t": 799.872,
+   "z": 5.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.1,
+   "taso_db": -31.9,
+   "kaistat_z": {
+    "matala": -0.3,
+    "keski": 5.7,
+    "korkea": 3.1
+   },
+   "pisteet": 5.2
+  },
+  {
+   "t": 801.319,
+   "z": 7.7,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.6,
+   "taso_db": -38.1,
+   "kaistat_z": {
+    "matala": 1.5,
+    "keski": 10.8,
+    "korkea": -0.2
+   },
+   "pisteet": 7.7
+  },
+  {
+   "t": 806.437,
+   "z": 5.6,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 4.5,
+   "taso_db": -33.2,
+   "kaistat_z": {
+    "matala": 18.1,
+    "keski": 3.8,
+    "korkea": -1.3
+   },
+   "pisteet": 5.6
+  },
+  {
+   "t": 812.583,
+   "z": 5.6,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 5.0,
+   "taso_db": -15.8,
+   "kaistat_z": {
+    "matala": 3.9,
+    "keski": 5.3,
+    "korkea": 3.1
+   },
+   "pisteet": 5.6
+  },
+  {
+   "t": 1056.629,
+   "z": 9.2,
+   "tyyppi": "aksentti",
+   "kontrasti_db": 3.7,
+   "taso_db": -69.0,
+   "kaistat_z": {
+    "matala": 9.2,
+    "keski": 0.0,
+    "korkea": 0.0
+   },
+   "pisteet": 9.2
+  },
+  {
+   "t": 1056.898,
+   "z": 6.2,
+   "tyyppi": "matala isku (patarumpu/bassot)",
+   "kontrasti_db": 2.8,
+   "taso_db": -71.9,
+   "kaistat_z": {
+    "matala": 6.2,
+    "keski": 0.0,
+    "korkea": 0.0
+   },
+   "pisteet": 6.2
+  },
+  {
+   "t": 1057.117,
+   "z": 8.7,
+   "tyyppi": "matala isku (patarumpu/bassot)",
+   "kontrasti_db": 4.2,
+   "taso_db": -70.9,
+   "kaistat_z": {
+    "matala": 8.7,
+    "keski": 0.0,
+    "korkea": 0.0
+   },
+   "pisteet": 8.7
+  }
+ ],
+ "analyses": [
+  {
+   "levytys": "rattle2022",
+   "paketti": "build/rattle_koko",
+   "iskut_lahde": "build/rattle_koko/aksentit.json",
+   "iskut_kynnys_z": 5.0,
+   "ajat_lahde": "annotations/ajat_rattle2022.json"
+  }
+ ],
+ "puuttuu": {
+  "ilman_aikaa": [
+   "tuulenpuuska",
+   "askeleet_B",
+   "con_sord_J"
+  ],
+  "jaksot_ilman_rajoja": []
+ }
+}

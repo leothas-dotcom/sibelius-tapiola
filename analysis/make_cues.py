@@ -1,15 +1,26 @@
-r"""Merkintäluonnos analyysista: kirjoittaa/päivittää annotations/cues.json.
+r"""Merkinnät teemakartasta ja levytyksen ajoista: kirjoittaa annotations/cues.json.
 
-Lukee analyysipaketit (build/<ajo>/: analysis.json, events.json, beats.json jos on) ja kokoaa:
-  sections  jaksot teemakartasta (annotations/teemat.json, jos se on olemassa)
-  cues      teemakartan tapahtumat (teema_*) + paketin tapahtumat (interpret.py)
-  bars      tahdit (beat_this, vain jos beats.json on ajettu; ei tahtinumeroita äänestä)
-Jokaisessa kohdassa on "lahde" (analyysi / arvio / vahvistettu) ja "vahvistettu".
-Kohtia, joissa "vahvistettu": true, ei koskaan muuteta eikä poisteta; muut luodaan uudelleen.
-Jaksojen, teemojen ja iskujen ajat ovat vain teemakartassa (CLAUDE.md): tämä työkalu ei keksi niitä.
+Lähteet (docs/teemakartta_rakenne.md):
+  annotations/teemat.json            ankkurit: partituurin paikka ja musiikillinen sisältö (levytysriippumaton, ei aikoja)
+  annotations/ajat_<levytys>.json    ankkuri-id -> aika sekunteina ko. levytyksen kuuntelukopiossa, varmuus, peruste
+  annotations/levytykset.json        levytysten luettelo (kuuntelukopio, kesto, rooli, analyysipaketti)
+  <paketti>/aksentit.json            levytyksen iskut (aksentit.py), levytyskohtaiset
+
+Tulos annotations/cues.json:
+  recording  valittu levytys
+  themes     ankkuriluokat (soitin / tunnelma / soolo / huippu / tauko / isku / jakso)
+  sections   jaksot (ankkuriparit *_alku / *_loppu), vain jos molemmat ajat tunnetaan
+  cues       yksi merkintä per ankkuri (t = null, jos aikaa ei ole voitu perustella: varmuus "arvio")
+  iskut      levytyksen iskut (aksentit.json); isku-ankkureihin liitetään lähin isku (+-0,15 s), jos sellainen on
+  analyses   mistä paketista iskut ovat
+
+Aikoja ei keksitä: ne luetaan vain ajat_<levytys>.json:sta. Tämä työkalu ei koskaan kirjoita ajat-tiedostoa, joten
+siihen merkityt vahvistetut ajat (varmuus "vahvistettu") säilyvät. Tahtinumeroita ei lasketa äänestä; tahtiruudukkoa
+(beats.json) ei viedä merkintöihin.
 Ajat ovat kuuntelukopion aikaa (s).
 
-  .venv\Scripts\python.exe -I analysis/make_cues.py build/testi60 [build/muu ...]
+  .venv\Scripts\python.exe -I analysis/make_cues.py --levytys rattle2022
+  .venv\Scripts\python.exe -I analysis/make_cues.py --levytys rattle2022 --paketti build/rattle_koko
 """
 import argparse
 import json
@@ -21,111 +32,206 @@ import lahde  # noqa: E402
 
 ROOT = lahde.ROOT
 CUES = ROOT / "annotations" / "cues.json"
-EXAMPLE = ROOT / "annotations" / "cues.example.json"
-
-# Jaksot ja teemat: annotations/teemat.json (teemakartta; ainoa paikka, jossa ajat ovat).
 THEMES_MAP = ROOT / "annotations" / "teemat.json"
-GENERATED_THEMES = {
-    "soitin_sisaan": "Analyysi: soitinperhe tulee sisään (kenttä 'perhe')",
-    "soitin_ulos": "Analyysi: soitinperhe vaikenee (kenttä 'perhe')",
-    "tempo_muutos": "Analyysi: tahtitempo muuttuu (kenttä 'tiedot'; vain jos beats.json on ajettu)",
-    "hiljenee_akkia": "Analyysi: voimakkuus putoaa äkkiä (esim. yleistauko)",
-    "voimistuu_akkia": "Analyysi: voimakkuus nousee äkkiä",
-    "rakenteen_muutos": "Analyysi: uutuuskäyrän huippu ja mitä siinä muuttui",
-}
+RECORDINGS = ROOT / "annotations" / "levytykset.json"
+VARMUUDET = ("vahvistettu", "analyysi", "arvio")  # vahvimmasta heikoimpaan
+LUOTTAMUS = ("hyvä", "kohtalainen", "heikko", "ei")  # parhaasta huonoimpaan
+ISKU_RAJA_S = 0.15
 
 
-def from_theme_map():
-    """Jaksot ja teemamerkinnät teemakartasta. Kartan 'vahvistettu' siirtyy merkintään."""
-    if not THEMES_MAP.exists():
-        return [], [], {}
-    m = json.loads(THEMES_MAP.read_text(encoding="utf-8"))
-    sections = [{**sec, "vahvistettu": bool(sec.get("vahvistettu"))} for sec in m.get("sections", [])]
+def read_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def pick_recording(levytys):
+    """Levytyksen rivi levytykset.json:sta (oletuksena ensimmäinen, jonka rooli on 'työ')."""
+    rec = read_json(RECORDINGS)["levytykset"]
+    if levytys is None:
+        for r in rec:
+            if r.get("rooli") == "työ":
+                return r
+        raise SystemExit("ei työlevytystä: anna --levytys")
+    for r in rec:
+        if r["id"] == levytys:
+            return r
+    raise SystemExit(f"levytystä '{levytys}' ei ole {RECORDINGS.relative_to(ROOT)}:ssa ({', '.join(r['id'] for r in rec)})")
+
+
+def worst(values, order):
+    return max(values, key=order.index)
+
+
+def load_times(levytys):
+    path = ROOT / "annotations" / f"ajat_{levytys}.json"
+    if not path.exists():
+        raise SystemExit(f"{path.relative_to(ROOT)} puuttuu: levytyksen ajat kirjoitetaan analyysistä (docs/teemakartta_rakenne.md)")
+    d = read_json(path)
+    if d.get("levytys") != levytys:
+        raise SystemExit(f"{path.name}: levytys '{d.get('levytys')}' ei vastaa '{levytys}'")
+    return d
+
+
+def check_times(anchors, times, kesto):
+    """Pysäyttää virheisiin; palauttaa varoitukset."""
+    ids = [a["id"] for a in anchors]
+    if len(ids) != len(set(ids)):
+        raise SystemExit("teemat.json: ankkureiden id:t eivät ole yksilöllisiä")
+    extra = sorted(set(times) - set(ids))
+    missing = sorted(set(ids) - set(times))
+    if extra:
+        raise SystemExit(f"ajat-tiedostossa on id:t, joita teemakartassa ei ole: {extra}")
+    if missing:
+        raise SystemExit(f"ajat-tiedostosta puuttuu ankkureiden aika: {missing}")
+    for i, e in times.items():
+        t = e.get("t")
+        if e.get("varmuus") not in VARMUUDET:
+            raise SystemExit(f"{i}: varmuus '{e.get('varmuus')}' ei ole {VARMUUDET}")
+        if t is None:
+            if e["varmuus"] != "arvio":
+                raise SystemExit(f"{i}: t on null, mutta varmuus on '{e['varmuus']}' (pitää olla 'arvio')")
+        else:
+            if e["varmuus"] == "arvio":
+                raise SystemExit(f"{i}: varmuus 'arvio' vaatii t: null (aika, jota ei voi perustella mittauksella, ei kuulu tähän)")
+            if not isinstance(t, (int, float)) or not (0 <= t <= kesto):
+                raise SystemExit(f"{i}: t={t} ei ole välillä 0–{kesto} s")
+        if not e.get("peruste"):
+            raise SystemExit(f"{i}: peruste puuttuu")
+    warn = []
+    for a in anchors:
+        if a.get("tarina"):
+            warn.append(f"{a['id']}: tarina ei ole tyhjä (käyttäjän kirjoittama; ok jos haastattelusta)")
+    return warn
+
+
+def build_sections(anchors, times, jaksot):
+    by = {}
+    for a in anchors:
+        if a.get("tyyppi") == "jakso":
+            by.setdefault(a["jakso"], {})[a["reuna"]] = a
+    sections, open_ = [], []
+    for sid, pair in by.items():
+        if set(pair) != {"alku", "loppu"}:
+            raise SystemExit(f"jakso '{sid}': alku- ja loppuankkuri molemmat vaaditaan (löytyi {sorted(pair)})")
+        a, b = pair["alku"], pair["loppu"]
+        ta, tb = times[a["id"]], times[b["id"]]
+        if ta["t"] is None or tb["t"] is None:
+            open_.append(sid)
+            continue
+        if not ta["t"] < tb["t"]:
+            raise SystemExit(f"jakso '{sid}': alku {ta['t']} ei ole ennen loppua {tb['t']}")
+        sections.append({
+            "id": sid,
+            "nimi": jaksot.get(sid, {}).get("nimi", sid),
+            "start": ta["t"], "end": tb["t"], "kesto": round(tb["t"] - ta["t"], 3),
+            "luokka": a["luokka"], "soi": a.get("soi", ""), "soittimet": a.get("soittimet", []),
+            "kirjain": a.get("kirjain"), "tahti": a.get("tahti"), "tahti_loppu": a.get("tahti_loppu"),
+            "ankkuri_alku": a["id"], "ankkuri_loppu": b["id"],
+            "varmuus": worst([ta["varmuus"], tb["varmuus"]], VARMUUDET),
+            "luottamus": worst([ta.get("luottamus", "ei"), tb.get("luottamus", "ei")], LUOTTAMUS),
+            "vahvistettu": ta["varmuus"] == "vahvistettu" and tb["varmuus"] == "vahvistettu",
+            "tarkista": bool(a.get("tarkista") or b.get("tarkista")),
+        })
+    sections.sort(key=lambda s: s["start"])
+    return sections, open_
+
+
+def nearest_hit(t, hits):
+    best = None
+    for h in hits:
+        d = abs(h["t"] - t)
+        if d <= ISKU_RAJA_S and (best is None or d < best[0]):
+            best = (d, h)
+    return best[1] if best else None
+
+
+def build_cues(anchors, times, iskut):
     cues = []
-    for e in m.get("events", []):
-        c = {"id": e.get("cue_id", f"teema_{e['id']}"), "teema": e["id"], "t": e["t"], "theme": e["theme"]}
-        if "t1" in e:
-            c["t_end"] = e["t1"]
-        for k in ("luokka", "lead"):
-            if k in e:
+    for a in anchors:
+        e = times[a["id"]]
+        c = {"id": a["id"], "ankkuri": a["id"], "t": e["t"]}
+        if e.get("t_loppu") is not None:
+            c["t_end"] = e["t_loppu"]
+        c.update({"theme": a["luokka"], "luokka": a["luokka"], "tyyppi": a["tyyppi"]})
+        if a.get("jakso"):
+            c["jakso"], c["reuna"] = a["jakso"], a["reuna"]
+        for k in ("nimi", "kirjain", "tahti", "tahti_loppu", "tahti_suhde", "soi", "soittimet", "tarina", "lahde"):
+            c[k] = a.get(k)
+        c["varmuus"] = e["varmuus"]
+        c["lahde_aika"] = e["varmuus"]  # vanha kenttä: analyysi / arvio / vahvistettu
+        c["luottamus"] = e.get("luottamus")
+        c["peruste"] = e["peruste"]
+        c["vahvistettu"] = e["varmuus"] == "vahvistettu"
+        c["tarkista"] = bool(a.get("tarkista"))
+        for k in ("vaihtoehdot", "ehdokkaat"):
+            if e.get(k):
                 c[k] = e[k]
-        c["lahde"] = e.get("varmuus", "arvio")
-        c["note"] = e.get("kuuluu", "") + (f". {e['tarina']}" if e.get("tarina") else "") + (" [tarkista]" if e.get("tarkista") else "")
-        c["peruste"] = e.get("peruste", "")
-        c["vahvistettu"] = bool(e.get("vahvistettu"))
+        if a["luokka"] == "isku" and e["t"] is not None:
+            h = nearest_hit(e["t"], iskut)
+            if h:
+                c["isku"] = {"t": h["t"], "z": h["z"], "tyyppi": h["tyyppi"], "ero_s": round(h["t"] - e["t"], 3)}
         cues.append(c)
-    return sections, cues, m.get("themes", {})
-
-
-def generated_entry(**kw):
-    return {**kw, "vahvistettu": False}
-
-
-def from_package(d):
-    """Tapahtumat ja tahdit yhdestä analyysipaketista."""
-    meta = json.loads((d / "analysis.json").read_text(encoding="utf-8"))
-    start = meta["start"]
-    cues = []
-    events_file = d / "events.json"
-    if events_file.exists():
-        for e in json.loads(events_file.read_text(encoding="utf-8"))["events"]:
-            extra = {k: e[k] for k in ("perhe", "tahti", "tiedot") if k in e}
-            cues.append(generated_entry(id=f"cue_{e['tyyppi']}_{e['t']:.1f}" + (f"_{e['perhe']}" if "perhe" in e else ""),
-                                        t=e["t"], theme=e["tyyppi"], varmuus=e["varmuus"], **extra,
-                                        lahde="analyysi", note=e["kuvaus"]))
-    bars = []
-    beats_file = d / "beats.json"
-    if beats_file.exists():
-        beats = json.loads(beats_file.read_text(encoding="utf-8"))
-        bars = [{"bar": b["bar"], "t": round(b["t"], 3), "lahde": "analyysi"} for b in beats["bars"]]
-    info = {"start": start, "duration": meta["duration"], "paketti": str(d.relative_to(ROOT)).replace("\\", "/")}
-    return cues, bars, info
+    cues.sort(key=lambda c: (c["t"] is None, c["t"] if c["t"] is not None else 0.0))
+    return cues
 
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("packages", nargs="+", type=Path)
+    ap = argparse.ArgumentParser(description="annotations/cues.json teemakartasta, levytyksen ajoista ja iskuista")
+    ap.add_argument("--levytys", help="levytyksen id (annotations/levytykset.json); oletus: ensimmäinen työlevytys")
+    ap.add_argument("--paketti", type=Path, help="analyysipaketti, josta iskut luetaan (oletus: levytyksen 'paketti' levytykset.json:sta)")
     a = ap.parse_args()
 
-    if CUES.exists():
-        base = json.loads(CUES.read_text(encoding="utf-8"))
-    elif EXAMPLE.exists():
-        base = json.loads(EXAMPLE.read_text(encoding="utf-8"))
-    else:
-        base = {"recording": {"lahde": "audio/05_Tapiola.mp3", "kuuntelukopio": "build/kuuntelu/tapiola_kuuntelu.wav"}, "themes": {}}
-    map_secs, cues, map_themes = from_theme_map()
-    # Teemakartta on käsin ylläpidetty ja kantaa omat vahvistuksensa, joten sen merkinnät ja jaksot
-    # tulevat aina kartasta. Muut vahvistetut merkinnät (cues.json:iin suoraan merkityt) säilyvät.
-    map_ids = {c["id"] for c in cues}
-    keep_cues = [c for c in base.get("cues", []) if c.get("vahvistettu") and c.get("id") not in map_ids
-                 and not str(c.get("id", "")).startswith("teema_")]
-    keep_ids = {c.get("id") for c in keep_cues}
-    bars, analyses = [], []
-    for d in a.packages:
-        d = d if d.is_absolute() else ROOT / d
-        c, b, info = from_package(d)
-        cues += c
-        bars += b
-        analyses.append(info)
-    cues = keep_cues + [c for c in cues if c["id"] not in keep_ids]
-    cues.sort(key=lambda c: c["t"] if c["t"] is not None else 1e9)
+    rec = pick_recording(a.levytys)
+    levytys = rec["id"]
+    pak = a.paketti or (Path(rec["paketti"]) if rec.get("paketti") else None)
+    if pak is None:
+        raise SystemExit(f"levytyksellä '{levytys}' ei ole 'paketti'-kenttää: anna --paketti")
+    pak = pak if pak.is_absolute() else ROOT / pak
+
+    if not THEMES_MAP.exists():
+        raise SystemExit(f"{THEMES_MAP.relative_to(ROOT)} puuttuu")
+    tm = read_json(THEMES_MAP)
+    anchors = tm["ankkurit"]
+    td = load_times(levytys)
+    kesto = rec["kesto_s"]
+    warn = check_times(anchors, td["ajat"], kesto)
+
+    aks_file = pak / "aksentit.json"
+    if not aks_file.exists():
+        raise SystemExit(f"{aks_file.relative_to(ROOT)} puuttuu: aja aksentit.py paketille")
+    aks = read_json(aks_file)
+    iskut = [{"t": x["t"], "z": x["z"], "tyyppi": x["tyyppi"], "kontrasti_db": x.get("kontrasti_db"), "taso_db": x.get("taso_db"),
+              "kaistat_z": x.get("kaistat_z"), "pisteet": x.get("pisteet")} for x in aks["aksentit"]]
+    iskut.sort(key=lambda x: x["t"])
+
+    sections, open_ = build_sections(anchors, td["ajat"], tm.get("jaksot", {}))
+    cues = build_cues(anchors, td["ajat"], iskut)
 
     out = {
-        "_ohje": ("Merkinnät, koneluettava vastine kuunteluoppaalle (annotations/kuunteluopas.md). "
-                  "Ajat sekunteina kuuntelukopion alusta. lahde: analyysi / arvio / vahvistettu. "
-                  "Aseta \"vahvistettu\": true - make_cues.py ei koskaan muuta vahvistettuja kohtia. "
-                  "Luotu: .venv\\Scripts\\python.exe -I analysis/make_cues.py <paketit>."),
-        "recording": base["recording"],
-        "themes": {**base.get("themes", {}), **map_themes, **GENERATED_THEMES},
-        "sections": map_secs,
+        "_ohje": ("Merkinnät, koneluettava vastine kuunteluoppaalle (annotations/kuunteluopas.md). GENEROITU: älä muokkaa käsin. "
+                  "Sisältö: annotations/teemat.json; ajat: annotations/ajat_<levytys>.json (ainoa paikka, jossa aikoja kirjoitetaan käsin); "
+                  "iskut: <paketti>/aksentit.json. Ajat sekunteina kuuntelukopion alusta. varmuus: vahvistettu / analyysi / arvio (t = null). "
+                  "Luotu: .venv\\Scripts\\python.exe -I analysis/make_cues.py --levytys <id>."),
+        "recording": {"levytys": levytys, "nimi": rec.get("nimi"), "lahde": rec.get("lahde"), "kuuntelukopio": rec.get("kuuntelukopio"),
+                      "kesto_s": kesto, "rooli": rec.get("rooli")},
+        "themes": tm.get("luokat", {}),
+        "sections": sections,
         "cues": cues,
-        "bars": sorted(bars, key=lambda b: b["t"]),
-        "analyses": analyses,
+        "iskut": iskut,
+        "analyses": [{"levytys": levytys, "paketti": str(pak.relative_to(ROOT)).replace("\\", "/"),
+                      "iskut_lahde": str(aks_file.relative_to(ROOT)).replace("\\", "/"),
+                      "iskut_kynnys_z": aks.get("zmin"), "ajat_lahde": f"annotations/ajat_{levytys}.json"}],
+        "puuttuu": {"ilman_aikaa": [c["id"] for c in cues if c["t"] is None], "jaksot_ilman_rajoja": open_},
     }
     CUES.parent.mkdir(parents=True, exist_ok=True)
-    CUES.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    n_conf = sum(1 for c in cues if c.get("vahvistettu"))
-    print(f"{CUES.relative_to(ROOT)}: {len(map_secs)} jaksoa, {len(cues)} tapahtumaa ({n_conf} vahvistettua), tahteja {len(out['bars'])}")
+    CUES.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+    n_t = sum(1 for c in cues if c["t"] is not None)
+    n_conf = sum(1 for c in cues if c["vahvistettu"])
+    print(f"{CUES.relative_to(ROOT)}: levytys {levytys}, {len(cues)} ankkuria ({n_t} ajalla, {len(cues) - n_t} ilman aikaa, {n_conf} vahvistettua), "
+          f"{len(sections)} jaksoa, {len(iskut)} iskua")
+    for w in warn:
+        print("HUOM", w)
+    if out["puuttuu"]["ilman_aikaa"]:
+        print("ilman aikaa:", ", ".join(out["puuttuu"]["ilman_aikaa"]))
 
 
 if __name__ == "__main__":

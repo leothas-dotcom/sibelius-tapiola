@@ -86,11 +86,26 @@ limittäin (30 s) ja `themes.stitch` / `aikajana.py` yhdistää ne (`aikajana.py
 | `analysis/rekisteri.py` | rekisterit ja sävelet kohinatason yläpuolella kuuntelukopiosta |
 | `analysis/check_package.py` | paketin ja merkintöjen tarkistus |
 | `analysis/themes.py`, `aikajana.py` | apufunktiot ja koko äänitteen aikajana (jaksot, hiljaiset kohdat, 10 vahvinta rajaa; teematunnistimet kirjoitetaan vaiheessa 5) |
-| `analysis/make_cues.py`, `kuunteluopas.py` | merkinnät ja kuunteluopas teemakartasta (`annotations/teemat.json`, vaihe 5) |
+| `analysis/make_cues.py`, `kuunteluopas.py` | `cues.json` ja kuunteluoppaan GEN-osat teemakartasta (`annotations/teemat.json`) ja levytyksen ajoista (`annotations/ajat_<levytys>.json`); `--levytys <id>` (vaihe 5) |
 | `analysis/videotarkistus.py`, `kriitikko.py` | valmiin videon tarkistus ja kriitikkoaineisto (vaiheet 8–10) |
 | `render/render.mjs`, `camcheck.mjs`, `serve.mjs`, `check-webgl.mjs` | renderöinnin runko ja kameramittari (kohtaus kirjoitetaan vaiheessa 8) |
 
 `npm run preview`, `npm run render`, `npm run check-webgl` ajavat vastaavat `render/`-skriptit.
+
+## Teemakartta, ajat ja merkinnät (vaihe 5)
+
+Rakenne: `docs/teemakartta_rakenne.md`. Ankkurit (`annotations/teemat.json`) ovat levytysriippumattomia partituurin paikkoja ilman sekunteja ja ilman tarinaa;
+ajat ovat levytyskohtaisia (`annotations/ajat_rattle2022.json`: aika, varmuus `analyysi` / `arvio` / `vahvistettu`, luottamus, peruste). Mikään aika ei ole vahvistettu, ennen kuin käyttäjä
+on kuullut sen. Aikajanan sanallistus: `docs/aikajana_tulkinta.md`; vaiheen raportti: `docs/tutkimus/vaihe5_raportti.md`.
+
+```powershell
+$py = ".venv\Scripts\python.exe"
+& $py -I analysis\make_cues.py --levytys rattle2022       # annotations/cues.json: ankkurit + ajat + levytyksen iskut (build/rattle_koko/aksentit.json)
+& $py -I analysis\kuunteluopas.py --levytys rattle2022    # täyttää annotations/kuunteluopas.md:n GEN-osat (ankkurit, minuutti minuutilta, tarkistuslista)
+& $py -I analysis\check_package.py --cues-only            # tarkistaa teemat.json + ajat + cues.json keskenään
+```
+
+Uusi levytys: lisää se `annotations/levytykset.json`:iin (kentät `kuuntelukopio`, `kesto_s`, `paketti`), kirjoita `ajat_<id>.json` ja aja samat komennot `--levytys <id>`:llä.
 
 ## Kansiot
 

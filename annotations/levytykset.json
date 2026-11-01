@@ -6,6 +6,7 @@
       "nimi": "Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc0e3TQ)",
       "lahde": "audio/vertailu/rattle_lso_2022.webm",
       "kuuntelukopio": "build/kuuntelu/rattle_kuuntelu.wav",
+      "paketti": "build/rattle_koko",
       "kesto_s": 1078.016,
       "rooli": "työ",
       "asetukset": "analysis/config.json",
