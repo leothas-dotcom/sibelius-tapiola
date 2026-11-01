@@ -2,6 +2,20 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Partituuri-PDF päätyi gittiin
+
+**Ei toiminut**
+- `git add docs/` vei IMSLP-skannauksen (ei PD EU:ssa ennen 2028) repoon ja GitHubiin. Huomattiin vasta, kun
+  partituuria alettiin lukea.
+
+**Korjaus**
+- `*.pdf` gitignoreen, tiedosto pois seurannasta, ja käyttäjän luvalla historia kirjoitettiin uudestaan
+  (`git filter-branch`, 31 commitia) ja pushattiin pakotetusti. Varmuuskopio .git-kansiosta scratchpadissa.
+
+**Oppi**
+- Lisää gittiin nimetyt tiedostot, ei kansioita. Tekijänoikeudenalainen lähdeaineisto (partituuri, äänitykset)
+  kuuluu alusta asti gitignoreen, ei vain `audio/`.
+
 ## 1.11.2026 – Kaniinkuoppa: partituurin sivuittainen luettelo
 
 **Ei toiminut**
