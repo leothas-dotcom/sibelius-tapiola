@@ -336,3 +336,23 @@ mitään; (3) videon tarkoitus: kunnianosoitus Sibeliukselle.
 - **Tunnelma:** monille kuulijoille teos on ahdistava ja pelottava (Rattlen YouTube-kommentit); käyttäjä ei itse
   koe niin, mutta sitä tunnelmaa haetaan tiettyihin kohtiin: väärä toivo, **groteski valo**, vyöryvät ja vellovat
   kohdat. Kirjataan ankkureihin kenttään `tunnelma`.
+
+## 1.11.2026 – käyttäjän palaute sekuntilistaan ja ohje esitysmerkinnöistä (saneltu, käyttäjän sanat)
+
+> [Tuo] nyt näyttää oikein hyvältä. Hienoa työtä. Näyttää just siltä, mitä mä halusin. Ja mitä tuosta ehkä vielä
+> vähän puuttuu, on se, että ne esitysohjeet, mitkä on kuitenkin niin kuin varmin tapa miettiä, mitä Sibelius itse
+> on halunnut, kun hän on kirjoittanut jotain. Mieti ensiksi lähteistä, että mitä Sibelius on tarkoittanut vaikka
+> jollakin Allegro-moderaattolla tai jotain vastaavaa, mitä hän on ehkä mahdollisesti ajatellut. Ja sitten siellä
+> docs-kansiossa on partituuri, mistä löydät sitten nämä esitysohjeet. Älä yritä tulkita sitä nuottinuotilta, se on
+> hieman vaikeaa. Äläkä yritä laskea sieltä tahtinumeroita, sekin on hieman vaikeaa. Mutta sä voit katsoa sieltä
+> kuitenkin niin kuin käyttämällä niin kuin logiikkaa, että missä kohdassa on mitäkin. Eli voit katsoa, että missä
+> kohtaa jouset alkaa vaikka, ja sitten Sibelius on kirjoittanut sinne sitten näitä esitysohjeita. Niin käypä
+> tarkistamassa sieltä sitten ne esitysohjeet vielä. Ja sitten ehkä joutuu vähän myöskin tekemään
+> taustatutkimusta, että mitä Sibelius nimenomaan on ajatellut niillä eri esitysohjeilla. Mikä on Kajanuksen
+> mielipide, mikä on Rattlen mielipide. Ne on tulkinnallisia, mutta mitä Sibelius on mahdollisesti ajatellut, niillä
+> on myöskin tulkintaa, mutta se, mitä hän on kirjoittanut paperiin, on [viesti katkesi]
+
+Ohjaajan merkintä: partituuri `docs/references/IMSLP15925-...pdf` (58 s.). Esitysmerkinnät luetaan sivuittain
+kirjainten ja soitinten tulojen avulla (ei nuotti nuotilta, ei tahtien laskentaa) ja viedään ankkureihin kenttään
+`esitysmerkinta`. Rinnalle haku: mitä Sibelius tarkoitti tempo- ja esitysmerkinnöillään (Rodziński-kirje,
+metronomit, hänen omat sanansa).

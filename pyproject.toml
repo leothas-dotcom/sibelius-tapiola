@@ -23,6 +23,9 @@ dependencies = [
 vertailu = [
     "yt-dlp>=2025.1",
 ]
+partituuri = [
+    "pymupdf>=1.24",
+]
 
 [tool.uv]
 package = false

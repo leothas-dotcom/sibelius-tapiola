@@ -43,3 +43,6 @@ __pycache__/
 Thumbs.db
 .DS_Store
 *.log
+
+# Partituurin skannaus ei ole julkista omaisuutta EU:ssa (Sibelius k. 1957): ei gittiin
+*.pdf
