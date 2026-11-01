@@ -129,6 +129,8 @@ def main():
     above_f = (frame_db(declick) - prep["noise_floor_db"] > 10).astype(float)
     sustained = np.array([above_f[i:i + FPS].mean() > 0.9 for i in range(n)])
     start_frame = int(np.argmax(sustained)) if sustained.any() else 0
+    while start_frame < n - 1 and not above_f[start_frame]:  # "yli 90 %" sallii alun edeltävät ruudut: siirretään ensimmäiseen kovaan ruutuun
+        start_frame += 1
     music = np.arange(n) >= start_frame
 
     # --- Voimakkuus suhteessa levyn pintakohinaan ---

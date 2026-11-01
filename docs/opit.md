@@ -2,6 +2,24 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Vaihe 1 ja ensimmäinen kuuntelu (60 s)
+
+**Toimi**
+- Putki kopioitiin ja korjattiin yhdelle mp3:lle yhdessä Sonnet-ajossa briefistä; kaikki johdetut äänet 0,00 ms
+  kuuntelukopiota vasten. Yksi dekoodaustapa (`analysis/lahde.py`) kaikille äänille poisti viivekysymyksen.
+- `aksentit.py` näytti patarumpusoolon 10 ms tarkkuudella (1,61 s) ilman virittämistä. Oppi edellisestä piti.
+- Kohinaikkuna löytyi tiedostosta ilman loppuuraa (hiljaisin 1 s ikkuna).
+- Pöytäkirja + kuva + kuuntelunäyte samasta välistä on oikea muoto: ohjaaja näki kuvasta saman kuin raportista.
+
+**Ei toiminut**
+- Demucs-stemmit eivät erottele orkesteria: patarummut menevät other-stemmiin, ja jouset, puupuhaltimet ja
+  vasket nousevat perhekanavissa yhtä aikaa. Stemmipohjaiset perhekanavat ovat Tapiolassa kuolleita avauksessa.
+  Seuraava yritys: perhekanavat spektristä, PANNs lyhyemmällä ikkunalla, tai molemmat.
+- `patarumpu_tremolo` ja `jousitremolo` reagoivat transientteihin. Tremolo pitää mitata modulaationa pitkän
+  äänen sisällä, ei iskuina.
+- Ohjaaja committasi `git add -A`:lla kesken agentin työn ja vei keskeneräisiä tiedostoja mukaan. Jatkossa:
+  commit vasta, kun agentti on palannut, tai `git add` vain omiin tiedostoihin.
+
 ## 1.11.2026 – Tutkimus (vaihe 2) ja käyttäjän korjaukset
 
 **Ei toiminut**
