@@ -210,3 +210,12 @@ Ohjaajan merkintä: kysymys yksittäisten soitinten erottelusta (ei vain perheet
 - **Mitattava:** uusi kanava `askel`: matalan rekisterin (bass-stemmi + 40–150 Hz) alut, jotka eivät osu muun
   orkesterin alkuihin (±80 ms). Testikohta tarvitaan: käyttäjältä harjoituskirjain, jossa askeleet kuuluvat
   selvimmin. Lisätty `docs/analyysisuunnitelma.md` lukuun 3.2.
+
+> Ainakin harjoituskirjaimen B kohdalla. On myös muita keinoja, esim hitaat vuorottelut kornojen <> (svellari)
+> ja pasuunoiden välillä teoksen loppupuolella.
+
+Ohjaajan merkintä: askel-kanavan varma kohta = **kirjain B** (käyttäjä). Toinen havainto: teoksen loppupuolella
+hitaat vuorottelut käyrätorvien (crescendo–diminuendo, "svellari" <>) ja pasuunoiden välillä. Tästä kaksi asiaa:
+(1) mitattava kanava `vaskiaalto`: vaskien pitkät paisutukset (< >) ja niiden vuorottelu kahden vaskiryhmän
+välillä, varma kohta loppupuolella (kirjain kysytään); (2) kuvakielessä hidas hengitys tai aalto, joka vaihtaa
+puolta. Käyrätorvi ja pasuuna pitää siis erottaa toisistaan, mikä on juuri luvun 7 kysymys (yksittäiset soittimet).

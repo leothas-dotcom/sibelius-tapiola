@@ -30,7 +30,9 @@ Nämä ovat kanavakortin testikohdat. Jokainen aika mitataan kuuntelukopiosta; t
 | V5 | Puupuhallinjakso ("peikot", kirjain G) | nopeat kahdeksasosakuviot puupuhaltimissa | puupuhallinkanava, liiketiheys |
 | V6 | C-duuri ennen kirjainta M (noin 5 tahtia) | yllättävä duurikirkastus | chroma / sävellajikanava: C-duurin kolmisointu |
 | V7 | Kirjain M, myrsky | kromaattinen jousitremolo, vasket | tremolokanava, liiketiheys, vaskikanava |
-| V8 | Loppu | H-duurisointu divisi-jousissa pianissimo | chroma: H-duuri; voimakkuus pp; patarumpu 0 |
+| V8 | Loppu | H-duurisointu divisi-jousissa; dynamiikka partituurista (käyttäjä: mezzoforte-sävy) | chroma: H-duuri; patarumpu 0 |
+| V9 | Kirjain B | matalat äänet "askelina" eri tahtiin kuin muu orkesteri | askel-kanava |
+| V10 | Loppupuoli, kirjain [kysytään] | käyrätorvien < > ja pasuunoiden hidas vuorottelu | vaskiaalto, soitin_horn vs soitin_trombone |
 
 Kohtia lisätään, kun käyttäjä antaa partituurista lisää (kirjaimet ja tahdit). Jokaisen varman kohdan aika
 kirjataan teemakarttaan ankkurina vasta, kun käyttäjä on kuullut sen kuuntelukopiosta.
@@ -62,7 +64,8 @@ audiosta." Tärkeysjärjestys:
 | **urkupiste** | bass-stemmin CREPE-sävel, jonka kesto > 4 s | Tapiolan matalat urkupisteet; kertoo, milloin pohja pysyy ja milloin liikkuu |
 | **duuri/molli ja C-duuri-ilmaisin** | chroma-korrelaatio h-molli-, D-duuri-, C-duuri- ja H-duuri-kolmisointuihin, 1 s ikkuna | V6 ja V8; käyttäjän avainkohta mitataan, ei arvata |
 | **liiketiheys** | onset-tiheys other-stemmissä 2 s ikkunassa | erottaa "peikkojakson" kuviot pitkistä äänistä |
-| **askel** (lisätty 1.11.2026) | matalan rekisterin alut (bass-stemmi + 40–150 Hz kaista), jotka eivät osu muun orkesterin alkuihin ±80 ms; raportoidaan aika, voima ja väli edelliseen | käyttäjän havainto: "matalat äänet tulee eri tahtiin, vähän niin kuin askeleet"; testikohta kysytään käyttäjältä (kirjain) |
+| **askel** (lisätty 1.11.2026) | matalan rekisterin alut (bass-stemmi + 40–150 Hz kaista), jotka eivät osu muun orkesterin alkuihin ±80 ms; raportoidaan aika, voima ja väli edelliseen | käyttäjän havainto: "matalat äänet tulee eri tahtiin, vähän niin kuin askeleet"; varma kohta: **kirjain B** (käyttäjä 1.11.2026) |
+| **vaskiaalto** (lisätty 1.11.2026) | vaskikanavan hitaat paisutukset (< >): voimakkuuden nousu ja lasku 2–8 s ikkunassa, ja vuorottelu käyrätorvien ja pasuunoiden välillä (yksittäiset luokat, luku 7) | käyttäjän havainto: "hitaat vuorottelut kornojen <> ja pasuunoiden välillä teoksen loppupuolella"; varma kohta loppupuolella, kirjain kysytään |
 | **perheet (jouset / puupuhaltimet / vasket)** | PANNs-luokat perheiksi, mutta **painotettuna** stemmeillä ja spektrillä: vasket = other-stemmi + kirkkaus + attakki; puupuhaltimet = korkea harmoninen energia ilman tremoloa | PANNs yksin on sokea vaskille ff:ssä (oppi) |
 
 Jokainen kanava tallennetaan 30 fps -ruututaulukkona (`*.f32`) kuten ennen, ja `check_package.py` tarkistaa pituudet.
