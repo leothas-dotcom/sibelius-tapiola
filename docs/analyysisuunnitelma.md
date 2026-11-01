@@ -89,3 +89,25 @@ paloittelee itse); muuten 420 s limittäin ja `stitch`. Kaikki ajat ovat kuuntel
 Kanava on käytössä vasta, kun se on näyttänyt varman kohtansa (luku 2) pöytäkirjassa ja käyttäjä on kuullut
 otteen. Kanava, joka ei läpäise, merkitään kanavakorttiin kuolleeksi, ja sen tilalle tulee partituuri +
 spektrogrammi + käyttäjän korva.
+
+## 7. Yksittäisten soitinten erottelu (käyttäjän kysymys 1.11.2026)
+
+Käyttäjä: "pitäisi tarkemmin pystyä erottelemaan vielä eri soittimet. Mieti onko mahdollista?"
+Rehellinen vastaus: **perheet** (jouset, puupuhaltimet, vasket, patarummut) erottuvat modernista äänityksestä
+nykyisillä työkaluilla. **Yksittäiset soittimet** (käyrätorvi vs. trumpetti, huilu vs. klarinetti, sello vs.
+kontrabasso) erottuvat vain osittain, ja täsmällisesti vain partituurin avulla. Kolme tasoa, kevyimmästä raskaimpaan:
+
+| Taso | Menetelmä | Mitä antaa | Tarkkuus | Työ |
+|---|---|---|---|---|
+| A | **PANNsin yksittäiset luokat** (violin, cello, double bass, flute, clarinet, bassoon, French horn, trumpet, trombone, timpani) kanavina; ikkunaa lyhennetään (10 s → 2–3 s) | karkea "onko soitin äänessä" soittimittain | heikko tutissa; sekoittaa vaskia keskenään; ei hetken tarkkuutta | pieni, tehdään vaiheessa 3–4 (brief kohta 10) |
+| B | **Parempi luokitin** samoille luokille: PaSST tai AST (AudioSet-transformerit) ja Essentia-mallit; CLAP ei (rikki). Lisäksi **MT3 / YourMT3+** monisoitintranskriptio, joka antaa nuotit soittimittain (ohjelmanumerot) | soittimittain nuotit ja aktiivisuus | orkesterilla kokeellinen; vaatii mittaamisen varmoissa kohdissa | keskikokoinen: painot `models.json`:iin, testi V1–V8:ssa |
+| C | **Partituuripohjainen soitinkartta** (score-informed): partituurista tahti → mitkä soittimet soittavat (käyttäjä tai OMR / MusicXML / MIDI, jos löytyy), ja partituurin kohdistus ääneen DTW:llä synteettistä MIDI-renderöintiä vasten. Sen jälkeen jokaisen tahdin aika äänityksessä tiedetään, ja soitinaktiivisuus luetaan partituurista, ei arvata äänestä | **täsmällinen "kuka soittaa missäkin tahdissa"** jokaiselle levytykselle, myös omalle | kohdistuksen tarkkuus ±100–300 ms, iskut tarkentavat 10 ms:iin | suurin, mutta ainoa, joka vastaa kysymykseen kokonaan. Vaatii symbolisen partituurin: MusicXML/MIDI (etsitään; [tarkista] laatu) tai OMR IMSLP-skannauksesta (Audiveris), tai käyttäjän käsin kirjaama soitinkartta kirjaimittain |
+
+Suositus (ohjaaja): A heti mittana, C tavoitteena. C sopii projektin sääntöihin: partituuri on tarkistusta varten,
+tahtinumeroita ei lasketa äänestä vaan ne tulevat partituurista; DTW-kohdistus vain sitoo partituurin tahdit
+äänen aikaan. Käyttäjä on soitinnuksen asiantuntija, joten käsin kirjattu soitinkartta harjoituskirjaimittain
+(A–N: mitkä soittimet, mikä on päällimmäisenä) voi olla nopein ja luotettavin tie, ja C:n kohdistus vain antaa sille
+ajat. B kokeillaan, jos A ei riitä ja C:n symbolista partituuria ei löydy.
+
+Edellisen projektin oppi, joka pätee: kanava, jota ei ole testattu varmassa kohdassa, ei ole käytössä. Tämä koskee
+myös tason B ja C tuloksia.
