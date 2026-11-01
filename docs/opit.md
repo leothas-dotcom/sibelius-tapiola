@@ -2,6 +2,19 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Opas sekuntilistaksi
+
+**Toimi**
+- Käyttäjä: tarina oli hyvä, mutta visualisointia varten se pitää olla sekunneilla. Ratkaisu: tarina, etuala ja
+  tunnelma ovat teemakartan ankkurin kenttiä, ja opas generoi ne aikaleimojen viereen. Yksi lähde, ei kahta.
+- Alku lyhennettiin Sibeliuksen omiin sanoihin (esipuhe, Damroschin alaotsikko, Jalas, sonaattimuoto, "suoruus").
+- Uudet kentät: `etuala` (kerrokset: mikä edessä, mikä takana; käyttäjän kuvataideanalogia syvyydestä) ja
+  `tunnelma` (ahdistava, groteski valo, velloava; käyttäjä: monet kuulijat kokevat teoksen pelottavana).
+
+**Oppi**
+- Tarinamuoto oli oikea tapa löytää tulkinta, mutta väärä tapa säilyttää se. Kirjoita ensin vapaasti, siirrä sitten
+  ankkureihin.
+
 ## 1.11.2026 – Kuunteluoppaan tarina
 
 **Toimi**

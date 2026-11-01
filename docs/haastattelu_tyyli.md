@@ -305,3 +305,34 @@ Ohjaajan merkintä: (1) haku Sibeliuksen tehokeinoista kirjallisuudessa ja niide
 (`docs/briefit/tutkimus_tehokeinot.md`); (2) hiljaisuus tehokeinona oppaaseen: alun **yleistauko** (käyttäjä,
 partituuri) = ankkuri `hiljaisuus_1`; tulkinta: hiljaisuudet luomisen tuskana ja sinä, että tämän jälkeen ei tullut
 mitään; (3) videon tarkoitus: kunnianosoitus Sibeliukselle.
+
+## 1.11.2026 – käyttäjän palaute oppaan 1. versioon (saneltu, käyttäjän sanat)
+
+> Joo, just näin. Just tätä mä ajattelin. Tämä kuulostaa hyvältä, toi tarina tuossa noin. Kuunteluoppaassa. Mutta
+> näin pitäisi nyt siis ankkuroida noihin aikaleimoihin tarkasti. Eli milloin tulee mikäkin. Eli me tehdään sitä
+> visualisointia, niin tuommoinen tarinamuoto ei oikeastaan auta, vaan niiden täytyy olla niin kuin sekuntilta
+> siinä kuunteluoppaassa. Että millä sekunnilla mikäkin tulee. Niin, se mun piti vielä sanoa, että niin kuin mietit
+> kuvataidetta, niin siellähän taiteilijat käyttää niin kuin eri kerroksia esimerkiksi luomaan syvyyttä.
+> Taideteokset, ne ei ole kaksulotteisia. Vaan niin kuin tässä Sibelius on käyttänyt ehkä samaa menetelmää, että
+> siinä on niin kuin eri kerroksia. Mitkä toiset kuuluu niin kuin kaukaa ja toiset kuuluu niin kuin läheltä. Eli
+> jotkut on kaukaisuudessa, jotkut on niin kuin etualalla. Ja sittenhän se aina vuorottelee, että mikä on
+> etualalla. Ja tämä tekee siitä synkästä ja joidenkin mielestä tämähän on tosi ahdistava ja pelottava tämä
+> kappale. Itse niin kuin en itse koe sitä sellaisena, mutta jos katsoo vaikka tuon kommentteja tuosta Ratlen
+> YouTube-videon alta, niin ihmiset kokee tämän tosi ahdistavana ja pelottavana, niin me voitaisiin ehkä
+> semmoistakin tunnelmaa hakea sitten siihen. Ainakin tiettyihin kohtiin. Ja just se, mistä mä puhun siitä niistä
+> väärän toiveen, väärän toivon niin kuin mielikuvasta ja vähän semmoista groteskista valosta siis ja just siitä
+> semmoisesta siinä on semmoisia vyöryviä kohtia, jotka velloo ja on tosi pelottaviakin. Kuunnella. Niin joo,
+> tarina oli hyvä. Se on ehkä nyt vähän niin kuin turha tuossa niin kuin noin pitkänä, että sun täytyisi nyt just
+> ehkä kertoa just muutamalla sanalla, että mistä se teos kertoo. Ja aloita siitä vaikka niistä Sibeliuksen omista
+> sanoista. Mitkä sieltä löytyy sieltä dokumenteista. Ja sitten niin kuin laitat ne nämä asiat, mitä tuossa
+> tarinassa on. Niin niiden täytyy olla tuossa nimenomaan tuossa kuunteluoppaan sekuntilistalta. Että yksittäisenä
+> tarinana siitä ei ole
+
+### Ohjaajan poiminnat (sitovat)
+- **Opas = sekuntilista.** Tarina siirretään ankkureihin (`teemat.json` kenttä `tarina`), jolloin se generoituu
+  aikaleimojen viereen. Erillinen pitkä tarina poistetaan. Alku: muutama sana, **Sibeliuksen omista sanoista** alkaen.
+- **Kerrokset:** Sibelius kerrostaa kuin kuvataide syvyyttä: jotkut äänet kaukaa, jotkut läheltä, ja etuala vuorottelee.
+  Ankkureihin kenttä `etuala` (mikä on edessä, mikä takana). Tämä on tyyliohjeen ydinaineksia (vaihe 6).
+- **Tunnelma:** monille kuulijoille teos on ahdistava ja pelottava (Rattlen YouTube-kommentit); käyttäjä ei itse
+  koe niin, mutta sitä tunnelmaa haetaan tiettyihin kohtiin: väärä toivo, **groteski valo**, vyöryvät ja vellovat
+  kohdat. Kirjataan ankkureihin kenttään `tunnelma`.

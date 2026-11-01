@@ -174,7 +174,8 @@ def gen_minutes(m, td, rec):
         ta, tb = ajat[p["alku"]["id"]]["t"], ajat[p["loppu"]["id"]]["t"]
         if ta is not None and tb is not None:
             secs.append({"id": sid, "nimi": m.get("jaksot", {}).get(sid, {}).get("nimi", sid), "a": ta, "b": tb, "soi": p["alku"].get("soi", ""),
-                         "partituuri": partituuri(p["alku"]), "ea": ajat[p["alku"]["id"]], "eb": ajat[p["loppu"]["id"]]})
+                         "partituuri": partituuri(p["alku"]), "ea": ajat[p["alku"]["id"]], "eb": ajat[p["loppu"]["id"]],
+                         "pa": p["alku"], "pb": p["loppu"]})
     secs.sort(key=lambda s: s["a"])
     hits = [a for a in ank if ajat[a["id"]]["t"] is not None and a.get("tyyppi") == "hetki"]
     out = []
@@ -191,18 +192,18 @@ def gen_minutes(m, td, rec):
         starts = [s for s in secs if a <= s["a"] < b]
         ends = [s for s in secs if a <= s["b"] < b]
         evs = [(ajat[x["id"]]["t"], x, ajat[x["id"]], "") for x in here]
-        evs += [(s["a"], None, s["ea"], f"{s['nimi']}: alkaa") for s in starts]
-        evs += [(s["b"], None, s["eb"], f"{s['nimi']}: päättyy") for s in ends]
+        evs += [(s["a"], None, dict(s["ea"], _ankkuri=s["pa"]), f"{s['nimi']}: alkaa") for s in starts]
+        evs += [(s["b"], None, dict(s["eb"], _ankkuri=s["pb"]), f"{s['nimi']}: päättyy") for s in ends]
         evs.sort(key=lambda z: z[0])
         if not evs:
             out.append("*(ei ankkureita: edellinen jatkuu)*\n")
             continue
-        out.append("| Aika | Mitä | Mitä kuuluu | Merkitys (käyttäjä) | Varmuus |\n|---|---|---|---|---|")
+        out.append("| Aika | Mitä | Mitä kuuluu | Etuala / tausta | Tunnelma | Tarina (Lähteet / Käyttäjä / Ohjaaja) | Varmuus |\n|---|---|---|---|---|---|---|")
         for t, an, e, label in evs:
-            if an is not None:
-                out.append(f"| **{mm(t)}** | {an['nimi']} | {an.get('soi', '')} ({partituuri(an)}) |  | {varmuus_teksti(e, an)} |")
-            else:
-                out.append(f"| {mm(t)} | {label} | | | {varmuus_teksti(e, {})} |")
+            if an is None:
+                an = e.get("_ankkuri", {})
+            nimi = an.get("nimi", label) if label == "" else label
+            out.append(f"| **{mm(t)}** | {nimi} | {an.get('soi', '')} ({partituuri(an)}) | {an.get('etuala', '')} | {an.get('tunnelma', '')} | {an.get('tarina', '')} | {varmuus_teksti(e, an)} |")
         out.append("")
     return "\n".join(out)
 

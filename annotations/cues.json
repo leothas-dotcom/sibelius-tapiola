@@ -243,7 +243,7 @@
    "soittimet": [
     "patarummut"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Judd: teos alkaa patarumpujen kutsulla. Käyttäjä: \"tututum\". Ohjaaja: ei fanfaari vaan sysäys, jolla jokin suuri ja hidas lähtee liikkeelle; jään naksahdus ennen railoa; ääni, joka tulee maasta eikä ilmasta.",
    "lahde": "käyttäjä, partituuri; kirjallisuus: Judd",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -268,7 +268,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: ydinmotiivi, itseensä kääntyvä kuvio, josta kaikki kasvaa (Salmenhaara, Europadisc). Ohjaaja: metsä, joka on jo siinä kun silmät avataan; ei alku vaan läsnäolo. Mikään ei vielä etene: motiivi toistuu ja pysyy (Hepokoski: harmoninen liikkumattomuus).",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -303,7 +303,7 @@
    "soittimet": [
     "käyrätorvet"
    ],
-   "tarina": "",
+   "tarina": "Käyttäjä kuuli: \"jouset, taustalla vasket\". Ohjaaja: käyrätorvet ovat etäisyys, se mikä on puiden takana. Ensimmäinen kerros syvyyteen.",
    "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -334,7 +334,7 @@
    "soittimet": [
     "puupuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: ensimmäinen asia, joka liikkuu metsässä.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -369,7 +369,7 @@
    "soittimet": [
     "vaskipuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Sibelius-klubi: vaskien isku avaa Allegro moderaton; sävellaji häilyy h-mollin ja gis-mollin välillä. Ohjaaja: ensimmäinen kerta, kun jokin metsässä on suurempi kuin kuuntelija.",
    "lahde": "kirjallisuus: Tapiola-tutkimus luku 3 (vaskien isku avaa Allegro moderaton)",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -401,7 +401,7 @@
    "tahti_suhde": null,
    "soi": "yleistauko (G.P.) vaskien iskun jälkeen; ääni hiljenee lähes täydelliseen hiljaisuuteen",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Käyttäjä: \"siinä alussa on iso generaalipaussi\". Ohjaaja: hiljaisuus on tärkeämpi kuin isku: hetki, jolloin tajuaa, että metsä kuuntelee takaisin. Metsänpeitto: ei valoa eikä ääntä, vaan hiljeneminen, jossa polku päättyy. Ensimmäinen kerta, kun säveltäjä ei tiedä, jatkuuko musiikki.",
    "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -428,7 +428,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: kun jouset palaavat, ne palaavat toisessa asennossa kuin lähtivät. Musiikki jatkui.",
    "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -456,7 +456,7 @@
    "soittimet": [
     "matalat soittimet"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: urkupisteet luovat synkkyyden (Europadisc, Kolly). Ohjaaja: maan oma aika, hitaampi kuin ihmisen ja tuulen. Kun urkupiste soi, metsä pidättää hengitystään.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -483,7 +483,7 @@
    "soittimet": [
     "matalat soittimet"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: pohja irtoaa; metsä hengittää ulos.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -512,7 +512,7 @@
     "puupuhaltimet",
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Sibelius Jalakselle: puupuhallinjaksossa \"metsänpeikot ja -eläimet ilmestyvät\". Ohjaaja: pilkahduksia, joita ei saa kiinni; metsänpeiton eläin, \"vaikka kulkisit aivan eläimen ohitse, niin et sitä näe\" (SKVR). Ääniä, ei hahmoja.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -540,7 +540,7 @@
     "puupuhaltimet",
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: kuviot katoavat, kun katsoo.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -568,7 +568,7 @@
    "soittimet": [
     "puupuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Europadisc liittää kirjaimen G kahdeksasosakuviot esipuheen haltioihin (\"haltiat väikkyy, hämyn äänet soi\"). Ohjaaja: teoksen tihein liike; se ei muodosta melodiaa, vaan liikettä puiden välissä.",
    "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -605,7 +605,7 @@
    "soittimet": [
     "puupuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: liike jatkuu hetken jousissa ja vaskissa ilman puupuhaltimia, sitten laantuu. Käyrätorvet ja puupuhaltimet alkavat pulssata noin neljän sekunnin välein: jokin hengittää hitaasti puiden takana.",
    "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -633,7 +633,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Whitman: monoliittiset taustasoinnut; Goodwin: pitkät pidetyt puhallinsävelet ovat tausta, jonka huomaa vasta kun se katkeaa. Ohjaaja: Tapiolan \"ikisalat\": se mikä on ollut ennen kuuntelijaa ja on hänen jälkeensä. Matalin spektri koko teoksessa.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -660,7 +660,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: pudotus hiljaisuuteen; metsä syvenee vielä.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -686,7 +686,7 @@
    "tahti_suhde": null,
    "soi": "pitkä hiljainen jakso, vähän liikettä",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Ohjaaja: teoksen hiljaisin pitkä jakso. Jos kuuntelija kyllästyy tässä, hän kuuntelee väärin: pitää kuunnella, kuinka vähän tapahtuu ja kuinka paljon se painaa. Hepokoski: ääniarkit, jotka muuntuvat hitaasti; Nørgård piti tätä äärettömyyssarjansa edeltäjänä.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -714,7 +714,7 @@
     "vaskipuhaltimet",
     "patarummut"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: pohja alkaa nousta; vasket ja patarummut lähestyvät kaukaa.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -740,7 +740,7 @@
     "vaskipuhaltimet",
     "patarummut"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: tutti-isku, jonka jälkeen seuraa levoton, voimakas minuutti, jossa C-duuri välähtää pari kertaa ja katoaa, kuin valo pilvien raosta.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -770,7 +770,7 @@
    "tahti_suhde": "noin 5 tahtia ennen kirjainta M",
    "soi": "yllättävä C-duuri, noin viisi tahtia",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Käyttäjä: \"juuri ennen talvimyrskyä aurinko hetkellisesti valaisee (C-duuri). Se on lempikohtani. Mutta toivo on turha\"; \"auringon säde synkän metsän läpi\"; muistikuva luennasta \"sairas ja väärä toivo\" (ei löytynyt lähteistä); \"groteski valo\". Lähteet: kirjallisuus ei mainitse; Hayes ja Kallio: teos ei poistu h-mollista ennen koodaa, joten C-duuri on paikallinen, vieras sointu. Ohjaaja: C-duuri ei ole h-mollin rinnakkaisduuri (se olisi D); valo tulee väärästä suunnasta. Kalevalan 49. runon taottu aurinko: kullasta, kuusen latvassa, \"eipä kuu kumotakana\", näyttää kullalta mutta ei lämmitä. Viisi sekuntia kuuntelija uskoo valoon; se ei johda mihinkään, se vain lakkaa.",
    "lahde": "käyttäjä, partituuri; avainkohta",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -802,7 +802,7 @@
    "soittimet": [
     "vaskipuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Sibelius-klubi: vaskien jyrinä kuin salama ja ukkonen. Käyttäjä: \"M ei ole vielä talvimyrsky, siinä ehkä ennakoidaan sitä\". Ohjaaja: hetki, jolloin toivo osoittautuu turhaksi, mutta rangaistus ei vielä tule. Salama ilman sadetta. Teoksen julmin kohta: Sibelius näyttää, mitä on tulossa, ja antaa odottaa kolme minuuttia.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -830,7 +830,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: teoksen jännitteisin jakso, nopea, dissonoiva, kromaattinen kuviointi ilman selvää sävellajia. Ei myrsky, vaan hermo. Tämä on kohta, josta kuulijat kirjoittavat ahdistavana.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -857,7 +857,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: jousten hermo lakkaa; vasket ottavat tilan.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -886,7 +886,7 @@
     "käyrätorvet",
     "trumpetit"
    ],
-   "tarina": "",
+   "tarina": "Käyttäjä: \"hitaat vuorottelut kornojen <> ja trumpettien välillä\". Ohjaaja: jos metsällä on hengitys, se on tässä: kaksi vaskiryhmää hengittävät vuorotellen kuin kaksi suurta rintakehää puiden takana. Kohta, jossa Sibeliuksen oma kamppailu kuuluu selvimmin: ei atonaalisuutta vastaan vaan tiivistämisen puolesta (Ross: tiukin ja tiivein).",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -920,7 +920,7 @@
     "käyrätorvet",
     "trumpetit"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: hengitys hiljenee; harva kuviointi ja toinen vaskipaisunta, sitten pitkä lasku kohti hiljaisuutta.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -946,7 +946,7 @@
    "tahti_suhde": null,
    "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen ennen myrskyä",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Ohjaaja: toinen hiljaisuus on ensimmäisen peili. Ensimmäisessä metsä kuunteli; tässä se kääntyy pois. Ensimmäiset kymmenen sekuntia ovat tyhjiä. Toinen kerta, kun säveltäjä ei tiedä, jatkuuko musiikki.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -971,7 +971,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Käyttäjä: \"alkaa ppp tahdissa 523 ja suurenee nopeasti, niinkuin kaukaa tuleva lumi ja jää. Aluksi se vain näkyy\". Lähteet: Grimley: alku kahisevaa jousifiguraatiota ilman selvää tahtilajin tuntua; myrsky on paikallisesti \"terrifyingly unmotivated\", sillä ei ole syytä. Ohjaaja: horisontti, joka alkaa liikkua; ei vielä ääntä vaan muutos siinä, miten kaukainen valo lankeaa.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1008,7 +1008,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: hiljaisuus päättyy, mutta myrsky on jo matkalla sen sisällä.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1033,7 +1033,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: kolmekymmentä desibeliä kymmenessä sekunnissa, kuin jokin tulisi pellon yli. Lumi ja jää lähestyvät.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1059,7 +1059,7 @@
     "jouset",
     "vaskipuhaltimet"
    ],
-   "tarina": "",
+   "tarina": "Käyttäjä: t. 540 talvimyrsky iskee päälle. Lähteet: Tovey: hirmumyrsky, joka taivuttaa latvat ja uhkaa metsän jättiläisiä; BBC: kimmeltävä puolisävelaskelin liikkuva jousiparvi, joka purkautuu vaskien ja puupuhaltimien huutoon. Myrsky ei ole esipuheessa. Ohjaaja: en kuule säätä. Kuulen sen, mitä Tapio on: Kalevalan 47. runon Ukon tuli iskee \"läpi taivahan yheksän, halki kuuen kirjokannen\", pystysuoraan kerrosten läpi. Se, mikä on ollut puiden takana koko ajan, tulee läpi. Ja säveltäjän tarinassa: maailma, joka ei enää ole hänen, tulee hänen metsäänsä. Myrskyssä ei ole melodiaa, vain motiivin sirpaleita.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1094,7 +1094,7 @@
    "soittimet": [
     "koko orkesteri"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: teoksen voimakkain kohta, tiheä tutti, jossa yksittäisiä soittimia ei enää erota. Sibelius piti Kajanuksen levytystä liian hitaana ja sanoi, ettei \"ranskalainen pehmeys\" sovi Tapiolaan vaan suoruus (Jalaksen muistiinpanot, [tarkista]).",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1117,7 +1117,7 @@
    "tahti_suhde": null,
    "soi": "äkillinen voimistuminen hiljaisesta kohdasta",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Ohjaaja: myrsky palaa vielä kerran hiljaisesta; aallot eivät lopu yhteen.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1142,7 +1142,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Europadisc, Grimley: \"huuto\" korkeissa jousissa t. 586–587. Ohjaaja: ainoa kohta, jossa kuulen ihmisen. Ei hahmoa, vaan ääni, joka on jäänyt metsään, kun myrsky meni. Madetoja kuuli 1927 teoksessa \"yksinäisen vaeltajan, joka purkaa elämän tuskaa\"; jos hän on jossain, hän on tässä, hetken, ja sitten metsä peittää hänet taas.",
    "lahde": "kirjallisuus: Grimley (tahdit), Europadisc (luonnehdinta) [tarkista partituurista]",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1177,7 +1177,7 @@
    "soittimet": [
     "koko orkesteri"
    ],
-   "tarina": "",
+   "tarina": "Ohjaaja: viimeinen tutti-huipennus ei ole voitto: se on viimeinen aalto, joka vyöryy ohi. Sen jälkeen pimeys.",
    "lahde": "analyysi: aikajana",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1205,7 +1205,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Tovey: \"aamen\"; Pursglove: tunnustus; BSO: kolme puhtaan duurisoinnun sykäystä, rauha voi olla petollinen; Hayes, Sibelius-klubi, Kallio: jäähyväiset; Whitehouse: heikko siunaus; Oramo: levollinen; Kallio: teoksen ainoa siirtymä mollista duuriin. Dynamiikkamerkintää ei anna yksikään lähde. Käyttäjä: \"toivo kiitos hiljaisuus ... huokaus ... massiivinen päätöspiste, mutta ei julistava, vaan hellä, mezzoforte-sävy\". Ohjaaja: C-duuri oli väärä valo, H-duuri on oikea, ja se tulee vasta kun mitään ei enää odoteta. Sama sävel kuin alussa, mutta duurissa: metsä on sama, kuuntelija ei. Jäähyväinen, joka ei ole jäähyväinen, koska hän aikoi jatkaa; siksi mezzoforte eikä pianissimo. Se jättää oven auki.",
    "lahde": "kirjallisuus: Wilker (tahdit); käyttäjä (dynamiikka mezzoforte-sävyinen) [tarkista partituurista]",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1232,7 +1232,7 @@
    "soittimet": [
     "jouset"
    ],
-   "tarina": "",
+   "tarina": "Lähteet: Wilker: bassoissa vielä yksi hidas syke t. 629–630. Ohjaaja: viimeinen askel, jota ei seuraa toinen.",
    "lahde": "kirjallisuus: Wilker (tahdit)",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1256,7 +1256,7 @@
    "tahti_suhde": "viimeinen ääni",
    "soi": "teoksen viimeinen ääni",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Ohjaaja: kolmas hiljaisuus, teoksen jälkeinen. Se ei jatkunut kolmeenkymmeneen vuoteen. Kuuntelija ei voi tietää sitä teoksen sisällä; me tiedämme, ja siksi tämä hiljaisuus painaa enemmän kuin sen kesto. Kunnianosoitus.",
    "lahde": "kirjallisuus: Wilker (634 tahtia)",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
@@ -1279,7 +1279,7 @@
    "tahti_suhde": null,
    "soi": "oktatoninen \"tuulenpuuska\"",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Lähteet: Grimley: oktatoninen tuulenpuuska t. 21–25. Ohjaaja: ensimmäinen kerta, kun ilma liikkuu metsässä.",
    "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
    "varmuus": "arvio",
    "lahde_aika": "arvio",
@@ -1310,7 +1310,7 @@
    "soittimet": [
     "matalat soittimet"
    ],
-   "tarina": "",
+   "tarina": "Käyttäjä: \"matalat äänet tulee eri tahtiin, vähän niin kuin askeleet ... onko ne Tapion jättiläisen askeleita\". Ohjaaja: askeleet kyllä, kävelijää ei. Jokin, jonka painon kuulee mutta jota ei näe. Kalevalan Tapio: halliparta, havuhattu, naavaturkki, mutta kuvituksissa lähes tyhjä aihe.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "arvio",
    "lahde_aika": "arvio",
@@ -1343,7 +1343,7 @@
    "tahti_suhde": "kirjaimen J jälkeen",
    "soi": "ensimmäinen con sord. (sordiino)",
    "soittimet": [],
-   "tarina": "",
+   "tarina": "Käyttäjä: alussa ei ole sordiinoja, ensimmäinen con sord. J:n jälkeen. Ohjaaja: sordiino ei himmennä vain ääntä vaan etäisyyttä: metsä on nyt kaukana, tai kuuntelija on syvällä sen sisällä, eikä niitä voi erottaa toisistaan.",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "arvio",
    "lahde_aika": "arvio",
