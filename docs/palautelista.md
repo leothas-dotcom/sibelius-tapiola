@@ -12,3 +12,6 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 4 | 1.11. | – | "Alussa ei ole sordinoja, ensimmäinen con sord on harjoituskirjain J jälkeen." | ✅ kirjattu | tutkimus ja Geminin lista korjattu; Del Marin t. 130 merkitty [tarkista] |
 | 5 | 1.11. | – | "Teos alkaa patarumpusoololla. Se on kiistaton." | ✅ todennettu | aksentit 1,61 s z14; matala kanava 1,60 s; pöytäkirja 0–60 s |
 | 6 | 1.11. | – | "Tee sellaiset analyysityökalut että KUULET NÄMÄ ASIAT." | 🔶 osittain | V1 mitattu; V2–V3 vain PANNs, heikko; perhekanavat eivät erottele (kanavakortti) |
+| 7 | 1.11. | 1,6 s | "nopea patarumputremolo. Tututum." | ✅ todennettu | käyttäjä kuuli; aksentit 1,61/1,79/1,88 s |
+| 8 | 1.11. | 4,6–5,2 s | "Jouset, taustalla vasket." | ✅ todennettu | käyttäjä kuuli; vaskikanava 0,18–0,32 kohdassa 3–6,5 s ei ollut väärä positiivinen |
+| 9 | 1.11. | – | "Sibelius on kirjoittanut mestarillisen soitinnuksen, ja se PITÄÄ tunnistaa." | 🔶 osittain | modernilla äänityksellä tunnistuu (vertailu60); 1932-levyllä ei vielä; vertailukartta ehdotettu |

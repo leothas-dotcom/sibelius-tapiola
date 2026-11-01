@@ -2,6 +2,18 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Vertailu moderniin äänitykseen
+
+**Toimi**
+- Käyttäjän ehdotus: sama putki modernille äänitykselle (Rattle/LSO 2022) ratkaisi kysymyksen "äänitys vai
+  työkalut" yhdellä ajolla: modernilla jouset, vasket ja puupuhaltimet erottuvat selvästi, 1932-levyllä eivät.
+- yt-dlp lisättiin manifestiin valinnaisena ryhmänä (`uv add --optional vertailu`), ei käsin.
+- Vertailuäänitys on vain kalibrointiin: ei totuus, ei videoon, ei gittiin.
+
+**Oppi**
+- Kun kanava ei erottele, testaa ensin lähde toisella äänityksellä ennen kuin viritetään menetelmää.
+- Demucsin drums-stemmi ei tunnista patarumpuja kummassakaan äänityksessä; matala kaista ja aksentit tunnistavat.
+
 ## 1.11.2026 – Vaihe 1 ja ensimmäinen kuuntelu (60 s)
 
 **Toimi**

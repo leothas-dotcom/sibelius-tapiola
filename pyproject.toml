@@ -19,6 +19,11 @@ dependencies = [
     "torchcrepe==0.0.24",      # melodian ja basson sävelkorkeus
 ]
 
+[project.optional-dependencies]
+vertailu = [
+    "yt-dlp>=2025.1",
+]
+
 [tool.uv]
 package = false
 # Projekti ajetaan Windowsissa (setup.ps1); lukitus vain sille.
