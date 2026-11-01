@@ -257,3 +257,8 @@ Ohjaajan merkintä (käyttäjä partituurista): **myrskyn tulo alkaa ppp t. 523*
 Aluksi se vain näkyy, ja iskee sitten päälle." Tämä on jo kuvakieltä: etäisyys → lähestyminen → isku. Mitattava
 kahtena ankkurina: `myrsky_nakyy` (t. 523, ppp, crescendo alkaa) ja `myrsky_iskee` (t. 540). Rattlessa ehdokas:
 nousu 14:03–14:29 hiljaisuudesta (26 s alle −45 dBFS) jaksoon 14:21–15:21; huippu 15:09.
+
+> Jatka teemakarttaan
+
+Ohjaajan merkintä 1.11.2026: käyttäjä ei kuunnellut otteita vielä; teemakartta tehdään analyysiajoin
+(`varmuus: analyysi`) ja ajat vahvistetaan myöhemmin korvalla. Brief: `docs/briefit/vaihe5_teemakartta.md`.
