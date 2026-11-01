@@ -272,3 +272,29 @@ myrskymeri-ekspressionismi, pohjoisen hengen ylevöinti (sitoutunut kansallismie
 
 **Korjauksia briefin oletuksiin:** Tulenkantajat oli kirjallinen ryhmä; Burchfieldin *Night Wind* on 1918; Harrisin
 jäävuoret 1930 ja Carrin metsäpyörteet 1935 jatkavat 1920-lukua; Thesleffin lähes abstrakti vaihe on myöhäinen.
+
+## 11. Suomalainen metsämytologia abstraktin kuvan aineksina (`docs/tutkimus/mytologia.md`)
+
+Noin 2300 sanaa, painopiste Kalevalassa ja SKVR:n runoissa (Haavio, Siikala, Pentikäinen vain välillisesti).
+Viisi vahvinta ainesta (agentin poiminta, lähteet tiedostossa):
+1. **Matka Tapiolaan ja sen tila:** soiden ja korpien yli, "Tapion talot näkyivät, ukset kulta kuumottivat poikki
+   suosta" (Kalevala 14); kolme linnaa, puinen, luinen ja kivinen, kussakin kuusi kultaikkunaa. Kuva: himmeä kulta
+   tumman massan takana, kerroksina.
+2. **Metsänpeitto:** näkymättömyys ja hiljeneminen, ei valoilmiö: "vaikka kulkisit aivan eläimen ohitse, niin et sitä
+   näe" (SKVR VI2 5391); polku päättyy, latvat sidotaan yhteen.
+3. **Metsä kolmena kerroksena ja sininen salo:** "alta harva, päältä tiheä, keskeltä läpinäkyvä" (SKVR III1 1231);
+   salo on synkkä tai sininen; "kuuna paistoi kuusen oksat, päivänä petäjän latvat" (Kalevala 14).
+4. **Tapion pöytä ja merkit:** kolme runkoa pystyyn, vaakalauta, pisarat juurille (SKVR IX3 982); "pilkut pitkin
+   maita, rastit vaaroihin"; karsikko. Pystysuora kohtaa vaakasuoran.
+5. **Ääni ja iskut:** "soi metsä, kumisi korpi"; torvi, pilli, kantele; revontulet kähisevät; Ukon tuli iskee
+   pystysuoraan kerrosten läpi (SKVR II 699), kipinä repäisee taivaan "läpi taivahan yheksän" (Kalevala 47).
+
+**Auringon kätkeminen (Kalevala 47–49):** kuu ja päivä houkutellaan puun latvaan, viedään "pimeähän Pohjolahan",
+"vuorehen teräksisehen", yhdeksän oven ja sadan salvan taakse; yö "pitkä, pilkkoisen pimeä". Uusi aurinko taotaan
+kullasta ja nostetaan kuusen latvaan, **mutta se ei loista**: "eipä kuu kumotakana", "ei salvat sanoilla taitu".
+Agentin merkitty tulkinta: lähin vastine auringonsäteelle, joka pettää, on **taottu aurinko, joka näyttää kullalta
+mutta ei valaise**. Lähteistä ei löytynyt valoa, joka pettäisi juuri ennen myrskyä; tämä on käyttäjän tulkinta ja
+mytologia antaa sille kaiun, ei lähteen.
+
+Aukot: kuvataideluku ohut; Gallen-Kallelan ornamentit, Simbergin metsät, Tapiola-ryijyt ja Aalto varmistamatta;
+kaiun haltiaa ei löytynyt SKVR:stä.
