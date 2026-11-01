@@ -62,6 +62,7 @@ audiosta." Tärkeysjärjestys:
 | **urkupiste** | bass-stemmin CREPE-sävel, jonka kesto > 4 s | Tapiolan matalat urkupisteet; kertoo, milloin pohja pysyy ja milloin liikkuu |
 | **duuri/molli ja C-duuri-ilmaisin** | chroma-korrelaatio h-molli-, D-duuri-, C-duuri- ja H-duuri-kolmisointuihin, 1 s ikkuna | V6 ja V8; käyttäjän avainkohta mitataan, ei arvata |
 | **liiketiheys** | onset-tiheys other-stemmissä 2 s ikkunassa | erottaa "peikkojakson" kuviot pitkistä äänistä |
+| **askel** (lisätty 1.11.2026) | matalan rekisterin alut (bass-stemmi + 40–150 Hz kaista), jotka eivät osu muun orkesterin alkuihin ±80 ms; raportoidaan aika, voima ja väli edelliseen | käyttäjän havainto: "matalat äänet tulee eri tahtiin, vähän niin kuin askeleet"; testikohta kysytään käyttäjältä (kirjain) |
 | **perheet (jouset / puupuhaltimet / vasket)** | PANNs-luokat perheiksi, mutta **painotettuna** stemmeillä ja spektrillä: vasket = other-stemmi + kirkkaus + attakki; puupuhaltimet = korkea harmoninen energia ilman tremoloa | PANNs yksin on sokea vaskille ff:ssä (oppi) |
 
 Jokainen kanava tallennetaan 30 fps -ruututaulukkona (`*.f32`) kuten ennen, ja `check_package.py` tarkistaa pituudet.

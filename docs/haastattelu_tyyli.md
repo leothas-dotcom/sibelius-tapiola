@@ -194,3 +194,19 @@ ja ajat ovat levytyskohtaisia; sama analyysi ajetaan uudelle äänitykselle, ja 
 
 Ohjaajan merkintä: kysymys yksittäisten soitinten erottelusta (ei vain perheet). Vastaus ja vaihtoehdot
 `docs/analyysisuunnitelma.md` luku 7 (1.11.2026).
+
+## 1.11.2026 – käyttäjän idea: matalat äänet askelina (saneltu, käyttäjän sanat)
+
+> Joo, semmoinen vielä juttu, mitä tässä rupesin miettimään, että Sibelius käyttää aika usein semmoista niin
+> matalat äänet tulee tuossa niin vähän niin kuin eri tahtiin, vähän niin kuin askeleet. Niin mietitte, mitähän ne
+> voisi olla sitten tässä niin kuin kuvakielessä sitten. Semmoisia niin onko ne sitten sen Tapion rättiläisen
+> [= jättiläisen?] askeleita vai
+
+### Ohjaajan merkintä
+- **Havainto:** matalat äänet (sellot, kontrabassot, fagotit, kontrafagotti, patarummut?) tulevat eri tahtiin kuin
+  muu orkesteri, kuin askeleet. Käyttäjän kuvaehdotus: Tapion jättiläisen askeleet. Hahmoja ei näytetä, joten
+  askel olisi **voima tai jälki** (paino, maan liike, jälki lumessa, runkojen huojunta), ei jalka. Päätetään
+  tyyliohjeessa.
+- **Mitattava:** uusi kanava `askel`: matalan rekisterin (bass-stemmi + 40–150 Hz) alut, jotka eivät osu muun
+  orkesterin alkuihin (±80 ms). Testikohta tarvitaan: käyttäjältä harjoituskirjain, jossa askeleet kuuluvat
+  selvimmin. Lisätty `docs/analyysisuunnitelma.md` lukuun 3.2.
