@@ -20,10 +20,10 @@ ja kustantaja muotoili siitä partituurin nelisäkeen (Sibeliuksen oma sanamuoto
 Damroschin ehdottama alaotsikko, jonka Sibelius hyväksyi: villi pohjoinen metsä, jossa asuvat metsien jumala ja
 hänen nymfinsä. Ainoa tapahtuma, jonka Sibelius itse nimesi, on vävy Jussi Jalakselle sanottu: puupuhallinjaksossa
 "metsänpeikot ja -eläimet ilmestyvät". Muodosta hän sanoi, että se on sonaattimuoto. Kajanuksen levytyksestä hän
-sanoi vuonna 1943, että se on liian hidas ja ettei "ranskalainen pehmeys" sovi Tapiolaan vaan suoruus
+sanoi vuonna 1943, että se on liian hidas ja että "elegantti ranskalainen pehmeys ei sovi Tapiolaan" ja että "iskevyys ei ole Tapiolalle vierasta"
 (Jalaksen muistiinpanot, [tarkista]).
 
-Siinä kaikki: metsä, metsän jumala, hämärässä väikkyvät haltiat, ja suoruus. Loput on kuulijan. Teos on h-mollissa,
+Siinä kaikki: metsä, metsän jumala, hämärässä väikkyvät haltiat, ja iskevyys. Loput on kuulijan. Teos on h-mollissa,
 yksiosainen, 634 tahtia, noin 18 minuuttia, ja se kasvaa yhdestä alun motiivista. Se on Sibeliuksen viimeinen suuri
 teos, mutta hän ei tiennyt sitä: hän siirtyi Tapiolasta kahdeksanteen sinfoniaan, joka paloi. Sibelius kerrostaa
 orkesterin: jotkut äänet kuuluvat kaukaa, jotkut läheltä, ja etuala vaihtuu (käyttäjä). Monelle kuulijalle teos on
@@ -268,7 +268,7 @@ Mitattu: taso -57…-13 dBFS (keskiarvo -31); liike 0.7 alkua/s.
 
 | Aika | Mitä | Mitä kuuluu | Etuala / tausta | Tunnelma | Tarina (Lähteet / Käyttäjä / Ohjaaja) | Varmuus |
 |---|---|---|---|---|---|---|
-| **15:10.6** | Myrskyn voimakkain kohta | koko äänitteen voimakkain jakso, tiheä tutti (ei tiedossa [tarkista]) | kaikki edessä | huippu, ylivoima | Ohjaaja: teoksen voimakkain kohta, tiheä tutti, jossa yksittäisiä soittimia ei enää erota. Sibelius piti Kajanuksen levytystä liian hitaana ja sanoi, ettei "ranskalainen pehmeys" sovi Tapiolaan vaan suoruus (Jalaksen muistiinpanot, [tarkista]). | analyysi (ei kuultu), luottamus hyvä |
+| **15:10.6** | Myrskyn voimakkain kohta | koko äänitteen voimakkain jakso, tiheä tutti (ei tiedossa [tarkista]) | kaikki edessä | huippu, ylivoima | Ohjaaja: teoksen voimakkain kohta, tiheä tutti, jossa yksittäisiä soittimia ei enää erota. Sibelius piti Kajanuksen levytystä liian hitaana ja sanoi Jalakselle 12.12.1943: "Elegantti ranskalainen pehmeys ei sovi Tapiolaan. Iskevyys ei ole T:lle vierasta." (Sibelius-klubi). | analyysi (ei kuultu), luottamus hyvä |
 | **15:35.9** | Toinen paisunta myrskyn jälkeen | äkillinen voimistuminen hiljaisesta kohdasta (ei tiedossa [tarkista]) | vasket nousevat takaa edelle | velloava | Ohjaaja: myrsky palaa vielä kerran hiljaisesta; aallot eivät lopu yhteen. | analyysi (ei kuultu), luottamus hyvä |
 
 ##### 16:00–17:00

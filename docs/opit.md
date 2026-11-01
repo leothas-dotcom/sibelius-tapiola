@@ -7,7 +7,7 @@
 **Toimi**
 - Käyttäjä: tarina oli hyvä, mutta visualisointia varten se pitää olla sekunneilla. Ratkaisu: tarina, etuala ja
   tunnelma ovat teemakartan ankkurin kenttiä, ja opas generoi ne aikaleimojen viereen. Yksi lähde, ei kahta.
-- Alku lyhennettiin Sibeliuksen omiin sanoihin (esipuhe, Damroschin alaotsikko, Jalas, sonaattimuoto, "suoruus").
+- Alku lyhennettiin Sibeliuksen omiin sanoihin (esipuhe, Damroschin alaotsikko, Jalas, sonaattimuoto, "iskevyys").
 - Uudet kentät: `etuala` (kerrokset: mikä edessä, mikä takana; käyttäjän kuvataideanalogia syvyydestä) ja
   `tunnelma` (ahdistava, groteski valo, velloava; käyttäjä: monet kuulijat kokevat teoksen pelottavana).
 

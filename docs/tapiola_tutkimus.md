@@ -169,8 +169,8 @@ liikkumattomuus, yksi motiivi) ja (2) ihminen sen sisällä (vaeltaja, tuska, ku
   Whitehouse "heikko siunaus"; Oramo "levollinen". Wilker: t. 624–634, bassoissa yksi sidos t. 629–630, "viimeinen
   hidas syke". Käyttäjän sanat "hellä", "huokaus", "kiitos" eivät esiinny lähteissä; lähin on "jäähyväiset".
   **Sibelius Jalasille 1943:** Kajanuksen levytys liian hidas, ja "ranskalainen pehmeys" ei sovi Tapiolalle vaan
-  suoruus (Sibelius-klubin kautta, [tarkista]). Tämä asettuu hellyyttä vastaan ja on syytä pitää mielessä, kun
-  lopun kuva päätetään: hellä ja suora eivät sulje toisiaan pois.
+  iskevyys (Sibelius-klubin kautta, [tarkista]). Tämä asettuu hellyyttä vastaan ja on syytä pitää mielessä, kun
+  lopun kuva päätetään: hellä ja iskevä eivät sulje toisiaan pois.
 
 ## 6. Kajanus ja levytys
 
@@ -324,3 +324,25 @@ lopussa. 7. sinfoniassa yksi fermaatti ja yksi Luftpause (Boyer); 5. sinfonian l
 Wilker pohtii, oliko Myrskyn alkusoitto viimeinen mahdollinen sinfoninen kehittely.
 
 Ei löytynyt: "Sibelius-aalto" nimityksenä, "kaukaa tuleva" -efekti Tapiolassa, terssikulut, "luontoääni".
+
+## 13. Esitysmerkinnät ja mitä Sibelius tarkoitti (`docs/tutkimus/esitysmerkinnat.md`)
+
+- **Rodziński-kirje** (FMQ 3/1991, "Tempo markings in Sibelius' Tapiola"): Rodziński kirjoitti, koska tempomerkintöjä
+  puuttui useasta kohdasta, ja Sibelius vastasi yksityiskohtaisesti (Ylivuori, FMQ 2026). Sisältö on vain painetussa
+  FMQ:ssa ja JSW I/16:n kriittisessä kommentaarissa ("Sibelius's notes concerning Tapiola as reported to Jussi Jalas").
+  **Hankittava kirjastosta.**
+- **Metronomiluvut:** painetussa partituurissa ei lukuja, vain suluissa puolinuotti Largamenten ja Allegro moderaton
+  (t. 21) perässä. Kilpeläinen: Handexemplar ja kirjeet sisältävät Sibeliuksen omat metronomimerkinnät; arvoja ei
+  verkossa. Sibelius metronomista: ei absoluuttista tempoa, luvut vain pahimpien virheiden estämiseksi (Boyer/Jalas).
+- **Vuoden 1926 painos on "Revised and edited by Carl Ettler"**: Breitkopf tarkisti partituurin Yhdysvaltain
+  tekijänoikeuden vuoksi eikä alkuperäistä ja tarkistusta voi erottaa (kirje Sibeliukselle 3.5.1926). **Painoksen
+  merkintöjä ei voi varmasti pitää Sibeliuksen omina; JSW I/16 on tarkistettu Urtext.** Tämä koskee myös projektin
+  IMSLP-skannausta.
+- **Sibeliuksen omat sanat Tapiolan esityksestä** (Jalakselle, Sibelius-klubin "Omin sanoin"): 9.4.1943 "Kajanuksen
+  Tapiola-levy on liian hidas"; 7.12.1943 Kajanus ei tuntenut Tapiolaa kyllin hyvin; **12.12.1943 "Elegantti
+  ranskalainen pehmeys ei sovi Tapiolaan. Iskevyys ei ole T:lle vierasta."** (Aiempi "suoruus" oli käännösvirhe
+  englannin "directness"-sanasta; korjattu 1.11.2026.) Kilpeläinen: liian hidas ja eloton, "must be played much more
+  dramatically". Yleisemmin: tempovaihdokset hänellä hyvin vähäisiä, pochettino liioitellaan (24.8.1940).
+- Ei löytynyt: Sibeliuksen omaa selitystä Largamentolle, Allegro moderatolle, dim. possibilelle, sordiinoille.
+- **Partituurihuomio:** näytesivulla (ja projektin skannauksen s. 6) selloissa "con sord. div." t. 39–48, ristiriidassa
+  käyttäjän "ensimmäinen con sord. J:n jälkeen" kanssa [käyttäjä tarkistaa].
