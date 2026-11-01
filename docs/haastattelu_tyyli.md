@@ -229,3 +229,15 @@ noin t. 392–396. Huomio ohjaajalta: kirjallisuus antaa "myrskyjaksolle" tahdit
 käyttäjä aloittaa talvimyrskyn kirjaimesta M = 397. Joko kirjallisuus tarkoittaa myöhempää huipennusta tai
 tahtilaskenta eroaa; tarkistetaan korvalla Rattlen aikajanasta, kun molemmat kohdat on paikannettu. Ei kiistellä:
 partituuri ja käyttäjän korva ratkaisevat.
+
+> No mitenköhän saisit tämän selville? Sinulle rakennettiin korvat tätä varten??? Voiko olla että teoksessa on
+> useampi myrsky? Ajattele nyt tulkintaa. Nämä eivät ole faktoja.
+
+Ohjaajan merkintä: oikein. Mitattiin heti (CPU, koko Rattle-äänitys): voimakkuus, liikkeen tiheys ja jousitremolon
+osuus sekunneittain → myrskypisteet. Tulos: **kymmenen myrskymäistä jaksoa**, kaksi suurta: 10:54–12:40 (kolme
+aaltoa, huippu 11:01 ja 11:56) ja 14:21–15:21 (pisin, tremolo-osuus korkein 0,36). Tulkintahypoteesi: M = t. 397 on
+ensimmäinen myrsky (käyttäjän talvimyrsky) noin 10:54, ja kirjallisuuden "myrskyjakso" t. 513–577 on toinen, suurempi
+myrsky noin 14:21–15:21. Juuri ennen 10:54 on voimakas jakso ilman tremoloa (10:26, −24,8 dBFS, tremolo 0,04):
+ehdokas C-duurin "auringonsäteelle". Kaikki tämä on tulkintaa ja odottaa käyttäjän korvaa. Otteet:
+`build/kuuntelu/otteet/ehdokas_M_ja_sitä_edeltävä_10m10-11m40.wav` ja `ehdokas_suuri_myrsky_14m10-15m35.wav`.
+Kuva: `build/rattle_koko_cpu_myrskyt.png`.
