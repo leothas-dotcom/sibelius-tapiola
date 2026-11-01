@@ -1,14 +1,259 @@
 # Tapiola: kuunteluopas
 
-*Tämän oppaan tarinaosat kirjoittaa käyttäjä haastattelussa; ne ovat tässä tyhjiä otsikoita. Generoidut osat (GEN-merkkien välissä)
-täytetään komennolla `.venv\Scripts\python.exe -I analysis/kuunteluopas.py --levytys rattle2022` teemakartasta
-(`annotations/teemat.json`) ja levytyksen ajoista (`annotations/ajat_<levytys>.json`): älä muokkaa niitä käsin.*
+*Opas on kuuntelijalle, joka sulkee silmänsä ja kuulee teoksen ensimmäistä kertaa: mitä kuuluu, mitä lähteet siitä
+sanovat, ja mitä me tulkitsemme. Tulkinta on merkitty: **Lähteet** (kirjallisuus, lähdeviitteet `docs/tapiola_tutkimus.md`),
+**Käyttäjä** (orkesterimuusikon oma mielikuvitus, lainattu), **Ohjaaja** (tämän oppaan kirjoittajan oma, luova tulkinta).
+Mikään näistä ei ole ainoa oikea: Sibelius ei kertonut tapahtumia, vain tilan. Me luomme tapahtumat itse, ja toinen
+kuulija saa luoda toiset.*
+
+*Ajat: generoidut osat (GEN-merkkien välissä) täyttää `analysis/kuunteluopas.py --levytys rattle2022` teemakartasta
+`annotations/teemat.json` ja levytyksen ajoista `annotations/ajat_rattle2022.json`. Tarinassa kohdat nimetään
+ankkureilla hakasulkeissa, esim. [auringonsade]; aika löytyy ankkuritaulukosta. Kaikki ajat ovat analyysin ehdotuksia,
+kunnes ne on kuultu.*
 
 ## Teos lyhyesti
 
+*Tapiola*, sinfoninen runo op. 112, on Jean Sibeliuksen viimeinen suuri orkesteriteos. Walter Damrosch tilasi sen
+New Yorkiin sähkeellä tammikuussa 1926, Sibelius sävelsi sen samana vuonna Ainolassa ja pyysi partituurin vielä
+syyskuussa takaisin korjattavaksi. Kantaesitys oli New Yorkissa 26.12.1926, Suomen ensiesitys Kajanuksen johdolla
+25.4.1927. Sen jälkeen Sibelius eli vielä kolmekymmentä vuotta eikä julkaissut yhtään suurta teosta: kahdeksas
+sinfonia paloi Ainolan takassa. Tutkijat ovat erimielisiä syistä (itsekritiikki, tiivistämisen raja, aika, terveys),
+ja yhdestä he ovat samaa mieltä: Sibelius ei tiennyt kirjoittavansa viimeistä. Hän siirtyi Tapiolasta kahdeksanteen.
+Jäähyväinen oli tahaton. (Lähteet: `docs/tutkimus/konteksti.md`.)
+
+Partituurin alussa on nelisäe, jonka kustantaja muotoili Sibeliuksen proosaselityksestä:
+
+> On metsät Pohjolassa sankat, tummat
+> ne ikisalat, haaveet hurjat loi.
+> Asunnot Tapion on siellä kummat,
+> haltiat väikkyy, hämyn äänet soi
+
+Siinä on koko ohjelma: metsä, metsän jumala, hämärässä väikkyvät haltiat. Ei tapahtumia. Teos on h-mollissa
+(rinnakkaisduuri D-duuri), yksiosainen, noin 18 minuuttia, 634 tahtia. Kokoonpano: 3 huilua (3. pikkolo), 2 oboeta,
+englannintorvi, 2 klarinettia, bassoklarinetti, 2 fagottia, kontrafagotti, 4 käyrätorvea, 3 trumpettia, 3 pasuunaa,
+patarummut ja jouset. Ei harppua, ei muita lyömäsoittimia. Sibelius ei sekoita ryhmiä, vaan kerrostaa ne (Hayes).
+Kaikki kasvaa yhdestä alun motiivista: Salmenhaaran mukaan siitä syntyy neljä perusmotiivia ja noin kolmekymmentä
+johdettua. Whittall kutsui teosta maalaukseksi, joka on nähty yhdessä jäätyneessä hetkessä.
+
+**Miten kuunnella.** Älä odota melodiaa, joka kehittyy ja palaa. Kuuntele tilaa: kuinka kaukaa ääni tulee, kuinka
+monta kerrosta soi yhtä aikaa, milloin pohja (sellot, kontrabassot, patarummut) liikkuu ja milloin se pysyy. Kuuntele
+hiljaisuuksia; niitä on kaksi, ja molemmat ovat tapahtumia. Ja kuuntele yhtä hetkeä, jota kirjallisuus ei mainitse:
+noin viisi tahtia C-duuria ennen harjoituskirjainta M.
+
+**Hiljaisuus tehokeinona.** Sibelius käyttää hiljaisuutta rakenteena, ei taukona. Tapiolassa on kaksi suurta
+hiljaisuutta: yleistauko alussa, vaskien iskun jälkeen [hiljaisuus_1_alku], ja pitkä hiljaisuus ennen myrskyä
+[hiljaisuus_2_alku], jonka sisällä ppp-kuviointi alkaa [myrsky_nakyy]. Lisäksi on pitkä lähes hiljainen jakso
+keskellä [hiljainen_jakso_alku] ja pimeys ennen H-duuria. **Käyttäjä:** "voisiko se viitata jotenkin siihen, että
+Sibeliuksella on sitä luomisen tuskaa ... tämä oli hänen viimeinen teos, ja sen jälkeen ei tullut enää mitään uutta."
+**Ohjaaja:** otan tämän oppaan läpi kulkevaksi langaksi. Jokainen hiljaisuus on hetki, jolloin säveltäjä ei tiedä,
+jatkuuko musiikki. Ensimmäinen hiljaisuus jatkuu, toinen jatkuu myrskynä, ja viimeinen, teoksen jälkeinen, ei jatkunut
+kolmeenkymmeneen vuoteen. Kuuntelija ei voi tietää sitä teoksen sisällä, mutta me tiedämme, ja siksi hiljaisuudet
+painavat enemmän kuin niiden kesto. Tämä on tulkinta, ja se on tämän videon syy: kunnianosoitus Sibeliukselle.
+
 ## Tarina
 
+### 1. Kolme lyöntiä pimeässä [avaus_patarumpu]
+
+Ensimmäinen ääni on patarumpu yksin: kolme lyhyttä lyöntiä, "tututum" (käyttäjä), ei säveltä, johon tarttua, vain
+kalvon tumma isku. Ei nuotti, vaan kumina. Juddin mukaan teos alkaa patarumpujen kutsulla; useimmat ohjelmakirjat
+ohittavat sen ja aloittavat jousista, mutta partituuri on selvä.
+
+**Ohjaaja:** tämä ei ole fanfaari eikä rummun kutsu taisteluun. Se on sysäys, jolla jokin suuri ja hidas lähtee
+liikkeelle: kuin jään naksahdus ennen kuin railo aukeaa, tai jalan paino, joka ei vielä ole askel. Ajattelen sitä
+äänenä, joka tulee maasta eikä ilmasta. Kaikki, mitä seuraa, soi sen jälkeen, ikään kuin tuo kolmen lyönnin paino
+olisi avannut tilan.
+
+### 2. Metsä ilmestyy [jouset_tulevat] [kayratorvet_vastaavat] [puhaltimet_tulevat]
+
+Heti perään jouset: ydinmotiivi, lyhyt, itseensä kääntyvä kuvio (Europadisc kutsuu sen alkusolua käänteeksi, joka
+palaa kaikissa myöhemmissä motiiveissa). Se ei ole teema vaan siemen. Sen alla, muutaman sekunnin päästä,
+käyrätorvet vastaavat pitkinä ääninä (käyttäjä kuuli: "jouset, taustalla vasket"). Sitten puupuhaltimet tulevat
+mukaan. Sibelius-klubin mukaan puhaltimien vastaus korostaa autiutta.
+
+**Lähteet:** Salmenhaara: tästä siemenestä kasvaa kaikki. Grimley nimeää tahteihin 21–25 oktatonisen
+"tuulenpuuskan" [tuulenpuuska]: ensimmäinen kerta, kun ilma liikkuu.
+
+**Ohjaaja:** jouset ovat metsä, joka on jo siinä, kun silmät avataan: ei alku vaan läsnäolo. Käyrätorvet niiden alla
+ovat etäisyys, se, mikä on puiden takana. Puupuhaltimet ovat ensimmäinen asia, joka liikkuu metsässä. Jos
+kuuntelet vain yhtä asiaa tässä, kuuntele, miten mikään ei vielä etene: motiivi toistuu, laskeutuu, nousee, mutta
+pysyy. Tämä on Hepokoskin "harmoninen liikkumattomuus", ja se on tahallista. Metsä ei kerro tarinaa, se on.
+
+### 3. Vaskien isku ja ensimmäinen hiljaisuus [vaskien_isku] [hiljaisuus_1_alku] [hiljaisuus_1_loppu]
+
+Alle minuutin kohdalla vasket iskevät, teoksen alun voimakkain hetki, ja liike kiihtyy nopeaksi kuvioinniksi.
+Sibelius-klubi: "vaskien isku avaa Allegro moderaton", ja sävellaji alkaa häilyä h-mollin ja gis-mollin välillä.
+Sitten, yllättäen, kaikki katkeaa: yleistauko (käyttäjä: "siinä alussa on iso generaalipaussi"), kolme sekuntia
+täydellistä hiljaisuutta, ja jouset aloittavat uudestaan.
+
+**Ohjaaja:** ensimmäinen isku on ensimmäinen kerta, kun jokin metsässä on suurempi kuin kuuntelija. Hiljaisuus sen
+perässä on tärkeämpi kuin isku: se on hetki, jolloin tajuaa, että metsä kuuntelee takaisin. Kalevalan metsänpeitto
+on juuri tätä: ei valoa, ei ääntä, vaan hiljeneminen, jossa polku päättyy. Kun jouset palaavat, ne palaavat toisessa
+asennossa kuin lähtivät.
+
+### 4. Askeleet ja pohja [askeleet_B] [urkupiste_H1_alku]
+
+Seuraavat minuutit ovat jousten ja vaskien vuorottelua lohkoissa, ja sitten vasket väistyvät: jäljelle jäävät
+sellot ja kontrabassot. Kirjaimen B kohdalla (t. 69) matalat äänet tulevat eri tahtiin kuin muu orkesteri,
+"vähän niin kuin askeleet" (käyttäjä). Myöhemmin kontrabassot asettuvat pitkälle urkupisteelle H:lla, yli kymmeneksi
+sekunniksi, ja liike lakkaa lähes kokonaan.
+
+**Käyttäjä:** "onko ne sitten sen Tapion jättiläisen askeleita".
+
+**Ohjaaja:** otan askeleet vastaan, mutta en kävelijää. Metsässä liikkuu jokin, jonka painon kuulee mutta jota ei
+näe: Kalevalassa Tapio on "halliparta, havuhattu, naavaturkki", mutta kuvituksissa hän on lähes tyhjä aihe, ja
+sekin on vihje. Pohja, joka välillä liikkuu omassa ajassaan ja välillä pysyy yhdellä sävelellä, on minulle maan
+oma aika: hitaampi kuin ihmisen, hitaampi kuin tuulen. Kun urkupiste soi, metsä pidättää hengitystään.
+
+### 5. Metsän olennot [nopea_liike_1_alku] [peikot_G_alku] [peikot_G_loppu]
+
+Keskivaiheilla puupuhaltimet alkavat kuvioida: nopeita kahdeksasosia, jotka tihenevät ja harvenevat aaltoina.
+Tämä on ainoa kohta, josta Sibelius itse sanoi jotain tapahtumaa: vävylleen Jussi Jalakselle hän kertoi, että
+puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät". Europadisc liittää kirjaimen G kahdeksasosakuviot
+esipuheen haltioihin, jotka "hämyn äänet soi".
+
+**Ohjaaja:** tässä on helppo kuulla keijuja, ja juuri siksi en kuule. Sibeliuksen peikot ovat ääniä, eivät
+hahmoja: pilkahduksia, joita ei saa kiinni, kuten metsänpeiton eläin, "vaikka kulkisit aivan eläimen ohitse,
+niin et sitä näe" (SKVR). Kuuntele, miten kuviot eivät koskaan muodosta melodiaa: ne ovat liikettä, joka väikkyy
+puiden välissä ja katoaa, kun katsoo. Käyrätorvet ja puupuhaltimet pulssaavat tämän jälkeen noin neljän sekunnin
+välein, kuin jokin hengittäisi hitaasti puiden takana.
+
+### 6. Syvä metsä ja pitkä pimeys [jousijakso_urkupiste_E_alku] [con_sord_J] [hiljainen_jakso_alku]
+
+Teoksen keskiosa laskeutuu alas: matalat jouset urkupisteellä, hiljaisia pudotuksia, ensimmäiset sordiinot
+kirjaimen J jälkeen (käyttäjä: alussa niitä ei ole). Kymmenennen minuutin kohdalla on teoksen hiljaisin pitkä
+jakso: yli viisitoista sekuntia hyvin hiljaa, lähinnä heikkoa jousiääntä.
+
+**Lähteet:** Whitman (Cleveland) kutsuu keskiosan taustasointuja "monoliittisiksi"; Goodwin (BSO): pitkät pidetyt
+puhallinsävelet ovat tausta, jonka huomaa vasta kun se katkeaa. Hepokoski: ääniarkit, jotka muuntuvat hitaasti;
+Nørgård piti tätä äärettömyyssarjansa edeltäjänä.
+
+**Ohjaaja:** tämä on Tapiolan "ikisalat", se mikä on ollut ennen kuuntelijaa ja on hänen jälkeensä. Sordiino ei
+himmennä vain ääntä vaan etäisyyttä: metsä on nyt kaukana, tai kuuntelija on syvällä sen sisällä, eikä niitä voi
+erottaa toisistaan. Jos kuuntelija kyllästyy tässä, hän kuuntelee väärin: pitää kuunnella, kuinka vähän
+tapahtuu, ja kuinka paljon se painaa.
+
+### 7. Vasket nousevat, ja aurinko [vaski_tutti_620] [auringonsade]
+
+Hiljaisuudesta vasket ja patarummut nousevat tutti-iskuun, ja sen jälkeen seuraa levoton, voimakas minuutti,
+jossa C-duuri välähtää pari kertaa ja katoaa. Sitten, noin viisi tahtia ennen kirjainta M (t. 392–396), se
+pysähtyy: viisi sekuntia puhdasta C-duuria, matala jännite, ei liikettä, jouset. Kirjallisuus ei mainitse tätä
+kohtaa lainkaan. Hayesin mukaan Tapiola ei koskaan modulaatiolla poistu h-mollistaan, ja Kallion mukaan ainoa
+siirtymä mollista duuriin on kooda: siis tämä C-duuri on paikallinen, vieras sointu, ei kotiin palaava.
+Sibelius-klubi kuvaa kohtaa kirkastuvana, hymnimäisenä jousisekvenssinä korkeassa rekisterissä ennen vaskien
+jyrinää.
+
+**Käyttäjä:** "juuri ennen talvimyrskyä aurinko hetkellisesti valaisee (C-duuri). Se on lempikohtani. Mutta toivo on
+turha: siitä alkaakin myrsky!" Ja: "niinkuin auringon säde synkän metsän läpi". Ja muistikuva luennasta, jossa se on
+"ikäänkuin 'sairas' ja 'väärä' toivo", jota ei löytynyt kirjallisuudesta.
+
+**Ohjaaja:** C-duuri ei ole h-mollin rinnakkaisduuri (se olisi D). Siksi valo tulee väärästä suunnasta. Minulle
+tämä on Kalevalan 49. runon taottu aurinko: Ilmarinen takoo kullasta uuden auringon ja nostaa sen kuusen latvaan,
+"eipä kuu kumotakana", se näyttää kullalta mutta ei lämmitä. Viisi tahtia kuuntelija uskoo valoon. Kuuntele, miten
+se ei johda mihinkään: ei kadenssia, ei vastausta, se vain lakkaa olemasta.
+
+### 8. M: ennakko, ei vielä myrsky [M_ennakko] [jannitejakso_alku]
+
+C-duurin viimeisestä sekunnista vasket räjähtävät: kirjain M, t. 397. Liike kymmenkertaistuu, patarummut tulevat,
+jouset katoavat kokonaan vaskien alle. Sibelius-klubi: "vaskien jyrinä kuin salama ja ukkonen". Sen jälkeen jouset
+ottavat vallan: teoksen jännitteisin jakso, nopea, dissonoiva, kromaattinen kuviointi ilman selvää sävellajia.
+
+**Käyttäjä:** "M ei ole vielä talvimyrsky. Siinä ehkä ennakoidaan sitä."
+
+**Ohjaaja:** M on se hetki, jolloin toivo osoittautuu turhaksi, mutta rangaistus ei vielä tule. Salama ilman
+sadetta. Tämä on dramaturgisesti teoksen julmin kohta: Sibelius näyttää, mitä on tulossa, ja antaa sitten
+odottaa kolme minuuttia. Kuuntele jousten kuviointia M:n jälkeen: se ei ole myrsky, se on hermo.
+
+### 9. Hengitys vaskissa [allegro_moderato_O_alku] [allegro_moderato_O_loppu]
+
+Kirjaimen O jälkeen, Allegro moderato (t. 462), jousten liike lakkaa ja vasket paisuvat vuorotellen: käyrätorvet
+nousevat ja laskevat (crescendo–diminuendo), trumpetit vastaavat, noin neljän sekunnin pulsseina. Sitten
+hiljaisempi, harva kuviointi, toinen vaskipaisunta, ja pitkä lasku kohti hiljaisuutta.
+
+**Käyttäjä:** "hitaat vuorottelut kornojen <> ja trumpettien välillä".
+
+**Ohjaaja:** jos metsällä on hengitys, se on tässä. Kaksi vaskiryhmää hengittävät vuorotellen, kuin kaksi
+suurta rintakehää puiden takana. Tämä on myös kohta, jossa Sibeliuksen oma kamppailu kuuluu selvimmin: ei
+atonaalisuutta vastaan vaan tiivistämisen puolesta. Ross kutsui Tapiolaa hänen tiukimmaksi ja tiiveimmäksi
+lausunnokseen. Tässä yksi motiivi, kaksi soitinryhmää ja hengitys riittävät.
+
+### 10. Toinen hiljaisuus: myrsky näkyy [hiljaisuus_2_alku] [myrsky_nakyy] [myrsky_kasvu]
+
+Neljännentoista minuutin kohdalla kaikki vaikenee: lähes kaksikymmentä sekuntia, joista ensimmäiset kymmenen ovat
+tyhjiä. Sitten jouset alkavat hyvin hiljaa, ppp, t. 523, ja alkavat kasvaa, nopeasti.
+
+**Käyttäjä:** "alkaa ppp tahdissa 523 ja suurenee nopeasti, niinkuin kaukaa tuleva lumi ja jää. Aluksi se vain
+näkyy, ja iskee sitten päälle kuin myrsky."
+
+**Lähteet:** Grimley: myrskyjakso t. 513–577, sen alku "kahisevaa jousifiguraatiota ilman selvää tahtilajin tuntua";
+hänen mukaansa myrsky on paikallisesti "terrifyingly unmotivated", sillä ei ole syytä. Wilker: t. 523.
+
+**Ohjaaja:** toinen hiljaisuus on ensimmäisen peili. Ensimmäisessä metsä kuunteli; tässä se kääntyy pois.
+Lumi, joka vain näkyy, on minulle horisontti, joka alkaa liikkua: ei vielä ääntä vaan muutos siinä, miten kaukainen
+valo lankeaa. Kuuntele crescendon nopeutta: kolmekymmentä desibeliä kymmenessä sekunnissa, kuin jokin tulisi
+pellon yli.
+
+### 11. Talvimyrsky [myrsky_iskee] [myrsky_huippu] [toinen_paisunta]
+
+Tahdissa 540 se iskee. Koko orkesteri, teoksen voimakkain kohta, tiheä tutti, jossa yksittäisiä soittimia ei
+enää erota: jousten kromaattiset kuviot kaikissa rekistereissä, vasket, patarummut. Aaltoja on useita; huippu
+tulee noin kaksikymmentä sekuntia iskun jälkeen, ja sen jälkeen vielä toinen paisunta hiljaisesta.
+
+**Lähteet:** Tovey: hirmumyrsky, joka taivuttaa latvat ja uhkaa metsän jättiläisiä. BBC Music Magazine: kimmeltävä,
+puolisävelaskelin liikkuva jousiparvi, joka purkautuu vaskien ja puupuhaltimien huutoon. Sibelius itse piti Kajanuksen
+levytystä liian hitaana ja elottomana ja sanoi, ettei "ranskalainen pehmeys" sovi Tapiolaan vaan suoruus (Jalaksen
+muistiinpanot, [tarkista]). Myrsky ei ole esipuheessa: se on kirjallisuuden ja meidän luentamme.
+
+**Ohjaaja:** en kuule tässä säätä. Kuulen sen, mitä Tapio on: Kalevalan 47. runossa Ukon tuli iskee "läpi taivahan
+yheksän, halki kuuen kirjokannen", pystysuoraan kerrosten läpi. Myrsky on hetki, jolloin se, mikä on ollut
+puiden takana koko ajan, tulee läpi. Ei vihainen, ei rankaiseva: vain suurempi kuin kuuntelija. Ja Sibeliuksen
+omalle tarinalle (käyttäjä: "luomisen tuska", "muuttuva maailma") tämä on se hetki, jossa maailma, joka ei enää ole
+hänen, tulee hänen metsäänsä. Kuuntele, että myrskyssä ei ole melodiaa: on vain motiivin sirpaleita.
+
+### 12. Huuto ja laantuminen [huuto] [loppuhuipennus]
+
+Myrskyn laannuttua korkeat jouset nousevat esiin yksin, t. 586–587: Europadisc ja Grimley kutsuvat sitä
+"huudoksi". Sitten hidas lasku, jännite purkautuu, ja vielä yksi, viimeinen tutti-huipennus ennen pimeyttä.
+
+**Ohjaaja:** huuto on ainoa kohta, jossa kuulen ihmisen. Ei hahmoa, vaan äänen, joka on jäänyt metsään, kun
+myrsky meni. Madetoja kuuli vuonna 1927 teoksessa "yksinäisen vaeltajan, joka purkaa elämän tuskaa", ja jos hän on
+jossain, hän on tässä, hetken, ja sitten metsä peittää hänet taas. Loppuhuipennus ei ole voitto: se on viimeinen
+aalto, joka vyöryy ohi.
+
+### 13. H-duuri: hellä päätöspiste [loppu_Hduuri_alku] [loppu_Hduuri_loppu] [musiikki_loppuu]
+
+Pimeydestä, lähes hiljaisuudesta, nousee äkkiä H-duurisointu monijakoisissa jousissa ja pysyy, noin puoli minuuttia,
+t. 624–634, hiljeten tasaisesti. Bassoissa on vielä yksi hidas syke (Wilker). Sitten ei mitään.
+
+**Lähteet:** Tovey: "aamen". Pursglove: ei aamen vaan tunnustus. BSO: kolme puhtaan duurisoinnun sykäystä, ja rauha
+voi olla petollinen. Hayes, Sibelius-klubi, Kallio: jäähyväiset. Whitehouse: heikko siunaus. Oramo: levollinen.
+Kallio: teoksen ensimmäinen ja ainoa siirtymä mollista duuriin. Dynamiikkamerkintää ei anna yksikään lähde.
+
+**Käyttäjä:** "se kuitenkin loppuu siihen H-duuriin, mikä on mielestäni jotenkin koskettavaa. Että onko se niin kuin
+toivo kiitos hiljaisuus ... se tuntuu enemmän sellaiselta huokaukselta, semmoiselta pehmeydeltä ... massiivinen niin
+kuin ikään kuin päätöspiste. Mutta se ei ole mikään semmoinen julistava, vaan hellä ja just nimenomaan se
+mezzoforte-sävy."
+
+**Ohjaaja:** C-duuri oli väärä valo. H-duuri on oikea, ja se tulee vasta, kun mitään ei enää odoteta. Sama sävel
+kuin alussa, mutta duurissa: metsä on sama, kuuntelija ei. Minulle tämä on se, mitä Sibelius ei tiennyt tekevänsä:
+jäähyväinen, joka ei ole jäähyväinen, koska hän aikoi jatkaa. Siksi se on mezzoforte eikä pianissimo, hellä eikä
+hauras. Se ei lopeta, se jättää oven auki. Ja sitten hän ei enää kävellyt siitä.
+
 ## Soittimet ja mitä ne merkitsevät
+
+*Tämä on tulkinta oppaan tarinaa varten, ei vielä kuvan elementtitaulukko (se tehdään tyyliohjeessa, vaihe 6).
+Lähteistä: Hayes (ryhmät kerroksina), Jalas (puupuhaltimet), Sibelius-klubi (vasket), Tovey, Grimley.*
+
+| Soitin tai ryhmä | Mitä se tekee teoksessa (mitattu ja luettu) | Lähteet sanovat | Ohjaajan tulkinta |
+|---|---|---|---|
+| Patarummut | avaavat teoksen yksin; palaavat M:ssä ja myrskyssä; vaikenevat lopussa | Judd: kutsu | maan ääni; paino, josta kaikki lähtee ja johon kaikki ei palaa |
+| Jouset (viulut, alttoviulut) | ydinmotiivi; hymnimäinen C-duuri; M:n jälkeinen hermo; myrskyn kromaattiset kuviot; huuto; H-duuri | "metsä", "tuuli" (Goodwin), "huuto" (Grimley) | metsä itse: läsnäolo, joka on ennen ja jälkeen; sordiinolla etäisyys |
+| Sellot ja kontrabassot | askeleet (B); urkupisteet H ja E; matala pohja keskijaksossa | urkupisteet luovat synkkyyden (Europadisc, Kolly) | maan aika, hitaampi kuin ihmisen; jokin painava liikkuu näkymättä |
+| Käyrätorvet | vastaavat jousille alussa; pulssit keskijaksossa; < > O:n jälkeen | ei lähdekuvausta | etäisyys ja hengitys; se, mikä on puiden takana |
+| Trumpetit ja pasuunat | vaskien isku (Allegro moderato); M:n jyrinä; myrskyn huuto; viimeinen huipennus | "salama ja ukkonen" (Sibelius-klubi); vaskimotiivin yhteenvetopaluu (Grimley) | se, mikä tulee läpi: Ukon tuli kerrosten halki |
+| Huilut ja pikkolo | nopeat kuviot (G); peikkojakso | Jalas: "metsänpeikot ja -eläimet"; Europadisc: haltiat | väike: liike, joka katoaa kun katsoo |
+| Klarinetit ja bassoklarinetti | puupuhaltimien tulo alussa; kuviot | ei erillistä kuvausta | hämyn äänet; puoliksi kuultu |
+| Oboet ja englannintorvi | ei mitattavissa (mallilla ei luokkaa); partituurista | ei lähdekuvausta | [tarkista partituurista: missä ne ovat yksin?] |
+| Fagotit ja kontrafagotti | matala rekisteri keskijaksossa (ei mitattavissa) | ei lähdekuvausta | pohjan toinen ääni; [tarkista partituurista] |
 
 ## Ankkurit aikakoodein
 
@@ -22,8 +267,8 @@ Levytys: **Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc
 | **0:13.1** | Käyrätorvet vastaavat jousille (`kayratorvet_vastaavat`) | jousten jälkeen, alku | vaskipuhaltimet, ensin käyrätorvet, vastaavat jousille jousten jälkeen | V3-vaihtoehto: vaskikanava 0,30 → 0,45 kohdissa 13,0–13,2 s, PANNs käyrätorvi 0,10 kohdassa 13,5 s (huippu 0,17), vaski 0,24; jouset-kanava laskee 0,67 (12,0 s) → 0,21 (13,2 s). | analyysi (ei kuultu), luottamus kohtalainen |
 | **0:26.4** | Puupuhaltimet tulevat mukaan (`puhaltimet_tulevat`) | jousten jälkeen, alku | puupuhaltimet tulevat mukaan jousten jälkeen | V3-sääntö: puupuhaltimet-kanava ylittää 0,5 kohdassa 26,43 s (0,59 → 0,86 kohdissa 27–29 s) ja PANNs klarinetti ylittää 0,05 kohdassa 27,3 s (ikkunassa 0,118). | analyysi (ei kuultu), luottamus kohtalainen |
 | **0:45.3** | Vaskien isku (`vaskien_isku`) | Allegro moderaton alku | vaskien isku avaa Allegro moderaton | aksentit.py: vahvin isku välillä 30–120 s kohdassa 45,327 s: z 32,9 (korkea isku), kontrasti 12,0 dB, taso −21,5 dBFS, kaistat matala/keski/korkea 1,5/32,6/99,0. Vaskikanava 0,07 → 0,49 kohdissa 44,4–45,0 s; | analyysi (ei kuultu), luottamus hyvä |
-| **0:58.1** | Ensimmäinen hiljaisuus alkaa (`hiljaisuus_1_alku`) | ei tiedossa [tarkista] | ääni hiljenee lähes täydelliseen hiljaisuuteen | aikajana.py hiljaiset kohdat: taso alle −60 dBFS vähintään 1,5 s: 58,1–61,4 s (3,3 s, keskitaso −66,6 dBFS = huoneen kohinan taso). Edellä äkillinen hiljeneminen 57,5 s (−25 dB/s; ff → p, jaksoraja 57,53 s). | analyysi (ei kuultu), luottamus hyvä |
-| **1:01.4** | Ensimmäinen hiljaisuus päättyy (`hiljaisuus_1_loppu`) | ei tiedossa [tarkista] | musiikki palaa; jouset aloittavat | Taso nousee −66,7 → −37,2 dBFS (1,5 s ennen/jälkeen). aksentit.py: 61,39 s (z 5,4), 61,59 s (z 9,4, kontrasti 15,0 dB), 61,79 s (z 8,4, kontrasti 18,8 dB). | analyysi (ei kuultu), luottamus hyvä |
+| **0:58.1** | Ensimmäinen hiljaisuus alkaa (`hiljaisuus_1_alku`) | ei tiedossa [tarkista] | yleistauko (G.P.) vaskien iskun jälkeen; ääni hiljenee lähes täydelliseen hiljaisuuteen | aikajana.py hiljaiset kohdat: taso alle −60 dBFS vähintään 1,5 s: 58,1–61,4 s (3,3 s, keskitaso −66,6 dBFS = huoneen kohinan taso). Edellä äkillinen hiljeneminen 57,5 s (−25 dB/s; ff → p, jaksoraja 57,53 s). | analyysi (ei kuultu), luottamus hyvä |
+| **1:01.4** | Ensimmäinen hiljaisuus päättyy (`hiljaisuus_1_loppu`) | ei tiedossa [tarkista] | yleistauko päättyy, jouset aloittavat; musiikki palaa; jouset aloittavat | Taso nousee −66,7 → −37,2 dBFS (1,5 s ennen/jälkeen). aksentit.py: 61,39 s (z 5,4), 61,59 s (z 9,4, kontrasti 15,0 dB), 61,79 s (z 8,4, kontrasti 18,8 dB). | analyysi (ei kuultu), luottamus hyvä |
 | **2:59.3** | Pitkä urkupiste H:lla alkaa (`urkupiste_H1_alku`) | ei tiedossa [tarkista] | pitkä urkupiste H:lla (H1) | kanavat.py urkupiste: sama sävel midi 35,1 (H1; englanniksi B1) yhtäjaksoisesti 179,33–191,83 s (12,5 s; vähimmäiskesto 4 s). Liiketiheys keskimäärin 0,1 alkua/s, taso −42…−28 dBFS (keskiarvo −34,1), jännite 0,0–0,7. | analyysi (ei kuultu), luottamus kohtalainen |
 | **3:11.8** | Pitkä urkupiste H:lla päättyy (`urkupiste_H1_loppu`) | ei tiedossa [tarkista] | pitkä urkupiste H:lla (H1) | kanavat.py urkupiste päättyy kohdassa 191,83 s (sama sävel midi 35,1 yhtäjaksoisesti 179,33 s alkaen, 12,5 s). Jaksoraja 193,49 s (uutuus 8,2); jännite 0,04 (179,3 s) → 0,46 (191,8 s). | analyysi (ei kuultu), luottamus kohtalainen |
 | **4:40.9** | Nopean kuvioinnin jakso alkaa (`nopea_liike_1_alku`) | ei tiedossa [tarkista] | nopea kuviointi, puupuhaltimia ja jousia | liiketiheys (0,5 s tasoitus) ylittää 2,5 alkua/s kohdassa 280,9 s ja pysyy sen yli 303,7 s asti (keskiarvo 3,8, suurin 5,5; 22,8 s). | analyysi (ei kuultu), luottamus kohtalainen |
@@ -68,7 +313,7 @@ Levytys: **Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc
 
 Mitattu: taso -86…-19 dBFS (keskiarvo -37); liike 1.0 alkua/s; soittimia aikajanassa (PANNs, vähintään 8 s): patarummut, puupuhaltimet, kontrabassot, sellot.
 
-Jaksot: **Ensimmäinen hiljaisuus** 0:58.1–1:01.4 (ääni hiljenee lähes täydelliseen hiljaisuuteen)
+Jaksot: **Ensimmäinen hiljaisuus** 0:58.1–1:01.4 (yleistauko (G.P.) vaskien iskun jälkeen; ääni hiljenee lähes täydelliseen hiljaisuuteen)
 
 | Aika | Mitä | Mitä kuuluu | Merkitys (käyttäjä) | Varmuus |
 |---|---|---|---|---|
@@ -83,7 +328,7 @@ Jaksot: **Ensimmäinen hiljaisuus** 0:58.1–1:01.4 (ääni hiljenee lähes täy
 
 Mitattu: taso -71…-26 dBFS (keskiarvo -36); liike 0.7 alkua/s; soittimia aikajanassa (PANNs, vähintään 8 s): kontrabassot, sellot, käyrätorvet, trumpetit ja pasuunat, puupuhaltimet.
 
-Jaksot: **Ensimmäinen hiljaisuus** 0:58.1–1:01.4 (ääni hiljenee lähes täydelliseen hiljaisuuteen)
+Jaksot: **Ensimmäinen hiljaisuus** 0:58.1–1:01.4 (yleistauko (G.P.) vaskien iskun jälkeen; ääni hiljenee lähes täydelliseen hiljaisuuteen)
 
 | Aika | Mitä | Mitä kuuluu | Merkitys (käyttäjä) | Varmuus |
 |---|---|---|---|---|

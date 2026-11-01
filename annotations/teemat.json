@@ -1,740 +1,740 @@
 {
- "_ohje": "Teemakartta: levytysriippumaton kirjasto (docs/teemakartta_rakenne.md). Ankkurit ovat partituurin paikkoja ja musiikillisia tapahtumia. Tässä tiedostossa EI ole sekunteja: ajat ovat annotations/ajat_<levytys>.json:ssa. 'tarina' on tyhjä: sen kirjoittaa käyttäjä haastattelussa. kirjain/tahti vain käyttäjältä tai kirjallisuudesta, muuten null ja tarkista=true. tyyppi 'jakso': alku ja loppu ovat omia ankkureitaan (kentät jakso, reuna).",
- "luokat": {
-  "soitin": "soittimen tulo tai soittimien kerrostuminen",
-  "tunnelma": "tunnelman tai dynamiikan muutos",
-  "soolo": "soolo",
-  "huippu": "huipennus tai avainkohta",
-  "tauko": "hiljaisuus tai tauko",
-  "isku": "isku tai tutti-isku",
-  "jakso": "jakso (alku ja loppu omina ankkureinaan)"
- },
- "jaksot": {
-  "hiljaisuus_1": {
-   "nimi": "Ensimmäinen hiljaisuus"
+  "_ohje": "Teemakartta: levytysriippumaton kirjasto (docs/teemakartta_rakenne.md). Ankkurit ovat partituurin paikkoja ja musiikillisia tapahtumia. Tässä tiedostossa EI ole sekunteja: ajat ovat annotations/ajat_<levytys>.json:ssa. 'tarina' on tyhjä: sen kirjoittaa käyttäjä haastattelussa. kirjain/tahti vain käyttäjältä tai kirjallisuudesta, muuten null ja tarkista=true. tyyppi 'jakso': alku ja loppu ovat omia ankkureitaan (kentät jakso, reuna).",
+  "luokat": {
+    "soitin": "soittimen tulo tai soittimien kerrostuminen",
+    "tunnelma": "tunnelman tai dynamiikan muutos",
+    "soolo": "soolo",
+    "huippu": "huipennus tai avainkohta",
+    "tauko": "hiljaisuus tai tauko",
+    "isku": "isku tai tutti-isku",
+    "jakso": "jakso (alku ja loppu omina ankkureinaan)"
   },
-  "urkupiste_H1": {
-   "nimi": "Pitkä urkupiste H:lla"
+  "jaksot": {
+    "hiljaisuus_1": {
+      "nimi": "Ensimmäinen hiljaisuus"
+    },
+    "urkupiste_H1": {
+      "nimi": "Pitkä urkupiste H:lla"
+    },
+    "nopea_liike_1": {
+      "nimi": "Nopea kuviointi"
+    },
+    "peikot_G": {
+      "nimi": "Puupuhallinkuviot (kirjain G)"
+    },
+    "jousijakso_urkupiste_E": {
+      "nimi": "Jousijakso urkupisteen päällä (E)"
+    },
+    "hiljainen_jakso": {
+      "nimi": "Hiljainen jakso"
+    },
+    "jannitejakso": {
+      "nimi": "Jännitteinen jousijakso"
+    },
+    "allegro_moderato_O": {
+      "nimi": "Vaskivuorottelu (Allegro moderato, O:n jälkeen)"
+    },
+    "hiljaisuus_2": {
+      "nimi": "Toinen hiljaisuus"
+    },
+    "loppu_Hduuri": {
+      "nimi": "H-duuri-loppu"
+    }
   },
-  "nopea_liike_1": {
-   "nimi": "Nopea kuviointi"
-  },
-  "peikot_G": {
-   "nimi": "Puupuhallinkuviot (kirjain G)"
-  },
-  "jousijakso_urkupiste_E": {
-   "nimi": "Jousijakso urkupisteen päällä (E)"
-  },
-  "hiljainen_jakso": {
-   "nimi": "Hiljainen jakso"
-  },
-  "jannitejakso": {
-   "nimi": "Jännitteinen jousijakso"
-  },
-  "allegro_moderato_O": {
-   "nimi": "Vaskivuorottelu (Allegro moderato, O:n jälkeen)"
-  },
-  "hiljaisuus_2": {
-   "nimi": "Toinen hiljaisuus"
-  },
-  "loppu_Hduuri": {
-   "nimi": "H-duuri-loppu"
-  }
- },
- "ankkurit": [
-  {
-   "id": "avaus_patarumpu",
-   "nimi": "Avaus: patarumpusoolo",
-   "kirjain": null,
-   "tahti": 1,
-   "tahti_loppu": null,
-   "tahti_suhde": "teoksen alku",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "patarumpusoolo (\"tututum\"), ei muita soittimia",
-   "soittimet": [
-    "patarummut"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri; kirjallisuus: Judd",
-   "tarkista": false
-  },
-  {
-   "id": "jouset_tulevat",
-   "nimi": "Jouset tulevat",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "heti patarumpusoolon jälkeen, alku",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "ydinmotiivi tulee jousissa patarumpusoolon jälkeen",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": true
-  },
-  {
-   "id": "kayratorvet_vastaavat",
-   "nimi": "Käyrätorvet vastaavat jousille",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "jousten jälkeen, alku",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "vaskipuhaltimet, ensin käyrätorvet, vastaavat jousille jousten jälkeen",
-   "soittimet": [
-    "käyrätorvet"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
-   "tarkista": true
-  },
-  {
-   "id": "puhaltimet_tulevat",
-   "nimi": "Puupuhaltimet tulevat mukaan",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "jousten jälkeen, alku",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "puupuhaltimet tulevat mukaan jousten jälkeen",
-   "soittimet": [
-    "puupuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": true
-  },
-  {
-   "id": "tuulenpuuska",
-   "nimi": "Tuulenpuuska",
-   "kirjain": null,
-   "tahti": 21,
-   "tahti_loppu": 25,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "hetki",
-   "soi": "oktatoninen \"tuulenpuuska\"",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
-   "tarkista": true
-  },
-  {
-   "id": "vaskien_isku",
-   "nimi": "Vaskien isku",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "Allegro moderaton alku",
-   "luokka": "isku",
-   "tyyppi": "hetki",
-   "soi": "vaskien isku avaa Allegro moderaton",
-   "soittimet": [
-    "vaskipuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "kirjallisuus: Tapiola-tutkimus luku 3 (vaskien isku avaa Allegro moderaton)",
-   "tarkista": true
-  },
-  {
-   "id": "hiljaisuus_1_alku",
-   "nimi": "Ensimmäinen hiljaisuus alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tauko",
-   "tyyppi": "jakso",
-   "jakso": "hiljaisuus_1",
-   "reuna": "alku",
-   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "hiljaisuus_1_loppu",
-   "nimi": "Ensimmäinen hiljaisuus päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tauko",
-   "tyyppi": "jakso",
-   "jakso": "hiljaisuus_1",
-   "reuna": "loppu",
-   "soi": "musiikki palaa; jouset aloittavat",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "askeleet_B",
-   "nimi": "Matalat äänet \"askeleina\"",
-   "kirjain": "B",
-   "tahti": 69,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "matalat äänet tulevat eri tahtiin kuin muu orkesteri",
-   "soittimet": [
-    "matalat soittimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": false
-  },
-  {
-   "id": "urkupiste_H1_alku",
-   "nimi": "Pitkä urkupiste H:lla alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "soitin",
-   "tyyppi": "jakso",
-   "jakso": "urkupiste_H1",
-   "reuna": "alku",
-   "soi": "pitkä urkupiste H:lla (H1)",
-   "soittimet": [
-    "matalat soittimet"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "urkupiste_H1_loppu",
-   "nimi": "Pitkä urkupiste H:lla päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "soitin",
-   "tyyppi": "jakso",
-   "jakso": "urkupiste_H1",
-   "reuna": "loppu",
-   "soi": "pitkä urkupiste H:lla (H1)",
-   "soittimet": [
-    "matalat soittimet"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "nopea_liike_1_alku",
-   "nimi": "Nopean kuvioinnin jakso alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "nopea_liike_1",
-   "reuna": "alku",
-   "soi": "nopea kuviointi, puupuhaltimia ja jousia",
-   "soittimet": [
-    "puupuhaltimet",
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "nopea_liike_1_loppu",
-   "nimi": "Nopean kuvioinnin jakso päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "nopea_liike_1",
-   "reuna": "loppu",
-   "soi": "nopea kuviointi päättyy",
-   "soittimet": [
-    "puupuhaltimet",
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "peikot_G_alku",
-   "nimi": "Puupuhallinkuviot G:ssä alkavat",
-   "kirjain": "G",
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "peikot_G",
-   "reuna": "alku",
-   "soi": "puupuhallinkuviot, nopeat kahdeksasosat",
-   "soittimet": [
-    "puupuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
-   "tarkista": true
-  },
-  {
-   "id": "peikot_G_loppu",
-   "nimi": "Puupuhallinkuviot G:ssä päättyvät",
-   "kirjain": "G",
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "peikot_G",
-   "reuna": "loppu",
-   "soi": "puupuhallinkuviot päättyvät",
-   "soittimet": [
-    "puupuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
-   "tarkista": true
-  },
-  {
-   "id": "con_sord_J",
-   "nimi": "Ensimmäinen sordiino",
-   "kirjain": "J",
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": "kirjaimen J jälkeen",
-   "luokka": "soitin",
-   "tyyppi": "hetki",
-   "soi": "ensimmäinen con sord. (sordiino)",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": true
-  },
-  {
-   "id": "jousijakso_urkupiste_E_alku",
-   "nimi": "Jousijakso urkupisteen päällä alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "soitin",
-   "tyyppi": "jakso",
-   "jakso": "jousijakso_urkupiste_E",
-   "reuna": "alku",
-   "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "jousijakso_urkupiste_E_loppu",
-   "nimi": "Jousijakso urkupisteen päällä päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "soitin",
-   "tyyppi": "jakso",
-   "jakso": "jousijakso_urkupiste_E",
-   "reuna": "loppu",
-   "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "hiljainen_jakso_alku",
-   "nimi": "Hiljainen jakso alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "jakso",
-   "jakso": "hiljainen_jakso",
-   "reuna": "alku",
-   "soi": "pitkä hiljainen jakso, vähän liikettä",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "hiljainen_jakso_loppu",
-   "nimi": "Hiljainen jakso päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "jakso",
-   "jakso": "hiljainen_jakso",
-   "reuna": "loppu",
-   "soi": "hiljainen jakso päättyy, vaskit ja patarummut kasvattavat",
-   "soittimet": [
-    "vaskipuhaltimet",
-    "patarummut"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "vaski_tutti_620",
-   "nimi": "Vaskien ja patarumpujen tutti-isku",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "isku",
-   "tyyppi": "hetki",
-   "soi": "vaskien ja patarumpujen tutti-isku, jakson voimakkain kohta",
-   "soittimet": [
-    "vaskipuhaltimet",
-    "patarummut"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "auringonsade",
-   "nimi": "C-duuri ennen kirjainta M",
-   "kirjain": null,
-   "tahti": 392,
-   "tahti_loppu": 396,
-   "tahti_suhde": "noin 5 tahtia ennen kirjainta M",
-   "luokka": "huippu",
-   "tyyppi": "hetki",
-   "soi": "yllättävä C-duuri, noin viisi tahtia",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri; avainkohta",
-   "tarkista": false
-  },
-  {
-   "id": "M_ennakko",
-   "nimi": "Kirjain M: vaskien jyrinä",
-   "kirjain": "M",
-   "tahti": 397,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "isku",
-   "tyyppi": "hetki",
-   "soi": "vaskien jyrinä, myrskyn ennakko (ei vielä talvimyrsky)",
-   "soittimet": [
-    "vaskipuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": false
-  },
-  {
-   "id": "jannitejakso_alku",
-   "nimi": "Jännitteinen jousijakso alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "jannitejakso",
-   "reuna": "alku",
-   "soi": "jousivaltainen jakso, korkea jännite ja nopea liike",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "jannitejakso_loppu",
-   "nimi": "Jännitteinen jousijakso päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "jannitejakso",
-   "reuna": "loppu",
-   "soi": "jousijakso päättyy, vaskit tulevat",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "allegro_moderato_O_alku",
-   "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu alkaa",
-   "kirjain": "O",
-   "tahti": 462,
-   "tahti_loppu": null,
-   "tahti_suhde": "O:n jälkeen",
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "allegro_moderato_O",
-   "reuna": "alku",
-   "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu",
-   "soittimet": [
-    "käyrätorvet",
-    "trumpetit"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": true
-  },
-  {
-   "id": "allegro_moderato_O_loppu",
-   "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu päättyy",
-   "kirjain": "O",
-   "tahti": 462,
-   "tahti_loppu": null,
-   "tahti_suhde": "O:n jälkeen",
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "allegro_moderato_O",
-   "reuna": "loppu",
-   "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu päättyy",
-   "soittimet": [
-    "käyrätorvet",
-    "trumpetit"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": true
-  },
-  {
-   "id": "hiljaisuus_2_alku",
-   "nimi": "Toinen hiljaisuus alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tauko",
-   "tyyppi": "jakso",
-   "jakso": "hiljaisuus_2",
-   "reuna": "alku",
-   "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen ennen myrskyä",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "hiljaisuus_2_loppu",
-   "nimi": "Toinen hiljaisuus päättyy",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tauko",
-   "tyyppi": "jakso",
-   "jakso": "hiljaisuus_2",
-   "reuna": "loppu",
-   "soi": "hiljaisuus päättyy; ppp-soitto on jo alkanut jakson sisällä",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "myrsky_nakyy",
-   "nimi": "Myrsky näkyy",
-   "kirjain": null,
-   "tahti": 523,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "hetki",
-   "soi": "ppp, hiljainen jousten kuviointi, crescendo alkaa",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": false
-  },
-  {
-   "id": "myrsky_kasvu",
-   "nimi": "Nopea voimistuminen alkaa",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "hetki",
-   "soi": "jouset tulevat selvästi esiin, nopea crescendo",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "myrsky_iskee",
-   "nimi": "Talvimyrsky iskee",
-   "kirjain": null,
-   "tahti": 540,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "isku",
-   "tyyppi": "hetki",
-   "soi": "talvimyrsky iskee: kromaattinen jousitremolo, vaskit täydellä voimalla",
-   "soittimet": [
-    "jouset",
-    "vaskipuhaltimet"
-   ],
-   "tarina": "",
-   "lahde": "käyttäjä, partituuri",
-   "tarkista": false
-  },
-  {
-   "id": "myrsky_huippu",
-   "nimi": "Myrskyn voimakkain kohta",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "huippu",
-   "tyyppi": "hetki",
-   "soi": "koko äänitteen voimakkain jakso, tiheä tutti",
-   "soittimet": [
-    "koko orkesteri"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "toinen_paisunta",
-   "nimi": "Toinen paisunta myrskyn jälkeen",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "tunnelma",
-   "tyyppi": "hetki",
-   "soi": "äkillinen voimistuminen hiljaisesta kohdasta",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "huuto",
-   "nimi": "Huuto",
-   "kirjain": null,
-   "tahti": 586,
-   "tahti_loppu": 587,
-   "tahti_suhde": null,
-   "luokka": "huippu",
-   "tyyppi": "hetki",
-   "soi": "korkeat jouset (\"huuto\") myrskyn jälkeen",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "kirjallisuus: Grimley (tahdit), Europadisc (luonnehdinta) [tarkista partituurista]",
-   "tarkista": false
-  },
-  {
-   "id": "loppuhuipennus",
-   "nimi": "Loppuhuipennus",
-   "kirjain": null,
-   "tahti": null,
-   "tahti_loppu": null,
-   "tahti_suhde": null,
-   "luokka": "huippu",
-   "tyyppi": "hetki",
-   "soi": "viimeinen suuri huipennus ennen H-duuria",
-   "soittimet": [
-    "koko orkesteri"
-   ],
-   "tarina": "",
-   "lahde": "analyysi: aikajana",
-   "tarkista": true
-  },
-  {
-   "id": "loppu_Hduuri_alku",
-   "nimi": "H-duuri-loppu alkaa",
-   "kirjain": null,
-   "tahti": 624,
-   "tahti_loppu": 634,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "loppu_Hduuri",
-   "reuna": "alku",
-   "soi": "H-duurisointu monijakoisissa jousissa (divisi); dynamiikka partituurista [tarkista]",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "kirjallisuus: Wilker (tahdit); käyttäjä (dynamiikka mezzoforte-sävyinen) [tarkista partituurista]",
-   "tarkista": false
-  },
-  {
-   "id": "loppu_Hduuri_loppu",
-   "nimi": "H-duuri-loppu päättyy",
-   "kirjain": null,
-   "tahti": 624,
-   "tahti_loppu": 634,
-   "tahti_suhde": null,
-   "luokka": "jakso",
-   "tyyppi": "jakso",
-   "jakso": "loppu_Hduuri",
-   "reuna": "loppu",
-   "soi": "H-duurisointu hiljenee",
-   "soittimet": [
-    "jouset"
-   ],
-   "tarina": "",
-   "lahde": "kirjallisuus: Wilker (tahdit)",
-   "tarkista": false
-  },
-  {
-   "id": "musiikki_loppuu",
-   "nimi": "Musiikki loppuu",
-   "kirjain": null,
-   "tahti": 634,
-   "tahti_loppu": null,
-   "tahti_suhde": "viimeinen ääni",
-   "luokka": "tauko",
-   "tyyppi": "hetki",
-   "soi": "teoksen viimeinen ääni",
-   "soittimet": [],
-   "tarina": "",
-   "lahde": "kirjallisuus: Wilker (634 tahtia)",
-   "tarkista": false
-  }
- ]
+  "ankkurit": [
+    {
+      "id": "avaus_patarumpu",
+      "nimi": "Avaus: patarumpusoolo",
+      "kirjain": null,
+      "tahti": 1,
+      "tahti_loppu": null,
+      "tahti_suhde": "teoksen alku",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "patarumpusoolo (\"tututum\"), ei muita soittimia",
+      "soittimet": [
+        "patarummut"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri; kirjallisuus: Judd",
+      "tarkista": false
+    },
+    {
+      "id": "jouset_tulevat",
+      "nimi": "Jouset tulevat",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": "heti patarumpusoolon jälkeen, alku",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "ydinmotiivi tulee jousissa patarumpusoolon jälkeen",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": true
+    },
+    {
+      "id": "kayratorvet_vastaavat",
+      "nimi": "Käyrätorvet vastaavat jousille",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": "jousten jälkeen, alku",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "vaskipuhaltimet, ensin käyrätorvet, vastaavat jousille jousten jälkeen",
+      "soittimet": [
+        "käyrätorvet"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
+      "tarkista": true
+    },
+    {
+      "id": "puhaltimet_tulevat",
+      "nimi": "Puupuhaltimet tulevat mukaan",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": "jousten jälkeen, alku",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "puupuhaltimet tulevat mukaan jousten jälkeen",
+      "soittimet": [
+        "puupuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": true
+    },
+    {
+      "id": "tuulenpuuska",
+      "nimi": "Tuulenpuuska",
+      "kirjain": null,
+      "tahti": 21,
+      "tahti_loppu": 25,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "hetki",
+      "soi": "oktatoninen \"tuulenpuuska\"",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
+      "tarkista": true
+    },
+    {
+      "id": "vaskien_isku",
+      "nimi": "Vaskien isku",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": "Allegro moderaton alku",
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "vaskien isku avaa Allegro moderaton",
+      "soittimet": [
+        "vaskipuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "kirjallisuus: Tapiola-tutkimus luku 3 (vaskien isku avaa Allegro moderaton)",
+      "tarkista": true
+    },
+    {
+      "id": "hiljaisuus_1_alku",
+      "nimi": "Ensimmäinen hiljaisuus alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tauko",
+      "tyyppi": "jakso",
+      "jakso": "hiljaisuus_1",
+      "reuna": "alku",
+      "soi": "yleistauko (G.P.) vaskien iskun jälkeen; ääni hiljenee lähes täydelliseen hiljaisuuteen",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "hiljaisuus_1_loppu",
+      "nimi": "Ensimmäinen hiljaisuus päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tauko",
+      "tyyppi": "jakso",
+      "jakso": "hiljaisuus_1",
+      "reuna": "loppu",
+      "soi": "yleistauko päättyy, jouset aloittavat; musiikki palaa; jouset aloittavat",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri 1.11.2026 (yleistauko); analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "askeleet_B",
+      "nimi": "Matalat äänet \"askeleina\"",
+      "kirjain": "B",
+      "tahti": 69,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "matalat äänet tulevat eri tahtiin kuin muu orkesteri",
+      "soittimet": [
+        "matalat soittimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": false
+    },
+    {
+      "id": "urkupiste_H1_alku",
+      "nimi": "Pitkä urkupiste H:lla alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "jakso",
+      "jakso": "urkupiste_H1",
+      "reuna": "alku",
+      "soi": "pitkä urkupiste H:lla (H1)",
+      "soittimet": [
+        "matalat soittimet"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "urkupiste_H1_loppu",
+      "nimi": "Pitkä urkupiste H:lla päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "jakso",
+      "jakso": "urkupiste_H1",
+      "reuna": "loppu",
+      "soi": "pitkä urkupiste H:lla (H1)",
+      "soittimet": [
+        "matalat soittimet"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "nopea_liike_1_alku",
+      "nimi": "Nopean kuvioinnin jakso alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "nopea_liike_1",
+      "reuna": "alku",
+      "soi": "nopea kuviointi, puupuhaltimia ja jousia",
+      "soittimet": [
+        "puupuhaltimet",
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "nopea_liike_1_loppu",
+      "nimi": "Nopean kuvioinnin jakso päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "nopea_liike_1",
+      "reuna": "loppu",
+      "soi": "nopea kuviointi päättyy",
+      "soittimet": [
+        "puupuhaltimet",
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "peikot_G_alku",
+      "nimi": "Puupuhallinkuviot G:ssä alkavat",
+      "kirjain": "G",
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "peikot_G",
+      "reuna": "alku",
+      "soi": "puupuhallinkuviot, nopeat kahdeksasosat",
+      "soittimet": [
+        "puupuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
+      "tarkista": true
+    },
+    {
+      "id": "peikot_G_loppu",
+      "nimi": "Puupuhallinkuviot G:ssä päättyvät",
+      "kirjain": "G",
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "peikot_G",
+      "reuna": "loppu",
+      "soi": "puupuhallinkuviot päättyvät",
+      "soittimet": [
+        "puupuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
+      "tarkista": true
+    },
+    {
+      "id": "con_sord_J",
+      "nimi": "Ensimmäinen sordiino",
+      "kirjain": "J",
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": "kirjaimen J jälkeen",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "ensimmäinen con sord. (sordiino)",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": true
+    },
+    {
+      "id": "jousijakso_urkupiste_E_alku",
+      "nimi": "Jousijakso urkupisteen päällä alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "jakso",
+      "jakso": "jousijakso_urkupiste_E",
+      "reuna": "alku",
+      "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "jousijakso_urkupiste_E_loppu",
+      "nimi": "Jousijakso urkupisteen päällä päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "jakso",
+      "jakso": "jousijakso_urkupiste_E",
+      "reuna": "loppu",
+      "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "hiljainen_jakso_alku",
+      "nimi": "Hiljainen jakso alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "jakso",
+      "jakso": "hiljainen_jakso",
+      "reuna": "alku",
+      "soi": "pitkä hiljainen jakso, vähän liikettä",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "hiljainen_jakso_loppu",
+      "nimi": "Hiljainen jakso päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "jakso",
+      "jakso": "hiljainen_jakso",
+      "reuna": "loppu",
+      "soi": "hiljainen jakso päättyy, vaskit ja patarummut kasvattavat",
+      "soittimet": [
+        "vaskipuhaltimet",
+        "patarummut"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "vaski_tutti_620",
+      "nimi": "Vaskien ja patarumpujen tutti-isku",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "vaskien ja patarumpujen tutti-isku, jakson voimakkain kohta",
+      "soittimet": [
+        "vaskipuhaltimet",
+        "patarummut"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "auringonsade",
+      "nimi": "C-duuri ennen kirjainta M",
+      "kirjain": null,
+      "tahti": 392,
+      "tahti_loppu": 396,
+      "tahti_suhde": "noin 5 tahtia ennen kirjainta M",
+      "luokka": "huippu",
+      "tyyppi": "hetki",
+      "soi": "yllättävä C-duuri, noin viisi tahtia",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri; avainkohta",
+      "tarkista": false
+    },
+    {
+      "id": "M_ennakko",
+      "nimi": "Kirjain M: vaskien jyrinä",
+      "kirjain": "M",
+      "tahti": 397,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "vaskien jyrinä, myrskyn ennakko (ei vielä talvimyrsky)",
+      "soittimet": [
+        "vaskipuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": false
+    },
+    {
+      "id": "jannitejakso_alku",
+      "nimi": "Jännitteinen jousijakso alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "jannitejakso",
+      "reuna": "alku",
+      "soi": "jousivaltainen jakso, korkea jännite ja nopea liike",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "jannitejakso_loppu",
+      "nimi": "Jännitteinen jousijakso päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "jannitejakso",
+      "reuna": "loppu",
+      "soi": "jousijakso päättyy, vaskit tulevat",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "allegro_moderato_O_alku",
+      "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu alkaa",
+      "kirjain": "O",
+      "tahti": 462,
+      "tahti_loppu": null,
+      "tahti_suhde": "O:n jälkeen",
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "allegro_moderato_O",
+      "reuna": "alku",
+      "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu",
+      "soittimet": [
+        "käyrätorvet",
+        "trumpetit"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": true
+    },
+    {
+      "id": "allegro_moderato_O_loppu",
+      "nimi": "Allegro moderato O:n jälkeen: vaskivuorottelu päättyy",
+      "kirjain": "O",
+      "tahti": 462,
+      "tahti_loppu": null,
+      "tahti_suhde": "O:n jälkeen",
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "allegro_moderato_O",
+      "reuna": "loppu",
+      "soi": "käyrätorvien < > ja trumpettien hidas vuorottelu päättyy",
+      "soittimet": [
+        "käyrätorvet",
+        "trumpetit"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": true
+    },
+    {
+      "id": "hiljaisuus_2_alku",
+      "nimi": "Toinen hiljaisuus alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tauko",
+      "tyyppi": "jakso",
+      "jakso": "hiljaisuus_2",
+      "reuna": "alku",
+      "soi": "ääni hiljenee lähes täydelliseen hiljaisuuteen ennen myrskyä",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "hiljaisuus_2_loppu",
+      "nimi": "Toinen hiljaisuus päättyy",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tauko",
+      "tyyppi": "jakso",
+      "jakso": "hiljaisuus_2",
+      "reuna": "loppu",
+      "soi": "hiljaisuus päättyy; ppp-soitto on jo alkanut jakson sisällä",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "myrsky_nakyy",
+      "nimi": "Myrsky näkyy",
+      "kirjain": null,
+      "tahti": 523,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "hetki",
+      "soi": "ppp, hiljainen jousten kuviointi, crescendo alkaa",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": false
+    },
+    {
+      "id": "myrsky_kasvu",
+      "nimi": "Nopea voimistuminen alkaa",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "hetki",
+      "soi": "jouset tulevat selvästi esiin, nopea crescendo",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "myrsky_iskee",
+      "nimi": "Talvimyrsky iskee",
+      "kirjain": null,
+      "tahti": 540,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "talvimyrsky iskee: kromaattinen jousitremolo, vaskit täydellä voimalla",
+      "soittimet": [
+        "jouset",
+        "vaskipuhaltimet"
+      ],
+      "tarina": "",
+      "lahde": "käyttäjä, partituuri",
+      "tarkista": false
+    },
+    {
+      "id": "myrsky_huippu",
+      "nimi": "Myrskyn voimakkain kohta",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "huippu",
+      "tyyppi": "hetki",
+      "soi": "koko äänitteen voimakkain jakso, tiheä tutti",
+      "soittimet": [
+        "koko orkesteri"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "toinen_paisunta",
+      "nimi": "Toinen paisunta myrskyn jälkeen",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "tunnelma",
+      "tyyppi": "hetki",
+      "soi": "äkillinen voimistuminen hiljaisesta kohdasta",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "huuto",
+      "nimi": "Huuto",
+      "kirjain": null,
+      "tahti": 586,
+      "tahti_loppu": 587,
+      "tahti_suhde": null,
+      "luokka": "huippu",
+      "tyyppi": "hetki",
+      "soi": "korkeat jouset (\"huuto\") myrskyn jälkeen",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "kirjallisuus: Grimley (tahdit), Europadisc (luonnehdinta) [tarkista partituurista]",
+      "tarkista": false
+    },
+    {
+      "id": "loppuhuipennus",
+      "nimi": "Loppuhuipennus",
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "huippu",
+      "tyyppi": "hetki",
+      "soi": "viimeinen suuri huipennus ennen H-duuria",
+      "soittimet": [
+        "koko orkesteri"
+      ],
+      "tarina": "",
+      "lahde": "analyysi: aikajana",
+      "tarkista": true
+    },
+    {
+      "id": "loppu_Hduuri_alku",
+      "nimi": "H-duuri-loppu alkaa",
+      "kirjain": null,
+      "tahti": 624,
+      "tahti_loppu": 634,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "loppu_Hduuri",
+      "reuna": "alku",
+      "soi": "H-duurisointu monijakoisissa jousissa (divisi); dynamiikka partituurista [tarkista]",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "kirjallisuus: Wilker (tahdit); käyttäjä (dynamiikka mezzoforte-sävyinen) [tarkista partituurista]",
+      "tarkista": false
+    },
+    {
+      "id": "loppu_Hduuri_loppu",
+      "nimi": "H-duuri-loppu päättyy",
+      "kirjain": null,
+      "tahti": 624,
+      "tahti_loppu": 634,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "loppu_Hduuri",
+      "reuna": "loppu",
+      "soi": "H-duurisointu hiljenee",
+      "soittimet": [
+        "jouset"
+      ],
+      "tarina": "",
+      "lahde": "kirjallisuus: Wilker (tahdit)",
+      "tarkista": false
+    },
+    {
+      "id": "musiikki_loppuu",
+      "nimi": "Musiikki loppuu",
+      "kirjain": null,
+      "tahti": 634,
+      "tahti_loppu": null,
+      "tahti_suhde": "viimeinen ääni",
+      "luokka": "tauko",
+      "tyyppi": "hetki",
+      "soi": "teoksen viimeinen ääni",
+      "soittimet": [],
+      "tarina": "",
+      "lahde": "kirjallisuus: Wilker (634 tahtia)",
+      "tarkista": false
+    }
+  ]
 }

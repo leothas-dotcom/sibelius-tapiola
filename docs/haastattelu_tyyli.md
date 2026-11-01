@@ -262,3 +262,46 @@ nousu 14:03–14:29 hiljaisuudesta (26 s alle −45 dBFS) jaksoon 14:21–15:21;
 
 Ohjaajan merkintä 1.11.2026: käyttäjä ei kuunnellut otteita vielä; teemakartta tehdään analyysiajoin
 (`varmuus: analyysi`) ja ajat vahvistetaan myöhemmin korvalla. Brief: `docs/briefit/vaihe5_teemakartta.md`.
+
+## 1.11.2026 – käyttäjän ohje kuunteluoppaan kirjoittamiseen (saneltu, käyttäjän sanat)
+
+> Niin siis tässä kohtaa sun täytyisi oikeastaan just käyttää sitä lähdemateriaaleja ja taustatutkimusta
+> hyväksi, että mitähän siis se Sibelius on tarkoittanut tai mahtanut tarkoittaa näillä eri asioilla, mitä me
+> sieltä kuultiin. Ja sitten jos on jotain kohtia, mitä lähdemateriaalissa on mainittu, että tätä ja tätä tässä
+> teoksessa on, mutta et tunnistanut niitä, että missä kohdassa ne on, niin mä voin kyllä katsoa ne partituurista
+> sulle. Ne kohdat. Mutta siis keskity siihen, että se kuuntelijaopas on just niin kuin sanoit, sellainen, että
+> jos joku laittaa silmät kiinni ja kuuntelee sen ekan kerran, että mitä sieltä pitäisi kuulla, ja sitten pohtii
+> vähän ehkä näitä niin kuin mitä lähteet on sanonut, mitä siellä voisi olla, sä voit myös itse pohtia ja olla
+> niin kuin luova ja niin kuin tämmönen uniikki tämän tulkinnan suhteen, että noin mitä mä oon tulkinnut itse on
+> niin kuin periaatteessa omia mielipiteitä ja voi olla, että joku toinen henkilö ajattelee eri tavalla ja sehän
+> taiteessa on rikkaus just, että ne on monitulkintaisia. Asioita. Eli ei ole yksittäistä oikeaa vastausta sille,
+> että mitä Sibelius on ajatellut, kun hän on kirjoittanut tällaisen patarummun, pärinän tähän alkuun. Mutta me
+> voimme itse luoda sen, ja nyt me olemme nimenomaan luomassa sitä tässä näin. Ei, etsi itse kirjallisuudesta
+> viitteet, ja käytä luovuutta mitä sibelius on mahdollisesti niillä tarkoittanut. Ne, mitkä minä olen sanonut,
+> on minun mielikuvituksesta. Nyt on sinun vuorosi. Lue docs-kansiosta kaikki lähdemateriaali, mitä maailmassa
+> on tapahtunut, mitä ne voisi tarkoittaa. Minä itse luulen että sibelius [viesti katkesi]
+
+Ohjaajan merkintä: opas on silmät kiinni ensikuuntelijalle: mitä pitäisi kuulla, mitä lähteet sanovat, ja
+ohjaajan oma luova tulkinta merkittynä omaksi. Käyttäjän kuvat ovat hänen (lainataan), ohjaajan omat ovat
+ohjaajan. Ei yhtä oikeaa vastausta. Kohdat, joita lähteet mainitsevat mutta joita ei ole paikannettu, listataan
+käyttäjälle partituurista katsottaviksi.
+
+## 1.11.2026 – käyttäjä: Sibeliuksen tehokeinot ja hiljaisuus (saneltu, käyttäjän sanat)
+
+> [En ole] kertonut sulle kaikkia asioita, mitä Sibelius on niinku käyttänyt musiikissaan. Niinku tehokeinona.
+> Niin. Koitapa itsekin etsiä itseä verkosta tämmöisiä niinku analyysejä, että minkälaisia asioita Sibelius
+> yleensä käyttää tehokeinona ja miten ne tässä Tapiolassa on ehkä kuultavissa. Itse mikä omalla kuuntelulla
+> tulee mieleen on se, että tässä just on kuvattu luontoa ja Suomen mytologiaa ja näitä Tapiolan teemoja, eli
+> metsänkeijuja ja muita, mutta niin kun ja jumalia ja myrskyä ja tällaista, mutta niin kun yksi tehokeinohan on
+> hiljaisuus, ja sehän on tietysti videossakin sitten niin kun tämmöinen sanotaanko erittäin hyvä tehokeino, mutta
+> miten me tuodaan se tuohon kuunteluoppaaseen, niin että vielä ei mietitä niitä visuaaleja, mutta että mitä se
+> voisi niillä hiljaisuuksilla korostaa, esimerkiksi vaikka siinä alussa on iso generaalipaussi, ja näin. Mietin
+> niitä hiljaisuuksia, voisiko se viitata jotenkin siihen, että Sibeliuksella on sitä luomisen tuskaa, mistä mä
+> puhuin, ja Sibeliuksella tämä oli hänen viimeinen teos, ja sen jälkeen ei tullut enää mitään uutta. Niin mun
+> mielestä se on niin kuin koskettavaa, että tämä oli hänen viimeinen teos, ja nyt me halutaan niin kuin luoda
+> kunniaa sitten Sibeliukselle tämmöisen visualisoinnin muodossa.
+
+Ohjaajan merkintä: (1) haku Sibeliuksen tehokeinoista kirjallisuudessa ja niiden kuulumisesta Tapiolassa
+(`docs/briefit/tutkimus_tehokeinot.md`); (2) hiljaisuus tehokeinona oppaaseen: alun **yleistauko** (käyttäjä,
+partituuri) = ankkuri `hiljaisuus_1`; tulkinta: hiljaisuudet luomisen tuskana ja sinä, että tämän jälkeen ei tullut
+mitään; (3) videon tarkoitus: kunnianosoitus Sibeliukselle.
