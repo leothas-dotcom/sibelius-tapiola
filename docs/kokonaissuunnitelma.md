@@ -4,8 +4,8 @@
 pyynnöstä ja päättyy committiin sekä merkintään `docs/opit.md`:hen. Vaiheen tarkistuslista on sen
 valmiuden ehto: "valmis tarkoittaa mitattua".*
 
-Teos: Jean Sibelius, *Tapiola* op. 112. Äänilähde: Kajanus / LSO 1932, siirto Bob Varney,
-`audio/05_Tapiola.mp3` (17:43). Tarkemmat tiedot: `docs/tapiola_tutkimus.md` (vaihe 2).
+Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle / LSO 2022, 17:58; lopullinen
+äänitys käyttäjän oma, myöhemmin. Kajanus 1932 on arkisto. Tarkemmat tiedot: `CLAUDE.md`, `docs/tapiola_tutkimus.md`.
 
 ## Tila
 
@@ -14,7 +14,7 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Äänilähde: Kajanus / LSO 1932, siirto
 | 0 | Perustus (CLAUDE.md, suunnitelma, git) | ✅ 1.11.2026 |
 | 1 | Lähteet ja työkalut | 🔶 kopioitu ja korjattu 1.11.2026; putki toimii 60 s paketille; koko tiedosto, render.mjs ja camcheck testaamatta |
 | 2 | Teos: tutkimusdokumentti | 🔶 verkkotutkimus valmis 1.11.2026; auki: jaksokartta kirjaimin partituurista, Salmenhaara 1970 |
-| 3 | Ääni: kuuntelukopio ja totuus | 🔶 kuuntelukopio tehty, kellot 0,00 ms; vire +7,8 c mitattu, päätös auki; käyttäjä ei vielä kuunnellut |
+| 3 | Ääni: kuuntelukopio ja totuus | 🔶 Kajanus-kopio tehty ja mitattu; **totuus vaihtui Rattleen 1.11.2026**, uusi kopio tekeillä |
 | 4 | Kuuntelutyökalu ja kanavakortti | 🔶 V1–V3 mitattu 60 s:ssa (docs/kanavakortti.md); perhekanavat eivät erottele; V4–V8 auki |
 | 5 | Kuunteluopas ja teemakartta | ⬜ |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 haastattelu alkoi 1.11.2026 (docs/haastattelu_tyyli.md); tyyliohjetta ei kirjoiteta ennen vaiheita 3–5 |

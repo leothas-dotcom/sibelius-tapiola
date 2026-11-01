@@ -1,9 +1,15 @@
 # CLAUDE.md – Tapiola-videoprojekti
 
 Teos: Jean Sibelius, *Tapiola*, sinfoninen runo op. 112 (1926).
-Äänilähde: Robert Kajanus / London Symphony Orchestra, Lontoo 1932, RCA Victrola 11503–11509,
-siirto Bob Varney. Lähde on **yksi tiedosto** `audio/05_Tapiola.mp3` (17:43, 44,1 kHz, stereo, 320 kbps). Ei LP, ei puolia.
-Aineistosta ei tehdä oletuksia edellisen projektin perusteella: se luetaan ja mitataan.
+**Äänitykset (päätös 1.11.2026):**
+- **Työäänitys:** Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc0e3TQ), 17:58,
+  `audio/vertailu/rattle_lso_2022.webm` → kuuntelukopio `build/kuuntelu/rattle_kuuntelu.wav`. Sillä kirjoitetaan
+  kuunteluopas ja teemakartta ja kalibroidaan analyysi. **Ei videoon, ei gittiin** (tekijänoikeus).
+- **Lopullinen äänitys:** käyttäjän oma, nauhoitetaan myöhemmin. Sama analyysi ajetaan sille, ja teemakartan ajat
+  siirtyvät siihen. YouTube-versio tehdään vain siitä.
+- **Arkisto:** Kajanus / LSO 1932 (`audio/05_Tapiola.mp3`, Bob Varneyn siirto). Tutkittu ja mitattu, ei enää
+  työäänitys: vuoden 1932 kaistanleveys ei anna soitinkanavia.
+- Aineistosta ei tehdä oletuksia edellisen projektin perusteella: se luetaan ja mitataan.
 
 Käyttäjä on orkesterimuusikko ja kirjoittaa suomeksi. Vastaa suomeksi.
 
@@ -28,8 +34,11 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 - Tarina ennen tekniikkaa. Kun olet epävarma, kysy käyttäjän tarinaa, älä arvaa tekniikkaa.
 
 ## Aika ja musiikki
-- **Aikojen ainoa totuus on kuuntelukopio** (`build/kuuntelu/`), jota käyttäjä kuuntelee. Kaikki ajat
-  dokumenteissa ja datassa ovat sen aikaa. Videon ääni mitataan sitä vasten (`kellot.py`), ja 0 ms on tavoite.
+- **Aikojen ainoa totuus on kuuntelukopio** (`build/kuuntelu/`, `analysis/config.json`), jota käyttäjä
+  kuuntelee. Kaikki ajat dokumenteissa ja datassa ovat sen aikaa ja nimeävät levytyksen. Videon ääni mitataan sitä
+  vasten (`kellot.py`), ja 0 ms on tavoite.
+- **Teemakartta on levytysriippumaton:** ankkurit ovat partituurin paikkoja (harjoituskirjain, tahti, mitä soi),
+  ja jokaisella levytyksellä on oma aikataulukkonsa. Ks. `docs/teemakartta_rakenne.md`.
 - Analyysi tehdään puhdistetusta monokopiosta; ääniraita on alkuperäinen, rahinoineen.
 - **Teemakartta (`annotations/teemat.json`) on ainoa paikka, jossa jaksojen, teemojen ja iskujen ajat ovat.**
   `cues.json` ja kuunteluoppaan aikakoodit generoidaan siitä. Aikoja ei kirjoiteta käsin muualle.

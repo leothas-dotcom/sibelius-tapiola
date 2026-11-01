@@ -178,3 +178,19 @@ teemakarttaan ankkurina (työnimi `auringonsade`, noin 5 tahtia ennen kirjainta 
 - **1920-luvun kuvataide innoittajana:** mitä se oli, mikä murros, kipuilu abstraktin ja esittävän välillä, mihin
   suuntaan taide meni. Sama kipuilu kuin Sibeliuksen tonaalisuuden ja atonaalisuuden välillä. Tutkitaan omana
   hakuna (`docs/briefit/tutkimus_taide1920.md`). Periaatteita, ei jäljennöksiä.
+
+## 1.11.2026 – käyttäjän päätös äänilähteestä (käyttäjän sanat)
+
+> Käytetään tuota modernia äänitystä kirjoittamaan se kuunteluopas. Unohdetaan tuo kajanus. Lopullinen
+> youtubeen menevä versio sitten me nauhoitamme itse. Ja käytämme samat analysointimenetelmät tallentamaan ne
+> kuunteluoppaan themet ja cuet. Eikö tämä ollut suunnitelma? Meillä on kuunteluopas, ja sitten theme ja cue
+> json kirjasto?
+
+Ohjaajan merkintä: päätös sitoo. Työäänitys = Rattle/LSO 2022 (kalibrointi ja oppaan kirjoitus). Lopullinen
+äänitys = käyttäjän oma, myöhemmin. Teemakartta ja cues rakennetaan niin, että ankkurit ovat partituurin paikkoja
+ja ajat ovat levytyskohtaisia; sama analyysi ajetaan uudelle äänitykselle, ja ajat siirtyvät.
+
+> Ja yksi kommentti: pitäisi tarkemmin pystyä erottelemaan vielä eri soittimet. Mieti onko mahdollista?
+
+Ohjaajan merkintä: kysymys yksittäisten soitinten erottelusta (ei vain perheet). Vastaus ja vaihtoehdot
+`docs/analyysisuunnitelma.md` luku 7 (1.11.2026).
