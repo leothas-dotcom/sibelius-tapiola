@@ -30,7 +30,8 @@ Nämä ovat kanavakortin testikohdat. Jokainen aika mitataan kuuntelukopiosta; t
 | V5 | Puupuhallinjakso ("peikot", kirjain G) | nopeat kahdeksasosakuviot puupuhaltimissa | puupuhallinkanava, liiketiheys |
 | V6 | C-duuri ennen kirjainta M, noin t. 392–396 | yllättävä duurikirkastus | chroma / sävellajikanava: C-duurin kolmisointu |
 | V7a | Kirjain M = t. 397: myrskyn ennakko, ensimmäinen aalto (käyttäjä) | vaskien jyrinä, liike | vaskikanava, liiketiheys |
-| V7 | **Talvimyrsky alkaa t. 540** (käyttäjä partituurista); kirjallisuuden jakso 513–577 | kromaattinen jousitremolo, vasket | tremolokanava, liiketiheys, vaskikanava |
+| V7b | **Myrsky näkyy: ppp t. 523**, crescendo alkaa (käyttäjä; Wilker 523) | hiljainen tremolo, nopea kasvu | tremolokanava, voimakkuuden nousunopeus dB/s |
+| V7 | **Myrsky iskee: t. 540** (käyttäjä partituurista) | kromaattinen jousitremolo, vasket täydellä voimalla | tremolokanava, liiketiheys, vaskikanava, isku |
 | V8 | Loppu | H-duurisointu divisi-jousissa; dynamiikka partituurista (käyttäjä: mezzoforte-sävy) | chroma: H-duuri; patarumpu 0 |
 | V9 | Kirjain B = t. 69 | matalat äänet "askelina" eri tahtiin kuin muu orkesteri | askel-kanava |
 | V10 | O:n jälkeen, Allegro moderato t. 462 | käyrätorvien < > ja **trumpettien** hidas vuorottelu (käyttäjä korjasi: ei pasuunat) | vaskiaalto, soitin_horn vs soitin_trumpet |

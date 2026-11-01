@@ -248,3 +248,12 @@ Ohjaajan merkintä (käyttäjä partituurista 1.11.2026): **talvimyrsky alkaa t.
 ensimmäinen aalto, ei vielä myrsky. C-duuri (noin t. 392–396) edeltää M:ää, ei myrskyä suoraan. Dramaturgia
 muuttuu: auringonsäde → ennakko (M) → ... → talvimyrsky (540) → huuto (586–587) → H-duuri (624–634). Kirjallisuuden
 t. 513–577 ja käyttäjän 540 ovat samaa jaksoa eri rajauksella. Rattlessa myrskyehdokas 14:21–15:21.
+
+> Ja se on sellainen nopeasti päälle tuleva, alkaa ppp tahdissa 523 ja suurenee nopeasti, niinkuin kaukaa tuleva
+> lumi ja jää. Aluksi se vain näkyy, ja iskee sitten päälle kuin myrsky.
+
+Ohjaajan merkintä (käyttäjä partituurista): **myrskyn tulo alkaa ppp t. 523** (sama kuin Wilkerin 523 ja Grimleyn
+513–577 jakso) ja kasvaa nopeasti; **t. 540 se iskee päälle**. Kuva käyttäjän sanoin: "kaukaa tuleva lumi ja jää.
+Aluksi se vain näkyy, ja iskee sitten päälle." Tämä on jo kuvakieltä: etäisyys → lähestyminen → isku. Mitattava
+kahtena ankkurina: `myrsky_nakyy` (t. 523, ppp, crescendo alkaa) ja `myrsky_iskee` (t. 540). Rattlessa ehdokas:
+nousu 14:03–14:29 hiljaisuudesta (26 s alle −45 dBFS) jaksoon 14:21–15:21; huippu 15:09.
