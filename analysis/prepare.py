@@ -1,0 +1,125 @@
+r"""Vaihe 0: esikäsittely.
+
+Leikkaa lähteestä (audio/05_Tapiola.mp3, config.json) pätkän ja tekee siitä tiedostot:
+  soundtrack.wav  ääniraita, 48 kHz stereo, rahina säilyy
+  orig_mono.wav     mono, käsittelemätön
+  declick_mono.wav  mono, naksahdukset poistettu (orig - declick = naksahdukset)
+  clean_mono.wav    mono, naksahdukset ja kohina poistettu (analyysiä varten;
+                    declick - clean = sihinä)
+  clean_44k.wav     sama 44,1 kHz:llä (näytönohjaimen mallit: Demucs, PANNs, CREPE, beat_this)
+
+Kohinanpoisto (afftdn) viivästää ääntä; viive mitataan ristikorrelaatiolla ja korjataan,
+joten kaikki tiedostot ovat samassa ajassa ääniraidan kanssa.
+
+Pintakohinan taso mitataan lähteen hiljaisimmasta 1 s ikkunasta (config.json: "kohinaikkuna",
+analysis/kohinaikkuna.py), tai --noise-window ALKU KESTO.
+
+Kaikki johdetut äänet dekoodataan lähteestä samalla ffmpeg-komennolla (analysis/lahde.py: decode),
+joten ne ovat samassa ajassa kuuntelukopion kanssa. Ajat ovat kuuntelukopion aikaa (0 = tiedoston alku).
+
+Käyttö:  .venv\Scripts\python.exe -I analysis/prepare.py --start 0 --duration 60 --out build/testi60
+"""
+import argparse
+import json
+import sys
+from pathlib import Path
+
+import numpy as np
+import soundfile as sf
+from scipy import signal
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I jättää skriptin kansion pois polulta
+import lahde  # noqa: E402
+
+ROOT = lahde.ROOT
+SR = 22050
+MONO = "pan=mono|c0=0.5*c0+0.5*c1"
+
+
+def extract(src, start, dur, af, out, sr, channels):
+    lahde.decode(src, out, sr, channels, "pcm_f32le", af=af, start=start, dur=dur)
+
+
+def rms_db(x):
+    return float(20 * np.log10(np.sqrt(np.mean(x ** 2)) + 1e-12))
+
+
+def align_to(reference, path, max_lag_s=0.2):
+    """Siirtää tiedoston path alkuperäisen (reference) kohdalle; palauttaa viiveen näytteinä."""
+    ref, sr = sf.read(reference, dtype="float32")
+    x, _ = sf.read(path, dtype="float32")
+    seg = slice(0, min(len(ref), len(x), sr * 10))
+    c = signal.correlate(ref[seg], x[seg], mode="full", method="fft")
+    mid, m = len(c) // 2, int(max_lag_s * sr)
+    lag = int(np.argmax(c[mid - m: mid + m + 1])) - m
+    if lag:
+        x = np.roll(x, lag)
+        if lag < 0:
+            x[lag:] = 0
+        sf.write(path, x, sr, subtype="FLOAT")
+    return lag
+
+
+def main():
+    sys.stdout.reconfigure(encoding="utf-8")
+    cfg = lahde.config()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--source", type=Path, default=None, help="lähde (oletus config.json: lahde)")
+    ap.add_argument("--start", type=float, default=0.0)
+    ap.add_argument("--duration", type=float, required=True)
+    ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--noise-window", type=float, nargs=2, metavar=("ALKU", "KESTO"), default=None,
+                    help="kohinaikkuna lähteen ajassa (oletus config.json: kohinaikkuna)")
+    a = ap.parse_args()
+
+    src = lahde.path_of(a.source) if a.source else lahde.source(cfg)
+    out = a.out if a.out.is_absolute() else ROOT / a.out
+    out.mkdir(parents=True, exist_ok=True)
+
+    # Pintakohinan taso lähteen kohinaikkunasta (sama monomiksaus kuin analyysikopiossa).
+    if a.noise_window:
+        nw_start, nw_dur = a.noise_window
+    elif cfg.get("kohinaikkuna"):
+        nw_start, nw_dur = cfg["kohinaikkuna"]["alku_s"], cfg["kohinaikkuna"]["kesto_s"]
+    else:
+        raise SystemExit("kohinaikkuna puuttuu: aja analysis/kohinaikkuna.py tai anna --noise-window ALKU KESTO")
+    noise = out / "kohinaikkuna_mono.wav"
+    extract(src, nw_start, nw_dur, MONO, noise, SR, 1)
+    noise_floor_db = rms_db(sf.read(noise, dtype="float32")[0])
+    noise.unlink()
+    nf = int(np.clip(round(noise_floor_db), -80, -20))  # afftdn hyväksyy -80..-20 dB
+
+    extract(src, a.start, a.duration, "anull", out / "soundtrack.wav", 48000, 2)
+    extract(src, a.start, a.duration, f"{MONO},aresample=44100", out / "orig_mono.wav", SR, 1)
+    extract(src, a.start, a.duration, f"{MONO},aresample=44100,adeclick", out / "declick_mono.wav", SR, 1)
+    clean_af = f"{MONO},aresample=44100,adeclick,afftdn=nf={nf}:tn=1"
+    extract(src, a.start, a.duration, clean_af, out / "clean_mono.wav", SR, 1)
+    extract(src, a.start, a.duration, clean_af, out / "clean_44k.wav", 44100, 1)
+    extract(src, a.start, a.duration, f"{MONO},aresample=44100", out / "orig_44k.wav", 44100, 1)
+
+    lags = {
+        "declick_mono": align_to(out / "orig_mono.wav", out / "declick_mono.wav"),
+        "clean_mono": align_to(out / "orig_mono.wav", out / "clean_mono.wav"),
+        "clean_44k": align_to(out / "orig_44k.wav", out / "clean_44k.wav"),
+    }
+    (out / "orig_44k.wav").unlink()
+
+    meta = {
+        "source": str(src.relative_to(ROOT)).replace("\\", "/") if src.is_relative_to(ROOT) else str(src),
+        "start": a.start,
+        "duration": a.duration,
+        "sr": SR,
+        "noise_floor_db": round(noise_floor_db, 2),
+        "afftdn_nf": nf,
+        "noise_window": {"start": nw_start, "duration": nw_dur},
+        "files": ["soundtrack.wav", "orig_mono.wav", "declick_mono.wav", "clean_mono.wav", "clean_44k.wav"],
+        "corrected_lag_samples": lags,
+    }
+    (out / "prepare.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
+    print(f"Pintakohina {noise_floor_db:.1f} dBFS (kohinaikkuna {nw_start:.2f}–{nw_start + nw_dur:.2f} s), afftdn nf={nf}")
+    print("Korjatut viiveet (näytettä): " + ", ".join(f"{k} {v}" for k, v in lags.items()))
+    print(f"Valmis: {out}")
+
+
+if __name__ == "__main__":
+    main()

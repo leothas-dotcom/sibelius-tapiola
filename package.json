@@ -1,0 +1,14 @@
+{
+  "name": "sibelius-tapiola",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "preview": "node render/serve.mjs",
+    "render": "node render/render.mjs",
+    "check-webgl": "node render/check-webgl.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.16.0"
+  }
+}

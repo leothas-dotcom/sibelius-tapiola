@@ -20,7 +20,7 @@ kuunteluoppaaseen, tyyliin ja kuvakäsikirjoitukseen. Visuaalisia päätöksiä 
 | Kantaesitys | New York 26.12.1926, Damrosch | varma |
 | Suomen ensiesitys | 25.4.1927, Kajanus, samassa konsertissa 7. sinfonia ja Myrsky-alkusoitto | varma |
 | Asema | Sibeliuksen viimeinen suuri orkesteriteos; sen jälkeen noin 30 vuoden "Ainolan hiljaisuus", 8. sinfonia tuhottiin | varma |
-| Perussävellaji | h-molli (engl. B minor; rinnakkaisduuri D-duuri, 2 ylennystä), loppu H-duurissa (B major) pianissimo | varma |
+| Perussävellaji | h-molli (engl. B minor; rinnakkaisduuri D-duuri, 2 ylennystä), loppu H-duurissa (B major) divisi-jousissa; dynamiikka partituurista (käyttäjä: mezzoforte-sävy), lähteet eivät anna merkintää | varma; dynamiikka [tarkista partituurista] |
 | Kokoonpano | 3 huilua (3. pikkolo), 2 oboeta, englannintorvi, 2 klarinettia, bassoklarinetti, 2 fagottia, kontrafagotti, 4 käyrätorvea, 3 trumpettia, 3 pasuunaa, patarummut, jouset. **Ei harppua, ei muita lyömäsoittimia.** | varma (Dahlström) |
 | Kesto | 15–21 min levytyksissä; tämä lähde 17:43 | varma |
 | Levytys | Kajanus / LSO, Abbey Road Studio 1, 29.(–30.)6.1932, HMV Sibelius Society Vol. 1 (DB 1739–1745), USA Victor M-333, levyt 11503–11509 (1937) | varma; matriisit [tarkista] |
@@ -71,7 +71,7 @@ Sibelius-klubin kuvaama kulku:
 6. **Vilkkaampi Allegro, sitten hitaampi Allegro moderato.**
 7. **Myrsky:** jousitremolot (BBC: kimmeltävä puolisävelaskelin liikkuva jousiparvi, joka purkautuu vaskien ja
    puupuhaltimien huutoon). Myrskyn jälkeen "huuto" korkeissa jousissa.
-8. **Kooda:** jäähyväiset orkesterille; H-duurisointu monijakoisissa jousissa, hiljaa.
+8. **Kooda:** jäähyväiset orkesterille; H-duurisointu monijakoisissa jousissa, t. 624–634 (Wilker). Dynamiikkaa ei yksikään lähde anna; "pianissimo" oli agentin lisäys ja on poistettu. Käyttäjä: mezzoforte-sävy, hellä, huokaus, ei julistava.
 
 Muoto: Sibelius itse puhui sonaattimuodosta; Murtomäki sonaatti + variaatio; Salmenhaara: ei yksi teema vaan
 neljä perusmotiivia ja noin 30 johdettua; Whitman: kolmikaari (esittely, levoton kehittely, kooda joka liukenee
@@ -116,7 +116,7 @@ Pitkät urkupisteet, runsaat jousitremolot, ostinatot. Dissonanssi säästeliäs
 
 | Ryhmä | Lähteiden mukaan kuultavissa | Tarkistettava |
 |---|---|---|
-| Jouset | avaus ilman sordiinoa; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi pp | ensimmäinen con sord. kirjaimen J jälkeen (käyttäjä); Del Marin tahdit [tarkista] |
+| Jouset | avaus ilman sordiinoa; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi, dynamiikka partituurista | ensimmäinen con sord. kirjaimen J jälkeen (käyttäjä); Del Marin tahdit [tarkista] |
 | Puupuhaltimet | vastaus avaukseen; "peikkojakso"; kuviot kirjaimesta G; pikkolo ja huilu | englannintorvi, bassoklarinetti, kontrafagotti: ei lähdekuvausta |
 | Vaskit | isku Allegro moderaton alkuun; "salama ja ukkonen"; myrskyn huuto | käyrätorvien soinnut: ei lähdekuvausta |
 | Patarummut | **Avaus on patarumpusoolo** (käyttäjä partituurista 1.11.2026; Judd). Muut lähteet ohittavat sen ja aloittavat jousista. | ensimmäinen kanavakortin testikohta |
@@ -145,6 +145,30 @@ maailman ja tonaliteettien kanssa." Lähteet tukevat tätä seuraavasti:
 **Dramaturgialle:** lähteet antavat kaksi tasoa, jotka käyttäjä jo nimesi: (1) tila, joka ei muutu (metsä,
 liikkumattomuus, yksi motiivi) ja (2) ihminen sen sisällä (vaeltaja, tuska, kutsu, johon ei vastata). Madetojan
 "yksinäinen vaeltaja" on aikalaisen, ei meidän, luenta, ja se on lainattavissa lähteellä.
+
+### Konteksti 1926 ja miksi viimeinen (`docs/tutkimus/konteksti.md`)
+- **Modernismi Sibeliuksen silmin:** päiväkirja 9.2.1914 Berliinistä (Vignalin kautta): kiinnostus Schönbergiin,
+  ihailun ja epäilyn sekoitus; huoli omasta asemasta vuosisadalla (päiväkirja 1910). **Mikään lähde ei yhdistä
+  hänen luomisen tuskaansa suoraan atonaalisuuteen**: se on käyttäjän tulkinta, ja se saa olla, kun se merkitään.
+  Mahler-keskustelu 1907 on Ekmanin (1935) sanamuoto, jonka aitoutta Vignal epäilee. "Kylmä lähdevesi": alkuperää
+  ei löytynyt.
+- **1918–26:** sisällissodan Ainola-tapahtumat, rahatilanne ja 60-vuotislahja 1925 lähteistetty. Eurooppalaisen ja
+  suomalaisen taiteen tapahtumat (Wozzeck 14.12.1925, kaksitoistasävelmenetelmä, Bauhaus, Dada, Tulenkantajat,
+  Merikanto) ovat vain ajoituksia, eivät todettuja vaikutussuhteita.
+- **Miksi viimeinen, tutkijat erimielisiä:** itsekritiikki ja täydellisyys (Barnett, Kilpeläinen, Ross);
+  tiivistämisen raja, "kahdeksas toteutui jo Tapiolassa" (Oramo, Whitehouse; tulkinta); 1930-luvun poliittinen
+  paine (Oramo pitää uskottavampana kuin terveyttä); vapina ja alkoholi (Sirén, Stearns); oma sana "kirjoittanut
+  tarpeeksi" (ei viitettä). Kahdeksas: Koussevitzky-lupaukset 1930–33, Voigtin kopiolasku 4.9.1933 (23 sivua),
+  poltto todennäköisesti 1945. **Viimeisyys on jälkikäteinen lukutapa:** Kilpeläisen mukaan Sibelius siirtyi
+  Tapiolasta kahdeksanteen ja ajatteli yhdeksättä; Kallio: jäähyväinen oli tahaton. Dramaturgialle: Tapiola ei
+  tiennyt olevansa viimeinen. Se on vahvempi kuin tietoinen jäähyväinen.
+- **Lopun H-duuri, tulkinnat:** Tovey "aamen"; Pursglove torjuu aamenin ja kuulee "tunnustuksen"; Europadisc
+  "kirkastettu"; BSO "kolme sykäystä, rauha voi olla petollinen"; Hayes, Sibelius-klubi, Kallio "jäähyväiset";
+  Whitehouse "heikko siunaus"; Oramo "levollinen". Wilker: t. 624–634, bassoissa yksi sidos t. 629–630, "viimeinen
+  hidas syke". Käyttäjän sanat "hellä", "huokaus", "kiitos" eivät esiinny lähteissä; lähin on "jäähyväiset".
+  **Sibelius Jalasille 1943:** Kajanuksen levytys liian hidas, ja "ranskalainen pehmeys" ei sovi Tapiolalle vaan
+  suoruus (Sibelius-klubin kautta, [tarkista]). Tämä asettuu hellyyttä vastaan ja on syytä pitää mielessä, kun
+  lopun kuva päätetään: hellä ja suora eivät sulje toisiaan pois.
 
 ## 6. Kajanus ja levytys
 
@@ -181,7 +205,9 @@ Ilman partituuria tahtinumerot jäävät pois, ja jaksokartta tehdään korvilla
 6. Painettu kirjallisuus, jota ei saatu luettua: **Salmenhaara 1970** (tärkein suomenkielinen; Finna / kirjasto),
    Taylor 2018, Grimley 2011, Howell 2001, Tawaststjerna, Del Mar 2023. Tovey 1939 on luettu kokonaan.
 7. "Väärä toivo" -luennan alkuperä: ei löytynyt verkosta; voi olla Salmenhaarassa tai Tawaststjernassa.
-8. Ristiriidat partituurista ratkaistaviksi: Del Marin sordiinotahti 130 vs. käyttäjän "ensimmäinen con sord. J:n
+8. Lopun dynamiikka ja soitinnus (t. 618–634), kirjainten P ja Q paikka ("dim. possibile", pp; Inkpot), Rossin
+   "ontto" h-mollisointu vaskissa: partituurista.
+9. Ristiriidat partituurista ratkaistaviksi: Del Marin sordiinotahti 130 vs. käyttäjän "ensimmäinen con sord. J:n
    jälkeen"; myrskyn alku 513 (Grimley) vs. 523 (Wilker) vs. kirjain M (käyttäjä).
 
 ## 9. Visuaaliset viitteet (katsaus `docs/tutkimus/viitteet.md`)
@@ -221,3 +247,28 @@ mitään kantta tai maalausta ei jäljennetä.
   on juuri se, mitä kansissa ei ole. Se on videon oma alue.
 - Valo rungoista ja usvasta läpi on viitteissä vahvin yksittäinen kuva, ja se osuu avainkohtaan (C-duuri ennen M).
 - Tapiolle ei ole vakiintunutta hahmoa, joten jos Tapio näkyy, hän on meidän.
+
+## 10. 1920-luvun kuvataide: kipuilu abstraktin ja esittävän välillä (`docs/tutkimus/taide1920.md`)
+
+Noin 2800 sanaa, 59 lähdettä. Viisi periaatetta (agentin ehdotuksia lähteiden pohjalta, eivät lähteiden väitteitä):
+1. **Luonto uutetaan, sitä ei kuvata.** Dove: "extraction"; Klee: taide tekee näkyväksi; Mondrianin puusarja.
+   Luonnon rakenne ja voima säilyvät, kuvaus katoaa.
+2. **Rakenne syntyy vastavoimien jännitteestä.** Kandinsky: elementin sisältö on jännite; Mondrianilla pysty ja vaaka;
+   Kleen *Fuge in Rot* rakentuu fuugan tapaan.
+3. **Valo ja pimeys ovat aine, josta tila rakennetaan.** Kandinskyn *Several Circles* (1926), Munchin *Stjernenatt*
+   (1922–24), Moholy-Nagyn valosommittelu, Harrisin valo avoveden yllä.
+4. **Liike on artikuloitua aikaa: rytmiä ja kontrapunktia.** Richter: liike on rytmiä. Kuva rinnastuu musiikkiin,
+   se ei kuvita sitä (Eggeling, Hirschfeld-Mack).
+5. **Kipuilua ei ratkaista.** Kandinsky otti geometrian mutta torjui "mekanistisen"; Burchfield, Carr ja Harris
+   pitivät luonnon jäljen ja rakenteen samassa kuvassa. Suomessa luontosidosta ei katkaistu (Huusko 2025).
+
+**Absoluuttinen elokuva samalta vuosikymmeneltä:** Ruttmann *Lichtspiel Opus I* (27.4.1921, lasille maalattu,
+Buttingin musiikki, Ruttmann itse sellossa), Richter *Rhythmus 21* (mykkä, suorakulmiot), Eggeling *Symphonie
+diagonale* (1924), Hirschfeld-Mackin värivaloleikit Bauhausissa (21.6.1922), Fischingerin musiikkiin ajastetut
+*Studien* vasta 1920-luvun lopulta. Lähteet eivät ratkaise, onko kuva musiikin kuvitusta vai rinnakkainen sommitelma.
+
+**Mitä ei kannata ottaa:** Mondrian-ruudukko, Kandinskyn ympyrät, Bauhaus-perusmuodot, visualisaattori-synestesia,
+myrskymeri-ekspressionismi, pohjoisen hengen ylevöinti (sitoutunut kansallismieliseen puheeseen).
+
+**Korjauksia briefin oletuksiin:** Tulenkantajat oli kirjallinen ryhmä; Burchfieldin *Night Wind* on 1918; Harrisin
+jäävuoret 1930 ja Carrin metsäpyörteet 1935 jatkavat 1920-lukua; Thesleffin lähes abstrakti vaihe on myöhäinen.

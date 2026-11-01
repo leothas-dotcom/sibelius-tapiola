@@ -1,0 +1,35 @@
+[project]
+name = "sibelius-tapiola"
+version = "0.1.0"
+description = "Sibelius: Tapiola, musiikkivideo koodilla: analyysityökalut"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    # Signaalianalyysi (analysis/analyze.py, prepare.py)
+    "librosa>=0.10",
+    "numpy",
+    "scipy",
+    "soundfile",
+    "matplotlib",
+    # Kuuntelutyökalu näytönohjaimella (analysis/listen.py)
+    "torch==2.11.0",
+    "torchaudio==2.11.0",      # beat_this ja torchcrepe vaativat; torchaudion viimeisin julkaisu on 2.11
+    "panns-inference==0.1.1",  # soittimet ja äänitapahtumat ruuduittain (AudioSet, PANNs CNN14)
+    "beat-this==1.1.0",        # iskut ja tahdin alut (vain lipulla --beats)
+    "demucs==4.1.0",           # stemmit: lyömäsoittimet, basso, "laulu", muu
+    "torchcrepe==0.0.24",      # melodian ja basson sävelkorkeus
+]
+
+[tool.uv]
+package = false
+# Projekti ajetaan Windowsissa (setup.ps1); lukitus vain sille.
+environments = ["sys_platform == 'win32'"]
+
+# PyTorch CUDA 13 -versiona; PyPI:n oletus olisi CPU-versio.
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }
