@@ -24,6 +24,10 @@ Kanavat ja menetelmät (ensimmäinen versio: kanavakortti ratkaisee luotettavuud
   kirkkaus             spektrin painopiste (log-asteikko 400-4000 Hz -> 0..1), puhdistettu mono
   vihje_hmolli, vihje_Dduuri, vihje_Cduuri, vihje_Hduuri
                        kolmisoinnun sävelten osuus 1 s chromasta, (osuus - 0,25) / 0,75. VAIN VIHJE.
+  soitin_<luokka>      PANNsin yksittäiset soitinluokat sellaisinaan (raaka-arvo 0..1, 30 fps): violin_fiddle, cello, double_bass,
+                       string_section, bowed_string_instrument, pizzicato, flute, clarinet, saxophone (diagnostiikka),
+                       wind_instrument_woodwind_instrument, french_horn, trumpet, trombone, brass_instrument, timpani,
+                       drum_roll, orchestra. Luokat puuttuvat kanavista, jos listen.py on ajettu ilman niitä.
   patarumpu_panns      PANNsin timpani + drum roll, suhteessa paketin 95. persentiiliin (kolmas, apukanava)
   stem_*_taso          stemmien absoluuttinen taso 0..1 (apukanava)
   taso_dbfs            kokonaistaso dBFS (puhdistettu mono)
@@ -55,6 +59,11 @@ PANNS = {
     "vasket": ["french_horn", "trumpet", "trombone", "brass_instrument"],
     "puu": ["wind_instrument_woodwind_instrument", "flute", "clarinet"],
 }
+# Yksittäiset PANNs-soitinluokat sellaisinaan kanavina soitin_<luokka> (raaka-arvo 0..1, 30 fps, ei normalisointia,
+# ei tasoitusta). AudioSetissä ei ole oboe-, fagotti- eikä englannintorvi-luokkaa; "brass section" = brass_instrument.
+SOITIN = ["violin_fiddle", "cello", "double_bass", "string_section", "bowed_string_instrument", "pizzicato",
+          "flute", "clarinet", "saxophone", "wind_instrument_woodwind_instrument",
+          "french_horn", "trumpet", "trombone", "brass_instrument", "timpani", "drum_roll", "orchestra"]
 # Kolmisoinnut (pykälät sävelestä C=0): suomalaiset nimet, H = englannin B.
 TRIADS = {
     "vihje_hmolli": ("h-molli", [11, 2, 6]),     # H, D, Fis
@@ -295,6 +304,9 @@ def main():
         "jouset": jouset, "puupuhaltimet": puu, "vasket": vasket, "kirkkaus": bright, **hints,
         "stem_drums_taso": S_drums, "patarumpu_panns": timp, "stem_bass_taso": S_bass, "stem_other_taso": S_other, "taso_dbfs": level,
     }
+    for k in SOITIN:
+        if f"panns_{k}" in L:
+            ch[f"soitin_{k}"] = L[f"panns_{k}"]
     # patarumpu_stemmi ja stem_drums_taso ovat sama luku; jälkimmäinen pois turhana
     ch.pop("stem_drums_taso")
     names = list(ch)
@@ -310,6 +322,8 @@ def main():
                        "urkupiste_min_s": 4.0, "patarumpu_tremolo_raja_per_s": 8,
                        "kolmisoinnut": {k: v[0] for k, v in TRIADS.items()}},
         "urkupisteet": [{"alku": round(start + t0, 2), "loppu": round(start + t1, 2), "midi": m} for t0, t1, m in ped_runs],
+        "soitinluokat": [k for k in SOITIN if f"panns_{k}" in L],
+        "soitinluokat_huom": "soitin_* = PANNs raaka-arvo sellaisenaan; AudioSetissä ei ole oboe-, fagotti- eikä englannintorvi-luokkaa",
         "huom": "Kanavat ovat ensimmäinen versio; luotettavuus todetaan kanavakortissa pöytäkirjasta (kuuntele.py).",
     }
     (d / "kanavat.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False), encoding="utf-8")

@@ -31,6 +31,12 @@ ROOT = lahde.ROOT
 FPS = 30
 SRC = {"melodia_laulu": "L", "melodia_muu": "M", "basso": "B"}
 HINT = {"vihje_hmolli": "h-molli", "vihje_Dduuri": "D-duuri", "vihje_Cduuri": "C-duuri", "vihje_Hduuri": "H-duuri"}
+# Yksittäiset PANNs-soitinluokat (kanavat soitin_<luokka>, raaka-arvo): sarakeotsikko, luokka
+SOITIN_COLS = [("viulu", "violin_fiddle"), ("sello", "cello"), ("kb", "double_bass"), ("jousisekt", "string_section"),
+               ("jousi", "bowed_string_instrument"), ("pizz", "pizzicato"), ("huilu", "flute"), ("klar", "clarinet"),
+               ("saks", "saxophone"), ("puu", "wind_instrument_woodwind_instrument"), ("torvi", "french_horn"),
+               ("trumpetti", "trumpet"), ("pasuuna", "trombone"), ("vaski", "brass_instrument"), ("patar", "timpani"),
+               ("rumpu-ps", "drum_roll"), ("orkesteri", "orchestra")]
 TYPE = {"tutti-isku": "tutti", "korkea isku": "korkea", "aksentti": "aks"}
 
 
@@ -74,14 +80,15 @@ def spectrogram(y, sr, t0, t1):
     return D, librosa.mel_frequencies(n_mels=128, fmin=40, fmax=8000)
 
 
-def plot(path, y, sr, t0, t1, K, A, tt, start, title):
+def plot(path, y, sr, t0, t1, K, A, tt, start, soitin, title):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
     D, freqs = spectrogram(y, sr, t0, t1)
-    fig, ax = plt.subplots(3, 1, figsize=(16, 13), sharex=True, facecolor="#FFFFFF",
-                           gridspec_kw={"height_ratios": [3.2, 1.3, 1.1]})
+    nrow = 4 if soitin else 3
+    fig, ax = plt.subplots(nrow, 1, figsize=(16, 13 + (3.5 if soitin else 0)), sharex=True, facecolor="#FFFFFF",
+                           gridspec_kw={"height_ratios": [3.2, 1.3, 1.1, 2.0][:nrow]})
     ax0 = ax[0]
     ax0.imshow(D, origin="lower", aspect="auto", extent=[t0, t1, 0, len(freqs)], cmap="Greys", vmin=-70, vmax=0)
     ticks = [100, 200, 500, 1000, 2000, 4000, 8000]
@@ -116,6 +123,14 @@ def plot(path, y, sr, t0, t1, K, A, tt, start, title):
     ax[2].set_xlabel("aika (s, kuuntelukopio)")
     ax[2].legend(loc="upper right", fontsize=8, ncol=4)
     ax[2].set_xlim(t0, t1)
+    if soitin:
+        M = np.stack([v for _, v in soitin])
+        ax[3].imshow(M, aspect="auto", origin="lower", cmap="Oranges", vmin=0, vmax=max(0.1, float(np.percentile(M, 99.5))),
+                     extent=[tt[0], tt[-1] + 1 / FPS, -0.5, len(soitin) - 0.5], interpolation="nearest")
+        ax[3].set_yticks(range(len(soitin)), [lab for lab, _ in soitin], fontsize=7)
+        ax[3].set_ylabel("soitinluokat (PANNs raaka)")
+        ax[3].set_xlabel("aika (s, kuuntelukopio)")
+        ax[3].set_xlim(t0, t1)
     fig.tight_layout()
     fig.savefig(path, dpi=80, facecolor="#FFFFFF")
     plt.close(fig)
@@ -130,6 +145,7 @@ def main():
     ap.add_argument("--package", type=Path, default=None, help="paketti (oletus: peiton mukaan build/*/)")
     ap.add_argument("--min-conf", type=float, default=0.6, help="nuottien vähimmäisvarmuus")
     ap.add_argument("--no-sample", action="store_true", help="ei kuuntelunäytettä")
+    ap.add_argument("--name", default=None, help="tiedostonimi tunnisteen sijaan: poytakirja_<name>.md/.png (oletus <alku>-<loppu>)")
     a = ap.parse_args()
     d = pick(a.t0, a.t1, a.package)
     am, A = load(d, "analysis")
@@ -144,12 +160,14 @@ def main():
 
     cfg = lahde.config()
     copy = lahde.listening_copy(cfg)
-    stamp = f"{int(round(a.t0)):04d}-{int(round(a.t1)):04d}"
+    stamp = a.name or f"{int(round(a.t0)):04d}-{int(round(a.t1)):04d}"
+    sample_stamp = (f"{cfg['levytys']}_" if cfg.get("levytys") else "") + f"{int(round(a.t0)):04d}-{int(round(a.t1)):04d}"
+    soitin = [(lab, K[f"soitin_{k}"]) for lab, k in SOITIN_COLS if f"soitin_{k}" in K]
     tt = start + np.arange(n) / FPS
     lines = [
         f"# Kuuntelupöytäkirja {mmss(a.t0)}–{mmss(a.t1)} (kuuntelukopion aikaa)", "",
         f"Paketti `{d.relative_to(ROOT).as_posix()}`, ruutu {a.step} s. Komento: `.venv\\Scripts\\python.exe -I analysis/kuuntele.py "
-        f"--from {a.t0:g} --to {a.t1:g}`. Ajat: kuuntelukopio `{Path(cfg['kuuntelukopio']).as_posix()}`, aika = ruudun alku.", "",
+        f"--from {a.t0:g} --to {a.t1:g} --package {d.relative_to(ROOT).as_posix()}" + (f" --step {a.step:g}" if a.step != 0.5 else "") + f"`. Ajat: kuuntelukopio `{Path(cfg['kuuntelukopio']).as_posix()}`, aika = ruudun alku.", "",
         "Arvot 0..1 ruudun keskiarvoja; patarumpu-sarakkeet ruudun suurin arvo. rumpu = drums-stemmin taso (dBFS -65..-20 -> 0..1), "
         "matala = 50-200 Hz iskuvoima (20 dB nousu 40 ms:ssa = 1). Kanava ei ole totuus, vaan tämä taulukko on kanavakortin pohja. "
         "Vihje (duuri/molli) on pelkkä vihje chromasta: kolmisoinnun sävelten osuus 1 s ikkunassa, vain jos > 0,25.",
@@ -157,7 +175,7 @@ def main():
         "| aika | rumpu | matala | jouset | puu | vasket | tremolo | urkupiste | tiheys/s | dBFS | isku | vihje | sävelet |",
         "|---|---|---|---|---|---|---|---|---|---|---|---|---|",
     ]
-    rows = []
+    rows, srows = [], []
     for t in np.arange(a.t0, a.t1, a.step):
         s = slice(int(round((t - start) * FPS)), max(int(round((t - start) * FPS)) + 1, int(round((t + a.step - start) * FPS))))
         if s.start < 0 or s.start >= n:
@@ -176,17 +194,23 @@ def main():
         row = (mmss(t), mx("patarumpu_stemmi"), mx("patarumpu_matala"), mean("jouset"), mean("puupuhaltimet"), mean("vasket"),
                mean("jousitremolo"), ped_s, mean("liiketiheys"), mean("taso_dbfs"), ak_s, hint, nt)
         rows.append(row)
+        srows.append("| " + " | ".join([mmss(t)] + [f"{float(v[s].max()):.2f}" for _, v in soitin]) + " |")
         lines.append("| " + " | ".join([row[0]] + [f"{v:.2f}" for v in row[1:7]] + [row[7], f"{row[8]:.1f}", f"{row[9]:.0f}", row[10], row[11], row[12]]) + " |")
 
+    if soitin:
+        lines += ["", "### Yksittäiset soitinluokat (PANNs, raaka-arvo ruudun suurin, 0..1; ei normalisoitu)", "",
+                  "AudioSetissä ei ole oboe-, fagotti- eikä englannintorvi-luokkaa; vaski = brass_instrument, saks = saksofoni (diagnostiikka).", "",
+                  "| aika | " + " | ".join(lab for lab, _ in soitin) + " |", "|---|" + "---|" * len(soitin)] + srows
     out_md = d / f"poytakirja_{stamp}.md"
     out_png = d / f"poytakirja_{stamp}.png"
-    print("\n".join(lines))
+    if len(lines) < 400:
+        print("\n".join(lines))
     y, sr = sf.read(str(copy), dtype="float32", always_2d=True)
     ym = y.mean(axis=1)
-    plot(out_png, ym, sr, a.t0, a.t1, K, A, tt, start, f"Pöytäkirja {mmss(a.t0)}–{mmss(a.t1)} · {d.name}")
+    plot(out_png, ym, sr, a.t0, a.t1, K, A, tt, start, soitin, f"Pöytäkirja {mmss(a.t0)}–{mmss(a.t1)} · {d.name}")
     extras = ["", f"Kuva: `{out_png.relative_to(ROOT).as_posix()}`"]
     if not a.no_sample:
-        sample = ROOT / "build" / "kuuntelu" / "otteet" / f"{stamp}.wav"
+        sample = ROOT / "build" / "kuuntelu" / "otteet" / f"{sample_stamp}.wav"
         sample.parent.mkdir(parents=True, exist_ok=True)
         sf.write(str(sample), y[int(a.t0 * sr):int(a.t1 * sr)], sr, subtype="PCM_24")
         extras.append(f"Kuuntelunäyte: `{sample.relative_to(ROOT).as_posix()}` (kuuntelukopiosta, {sr} Hz, 24 bit)")

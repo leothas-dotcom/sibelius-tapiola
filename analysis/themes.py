@@ -199,4 +199,5 @@ def bar_at(bars, t):
 
 
 def mmss(t):
+    t = round(float(t), 1)  # 59,96 -> 60,0 s ei saa tulostua muodossa 14:60.0
     return f"{int(t // 60)}:{t % 60:04.1f}"

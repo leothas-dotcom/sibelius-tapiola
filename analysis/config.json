@@ -1,7 +1,9 @@
 {
-  "_ohje": "Projektin yhteiset asetukset. Lähde, kuuntelukopio ja näytetaajuudet luetaan täältä (analysis/lahde.py). Kohinaikkuna kirjoitetaan tänne analysis/kohinaikkuna.py:llä.",
-  "lahde": "audio/05_Tapiola.mp3",
-  "kuuntelukopio": "build/kuuntelu/tapiola_kuuntelu.wav",
+  "_ohje": "Projektin yhteiset asetukset. Lähde, kuuntelukopio ja näytetaajuudet luetaan täältä (analysis/lahde.py). Kohinaikkuna kirjoitetaan tänne analysis/kohinaikkuna.py:llä. Työäänitys Rattle/LSO 2022 (päätös 1.11.2026); arkiston Kajanus 1932 -asetukset: analysis/config_kajanus1932.json (TAPIOLA_CONFIG).",
+  "levytys": "rattle2022",
+  "lahde": "audio/vertailu/rattle_lso_2022.webm",
+  "kuuntelukopio": "build/kuuntelu/rattle_kuuntelu.wav",
+  "lahde_vertailu": "audio/vertailu/rattle_lso_2022_44k.wav",
   "kuuntelukopio_sr": 48000,
   "kuuntelukopio_kanavat": 2,
   "kuuntelukopio_koodekki": "pcm_s24le",
@@ -9,38 +11,57 @@
   "gpu_sr": 44100,
   "fps": 30,
   "kohinaikkuna": {
-    "alku_s": 49.6,
+    "alku_s": 5.1,
     "kesto_s": 1.0,
-    "taso_dbfs": -71.22,
-    "valittu": "all",
+    "taso_dbfs": -70.83,
+    "valittu": "start",
     "menetelma": "hiljaisin 1 s ikkuna, RMS dBFS, mono 0,5L+0,5R, askel 50 ms, kuuntelukopiosta",
     "ehdokkaat": {
       "start": {
-        "alku_s": 0.0,
+        "alku_s": 5.1,
         "kesto_s": 1.0,
-        "taso_dbfs": -68.59
+        "taso_dbfs": -70.83
       },
       "end": {
-        "alku_s": 1060.15,
+        "alku_s": 1056.95,
         "kesto_s": 1.0,
-        "taso_dbfs": -47.43
+        "taso_dbfs": -77.24
       },
       "all": {
-        "alku_s": 49.6,
+        "alku_s": 1056.95,
         "kesto_s": 1.0,
-        "taso_dbfs": -71.22
+        "taso_dbfs": -77.24
       }
     },
     "hiljaisuudet": {
       "+6 dB": {
-        "alku_hiljaisuus_s": 0.2,
-        "loppu_hiljaisuus_s": 0.24
+        "alku_hiljaisuus_s": 6.5,
+        "loppu_hiljaisuus_s": 22.52
       },
       "+10 dB": {
-        "alku_hiljaisuus_s": 1.6,
-        "loppu_hiljaisuus_s": 0.44
+        "alku_hiljaisuus_s": 7.6000000000000005,
+        "loppu_hiljaisuus_s": 25.02
       }
     },
-    "kesto_s_tiedosto": 1062.844
+    "digitaaliset_jaksot_s": [
+      [
+        0.0,
+        5.053833333333333
+      ],
+      [
+        1057.994625,
+        1078.016
+      ]
+    ],
+    "huone": {
+      "ensimmainen_ei_digitaalinen_s": 5.0538,
+      "viimeinen_ei_digitaalinen_s": 1057.9946,
+      "huoneen_kohina_dbfs": -67.6,
+      "kohina_menetelma": "100 ms RMS, mediaani 0,3–2,0 s ensimmäisen ei-nollanäytteen jälkeen",
+      "ensimmainen_aani_s": 7.6,
+      "musiikki_loppuu_s": 1051.6,
+      "raja": "100 ms RMS > huoneen kohina + 10 dB"
+    },
+    "kesto_s_tiedosto": 1078.016
   }
 }

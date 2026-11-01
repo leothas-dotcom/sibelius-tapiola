@@ -2,6 +2,26 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 1.11.2026 – Koko teos Rattlesta (vaiheet 3–4)
+
+**Toimi**
+- Koko 1078 s mahtui yhteen pakettiin (näytönmuisti 2,8 Gt), ei osia eikä stitchiä. Listen 229 s.
+- Chroma-vihje löysi käyttäjän C-duurin: 680–685 s, 5,1 s, C+E+G 58 %, matala jännite, ja heti perään M:n isku
+  (liiketiheys 0,05 → 2,2/s, vaski 0,01 → 0,34). Mittaus osui partituurihavaintoon ilman että sille annettiin aikaa.
+- Karkea CPU-myrskykartta (taso + liike + tremolo-proxy) antoi kymmenen myrskymäistä jaksoa minuuteissa ja
+  johti kysymykseen "useampi myrsky?", johon käyttäjä vastasi partituurista (523 ppp, 540 isku).
+- Agentti poikkesi briefistä perustellusti (kohinaikkuna: digitaalinen hiljaisuus ohitettiin) ja kirjasi syyn.
+
+**Ei toiminut**
+- `jousitremolo` on kuollut myös modernilla äänityksellä (keskiarvo 0,014 myrskyssä): amplitudimodulaatio
+  8–20 Hz ei näy orkesterin tutissa. Myrsky tunnistetaan jännitteestä, kromaattisuudesta, liiketiheydestä ja
+  vaskista. Tremolo pitää mitata toisin (esim. spektrin aikavaihtelu kapealla kaistalla, tai luokitin).
+- PANNs: trumpetti ja pasuuna eivät erotu (korrelaatio 0,87); kontrabasso ei nouse koskaan; oboelle, fagotille ja
+  englannintorvelle ei ole luokkaa. Luokat 2,5–3 s jäljessä. Taso A ei riitä V10:een (käyrätorvi vs. trumpetti).
+- Ohjaajan karkea tahtiosuus-arvio (M ≈ 63 % ≈ 11:00) osui 25 s pieleen (M = 11:25). Tempo ei ole tasainen;
+  arviota ei käytetä muuhun kuin karkeaan haarukointiin.
+- Ohjaaja committasi `git add docs/` kesken agentin työn toisen kerran. Sääntö: `git add` nimetyin tiedostoin.
+
 ## 1.11.2026 – Vertailu moderniin äänitykseen
 
 **Toimi**

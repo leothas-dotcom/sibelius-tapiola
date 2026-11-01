@@ -1,0 +1,25 @@
+{
+  "_ohje": "Levytysten luettelo (docs/teemakartta_rakenne.md). Kesto on kuuntelukopion kesto sekunteina; ajat ovat aina ko. kuuntelukopion aikaa tiedoston alusta.",
+  "levytykset": [
+    {
+      "id": "rattle2022",
+      "nimi": "Rattle / London Symphony Orchestra 2022 (LSO:n YouTube-kanava, gkX-Uc0e3TQ)",
+      "lahde": "audio/vertailu/rattle_lso_2022.webm",
+      "kuuntelukopio": "build/kuuntelu/rattle_kuuntelu.wav",
+      "kesto_s": 1078.016,
+      "rooli": "työ",
+      "asetukset": "analysis/config.json",
+      "huom": "Ei videoon, ei gittiin (tekijänoikeus). Lopullisen äänityksen tullessa sama putki ajetaan sille."
+    },
+    {
+      "id": "kajanus1932",
+      "nimi": "Kajanus / London Symphony Orchestra 1932 (siirto Bob Varney)",
+      "lahde": "audio/05_Tapiola.mp3",
+      "kuuntelukopio": "build/kuuntelu/tapiola_kuuntelu.wav",
+      "kesto_s": 1062.844,
+      "rooli": "arkisto",
+      "asetukset": "analysis/config_kajanus1932.json",
+      "huom": "Ajettavissa: $env:TAPIOLA_CONFIG='analysis/config_kajanus1932.json'. Vuoden 1932 kaistanleveys ei anna soitinkanavia."
+    }
+  ]
+}

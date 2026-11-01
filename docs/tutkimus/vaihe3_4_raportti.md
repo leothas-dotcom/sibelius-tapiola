@@ -197,6 +197,7 @@ Säännöt on kirjattu skriptiin (ei käsin kirjattuja sekunteja). Partituurin k
 - **`jousitremolo`-kanava on kuollut myrskyssä:** keskiarvo 0,014, huippu 0,23, 20 ruutua / 1050 yli 0,2. Kromaattinen jousitremolo tunnistetaan siis jännitteestä, selkeydestä ja liiketiheydestä, ei tremolokanavasta.
 - Raaka-arvot 685–720 s: orkesteri 0,36, vaski 0,34, pasuuna 0,17, käyrätorvi 0,15, patarumpu 0,15, trumpetti 0,15, viulu 0,09, jousisoitin 0,08.
 - Jännite on korkea myös tauon 845,6–865,2 s jälkeen (856–875 s ja 887–897 s); jos käyttäjän "M" tarkoittaa myrskyn toista aaltoa, ehdokas on siellä. Tätä ei ole tutkittu pidemmälle.
+- **Huomio:** tämän raportin teon aikana ohjaaja kirjasi käyttäjän partituuritiedon (`docs/analyysisuunnitelma.md`, V7a/V7): M = t. 397 on myrskyn ennakko ja talvimyrsky alkaa t. 540. Mitattu V6/V7 (680,0–685,1 s ja 685,13 s) vastaa silloin kirjainta M (V7a), ja talvimyrskyn ehdokas on mitatuista kohdista jännite-/selkeysjakso 856–897 s heti 19,6 s hiljaisen kohdan jälkeen. Sitä ei ole tutkittu pidemmälle, koska se ei kuulunut tämän vaiheen briefiin.
 
 ### V8 loppu, H-duuri divisi-jousissa: 1025,5 s
 - Viimeinen jakso, jossa `vihje_Hduuri` (3 s tasoitus) > 0,5 vähintään 10 s: **1025,47–1051,43 s (26,0 s)**; musiikki loppuu 1051,6 s, digitaalinen hiljaisuus alkaa 1057,995 s.
@@ -287,7 +288,7 @@ Avauksen pitkät sävelet: As4 (MIDI 68, +4,5…+6,2 c, neljässä pätkässä 2
 
 ## 12. Mikä ei toiminut tai on rajoittunutta
 
-- `kohinaikkuna.py` valitsi ensin digitaalisen hiljaisuuden (−240 dBFS); korjattu. Alun ikkuna valittiin brief­ in "hiljaisin"-säännön sijaan (luku 4).
+- `kohinaikkuna.py` valitsi ensin digitaalisen hiljaisuuden (−240 dBFS); korjattu. Alun ikkuna valittiin briefin "hiljaisin"-säännön sijaan (luku 4).
 - `soundfile` ei lue webm:ää, joten riippumaton libmpg123-vertailu ei ole mahdollinen; vertailuina on kaksi ffmpegin opus-dekooderia (`opus`, `libopus`), natiivi 44,1 kHz -dekoodaus ja aiempi wav (kaikki 0,00 ms). Kaikki ovat saman ffmpegin dekoodauksia.
 - **Kanavat:** `jousitremolo` kuollut (myrsky 0,014 keskiarvo); `patarumpu_stemmi` kuollut V1:ssä (herää vain M-iskussa 685,2 s); `patarumpu_tremolo` epäluotettava (19 lyhyttä pätkää, V1:ssä 0); `patarumpu_matala` ei selektiivinen (0,48 V8:ssa); `soitin_double_bass` kuollut; `puupuhaltimet`- ja `vasket`-perhekanavat sekoittuvat toisiinsa ja attakkiin (13 s: käyrätorvi nostaa puupuhallinkanavaa, 7,6 s: patarumpuiskun attakki nostaa vaskikanavaa).
 - **Aikajana:** dynamiikka saturoituu ("f"/"ff" 87 jaksolla 105:stä); soolotunnistin ei löytänyt yhtään sooloa; sävellaji-ehdotukset (Krumhansl–Schmuckler) ovat epävakaita ja puolet 10 vahvimmasta rajasta perustuu vain niihin.

@@ -15,7 +15,7 @@ voimakkuus ja nuotinalut). Kuvaukset lasketaan koko äänitteen yli normalisoidu
 PANNs kertoo, MIKÄ soi, mutta ei tarkkaa HETKEÄ (ikkuna useita sekunteja; vaskien raaka-arvot
 jäävät tutissa lähelle nollaa). Hetki tulee jaksorajasta tai interpret.py:n tapahtumasta.
 
-Tulosteet: build/koko/aikajana.md ja aikajana.json (ajat kuuntelukopion aikaa)
+Tulosteet: --out-kansioon (oletus build/koko) aikajana.md ja aikajana.json (ajat kuuntelukopion aikaa); Rattle: --out build/rattle_koko
     .venvScriptspython.exe -I analysis/aikajana.py build/testi60 [build/muu ...] [--out build/koko]
 """
 import argparse
@@ -26,6 +26,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))  # -I jättää skriptin kansion pois polulta
+import lahde  # noqa: E402
 from themes import FPS, channels, key_of, load_chunk, mmss, stitch  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -36,6 +37,16 @@ FAM_FI = {"horns": "käyrätorvet", "tpt": "trumpetit ja pasuunat", "violin": "v
 
 def level(x):
     return LEVELS[int(np.digitize(x, [0.12, 0.25, 0.4, 0.55, 0.72]))]
+
+
+def package_novelty(dirs):
+    """Jaksorajojen vahvuus (segments.py: uutuuskäyrän arvo rajalla), kuuntelukopion ajassa: [(alku_s, uutuus)]."""
+    out = []
+    for d in dirs:
+        f = Path(d) / "segments.json"
+        if f.exists():
+            out += [(s["alku"], s.get("alku_uutuus")) for s in json.loads(f.read_text(encoding="utf-8"))]
+    return sorted(out)
 
 
 def package_segments(dirs):
@@ -124,7 +135,72 @@ def describe(S, C, bounds, events, end_t):
     return rows
 
 
-def write(rows, out):
+def boundary_basis(S, C, rows, novelty, win=3.0, top=10):
+    """10 vahvinta jaksorajaa (uutuuskäyrän arvo) ja mitattu peruste: 3 s ennen vs. 3 s jälkeen rajan."""
+    n = len(C["loud"])
+    F = C["F"]
+    nov = np.array([v for _, v in novelty if v is not None])
+    cand = []
+    for r in rows[1:]:
+        t = r["alku"]
+        m = [v for a, v in novelty if abs(a - t) < 0.05 and v is not None]
+        if not m:
+            continue
+        ia = max(0, int((t - win) * FPS))
+        ib = int(t * FPS)
+        ic = min(n, int((t + win) * FPS))
+        if ib - ia < FPS or ic - ib < FPS:
+            continue
+        b = lambda x: float(np.mean(x[ia:ib]))
+        a_ = lambda x: float(np.mean(x[ib:ic]))
+        facts = []
+        dl = a_(C["loud"]) - b(C["loud"])
+        if abs(dl) >= 0.1:
+            facts.append(f"voimakkuus {b(C['loud']):.2f} -> {a_(C['loud']):.2f} ({'nousee' if dl > 0 else 'laskee'})")
+        dr = a_(C["reg"]) - b(C["reg"])
+        if abs(dr) >= 0.15:
+            facts.append(f"rekisteri {'nousee' if dr > 0 else 'laskee'} ({b(C['reg']):.2f} -> {a_(C['reg']):.2f})")
+        for f in FAM_FI:
+            v0, v1 = b(F[f]), a_(F[f])
+            if abs(v1 - v0) >= 0.3:
+                facts.append(f"{FAM_FI[f]} {'tulevat' if v1 > v0 else 'poistuvat'} ({v0:.2f} -> {v1:.2f})")
+        k0, r0 = key_of(C["chroma"][ia:ib].mean(axis=0))
+        k1, r1 = key_of(C["chroma"][ib:ic].mean(axis=0))
+        if k0 != k1 and r0 > 0.5 and r1 > 0.5:
+            facts.append(f"sävellaji-ehdotus {k0} -> {k1}")
+        cand.append({"t": t, "uutuus": max(m), "peruste": facts})
+    cand.sort(key=lambda c: -c["uutuus"])
+    return cand[:top], float(np.median(nov)) if len(nov) else 0.0
+
+
+def quiet_runs(dirs, end_t, thr=-60.0, min_s=1.5):
+    """Hiljaiset kohdat: taso (kanavat.f32 taso_dbfs, 0,5 s tasoitus) alle thr dBFS vähintään min_s ennen end_t:tä
+    ja ensimmäisen äänen jälkeen (yksi paketti). [(alku_s, loppu_s, keskitaso_dbfs)]"""
+    if len(dirs) != 1 or not (Path(dirs[0]) / "kanavat.json").exists():
+        return []
+    d = Path(dirs[0])
+    m = json.loads((d / "kanavat.json").read_text(encoding="utf-8"))
+    x = np.fromfile(d / "kanavat.f32", dtype=np.float32).reshape(m["frames"], -1)
+    lv = x[:, m["channels"].index("taso_dbfs")]
+    from scipy.ndimage import uniform_filter1d
+    mask = uniform_filter1d(lv, FPS // 2) < thr
+    mask[: int(m["music_start"] * FPS)] = False
+    mask[int(end_t * FPS):] = False
+    out, i = [], 0
+    while i < len(mask):
+        if mask[i]:
+            j = i
+            while j < len(mask) and mask[j]:
+                j += 1
+            if (j - i) / FPS >= min_s:
+                out.append((round(i / FPS, 1), round(j / FPS, 1), round(float(lv[i:j].mean()), 1)))
+            i = j
+        else:
+            i += 1
+    return out
+
+
+def write(rows, out, strongest=None, nov_median=None, quiet=None):
     (out / "aikajana.json").write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
     lines = ["# Aikajana (kuuntelukopion aikaa)", "",
              "Jaksorajat: segments.py (uutuuskäyrä). Kuvaukset: koko äänitteen yli normalisoidut kanavat (aikajana.py).",
@@ -138,6 +214,16 @@ def write(rows, out):
             hu += " · " + "; ".join(r["tapahtumat"][:3])
         lines.append(f"| {mmss(r['alku'])} | {r['kesto']} | {r['dyn']} {r['suunta'][:5]} ({r['voimakkuus'][0]}→{r['voimakkuus'][1]}, max {r['huippu']}) "
                      f"| {r['rekisteri']} | {r['liike']} | {', '.join(r['soittimet']) or '–'} | {ch} | {hu} | {r['savellaji']} ({r['selkeys']}) |")
+    if quiet:
+        lines += ["", "## Hiljaiset kohdat (taso alle -60 dBFS vähintään 1,5 s; huoneen kohina noin -66 dBFS)", "", "| Alku | Loppu | Kesto | Keskitaso dBFS |", "|---|---|---|---|"]
+        lines += [f"| {mmss(a)} ({a} s) | {mmss(b)} ({b} s) | {b - a:.1f} s | {q} |" for a, b, q in quiet]
+    if strongest:
+        lines += ["", f"## 10 vahvinta jaksorajaa (uutuuskäyrän arvo rajalla; kaikkien rajojen mediaani {nov_median:.3f})", "",
+                  "Peruste = mitattu muutos 3 s ennen vs. 3 s jälkeen rajan (voimakkuus, rekisteri ja PANNs-perheet normalisoituina koko äänitteen yli; sävellaji vain ehdotus).", "",
+                  "| # | Aika | Uutuus | Peruste |", "|---|---|---|---|"]
+        for k, c in enumerate(strongest, 1):
+            lines.append(f"| {k} | {mmss(c['t'])} ({c['t']:.1f} s) | {c['uutuus']:.3f} | {'; '.join(c['peruste']) or 'ei yli kynnysten (muutos jakautuu usealle piirteelle)'} |")
+        (out / "aikajana_vahvimmat.json").write_text(json.dumps(strongest, ensure_ascii=False, indent=1), encoding="utf-8")
     (out / "aikajana.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -153,8 +239,16 @@ def main():
     bounds, events = package_segments(dirs)
     music = np.where(C["music"])[0]
     end_t = (music[-1] + 1) / FPS if len(music) else len(C["loud"]) / FPS
+    # aikajana päättyy viimeiseen ei-digitaaliseen näytteeseen (config.json: kohinaikkuna.huone), ei digitaaliseen hiljaisuuteen
+    last_nd = (lahde.config().get("kohinaikkuna", {}).get("huone", {}) or {}).get("viimeinen_ei_digitaalinen_s")
+    if last_nd and len(dirs) == 1:
+        end_t = float(last_nd)
+        bounds = [b for b in bounds if b < end_t - 0.5]  # rajat digitaalisen hiljaisuuden sisällä pois
+        events = [e for e in events if e["t"] < end_t]
     rows = describe(S, C, bounds, events, end_t)
-    write(rows, a.out)
+    strongest, med = boundary_basis(S, C, rows, package_novelty(dirs))
+    quiet = quiet_runs(dirs, end_t)
+    write(rows, a.out, strongest, med, quiet)
     print(f"{len(rows)} jaksoa, {len(events)} tapahtumaa -> {a.out / 'aikajana.md'}")
 
 

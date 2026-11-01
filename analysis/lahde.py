@@ -12,12 +12,14 @@ dekoodausviivettä: dekoodatun virran ensimmäinen näyte on ensimmäisen mp3-ke
 Kaikki ajat ovat tämän virran aikaa (0 = ensimmäinen dekoodattu näyte).
 """
 import json
+import os
 import shutil
 import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-CONFIG = ROOT / "analysis" / "config.json"
+# TAPIOLA_CONFIG=analysis/config_kajanus1932.json ajaa arkiston (Kajanus 1932) asetuksilla.
+CONFIG = Path(os.environ["TAPIOLA_CONFIG"]).resolve() if os.environ.get("TAPIOLA_CONFIG") else ROOT / "analysis" / "config.json"
 # Sävelnimet suomeksi: H = englannin B (h-molli = B minor, H-duuri = B major), B = englannin B-flat.
 PITCHES = ["C", "Cis", "D", "Es", "E", "F", "Fis", "G", "As", "A", "B", "H"]
 

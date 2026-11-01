@@ -1,0 +1,47 @@
+{
+  "_ohje": "Kajanus / LSO 1932 (arkisto). Aja: $env:TAPIOLA_CONFIG='analysis/config_kajanus1932.json' ennen työkaluja. Säilytetty 1.11.2026 ennen siirtymistä Rattle-työäänitykseen.",
+  "levytys": "kajanus1932",
+  "lahde": "audio/05_Tapiola.mp3",
+  "kuuntelukopio": "build/kuuntelu/tapiola_kuuntelu.wav",
+  "kuuntelukopio_sr": 48000,
+  "kuuntelukopio_kanavat": 2,
+  "kuuntelukopio_koodekki": "pcm_s24le",
+  "analyysi_sr": 22050,
+  "gpu_sr": 44100,
+  "fps": 30,
+  "kohinaikkuna": {
+    "alku_s": 49.6,
+    "kesto_s": 1.0,
+    "taso_dbfs": -71.22,
+    "valittu": "all",
+    "menetelma": "hiljaisin 1 s ikkuna, RMS dBFS, mono 0,5L+0,5R, askel 50 ms, kuuntelukopiosta",
+    "ehdokkaat": {
+      "start": {
+        "alku_s": 0.0,
+        "kesto_s": 1.0,
+        "taso_dbfs": -68.59
+      },
+      "end": {
+        "alku_s": 1060.15,
+        "kesto_s": 1.0,
+        "taso_dbfs": -47.43
+      },
+      "all": {
+        "alku_s": 49.6,
+        "kesto_s": 1.0,
+        "taso_dbfs": -71.22
+      }
+    },
+    "hiljaisuudet": {
+      "+6 dB": {
+        "alku_hiljaisuus_s": 0.2,
+        "loppu_hiljaisuus_s": 0.24
+      },
+      "+10 dB": {
+        "alku_hiljaisuus_s": 1.6,
+        "loppu_hiljaisuus_s": 0.44
+      }
+    },
+    "kesto_s_tiedosto": 1062.844
+  }
+}

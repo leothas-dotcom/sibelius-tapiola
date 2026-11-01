@@ -43,6 +43,9 @@ PANNS_CLASSES = [
     "Violin, fiddle", "Cello", "Double bass", "String section", "Bowed string instrument", "Pizzicato",
     "French horn", "Trumpet", "Trombone", "Brass instrument", "Wind instrument, woodwind instrument",
     "Flute", "Clarinet", "Timpani", "Drum roll", "Orchestra",
+    # Vain diagnostiikaksi (soitinluokkien rajat): AudioSetissä ei ole oboe-, fagotti- eikä englannintorvi-luokkaa;
+    # saksofoni on lähin puupuhallinluokka, jonka alle ne voivat valua.
+    "Saxophone",
 ]
 def slug(s):
     return "".join(c if c.isalnum() else "_" for c in s.lower()).strip("_").replace("__", "_")

@@ -123,7 +123,10 @@ def main():
         key = max(set(keys), key=keys.count) if keys else None
         ev = [e["kuvaus"] for e in events if s0 <= e["t"] < s1 and e["tyyppi"] != "rakenteen_muutos"]
         b_in = [b["bar"] for b in beats["bars"] if s0 - 0.3 <= b["t"] < s1 - 0.3]
+        # uutuuskäyrän arvo rajalla (0,5 s askel): rajan vahvuus; tapahtumasta lisätyillä rajoilla käyrän arvo lähimmässä askeleessa
+        ni = int(np.clip(round((s0 - start) * FPS / step), 0, len(nov) - 1))
         segs.append({
+            "alku_uutuus": round(float(nov[max(0, ni - 1):ni + 2].max()), 3),
             "alku": round(s0, 2), "loppu": round(s1, 2), "kesto": round(s1 - s0, 1),
             "tahdit": [b_in[0], b_in[-1]] if b_in else None,
             "soittimet": inst, "aktiivisuus": {k: round(v, 2) for k, v in acts.items()},
