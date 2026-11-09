@@ -2,6 +2,28 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 9.11.2026 – Jokainen minuutti, ei vain ensimmäinen
+
+**Ei toiminut**
+- Ohjaaja analysoi ensimmäisen minuutin tarkasti ja jätti loput karkeiksi. Käyttäjä: "sitten ei seuraavilla minuuteilla
+  tapahdu mitään? Jokainen minuutti pitää tarkasti miettiä." Menetelmä, joka toimii yhdessä kohdassa, ajetaan heti
+  koko teokselle.
+- Rattlen videon kommenteissa oli vain yksi aikaleima; ne kelpaavat tunnelman lähteeksi, eivät ajoitukseen.
+
+**Toimi**
+- `tarkka.py` (CQT 60 kaistaa/oktaavi, 12 ms) vastasi käyttäjän kolmeen tarkkaan havaintoon: gis soi 25 s
+  yhtäjaksoisesti, se paisuu 12 kertaa ja sen väri vaihtuu sekunneittain, ja basson askeleet näkyvät 1:25 alkaen
+  noin 1,8 s välein. Kun kysymys on tarkka, spektri vastaa; yleinen soitinluokitin ei vastannut.
+- `minuutit.py` ajoi saman 18 minuutille ja tiivisti jokaisen: pitkät äänet, matalat alut, kuvioiden tiheys.
+  Siitä 29 uutta ankkuria ja kolme korjausta.
+- Jo luetut partituurimerkinnät ja kirjaimet sijoitettiin mitattuihin tapahtumiin (tahti–aika-taulukko). Se
+  paljasti kolme virhettä: "toinen hiljaisuus" on pp eikä tauko (t. 513), myrskyn isku t. 540 on noin 14:33 ja
+  kohdassa 14:50 on Q (patarummut ja vasket), ja huuto on 15:36–15:55 eikä 16:10.
+
+**Oppi**
+- Työnjako, joka toimii: käyttäjä sanoo yhdellä lauseella, mitä kuulee; ohjaaja mittaa sen tarkasti ja etsii saman
+  muualta. Ohjaaja ei kuule, vaan mittaa: soitinta se ei nimeä varmasti.
+
 ## 9.11.2026 – Metsä näkyy, synestesia, lisää detaljia edullisesti
 
 **Ei toiminut**

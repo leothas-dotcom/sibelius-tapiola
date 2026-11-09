@@ -140,7 +140,7 @@ def check_cues():
                     jak.setdefault(a["jakso"], set()).add(a["reuna"])
             check(all(v == {"alku", "loppu"} for v in jak.values()), f"{len(jak)} jaksoa: alku- ja loppuankkuri molemmat")
             n = len(aid)
-            check(30 <= n <= 60, f"ankkureita {n} (tavoite 30–60)")
+            check(30 <= n <= 120, f"ankkureita {n} (tavoite 30–120)")
             nulls = [x["id"] for x in c["cues"] if x["t"] is None]
             print(f"INFO    ilman aikaa: {nulls if nulls else 'ei yhtään'}")
 

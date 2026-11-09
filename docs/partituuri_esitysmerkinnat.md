@@ -74,3 +74,41 @@ viulujen I sordiinoa K:ssa, mutta sellot ja viulut ovat sordiinolla jo aiemmin [
 ## Mitä ei luettu (tahallaan)
 Painetut sivut 7, 10–30, 36–37, 40–42 (ja osa sivujen 32, 53, 54, 56 alapuoliskoista). Kirjaimet C–I ja N. Kirjain G
 (puupuhallinkuviot) on lukemattomilla sivuilla; käyttäjä antaa sen.
+
+## Tahti–aika (Rattle 2022), 9.11.2026
+
+*Painetut tahtinumerot ja kirjaimet (luetut sivut) sijoitettuna Rattlen kuuntelukopion aikaan. Tahteja ei ole laskettu
+äänestä: aika on mitatun tapahtuman aika, ja tahti tulee partituurista. "Arvio" = sijoitettu kahden mitatun kohdan
+väliin tahtimäärän suhteella (osui aiemmin 25 s pieleen; ei käytetä kuvan ajoitukseen ennen kuin korva vahvistaa).*
+
+| Tahti | Kirjain / merkintä | Aika | Peruste |
+|---|---|---|---|
+| 1 | Largamente, patarummut | 0:07.7 | mitattu, käyttäjä kuuli |
+| 21 | Allegro moderato, vasket fp, puuska alkaa | 0:45.3 | mitattu isku z 33, käyttäjä kuuli |
+| 25 | kaikki ff | noin 0:51–0:52 | mitattu tason huippu |
+| ~28–34 | yleistauko (käyttäjä) | 0:58.1–1:01.4 | mitattu |
+| 69 | B, basson askeleet | 2:09.7 | mitattu, käyttäjä kuuli (askeleet jo 1:24.8 alkaen) |
+| ~274 | J | noin 7:56 | arvio |
+| 290 | K, con sord., flageoletit | 8:16.3 | mitattu jousilohko, urkupiste e |
+| 302 | patarummut ppp | 8:38.5 | mitattu matala d-tremolo |
+| 342 | L, cresc. possibile | 10:13.6 | mitattu tason nousu |
+| ~356–358 | fff dim. molto | 10:21.6 | mitattu isku |
+| ~359 | Allegro | noin 10:32 | arvio |
+| 392–396 | C-duuri | 11:20.0–11:25.1 | mitattu chroma |
+| 397 | M | 11:25.1 | mitattu |
+| 442 | O | noin 12:14.6 | arvio |
+| 455 | poco rallentando al | noin 12:29 | arvio |
+| 462 | Allegro moderato, vaskien vuorottelu | 12:36.5 | mitattu (kohtalainen) |
+| 490 | P, fp cresc. molto > ff | 13:26.5 | mitattu paisutus |
+| 505 | dim. possibile | noin 13:45 | mitattu lasku |
+| 513 | Allegro, jouset pp | 14:05.6 | mitattu (äänite lähes äänetön) |
+| 523 | ppp, myrsky näkyy | 14:17.1 | mitattu jousten tulo |
+| 540 | jouset fff | noin 14:33 | arvio mitattujen 523 ja 550 välistä |
+| 550 | Q, patarummut ja vasket | 14:50.5 | mitattu hyppy, patarummut |
+| ~569 | Allegro moderato, tutti fff | 15:10.6 | mitattu äänitteen kovin kohta |
+| 577 | R | 15:23 | mitattu vaskikorahdus |
+| 587 | huuto: nouseva asteikko, sitten ff 8va | 15:35.9 → 15:45–15:55 | mitattu nousu ja korkea rekisteri |
+| 593 | klarinetti 1. Solo | noin 16:00 | arvio |
+| 605 | S, viulut sempre mf | noin 16:21 | arvio |
+| 618 | kaikki ff dim. pp | 16:52.7 | mitattu huippu |
+| 624–634 | H-duuri, jouset mf sempre / mp | 17:04.7–17:31.4 | mitattu |
