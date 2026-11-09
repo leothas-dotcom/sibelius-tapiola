@@ -183,6 +183,12 @@ def check_storyboard():
     ilman = re.sub(r"<!--aika-->[^\n]*?<!--/aika-->", "", text)
     kasin = sorted(set(re.findall(r"(?<![\w/.])\d{1,2}:\d{2}(?![\w])", ilman)))
     check(not kasin, f"ei käsin kirjoitettuja aikoja {kasin if kasin else ''}")
+    kulut = re.findall(r"^- Kulku (\d+): `([^`\n]+)` → `([^`\n]+)`", text, re.M)
+    check([int(x[0]) for x in kulut] == list(range(1, 8)), f"kulkuja seitsemän, numerot 1..7 (löytyi {len(kulut)})")
+    tunnetut = [(n, t[x], t[y]) for n, x, y in kulut if t.get(x) is not None and t.get(y) is not None]
+    kestot = ", ".join(f"{n}: {y - x:.0f} s" for n, x, y in tunnetut)
+    lyhyet = [n for n, x, y in tunnetut if y - x < 4.0]
+    check(len(tunnetut) == len(kulut) and not lyhyet, f"jokainen kulku kestää vähintään 4 s ({kestot}) {lyhyet if lyhyet else ''}")
     pys = len(re.findall(r"Nimetty pysähdys", text))
     check(pys == 2, f"nimettyjä pysähdyksiä kaksi (C-duuri ja H-duuri), löytyi {pys}")
 

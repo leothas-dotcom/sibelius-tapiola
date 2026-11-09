@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.2, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin, luku 7b ääni → kuva). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 1.3, 9.11.2026 (v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -30,7 +30,8 @@ näkyy vain kamerassa: vääjäämättömyytenä, valon pettämisenä, hiljaisuu
 
 ## 2. Kielioppi: miten kuva puhuu
 
-1. **Kerrokset.** Kuvassa on aina vähintään kolme syvyyskerrosta: lähellä, keskellä, kaukana. Kerrokset ovat
+1. **Kerrokset.** Kuvassa on aina vähintään kolme syvyyskerrosta: lähellä, keskellä, kaukana. Ainoa nimetty poikkeus
+   on myrsky (luku 5), jossa kerrokset menettävät eronsa: sama valo, väri ja suunta. Kerrokset ovat
    etäisyyttä ja valoa, eivät tasoja: kaukainen on himmeämpi, sinisempi, hitaampi ja pehmeämpi; läheinen on
    tummempi, terävämpi ja nopeampi. Etuala vaihtuu, kuten musiikissa: se, joka puhuu, tulee etualalle. Kerrokset
    ovat Sibeliuksen kerrostettu orkesteri (Hayes) ja Kalevalan metsä, "alta harva, päältä tiheä, keskeltä
@@ -39,7 +40,8 @@ näkyy vain kamerassa: vääjäämättömyytenä, valon pettämisenä, hiljaisuu
    lakkaavat, iskevät, paisuvat, väikkyvät. Kamera tekee sen, mitä musiikki tarkoittaa: lähestyy, uppoaa, pysähtyy,
    katsoo pois. Kamera ei koskaan reagoi iskuun; elementit reagoivat.
 3. **Yksi suunta.** Kamera liikkuu sisään ja eteen. Se ei peruuta eikä palaa. Tämä on vääjäämättömyys: se, mikä
-   on edessä, tulee, ja katsoja menee sitä kohti. **[ohjaajan valinta]** Poikkeus on vain lopussa (luku 5).
+   on edessä, tulee, ja katsoja menee sitä kohti. **[ohjaajan valinta]** Poikkeukset ovat nimettyjä (luku 5): pysähdykset C-duurissa ja
+   H-duurissa ja nousu huudossa.
 4. **Siirtymä on kulku.** Uusi maailma avautuu, kun kamera ajaa jonkin läpi: oksiston, lumen, rungon pinnan,
    veden, pimeyden, valon. Mittakaava muuttuu jatkuvasti, ei hyppäyksin. Katsoja ei saa huomata, missä kohtaa
    edellinen maailma loppui.
@@ -47,7 +49,7 @@ näkyy vain kamerassa: vääjäämättömyytenä, valon pettämisenä, hiljaisuu
    (C-duuri, hiljaisuudet, H-duuri). Jokainen pysähdys on kuvakäsikirjoituksessa nimetty ja perusteltu. Pysähdys,
    jota ei ole nimetty, on virhe.
 6. **Hiljaisuus on kuva.** Kun musiikki vaikenee, kuva ei pimene vahingossa eikä jatka entistä. Hiljaisuudessa
-   kamera jatkaa liikettä, mutta elementit lakkaavat: tyhjä tila, jossa liike jatkuu, on se, miltä hiljaisuus
+   kamera jatkaa liikettä, mutta elementit lakkaavat ja metsä jää: metsä ilman elementtejä, jossa liike jatkuu, on se, miltä hiljaisuus
    näyttää. Kolme hiljaisuutta, kolme eri tyhjyyttä (yleistauko, ennen myrskyä, teoksen jälkeen).
 7. **Valo on aine.** Valo ja pimeys rakentavat tilan (Kandinsky, Munch, Moholy-Nagy; Davisin kansi: säteet
    usvan läpi runkojen välistä). Valo tulee aina jostain suunnasta ja jostain kerroksesta. Väärä valo (C-duuri)
@@ -74,8 +76,8 @@ valinta]**, ja mytologian sanat ovat niiden lähde.
 | **Salo** | syvä sininen ("siniset salot") | kaukaiset kerrokset; mitä kauempana, sitä sinisempi |
 | **Halla** | kylmä sinivalkoinen | lumi, jää, myrskyn valo; kylmä ei lämmitä |
 | **Noki** | musta, lämmin | varjot lähellä; patarumpujen ja pohjan väri |
-| **Taottu aurinko** | **punainen** valo kullan sijasta (ohjaajan ehdotus synestesiasta, **käyttäjä hyväksyi 9.11.2026**: "C duuri voi olla punainen, sopii sibeliukseen"): Sibeliuksen kerrotaan kuulleen C-duurin punaisena (ks. alla). Punainen valo sinivihreässä metsässä on väärä ja groteski. Hylätty vaihtoehto (v1): messinki, rikinkeltainen | **vain** C-duuri (t. 385–396) ja sen välähdykset sitä ennen: väärä valo; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
-| **Kajo** | vaalea, pehmeä, hieman lämmin valkoinen | **vain** H-duuri (t. 605–634): oikea valo, hellä, mezzoforte |
+| **Taottu aurinko** | **punainen** valo kullan sijasta (ohjaajan ehdotus synestesiasta, **käyttäjä hyväksyi 9.11.2026**: "C duuri voi olla punainen, sopii sibeliukseen"): Sibeliuksen kerrotaan kuulleen C-duurin punaisena (ks. alla). Punainen valo sinivihreässä metsässä on väärä ja groteski. Hylätty vaihtoehto (v1): messinki, rikinkeltainen | **vain** C-duuri (`auringonsade`, t. 392–396) ja sen välähdykset sitä ennen: väärä valo; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
+| **Kajo** | vaalea, pehmeä, hieman lämmin valkoinen | **vain** H-duuri (`loppu_Hduuri_alku`, t. 624–634): oikea valo, hellä, mezzoforte |
 
 Säännöt: koko teos on tumma; valoisin kohta ennen loppua on taottu aurinko, ja sekin on väärän värinen. Värit
 eivät vaihdu iskussa; ne vaihtuvat kerroksen tullessa etualalle. Ei kirkkaita puhtaita värejä. Punaista on vain
@@ -110,7 +112,7 @@ Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niit�
 ## 5. Liike ja kamera
 
 - **Kamera liikkuu aina**, paitsi nimetyissä pysähdyksissä. Perusliike on hidas ajo sisään (dolly), kerrosten
-  läpi. Nopeus seuraa musiikin liikettä (liiketiheys-kanava): peikkojaksossa nopeammin, urkupisteillä hitaasti,
+  läpi. Nopeus seuraa musiikin liikkeen suuria muutoksia (liiketiheys hitaana keskiarvona): peikkojaksossa nopeammin, urkupisteillä hitaasti,
   hiljaisuuksissa tasaisesti.
 - **Kamera ei pyöri eikä ylitä 20 °/s.** Ei kallistusta (roll). Suunnanvaihdot ovat jatkuvia.
 - **Elementit reagoivat iskuihin, kamera ei.** Iskun elementti on ympäristössä: pohjan tärähdys, valon leikkaus
@@ -121,12 +123,13 @@ Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niit�
   katsojan (jouset ppp → fff). T. 540 se iskee: kerrokset romahtavat yhdeksi. Q:sta (t. 550) kamera on myrskyn
   sisällä ja ajaa sen läpi: katsoja menee siitä läpi, ei pakene. Huuto (t. 587) on ensimmäinen hetki, jolloin
   kamera nousee: ylös, ei taakse.
-- **Loppu [ohjaajan valinta]:** S:stä (t. 605) kamera hidastuu, ja H-duurissa (t. 618–634) se pysähtyy
-  ensimmäisen kerran koko teoksessa. Pysähtyminen on lopun tapahtuma. Kajo tulee kerrosten takaa, ja kuva jää
+- **Loppu [ohjaajan valinta]:** S:stä (t. 605) kamera hidastuu, ja H-duurissa (t. 624–634) se pysähtyy
+  toisen ja viimeisen kerran. Pysähtyminen on lopun tapahtuma. Kajo tulee kerrosten takaa, ja kuva jää
   paikalleen hiljaisuuteen. Viimeinen hiljaisuus: kuva ei pimene, se vain lakkaa muuttumasta.
 - **Staattiset hetket (nimetyt):** C-duuri (kamera pysähtyy, taottu aurinko nousee kerrosten taakse, ja kun M
-  iskee, kamera lähtee uudestaan liikkeelle, nyt nopeammin kuin ennen); yleistauko (kamera jatkaa, elementit
-  pois); hiljaisuus ennen myrskyä (kamera jatkaa, hyvin hitaasti, horisontti ilmestyy); H-duuri (pysähdys).
+  alkaa, kamera lähtee uudestaan liikkeelle jatkuvalla kiihdytyksellä, nyt nopeammin kuin ennen: rakenteen käänne, ei
+  reaktio iskun ruudussa); yleistauko (kamera jatkaa, elementit
+  pois); hiljaisuus ennen myrskyä (kamera jatkaa, hyvin hitaasti; horisontti paljastuu, kun myrsky näkyy); H-duuri (pysähdys).
 
 ## 6. Henkilöt ja elementit
 
@@ -146,14 +149,15 @@ elementin, ei soitinta. Sarake Iskussa sanoo, miten elementti vastaa iskuun (isk
 | Sellot, kontrabassot | **Pohjan askeleet ja urkupiste**: vaakasuora pohja, joka siirtyy omassa ajassaan tai pysyy | pohja | askeleet: pohja nytkähtää eri tahtiin kuin muu; urkupiste: pohja pysyy, kaikki muu liikkuu sen päällä | urkupiste, askel (rakennetaan) | pohja painuu |
 | Käyrätorvet | **Kaukainen kajo ja hengitys**: himmeä valo kaukaisimmassa kerroksessa, joka paisuu ja laskee | kaukana | < >: kajo hengittää; pulssit: kajo sykkii | PANNs käyrätorvi (osittain), vaskiaalto (rakennetaan) | kajo välähtää |
 | Trumpetit, pasuunat | **Läpi tuleva valo**: valo, joka leikkaa kerrosten läpi pystysuoraan (Ukon tuli) | takaa eteen | isku: leikkaus; jyrinä: useita leikkauksia; myrsky: kerrokset repeävät | vaskikanava, aksentit | leikkaus iskun ruudussa |
-| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia oksistossa ja kerrosten välissä, jotka nousevat, laskevat ja katoavat | lähellä ja keskellä | nopeat kuviot: pilkahduksia; alun "nousevat ja laskevat kuviot" (käyttäjä: "ovatko mäkiä??"): valon kaari, joka nousee esiin metsän siimeksestä ja painuu takaisin | PANNs huilu, liiketiheys, sävelkaaret | ei reagoi |
+| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia oksistossa ja kerrosten välissä, jotka nousevat, laskevat ja katoavat | keskellä ja kaukana; johtaessaan lähioksissa | nopeat kuviot: pilkahduksia; alun "nousevat ja laskevat kuviot" (käyttäjä: "ovatko mäkiä??"): valon kaari, joka nousee esiin metsän siimeksestä ja painuu takaisin | PANNs huilu, liiketiheys, sävelkaaret | ei reagoi |
 | Klarinetit, bassoklarinetti | **Hämyn äänet**: puoliksi näkyvä liike keskikerroksessa, muoto joka ei tarkennu | keskellä | kuviot: muoto liikkuu; pitkät: muoto jää puoliksi näkyviin | PANNs klarinetti | ei reagoi |
 | Oboet, englannintorvi | **Ohut linja**: yksi kapea valojuova kaukaa | kaukana | yksin: linja näkyy; muuten ei | ei mitattavissa; partituuri | ei reagoi |
 | Fagotit, kontrafagotti | **Pohjan toinen ääni**: pohjan sisällä liikkuva tummempi massa | pohja | pitkät: massa hengittää pohjan sisällä | ei mitattavissa; partituuri | ei reagoi |
 | Koko orkesteri (tutti) | **Kerrokset yhtenä**: kaikki kerrokset samassa valossa ja liikkeessä | kaikki | myrsky: kerrokset romahtavat yhdeksi; loppuhuipennus: viimeinen aalto | taso, jännite | kerrokset romahtavat yhdeksi (myrsky) |
 
-Elementtien yhteinen laki: **väike ja kajo ovat kaukana, paino ja massa lähellä.** Kun soitin tulee etualalle
-musiikissa, sen elementti tulee lähemmäs kerroksissa, ei suuremmaksi paikallaan.
+Elementtien yhteinen laki: **väikkeen ja kajon koti on kaukana, painon ja massan lähellä.** Kun soitin tulee etualalle
+musiikissa, sen elementti tulee lähemmäs kerroksissa, ei suuremmaksi paikallaan; kun se lakkaa johtamasta, se palaa
+kotiinsa.
 
 ## 7b. Ääni → kuva: mitä äänessä tapahtuu, se näkyy
 
@@ -168,7 +172,7 @@ VISUAALISESTI." Tämä taulukko on sitova: jokaisella tunnistetulla äänen tapa
 | **Äänenkorkeus** | sävel, rekisterikerros (matala, keski, korkea) | korkeus kuvassa: matala on maassa ja juurissa, keski runkojen korkeudella, korkea latvoissa ja taivaassa |
 | **Nousu** (koko orkesteri kohoaa) | tapahtuma `nousu` | kaikki kerrokset ja valo kohoavat rungoista latvoihin; kamera pysyy suunnassaan, metsä kasvaa sen ohi ylöspäin |
 | **Lasku** | tapahtuma `lasku` | valo ja liike painuvat latvoista maahan |
-| **Kerros katoaa** (spektristä häviää osa) | tapahtuma `kerros katoaa` | se osa kuvasta häviää: jos pohja katoaa, maa ja juuret katoavat alta ja metsä leijuu; jos ylärekisteri sammuu, latvat ja taivas pimenevät |
+| **Kerros katoaa** (spektristä häviää osa) | tapahtuma `kerros katoaa`, `basso vaikenee` | se osa kuvasta häviää: jos pohja katoaa, maa ja juuret katoavat alta ja metsä leijuu; jos ylärekisteri sammuu, latvat ja taivas pimenevät |
 | **Kerros tulee** | tapahtuma `kerros tulee` | se osa kuvasta syttyy tai tulee näkyviin, ei ilmesty tyhjästä vaan paljastuu |
 | **Paljastuminen** (ääni oli taustalla, muut lopettavat) | pitkä ääni jatkuu, kun toinen kerros lakkaa (esim. alun gis) | etummainen kerros väistyy ja takana koko ajan ollut jää näkyviin; mitään uutta ei tuoda |
 | **Urkupiste** | tapahtuma `urkupiste` | maa ja horisontti pysyvät paikallaan; kaikki muu liikkuu sen päällä |
@@ -179,10 +183,10 @@ VISUAALISESTI." Tämä taulukko on sitova: jokaisella tunnistetulla äänen tapa
 | **Nopea / hidas** | uusia säveliä sekunnissa, tapahtuma `liike` | kuinka nopeasti elementit liikkuvat ja vaihtuvat; kameran nopeus seuraa vain suuria muutoksia |
 | **Rytmi, vuorottelu** | toistuvat purskeet, `vuorottelu`, `hengittävä sointu` | kaksi paikkaa kuvassa vuorottelee samassa tahdissa; sointumatto hengittää (kirkastuu ja himmenee) |
 | **Tremolo** | tapahtuma `tremolo` | valo tai massa väreilee paikallaan |
-| **Paisutus < >** | pitkän äänen muoto | elementti kirkastuu ja himmenee, tulee lähemmäs ja vetäytyy |
+| **Paisutus < >** | pitkän äänen muoto, `paisuva sointu` | elementti kirkastuu ja himmenee, tulee lähemmäs ja vetäytyy |
 | **Isku, sforzato** | `aksentit`, tapahtuma `isku` | ympäristö reagoi iskun ruudussa: tärähdys maassa, valon leikkaus |
 | **Äkillinen muutos, hiljaisuus** | `äkillinen …`, `hiljaisuus` | valo ja liike katkeavat samassa ruudussa; hiljaisuudessa kamera jatkaa, elementit poissa |
-| **Ketkä soittavat** | perhevihje, yläsävelväri, käyttäjän korva, partituuri | soittimen elementti (luku 7) on se, joka liikkuu; kun soitin vaihtuu samalla sävelellä, sama linja vaihtaa väriä |
+| **Ketkä soittavat** | perhevihje, yläsävelväri, käyttäjän korva, partituuri | soittimen elementti (luku 7) on se, joka liikkuu; kun soitin vaihtuu samalla sävelellä, sama linja vaihtaa sävyä liukuen, ei iskussa |
 | **Sävellajin väri** | duuri, molli, synestesia | valon väri (luku 3) |
 
 Sääntö: jos äänessä tapahtuu jokin näistä eikä kuvassa tapahdu mitään, se on virhe. Jos kuvassa tapahtuu jotain,
@@ -194,7 +198,8 @@ mille ei ole äänessä syytä, sekin on virhe.
 2. Enintään kolme elementtiä liikkuu yhtä aikaa; muut pysyvät kerroksessaan.
 3. Katsoja tietää aina, mihin suuntaan kamera menee. Suunta vaihtuu vain nimetyissä kohdissa.
 4. Jokainen siirtymä maailmasta toiseen kestää vähintään neljä sekuntia ja on jatkuva.
-5. Iskun elementti näkyy iskun ruudussa, ei ennen eikä jälkeen (videotarkistus).
+5. Iskun vastine näkyy iskun ruudussa, ei ennen eikä jälkeen (videotarkistus); se, mikä vastaa (maa, kerrokset, valon
+   lähde), on jo kuvassa.
 6. Kerrosten reunat eivät vuoda; tyhjä tausta on virhe (kohtauscheck).
 7. Valon lähde on aina jossain kerroksessa; valoa ei ole ilman lähdettä.
 8. Teksti, nuotit, soittimet, kasvot, eläimet, ihmiset: ei koskaan.
@@ -209,7 +214,7 @@ mille ei ole äänessä syytä, sekin on virhe.
 - Disney-kerrontaa ja japanilaista viivaa (käyttäjä: ne eivät siirry).
 - Keijuja, peikkoja, Tapion kasvoja, vaeltajaa, säveltäjän hahmoa.
 - Kameran pyörimistä, kallistusta, nopeita heilahduksia, vahingossa pysähtymistä.
-- Värejä, jotka lämmittävät ennen loppua. Punaista. Hehkua ilman lähdettä.
+- Värejä, jotka lämmittävät ennen loppua. Punaista muualla kuin taotussa auringossa. Hehkua ilman lähdettä.
 - Tekoälykuvia. Olemassa olevien kansien tai maalausten jäljentämistä.
 
 ## 10. Kokonaistarina kuvana (lyhyesti, kuvakäsikirjoituksen runko)
@@ -245,6 +250,7 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 
 ### Kerrokset
 6. Aina vähintään kolme syvyyskerrosta: lähellä (tumma, terävä, nopea), keskellä, kaukana (sininen, himmeä, hidas).
+   Nimetty poikkeus: myrskyssä kerrokset menettävät eronsa (sama valo, väri ja suunta).
 7. Se, joka musiikissa puhuu, tulee lähemmäs kerroksissa. Ei suuremmaksi paikallaan.
 8. Kerros on etäisyys ja valo, ei taso eikä pahvi. Kerrosten reunat eivät vuoda; tyhjä tausta on virhe.
 
@@ -253,8 +259,8 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
    (tyyliohje luku 7), ei esine: ei soittimia, nuotteja, kasvoja, eläimiä, ihmisiä, hahmoja.
 10. Iskun elementti on ympäristössä (pohjan tärähdys, valon leikkaus, kerrosten etääntyminen) ja näkyy iskun ruudussa.
 11. Elementti ei ilmesty, katoa eikä loiki iskussa. Se on jo kuvassa ja muuttaa tilaa.
-12. Enintään kolme elementtiä liikkuu yhtä aikaa.
-13. Väike ja kajo ovat kaukana; paino ja massa lähellä.
+12. Enintään kolme elementtiä liikkuu yhtä aikaa; muut pysyvät kerroksessaan.
+13. Väikkeen ja kajon koti on kaukana, painon ja massan lähellä. Johtaessaan elementti tulee lähemmäs (sääntö 7).
 
 ### Valo ja väri
 14. Valolla on aina lähde jossain kerroksessa. Ei hehkua ilman lähdettä.
@@ -264,7 +270,7 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 17. Värit vaihtuvat kerroksen tullessa etualalle, eivät iskussa.
 
 ### Hiljaisuus
-18. Hiljaisuudessa kamera jatkaa, elementit lakkaavat. Kuva ei pimene vahingossa eikä jatka entistä.
+18. Hiljaisuudessa kamera jatkaa, elementit lakkaavat, metsä jää. Kuva ei pimene vahingossa eikä jatka entistä.
 
 ### Mitä ei koskaan
 19. Ei paperia, mustetta, rasteria, nukkeja, leikattuja tasoja, hahmoja (edellinen projekti).

@@ -21,8 +21,8 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 3 | Ääni: kuuntelukopio ja totuus | ✅ Rattle-kuuntelukopio `build/kuuntelu/rattle_kuuntelu.wav`, kellot 0,00 ms, vire +5,6 c (ei korjattu); Kajanus arkisto |
 | 4 | Kuuntelutyökalu | ✅ yksi työkalu `analysis/korvat.py`: 270 tapahtumaa, 17 ruutukanavaa (`build/rattle_koko/ohjaus.f32`); mitä ääni antaa ja mitä ei: tutkimuksen luku 13; **vääriä osumia ei ole karsittu korvalla** |
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
-| 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.2 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
-| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1 (12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä (tulkinta, vahvistettava); auki: sana kajo, loppukuva, puuttuva data, tuoreen lukijan tarkistus |
+| 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.3 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12; omat ristiriidat korjattu 9.11.2026); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
+| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1.1 (tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä (tulkinta, vahvistettava); auki: sana kajo, loppukuva, puuttuva data |
 | 8 | Tekniikka ja mittarit | ⬜ |
 | 9 | Perusta, sitten osat | ⬜ |
 | 10 | Luonnokset ennen renderiä | ⬜ |
@@ -165,7 +165,9 @@ Tarkistuslista:
 - [x] Kuvakäsikirjoituksessa ei ole kuunteluoppaan sisältöä (lähteet ja tulkinnat jäävät oppaaseen; ankkurin nimi vie sinne).
 - [x] Ei keksittyjä lainauksia: lainaukset ovat käyttäjän sanoja haastattelusta; yksi Kalevala-viite on merkitty tulkinnaksi.
 - [x] Iskujen elementit ovat ympäristössä (rivi Iskut otoissa, yleissääntö luvussa 6); hahmoja ei ole.
-- [ ] Tyyliohjeen kohta kohdalta -tarkistus tuoreella lukijalla (kriitikko) on tekemättä: tarkistin itse.
+- [x] Tyyliohjeen kohta kohdalta -tarkistus tuoreella lukijalla (Sonnet, 9.11.2026): `runs/kk_tarkistus_v1/`
+  (brief, kriitikon raportti, ohjaajan todennus). 27 löydöstä: 24 korjattu tai tarkennettu, 2 ei pitänyt, 1 ei vaatinut muutosta.
+  Korjattua tekstiä ei ole luettu tuoreilla silmillä uudestaan.
 - [ ] Puuttuva data (käsikirjoituksen luku 8) korjattu teemakarttaan tai kuuntelutyökaluun.
 - [ ] Käyttäjä on lukenut ja hyväksynyt.
 - [ ] Opit ja commit.
@@ -280,6 +282,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 29 | 9.11. | – | "Hyväksyn maailmat" | ✅ todennettu | kahdeksan maailmaa ja seitsemän kulkua kirjattu hyväksytyiksi (`docs/kuvakasikirjoitus.md` alku, luku 2 ja luku 8 kohta 1); hyväksyntä koskee runkoa, ei luvun 8 muita päätöksiä |
 | 30 | 9.11. | – | "C duuri voi olla punainen, sopii sibeliukseen." | ✅ todennettu | punainen kirjattu päätökseksi: tyyliohje luku 3 ja säännöt 15–16, käsikirjoitus luvut 3 ja 8, `kriitikko_kohdat.json`; messinki merkitty hylätyksi vaihtoehdoksi |
 | 31 | 9.11. | – | "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä." | 🔶 kirjattu, tulkinta vahvistettava | luettu: D-duuri on h-mollin rinnakkaisduuri, joten sen välähdykset ovat synkkiä ja hämäriä, eivät keltaisia (tyyliohje luku 3, käsikirjoitus luvut 3 ja 8). Toinen mahdollinen luenta, lopun H-duuri synkkänä ja hämäränä, on kysytty käyttäjältä; sitä ei ole viety tekstiin |
+| 32 | 9.11. | – | "Aja tarkistus" | ✅ todennettu | tuore Sonnet-lukija, brief tiedostona; raportti `runs/kk_tarkistus_v1/kriitikko.md` (9 rikkomusta, 5 ristiriitaa, 5 aukkoa, 8 huomiota, 12 tyyliohjeen omaa ristiriitaa); ohjaajan todennus löydös löydökseltä `runs/kk_tarkistus_v1/tarkistus.md`; käsikirjoitus v1.1 ja tyyliohje v1.3; mitattu `check_package.py --cues-only`: kaikki kunnossa, seitsemän kulkua vähintään 4 s |
 
 ---
 
@@ -304,8 +307,17 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
   yhtään aksenttia.
 - **Tyyliohjeen aukot, jotka kirjoittaminen paljasti:** sana kajo tarkoittaa sekä käyrätorvien valoa että
   H-duurin väriä; sääntö 13 (väike kaukana) ja luvun 7 taulukko (väike lähellä ja keskellä) ovat ristiriidassa.
-  Molemmat on jätetty käyttäjän päätettäväksi, tyyliohjetta ei muutettu.
-- **Ei tehty:** tuore lukija ei ole tarkistanut käsikirjoitusta tyyliohjetta vasten. Maailmat ovat ohjaajan
+  Väike on ratkaistu tyyliohjeessa v1.3 (koti kaukana, johtaessaan lähemmäs); sana kajo on yhä käyttäjän päätettävä.
+- **Tuore lukija (9.11.2026) löysi sen, mitä kirjoittaja ei nähnyt:** oman iskusääntöni, joka rikkoi sääntöjä 10 ja 11;
+  värin vaihtumisen iskussa kahdessa otossa; kolme ottoa ja yhden maailman, joissa metsä ei näkynyt; ja kaksitoista
+  ristiriitaa tyyliohjeen sisällä. Kirjoittaja lukee tekstinsä sen mukaan, mitä tarkoitti.
+- **Mikä toimi briefissä:** vaatimus lainata molemmat tekstit sanasta sanaan ja täyttää sääntö- ja ottotaulukko
+  kokonaan. Jokainen löydös oli tarkistettavissa minuutissa, ja kaksi osoittautui vääriksi (kameran nousun ankkuri,
+  väikkeen kerros).
+- **Mikä ei toimi tekstistä:** liikkuvien elementtien määrä otossa on arvio. Se mitataan vasta kuvasta.
+- **Tyyliohje oli itse ristiriitainen**, ja siksi käsikirjoitus ei voinut noudattaa sitä kokonaan. Ohje kannattaa
+  tarkistuttaa tuoreella lukijalla ennen kuin siitä johdetaan mitään.
+- **Ei tehty:** korjattua tekstiä ei ole luettu tuoreilla silmillä uudestaan. Maailmat olivat ohjaajan
   ehdotus, eivät käyttäjän sanoja. Kolmen C-duurin vilahduksen ajat ja vaskivuorottelun osapuolet puuttuvat datasta.
 
 ## 9.11.2026 – Vähemmän tiedostoja, ja synteesi ennen poistoa
