@@ -85,3 +85,13 @@ tilaajalle.
 
 Liikesarjoja on tällä kierroksella enemmän: yksi jokaisesta iskusta ja kulusta välillä. Tiedoston nimi kertoo kohdan
 (esimerkiksi `liike_isku_0-45_01.png` alkaa kohdasta 0:45). Jokainen on neljä sekuntia, viisi ruutua sekunnissa. Katso ne kaikki.
+
+## Neljäs kierros
+
+Kolmannen kierroksen raportti on `palaute_k3.md`. Kuva on korjattu ja renderöity uudestaan; ruudut ovat uudet, ja
+liikesarjoja on lisää (myös ne kohdat, joita kolmas kriitikko pyysi). Käsikirjoitus on versio 2.2: kuvatapa 6 on
+nimeltään Ikisalo ja kuvattu uudestaan, ja viidessä kulussa kuva kulkee läpinäkyvän verhon läpi rajauksen muuttuessa
+jatkuvasti. Tee kuten ennen, lähtölistana `palaute_k3.md`. Erottele lopuksi selvästi:
+(a) virheet, jotka estävät näyttämästä osaa tilaajalle;
+(b) virheet, jotka haittaavat mutta eivät estä;
+(c) makuasiat, jotka tilaajan pitää itse ratkaista (esimerkiksi värin voimakkuus tai puiden muoto).
