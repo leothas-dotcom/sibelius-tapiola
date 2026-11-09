@@ -18,7 +18,7 @@ export const PALETTI = { hamy: '#0b1719', salo: '#163a66', halla: '#cfe1ee', nok
 const C = PALETTI;
 
 const PERUS = {
-  jouset: 1, viiva: 68, viivaVoima: 1, viivaPohja: 0.3, kukkulat: 1, harjut: 1, vaike: 0, leikkaus: 0, tuuli: 0, reuna: 0.05, puut: 1, kt: 1, seis: 0, kulku: '',
+  jouset: 1, viiva: 68, viivaVoima: 1, viivaPohja: 0.3, kukkulat: 1, harjut: 1, vaike: 0, leikkaus: 0, tuuli: 0, reuna: 0.05, puut: 1, kt: 1, seis: 0, kulku: '', sivu: 0.004,
   kerroksia: 2, tiheys: 1, lahi: 4, stack: 0, pan: [0, 0], trunk: 0.07, frost: 0, reflect: 0, crown: 0,
   maaY: 0.13, pLo: 50, pHi: 98, zoom: 1, mist: 0.6, dark: 0,
   snow: [0, 0.4, 0.5, 0.5],
@@ -35,19 +35,20 @@ const m = (...os) => Object.assign({}, PERUS, ...os);
 // Aikajana: ankkuri → tila. Roolit kuunteluoppaasta.
 const KELMEA = lin('#b9c2c4', 1.3);
 // Kuvatavat (tyyliohje 4b) saman kerrosmaiseman rajauksina. Jokainen on katsojan paikka; kerrostumat pysyvät samoina.
-const K2_MAASTA = { kt: 2, maaY: 0.30, pHi: 90, kerroksia: 5, tiheys: 0.8, reuna: 0.06, lahi: 12, zoom: 1.32 };
-const K3_YLOS = { kt: 3, maaY: 0.30, pHi: 90, kerroksia: 5, tiheys: 0.8, reuna: 0.07, lahi: 16, zoom: 1.52, pan: [0, 0.36] };
-const K4_LAHI = { kt: 4, maaY: 0.30, pHi: 90, kerroksia: 5, tiheys: 1.2, reuna: 0.07, lahi: 10, zoom: 2.1, pan: [0, 0.22], frost: 1, vaike: 1,
+const K2_MAASTA = { kt: 2, maaY: 0.20, pHi: 110, kerroksia: 5, tiheys: 0.75, reuna: 0.06, lahi: 13, zoom: 1.32, sivu: 0.014 };
+const K3_YLOS = { kt: 3, maaY: 0.20, pHi: 110, kerroksia: 5, tiheys: 0.75, reuna: 0.09, lahi: 15, zoom: 1.52, pan: [0, 0.12], sivu: 0.008,
+  skyLow: lin(C.salo, 0.42), skyTop: lin(C.salo, 0.16) };
+const K4_LAHI = { kt: 4, maaY: 0.20, pHi: 110, kerroksia: 5, tiheys: 1.0, reuna: 0.07, lahi: 7, zoom: 1.75, pan: [0, 0.04], frost: 1, vaike: 1, sivu: 0.01,
   treeNear: lin('#101c2b', 0.9), treeFar: lin('#3a587c', 0.8), mist: 0.9, skyLow: lin(C.salo, 0.22), snowCol: lin(C.halla, 0.42) };
-const K5_PINTA = { kt: 5, maaY: 0.45, pHi: 98, kerroksia: 4.5, tiheys: 0.9, reuna: 0.075, lahi: 8, zoom: 1.2, reflect: 1, groundCol: lin(C.noki, 0.3) };
-const K6_RYTMI = { kt: 6, maaY: 0.05, pHi: 110, kerroksia: 5, tiheys: 0.42, reuna: 1.8, lahi: 1.8, zoom: 1.1, pan: [0, 0.42], trunk: 0.20, crown: 1, mist: 1.2, puut: 0.3,
-  treeFar: lin('#2c4a73', 0.8), treeNear: lin(C.noki, 0.9), skyLow: lin(C.salo, 0.6), skyTop: lin(C.salo, 0.5), mistCol: lin('#7f9bbd', 0.5) };
+const K5_PINTA = { kt: 5, maaY: 0.22, pHi: 104, kerroksia: 5, tiheys: 0.8, reuna: 0.07, lahi: 11, zoom: 1.2, reflect: 0.5, snow: [0.08, 0.5, 0.4, 0.45], groundCol: lin(C.noki, 0.3), sivu: 0.012 };
+const K6_RYTMI = { kt: 6, maaY: 0.12, pHi: 98, kerroksia: 5, tiheys: 0.62, reuna: 0.05, lahi: 42, zoom: 1.1, trunk: 0.17, crown: 1, mist: 1.15, sivu: 0.022,
+  treeFar: lin('#22395a', 0.6), treeNear: lin(C.noki, 0.8), skyLow: lin(C.salo, 0.42), mistCol: lin('#7f9bbd', 0.42) };
 const K7_PIMEA = { kt: 7, maaY: 0.2, pHi: 98, kerroksia: 5, tiheys: 0.7, reuna: 0.06, lahi: 10, zoom: 1.3, dark: 0.86 };
-const K8_ULKOA = { kt: 8, maaY: 0.30, pHi: 120, kerroksia: 3, tiheys: 1.2, reuna: 0.06, lahi: 3, zoom: 1.0, reflect: 0.6, groundCol: lin(C.noki, 0.3), mist: 1.0, skyLow: lin(C.salo, 0.4) };
+const K8_ULKOA = { kt: 8, maaY: 0.30, pHi: 120, kerroksia: 3, tiheys: 1.2, reuna: 0.06, lahi: 3, zoom: 1.0, reflect: 0.12, groundCol: lin(C.noki, 0.3), mist: 1.0, skyLow: lin(C.salo, 0.4) };
 const K9_TUULI = { kt: 9, maaY: 0.24, pHi: 110, kerroksia: 4.5, tiheys: 0.8, reuna: 0.05, lahi: 9, zoom: 1.3, mist: 1.3,
   skyLow: lin('#55616c', 0.8), skyTop: lin('#3a444e', 0.6) };
 const K10_YLHAALTA = { kt: 10, maaY: 0.08, pLo: 50, pHi: 74, kerroksia: 5, tiheys: 1.0, reuna: 0.04, lahi: 4.5, stack: 0.62, zoom: 1.0, puut: 0.5, mist: 0.9 };
-const SUN = (v) => [0.80, 0.92, v, 0.34];
+const SUN = (v) => [0.82, 0.50, v, 0.30];
 const KAJO = { glow: [0.82, 0.07, 0.75, 1.1], warmCol: lin(C.kajo, 1.0), lightCol: lin(C.kajo, 1.2) };
 
 const AVAIMET = [
@@ -62,19 +63,19 @@ const AVAIMET = [
   ['puhallinkuviot_loppu', m({ jouset: 0, zoom: 1.16, reuna: 0.07, kerroksia: 2.5 })],
   ['patarumpu_paisuu', m({ jouset: 0, zoom: 1.18, snow: [0.03, 0.3, 0.5, 0.4], reuna: 0.075, kerroksia: 2.5 })],
   ['vaskien_isku', m({ jouset: 1, leikkaus: 1, zoom: 1.2, snow: [0.16, 1.8, 0.4, 0.6], tuuli: 1, reuna: 0.085, kerroksia: 3 })],
-  ['gis_pitka_aani_loppu', m({ jouset: 1, leikkaus: 0.8, zoom: 1.21, snow: [0.3, 2.0, 0.4, 0.65], tuuli: 1, reuna: 0.09, kerroksia: 3, viivaVoima: 0.3, viivaPohja: 1, kukkulat: 0 })],
-  ['fraasi_ennen_taukoa', m({ jouset: 1, zoom: 1.26, snow: [0.45, 1.4, 0.5, 0.7], mist: 0.9, tuuli: 0.4, reuna: 0.09, kerroksia: 4, lahi: 6, maaY: 0.16, viivaVoima: 0.25, viivaPohja: 1, kukkulat: 0 })],
-  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [0.55, 0.4, 0.8, 0.7], mist: 1.1, reuna: 0.08, kerroksia: 4.6, lahi: 9, maaY: 0.22, viivaVoima: 0, kukkulat: 0 })],
+  ['gis_pitka_aani_loppu', m({ jouset: 1, leikkaus: 0.8, zoom: 1.21, snow: [0.3, 2.0, 0.4, 0.65], tuuli: 1, reuna: 0.09, kerroksia: 3, viivaVoima: 0.12, viivaPohja: 1, kukkulat: 0 })],
+  ['fraasi_ennen_taukoa', m({ jouset: 1, zoom: 1.26, snow: [0.45, 1.4, 0.5, 0.7], mist: 0.9, tuuli: 0.4, reuna: 0.09, kerroksia: 3.5, lahi: 5, maaY: 0.15, viivaVoima: 0.08, viivaPohja: 1, kukkulat: 0 })],
+  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [0.55, 0.4, 0.8, 0.7], mist: 1.1, reuna: 0.07, kerroksia: 2.4, lahi: 5, maaY: 0.16, viivaVoima: 0, kukkulat: 0, puut: 0 })],
   // 2 Maan tasalta: yleistauon lumessa katse laskeutuu maahan; fis on viiva; bassot ovat maa
-  ['hiljaisuus_1_loppu', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.35, 0.25, 0.7, 0.6], mist: 0.9, viivaVoima: 0, kukkulat: 0 })],
-  ['fis_pitka_aani', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.3, 0.2, 0.6, 0.55] })],
-  ['valo_D_duuri', m(K2_MAASTA, { jouset: 0, viiva: 66, snow: [0.1, 0.2, 0.6, 0.5], harjut: 1.5, lightCol: KELMEA })],
+  ['hiljaisuus_1_loppu', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.35, 0.25, 0.7, 0.6], mist: 0.9, viivaVoima: 0, kukkulat: 0, kerroksia: 2.6, lahi: 6, maaY: 0.17 })],
+  ['fis_pitka_aani', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.3, 0.2, 0.6, 0.55], kerroksia: 2.8, lahi: 6, maaY: 0.17 })],
+  ['valo_D_duuri', m(K2_MAASTA, { jouset: 0, viiva: 66, snow: [0.1, 0.2, 0.6, 0.5], harjut: 1.8, lightCol: KELMEA, kerroksia: 4, lahi: 9, maaY: 0.19 })],
   ['askeleet_alkavat', m(K2_MAASTA, { jouset: 1, viiva: 66 })],
-  ['askeleet_B', m(K2_MAASTA, { jouset: 1, viiva: 66 })],
+  ['askeleet_B', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.24, lahi: 16 })],
   // 3 Ylös runkoja pitkin: katse nousee nousun mukana
-  ['urkupiste_H1_alku', m(K2_MAASTA, { jouset: 1, viiva: 66 })],
-  ['urkupiste_H1_loppu', m(K3_YLOS, { jouset: 1, viiva: 66 })],
-  ['nousu_huippu_D', m(K3_YLOS, { jouset: 0, viiva: 66, harjut: 1.5, lightCol: KELMEA, warmCol: KELMEA, glow: [1.15, 0.22, 0.5, 1.4] })],
+  ['urkupiste_H1_alku', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.24, lahi: 16 })],
+  ['urkupiste_H1_loppu', m(K3_YLOS, { jouset: 1, viiva: 66, viivaVoima: 0.6, warmCol: KELMEA, glow: [0.95, 0.25, 0.35, 1.5] })],
+  ['nousu_huippu_D', m(K3_YLOS, { jouset: 0, viiva: 66, viivaVoima: 0.6, harjut: 1.8, lightCol: KELMEA, warmCol: KELMEA, glow: [0.95, 0.28, 0.7, 1.6], pan: [0, 0.16] })],
   // 4 Lähikuva: huurteinen oksisto, pilkahdukset
   ['pohja_katoaa', m(K4_LAHI, { jouset: 1, viiva: 66 })],
   ['e_pitka_ja_kuviot', m(K4_LAHI, { jouset: 0, viiva: 64 })],
@@ -89,28 +90,28 @@ const AVAIMET = [
   ['vaskipulssit', m(K5_PINTA, { jouset: 0, viiva: 68 })],
   ['hajoaa_hiljaisuuteen', m(K5_PINTA, { jouset: 1, viiva: 68, reflect: 0.6 })],
   // 6 Runkojen rytmi: ikisalo; lopussa punainen väärä valo sivulta
-  ['jousijakso_urkupiste_E_alku', m(K6_RYTMI, { kulku: 'usva', jouset: 1, viiva: 66, viivaVoima: 0.4 })],
-  ['patarumpu_ppp', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4 })],
-  ['hitaat_soinnut', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4 })],
-  ['h_palaa_ennen_hiljaisuutta', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4 })],
-  ['hiljainen_jakso_alku', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4 })],
-  ['hiljainen_jakso_loppu', m(K6_RYTMI, { jouset: 0, viiva: 66, viivaVoima: 0.4, harjut: 1.5 })],
-  ['vaski_tutti_620', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4, leikkaus: 1 })],
-  ['allegro_359', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4, vaike: 1 })],
-  ['c_duuri_valahdykset', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 0.4, sun: SUN(0.12) })],
-  ['auringonsade', m(K6_RYTMI, { seis: 1, jouset: 1, viiva: 66, viivaVoima: 0.4, sun: SUN(0.9) })],
+  ['jousijakso_urkupiste_E_alku', m(K6_RYTMI, { kulku: 'usva', jouset: 1, viiva: 66, viivaVoima: 1 })],
+  ['patarumpu_ppp', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1 })],
+  ['hitaat_soinnut', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1 })],
+  ['h_palaa_ennen_hiljaisuutta', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1 })],
+  ['hiljainen_jakso_alku', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1 })],
+  ['hiljainen_jakso_loppu', m(K6_RYTMI, { jouset: 0, viiva: 66, viivaVoima: 1, harjut: 1.5 })],
+  ['vaski_tutti_620', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1, leikkaus: 1 })],
+  ['allegro_359', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1, vaike: 1 })],
+  ['c_duuri_valahdykset', m(K6_RYTMI, { jouset: 1, viiva: 66, viivaVoima: 1, sun: SUN(0.12) })],
+  ['auringonsade', m(K6_RYTMI, { seis: 1, jouset: 1, viiva: 66, viivaVoima: 1, sun: SUN(0.9) })],
   // 7 Pimeä ja välähdys: väärä valo viedään; metsä näkyy vain, kun vasket leikkaavat
   ['M_ennakko', m(K6_RYTMI, { jouset: 0, viiva: 66, viivaVoima: 0.2, leikkaus: 1, sun: SUN(0.9) })],
   ['M_raskaat_askeleet', m(K7_PIMEA, { kulku: 'pimea', jouset: 0, viiva: 66, leikkaus: 0.9 })],
   ['jannitejakso_alku', m(K7_PIMEA, { jouset: 1, viiva: 66, dark: 0.7 })],
-  ['O_kirjain', m(K7_PIMEA, { jouset: 0, viiva: 66, dark: 0.6 })],
-  ['allegro_moderato_O_alku', m(K7_PIMEA, { jouset: 0, viiva: 66, harjut: 1.6, dark: 0.55 })],
-  ['allegro_moderato_O_loppu', m(K7_PIMEA, { jouset: 0, viiva: 66, vaike: 1, dark: 0.6 })],
-  ['P_vaskipaisunta', m(K7_PIMEA, { jouset: 0, viiva: 66, leikkaus: 1, harjut: 1.6, dark: 0.7 })],
+  ['O_kirjain', m(K7_PIMEA, { jouset: 0, viiva: 66, dark: 0.5, harjut: 1.8, viivaVoima: 1.2 })],
+  ['allegro_moderato_O_alku', m(K7_PIMEA, { jouset: 0, viiva: 66, harjut: 2.4, dark: 0.42 })],
+  ['allegro_moderato_O_loppu', m(K7_PIMEA, { jouset: 0, viiva: 66, vaike: 1, dark: 0.5 })],
+  ['P_vaskipaisunta', m(K7_PIMEA, { jouset: 0, viiva: 66, leikkaus: 1, harjut: 2.2, dark: 0.45, warmCol: lin(C.halla, 0.9), glow: [0.5, 0.10, 0.7, 1.3] })],
   ['dim_possibile', m(K7_PIMEA, { jouset: 1, viiva: 66, dark: 0.6 })],
   // 8 Ulkoa ja kaukaa: jään yli; myrsky näkyy ensin kaukana
   ['hiljaisuus_2_alku', m(K8_ULKOA, { kulku: 'pimea', jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, dark: 0.25 })],
-  ['myrsky_nakyy', m(K8_ULKOA, { jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.15, 0.8, 0.4, 0.5], tuuli: 0.2 })],
+  ['myrsky_nakyy', m(K8_ULKOA, { jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.01, 0.8, 0.4, 0.5], tuuli: 0.1 })],
   ['myrsky_kasvu', m(K8_ULKOA, { jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.5, 1.8, 0.4, 0.7], tuuli: 0.6, kerroksia: 3 })],
   // 9 Tuulen sisällä
   ['myrsky_iskee', m(K9_TUULI, { jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.9, 2.6, 0.5, 0.8], tuuli: 1.3 })],
@@ -119,14 +120,14 @@ const AVAIMET = [
   ['R_vasket', m(K9_TUULI, { jouset: 0, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.7, 2.2, 0.5, 0.7], tuuli: 1.0, leikkaus: 1, harjut: 1.6 })],
   ['toinen_paisunta', m(K9_TUULI, { jouset: 1, viiva: 66, viivaVoima: 0, kukkulat: 0, snow: [0.5, 1.8, 0.5, 0.7], tuuli: 0.8 })],
   // 10 Ylhäältä: vaarat kerroksina; lopussa kajo
-  ['huuto', m(K10_YLHAALTA, { kulku: 'lumi', jouset: 1, viiva: 68, viivaVoima: 0.5, kukkulat: 0, snow: [0.3, 1.0, 0.5, 0.6], tuuli: 0.4, puut: 1 })],
-  ['yksinaiset_aanet', m(K10_YLHAALTA, { jouset: 0, viiva: 68, snow: [0.12, 0.3, 0.5, 0.5] })],
-  ['S_sempre_mf', m(K10_YLHAALTA, { jouset: 1, viiva: 68 })],
-  ['loppuhuipennus', m(K10_YLHAALTA, { jouset: 1, viiva: 68 })],
-  ['loppu_Hduuri_alku', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68 })],
-  ['viimeiset_askeleet', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68 })],
-  ['musiikki_loppuu', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68 })],
-  ['tiedoston_loppu', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68 })],
+  ['huuto', m(K10_YLHAALTA, { kulku: 'lumi', jouset: 1, viiva: 80, viivaVoima: 1.3, kukkulat: 0, snow: [0.15, 0.6, 0.5, 0.5], tuuli: 0.2, puut: 0.15, pHi: 86 })],
+  ['yksinaiset_aanet', m(K10_YLHAALTA, { jouset: 0, viiva: 68, snow: [0.06, 0.2, 0.5, 0.45], puut: 0 })],
+  ['S_sempre_mf', m(K10_YLHAALTA, { jouset: 1, viiva: 68, puut: 0.3 })],
+  ['loppuhuipennus', m(K10_YLHAALTA, { jouset: 1, viiva: 68, puut: 0.3, mist: 1.3 })],
+  ['loppu_Hduuri_alku', m(K10_YLHAALTA, { seis: 1, jouset: 1, viiva: 68, puut: 0 })],
+  ['viimeiset_askeleet', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68, puut: 0 })],
+  ['musiikki_loppuu', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68, puut: 0 })],
+  ['tiedoston_loppu', m(K10_YLHAALTA, KAJO, { seis: 1, jouset: 1, viiva: 68, puut: 0 })],
 ];
 
 const lerp = (a, b, k) => (Array.isArray(a) ? a.map((x, i) => x + (b[i] - x) * k) : a + (b - a) * k);
@@ -161,6 +162,8 @@ async function alusta() {
 
   const NUOTIT = cues.nuotit;                      // [alku, kesto, midi], aikajärjestyksessä
   const ISKUT = cues.iskut.map((x) => ({ t: x.t, v: clamp(x.pisteet / 70, 0.15, 1) }));
+  for (const c of cues.cues) if (c.luokka === 'isku' && c.t != null && !ISKUT.some((x) => Math.abs(x.t - c.t) < 0.15)) ISKUT.push({ t: c.t, v: 1 });
+  ISKUT.sort((x, y) => x.t - y.t);
   const ensimmainen = (lista, t, avain) => { let a = 0, b = lista.length; while (a < b) { const c = (a + b) >> 1; if (avain(lista[c]) < t) a = c + 1; else b = c; } return a; };
   const PISIN = NUOTIT.reduce((s, n) => Math.max(s, n[1]), 0);
   // Yläsävelet pois: kuuntelutyökalu kirjaa nuotiksi myös vahvan äänen yläsävelet (oktaavi, kvintti, terssi ylempänä).
@@ -180,6 +183,11 @@ async function alusta() {
       if (m2 < 48) BHARM[i] = 1; else if (dbRuutu(m2, f) >= dbRuutu(mi, f) - 4) HARM[i] = 1;
     }
   }
+  // kuinka tiheästi ääniä alkaa nuotin ympärillä: tiheässä kohdassa lyhyt ääni ei saa omaa puuta
+  const TIHEYS = new Float32Array(NUOTIT.length);
+  for (let i = 0, a0 = 0, a1 = 0; i < NUOTIT.length; i++) { const t0 = NUOTIT[i][0];
+    while (a0 < NUOTIT.length && NUOTIT[a0][0] < t0 - 1) a0++; while (a1 < NUOTIT.length && NUOTIT[a1][0] < t0 + 1) a1++;
+    TIHEYS[i] = 0.18 + 0.9 * clamp((a1 - a0 - 8) / 40, 0, 1); }
   const PURSKEET = cues.tapahtumat.filter((e) => e.tyyppi === 'purske');
   const purske = (t) => PURSKEET.some((e) => t >= e.alku && t <= e.loppu);
 
@@ -189,6 +197,8 @@ async function alusta() {
   avaimet.forEach((a, i) => { a.matka = mk; if (i + 1 < avaimet.length && !a.p.seis) mk += avaimet[i + 1].t - a.t; });
   avaimet.forEach((a, i) => { let j = i; while (j > 0 && avaimet[j - 1].p.kt === a.p.kt) j--; let e = i; while (e + 1 < avaimet.length && avaimet[e + 1].p.kt === a.p.kt) e++;
     a.m0 = avaimet[j].matka; a.m1 = avaimet[Math.min(e + 1, avaimet.length - 1)].matka; });
+  let dr = 0;
+  avaimet.forEach((a, i) => { a.drift = dr; if (i + 1 < avaimet.length) dr += (avaimet[i + 1].t - a.t) * (a.p.sivu + avaimet[i + 1].p.sivu) / 2; });
   const AJO = 0.14;
   const ajo = (a, matkaNyt) => (a.p.kt === 1 ? 1 : 1 + AJO * clamp((matkaNyt - a.m0) / Math.max(a.m1 - a.m0, 1), 0, 1));
 
@@ -208,12 +218,14 @@ async function alusta() {
       const lahella = smooth(clamp(1 - Math.abs(t - tm) / puoli, 0, 1));
       p.zoom = ennen ? a.p.zoom * ajo(a, matkaNyt) * (1 + 0.6 * lahella * lahella) : b.p.zoom * (1 - 0.18 * lahella);
       p.verho = [...VERHOT[b.p.kulku], lahella];
+      p.drift = a.drift + (b.drift - a.drift) * k;
       p.kulku = '';
     } else {
       for (const key of Object.keys(PERUS)) p[key] = ASKEL.has(key) ? a.p[key] : lerp(a.p[key], b.p[key], s);
       p.zoom = lerp(a.p.zoom * ajo(a, matkaNyt), b.p.zoom * (a.p.kt === b.p.kt ? ajo(b, matkaNyt) : 1), a.p.kt === b.p.kt ? 0 : s);
       if (a.p.kt === b.p.kt) p.zoom = lerp(a.p.zoom, b.p.zoom, s) * ajo(a, matkaNyt);
       p.verho = [0, 0, 0, 0];
+      p.drift = a.drift + (t - a.t) * (a.p.sivu + (b.p.sivu - a.p.sivu) * k / 2);
     }
     return p;
   }
@@ -284,12 +296,12 @@ async function alusta() {
       const nousu = smooth(clamp(ika / 0.45, 0, 1));
       const lasku = 1 - smooth(clamp(jalki / 0.9, 0, 1));
       if (r.jouset > 0.5) {
-        if (HARM[i]) continue;
+        if (HARM[i] || kesto < TIHEYS[i]) continue;
         // jousten ääni on kuusiryhmä. Paikka, syvyys ja muoto ovat sävelen omat: sama sävel palaa samana ryhmänä samaan
         // paikkaan (siemen tunnistuu). Korkein puu yltää sävelen korkeuteen. Äänen voima näkyy huojuntana ja kokona.
         // Ryhmä alkaa kasvaa hieman ennen äänen alkua, jotta se on pystyssä, kun ääni soi; se on aina läpinäkymätön.
         const x0 = ASP * (0.07 + 0.86 * fract(midi * KULTA + 0.31));
-        const n = kesto >= 1.2 ? 6 : 3;
+        const n = kesto >= 1.2 ? 4 : 2;
         const kasvu = smooth(clamp((ika + 0.2) / 0.45, 0, 1));
         for (let j = 0; j < n; j++) {
           const h1 = fract(midi * 0.754 + j * 0.3819 + 0.11), h2 = fract(midi * 0.317 + j * 0.6180 + 0.53);
@@ -297,7 +309,7 @@ async function alusta() {
           const kork = (Y(midi) - p.maaY) * (j === 0 ? 1 : 0.5 + 0.45 * h1) * (0.96 + 0.08 * L);
           const top = p.maaY + kork * (0.06 + 0.94 * kasvu) * (0.12 + 0.88 * lasku);
           puut.push({ x: x0 + ASP * (j === 0 ? 0 : (h1 - 0.5) * 0.17 + (j % 2 ? 0.03 : -0.03)), top, w: kork * (0.15 + 0.06 * h2) * (1.25 - 0.35 * syv), syv,
-            a: p.puut * clamp(lasku / 0.12, 0, 1) * clamp((ika + 0.2) / 0.1, 0, 1), siemen: fract(midi * 0.137 + j * 0.291) + 0.01, huoj: (0.014 + 0.045 * L) * (1 + 1.5 * p.tuuli),
+            a: p.puut * clamp(lasku / 0.12, 0, 1) * clamp((ika + 0.2) / 0.1, 0, 1), siemen: fract(midi * 0.137 + j * 0.291) + 0.01, huoj: Math.min((0.014 + 0.045 * L) * (1 + 0.6 * p.tuuli), 0.07),
             tarkeys: kesto * (0.5 + L) * (j === 0 ? 2 : 1) });
         }
       } else if (kesto >= 0.6 && !HARM[i]) {
@@ -355,7 +367,8 @@ async function alusta() {
     const reg = [taso3(28, 47), taso3(48, 71), taso3(72, 100)];
     const n0 = ensimmainen(NUOTIT, t - 1.5, (n) => n[0]), n1 = ensimmainen(NUOTIT, t, (n) => n[0]);
     const liike = clamp((n1 - n0) / 22, 0, 1);
-    return { p, Y, puut, harjut, kukkulat, pilk, viivaY: Y(p.viiva), vv, ml, var_, sys, leik, reuna, reg, liike, heilaus };
+    const taso = clamp(0.45 * reg[0] + 0.75 * reg[1] + 0.45 * reg[2], 0, 1);
+    return { p, Y, puut, harjut, kukkulat, pilk, viivaY: Y(p.viiva), vv, ml, var_, sys, leik, reuna, reg, liike, heilaus, taso };
   }
 
   const fTree = new Float32Array(72 * 4), fTreeB = new Float32Array(72 * 4), fRidge = new Float32Array(16 * 4), fRidgeB = new Float32Array(16 * 4);
@@ -380,13 +393,13 @@ async function alusta() {
     gl.uniform4fv(U('uHill'), fHill); gl.uniform4fv(U('uGlint'), fGlint); gl.uniform4fv(U('uPulse'), fPulse);
     gl.uniform1i(U('uNTree'), k.puut.length); gl.uniform1i(U('uNRidge'), k.harjut.length); gl.uniform1i(U('uNHill'), Math.min(k.kukkulat.length, 12)); gl.uniform1i(U('uNGlint'), k.pilk.length);
     gl.uniform4f(U('uLine'), k.viivaY, 0.8 * k.vv, 0.0020, 0.035);
-    gl.uniform4f(U('uGround'), p.maaY, Math.max(clamp(k.var_ / 14, 0, 1.5), 1.1 * clamp((k.ml + 40) / 22, 0, 1)), clamp((k.ml + 45) / 35, 0, 1), 0.09);
+    gl.uniform4f(U('uGround'), p.maaY, Math.max(clamp(k.var_ / 14, 0, 1.5), 1.1 * clamp((k.ml + 40) / 22, 0, 1)), clamp((k.ml + 45) / 35, 0, 1), 0.16);
     gl.uniform4f(U('uCut'), ASP * (0.42 + 0.16 * fract(k.leik[2] * KULTA)), k.leik[0], k.leik[1], k.leik[2]);
     gl.uniform3f(U('uBand'), k.reuna, 0.94, p.tuuli);
     gl.uniform4f(U('uForest'), p.kerroksia, p.tiheys, k.reuna, p.lahi);
-    gl.uniform1f(U('uStack'), p.stack); gl.uniform1f(U('uDrift'), 0.004 * t); gl.uniform1f(U('uSway'), (0.010 + 0.03 * k.liike + 0.03 * k.heilaus) * (1 + 1.5 * p.tuuli));
+    gl.uniform1f(U('uStack'), p.stack); gl.uniform1f(U('uDrift'), p.drift); gl.uniform1f(U('uSway'), Math.min((0.010 + 0.03 * k.liike + 0.03 * k.heilaus) * (1 + 0.6 * p.tuuli), 0.08));
     gl.uniform1f(U('uTrunk'), p.trunk); gl.uniform1f(U('uCrown'), p.crown); gl.uniform1f(U('uFrost'), p.frost); gl.uniform1f(U('uReflect'), p.reflect);
-    gl.uniform2fv(U('uPan'), p.pan); gl.uniform3fv(U('uReg'), k.reg); gl.uniform4fv(U('uVeil'), p.verho);
+    gl.uniform2fv(U('uPan'), p.pan); gl.uniform3fv(U('uReg'), k.reg); gl.uniform4fv(U('uVeil'), p.verho); gl.uniform1f(U('uTaso'), k.taso);
     gl.uniform4fv(U('uSnow'), p.snow); gl.uniform4fv(U('uGlow'), p.glow); gl.uniform4fv(U('uSun'), [p.sun[0] * ASP, p.sun[1], p.sun[2], p.sun[3]]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
     gl.finish();
