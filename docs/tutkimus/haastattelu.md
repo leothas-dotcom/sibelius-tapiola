@@ -661,3 +661,7 @@ Käyttäjä jatkoi samana päivänä kolmella viestillä:
 
 > JA JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????
 
+> Ja revontulet tietysti VAIN johonkin tiettyyn kohtaan, mihin se dramaturgillisesti sopii
+
+> MAAILMOITA! JOIDEN SISÄLTÄ LÖYTYY MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???
+

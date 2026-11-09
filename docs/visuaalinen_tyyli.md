@@ -255,9 +255,9 @@ TAPIOLA. SIIS TAPIO JUMALAN ASUINPAIKKA. MYTOLOGINEN HAHMO." ... "haluan myös r
     vaara on Tapion talo: valtava kumpu metsän takana, jonka rinteessä hopeiset ikkunat kuumottavat, kun käyrätorvet
     soivat (Kalevala 14: "ukset kulta kuumottivat"; hopea, koska lämmin väri on varattu lopulle). Tapiota ei piirretä
     kasvoina; hänen läsnäolonsa on mittakaava ja valo.
-12. **Revontulet.** Taivaalla on revontulet: välkkyvä kaari, joka laskeutuu (SKVR XII2 7950). Ne ovat puhaltimien ja
-    ylärekisterin valo: syttyvät, kun puhaltimet tulevat, ja leimahtavat vaskien iskussa. Sävy on kylmä vihertävä halla,
-    ei kirkas.
+12. **Revontulet yhdessä kohdassa.** Käyttäjä: "revontulet tietysti VAIN johonkin tiettyyn kohtaan, mihin se
+    dramaturgillisesti sopii." Välkkyvä kaari, joka laskeutuu (SKVR XII2 7950); sävy kylmä vihertävä halla, ei kirkas.
+    Paikka valitaan käsikirjoituksessa (ohjaajan ehdotus: huudon jälkeen, maailma 11), ja muualla niitä ei ole.
 13. **Kamera ei koskaan aja maan läpi.** Kameran korkeus mitataan maasta sen omalla kohdalla.
 14. **Yksittäinen puu on harkittu ja kertoo tarinan.** Käyttäjä: "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN
     PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" Jokainen yksittäinen puu nimetään käsikirjoituksessa lähteineen
