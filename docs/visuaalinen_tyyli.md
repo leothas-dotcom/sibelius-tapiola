@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.3, 9.11.2026 (v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 1.4, 9.11.2026 (v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -100,7 +100,9 @@ Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niit�
 
 ## 4. Tila
 
-- **Metsä on tila, ei maisema.** Katsoja on metsän sisällä, runkojen keskellä, ei sen edessä. Horisonttia ei näytetä ennen myrskyä: se
+- **Metsä on aina kuvassa, mutta katsojan paikka vaihtuu** (luku 4b): usvan takana, maan tasalla, rungon alla, oksan
+  vieressä, jään yllä, runkojen seassa, pimeässä, ulkona jäällä ja latvojen yläpuolella. Metsää ei kuvata runkorivinä
+  syvyydessä. Horisonttia ei näytetä ennen myrskyä: se
   ilmestyy, kun myrsky näkyy kaukana (t. 523), ja se on ensimmäinen kerta, kun tila on suurempi kuin katsoja.
 - **Pystysuora ja vaakasuora.** Metsä on pystysuoraa massaa; pohja (sellot, bassot, patarummut) on vaakasuoraa
   painoa. Tapion pöytä: kolme runkoa pystyyn, vaakalauta päälle. Myrsky on se, mikä iskee pystysuoraan kerrosten
@@ -108,6 +110,37 @@ Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niit�
 - **Mittakaava kasvaa sisäänpäin.** Jokainen uusi maailma on suurempi kuin edellinen, vaikka se löytyi pienemmän
   sisältä. Tämä on Tapiolan "ikisalat": loputon sisäänpäin.
 - **Ei tyhjää reunaa.** Kerrokset täyttävät kuvan reunoihin asti; lavasteen reuna on virhe (kohtauscheck).
+
+## 4b. Kuvatavat: miten metsä ja sen tunnelmat kuvataan
+
+Käyttäjä 9.11.2026 (vedos 1): "se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka on niin kuin
+syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." Ja: "sumussa näkyviä kaukaisia vuoria [...] ne on vaan niin kun
+puun niin kun indikaatio". Ja: "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä."
+Ja: "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus."
+
+**Periaate:** metsä syntyy vihjeestä ja rajauksesta, ei puiden lukumäärästä. Jokaisella tunnelmalla on oma kuvatapansa:
+katsojan paikka, rajaus ja se, millä puu vihjataan. Lähteet ovat `docs/tutkimus/taide1920.md` luvussa 7; niistä otetaan
+periaate, ei kuvaa eikä tyyliä. Valinnat ovat **[ohjaajan ehdotus]**.
+
+| Kuvatapa | Katsojan paikka ja rajaus | Millä puu vihjataan | Tunnelma | Ääni → kuva | Periaatteen lähde |
+|---|---|---|---|---|---|
+| **1 Usvan läpi** | metsän sisällä; lähellä mustat oksat kuvan poikki, muu on usvaa | rungot ovat vaaleita ja tummia pystyvetoja, jotka tulevat usvasta ja häipyvät siihen | hämy, läsnäolo | äänen voima on usvan valo; pitkän äänen korkeus on valon korkeus; säikeet piirtävät melodian | Tōhaku: usva on tyhjää tilaa |
+| **2 Maan tasalta** | kamera lumen pinnassa; maa täyttää puolet kuvasta, latvat jäävät kuvan ulkopuolelle | runkojen tyvet pylväinä, lumen muodot | paino, joka kulkee edellä | basson korkeus on maan muoto; askel on painuma linssin edessä | Halonen: korkea horisontti; Klimt: ei taivasta |
+| **3 Ylös runkoja pitkin** | katse kallistuu ylös; rungot kohtaavat kuvan keskellä | latvojen aukko ja oksien verkko valoa vasten | kasvu, hetken valo | ylälinjan korkeus on katseen korkeus | O'Keeffe: katse rungon alta |
+| **4 Lähikuva** | yksi oksa täyttää kuvan; metsä on sen takana epätarkkana | huurteen kiteet, neulaset | väike, leikki | korkeat lyhyet äänet ovat pilkahduksia; korkeus on pilkahduksen paikka oksalla | Halonen: lähikuvat lumisista puista |
+| **5 Pinnan sisään** | katse alas mustaan jäähän; metsä on pinnan alla ylösalaisin | heijastus ja halkeamat | vieras, tummuva, ensimmäinen pelko | syke on pinnan aalto; voima on heijastuksen selkeys | oma; Munch: pimeys ja heikko valo |
+| **6 Runkojen rytmi** | ei maata, ei taivasta; valtavat rungot pystyraitoina koko pinnalla | raitojen leveys, väli ja sävy | pienuus, ajan pysähtyminen | sointu on raitojen sävy; matala rekisteri on leveät, tummat raidat | Klimt: rungot pinnan rytminä |
+| **7 Pimeä ja välähdys** | kuva on musta; metsä on olemassa vain, kun valo leikkaa | hetkeksi näkyvä siluetti | ahdistus | vaskien isku on välähdys; askel on se, mitä välähdys näyttää | Munch; Norštein: näkyy vain lähin |
+| **8 Ulkoa ja kaukaa** | jään yllä; metsä on tumma reuna ja sen takana vaarat kerroksina usvassa | reunan sahalaita; kauempana pelkkä sävy | etäinen uhka | hiljainen kuviointi on kauimman kerroksen väreily; crescendo nielee kerroksen kerrallaan | Guo Xi: usva erottaa tasot |
+| **9 Tuulen sisällä** | myrskyn keskellä; kerroksilla ei ole eroa | taipuvat vihjeet lumen raoissa | ylivoima | äänen tiheys on viivojen tiheys; korkeus on tuulen korkeus kuvassa | Burchfield: tuuli merkkeinä |
+| **10 Ylhäältä** | latvojen yläpuolella; vaarat ja metsä kerroksina horisonttiin, usva laaksoissa | kerroksen reunan latvat; kaukana pelkkä sävy | paljaus, sitten hellyys | yksittäinen ääni on valo yhdessä laaksossa, korkeus sen mukaan; H-duuri on usvan hehku | Järnefelt: latvoista vaaroihin ja horisonttiin |
+
+**Kolme yhteistä sääntöä:**
+1. **Metsä elää.** Mikään ei seiso paikallaan: usva ajelehtii, latvat huojuvat, lumi varisee, valo hengittää. Jokainen
+   näistä liikkeistä tulee äänestä (luku 7b). Ajo paikallaan seisovien puiden välissä ei ole kuva.
+2. **Ääni näkyy kahdella akselilla joka kuvatavassa:** korkeus on korkeus kuvassa, ja voima on valon määrä ja läheisyys.
+3. **Kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella**, ei leikkauksella. Maailmoja maailmojen sisällä: kun
+   kamera ajaa jonkin sisään, sieltä avautuva maailma saa olla nähty toisesta paikasta.
 
 ## 5. Liike ja kamera
 
@@ -237,12 +270,14 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 *Sama asia lyhyesti. Jos tämä ja yllä oleva ovat ristiriidassa, yllä oleva voittaa.*
 
 ### Ääni ohjaa
-0. Kuva on äänen visualisointi. Jokaisella äänen tapahtumalla on vastine (tyyliohje 7b): nousu, lasku, kerros katoaa
+0. Kuva on äänen visualisointi. Äänen korkeus on korkeus kuvassa ja äänen voima on valon määrä ja läheisyys: molemmat
+   näkyvät joka kuvatavassa (luku 4b). Jokaisella äänen tapahtumalla on vastine (tyyliohje 7b): nousu, lasku, kerros katoaa
    tai tulee, paljastuminen, urkupiste, basso liikkuu, staccato, legato, nopea, hidas, tremolo, vuorottelu, isku,
    hiljaisuus. Ääni tapahtuu eikä kuva reagoi = virhe. Kuva tapahtuu ilman äänen syytä = virhe.
 
 ### Kamera
-1. Kamera liikkuu aina, hitaasti sisään ja eteen. Ei peruuta, ei palaa.
+1. Kamera liikkuu aina, hitaasti sisään ja eteen. Ei peruuta, ei palaa. Katseen korkeus ja suunta vaihtuvat kuvatavan
+   mukana (luku 4b), jatkuvasti.
 2. Pysähdys vain nimetyissä kohdissa: C-duuri (taottu aurinko), H-duuri (loppu). Nimeämätön pysähdys on virhe.
 3. Ei pyörimistä, ei kallistusta, enintään 20 °/s. Suunnanvaihdot jatkuvia.
 4. Kamera ei reagoi iskuun. Elementit reagoivat.
@@ -255,7 +290,8 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 8. Kerros on etäisyys ja valo, ei taso eikä pahvi. Kerrosten reunat eivät vuoda; tyhjä tausta on virhe.
 
 ### Elementit
-9. Metsä näkyy: rungot, kuuset, oksisto, lumi, usva, kerroksittain. Jokainen soitin on elementti metsän sisällä
+9. Metsä näkyy: rungot, kuuset, oksisto, lumi, usva, kerroksittain. Ei runkorivinä syvyydessä: jokaisella tunnelmalla
+   on kuvatapansa (luku 4b), puu saa olla vihje, ja metsä elää äänen mukana. Jokainen soitin on elementti metsän sisällä
    (tyyliohje luku 7), ei esine: ei soittimia, nuotteja, kasvoja, eläimiä, ihmisiä, hahmoja.
 10. Iskun elementti on ympäristössä (pohjan tärähdys, valon leikkaus, kerrosten etääntyminen) ja näkyy iskun ruudussa.
 11. Elementti ei ilmesty, katoa eikä loiki iskussa. Se on jo kuvassa ja muuttaa tilaa.

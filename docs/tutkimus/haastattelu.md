@@ -515,3 +515,31 @@ poistettu. 3:20: kaksi kerrosta mitattu, mutta soitinta (viulut) ei voi nimetä 
 Ohjaajan merkintä (sitova): video on visualisaattori äänelle. Tyyliohjeen luku 7b antaa jokaiselle äänen
 tapahtumalle kuvavastineen. Tunnistin `analysis/tapahtumat.py` etsii tapahtumat koko teoksesta. Opas on kuulijan
 kieltä, tekninen data JSONissa. Sibeliuksen keino "kerros väistyy ja paljastaa toisen" on oma rivinsä taulukossa.
+
+## 9.11.2026: palaute vedoksesta 1 (saneltu)
+
+> Joo, niin mä mietin nyt vaan sitä, että jos tässä ollaan koko ajan metsässä, niin onko se vähän tylsä niin kuin
+> minuutille, että mä toivoisin, että niin kuin mä oon yrittänyt sanoa ihan alusta lähtien, että tää olisi
+> mahdollisimman luova [...] Että me ollaan puiden keskellä, mikä on periaatteessa ihan hyvä haku. Mutta että jos vaikka
+> mietitään niin kuin taidehistoriaa, niin että se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka
+> on niin kuin syvyydessä. Vaan se on niin kuin äärimmäisen tylsä. Eli tee vaikka semmoinen taidehistoriahaku, että
+> millä tavalla me voitaisiin kuvata niin kuin eri tunnelmia siellä metsässä. Vaikka, että miten me kuvataan vaikka sitä
+> hämyä ja miten me kuvataan sitä, että se valo muuttuu siellä metsässä. Että siinähän varmaan tarvii käyttää
+> jonkunnäköisiä kuvakulmia. Ja sitten joskus [...] se metsää voi olla niin kun useassa kerroksessa, että meillä on niin
+> kun sumussa näkyviä kaukaisia vuoria, [...] mihin sitten se metsä rajautuu ja ne näkyy vaan niin kun semmoisena sumuna
+> siellä oikeastaan, että ne on vaan niin kun puun niin kun indikaatiopuista. [...] saat nyt piirtänyt puuta ja
+> ajatellut, että se on metsä. Kun niin kuin tässä nimenomaan just halutaan täysin eri suuntaan mennä. Eli metsää pitää
+> olla, ja sitten sitä hämyisyyttä ja tunnelmaa. Oikein en nyt nähnyt noista vedoksista esimerkiksi vaikka niitä miten se
+> äänen korkeus siinä otettiin huomioon, sitä mä yritin toistaa, että aika usein niissä visuaalisissa tyyleissä, että
+> sen kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä. Mutta mä veikkaan, että se,
+> että me zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus. Eli tää täytyy nyt
+> niin kuin kirjoittaa uudelleen niin, että luet ne kuunteluoppaan asiat ja sitten sen jälkeen sieltä
+> kuvakäsikirjoituksesta katsot ne tunnelmat ja tunteet, mitä se kuvakäsikirjoitus yrittää välittää, ja sitten sen
+> jälkeen mietit sinne renderille, että miten se niinku käytännössä toteutetaan. Ja näähän ei ole nyt ihan helppo
+> tehtävä. Eli tähän sun täytyy käyttää niin kuin ihan oikeasti ajatusta. Miettiä, että miten sä toteutat ne eri tunteet,
+> tunnelmat siellä. Kuvassa.
+
+Ohjaajan luenta: (1) metsä pysyy, mutta sitä ei kuvata runkorivinä syvyydessä; (2) jokaisella tunnelmalla on oma
+kuvatapansa: kuvakulma, rajaus ja se, millä puu vihjataan; (3) metsä saa olla kerroksina, kaukaiset vaarat usvassa, puut
+vain vihjeinä; (4) kuva seuraa ääntä näkyvästi, välillä korkeutta, välillä voimaa; (5) ajo paikallaan seisovien
+puiden välissä ei riitä liikkeeksi.

@@ -21,11 +21,11 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 3 | Ääni: kuuntelukopio ja totuus | ✅ Rattle-kuuntelukopio `build/kuuntelu/rattle_kuuntelu.wav`, kellot 0,00 ms, vire +5,6 c (ei korjattu); Kajanus arkisto |
 | 4 | Kuuntelutyökalu | ✅ yksi työkalu `analysis/korvat.py`: 270 tapahtumaa, 17 ruutukanavaa (`build/rattle_koko/ohjaus.f32`); mitä ääni antaa ja mitä ei: tutkimuksen luku 13; **vääriä osumia ei ole karsittu korvalla** |
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
-| 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.3 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12; omat ristiriidat korjattu 9.11.2026); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
-| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1.1 (tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä 9.11.2026; auki: sana kajo, loppukuva, puuttuva data |
+| 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.4 (luku 4b: kymmenen kuvatapaa vedoksen 1 palautteen jälkeen; metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12; omat ristiriidat korjattu 9.11.2026); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
+| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1.2 (luvut 1 ja 2: kuvatapa joka hetkelle; ottojen rivit kirjoitetaan uudestaan vedoksen 2 jälkeen; tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä 9.11.2026; auki: sana kajo, loppukuva, puuttuva data |
 | 8 | Tekniikka ja mittarit | 🔶 tekniikka valittu vedosta varten (yksi säteenseurantavarjostin, WebGL2, ei uusia riippuvuuksia); `seek(t)` toistettava ja camcheck mitattu; muut mittarit puuttuvat |
 | 9 | Perusta, sitten osat | ⬜ |
-| 10 | Luonnokset ennen renderiä | 🔶 vedos 1: 16 stilliä kahdeksasta maailmasta (`runs/vedos_v1/`), **odottaa käyttäjän katsomista**; ääni ei vielä ohjaa kuvaa |
+| 10 | Luonnokset ennen renderiä | 🔶 vedos 2: 19 stilliä, kymmenen kuvatapaa, ääni ohjaa säikeitä ja valoa (`runs/vedos_v2/`); vedos 1 hylätty palautteessa (rivipuut syvyydessä); **odottaa käyttäjän katsomista** |
 | 11 | Kriitikko | ⬜ |
 | 12 | Koko renderi ketjuna ja master | ⬜ |
 
@@ -288,12 +288,32 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 31 | 9.11. | – | "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä." | ✅ todennettu | käyttäjä myöhemmin 9.11.: "tämä oli virhe minun osaltani" (sävellajit ristissä); luettu: D-duuri on h-mollin rinnakkaisduuri, joten sen välähdykset ovat synkkiä ja hämäriä, eivät keltaisia (tyyliohje luku 3, käsikirjoitus luvut 3 ja 8). Lopun H-duuri pysyy hellänä; toista luentaa ei viety tekstiin |
 | 32 | 9.11. | – | "Aja tarkistus" | ✅ todennettu | tuore Sonnet-lukija, brief tiedostona; raportti `runs/kk_tarkistus_v1/kriitikko.md` (9 rikkomusta, 5 ristiriitaa, 5 aukkoa, 8 huomiota, 12 tyyliohjeen omaa ristiriitaa); ohjaajan todennus löydös löydökseltä `runs/kk_tarkistus_v1/tarkistus.md`; käsikirjoitus v1.1 ja tyyliohje v1.3; mitattu `check_package.py --cues-only`: kaikki kunnossa, seitsemän kulkua vähintään 4 s |
 | 33 | 9.11. | – | "Hyvä. Tee vedokset kohtauksista" | 🔶 tehty, ei katsottu | vedos 1: 16 stilliä (otot 2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58), kontaktiarkki `runs/vedos_v1/stills/arkki.png`; mitattu: toistettavuus ja camcheck (0,8 °/s); kolme pahinta ongelmaa ja tekemättömät `runs/vedos_v1/run.json` |
+| 34 | 9.11. | vedos 1 | "se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka on niin kuin syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." ... "tee vaikka semmoinen taidehistoriahaku" ... "sumussa näkyviä kaukaisia vuoria" ... "puun indikaatio" ... "en nyt nähnyt noista vedoksista ... miten se äänen korkeus siinä otettiin huomioon" ... "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä" ... "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus" ... "tää täytyy nyt niin kuin kirjoittaa uudelleen" (koko palaute: `docs/tutkimus/haastattelu.md`) | 🔶 korjattu, ei todennettu | taidehistoriahaku (`docs/tutkimus/taide1920.md` luku 7); tyyliohje v1.4 luku 4b kuvatavat; käsikirjoitus v1.2 luvut 1 ja 2; vedos 2 (`runs/vedos_v2/`): eri kuvatapa joka tunnelmalle, säikeet piirtävät ylälinjan korkeuden ja valo seuraa äänen tasoa; käyttäjä ei ole vielä katsonut |
 
 ---
 
 # 3. Opit
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
+
+## 9.11.2026 – Vedos 2: kuvatapa joka tunnelmalle
+
+- **Käyttäjän palaute vedoksesta 1:** metsä runkorivinä syvyydessä on "äärimmäisen tylsä", ääni ei näkynyt, ja ajo paikallaan
+  seisovien puiden välissä ei ole kokemus. Koko palaute: `docs/tutkimus/haastattelu.md`.
+- **Mikä oli vialla ajattelussa:** tein yhden tilan ja kahdeksan asetusta ja kutsuin niitä maailmoiksi. Tyyliohjeen lause
+  "katsoja on metsän sisällä, runkojen keskellä" lukitsi kuvakulman ennen kuin yhtään tunnelmaa oli mietitty kuvana.
+  Käsikirjoituksen sarake Katsoja kokee oli olemassa, mutta mikään ei sitonut sitä siihen, miltä kuva näyttää.
+- **Mitä haku antoi** (`docs/tutkimus/taide1920.md` luku 7): metsä syntyy vihjeestä ja rajauksesta. Usva on tyhjää tilaa,
+  usva erottaa etäisyyden tasot, lähikuva, rajaus ilman taivasta, katse rungon alta ylös, katse latvoista vaaroihin.
+- **Mikä toimi:** kuvatapa on katsojan paikka ja rajaus, ei uusi puumalli. Sama tila näyttää eri kuvalta, kun katse on
+  ylhäällä, maassa, jäässä tai latvojen yllä. Vaarat kerroksina usvassa syntyivät taivaan funktioon ilman geometriaa, ja
+  niissä puu on pelkkä reunan vihje.
+- **Ääni kuvaan:** säie piirtää ylälinjan korkeuden viiden sekunnin ikkunasta, joten melodian muoto näkyy stillissäkin.
+  Valon määrä tulee äänen tasosta. Basso, iskut ja tapahtumat puuttuvat vielä.
+- **Kolme pahinta ongelmaa** (`runs/vedos_v2/run.json`): usvakuva on yhä runkoja syvyydessä; metsän reuna ulkoa on lähellä
+  tyynen järven kliseetä; latvat ylhäältä ovat piikkejä.
+- **Työkaluvirhe:** tiedoston kirjoitus epäonnistui, koska tiedostoa oli muokattu komentoriviltä lukemisen jälkeen, ja yksi
+  kierros piirtyi vanhalla aikajanalla. Tulos pitää tarkistaa ennen renderiä, ei sen jälkeen.
 
 ## 9.11.2026 – Vedos 1: maailmat stilleinä
 

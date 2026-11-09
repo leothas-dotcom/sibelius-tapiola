@@ -1,9 +1,11 @@
 # Kuvakäsikirjoitus: Tapiola
 
-*Versio 1.1, 9.11.2026. Tuore lukija tarkisti tekstin tyyliohjetta vasten (`runs/kk_tarkistus_v1/kriitikko.md`), ja
+*Versio 1.2, 9.11.2026. Luvut 1 ja 2 on ajateltu uudestaan vedoksen 1 palautteen jälkeen: jokaisella hetkellä on oma
+kuvatapansa (tyyliohje luku 4b). Ottojen rivit Näkyy ja Kamera puhuvat vielä paikoin vedoksen 1 runkometsästä; ne
+kirjoitetaan uudestaan maailma kerrallaan, kun käyttäjä on nähnyt vedoksen 2. Versio 1.1: Tuore lukija tarkisti tekstin tyyliohjetta vasten (`runs/kk_tarkistus_v1/kriitikko.md`), ja
 löydökset on korjattu. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat") sekä C-duurin punaisen valon ja D-duurin hämärät välähdykset;
 luvun 8 muut päätökset ovat auki. Noudattaa tyyliohjetta
-(`docs/visuaalinen_tyyli.md` v1.3): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
+(`docs/visuaalinen_tyyli.md` v1.4): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
 otsikoissa ovat generoituja (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu.
 Kaikki muu viittaa ankkureihin (`annotations/teemat.json`), ei sekunteihin. Kuunteluoppaan sisältöä (lähteet,
 tulkinnat) ei toisteta tässä: ankkurin nimi vie sinne.*
@@ -33,24 +35,28 @@ liikkuu yhtä aikaa: jos tapahtuma toisi neljännen, se vastaa valollaan omassa 
 
 ## 1. Kaari: kaksitoista hetkeä
 
-| # | Hetki | Ankkurit | Katsoja kokee |
-|---|---|---|---|
-| 1 | Metsä on jo siinä | `avaus_patarumpu` – `patarumpu_paisuu` | läsnäolon: jokin on ollut täällä ennen minua |
-| 2 | Ensimmäinen repeämä | `vaskien_isku` – `hiljaisuus_1_loppu` | säikähdyksen ja pidätetyn hengityksen |
-| 3 | Jokin kulkee edellä | `fis_pitka_aani` – `askeleet_B` | painon, jota ei näe, ja halun seurata |
-| 4 | Metsä kohoaa, maa katoaa | `urkupiste_H1_alku` – `pohja_katoaa` | hetken valon ja sitten pohjattomuuden |
-| 5 | Väike | `e_pitka_ja_kuviot` – `peikot_G_loppu` | leikin, jota ei saa kiinni |
-| 6 | Metsä liikkuu kokonaisena | `peikot_G_loppu` – `hajoaa_hiljaisuuteen` | ensimmäisen pelon |
-| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen |
-| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen |
-| 9 | Petos ja hermo | `M_ennakko` – `dim_possibile` | ahdistuksen: liikettä ei voi pysäyttää |
-| 10 | Se näkyy ja tulee | `hiljaisuus_2_alku` – `R_vasket` | kauhun ja ylivoiman |
-| 11 | Huuto ja jälki | `toinen_paisunta` – `yksinaiset_aanet` | paljauden |
-| 12 | Oikea valo | `S_sempre_mf` – `musiikki_loppuu` | hellyyden, levon, kunnioituksen |
+| # | Hetki | Ankkurit | Katsoja kokee | Kuvatapa (tyyliohje 4b) | Miten tunne tehdään kuvassa |
+|---|---|---|---|---|---|
+| 1 | Metsä on jo siinä | `avaus_patarumpu` – `patarumpu_paisuu` | läsnäolon: jokin on ollut täällä ennen minua | 1 Usvan läpi | kuva on melkein pelkkää usvaa; lähellä mustat oksat, niiden takana rungot vain vihjeinä; valo on usvan sisällä eikä näytä lähdettään |
+| 2 | Ensimmäinen repeämä | `vaskien_isku` – `hiljaisuus_1_loppu` | säikähdyksen ja pidätetyn hengityksen | 1 Usvan läpi, repeää | valo leikkaa usvan ja näyttää hetkeksi koko metsän; sitten lumi peittää kaiken paitsi runkojen varjot |
+| 3 | Jokin kulkee edellä | `fis_pitka_aani` – `askeleet_B` | painon, jota ei näe, ja halun seurata | 2 Maan tasalta | kamera laskeutuu lumen pintaan; maa täyttää puolet kuvasta, ja paino painaa lunta linssin edessä |
+| 4 | Metsä kohoaa, maa katoaa | `urkupiste_H1_alku` – `pohja_katoaa` | hetken valon ja sitten pohjattomuuden | 3 Ylös runkoja pitkin | katse nousee nousun mukana rungoista latvoihin; valo on latvojen aukossa; kun pohja katoaa, maata ei enää ole kuvassa |
+| 5 | Väike | `e_pitka_ja_kuviot` – `peikot_G_loppu` | leikin, jota ei saa kiinni | 4 Lähikuva | yksi huurteinen oksa täyttää kuvan; pilkahdukset syttyvät kiteissä äänen korkeuden mukaan ja ovat poissa, kun niihin katsoo |
+| 6 | Metsä liikkuu kokonaisena | `peikot_G_loppu` – `hajoaa_hiljaisuuteen` | ensimmäisen pelon | 5 Pinnan sisään | katse painuu mustaan jäähän; metsä on pinnan alla ylösalaisin, ja syke kulkee pinnassa aaltona |
+| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen | 6 Runkojen rytmi | ei maata, ei taivasta: valtavat rungot pystyraitoina, jotka liukuvat hitaasti; sävyt porrastuvat sinisestä usvaan |
+| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen | 6 Runkojen rytmi, punainen | sama rytmi; punainen valo sytyttää raidat toiselta reunaltaan, ja varjot lankeavat kuvan poikki |
+| 9 | Petos ja hermo | `M_ennakko` – `dim_possibile` | ahdistuksen: liikettä ei voi pysäyttää | 7 Pimeä ja välähdys | kuva on musta; metsä on olemassa vain silloin, kun valo leikkaa, ja joka kerta se on lähempänä |
+| 10 | Se näkyy ja tulee | `hiljaisuus_2_alku` – `R_vasket` | kauhun ja ylivoiman | 8 Ulkoa ja kaukaa, sitten 9 Tuulen sisällä | metsän reuna ja vaarat kerroksina usvassa; myrsky nielee kerroksen kerrallaan kauimmasta alkaen, kunnes se on päällä |
+| 11 | Huuto ja jälki | `toinen_paisunta` – `yksinaiset_aanet` | paljauden | 10 Ylhäältä | kamera nousee myrskyn läpi; vaarat ja metsä kerroksina horisonttiin, ja yksittäiset äänet ovat valoja eri laaksoissa |
+| 12 | Oikea valo | `S_sempre_mf` – `musiikki_loppuu` | hellyyden, levon, kunnioituksen | 10 Ylhäältä, pysähtyy | sama näkymä; kajo nousee kauimman vaaran takaa, usva laaksoissa alkaa hehkua, ja kaikki lakkaa liikkumasta |
+
+Joka hetkessä pätee kolme asiaa (tyyliohje 4b): metsä elää äänen mukana, äänen korkeus on korkeus kuvassa ja äänen voima
+on valon määrä ja läheisyys, ja kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella.
 
 ## 2. Maailmat ja kulut
 
-Käyttäjän idea: kamera ajaa jonkin sisään, se suurenee, ja sieltä löytyy uusi maailma. Jokainen maailma on metsä.
+Käyttäjän idea: kamera ajaa jonkin sisään, se suurenee, ja sieltä löytyy uusi maailma. Jokainen maailma on metsä,
+mutta nähty eri paikasta (luku 1, sarake Kuvatapa): maailma ei ole uusi rivi puita vaan uusi tapa nähdä metsä.
 Jokainen löytyy jostakin pienestä edellisen sisältä ja on silti edellistä suurempi. Maailmat ja kulut ovat
 ohjaajan ehdotus, jonka **käyttäjä hyväksyi 9.11.2026**; perustelu on musiikissa, ei mytologiassa, ellei toisin sanota.
 

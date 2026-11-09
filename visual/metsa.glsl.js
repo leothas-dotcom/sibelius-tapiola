@@ -1,4 +1,6 @@
 // Tapiolan tila: yksi säteenseurantavarjostin, jossa metsä on paikan funktio. Ei tilaa ruutujen välillä.
+// Kuvatavat (tyyliohje 4b) ovat saman tilan eri katsomispaikkoja: usva, maan taso, katse ylös, lähikuva, heijastus
+// jäässä, runkojen rytmi, pimeä ja välähdys, vaarat kerroksina usvassa, tuuli.
 // Maailmat (kuvakäsikirjoitus luku 2) ovat tämän saman funktion parametreja; ne asettaa visual/kohtaus.js.
 
 export const VERT = `#version 300 es
@@ -44,6 +46,12 @@ uniform vec3 uStrandCol;
 uniform vec4 uStep;      // etäisyys kamerasta (m), syvyys (m), -, -
 uniform vec3 uFlake;     // tiheys, kirkkaus, viiru
 uniform vec3 uFlakeCol;
+// kuvatavat
+uniform float uMist, uZen, uDrift, uRipple, uRidgeFade, uTooth, uSparkY, uMelOn, uMelRange;
+uniform vec3 uZenCol, uRidgeCol, uRidgeMist, uSpotCol;
+uniform vec4 uRidge;     // näkyviä kerroksia, kauimman harjan korkeus (rad), lähimmän harjan korkeus (rad), harjan vaihtelu (rad)
+uniform vec4 uSpot;      // suunta sivulle (rad), korkeus (rad), voimakkuus, kerros jonka takana (0 kaukana .. 6 lähellä)
+uniform float uMel[32];  // ylälinjan korkeus ajan yli: vasen reuna on mennyttä, oikea tulevaa; alle 0 on tauko
 
 const float PI = 3.14159265;
 
@@ -59,7 +67,7 @@ float erfa(float x) { float s = sign(x); x = abs(x); float t = 1.0 / (1.0 + 0.32
 vec3 dirFrom(float az, float el) { return vec3(sin(az) * cos(el), sin(el), cos(az) * cos(el)); }
 
 float gH(vec2 xz) {
-  float h = uTerrain * (vnoise(xz * 0.017) * 2.0 - 1.0) + 0.10 * (1.0 - uIce) * vnoise(xz * 0.8);
+  float h = uTerrain * (vnoise(xz * 0.017) * 2.0 - 1.0) + 0.10 * (1.0 - uIce) * vnoise(xz * 0.8) + uDrift * (vnoise(xz * 0.45 + 3.1) * 2.0 - 1.0);
   vec2 d = xz - vec2(0.0, uCam.z + uStep.x);
   h -= uStep.y * exp(-dot(d, d) / 0.35);
   return h;
@@ -124,6 +132,9 @@ float treeline(float az) {
 vec3 sky(vec3 rd, float k) {
   float az = atan(rd.x, rd.z), el = asin(clamp(rd.y, -1.0, 1.0));
   vec3 c = uFogCol * mix(1.0, uFogDown, smoothstep(0.0, -0.5, el)) * mix(1.0, 0.4, smoothstep(0.0, 0.45, el));
+  // usvan lautat: vaakasuoria vaaleampia ja tummempia vöitä, jotka ajelehtivat
+  c *= 1.0 + uMist * 0.7 * (vnoise(vec2(az * 2.2 + uTime * 0.012, el * 11.0 - uTime * 0.004)) + 0.5 * vnoise(vec2(az * 7.0 - uTime * 0.02, el * 30.0)) - 0.75);
+  c += uZenCol * uZen * smoothstep(0.25, 1.0, rd.y);
   float sa = (az - uSlit.x) / uSlit.z, se = (el - uSlit.y) / uSlitTall;
   float halo = exp(-pow((az - uSlit.x) / (uSlit.z * 7.0 + 0.06), 2.0)) * exp(-pow((el - uSlit.y) / (uSlitTall * 2.2), 2.0));
   c += uSlitCol * uSlit.w * (k * exp(-sa * sa) * exp(-se * se) + 0.10 * halo);
@@ -139,12 +150,45 @@ vec3 sky(vec3 rd, float k) {
     c = mix(c * 0.55, c + hc * uHorizon, above);
     c += hc * uHorizon * 0.10 * (1.0 - above) * k;
   }
+  // vaarat kerroksina usvassa: kauimmasta lähimpään; puu on vain reunan vihje
+  if (uRidge.x > 0.0) {
+    for (int kk = 0; kk < 7; kk++) {
+      float fk = float(kk) / 6.0;
+      if (float(kk) < 7.0 - uRidge.x) continue;
+      if (uSpot.z > 0.0 && abs(float(kk) - uSpot.w) < 0.5) {
+        float ga = (az - uSpot.x) / 0.10, ge = (el - uSpot.y) / 0.022;
+        c += uSpotCol * uSpot.z * exp(-ga * ga - ge * ge);
+      }
+      float crest = mix(uRidge.y, uRidge.z, fk * (0.55 + 0.45 * fk));
+      float prof = crest + uRidge.w * (0.35 + 0.65 * fk) * ((vnoise(vec2(az * (1.6 + 4.0 * (1.0 - fk)) + float(kk) * 17.3, float(kk) + uCam.z * 0.0006 * fk)) - 0.5) * 2.0
+        + 0.35 * (vnoise(vec2(az * 9.0 + float(kk) * 5.1, float(kk))) - 0.5));
+      float tw = mix(0.0035, uTooth, fk * fk * fk);
+      float x = az / tw + float(kk) * 3.7; float i = floor(x), f = fract(x);
+      float hh = hash(vec2(i, float(kk) + 0.5));
+      float tooth = pow(1.0 - abs(f - 0.5) * 2.0, 1.4) * (0.35 + 1.0 * hh) * tw * 3.0;
+      // kuusen oksakerrokset: reuna on porrastettu, ei sileä kolmio
+      tooth *= 0.86 + 0.14 * step(0.5, fract((el - prof) / (tw * 0.42)));
+      float d = prof + tooth - el;
+      float soft = mix(0.0022, 0.0007, fk);
+      float a = smoothstep(-soft, soft, d);
+      vec3 tone = mix(uRidgeMist, uRidgeCol, fk * fk);
+      float below = clamp(d / (uRidge.w * 1.3 + 0.03), 0.0, 1.0);
+      vec3 mistc = uRidgeMist + uGlowCol * uGlow.z * 0.5 * (1.0 - fk) * exp(-pow(az / uGlow.w, 2.0));
+      tone = mix(tone, mistc, below * (0.85 - 0.55 * fk));
+      tone *= 1.0 + uMist * 0.5 * (vnoise(vec2(az * 5.0 + float(kk) * 9.0 + uTime * 0.01, el * 40.0)) - 0.5);
+      float sw = clamp(uRidgeFade - float(kk), 0.0, 1.0);
+      tone = mix(tone, uBandCol * (0.55 + 0.45 * uBand.x), sw);
+      c = mix(c, tone, a * mix(1.0, 0.75, sw));
+    }
+  }
   return c;
 }
 
 float fogAmount(vec3 ro, vec3 rd, float t) {
   float low = exp(-max(ro.y + rd.y * t * 0.5, 0.0) * uFogLow);
-  return 1.0 - exp(-uFogDen * t * mix(1.0, low * 2.5, step(0.0001, uFogLow)));
+  vec3 pm = ro + rd * t * 0.6;
+  float bank = 1.0 + uMist * (vnoise(vec2(pm.x * 0.09 + uTime * 0.02, pm.y * 0.4 + pm.z * 0.06)) * 2.0 - 1.0);
+  return 1.0 - exp(-uFogDen * bank * t * mix(1.0, low * 2.5, step(0.0001, uFogLow)));
 }
 
 float flakes(vec3 ro, vec3 rd, float thit) {
@@ -222,13 +266,30 @@ vec3 render(vec2 frag) {
     lit += (uGlowCol * uGlow.z * 0.22 + uLineCol * uLine.z * 0.05) * uHorizon * (0.4 + 0.6 * max(n.y, 0.0)) * (0.4 + snow);
     if (mat > 2.5) lit += uSlitCol * uSlit.w * 0.5 * pow(max(dot(reflect(rd, n), Lslit), 0.0), 10.0);
     col = alb * lit + sunLit * (0.10 + 0.5 * dot(alb, vec3(0.333)));
-    if (uIce > 0.0 && mat < 0.5) col += sky(reflect(rd, n), 1.0) * uIce * 0.35 * pow(1.0 - max(-rd.y, 0.0), 3.0);
+    // musta jää: metsä näkyy pinnassa ylösalaisin; syke kulkee pinnassa aaltona
+    if (uIce > 0.0 && mat < 0.5) {
+      vec2 dc = p.xz - uCam.xz;
+      vec3 nn = normalize(n + vec3(dc.x, 0.0, dc.y) / (length(dc) + 0.3) * uRipple * 0.05 * sin(length(dc) * 5.0 - uTime * 5.0));
+      vec3 rr = reflect(rd, nn);
+      float tr = 0.1, rm = 0.0; bool rh = false;
+      for (int i = 0; i < 150; i++) {
+        float m2; float d2 = map(p + rr * tr, m2);
+        if (d2 < 0.003 * tr + 0.001) { rh = true; rm = m2; break; }
+        tr += clamp(d2 * 0.8, 0.02, uCell * 0.5);
+        if (tr > uFar * 0.6) break;
+      }
+      vec3 rc = sky(rr, 1.0);
+      if (rh) { float fr = fogAmount(p, rr, tr); rc = mix(uTrunkCol * uAmb, sky(rr, fr * fr), fr); }
+      float crack = smoothstep(0.018, 0.0, abs(vnoise(p.xz * 0.7) - 0.5)) + 0.6 * smoothstep(0.012, 0.0, abs(vnoise(p.xz * 2.3 + 9.0) - 0.5));
+      col = mix(col, rc, uIce * 0.9) + uSnowCol * 0.018 * crack * uIce;
+    }
     // väike: pilkahdukset oksiston pinnalla
     if (uSpark > 0.0 && mat > 1.5) {
       vec3 g = floor(p * 26.0);
       float hs = hash(g.xy + g.z * 7.31);
       float tw = step(0.6, fract(hs * 91.0 + floor(uTime * 6.0) * 0.618));
-      col += uSlitCol * 3.0 * uSpark * step(0.992, hs) * tw;
+      float band = exp(-pow((p.y - uSparkY) / 0.7, 2.0));
+      col += uSlitCol * 4.0 * uSpark * step(0.985, hs) * tw * (0.15 + band);
     }
     float f = fogAmount(ro, rd, t);
     col = mix(col, sky(rd, f * f), f);
@@ -242,8 +303,15 @@ vec3 render(vec2 frag) {
     float I = abs(sn) > 1e-4 ? (w * 0.8862 / abs(sn)) * abs(erfa((s0 + thit * sn) / w) - erfa(s0 / w)) : thit * exp(-s0 * s0 / (w * w));
     col += uCutCol * uCut.z * 0.004 * min(I * I, 160.0);
   }
-  // säikeet: ohuiden valoviivojen kimput runkojen välissä kolmessa syvyydessä
+  // säikeet: ohuiden valoviivojen kimput kolmessa syvyydessä. Kun ylälinja on mitattu, viiva piirtää sen korkeuden
+  // ajan yli: kuvan vasen reuna on juuri mennyttä, oikea juuri tulevaa.
   if (uStrand.x > 0.001) {
+    float su = clamp(frag.x / uRes.x, 0.0, 1.0) * 31.0;
+    int i0 = int(floor(su)); int i1 = min(i0 + 1, 31);
+    float m0 = uMel[i0], m1 = uMel[i1];
+    float fm = smoothstep(0.0, 1.0, fract(su));
+    float mel = mix(m0, m1, fm);
+    float on = uMelOn > 0.5 ? smoothstep(-0.2, 0.05, min(m0, m1)) : 1.0;
     for (int k = 0; k < 3; k++) {
       float dk = uStrand.z * (k == 0 ? 1.0 : (k == 1 ? 1.9 : 3.4));
       float tk = dk / max(rd.z, 0.05);
@@ -251,17 +319,23 @@ vec3 render(vec2 frag) {
       vec3 p = ro + rd * tk;
       float fk = float(k);
       float tr = 1.0 - fogAmount(ro, rd, tk);
+      float base = uMelOn > 0.5 ? uStrand.y + uMelRange * (mel - 0.5) * (1.0 + 0.9 * fk) + fk * 0.5
+                                : uStrand.y + fk * 0.9 + 0.5 * sin(p.x * 0.45 + fk * 2.1 + uTime * 0.5);
       for (int f = 0; f < 4; f++) {
         float ff = float(f);
-        float y = uStrand.y + fk * 0.9 + 0.5 * sin(p.x * 0.45 + fk * 2.1 + uTime * 0.5) + (0.10 + 0.05 * ff) * sin(p.x * (1.3 + 0.37 * ff) + fk * 5.0 + ff * 1.9 - uTime * 0.8) + 0.05 * ff;
+        float y = base + (0.06 + 0.03 * ff) * sin(p.x * (1.3 + 0.37 * ff) + fk * 5.0 + ff * 1.9 - uTime * 0.8) + 0.04 * ff;
         float d = abs(p.y - y) / (uStrand.w * (1.0 + 0.6 * fk));
-        col += uStrandCol * uStrand.x * 0.45 * exp(-d * d) * tr / (1.0 + 0.6 * fk);
+        col += uStrandCol * uStrand.x * on * 0.45 * exp(-d * d) * tr / (1.0 + 0.6 * fk);
       }
     }
   }
   if (uFlake.x > 0.001) {
     col *= 1.0 + 0.5 * uFlake.z * uFlake.x * (vnoise(rd.xy * vec2(5.0, 9.0) + uTime * vec2(1.3, 0.2)) + 0.5 * vnoise(rd.xy * 21.0 - uTime) - 0.75);
     col += uFlakeCol * uFlake.y * flakes(ro, rd, thit);
+    // tuuli näkyy viivoina, kun viiru on suuri
+    vec2 wd = normalize(vec2(1.0, -0.22));
+    float wl = vnoise(vec2(dot(rd.xy, vec2(-wd.y, wd.x)) * 130.0, dot(rd.xy, wd) * 2.5 - uTime * 3.0));
+    col += uFlakeCol * uFlake.y * 0.9 * max(uFlake.z - 0.6, 0.0) * smoothstep(0.70, 0.96, wl);
   }
   return col;
 }

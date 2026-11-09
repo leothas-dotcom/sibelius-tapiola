@@ -1,0 +1,44 @@
+{
+  "nimi": "vedos_v2",
+  "pvm": "2026-11-09",
+  "mika": "Toiset vedokset: kymmenen kuvatapaa (tyyliohje 4b), yksi kullekin tunnelmalle, ja ääni ohjaa kuvaa. Stillejä, ei videota.",
+  "pyynto": "Käyttäjän palaute vedoksesta 1 (9.11.2026, docs/tutkimus/haastattelu.md): rivipuut syvyydessä on tylsä; taidehistoriahaku; kuvakulmat; kaukaiset vaarat sumussa, puu vihjeenä; äänen korkeus ja voima näkyviin.",
+  "tekija": "ohjaaja (pääistunto); ei aliagentteja",
+  "lahtotila": "2e71866",
+  "kohtaus": "visual/index.html (visual/kohtaus.js, visual/metsa.glsl.js)",
+  "levytys": "rattle_lso_2022",
+  "komento": "node render/render.mjs --data build/rattle_koko --otot 2:0.7,3:0.6,7:0.15,9,11:0.5,12:0.6,14:0.95,15:0.9,19:0.3,25:0.5,30,37,39:0.2,47:0.7,48:0.7,49:0.5,55:0.5,56:0.8,58:0.8 --dir runs/vedos_v2/stills",
+  "kuvatavat_otoittain": {
+    "1 Usvan läpi": [2, 3, 7, 9],
+    "2 Maan tasalta": [11, 12],
+    "3 Ylös runkoja pitkin": [14, 15],
+    "4 Lähikuva (huurre)": [19],
+    "5 Pinnan sisään (heijastus mustassa jäässä)": [25],
+    "6 Runkojen rytmi": [30, 37],
+    "7 Pimeä ja välähdys": [39],
+    "8 Ulkoa ja kaukaa": [47],
+    "9 Tuulen sisällä": [48, 49],
+    "10 Ylhäältä: vaarat kerroksina": [55, 56, 58]
+  },
+  "aani_ohjaa": {
+    "ylalinja_midi": "säikeet piirtävät ylälinjan korkeuden: kuvan vasen reuna on 2,5 s mennyttä, oikea 2,5 s tulevaa (otot 2 ja 3); pilkahdusten korkeus huurteessa",
+    "taso_dbfs": "valon määrä (valorako, kajo, myrskyn nauha, säikeet, latvojen valo) seuraa äänen tasoa puolen sekunnin keskiarvona"
+  },
+  "mitattu": {
+    "toistettavuus": "otot 3 ja 58 piirretty kahdesti eri järjestyksessä: tiedostojen sha256 sama",
+    "camcheck": "koko kesto joka kolmas ruutu: kääntö enintään 10,0 astetta/s (raja 20), ei pyörimistä; siirto enintään 6,3 m/s",
+    "ankkurit": "kohtaus kaatuu, jos aikajanan ankkuri tai kanava puuttuu; koodissa ei ole musiikin sekunteja"
+  },
+  "ei_tehty": [
+    "liike: stillistä ei näe, elääkö metsä; usvan ajelehtiminen, tuulen viivat ja jään aallot on kirjoitettu ajan funktioiksi, mutta videota ei ole katsottu",
+    "kulut kuvatavasta toiseen ovat parametrien liuku; kameran siirto 6,3 m/s tulee niistä",
+    "basson korkeus, iskut ja koneen tapahtumat eivät vielä ohjaa kuvaa",
+    "ottojen rivit Näkyy ja Kamera käsikirjoituksessa ovat vielä vedoksen 1 ajalta",
+    "mittarit kohtauscheck, jatkuvuus ja iskujen ruudut puuttuvat; kriitikko ei ole katsonut"
+  ],
+  "kolme_pahinta": [
+    "usvan läpi (otot 2, 3, 7) on yhä lähinnä runkoja syvyydessä: usva ei vielä kanna kuvaa niin kuin on tarkoitus",
+    "ulkoa ja kaukaa (otto 47): vaarojen kerrokset eivät erotu, ja jään peilikuva on lähellä tyynen järven kliseetä",
+    "ylhäältä (otot 55, 56) lähimmän kerroksen latvat ovat piikkejä eivätkä kuusia, ja ylös runkoja pitkin (14, 15) on harmaa ilman väriä"
+  ]
+}
