@@ -239,6 +239,33 @@ Säännöt, jotka näistä seuraavat:
    **Loppu on hyväksyvä:** H-duuri on kaunis ja tyytyväinen, ei surullinen eikä synkkä. Kuva sanoo "tähän se loppui"
    ilman, että mikään kuolee tai pimenee. Kameran suunnitelma on käsikirjoituksen uudessa rungossa (ehdotus).
 
+**Käyttäjä 9.11.2026, alkupätkän (alku_v4) jälkeen:** "MIKSI Musiikki ei nyt reagoi mitenkään siihen että jousien intensiteetti
+kasvaa? EIKÄ KAMERA VOI AJAA MAAN LÄPI." ... "Alussa on horisontti. Synkkä metsä. Siemen ideasta. Seuraamme sen kehittymistä
+koko teoksen ajan." ... "EN halua mitään helvetin puita siihen pomppimaan. Mutta METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ
+JOKAISEN PUUN ERIKSEEN: MIETI!!!!" ... "SEN PITÄÄ ELÄÄ, SE ON LAAJA, TUMMA, JA SIBELIAANIINEN. SE ON IKIAIKAINEN, SE ON
+TAPIOLA. SIIS TAPIO JUMALAN ASUINPAIKKA. MYTOLOGINEN HAHMO." ... "haluan myös revontulia :)"
+
+9. **Metsä on massa, ei puita.** Metsä piirretään yhtenäisenä tummana massana kerroksittain syvyyteen (latvuston siluetti,
+   usva kerrosten välissä, "alta harva, päältä tiheä, keskeltä läpinäkyvä"), ei yksittäisinä puina. Massa elää: tuulen
+   aalto kulkee latvuston yli, usva liikkuu sen sisällä, sen tummuus ja läsnäolo kasvavat jousten intensiteetin mukana.
+10. **Jousten intensiteetti näkyy aina.** Kun jouset voimistuvat, metsä tummenee, tulee läsnä olevaksi ja sen latvusto
+    aaltoilee; kun ne lakkaavat, metsä väistyy usvaan ja se, mikä soi taustalla, paljastuu. Siemen on toistuva ele:
+    jousten motiivin tullessa tumma aalto kulkee metsän läpi, ja ele kehittyy teoksen mukana.
+11. **Tapiola on Tapion asuinpaikka.** Metsä on jumalan koti: ikiaikainen, laaja ja tumma. **[ohjaajan ehdotus]** Kaukaisin
+    vaara on Tapion talo: valtava kumpu metsän takana, jonka rinteessä hopeiset ikkunat kuumottavat, kun käyrätorvet
+    soivat (Kalevala 14: "ukset kulta kuumottivat"; hopea, koska lämmin väri on varattu lopulle). Tapiota ei piirretä
+    kasvoina; hänen läsnäolonsa on mittakaava ja valo.
+12. **Revontulet.** Taivaalla on revontulet: välkkyvä kaari, joka laskeutuu (SKVR XII2 7950). Ne ovat puhaltimien ja
+    ylärekisterin valo: syttyvät, kun puhaltimet tulevat, ja leimahtavat vaskien iskussa. Sävy on kylmä vihertävä halla,
+    ei kirkas.
+13. **Kamera ei koskaan aja maan läpi.** Kameran korkeus mitataan maasta sen omalla kohdalla.
+14. **Yksittäinen puu on harkittu ja kertoo tarinan.** Käyttäjä: "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN
+    PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" Jokainen yksittäinen puu nimetään käsikirjoituksessa lähteineen
+    (pilkkapuu, ikihongat, petäjä, Tapion pöytä); puu, jolla ei ole tarinaa, ei ole kuvassa.
+15. **Kaikki kaksitoista maailmaa suunnitellaan taustatutkimuksesta ennen piirtämistä.** Käyttäjä: "Tämä ei ole valmis,
+    ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN." Suunnitelma on käsikirjoituksen
+    luvussa "Kaksitoista maailmaa".
+
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.
 

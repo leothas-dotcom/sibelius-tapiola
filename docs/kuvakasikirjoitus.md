@@ -35,22 +35,178 @@ Tämä on runko: maailmat, kamera ja loppu. Otot kirjoitetaan vasta, kun käytt�
 5. **Kunnioitus on pidättyvyyttä.** Vaakasuora horisontti, ei tärinää, ei nopeita liikkeitä, pitkät katkeamattomat
    otot. Olentoja ei jahdata eikä lähestytä: ne ovat usvan rajalla ja jäävät sinne.
 
-### Maailmat ja kulut (kaksitoista hetkeä, samat ankkurit kuin luvussa 1)
+### Kaksitoista maailmaa (suunnitelma 9.11.2026, taustatutkimuksesta; ohjaajan ehdotus, käyttäjä ei ole hyväksynyt)
 
-| # | Hetki | Maailma ja kameran paikka | Mistä ajetaan seuraavaan |
-|---|---|---|---|
-| 1 | Metsä on jo siinä | **Idea:** tumma ilma, lumikenttä ja kaukana laaja tumma metsä. Sen takana gis on horisontin valo, joka muodostaa mäkiä hitaasti. Kamera silmänkorkeudella, hitain vauhti, suoraan kohti metsää. | metsän reuna lähestyy koko ajan |
-| 2 | Ensimmäinen repeämä | Vaskien valo repeää pystyyn kaukana metsän sisällä; tuuli ja lumi tulevat vastaan. Kamera ei hidasta. Hiljaisuudessa lumi jää ilmaan ja kamera jatkaa. | ensimmäiset rungot ohittavat kameran |
-| 3 | Jokin kulkee edellä | **Metsän sisällä.** Kamera laskeutuu lumen pintaan. Puut tulevat usvasta ja jäävät ohi. Edellä usvassa liikkuu jotain, mikä ei koskaan tule lähemmäs. | katse alkaa kohota runkoja pitkin |
-| 4 | Metsä kohoaa, maa katoaa | Kamera kallistuu hitaasti ylös ja jatkaa eteen; kelmeä valo latvojen takana. Maa jää pois kuvasta. | ajetaan huurteiseen oksistoon ja sen yhteen kiteeseen |
-| 5 | Väike | **Maailma kiteen sisällä:** ensimmäinen maailma toistuu pienenä, huurre on metsää ja valo sen horisontti. Pilkahdukset ovat väikkyvät haltiat. | ajetaan jään pintaan ja sen läpi |
-| 6 | Metsä liikkuu kokonaisena | **Jään alla:** metsä ylösalaisin tummassa, syke kulkee pinnassa kameran yllä. | pimeä runkojen välissä kasvaa ja nielee kuvan |
-| 7 | Ikisalo | **Ikimetsä:** valtavat rungot, kamera matalalla ja hitaimmillaan, katsoja pieni. Kaukana runkojen takana liikkuu jotain suurta. | punainen valo syttyy suoraan edessä |
-| 8 | Väärä valo | Kamera pysähtyy ensimmäisen kerran (nimetty) ja katsoo punaista valoa runkojen takana. | valo viedään; pimeys |
-| 9 | Petos ja hermo | Kamera lähtee uudestaan, nopeammin kuin koskaan. Metsä näkyy vain vaskien välähdyksissä. | rungot harvenevat, metsä loppuu |
-| 10 | Se näkyy ja tulee | **Ulkona jäällä:** tila on ensimmäistä kertaa katsojaa suurempi. Myrsky näkyy kaukana, tulee ja iskee; kamera kulkee sen läpi. | huuto |
-| 11 | Huuto ja jälki | Kamera nousee ainoan kerran: ylös myrskyn läpi, ei taakse. | myrsky jää alle |
-| 12 | Oikea valo | **Ylhäällä:** laaja metsä vaaroina horisonttiin. Alun kuva palaa: horisontin valo ja hitaat mäet, nyt oikeassa valossa. | ei mihinkään |
+Käyttäjä: "Sinun piti tehdä 12 maailmaa." ... "Tämä ei ole valmis, ennen kuin olet oikeasti suunnitellut ne visualisaatiot.
+TAUSTATUTKIMUKSEN MUKAAN" ... "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE
+KERTOO????"
+
+Jokaisessa maailmassa: **Lähde** (`docs/tapiola_tutkimus.md`, luvut 2, 4, 5, 8 ja 11), **Kuva**, **Ääni ohjaa** (mitatut
+signaalit: `annotations/cues.json`), **Kamera**, **Puu** (harkittu yksittäinen puu ja sen tarina) ja **Siemen** (miten jousten
+motiivin ele näkyy tässä maailmassa). Metsä on aina massa kerroksittain (tyyliohje 4d.9); yksittäisiä puita on vain siellä,
+missä ne alla nimetään.
+
+**Kolme kaarta koko teoksen läpi.**
+- **Siemen.** Jousten motiivi on tumma aalto, joka kulkee metsän massan läpi kaukaa lähelle. Se on sama ele joka kerta ja
+  kehittyy: alussa yksi aalto (1), sitten aallot painon kanssa (3), hitaat syvät aallot (7), hermostunut värinä (9),
+  myrsky, jossa aalto on kasvanut koko tilaksi (10; Tovey: koko teos on yksi crescendo), ja lopussa valo, joka kulkee
+  saman reitin kuin aalto (12).
+- **Tapio.** Kaukaisin vaara on Tapion talo (K14: "Tapion talot näkyivät, ukset kulta kuumottivat poikki suosta"). Se
+  näkyy kaukana hopeisin ikkunoin (1), kulkee edellä näkymättä (3), on talo, jonka sisällä ollaan (7), lupaa väärää valoa
+  (8) ja näkyy lopussa kokonaisena ylhäältä (12). Ei kasvoja: mittakaava ja valo.
+- **Revontulet.** Puhaltimien ja ylärekisterin valo (SKVR XII2 7950: "kähähtelivät, kähisivät", tulevat alas lumelle):
+  heikot (1), leimahtavat ja laskeutuvat lumelle iskussa (2), taittuvat kiteen läpi (5), peilautuvat jäässä (6), poissa
+  salissa (7), punaisen auringon syrjäyttämät (8), poissa pimeässä (9), myrskyn repimät viirut (10), kaari muodostuu
+  uudestaan (11), tyyni kaari (12). Sävy kylmä vihertävä halla.
+
+#### 1 Horisontti ja siemen · `tiedoston_alku` → `patarumpu_paisuu`
+- **Lähde:** esipuhe "sankat, tummat ikisalat"; K14 Tapion talot kaukana, perille ei pääse; Judd: patarummut ovat kutsu;
+  Goodwin ja oma kuuntelu: käyrätorvien gis on tausta, joka paljastuu, kun jouset lakkaavat; SKVR III1 1231 "alta harva,
+  päältä tiheä, keskeltä läpinäkyvä"; Jalas: puupuhaltimissa "metsänpeikot ja -eläimet ilmestyvät".
+- **Kuva:** tumma suo lumen alla, kaukana laaja metsän massa kerroksittain usvaan, sen takana vaara, joka on Tapion talo.
+  Gis on horisontin valo, joka muodostaa mäkiä hitaasti yläsävelten voimasta (käyttäjä). Kun jouset lakkaavat, metsä
+  väistyy usvaan ja horisontin valo kirkastuu: paljastuminen. Käyrätorvien soidessa vaaran rinteessä kuumottaa hopeisia
+  ikkunoita. Puupuhaltimet (0:25) sytyttävät revontulet heikkoina ja väikkeen metsän latvustoon.
+- **Ääni ohjaa:** gis-kaista → horisontin valo; yläsävelet → mäet (3 s); jousten rekisteri 50–79 → metsän tummuus ja
+  latvuston aalto; matalan kaistan alut → valo lumen pinnassa (patarumpu); puupuhaltimet 72–100 → revontulet.
+- **Kamera:** silmänkorkeus, suoraan kohti metsää, hitain vauhti. Maa on tasainen suo kameran alla.
+- **Puu:** **pilkkapuu**, yksi kuusi suolla, joka ohitetaan 0:20–0:35. K14: "veistä pilkut pitkin maita, rastit vaaroihin".
+  Se on tien ensimmäinen merkki: joku on kulkenut tästä ennen. Sama puu on viimeinen puu (12).
+- **Siemen:** yksi tumma aalto metsän läpi, kun jouset tulevat (0:08), toinen 0:20.
+
+#### 2 Repeämä · `vaskien_isku` → `hiljaisuus_1_loppu`
+- **Lähde:** K47 kipinä "läpi taivahan yheksän", "taivas reikihin repesi"; Ukko iskee tulta kolmannessa kerroksessa
+  (SKVR II 699); Damrosch: jäiset tuulet; Knussen: lumi; Sibelius: "iskevyys ei ole Tapiolalle vierasta"; metsänpeitto
+  (SKVR VI2 5391): äänet vaimenevat, polku päättyy.
+- **Kuva:** pystysuora valo repeää kaikkien kerrosten läpi syvällä metsässä; revontulet leimahtavat ja laskeutuvat lumelle;
+  puuska tuo lumen vastaan ja latvuston aalto kulkee koko massan yli. Gis päättyy: horisontin valo sammuu hitaasti.
+  Hiljaisuus on metsänpeitto: kaikki äänen elementit lakkaavat, lumi jää ilmaan, metsä seisoo, kamera jatkaa.
+- **Ääni ohjaa:** `vaskien_isku` → leikkaus iskun ruudussa; `tuulenpuuska` → lumen ja latvuston aalto; `hiljaisuus_1` →
+  putoaminen hidastuu, revontulet sammuvat.
+- **Kamera:** sama vauhti, ei säpsähdä. **Puu:** ei. **Siemen:** aalto kasvaa puuskaksi: ensimmäinen kerta, kun ele on
+  suurempi kuin jouset.
+
+#### 3 Jokin kulkee edellä · `fis_pitka_aani` → `askeleet_B` loppuun (`urkupiste_H1_alku`)
+- **Lähde:** Madetoja 1927: yksinäinen vaeltaja; käyttäjä: matalat äänet "Tapion jättiläisen askeleita"; metsänpeitto
+  "vaikka kulkisit aivan eläimen ohitse, niin et sitä näe"; Europadisc: laskevat urkupisteet; Inkpot: "humisevat kuin
+  maapallon pyöriminen"; K14 pilkut ja rastit.
+- **Kuva:** kamera ajaa metsän reunan läpi: ensimmäinen maailma avautuu toisen sisälle. Sisällä metsä on tummaa massaa,
+  jonka välissä kulkee usvaa; valo tulee vain horisontin kajosta runkojen välistä. Basson askeleet ovat painoa, joka
+  siirtyy maassa edellä: lumen pinnan valo ja usvan väistyminen, ei jalkaa. Jousten sointumatto hengittää metsän
+  tummuutena. Pilkat syttyvät ohitettaviin runkoihin askelten tahdissa: jättiläisen jälki.
+- **Ääni ohjaa:** fis-kaista → horisontin valo (eri sävel, hieman alempi); matalan kaistan alut → askel (valo maassa ja
+  pilkka rungossa); jouset → tummuus ja hengitys; `tapahtumat` liike → usvan nopeus.
+- **Kamera:** laskeutuu lumen pintaan (paino), jatkaa eteen. **Puu:** **ikihongat**, muutama valtava runko, jotka
+  ohittavat kameran läheltä. Tarina: ne mittaavat kulkijan pienuuden; jokaisessa on pilkka, joka syttyy, kun askel osuu.
+- **Siemen:** aallot tulevat painon kanssa: jokaista jousten paisutusta seuraa askel.
+
+#### 4 Metsä kohoaa, maa katoaa · `urkupiste_H1_alku` → `pohja_katoaa`
+- **Lähde:** de.wikipedia: noin 40 tahdin nouseva jousicrescendo; D-duuri on h-mollin rinnakkaisduuri, välähdys kelmeä
+  (käyttäjä); SKVR: "kuuna paistoi kuusen oksat, päivänä petäjän latvat"; tyyliohje 7b: pohjan kadotessa maa ja juuret
+  katoavat alta ja metsä leijuu; O'Keeffe: katse rungon alta ylös.
+- **Kuva:** kamera kallistuu hitaasti ylös runkoja pitkin ja jatkaa eteen; nousun mukana kelmeä valo laskeutuu latvoihin
+  ylhäältä; D-duurissa latvat ja huurre syttyvät hallan valoon. Kun pohja katoaa, maa jää kuvan alle ja metsä leijuu.
+- **Ääni ohjaa:** jousten rekisterin nousu (keskikorkeus) → kallistus ja valon korkeus; `nousu` → valon kasvu; D-duurin
+  ankkuri → hallan valo latvoissa; `pohja katoaa` → maan häipyminen.
+- **Kamera:** ainoa kallistus ylös; alle 20 °/s. **Puu:** **suuri petäjä**, jonka latva saa valon ensimmäisenä: "päivänä
+  petäjän latvat". Tarina: valo koskettaa ensin korkeinta ja vanhinta. **Siemen:** aalto nousee latvoihin valona.
+
+#### 5 Väike · `e_pitka_ja_kuviot` → `peikot_G_loppu`
+- **Lähde:** Jalas: puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät"; Europadisc: haltiat; K14 kolme linnaa
+  (puinen, luinen, kivinen), kussakin kuusi kultaikkunaa: hohtavat aukot pimeässä; hiidenväki kulkee näkymättömiä polkujaan
+  helinän saattelemana; Halonen: oksien verkko ja huurre, ei syvyys.
+- **Kuva:** kamera ajaa huurteiseen oksistoon ja sen kiteen sisään: toinen maailma, jossa ensimmäinen toistuu pienenä
+  (huurteen harjanteet ovat metsä, kiteen valo horisontti). Pilkahdukset ovat väki, joka liikkuu näkymättömiä polkuja:
+  valoa, joka vaihtaa paikkaa ennen kuin katsoja ehtii katsoa. Pimeässä hohtaa kuusi pientä ikkunaa kolmessa rivissä
+  (linnat), ei koskaan kaikki yhtä aikaa. Revontulet näkyvät kiteen läpi taittuneina.
+- **Ääni ohjaa:** lyhyet korkeat äänet → pilkahdukset paikkoineen; `purske` → väen kulku; pitkä e → kiteen valo; staccato
+  ja legato (7b) → pisteet tai säie.
+- **Kamera:** kiteen sisälle, sama vauhti. **Puu:** ei; oksisto on kide. **Siemen:** aalto on pieni ja nopea, väikkeenä.
+
+#### 6 Metsä liikkuu kokonaisena · `peikot_G_loppu` → `hajoaa_hiljaisuuteen`
+- **Lähde:** Goodwin: jäiset puuskat kahisuttavat; Grimley: kahiseva, rapiseva; SKVR II 625a "Pakkanen Puhurin poika,
+  kylmä soita, kylmä maita": kylmä etenee pintoja pitkin; Inkpot: urkupisteet humisevat.
+- **Kuva:** kamera ajaa jään pintaan ja sen alle: metsä näkyy ylösalaisin mustassa jäässä ja liikkuu kokonaisena, yhtenä
+  massana (ensimmäinen pelko). Vyöry on aalto, joka kulkee koko peilikuvan läpi. Pakkanen piirtää huurretta pintaan
+  sykkeiden tahdissa. Revontulet peilautuvat jäähän.
+- **Ääni ohjaa:** jousten voima → massan liike; vaskipulssit → huurteen leviäminen; `tremolo` → pinnan väre.
+- **Kamera:** jään alla, katse eteen ja ylös. **Puu:** ei. **Siemen:** aalto liikuttaa koko metsää kerralla.
+
+#### 7 Ikisalo · `jousijakso_urkupiste_E_alku` → `hiljainen_jakso_loppu`
+- **Lähde:** esipuhe "ikisalat"; Hepokoski: hitaasti muuttuva pinta hitaan syväliikkeen päällä; Tovey: sama tausta
+  hämmästyttävän pitkään; "sininen salo"; SKVR IX3 982 Tapion pöytä: kolme runkoa pystyyn, vaakalauta päälle, pisarat
+  juurelle; karsikko; metsänpeitto hiljaisuudessa.
+- **Kuva:** kolmas maailma: Tapion talo sisältä. Valtavat rungot pylväinä, kaikki sinistä, usva kerroksina, hitainta.
+  Kolmen rungon välissä vaakasuora valon lauta: Tapion pöytä. H:n neljätoista sykettä (9:40) kulkevat valona pöydän
+  lautaa pitkin: talon syke. Hiljaisuudessa (9:57) valo sammuu pöydältä ja usva peittää pylväät: metsänpeitto.
+- **Ääni ohjaa:** matalat jouset → massan tummuus ja usvan paksuus; urkupiste → pöydän valo; matalan kaistan alut → syke
+  laudalla; `hiljaisuus` → valo pois.
+- **Kamera:** hitaimmillaan, matalalla, pylväiden ohi. **Puu:** **kolme ikihonkaa ja lauta**: Tapion pöytä. Tarina:
+  kulkija on jumalan talossa; pöytä on paikka, johon jätetään uhri (karsikko), ja valo on talon elämä.
+- **Siemen:** aallot ovat syviä ja hitaita, ja ne kulkevat pylväiden välissä usvana.
+
+#### 8 Väärä valo · `hiljainen_jakso_loppu` → `auringonsade`
+- **Lähde:** K49 taottu aurinko: kullasta ja hopeasta, nostetaan kuusen latvaan, "eipä kuu kumotakana eikä päivyt
+  paistakana"; Sibeliuksen värikuulo C-duuri = punainen (käyttäjä hyväksyi); Europadisc ja Inkpot: matalat valonsäteet,
+  himmeä auringonvalo.
+- **Kuva:** tutti-isku (10:21) repäisee valon pylväiden läpi; sitten punainen aurinko nousee kolmesti pylväiden takaa ja jää
+  (C-duuri ennen M:ää). Se ei valaise mitään: pylväät pysyvät mustina, vain usva ja ikkunat Tapion talossa punertuvat.
+  Revontulet väistyvät sen tieltä. Kamera pysähtyy ensimmäisen kerran ja katsoo sitä.
+- **Ääni ohjaa:** `vaski_tutti_620` → leikkaus; C-duurin ankkurit → auringon nousu; jousten voima → usvan punerrus.
+- **Kamera:** nimetty pysähdys. **Puu:** sama kolme pylvästä kehystää auringon. **Siemen:** aalto pysähtyy auringon eteen.
+
+#### 9 Petos ja hermo · `M_ennakko` → `dim_possibile`
+- **Lähde:** K47 ja K49: valo houkutellaan latvaan ja suljetaan "vuorehen teräksisehen" yhdeksän oven taakse, yö "pitkä,
+  pilkkoisen pimeä"; Mäkelä: kuolema ja tyhjyys; tyyliohje 2.10: ahdistus on sallittu tässä; 7b: tremolo on väre
+  paikallaan, vuorottelu on kaksi paikkaa.
+- **Kuva:** M: vaskien pystyvalo sulkee auringon; pimeys. Kamera lähtee uudestaan ja kiihtyy. Metsä näkyy vain vaskien
+  välähdyksissä: yhdeksän ovea ovat peräkkäiset tummat kerrokset, joiden läpi ajetaan. Jousten hermo on massan värinä
+  paikallaan. Vaskien vuorottelu (12:36) on kaksi valon paikkaa, jotka vastaavat toisilleen pimeässä.
+- **Ääni ohjaa:** nimetyt iskut → leikkaukset; `tremolo` → värinä; `vuorottelu` → kaksi paikkaa; jousten voima → värinän
+  laajuus; `liike` → kameran kiihtyvyys (hidas keskiarvo).
+- **Kamera:** nopein ajo koko teoksessa. **Puu:** ei. **Siemen:** aalto on hajonnut värinäksi: idea on hermona.
+
+#### 10 Se näkyy ja tulee · `hiljaisuus_2_alku` → `R_vasket`
+- **Lähde:** myrsky on kirjallisuuden ja käyttäjän luenta, merkitään tulkinnaksi (tutkimus luku 2); Wilker: jousitremolo
+  ja kromaattinen kenttä t. 523; Grimley: kahiseva, jylisevä, viheltävä; Pakkanen etenee pintoja pitkin; Knussen: lumi;
+  Ukon tuli kerrosten läpi; tyyliohje 4: horisonttia ei näytetä ennen tätä.
+- **Kuva:** metsä loppuu, ja kamera on ulkona jäällä: tila on ensimmäistä kertaa katsojaa suurempi. Horisontti paljastuu,
+  ja kaukana metsä on matala musta reuna. Myrsky näkyy kaukana lumiseinänä ja tulee kerros kerrokselta; se iskee, kerrokset
+  romahtavat yhdeksi; revontulet repeävät viiruiksi; Q:n ja R:n iskut ovat pystyvaloja myrskyn sisällä. Kamera ajaa läpi.
+- **Ääni ohjaa:** jousten voima → lumen tiheys ja massan liike; `Q_koko_metsa`, `myrsky_huippu`, `R_vasket` → leikkaukset;
+  matalat alut → maan valo; `tremolo` → väre.
+- **Kamera:** sama suunta, myrskyn läpi. **Puu:** ei: metsä on reuna. **Siemen:** aalto on kasvanut koko tilaksi.
+
+#### 11 Huuto ja jälki · `toinen_paisunta` → `yksinaiset_aanet`
+- **Lähde:** Grimley: huuto; Goodwin: katkeamisen jättämä aavemainen tyhjä hiljaisuus; Järnefelt Kolilta: katse
+  latvoista vaaroihin ja horisonttiin; tyyliohje 5: huuto on ainoa hetki, jolloin kamera nousee.
+- **Kuva:** kamera nousee myrskyn läpi latvojen yläpuolelle: alla koko metsä vaaroina horisonttiin. Nouseva asteikko on
+  horisontin valo, joka nousee huudon korkeuteen; revontulet muodostuvat uudestaan kaareksi. Yksittäiset äänet ovat mäkiä,
+  jotka muodostuvat hitaasti horisonttiin (käyttäjän alkuperäinen gis-ajatus palaa).
+- **Ääni ohjaa:** viulujen korkea ääni → horisontin valon korkeus; yksittäiset pitkät äänet → mäet (3 s); puhaltimet →
+  revontulet.
+- **Kamera:** nousee, ei peruuta. **Puu:** ei. **Siemen:** aalto on alla, näkyy ylhäältä metsän pintana.
+
+#### 12 Oikea valo · `S_sempre_mf` → `tiedoston_loppu`
+- **Lähde:** Tovey ja Grimley: lasku hiljaisuuteen; Inkpot: metsän "elävä puu" loppupuolella; "Soi metsä, kumisi korpi"
+  (K46): ääni, joka kimpoaa takaisin; Tapion pöytä: pystysuora kohtaa vaakasuoran (tyyliohje 4); käyttäjä: "hieno
+  hyväksyvä H-duuri", Sibelius tyytyväinen.
+- **Kuva:** ylhäältä nähty ensimmäinen maailma palaa kokonaisena: horisontti ja hitaat mäet, metsän massa alla, Tapion
+  talo kaukana tyynenä. Kamera hidastuu S:stä ja pysähtyy H-duurissa omasta tahdostaan: perille tulo. Kajo nousee
+  horisontin takaa ja kulkee metsän yli kohti katsojaa saman reitin kuin siemenen aalto. Revontulet ovat tyyni kaari.
+  Lumi sataa edelleen, usva liikkuu: metsä jatkuu kuvan reunojen yli. Kuva lakkaa muuttumasta vasta musiikin jälkeen.
+- **Ääni ohjaa:** viulujen ääni → horisontin valo; H-duurin ankkuri → kajon nousu; basson viimeiset askeleet → valo
+  maassa; `musiikki_loppuu` → kaikki äänen elementit lakkaavat, metsä ja lumi jäävät.
+- **Kamera:** hidastuu ja pysähtyy (nimetty). **Puu:** **pilkkapuu** (sama kuin 1) kuvan alareunassa lähellä, yksin.
+  Tarina: tien ensimmäinen merkki on sen viimeinen; kulkija jätti jäljen, ja metsä jatkuu. "Soi metsä, kumisi korpi."
+- **Siemen:** aalto on valo.
+
+**Kulut maailmasta toiseen** (tyyliohje 2.4, vähintään neljä sekuntia, mittakaava jatkuva): 1→2 ei kulkua, sama
+maailma repeää; 2→3 metsän reunan massan läpi (`hiljaisuus_1_loppu`); 3→4 katse nousee (`urkupiste_H1_alku`); 4→5
+huurteen kiteeseen (`nousu_huippu_D` → `pohja_katoaa`); 5→6 jään pintaan (`jannitesoinnut` → `pohja_vaihtuu_D`); 6→7
+pimeään pylväiden väliin (`hajoaa_hiljaisuuteen` → `jousijakso_urkupiste_E_alku`); 7→8 sama talo, valo vaihtuu; 8→9
+pimeys (`M_ennakko` → `M_raskaat_askeleet`); 9→10 metsä loppuu (`dim_possibile` → `hiljaisuus_2_alku`); 10→11 nousu
+(`toinen_paisunta` → `huuto`); 11→12 sama paikka, vauhti hidastuu.
 
 ### Loppu: tähän se loppui
 

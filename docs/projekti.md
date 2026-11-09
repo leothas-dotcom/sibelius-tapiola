@@ -293,6 +293,8 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 36 | 9.11. | koepätkä | "Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen" ... "Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva ... on kulmikas, nykivä. EI NÄIN." ... "torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?" ... "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina." ... lumi "on KAIKEN PÄÄLLÄ oleva maski" ... "alun metsä voisi olla vain 'siemen' metsästä" ... "gis-äänet ... kukkuloina - seurata sitä spektrin muotoa" ... "horisonttia - siksi lähes unisono - josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää" (koko palaute: `docs/tutkimus/haastattelu.md`) | ❌ hylätty: käyttäjä näki vedoksen 3 ja hylkäsi sen, ks. rivi 37 (aiemmin: kriitikon kriitikon kierrokset 5–7 ilman estäviä virheitä, `runs/vedos_v3/run.json`) | työ käynnissä: katso luku Työn tila heti tämän taulukon alla |
 | 37 | 9.11. | vedos 3 (koko teos) | "pomppivat ja hyppivät kumikuuset" ... "METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA" ... "Kaukaiset puut ... juuri ja juuri erottaa usvan seasta" ... "kalevalalainen metsä. Jossa on mystisiä olentoja" ... "Gis on ... horisontti - joka sitten hellävaraisesti muodostaa mäkiä" ... "Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi" ... "joudut tekemään kaiken uusiksi". Hyvää: valot, lumisade. Koko teksti: `docs/tutkimus/haastattelu.md` | ❌ auki | tyyliohje v2.0: luku 4c hylätty, luku 4d kirjaa sanat; käsikirjoitus v2.2 merkitty hylätyksi; uutta kuvaa ei ole |
 | 38 | 9.11. | vedos 3 (jatkoa) | "Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä, toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? ... Sellaiseen hienoon hyväksyvään H-duuriin." | 🔶 ehdotus ja alkupätkä tehty, ei todennettu | ehdotus kirjoitettu (`docs/kuvakasikirjoitus.md`, Uusi runko: kamera, maailmat, loppu); kuvaa ei ole |
+| 39 | 9.11. | alkupätkä alku_v4 | "MIKSI Musiikki ei nyt reagoi ... jousien intensiteetti kasvaa? EIKÄ KAMERA VOI AJAA MAAN LÄPI." ... "Aloitetaan alusta." ... "METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ JOKAISEN PUUN ERIKSEEN" ... "SEN PITÄÄ ELÄÄ, SE ON LAAJA, TUMMA, JA SIBELIAANIINEN ... TAPIO JUMALAN ASUINPAIKKA" ... "haluan myös revontulia" | ❌ auki | tyyliohje 4d kohdat 9–13; uusi piirto tekeillä |
+| 40 | 9.11. | alkupätkä alku_v4 | "Sinun piti tehdä 12 maailmaa. Miksi olet tehnyt vain yhden?" ... "Tämä ei ole valmis, ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN" ... "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" | 🔶 suunnitelma kirjoitettu, ei hyväksytty | `docs/kuvakasikirjoitus.md` luku "Kaksitoista maailmaa": jokaisessa lähde, kuva, ääni ohjaa, kamera, puu ja siemen |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
@@ -419,8 +421,16 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   tyhjä alapuoli, pyöreälatvaiset männyt, kalevalaiset olennot puuttuvat. Pätkä näytetään käyttäjälle suunnan
   tarkistuksena ennen muuta työtä (tyyliohje 4d, prosessisääntö).
 
-**Seuraavaksi:** käyttäjä katsoo alkupätkän (`runs/alku_v4/tapiola_alku_v4_720p.mp4`); sen palautteen mukaan joko
-jatketaan tällä piirrolla (otot 1–2 uusiksi, olennot, alun sommittelu) tai korjataan suuntaa.
+- 9.11. **Käyttäjä hylkäsi alkupätkän** (rivit 39 ja 40): jousten intensiteetti ei näkynyt, kamera ajoi maan läpi (rinne
+  nousi, kameran korkeus ei), metsä piirrettiin puu kerrallaan, maailmoja oli yksi eikä kahtatoista, suunnittelu puuttui.
+  **Opittua:** suunnitelma kaikille maailmoille taustatutkimuksesta ennen ensimmäistäkään ruutua; metsä massana;
+  jokainen yksittäinen puu nimetään tarinoineen; kameran korkeus maasta omalla kohdallaan.
+- 9.11. Kaksitoista maailmaa suunniteltu (`docs/kuvakasikirjoitus.md`, luku "Kaksitoista maailmaa"): jokaisessa lähde
+  taustatutkimuksesta, kuva, mitatut signaalit, kamera, harkittu puu ja siemenen ele; kolme kaarta (siemen, Tapio,
+  revontulet). Tyyliohje 4d kohdat 9–15.
+
+**Seuraavaksi:** käyttäjä lukee suunnitelman; sen jälkeen piirto maailmoille 1 ja 2 massametsänä (`visual/matka.js`
+uusiksi), alkupätkä, kriitikko käyttäjän sanoilla, ja vasta sitten maailmat 3–12 järjestyksessä.
 Aiempi suunnitelma: käyttäjä katsoo vedoksen 3 ja antaa palautteen
 
 ---

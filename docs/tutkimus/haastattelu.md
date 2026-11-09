@@ -626,3 +626,38 @@ Käyttäjän sanat kokonaan:
 > toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? Hänen tuotantonsa.
 > Sellaiseen hienoon hyväksyvään H-duuriin. Se on upea loppu, kaunis ja tuntuu että Sibeliuskin on siinä kohtaa
 > tyytyväinen omaan uraansa.
+
+## 9.11.2026: palaute alkupätkästä (alku_v4) ja uusi aloitus
+
+Käyttäjän sanat kokonaan:
+
+> EI EI EI EI EI!!!! MIKSI Musiikki ei nyt reagoi mitenkään siihen että jousien intensiteetti kasvaa? EIKÄ KAMERA VOI AJAA
+> MAAN LÄPI. MITÄ OIKEIN AJATTELET?
+>
+> Aloitetaan alusta. Tee visuaalinen, näyttävä ja luova musiikkivideo sibeiluksen tapiola-sävelrunolle.
+>
+> Lue taustatutkimus, visuaalinen tyyli ja kuvakäsikirjoitus.
+>
+> Luo visualisaatiot, jotka TOTEUTTAVAT yllä mainitut dokumentit.
+>
+> Alussa on horisontti. Synkkä metsä. Siemen ideasta. Seuraamme sen kehittymistä koko teoksen ajan.
+>
+> EN halua mitään helvetin puita siihen pomppimaan. Mutta METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ JOKAISEN PUUN
+> ERIKSEEN: MIETI!!!!
+>
+> SEN PITÄÄ ELÄÄ, SE ON LAAJA, TUMMA, JA SIBELIAANIINEN. SE ON IKIAIKAINEN, SE ON TAPIOLA. SIIS TAPIO JUMALAN
+> ASUINPAIKKA. MYTOLOGINEN HAHMO.
+>
+> Ai niin, haluan myös revontulia :)
+
+Ohjaajan huomio: kamera ajoi maan läpi, koska metsän rinne nousi kameran edessä mutta kameran korkeus laskettiin
+tasaisesta maasta. Jousten intensiteetti ohjasi vain usvan ohenemista, jota ei erota.
+
+Käyttäjä jatkoi samana päivänä kolmella viestillä:
+
+> Sinun piti tehdä 12 maailmaa. Miksi olet tehnyt vain yhden?
+
+> Tämä ei ole valmis, ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN
+
+> JA JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????
+
