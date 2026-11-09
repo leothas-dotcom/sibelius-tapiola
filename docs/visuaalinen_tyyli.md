@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1, luonnos 1.11.2026. Kirjoitettu käyttäjän ideoista (`docs/haastattelu_tyyli.md`) ja tutkimuksesta
+*Versio 1.1, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin). Kirjoitettu käyttäjän ideoista (`docs/haastattelu_tyyli.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan ja `docs/kuvasaannot.md` ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -12,8 +12,13 @@ merkitty **[ohjaajan valinta]**.*
 ja kun se ajaa jonkin sisään, se suurenee ja sieltä avautuu uusi maailma. Ei leikkauksia: jokainen siirtymä on
 kulku jonkin läpi. Sibeliuksen teos kasvaa yhdestä motiivista; kuva kasvaa yhdestä liikkeestä.
 
-**Abstrakti, elävä taideteos**, joka elää musiikin tahdissa: valoa, varjoa, luontoa ja luonnonvoimia abstraktein
-keinoin. Ei ihmishahmoja, ei keijuja, ei peikkoja. Esipuheen sanat ovat kuvan sanat: sankat tummat metsät,
+**Synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä.** Se on koko teoksen lähtökohta, ja se näkyy
+(käyttäjä 9.11.2026: "Ei ole mielestäni oikein että metsää ei tuotaisi esille"). Metsä on tunnistettava metsä:
+kuusikkoa, runkoja, oksistoa, lunta, usvaa, valoa runkojen välistä. Se on pelkistetty ja tumma, ei valokuva, mutta
+katsoja tietää joka hetki olevansa metsässä.
+
+**Elävä taideteos**, joka elää musiikin tahdissa: valoa, varjoa, luontoa ja luonnonvoimia. Ei ihmishahmoja, ei
+keijuja, ei peikkoja. Abstraktia on se, mitä soittimet tekevät metsässä (elementit, luku 7), ei metsä itse. Esipuheen sanat ovat kuvan sanat: sankat tummat metsät,
 ikisalat, hurjat haaveet, Tapion kummat asunnot, väikkyvät haltiat, hämyn äänet. Suomalainen luonto ja mytologia
 ovat pohja, mutta mytologiasta otetaan tilat, voimat, merkit ja värit, ei henkilöitä.
 
@@ -47,11 +52,13 @@ näkyy vain kamerassa: vääjäämättömyytenä, valon pettämisenä, hiljaisuu
 7. **Valo on aine.** Valo ja pimeys rakentavat tilan (Kandinsky, Munch, Moholy-Nagy; Davisin kansi: säteet
    usvan läpi runkojen välistä). Valo tulee aina jostain suunnasta ja jostain kerroksesta. Väärä valo (C-duuri)
    ja oikea valo (H-duuri) ovat eri valoja (luku 3).
-8. **Luonto uutetaan, sitä ei kuvata** (Dove: "extraction"). Metsä on pystysuoria massoja, välejä, kerroksia ja
-   painoa, ei puita lehtineen. Lumi on valoa ja liikettä, ei hiutaleita. Myrsky on tilan vääristymistä, ei säätä.
-9. **Ei esineitä.** Jokainen soitin on elementti (luku 7). Elementti on liikettä, valoa, massaa tai jälkeä,
-   jolla on paikka kerroksissa. Elementti ei ole koskaan tunnistettava esine (ei nuotti, ei soitin, ei eläin,
-   ei kasvot).
+8. **Metsä näkyy, soittimet uutetaan.** Metsä on metsä: rungot, kuuset, oksisto, lumi, usva, kerroksittain
+   syvyyteen. Soittimien elementit sen sisällä ovat uutettuja (Dove: "extraction"): valoa, liikettä, painoa ja
+   jälkeä, ei esineitä. Myrsky on lunta ja jäätä, joka tulee kaukaa (käyttäjä), ja samalla tilan romahtamista.
+9. **Soitin ei ole esine.** Jokainen soitin on elementti (luku 7). Elementti on liikettä, valoa, massaa tai
+   jälkeä, jolla on paikka metsän kerroksissa. Elementti ei ole koskaan nuotti, soitin, eläin, kasvot tai hahmo.
+   Metsän omat asiat (rungot, oksat, lumi, usva, maa, taivas) ovat ympäristöä, ja elementit elävät niissä: säie
+   kulkee runkojen välissä, väike oksistossa, tärähdys maassa.
 10. **Ahdistus on sallittu kohdissa.** Monille teos on pelottava. Haemme sitä M:n jälkeisessä hermossa,
     myrskyn tulossa ja myrskyssä: tila, joka on liian suuri, valo joka on väärä, liike jota ei voi pysäyttää.
     Emme hae sitä kaikkialla: alku ja loppu ovat rauhallisia, syviä, kunnioittavia.
@@ -67,16 +74,30 @@ valinta]**, ja mytologian sanat ovat niiden lähde.
 | **Salo** | syvä sininen ("siniset salot") | kaukaiset kerrokset; mitä kauempana, sitä sinisempi |
 | **Halla** | kylmä sinivalkoinen | lumi, jää, myrskyn valo; kylmä ei lämmitä |
 | **Noki** | musta, lämmin | varjot lähellä; patarumpujen ja pohjan väri |
-| **Taottu aurinko** | messinki, rikinkeltainen, hieman vihertävä | **vain** C-duuri (t. 385–396) ja sen kaiut: väärä valo, groteski; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
+| **Taottu aurinko** | **punainen** valo kullan sijasta **[ohjaajan ehdotus synestesiasta, käyttäjä päättää]**: Sibeliuksen kerrotaan kuulleen C-duurin punaisena (ks. alla). Punainen valo sinivihreässä metsässä on väärä ja groteski. Vaihtoehto (v1): messinki, rikinkeltainen | **vain** C-duuri (t. 385–396) ja sen välähdykset sitä ennen: väärä valo; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
 | **Kajo** | vaalea, pehmeä, hieman lämmin valkoinen | **vain** H-duuri (t. 605–634): oikea valo, hellä, mezzoforte |
 
 Säännöt: koko teos on tumma; valoisin kohta ennen loppua on taottu aurinko, ja sekin on väärän värinen. Värit
-eivät vaihdu iskussa; ne vaihtuvat kerroksen tullessa etualalle. Ei kirkkaita puhtaita värejä, ei punaista
-(ei tulta, ei auringonlaskua: se on kansien klisee). Ei hehkua tai bloomia ilman lähdettä kerroksessa.
+eivät vaihdu iskussa; ne vaihtuvat kerroksen tullessa etualalle. Ei kirkkaita puhtaita värejä. Punaista on vain
+taotussa auringossa, jos käyttäjä hyväksyy synestesiaehdotuksen; ei tulta, ei auringonlaskua (kansien klisee).
+Ei hehkua tai bloomia ilman lähdettä kerroksessa.
+
+**Synestesia (käyttäjän kysymys 9.11.2026).** Sibelius oli värikuuloinen: hän liitti sävellajeihin värejä.
+Lähteet ovat toissijaisia [tarkista Tawaststjernasta tai Ainolasta]:
+- **F-duuri = vihreä.** Ainolan ruokasalin vihreä takka on yksi kahdesta asiasta, joita Sibelius itse vaati
+  taloon; hänen kerrotaan "kuulleen" sen värin F-duurina (Ainolan opastus, David Nice 2010, useita lähteitä).
+- **C-duuri = punainen, D-duuri = keltainen** (yksi populaarilähde, interlude.hk; D-keltainen voi olla
+  sekaannus Rimski-Korsakoviin). Heikko lähde.
+- Hänen kerrotaan salanneen kykynsä, ettei häntä pilkattaisi (classical-music.com).
+Miten se tuodaan kuvaan **[ohjaajan ehdotus]**: väri seuraa sävellajia, ei soitinta. Perustila h-molli on hämy
+ja salo. C-duurin väärä valo on punainen, koska se oli Sibeliukselle punainen: se on ainoa kerta, kun metsässä on
+punaista. Jos D-duurin keltainen pitää (rinnakkaisduuri), sen välähdykset ovat ne "hetkelliset valon välähdykset"
+alun aikana (analyysi kuuli D-duuria 0:44–0:55 ja 1:15–1:40). H-duurin väriä ei tunneta lähteistä; se on kajo.
+Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niitä.
 
 ## 4. Tila
 
-- **Metsä on tila, ei maisema.** Katsoja on sisällä, ei edessä. Horisonttia ei näytetä ennen myrskyä: se
+- **Metsä on tila, ei maisema.** Katsoja on metsän sisällä, runkojen keskellä, ei sen edessä. Horisonttia ei näytetä ennen myrskyä: se
   ilmestyy, kun myrsky näkyy kaukana (t. 523), ja se on ensimmäinen kerta, kun tila on suurempi kuin katsoja.
 - **Pystysuora ja vaakasuora.** Metsä on pystysuoraa massaa; pohja (sellot, bassot, patarummut) on vaakasuoraa
   painoa. Tapion pöytä: kolme runkoa pystyyn, vaakalauta päälle. Myrsky on se, mikä iskee pystysuoraan kerrosten
@@ -108,8 +129,8 @@ eivät vaihdu iskussa; ne vaihtuvat kerroksen tullessa etualalle. Ei kirkkaita p
 
 ## 6. Henkilöt ja elementit
 
-Henkilöitä ei ole. Tapio ei näy hahmona; hän on tila itse: kummat asunnot, kerrokset, paino ja se, mikä tulee
-läpi. Haltiat ovat väikettä: pieniä valon ja liikkeen pilkahduksia kerrosten välissä, jotka katoavat kun katsoo.
+Henkilöitä ei ole. Metsä on päähenkilö. Tapio ei näy hahmona; hän on metsä itse: kummat asunnot, kerrokset,
+paino ja se, mikä tulee läpi. Haltiat ovat väikettä: pieniä valon ja liikkeen pilkahduksia kerrosten välissä, jotka katoavat kun katsoo.
 Säveltäjä ei näy; hän on kamera.
 
 ## 7. Soitin → elementti
@@ -124,7 +145,7 @@ elementin, ei soitinta. Kanavakortti sanoo, mitä kanavaa elementti saa seurata.
 | Sellot, kontrabassot | **Pohjan askeleet ja urkupiste**: vaakasuora pohja, joka siirtyy omassa ajassaan tai pysyy | pohja | askeleet: pohja nytkähtää eri tahtiin kuin muu; urkupiste: pohja pysyy, kaikki muu liikkuu sen päällä | urkupiste, askel (rakennetaan) |
 | Käyrätorvet | **Kaukainen kajo ja hengitys**: himmeä valo kaukaisimmassa kerroksessa, joka paisuu ja laskee | kaukana | < >: kajo hengittää; pulssit: kajo sykkii | PANNs käyrätorvi (osittain), vaskiaalto (rakennetaan) |
 | Trumpetit, pasuunat | **Läpi tuleva valo**: valo, joka leikkaa kerrosten läpi pystysuoraan (Ukon tuli) | takaa eteen | isku: leikkaus; jyrinä: useita leikkauksia; myrsky: kerrokset repeävät | vaskikanava, aksentit |
-| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia kerrosten välissä, jotka katoavat | lähellä ja keskellä | nopeat kuviot: pilkahduksia; ei koskaan pysähdy katsottavaksi | PANNs huilu, liiketiheys |
+| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia oksistossa ja kerrosten välissä, jotka nousevat, laskevat ja katoavat | lähellä ja keskellä | nopeat kuviot: pilkahduksia; alun "nousevat ja laskevat kuviot" (käyttäjä: "ovatko mäkiä??"): valon kaari, joka nousee esiin metsän siimeksestä ja painuu takaisin | PANNs huilu, liiketiheys, sävelkaaret |
 | Klarinetit, bassoklarinetti | **Hämyn äänet**: puoliksi näkyvä liike keskikerroksessa, muoto joka ei tarkennu | keskellä | kuviot: muoto liikkuu; pitkät: muoto jää puoliksi näkyviin | PANNs klarinetti |
 | Oboet, englannintorvi | **Ohut linja**: yksi kapea valojuova kaukaa | kaukana | yksin: linja näkyy; muuten ei | ei mitattavissa; partituuri |
 | Fagotit, kontrafagotti | **Pohjan toinen ääni**: pohjan sisällä liikkuva tummempi massa | pohja | pitkät: massa hengittää pohjan sisällä | ei mitattavissa; partituuri |

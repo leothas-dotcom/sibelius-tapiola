@@ -16,7 +16,8 @@ osa, brief ja kriitikko lukee nämä tyyliohjeen jälkeen. Palaute kirjoitetaan 
 8. Kerros on etäisyys ja valo, ei taso eikä pahvi. Kerrosten reunat eivät vuoda; tyhjä tausta on virhe.
 
 ## Elementit
-9. Jokainen soitin on elementti (tyyliohje luku 7). Ei esineitä: ei soittimia, nuotteja, kasvoja, eläimiä, ihmisiä.
+9. Metsä näkyy: rungot, kuuset, oksisto, lumi, usva, kerroksittain. Jokainen soitin on elementti metsän sisällä
+   (tyyliohje luku 7), ei esine: ei soittimia, nuotteja, kasvoja, eläimiä, ihmisiä, hahmoja.
 10. Iskun elementti on ympäristössä (pohjan tärähdys, valon leikkaus, kerrosten etääntyminen) ja näkyy iskun ruudussa.
 11. Elementti ei ilmesty, katoa eikä loiki iskussa. Se on jo kuvassa ja muuttaa tilaa.
 12. Enintään kolme elementtiä liikkuu yhtä aikaa.
@@ -24,8 +25,9 @@ osa, brief ja kriitikko lukee nämä tyyliohjeen jälkeen. Palaute kirjoitetaan 
 
 ## Valo ja väri
 14. Valolla on aina lähde jossain kerroksessa. Ei hehkua ilman lähdettä.
-15. Koko teos on tumma: hämy, salo, halla, noki. Ei punaista, ei lämpöä ennen loppua.
-16. Taottu aurinko (messinki, rikinkeltainen) vain C-duurissa. Kajo (pehmeä vaalea) vain H-duurissa.
+15. Koko teos on tumma: hämy, salo, halla, noki. Ei lämpöä ennen loppua. Punaista vain taotussa auringossa
+    (C-duuri), jos käyttäjä hyväksyy synestesiaehdotuksen.
+16. Taottu aurinko (punainen tai messinki, käyttäjä päättää) vain C-duurissa. Kajo (pehmeä vaalea) vain H-duurissa.
 17. Värit vaihtuvat kerroksen tullessa etualalle, eivät iskussa.
 
 ## Hiljaisuus

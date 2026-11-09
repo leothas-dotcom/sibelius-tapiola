@@ -2,6 +2,24 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 9.11.2026 – Metsä näkyy, synestesia, lisää detaljia edullisesti
+
+**Ei toiminut**
+- Tyyliohje v1 vei abstraktion liian pitkälle ("metsä uutetaan, ei kuvata"). Käyttäjä: metsä on lähtökohta ja se
+  näkyy. Abstraktia on se, mitä soittimet tekevät metsässä, ei metsä.
+- Koneluettavaa partituuria (MIDI, MusicXML) ei löytynyt kahdella haulla. basic-pitch ei asennu Python 3.12:een
+  (tensorflow-riippuvuus); sääntö kieltää kiertotiet, jätettiin.
+- Kaarentunnistin (`kaaret.py`) poimii jousimelodian yläsäveliä, ei puhaltimien kuvioita: sen kaarilistaa ei käytetä.
+- Kerroskartan ensimmäinen versio sulautti alun hiljaisuuteen ja antoi liikkeeksi aina "nopea". Tarkistus kuvasta
+  ja rivien lukeminen ennen raportointia paljasti sen.
+
+**Toimi**
+- Rekisterikerrokset CQT:stä (matala, keski, korkea, kirkas) erottelevat alun tapahtumat, joita soitinluokitin ei
+  erotellut: patarummut yksin, siemen, käyrätorvien pitkä vastaus, siemen uudestaan, pitkä ääni ja sen yllä pienet
+  korkeat kuviot, patarumpujen paisutus, puuska. Ei uusia riippuvuuksia, CPU, alle minuutti.
+- Kerroskartta: 338 riviä koko teoksesta, noin 3 s välein, generoituna. Ei arvaa soitinta.
+- Suppea haku (viisi hakua, ei agenttia) riitti synestesiaan ja MIDI-kysymykseen.
+
 ## 1.11.2026 – Tyyliohje v1
 
 **Toimi**

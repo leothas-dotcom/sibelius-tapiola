@@ -429,3 +429,39 @@ Ohjaajan merkintä: merkittävyyden testi CLAUDE.md:hen ja muistiin. Sordiino-an
 
 Ohjaajan merkintä: staattinen hetki on valinta, ei vahinko: kamera pysähtyy ja seuraa yhtä elementtiä. Tyyliohje
 sanoo, milloin kamera liikkuu ja milloin elementit, ja miten kokonaistarina kulkee.
+
+## 9.11.2026 – käyttäjän palaute tyyliohjeeseen ja oppaaseen (käyttäjän sanat)
+
+> Siirrytään seuraavaan kohtaan, joka olisi kuvakäsikirjoituksen teko. Lue sitä varten taustamateriaali, ja mieti
+> mitkä asiat halutaan kuuntelijalle nostaa esiin. Mitkä soi, mitä tapahtuu? Tulkitse.
+
+> Huomaan tuosta kuunteluoppaasta, että se on vielä kovin puutteellinen. Sinne pitäisi saada paljon lisää detailia -
+> mitä soi, millä hetkellä.
+
+> Esimerkiksi alkuun. Olet kuullut oikein asioita, mutta sieltä vielä puuttuu paljon. Esim se, että alun melodia on
+> ikäänkuin siemen, josta koko musiikki lähtee. Tämä edustaa tämän kappaleen minimalismia - jouset soittaa melodian -
+> puhaltajat kukin vuorollaan tulee esiin ja tekevät pienet nousevat ja laskevat kuviot (ovatko mäkiä??) jotka
+> tulevat ikäänkuin esiin sieltä metsän siimeksestä.
+
+> Tässä kuvataan metsää, se on nyt täysin selvää. Ei ole mielestäni oikein että metsää ei tuotaisi esille. Se on
+> tietysti koko kappaleen lähtökohta - synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä.
+
+> Sibelius oli myös aisti Synestesia. Hän näki äänessä värejä. Miten sitä tuodaan tähän esiin? Tutki asiaa.
+
+> Kyllä, tuulenpuuska alkaa heti alun vaski-iskun jälkeen. Samoin ne bassojen jättiläisaskeleet on 2:09 eteenpäin
+> oikein. Ne toki jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla.
+
+> Mutta mieti, miten saisit sinne kuunteluoppaaseen vielä paljon enemmän detailia. Mitä kappaleessa tapahtuu? Miten
+> eri kanavat saisi vielä luotettavammin eroiteltua? Äärimmäisessä hädässä katso partituurista, se kuluttaa koko
+> minun viikon krediitit, kun alat tulkita sitä. Joku edullinen tapa
+
+### Ohjaajan poiminnat (sitovat)
+- **Metsä näkyy.** Synkkä suomalainen metsä, jossa hetkellisiä valon välähdyksiä, on koko teoksen lähtökohta ja se
+  tuodaan esiin. Tyyliohjeen "metsä uutetaan, ei kuvata" oli liian pitkälle viety: korjataan.
+- **Alku:** jousten melodia on siemen, josta kaikki lähtee (minimalismi); puhaltajat tulevat kukin vuorollaan esiin
+  pienin nousevin ja laskevin kuvioin metsän siimeksestä (käyttäjä: "ovatko mäkiä??").
+- **Synestesia:** Sibelius näki äänessä värejä; tutkitaan ja viedään väriin.
+- **Vahvistettu korvalla:** tuulenpuuska heti alun vaski-iskun jälkeen; bassojen askeleet 2:09 eteenpäin (jatkuvat
+  useissa paikoissa).
+- **Opas tarvitsee paljon lisää detaljia** (mikä soi, millä hetkellä), edullisesti: ei partituurin tulkintaa
+  kielimallilla. Etsitään koneluettava partituuri (MIDI/MusicXML) ja kohdistetaan se ääneen.

@@ -55,16 +55,17 @@
       ]
     },
     "tuulenpuuska": {
-      "t": null,
-      "varmuus": "arvio",
-      "luottamus": "ei",
-      "peruste": "Kirjallisuus (Grimley) antaa vain tahdit 21–25, ja oktatonista piirrettä ei voi mitata: chroman sopivuus parhaaseen oktatoniseen kokoelmaan ei erottele diatonisesta (2 s ikkunat, oktatoninen vs diatoninen: 24 s 0,85 vs 0,79; 44 s 0,76 vs 0,67; 48 s 0,80 vs 0,70; 66 s 0,89 vs 0,79; mutta 26 s 0,89 vs 0,90 ja 28 s 0,81 vs 0,87). Tahtinumeroa ei lasketa äänestä. Ehdokasalue (ei perusteltu): 48–51 s, jossa liiketiheys nousee 4,0 alkua/s (kohta 49 s, alun suurin) heti vaskien iskun (45,33 s) jälkeen.",
+      "t": 45.4,
+      "varmuus": "vahvistettu",
+      "luottamus": "hyvä",
+      "peruste": "Käyttäjä 9.11.2026 (korva): tuulenpuuska alkaa heti alun vaski-iskun jälkeen. Vaski-isku aksentit.py 45,327 s (z 32,9); nopea kuviointi liiketiheys 4,0 alkua/s kohdassa 49 s; taso huipussaan noin 52 s. Partituuri: t. 21 Allegro moderato, viulut div. p kuudestoistaosin cresc. molto al, t. 25 kaikki ff (s. 4–5). Alun ja lopun tarkka raja: analyysi.",
       "ehdokkaat": [
         {
           "t": 48.0,
           "huom": "nopea kuviointi, liiketiheys 4,0/s kohdassa 49 s; aksentti 48,79 s (z 6,4); ei oktatonista mittaa"
         }
-      ]
+      ],
+      "t_loppu": 52.0
     },
     "vaskien_isku": {
       "t": 45.327,
@@ -86,10 +87,10 @@
       "peruste": "Taso nousee −66,7 → −37,2 dBFS (1,5 s ennen/jälkeen). aksentit.py: 61,39 s (z 5,4), 61,59 s (z 9,4, kontrasti 15,0 dB), 61,79 s (z 8,4, kontrasti 18,8 dB). interpret.py: voimistuu äkkiä 61,67 s (+31 dB/s), jouset tulevat sisään 62,0 s. Jaksoraja 62,21 s on teoksen vahvin (uutuus 25,4): viulut, jouset, sellot ja kontrabassot tulevat."
     },
     "askeleet_B": {
-      "t": null,
-      "varmuus": "arvio",
-      "luottamus": "ei",
-      "peruste": "Askel-kanavaa (matalan rekisterin alut, jotka eivät osu muun orkesterin alkuihin) ei ole rakennettu, joten kohtaa ei voi mitata. Tahtinumeroa ei lasketa äänestä. Ehdokkaat (ei perusteltu): 129,67–136,2 s: CREPE-bassolinjan H1-sävelet (midi 35) erillisinä lyhyinä iskuina epäsäännöllisin välein (129,67 / 130,12 / 130,93 / 131,63 / 133,44 / 135,32 / 136,18 s), jouset-kanava 0,10–0,13 ja vaskikanava alle 0,06; mutta melodia_muu-nuotit osuvat osin samoihin hetkiin (130,98 s, 131,65 s), joten asynkronisuutta ei todennettu. 124,6 s: jaksoraja (uutuus 18,4, teoksen 9. vahvin): vaskit poistuvat, sellot ja kontrabassot tulevat.",
+      "t": 129.67,
+      "varmuus": "vahvistettu",
+      "luottamus": "hyvä",
+      "peruste": "Käyttäjä 9.11.2026 (korva): bassojen askeleet 2:09 eteenpäin oikein; ne jatkuvat useissa paikoissa ja voivat olla vaikeita kuulla. CREPE-bassolinjan H1-sävelet erillisinä iskuina 129,67 / 130,12 / 130,93 / 131,63 / 133,44 / 135,32 / 136,18 s. Partituuri: B = t. 69, kontrabassot toistuvat kahdeksasosat poco a poco cresc. (s. 8).",
       "ehdokkaat": [
         {
           "t": 129.67,
@@ -338,6 +339,36 @@
       "luottamus": "hyvä",
       "peruste": "kohinaikkuna.py: viimeinen 100 ms RMS, joka ylittää huoneen kohinan + 10 dB, on kohdassa 1051,6 s; taso sen jälkeen −59…−97 dBFS (hiljenemishäntä); viimeinen ei-nolla-näyte 1057,9946 s; digitaalinen hiljaisuus 1057,995 s alkaen (20,0 s tiedoston loppuun). Aplodeja ei ole.",
       "t_loppu": 1057.995
+    },
+    "siemen_toistuu": {
+      "t": 20.5,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "kaaret.py: keskirekisterin harmoninen kerros (midi 62–76) palaa kohdassa 20,5 s samana kuin 8,9–12,3 s; aksentti 20,5 s (z 20); taso −39 → −28 dBFS."
+    },
+    "puhallinkuviot_alku": {
+      "t": 25.4,
+      "varmuus": "analyysi",
+      "luottamus": "kohtalainen",
+      "peruste": "kaaret.py: pitkä pidetty ääni As4 (gis1) alkaa 25,4 s ja kestää noin 42 s asti (CREPE: midi 68, 25,43–42,07 s); sen yllä korkean ja kirkkaan kaistan purskeet 27,3 / 28,4 / 29,5–32,0 / 32,5 / 35,1 s (aksentit z 7–13); puupuhallinkanava yli 0,5 kohdassa 26,4 s."
+    },
+    "puhallinkuviot_loppu": {
+      "t": 39.5,
+      "varmuus": "analyysi",
+      "luottamus": "kohtalainen",
+      "peruste": "kerroskartta: korkean kaistan purskeet lakkaavat noin 39,5 s; keskirekisterin pitkä ääni jatkuu; soitinluokat nollassa 39–44 s."
+    },
+    "patarumpu_paisuu": {
+      "t": 41.5,
+      "varmuus": "analyysi",
+      "luottamus": "kohtalainen",
+      "peruste": "kaaret.py: matalan kaistan osuus nousee 41–45 s (0,05 → 0,6), taso −40 → −37 dBFS; patarumpu_matala-kanava 0,2–0,3; partituuri: patarummut tremolo pp → mp ennen t. 21."
+    },
+    "fraasi_ennen_taukoa": {
+      "t": 54.4,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "kaaret.py: keskirekisterin kerros ja ylälinja 54,4–57,1 s; interpret.py: jouset tulevat sisään 54,7 s; äkillinen hiljeneminen 57,5 s."
     }
   }
 }

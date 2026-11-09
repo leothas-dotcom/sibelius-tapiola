@@ -39,6 +39,9 @@
     },
     "loppu_Hduuri": {
       "nimi": "H-duuri-loppu"
+    },
+    "puhallinkuviot": {
+      "nimi": "Puhaltimien pienet kuviot"
     }
   },
   "ankkurit": [
@@ -75,7 +78,7 @@
       "soittimet": [
         "jouset"
       ],
-      "tarina": "Lähteet: ydinmotiivi, itseensä kääntyvä kuvio, josta kaikki kasvaa (Salmenhaara, Europadisc). Ohjaaja: metsä, joka on jo siinä kun silmät avataan; ei alku vaan läsnäolo. Mikään ei vielä etene: motiivi toistuu ja pysyy (Hepokoski: harmoninen liikkumattomuus). Lähteet: Wilker: pääajatus asetetaan t. 13, ja koko teos on sen rönsyilyä.",
+      "tarina": "Lähteet: ydinmotiivi, itseensä kääntyvä kuvio, josta kaikki kasvaa (Salmenhaara, Europadisc). Ohjaaja: metsä, joka on jo siinä kun silmät avataan; ei alku vaan läsnäolo. Mikään ei vielä etene: motiivi toistuu ja pysyy (Hepokoski: harmoninen liikkumattomuus). Lähteet: Wilker: pääajatus asetetaan t. 13, ja koko teos on sen rönsyilyä. Käyttäjä 9.11.2026: \"alun melodia on ikäänkuin siemen, josta koko musiikki lähtee. Tämä edustaa tämän kappaleen minimalismia - jouset soittaa melodian\".",
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
       "etuala": "jouset edessä",
@@ -115,10 +118,10 @@
       "soittimet": [
         "puupuhaltimet"
       ],
-      "tarina": "Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: ensimmäinen asia, joka liikkuu metsässä.",
+      "tarina": "Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: ensimmäinen asia, joka liikkuu metsässä. Käyttäjä 9.11.2026: \"puhaltajat kukin vuorollaan tulee esiin ja tekevät pienet nousevat ja laskevat kuviot (ovatko mäkiä??) jotka tulevat ikäänkuin esiin sieltä metsän siimeksestä\".",
       "lahde": "käyttäjä, partituuri",
       "tarkista": true,
-      "etuala": "puupuhaltimet nousevat etualalle, jouset taakse",
+      "etuala": "puhaltimet kukin vuorollaan nousevat esiin metsän siimeksestä pienin nousevin ja laskevin kuvioin; jouset taakse",
       "tunnelma": "autius",
       "esitysmerkinta": "t. 1–9: huilut p < f, oboet ja klarinetit poco f; t. 10–20 poco f → p (s. 3–4)."
     },
@@ -133,7 +136,7 @@
       "tyyppi": "hetki",
       "soi": "oktatoninen \"tuulenpuuska\"",
       "soittimet": [],
-      "tarina": "Lähteet: Grimley: oktatoninen tuulenpuuska t. 21–25. Ohjaaja: ensimmäinen kerta, kun ilma liikkuu metsässä. Lähteet: Grimley: harhautettu kadenssi (E7), jonka oktatoninen puuska pyyhkäisee pois.",
+      "tarina": "Lähteet: Grimley: oktatoninen tuulenpuuska t. 21–25. Ohjaaja: ensimmäinen kerta, kun ilma liikkuu metsässä. Lähteet: Grimley: harhautettu kadenssi (E7), jonka oktatoninen puuska pyyhkäisee pois. Käyttäjä 9.11.2026: tuulenpuuska alkaa heti alun vaski-iskun jälkeen (vahvistettu korvalla).",
       "lahde": "kirjallisuus: Grimley [tarkista partituurista]",
       "tarkista": true,
       "etuala": "[tarkista partituurista]",
@@ -215,7 +218,7 @@
       "soittimet": [
         "matalat soittimet"
       ],
-      "tarina": "Käyttäjä: \"matalat äänet tulee eri tahtiin, vähän niin kuin askeleet ... onko ne Tapion jättiläisen askeleita\". Ohjaaja: askeleet kyllä, kävelijää ei. Jokin, jonka painon kuulee mutta jota ei näe. Kalevalan Tapio: halliparta, havuhattu, naavaturkki, mutta kuvituksissa lähes tyhjä aihe.",
+      "tarina": "Käyttäjä: \"matalat äänet tulee eri tahtiin, vähän niin kuin askeleet ... onko ne Tapion jättiläisen askeleita\". Ohjaaja: askeleet kyllä, kävelijää ei. Jokin, jonka painon kuulee mutta jota ei näe. Kalevalan Tapio: halliparta, havuhattu, naavaturkki, mutta kuvituksissa lähes tyhjä aihe. Käyttäjä 9.11.2026: \"bassojen jättiläisaskeleet on 2:09 eteenpäin oikein. Ne toki jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla.\"",
       "lahde": "käyttäjä, partituuri",
       "tarkista": false,
       "etuala": "sellot ja kontrabassot omassa ajassaan muun orkesterin alla",
@@ -834,6 +837,113 @@
       "etuala": "ei mitään",
       "tunnelma": "hiljaisuus, joka jäi",
       "esitysmerkinta": ""
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "id": "siemen_toistuu",
+      "nimi": "Siemen toisen kerran",
+      "tahti_suhde": "alku, t. 1–9",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "jousten melodia (siemen) toistuu; sama harmoninen kerros kuin ensimmäisellä kerralla",
+      "soittimet": [
+        "jouset"
+      ],
+      "lahde": "analyysi: rekisterikerrokset (kaaret.py); partituuri s. 3",
+      "tarina": "Ohjaaja: siemen sanotaan kahdesti, ennen kuin mikään kasvaa. Minimalismi (käyttäjä): sama asia uudestaan, ja juuri siksi se jää mieleen.",
+      "etuala": "jouset edessä, käyrätorvien pitkä ääni väistyy",
+      "tunnelma": "staattinen, synkkä",
+      "esitysmerkinta": "t. 1–9: jouset f, sitten poco f (s. 3)."
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "id": "puhallinkuviot_alku",
+      "nimi": "Puhaltimien pienet kuviot: alkaa",
+      "tahti_suhde": "t. 10–20",
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "puhallinkuviot",
+      "reuna": "alku",
+      "soi": "pitkä pidetty ääni keskirekisterissä; sen yllä puhaltimet tulevat vuorotellen esiin pienin nousevin ja laskevin kuvioin",
+      "soittimet": [
+        "huilut",
+        "oboet",
+        "klarinetit",
+        "käyrätorvet"
+      ],
+      "lahde": "käyttäjä 9.11.2026; analyysi: rekisterikerrokset; partituuri s. 4",
+      "tarina": "Käyttäjä: \"puhaltajat kukin vuorollaan tulee esiin ja tekevät pienet nousevat ja laskevat kuviot (ovatko mäkiä??) jotka tulevat ikäänkuin esiin sieltä metsän siimeksestä\". Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: metsä on jo siinä; nämä ovat ensimmäiset asiat, jotka liikkuvat sen sisällä. Kumpuja tai valon kaaria, jotka nousevat esiin ja painuvat takaisin.",
+      "etuala": "puhaltimien kuviot nousevat esiin yksi kerrallaan keskikerroksesta; pitkä ääni pohjana; jouset poissa",
+      "tunnelma": "autius, ensimmäinen liike",
+      "esitysmerkinta": "t. 10–20: huilut a 2 poco f → p; käyrätorvet dim., dim. molto; trumpetit pp → ppp (s. 4)."
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "id": "puhallinkuviot_loppu",
+      "nimi": "Puhaltimien pienet kuviot: päättyy",
+      "tahti_suhde": "t. 10–20",
+      "luokka": "jakso",
+      "tyyppi": "jakso",
+      "jakso": "puhallinkuviot",
+      "reuna": "loppu",
+      "soi": "kuviot lakkaavat; jäljelle jää pitkä ääni",
+      "soittimet": [
+        "käyrätorvet"
+      ],
+      "lahde": "analyysi: rekisterikerrokset",
+      "tarina": "Ohjaaja: liike lakkaa, metsä jää.",
+      "etuala": "pitkä ääni yksin",
+      "tunnelma": "odottava",
+      "esitysmerkinta": ""
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "id": "patarumpu_paisuu",
+      "nimi": "Patarumpujen paisutus ennen puuskaa",
+      "tahti_suhde": "t. 20, ennen Allegro moderatoa",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "patarumpujen hiljainen tremolo paisuu",
+      "soittimet": [
+        "patarummut"
+      ],
+      "lahde": "partituuri s. 4 (patarummut tremolo pp → mp, t. ~20); analyysi: matala kerros nousee",
+      "tarina": "Ohjaaja: maa alkaa väristä ennen kuin ilma liikkuu. Sama ääni, joka avasi teoksen, nyt varoituksena.",
+      "etuala": "pohja nousee esiin pitkän äänen alta",
+      "tunnelma": "varoitus",
+      "esitysmerkinta": "t. ~20: patarummut tremolo pp → mp (s. 4)."
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "id": "fraasi_ennen_taukoa",
+      "nimi": "Jousten fraasi ennen yleistaukoa",
+      "tahti_suhde": "t. 25 jälkeen",
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "puuskan jälkeen jouset sanovat lyhyen fraasin, ja kaikki katkeaa",
+      "soittimet": [
+        "jouset"
+      ],
+      "lahde": "analyysi: rekisterikerrokset, taso",
+      "tarina": "Ohjaaja: viimeinen lause ennen hiljaisuutta; se jää kesken.",
+      "etuala": "jouset edessä",
+      "tunnelma": "kesken jäävä",
+      "esitysmerkinta": "t. 25 jälkeen: poco f, aksentit (s. 5)."
     }
   ]
 }
