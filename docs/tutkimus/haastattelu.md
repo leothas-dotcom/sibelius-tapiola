@@ -730,3 +730,10 @@ Ohjaaja palautti edellisen version (suolta kaukaiseen metsään).
 > MAAILMAT ON USKOTTAVIA, ja sitten pudomme juonen kameralla kuinka kuljemme alkuideasta jokaiseen maailmaan. Niiden pitää
 > heijastaa sitä ideaa jollain tavalla
 
+## 10.11.2026: korjaus: metsä elää
+
+> Hei, miksi olet kirjoittanut "mikään metsän osa ... ei heilahda iskusta" . . enhän sitä tarkoittanut. Totta kai metsä
+> elää. Mutta ei ne puut voi pomppia kuten pomppupallot. Liioittelit. Nythän ne puut on sitten ihan staattisia. Ei se nyt
+> ollut idea. Niiden tulee vain käyttäytyä kuten..puut. Ei koomiset sarjakuva-kumihahmot. Tietysti niiden pitää liikkua
+> tuulen mukana! Eli reagoida musiikkiin
+

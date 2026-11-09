@@ -220,8 +220,13 @@ Käyttäjän sanat (koko palaute: `docs/tutkimus/haastattelu.md`):
 - Säilytetään: "valot on hyvät ja dramaattiset" ja "Lumisade toimii nyt hienosti".
 
 Säännöt, jotka näistä seuraavat:
-1. **Metsä on pysyvä.** Puu ei kasva, kutistu, pompi, heilahda iskusta eikä vaihda paikkaa äänen mukana. Maa ei pompi.
-   Ääni näkyy valona, usvana, lumena, tuulena ja siinä, mikä metsässä liikkuu (luku 2.2 ja 2.9), ei puiden koossa.
+1. **Puut käyttäytyvät kuin puut.** Metsä elää: puut huojuvat tuulessa, latvusto aaltoilee, oksat liikkuvat, lumi varisee.
+   Tuuli on musiikki: metsä reagoi jousten intensiteettiin, puuskiin ja iskuihin niin kuin metsä reagoi tuuleen (latvat
+   taipuvat ja palaavat, aalto kulkee massan yli). Kiellettyä on vain se, mikä ei ole puun käytöstä: kasvaminen ja
+   kutistuminen nuottien mukana, pomppiminen, hyppiminen, kumimainen venyminen ja paikan vaihto. Maa ei pompi.
+   Käyttäjä 10.11.2026 (korjaus ohjaajan liioitteluun "ei heilahda iskusta"): "Totta kai metsä elää. Mutta ei ne puut voi
+   pomppia kuten pomppupallot. ... Niiden tulee vain käyttäytyä kuten..puut. Ei koomiset sarjakuva-kumihahmot. Tietysti
+   niiden pitää liikkua tuulen mukana! Eli reagoida musiikkiin"
 2. **Metsä on laaja ja syvä, ei rivi.** Puita on jatkuvasti kaikilla etäisyyksillä. Syvyys tehdään usvalla ja valolla:
    jokainen etäisyys on edellistä himmeämpi, ja kaukaisimmat puut erottuvat juuri ja juuri.
 3. **Kamera kulkee eteenpäin koko ajan** (luvut 2.3 ja 5). Puut tulevat usvasta, suurenevat lähestyessä ja jäävät ohi.

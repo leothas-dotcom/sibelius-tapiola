@@ -28,8 +28,13 @@ ei kuvio ruudulla.
 
 ## Mikä on mennyt pieleen (älä toista)
 
-1. **Pomppivat puut.** Mikään metsän osa (puu, maa, horisontti) ei kasva, kutistu, pompi, heilahda iskusta eikä vaihda
-   paikkaa äänen mukana. Käyttäjä: "EN halua mitään helvetin puita siihen pomppimaan."
+1. **Pomppivat puut, tai liikkumaton metsä.** Puut käyttäytyvät kuin puut: ne **huojuvat tuulessa**, latvusto aaltoilee,
+   oksat liikkuvat, lumi varisee, ja tuuli on musiikki (jousten intensiteetti, puuskat, iskut, myrsky). Kiellettyä on se,
+   mikä ei ole puun käytöstä: kasvaminen ja kutistuminen nuottien mukana, pomppiminen, hyppiminen, kumimainen venyminen,
+   paikan vaihto. Maa ja horisontti eivät pompi. Käyttäjä: "EN halua mitään helvetin puita siihen pomppimaan." ja
+   (korjaus 10.11.2026) "Totta kai metsä elää. Mutta ei ne puut voi pomppia kuten pomppupallot. ... Niiden tulee vain
+   käyttäytyä kuten..puut. Ei koomiset sarjakuva-kumihahmot. Tietysti niiden pitää liikkua tuulen mukana! Eli reagoida
+   musiikkiin". Staattinen metsä on yhtä suuri virhe kuin pomppiva.
 2. **Metsä rivinä tai kuutena puuna.** Käyttäjä: "EI METSÄ tarkoita sitä että piirrä 6 puuta=metsä. Se on tylsä." ja
    "METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ JOKAISEN PUUN ERIKSEEN". Metsä on massa, jonka muodon tekevät **valo ja
    varjo**: "pidän erityisesti siitä miten valo osuu puun latvoihin, siivilöityy tuolta oksien välistä". Taidehistoria
