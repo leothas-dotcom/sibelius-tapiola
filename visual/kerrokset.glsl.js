@@ -19,6 +19,7 @@ out vec4 outColor;
 uniform vec2 uRes;
 uniform float uAA, uTime, uZoom, uMist, uDark, uStack, uDrift, uSway, uTrunk, uFrost, uReflect, uCrown;
 uniform vec2 uPan, uSnowT;   // uSnowT: lumen kulkema matka (tuulen ja putoamisen integraali)
+uniform float uReach;       // lopun kajo: kuinka lähelle valo on ehtinyt vaarojen yli (0 kaukana .. 1 lähellä)
 uniform float uPivot;       // lähestymisen kiintopiste: sävelen fis korkeus kuvassa
 uniform float uTaso;        // äänen voima 0..1: valon määrä koko kuvassa
 uniform vec4 uVeil;        // kulku jonkin läpi: verhon väri ja peittävyys (lumi, usva, pimeä, huurre)
@@ -55,7 +56,7 @@ float spruce(vec2 p, float x0, float gy, float top, float w, float soft, float s
   float vv = clamp(v, 0.0, 1.0);
   float s1 = fract(seed * 7.31), s2 = fract(seed * 3.17 + 0.4), s3 = fract(seed * 11.9 + 0.7);
   float wind = uBand.z;
-  float bend = sway * pow(vv, 1.3) * (sin(uTime * (1.9 + 1.3 * s1) + seed * 6.283) + (0.5 + 0.5 * min(wind, 1.6)) * sin(uTime * (4.1 + s2) + seed * 11.0))
+  float bend = min(sway, 0.14 * h) * pow(vv, 1.3) * (sin(uTime * (1.9 + 1.3 * s1) + seed * 6.283) + (0.5 + 0.5 * min(wind, 1.6)) * sin(uTime * (4.1 + s2) + seed * 11.0))
              - wind * 0.006 * vv * vv * min(h / 0.3, 1.5) + (s2 - 0.5) * 0.10 * w * vv * vv;
   float dx = p.x - x0 - bend + shim * 0.0016 * sin(uTime * 34.0 + p.y * 260.0 + seed * 9.0);
   float cb = mix(0.08 + 0.10 * s3, 0.97, crownHi);      // ikisalo: lähimpien puiden oksisto on kuvan yläpuolella
@@ -82,7 +83,7 @@ float groundLine(float x) {
     if (pu.z <= 0.0) continue;
     float d = abs(x - pu.x);
     float front = pu.y * 1.4;
-    g += pu.z * 0.07 * exp(-pu.y * 2.2) * exp(-pow((d - front) / 0.10, 2.0)) + pu.z * 0.045 * exp(-pu.y * 6.0) * exp(-d * d / 0.03);
+    g += pu.z * 0.15 * exp(-pu.y * 2.2) * exp(-pow((d - front) / 0.07, 2.0)) + pu.z * 0.06 * exp(-pu.y * 6.0) * exp(-d * d / 0.03);
   }
   return g;
 }
@@ -108,7 +109,7 @@ float snowSlab(vec2 p, float depth, float seed, float dens) {
   if (wn > 1.2) {
     vec2 q = vec2(p.x + uSnowT.x * sp * 0.22, p.y + p.x * 0.12 * wn);
     float ln = vnoise(vec2(q.x * sc * 0.05, q.y * sc * mix(0.5, 1.6, depth) + seed * 9.0));      // lähellä paksu ja harva, kaukana ohut ja tiheä
-    fl += (wn - 1.2) * 0.32 * clamp(dens * 2.5, 0.0, 1.0) * smoothstep(mix(0.90, 0.78, depth) - 0.2 * uSnow.x * dens, 0.99, ln);
+    fl += (wn - 1.2) * 0.32 * clamp(dens * 2.5, 0.0, 1.0) * smoothstep(0.2, 0.6, depth) * smoothstep(mix(0.90, 0.78, depth) - 0.2 * uSnow.x * dens, 0.99, ln);
   }
   return fl;
 }
@@ -217,9 +218,9 @@ vec3 scene(vec2 p) {
     float zk = min(pow(uZoom, 1.0 + 2.6 * fl * fl), zc);
     vec2 pk = c0 + (p - c0) / zk;
     pk.x += uDrift * (0.12 + 1.2 * fl * fl);
-    float base = groundLine(pk.x) + uStack * (1.0 - fl) - 0.012 * fl + uStack * 0.10 * (regFor(fl) - 0.4)
+    float base = groundLine(pk.x) + uStack * (1.0 - fl) - 0.012 * fl + uStack * 0.30 * (regFor(fl) - 0.4)
                + uStack * 0.16 * (vnoise(vec2(pk.x * (0.9 + 1.2 * (1.0 - fl)) + float(L) * 13.0, float(L))) - 0.5) * (0.5 + 0.5 * fl);
-    float cells = mix(36.0, 4.2, pow(fl, 1.25)) * uForest.y;
+    float cells = mix(36.0, 4.2, pow(fl, 1.25)) * 0.8;
     float x = pk.x * cells + fl * 7.3;
     float ii = floor(x);
     float a = 0.0;
@@ -227,11 +228,13 @@ vec3 scene(vec2 p) {
     for (int k = -1; k <= 1; k++) {
       float ci = ii + float(k);
       float hh = hash(vec2(ci, 4.0 + fl * 9.0));
-      if (hh < 0.22 * fl + 0.10 + 0.8 * uStack) continue;                                  // aukkoja: ei tasavälistä riviä
+      float th = 0.22 * fl + 0.10 + 0.8 * uStack + 0.6 * clamp(1.0 - uForest.y, 0.0, 1.0);
+      float on = smoothstep(th, th + 0.12, hh);
+      if (on <= 0.0) continue;                                  // aukkoja: ei tasavälistä riviä
       float tx = (ci + 0.5 + 0.5 * (hash(vec2(ci, 9.0 + fl)) - 0.5) - fl * 7.3) / cells;
-      float H = H0 * (0.35 + 0.95 * hh * hh);                               // eri-ikäisiä puita, ei samankokoisia
+      float H = H0 * (0.35 + 0.95 * hh * hh) * on;                               // eri-ikäisiä puita, ei samankokoisia
       float runko = uCrown * step(0.9, fl);                                 // vain lähin kerros on pelkkiä runkoja; muu on metsää
-      if (runko > 0.25) H = max(H, 1.6);                                    // pelkkä runko jatkuu aina kuvan yli
+      if (runko > 0.25) H = max(H, 1.6); else H = min(H, 0.62 / zk);                                    // pelkkä runko jatkuu aina kuvan yli
       a = max(a, spruce(pk, tx, base, base + H, H * (0.15 + 0.07 * hh), mix(0.003, 0.0012, fl), hh * 7.0 + ci * 0.37 + fl, min(uSway * (0.4 + 0.9 * fl) * (min(H, 0.6) / 0.25), 0.035 + 0.02 * fl), 0.0, runko));
     }
     vec3 tone = mix(mix(uTreeFar, uMistCol * 0.5, 0.45), uTreeNear, pow(fl, 0.8));
@@ -239,12 +242,12 @@ vec3 scene(vec2 p) {
     tone += uSunCol * uSun.z * 0.16 * (1.0 - 0.6 * fl) * exp(-pow((pk.x - uSun.x) / 1.1, 2.0));
     float rime = 0.45 + 0.55 * vnoise(pk * vec2(30.0, 110.0)) ;
     tone = mix(tone, mix(uTreeFar * 1.9 + uSnowCol * 0.22, uTreeFar * 1.2 + uSnowCol * 0.05, fl) * (0.6 + 0.4 * rime), uFrost * mix(0.7, 0.4, fl));
+    col = mix(col, tone, a * uBand.y);
     if (uStack > 0.01) {
       float fill = smoothstep(0.004, -0.004, pk.y - base - H0 * 0.18);
-      vec3 ft = mix(tone, uMistCol * 0.75 + uWarmCol * uGlow.z * 0.25 * (1.0 - fl), clamp((base - pk.y) / (uStack * 0.30 + 0.02), 0.0, 1.0) * (0.9 - 0.5 * fl));
+      vec3 ft = mix(tone, uMistCol * 0.75 + uWarmCol * uGlow.z * (0.10 * (1.0 - fl) + 0.45 * smoothstep(fl, fl + 0.3, uReach * 1.3)), clamp((base - pk.y) / (uStack * 0.30 + 0.02), 0.0, 1.0) * (0.9 - 0.5 * fl));
       col = mix(col, ft, fill * vis * clamp(uStack * 6.0, 0.0, 1.0));
     }
-    col = mix(col, tone, a * uBand.y);
     col += uSnowCol * uSnow.w * mix(0.50, 0.14, fl) * snowSlab(pk, 0.8 - 0.65 * fl, 6.0 + float(L), mix(0.9, 0.15, fl));
     if (uFrost > 0.0 && a > 0.5) {                                        // huurteen kiteet välkkyvät
       vec2 gq = floor(pk * 150.0); float hs = hash(gq); vec2 gf = fract(pk * 150.0) - 0.5;
@@ -258,12 +261,12 @@ vec3 scene(vec2 p) {
   pg.x += uDrift * 1.4;
   float gl = groundLine(pg.x);
   float ga = smoothstep(0.003, -0.003, pg.y - gl);
-  float dep = (gl - pg.y);
-  vec3 gcol = uGroundCol * (0.5 + 0.3 * vnoise(vec2(pg.x * 5.0, pg.y * 30.0)));
-  gcol += uSnowCol * uGround.w * (0.10 + 0.90 * exp(-dep / 0.045)) * (0.7 + 0.3 * vnoise(vec2(pg.x * 7.0, pg.y * 45.0)));
+  float dep = max(gl - pg.y, 0.0);
+  vec3 gcol = mix(uSkyLow * 0.8 + uSnowCol * 0.10, uGroundCol * 0.22, clamp(dep / 0.10, 0.0, 1.0)) * (0.8 + 0.3 * vnoise(vec2(pg.x * 5.0, pg.y * 30.0)));
+  gcol += uSnowCol * uGround.w * (1.3 * exp(-dep / 0.006) + 0.45 * exp(-dep / 0.03) * (0.55 + 0.45 * smoothstep(0.3, 0.7, vnoise(vec2(pg.x * 3.0 + dep * 10.0, dep * 60.0)))));
   gcol += uLightCol * uGround.z * 0.22 * exp(-dep / 0.035);
   for (int i = 0; i < 4; i++) { vec4 pu = uPulse[i]; if (pu.z <= 0.0) continue; float dd = abs(pg.x - pu.x) - pu.y * 1.4;
-    gcol += uLightCol * pu.z * 0.55 * exp(-pu.y * 1.8) * exp(-dd * dd / 0.02) * exp(-dep / 0.05); }
+    gcol += uLightCol * pu.z * 1.6 * exp(-pu.y * 1.8) * exp(-dd * dd / 0.02) * exp(-dep / 0.08); }
   col = mix(col, gcol, ga * (1.0 - uStack * 2.0 > 0.0 ? 1.0 : 0.0));
 
   // lumi lähellä: vain muutama suuri, pehmeä hiutale aivan katsojan edessä

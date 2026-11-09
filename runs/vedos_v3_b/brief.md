@@ -111,3 +111,26 @@ Tieto, jota ruuduista ei näe:
 - Puhaltimen pitkä ääni on usvainen harju (pehmeä hohde ilman terävää viivaa); terävä valoviiva on vain teoksen pitkä ääni.
 
 Pidä raportti tiiviinä: K1- ja K2-taulukoissa riittää rivi niistä kohdista, jotka eivät toteudu tai toteutuvat osin.
+
+## Kuudes kierros
+
+Viidennen kierroksen raportti on `palaute_k5.md`. Kuva on korjattu ja renderöity uudestaan; ruudut ovat uudet. Tee kuten
+viidennellä kierroksella, lähtölistana `palaute_k5.md`, ja pidä raportti yhtä tiiviinä. Sama kolmijako lopuksi.
+
+Tieto, jota ruuduista ei näe:
+- Basson askeleet ja sykkeet ovat nyt maan sysäyksiä: maan pinta kohoaa ja valo kulkee siinä aaltona poispäin.
+- Metsän reunan korkeus ja kuvan valo seuraavat äänen tasoa noin sekunnin liu'ulla, eivät iskun ruudussa.
+- Ikisalossa (8:08–11:26) kuva kulkee runkojen ohi; hitaissa ja hiljaisissa jaksoissa se hidastuu ja etääntyy.
+- H-duurin lopussa valo etenee vaarojen yli kaukaa lähelle ja vetäytyy musiikin loputtua.
+
+## Seitsemäs kierros
+
+Kuudennen kierroksen raportti on `palaute_k6.md`. Kuva on korjattu ja renderöity uudestaan; ruudut ovat uudet. Tee kuten
+kuudennella kierroksella, lähtölistana `palaute_k6.md`, yhtä tiiviisti. Sama kolmijako lopuksi.
+
+Tieto, jota ruuduista ei näe:
+- Maa on nyt yölumen pinta: kirkas ohut reuna ja alaspäin tummuva hanki. Basson askel nostaa pinnan aalloksi ja
+  valaisee sen.
+- Metsän tiheys muuttuu niin, että puut kasvavat ja kutistuvat paikallaan. Aiemmin tiheyden muutos siirsi puita
+  sivusuunnassa, mikä näytti puurivin vaihtumiselta.
+- Ruudukon ruudut ovat pieniä: hieno lumi ja pienet pilkahdukset eivät erotu niistä. Sano silloin "en erota", älä "ei ole".

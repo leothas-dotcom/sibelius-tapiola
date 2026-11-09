@@ -1,0 +1,51 @@
+{
+  "nimi": "vedos_v3",
+  "pvm": "2026-11-09",
+  "mika": "Kolmas vedos: koko teos kerrosmaisemana (tyyliohje 4c), kuva lasketaan äänestä ruutu ruudulta. Seitsemän koko renderiä ja seitsemän kriitikkokierrosta.",
+  "pyynto": "Käyttäjän palaute koepätkästä 9.11.2026 (palautelista rivi 36, docs/tutkimus/haastattelu.md): ei staattista metsää, ei nykivää viivaa, lumi syvyydessä, alku metsän ideana, kuunteluoppaan kaikki asiat näkyviin, kriitikko etsii virheet.",
+  "tekija": "ohjaaja (pääistunto); kriitikot Sonnet-aliagentteja kolmessa osassa (runs/vedos_v3_a|b|c)",
+  "kohtaus": "visual/index.html (visual/kohtaus.js, visual/kerrokset.glsl.js)",
+  "levytys": "rattle_lso_2022 (työäänitys: ei videoon, ei gittiin; tiedostot vain käyttäjän omaan katseluun)",
+  "komento": "node render/render.mjs --data build/rattle_koko --page \"visual/index.html?aa=1\" --workers 2 --chunk 40 --audio build/kuuntelu/rattle_kuuntelu.wav --out runs/vedos_v3/koko.mp4",
+  "tulos": {
+    "tiedosto": "runs/vedos_v3/koko.mp4",
+    "kesto_s": 1078.0,
+    "ruutuja": 32340,
+    "katselukopio": "runs/vedos_v3/tapiola_vedos3_720p.mp4"
+  },
+  "mitattu": {
+    "aani_totuutta_vasten": "0,00 ms kaikissa mittauspisteissä (analysis/kellot.py), jokaisessa seitsemässä renderissä",
+    "basson_askeleet": "matalan kaistan tason nousut: 9:40-9:57 antaa 14 sykettä, sama kuin kuunteluoppaassa"
+  },
+  "kriitikkokierrokset": {
+    "1": "A 21, B 17, C 15 virhettä",
+    "2-3": "korjauksia; jokaisessa osassa kolme estävää",
+    "4": "estävät: A maa puuttuu, puut läpikuultavia, viiva ei seuraa säveltä; B tutti-isku 10:21 ei näy; C ehdollisesti salaman ajoitus ja kulku 9",
+    "5": "ei estäviä (A, B, C)",
+    "6": "ei estäviä (A, B, C)",
+    "7": "ei estäviä (A, B, C); haittaavien lista vakiintunut"
+  },
+  "ei_korjattu": [
+    "17:12-17:56 sama kuva 44 s (H-duurin nimetty pysähdys) ja 16:00-16:56 samat vaarakerrokset",
+    "8:08-11:26 ikisalon sommitelma (rungot, viiva, kuusirivi) säilyy samantyyppisenä 3 min 18 s, vaikka rungot liikkuvat",
+    "nousut ja laskut eivät näy viivassa (2:56-3:18, 6:36-6:58, 15:35-15:45); viiva on teoksen pitkä ääni eikä seuraa melodiaa",
+    "kukkuloita on enemmän kuin kuunteluoppaassa paisutusrivejä",
+    "2:30-2:56 ja 0:26-0:41 samaa kuusikkoa; 5:34-5:58 peilikaista lukee järveksi",
+    "P (13:26) ei lue pystyleikkauksena; kulku 13:53-14:04 tumma; lumi 14:17 muutaman sekunnin myöhässä",
+    "hieno lumi ja maan sysäykset eivät erotu kriitikon pienistä ruuduista; täysikokoisesta kuvasta ne on todettu vain kohdasta 9:42"
+  ],
+  "kayttajan_ratkaistavat": [
+    "ikisalon mustat suorareunaiset rungot",
+    "puhdas punainen 11:22 ja M:n vaalea taivas",
+    "lopun vaarat ja niiden puurivit",
+    "kuusen oksien muoto lähikuvissa",
+    "H-duurin pysähdys vai liike",
+    "kajon kermanvalkoinen sävy"
+  ],
+  "ei_tehty": [
+    "käyttäjä ei ole nähnyt tätä renderiä",
+    "master 2160p",
+    "WhatsApp-versio",
+    "camcheck ja muut mittarit kerrosmaisemalle"
+  ]
+}

@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.5, 9.11.2026 (v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 1.6, 9.11.2026 (v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -168,6 +168,19 @@ soi, ei jää näkymättä. Kuva lasketaan äänestä ruutu ruudulta (nuotit, pi
 | **Vaskien isku** | **Pystysuora leikkaus** kaikkien kerrosten läpi. | Kuvan ainoa pystysuora valo. Lähimmät puut jäävät sen eteen siluetteina. |
 | **Hiljaisuus, tuuli, myrsky** | **Lumi kerrosten välissä:** kaukana pientä ja hidasta, lähellä suurta ja nopeaa. | Lumi ei ole koskaan maski kuvan päällä: lähempi kerros peittää kauemman lumen. |
 | **Sävellajin väri** | C-duuri punainen (taottu aurinko), H-duuri kajo. | Luku 3. |
+
+**Tarkennukset (v1.6, ohjaajan valintoja kriitikkokierrosten perusteella):**
+- **Viivan korkeus kuvassa on sävelkorkeus, ei mitään muuta.** Lähestymisen kiintopiste on viivan sävelen korkeus, joten
+  lähestyminen ja maan korkeus eivät siirrä viivaa. Kun sävel vaihtuu, viiva liukuu uuteen korkeuteen.
+- **Maa on kuvassa aina.** Lähestyminen ei vie maata kuvan alle: lähimpien kerrosten suurennos on rajattu.
+- **Basson askel on maan sysäys:** pinta kohoaa ja valo kulkee siinä aaltona poispäin. Askeleet luetaan matalan
+  rekisterin tason nousuista.
+- **Pystysuora leikkaus tulee vain nimetyissä iskuissa** (kuunteluoppaan ja käsikirjoituksen iskut). Muut aksentit ovat
+  maan sysäyksiä ja metsän heilahduksia.
+- **Mikään kerros ei ole läpikuultava.** Kerros tai kuusiryhmä, joka on tulossa tai väistymässä, on matalampi, ei
+  haaleampi.
+- **Metsän korkeus ja kuvan valo seuraavat äänen tasoa noin sekunnin liu'ulla.** Metsä ei vaihdu iskun ruudussa.
+- **Huojunta on suhteessa puun korkeuteen**, ja tuuli lisää sen laajuutta, ei taajuutta.
 
 **Alku on metsän idea.** Ensin on vain tumma ilma ja maa. Patarumpu sysää maata. Jousten siemen kasvattaa ensimmäisen
 kuusikon horisontin viivan eteen; kun jouset lakkaavat, kuusikko väistyy ja viiva jää; puhaltajat nousevat viivasta
