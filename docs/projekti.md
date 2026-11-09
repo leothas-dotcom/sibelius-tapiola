@@ -23,9 +23,9 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.3 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12; omat ristiriidat korjattu 9.11.2026); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
 | 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1.1 (tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä 9.11.2026; auki: sana kajo, loppukuva, puuttuva data |
-| 8 | Tekniikka ja mittarit | ⬜ |
+| 8 | Tekniikka ja mittarit | 🔶 tekniikka valittu vedosta varten (yksi säteenseurantavarjostin, WebGL2, ei uusia riippuvuuksia); `seek(t)` toistettava ja camcheck mitattu; muut mittarit puuttuvat |
 | 9 | Perusta, sitten osat | ⬜ |
-| 10 | Luonnokset ennen renderiä | ⬜ |
+| 10 | Luonnokset ennen renderiä | 🔶 vedos 1: 16 stilliä kahdeksasta maailmasta (`runs/vedos_v1/`), **odottaa käyttäjän katsomista**; ääni ei vielä ohjaa kuvaa |
 | 11 | Kriitikko | ⬜ |
 | 12 | Koko renderi ketjuna ja master | ⬜ |
 
@@ -177,8 +177,12 @@ Tarkistuslista:
 Tekniikka valitaan tyyliohjeen mukaan, ei etukäteen.
 
 Tarkistuslista:
-- [ ] Tekniikkavalinta perusteltu tyyliohjeesta `docs/tekniikka.md`:ssä.
-- [ ] Kohtausrajapinta: `seek(t)` puhdas aikafunktio; ei tilaa ruutujen välillä, ei ajastimia, ei
+- [x] Tekniikkavalinta (ei omaa dokumenttia): tyyliohjeen luku 11 vaatii jatkuvan tilan, jossa kamera ajaa kerrosten läpi,
+  syvyyssumun ja valon kerroksittain, kaiken koodilla ja `seek(t)`:n ilman tilaa. Valittu yksi säteenseurantavarjostin
+  (WebGL2, `visual/metsa.glsl.js`): metsä on paikan funktio, joten se jatkuu loputtomiin eteenpäin, ja maailmat ovat saman
+  funktion parametreja (`visual/kohtaus.js`). Ei uusia riippuvuuksia. Valinta koskee vedosta ja vahvistetaan, kun käyttäjä
+  on nähnyt sen.
+- [x] (mitattu 9.11.2026: kaksi ottoa eri järjestyksessä, sama sha256) Kohtausrajapinta: `seek(t)` puhdas aikafunktio; ei tilaa ruutujen välillä, ei ajastimia, ei
   siemenetöntä satunnaisuutta. Testi, joka renderöi saman ruudun kahdesti eri järjestyksessä ja vertaa.
 - [ ] Ruudut putkeen ffmpegille, eksplisiittinen `-t`, osat tuoreella selaimella, keskeytynyt ajo jatkuu.
 - [ ] Mittarit rakennettu ja testattu ennen ensimmäistä kohtausta: camcheck (≤ 20 °/s, ei pyörimistä),
@@ -283,12 +287,29 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 30 | 9.11. | – | "C duuri voi olla punainen, sopii sibeliukseen." | ✅ todennettu | punainen kirjattu päätökseksi: tyyliohje luku 3 ja säännöt 15–16, käsikirjoitus luvut 3 ja 8, `kriitikko_kohdat.json`; messinki merkitty hylätyksi vaihtoehdoksi |
 | 31 | 9.11. | – | "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä." | ✅ todennettu | käyttäjä myöhemmin 9.11.: "tämä oli virhe minun osaltani" (sävellajit ristissä); luettu: D-duuri on h-mollin rinnakkaisduuri, joten sen välähdykset ovat synkkiä ja hämäriä, eivät keltaisia (tyyliohje luku 3, käsikirjoitus luvut 3 ja 8). Lopun H-duuri pysyy hellänä; toista luentaa ei viety tekstiin |
 | 32 | 9.11. | – | "Aja tarkistus" | ✅ todennettu | tuore Sonnet-lukija, brief tiedostona; raportti `runs/kk_tarkistus_v1/kriitikko.md` (9 rikkomusta, 5 ristiriitaa, 5 aukkoa, 8 huomiota, 12 tyyliohjeen omaa ristiriitaa); ohjaajan todennus löydös löydökseltä `runs/kk_tarkistus_v1/tarkistus.md`; käsikirjoitus v1.1 ja tyyliohje v1.3; mitattu `check_package.py --cues-only`: kaikki kunnossa, seitsemän kulkua vähintään 4 s |
+| 33 | 9.11. | – | "Hyvä. Tee vedokset kohtauksista" | 🔶 tehty, ei katsottu | vedos 1: 16 stilliä (otot 2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58), kontaktiarkki `runs/vedos_v1/stills/arkki.png`; mitattu: toistettavuus ja camcheck (0,8 °/s); kolme pahinta ongelmaa ja tekemättömät `runs/vedos_v1/run.json` |
 
 ---
 
 # 3. Opit
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
+
+## 9.11.2026 – Vedos 1: maailmat stilleinä
+
+- **Mitä tehtiin:** käyttäjä pyysi vedokset kohtauksista. Tehtiin tekniikkavalinta, yhteinen runko ja 16 stilliä, ei videota.
+  Ottojen ajat tulevat käsikirjoituksen otsikoista ja ohjaustiedostosta (`render.mjs --otot`), ei komentoriviltä.
+- **Mikä toimi:** metsä paikan funktiona. Kahdeksan maailmaa syntyy samasta puusta ja samasta sumusta eri luvuilla, ja syvyys
+  tulee sumusta: lähellä musta siluetti, kaukana sininen. Valo kannattaa pitää takana ja pinnat lähes valaisematta, koska
+  suora valo paljastaa sileän pinnan.
+- **Mikä ei toiminut ensin:** kartiokuuset näyttivät muovilta, kunnes oksakerrokset saivat riipunnan ja oksiston alaraja nousi
+  silmän yläpuolelle. Valon leikkaus oli valkoinen seinä, koska gamma nostaa heikonkin tilavuusvalon näkyviin: voimakkuus
+  pitää keskittää terään. Lumi oli ruudukossa. Tiheys 0 jätti silti puita aukealle (vertailu oli väärin päin).
+- **Kolme pahinta ongelmaa** (`runs/vedos_v1/run.json`): puut läheltä liian sileitä; aukea, myrsky ja loppu latteita; jääkatto,
+  ikisalo ja säikeet keskeneräisiä.
+- **Ei tehty:** ääni ei ohjaa mitään, kulkuja ei ole suunniteltu, mittareista on vain camcheck, kriitikko ei ole katsonut.
+- **Työkaluvirhe:** Bash-heredoc syö kenoviivat, joten säännöllinen lauseke rikkoutui kahdesti. Kenoviivoja sisältävä koodi
+  kirjoitetaan tiedostotyökalulla.
 
 ## 9.11.2026 – Kuvakäsikirjoitus: ensin kaari, sitten otot, ja kaikki mitattavaksi
 

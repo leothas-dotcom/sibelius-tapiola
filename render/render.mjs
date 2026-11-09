@@ -2,6 +2,8 @@
 //   node render/render.mjs --data build/testi60 --out runs/<ajo>/renders/video.mp4
 //        [--start 0] [--end 60] [--workers 3] [--fade-out 3.5] [--chunk 40] [--audio <wav>]
 //   node render/render.mjs --data build/testi60 --stills 5,40,59 [--debug 1] [--dir output/stills]
+//   node render/render.mjs --otot 3,7,37:0.8 --dir runs/<ajo>/stills   stillit ottonumeron mukaan (kuvakäsikirjoitus);
+//        luku kaksoispisteen jälkeen on kohta oton sisällä (0 alku, 1 loppu, oletus 0.5). Ajat tulevat ankkureista.
 //   --page visual/<kohtaus>/index.html valitsee kohtauksen (oletus visual/index.html; visual/ kirjoitetaan vaiheessa 8)
 //   Ääniraita on oletuksena kuuntelukopio build/kuuntelu/tapiola_kuuntelu.wav (aikojen totuus, CLAUDE.md).
 // Ruudut jaetaan noin --chunk sekunnin osiin, ja työläiset ottavat osia jonosta (kohtaus on puhdas
@@ -13,7 +15,7 @@
 import puppeteer from 'puppeteer';
 import { spawn } from 'node:child_process';
 import { once } from 'node:events';
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, writeFile, rm, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { startServer, ROOT } from './serve.mjs';
@@ -31,6 +33,7 @@ function parseArgs() {
     const key = v[i].replace(/^--/, '');
     const val = v[i + 1];
     if (key === 'stills') a.stills = val.split(',').map(Number);
+    else if (key === 'otot') a.otot = val;
     else if (['start', 'end', 'quality', 'workers', 'fade-out', 'chunk'].includes(key)) a[key] = Number(val);
     else a[key] = val;
   }
@@ -119,13 +122,30 @@ const pageUrl = a.page.replace(/\\/g, '/');   // --page voi sisältää kyselyn 
 const url = `${server.url}/${pageUrl}${pageUrl.includes('?') ? '&' : '?'}data=${encodeURIComponent(a.data)}&mode=render&debug=${a.debug}`;
 
 try {
+  if (a.otot) {
+    // Otot kuvakäsikirjoituksesta, ajat ohjaustiedostosta: ei sekunteja komentorivillä.
+    const kk = await readFile(path.resolve(ROOT, 'docs/kuvakasikirjoitus.md'), 'utf8');
+    const cues = JSON.parse(await readFile(path.resolve(ROOT, 'annotations/cues.json'), 'utf8'));
+    const aika = Object.fromEntries(cues.cues.map((c) => [c.id, c.t]));
+    aika.tiedoston_alku = 0;
+    aika.tiedoston_loppu = cues.recording.kesto_s;
+    const otot = new Map([...kk.matchAll(/^#### (\d+) [^\n]*?`([^`\n]+)` → `([^`\n]+)`/gm)].map((x) => [Number(x[1]), [x[2], x[3]]]));
+    a.stills = a.otot.split(',').map((v) => {
+      const [n, k] = v.split(':').map(Number);
+      const o = otot.get(n);
+      if (!o || aika[o[0]] == null || aika[o[1]] == null) throw new Error(`otto ${n} tai sen ankkuri puuttuu`);
+      const kohta = Number.isFinite(k) ? k : 0.5;
+      return { t: aika[o[0]] + kohta * (aika[o[1]] - aika[o[0]]), nimi: `otto${String(n).padStart(2, '0')}_${o[0]}` };
+    });
+  }
   if (a.stills) {
     const page = await openPage(browsers[0], url);
     const dir = path.resolve(ROOT, a.dir);
     await mkdir(dir, { recursive: true });
-    for (const t of a.stills) {
+    for (const st of a.stills) {
+      const t = typeof st === 'number' ? st : st.t;
       await page.evaluate((x) => window.seek(x), t);
-      const file = path.join(dir, `t${t.toFixed(1).padStart(5, '0')}.png`);
+      const file = path.join(dir, typeof st === 'number' ? `t${t.toFixed(1).padStart(5, '0')}.png` : `${st.nimi}.png`);
       await page.screenshot({ path: file, type: 'png', clip: CLIP });
       console.log('still:', file);
     }

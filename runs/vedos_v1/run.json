@@ -1,0 +1,35 @@
+{
+  "nimi": "vedos_v1",
+  "pvm": "2026-11-09",
+  "mika": "Ensimmäiset vedokset: kahdeksan maailmaa, valo ja väri stilleinä. Ei videota.",
+  "pyynto": "Käyttäjä 9.11.2026: \"Hyvä. Tee vedokset kohtauksista\"",
+  "tekija": "ohjaaja (pääistunto); ei aliagentteja",
+  "lahtotila": "60c65ba",
+  "kohtaus": "visual/index.html (visual/kohtaus.js, visual/metsa.glsl.js)",
+  "levytys": "rattle_lso_2022",
+  "komento": "node render/render.mjs --data build/rattle_koko --otot 2:0.6,4:0.9,7:0.15,9,16:0.2,19:0.3,22,30,37,39:0.2,47:0.7,49:0.3,50:0.9,54:0.2,56:0.8,58:0.8 --dir runs/vedos_v1/stills",
+  "stillit": {
+    "kansio": "runs/vedos_v1/stills (ei gitissä)",
+    "koko": "1920x1080 PNG, 2x2 ylinäytteistys",
+    "otot": [2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58],
+    "kontaktiarkki": "runs/vedos_v1/stills/arkki.png"
+  },
+  "mitattu": {
+    "toistettavuus": "otot 4 ja 37 piirretty kahdesti eri järjestyksessä: tiedostojen sha256 sama",
+    "camcheck": "koko kesto joka kolmas ruutu: kääntö enintään 0,8 astetta/s (raja 20), ei pyörimistä; siirto enintään 3,3 m/s",
+    "ankkurit": "kohtaus kaatuu, jos aikajanan ankkuri puuttuu ohjaustiedostosta; koodissa ei ole sekunteja"
+  },
+  "ei_tehty": [
+    "ääni ei ohjaa mitään: ruutukanavia, iskuja ja koneen tapahtumia ei lueta",
+    "kulut maailmasta toiseen ovat parametrien liuku, ei suunniteltu kulku",
+    "elementeistä mukana vain valorako, valon leikkaus, säikeet, väike, taottu aurinko, kajo ja lumi; askeleet ja tärähdys eivät näy stillissä",
+    "mittarit kohtauscheck, jatkuvuus ja iskujen ruudut puuttuvat",
+    "paletin heksat ovat ehdotus (visual/kohtaus.js), ei lukittu",
+    "tuore kriitikko ei ole katsonut vedoksia"
+  ],
+  "kolme_pahinta": [
+    "puut ovat läheltä liian sileitä ja säännöllisiä; lähioksat näyttävät muovilta (otot 07 ja 22)",
+    "aukea, myrsky ja loppu ovat latteita: taivas on tasainen, metsä ylhäältä on tasainen matto, myrskyn lumi on pisteitä",
+    "jääkatto ei näy otossa 22, ikisalo (otto 30) on tyhjä, ja säikeet ovat viivoja eivätkä vielä metsän ainetta"
+  ]
+}
