@@ -101,7 +101,8 @@ Ainekset? Onko ne tässä uudessa suunnitelmassa?" Jokaisella aineksella on paik
 | Värit: sininen, hopea ja kulta, harmaa, sysi, hämy, punamulta | kaikki | salo ja hämy perustilana, hopea ikkunoissa ja pilkoissa, harmaa naavassa ja usvassa, punainen vain taotussa auringossa, lämmin vasta kajossa |
 
 **Kolme kaarta koko teoksen läpi.**
-- **Siemen.** Jousten motiivi on tumma aalto, joka kulkee metsän massan läpi kaukaa lähelle. Se on sama ele joka kerta ja
+- **Siemen.** Jousten motiivi on tumma aalto, joka alkaa metsän reunasta heti jousten tullessa ja vyöryy massan läpi
+  rinnettä ylös Tapion taloon; talo vastaa ikkunoillaan, kun jouset lakkaavat (kaiku). Se on sama ele joka kerta ja
   kehittyy: alussa yksi aalto (1), sitten aallot painon kanssa (3), hitaat syvät aallot (7), hermostunut värinä (9),
   myrsky, jossa aalto on kasvanut koko tilaksi (10; Tovey: koko teos on yksi crescendo), ja lopussa valo, joka kulkee
   saman reitin kuin aalto (12).
@@ -125,8 +126,9 @@ Ainekset? Onko ne tässä uudessa suunnitelmassa?" Jokaisella aineksella on paik
 - **Ääni ohjaa:** gis-kaista → horisontin valo; yläsävelet → mäet (3 s); jousten rekisteri 50–79 → metsän tummuus ja
   latvuston aalto; matalan kaistan alut → valo lumen pinnassa (patarumpu); puupuhaltimet 72–100 → väike latvustossa.
 - **Kamera:** silmänkorkeus, suoraan kohti metsää, hitain vauhti. Maa on tasainen suo kameran alla.
-- **Puu:** **pilkkapuu**, yksi kuusi suolla, joka ohitetaan `siemen_toistuu`n ja `puhallinkuviot_alku`n välillä. K14: "veistä pilkut pitkin maita, rastit vaaroihin".
-  Se on tien ensimmäinen merkki: joku on kulkenut tästä ennen. Sama puu on viimeinen puu (12).
+- **Puu:** ei. (Ohjaajan ehdotus pilkkapuusta poistettiin 9.11.2026: käyttäjä ei ollut varma, pitääkö siitä, eikä mikään
+  vaatinut sitä. Maailman 12 pilkkapuu on samasta syystä auki.) Horisontti: se seuraa melodian kaarta hienovaraisesti
+  ja piirtyy vasemmalta oikealle sitä mukaa kuin musiikki etenee; vaarat ovat sileitä.
 - **Siemen:** yksi tumma aalto metsän läpi, kun jouset tulevat (`jouset_tulevat`), toinen `siemen_toistuu`.
 
 **Maailma 2. Repeämä** · `vaskien_isku` → `hiljaisuus_1_loppu`

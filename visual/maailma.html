@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="fi">
+<meta charset="utf-8">
+<title>Tapiola</title>
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block;width:1920px;height:1080px}</style>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script type="module">
+// maailma.html?m=03_04 lataa moduulin visual/maailma_03_04.js
+const m = new URLSearchParams(location.search).get('m');
+import(`./maailma_${m}.js`).catch((e) => { console.error(e); window.sceneError = String(e.message || e); });
+</script>
+</html>

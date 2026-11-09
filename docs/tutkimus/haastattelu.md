@@ -673,3 +673,60 @@ Käyttäjä jatkoi samana päivänä kolmella viestillä:
 > Luitko tuon tapiola_tutkimus.md:en? Siellähän on UPEAA materiaalia. BRAVO! Olet tehnyt sen kanssa hienoa työtä. Miten me
 > visualisoimme nuo Ainekset? Onko ne tässä uudessa suunnitelmassa?
 
+## 9.11.2026: palaute maailmojen 1 ja 2 välivedoksesta (kuusi vielä etualalla)
+
+> Noniin, mutta nyt se metsä alkaa näyttää siltä mitä pitää. Hyvää työtä. Ja kummut siellä hienosti. Idea: mitä jos
+> käytetään taustaa hyväksi niin, että se liikkuu? Lähellä olevat kappaleet liikkuvat nopeamin, kaukana hitaasti? En ole
+> varma pidänkö tuosta joulukuusesta etualalla. Miksi se on siinä? Mikä kuvakäsikirjoituksessa sanoi: piirrä kuusi
+> etualalle?
+>
+> Meillä pitäisi olla se musiikin sisäänrakennettu eteneminen, se alkuidea, ja gis-horisontti, joka elää
+> "hienovaraisesti" sen melodian mukana. Mielestäni minkään kappaleen (tai ainakaan kaikkien, voi käyttää hillitysti) ei
+> tarvitse värähdellä kuin spektri, enemmän seurata sen melodian kaarta.
+>
+> Ei teräviä vuoria. Ei suomessa ole sellaisia. On vain vaaroja, kumpuja ja korkeintaan tuntureita. Ne ovat aina sileitä,
+> jääkauden muokkaamia.
+
+Ohjaajan vastaus kuuseen: se oli ohjaajan ehdotus (pilkkapuu, Kalevala 14), ei käsikirjoituksen vaatimus. Poistettu kuvasta.
+
+
+## 9.–10.11.2026: referenssikuvat, valo ja varjo, ja "lopeta"
+
+Käyttäjä lähetti 13 valokuvaa referensseiksi: "Katso noita referenssikuvia. Tuossa vähän mitä ajattelin. MUTTA VISUAALINEN
+TYYLI SILTI ON ETUALALLA". Kuvat (ohjaajan kuvaus; kuvat eivät ole repossa):
+1. Näkymä tornista tai vaaralta metsän yli: lähimmät kuusenlatvat erottuvat ilta-auringossa, metsä jatkuu mattona sileään vaaraan.
+2. Vanhan kuusimetsän sisus: rungot, sammal, laikukas valo.
+3. Suo: mäntyjä, lampareita, kaatuneita runkoja.
+4. Kirjan kansi (Retki ikimetsään): valokeilat siivilöityvät vanhan metsän oksien läpi.
+5. Lumiset kuuset alhaalta ylös katsottuna tähtitaivasta vasten.
+6. Vanhan metsän runkoja läheltä.
+7. Tykkylumen peittämät puut, sininen hämärä.
+8. Vihreä revontulikaari tumman metsän yllä.
+9. Kynttiläpolku pimeässä metsässä, kuu oksien takana.
+10. Kuu ja sen kehä käkkyräisten mäntyjen siluettien takana, tähtiä.
+11. Tumma ilmakuva lumisesta kuusimetsästä raskaan pilvitaivaan alla, valoa horisontissa.
+12. Ilmakuva lumisesta metsästä vaaleanpunaisessa valossa, tie.
+13. Lumiset kuuset alhaalta, Linnunrata.
+
+> Näetkö noissa kuvissa tuon valon ja varjon? Ne pitää nyt sovittaa tähän kappaleeseen. Mutta tuossa pidän erityisesti
+> siitä miten valo osuu puun latvoihin, siivilöityy tuolta oksien välistä.
+>
+> Katso tota taidehistoriaa: siellä se MUOTO on kuvattu, ja sillä on tehty VAIKUTELMA metsästä. EI METSÄ tarkoita sitä että
+> piirrä 6 puuta=metsä. Se on tylsä. VALON PITÄÄ reagoida musiikkiin, elää sen kanssa.
+
+Ohjaaja vaihtoi tämän jälkeen maailman 1 kuvakulman latvojen yläpuolelle yhden referenssin perusteella. Käyttäjä:
+
+> Lopeta. Ei näin. Et voi ottaa yhtä kuvaa, ja muuttaa kaikkea. LUE AINA ENSIN VISUALINEN TYYLI, ja sitten vasta teet
+> päätökset. Tuo ei näytä enää metsältä. Vanha toimi paremmin, kun ne ovat kaukana.
+>
+> Meni huonompaan suuntan edellinen renderi
+
+> Ja mihin ne 12 maailmaa jäi? Älä harhaudu, laita tausta-agentit puuhaamaan niitä, ja valvo että ne tulevat valmiiksi
+
+Ohjaaja palautti edellisen version (suolta kaukaiseen metsään).
+
+> Käske niitä agentteja lukemaan taustatutkimus, visuaalinen tyyli, kuvakäsikirjoitus. Sitten anna prompti että mitä kunkin
+> agentin pitää saada aikaiseksi. Valvo kriitikon avulla että ne toteuttavat JOKAISEN TYYLIOHJEEN SÄÄNNÖN. Ja että ne
+> MAAILMAT ON USKOTTAVIA, ja sitten pudomme juonen kameralla kuinka kuljemme alkuideasta jokaiseen maailmaan. Niiden pitää
+> heijastaa sitä ideaa jollain tavalla
+

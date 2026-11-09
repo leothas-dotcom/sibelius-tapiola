@@ -295,6 +295,8 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 38 | 9.11. | vedos 3 (jatkoa) | "Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä, toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? ... Sellaiseen hienoon hyväksyvään H-duuriin." | 🔶 ehdotus ja alkupätkä tehty, ei todennettu | ehdotus kirjoitettu (`docs/kuvakasikirjoitus.md`, Uusi runko: kamera, maailmat, loppu); kuvaa ei ole |
 | 39 | 9.11. | alkupätkä alku_v4 | "MIKSI Musiikki ei nyt reagoi ... jousien intensiteetti kasvaa? EIKÄ KAMERA VOI AJAA MAAN LÄPI." ... "Aloitetaan alusta." ... "METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ JOKAISEN PUUN ERIKSEEN" ... "SEN PITÄÄ ELÄÄ, SE ON LAAJA, TUMMA, JA SIBELIAANIINEN ... TAPIO JUMALAN ASUINPAIKKA" ... "haluan myös revontulia" | ❌ auki | tyyliohje 4d kohdat 9–13; uusi piirto tekeillä |
 | 40 | 9.11. | alkupätkä alku_v4 | "Sinun piti tehdä 12 maailmaa. Miksi olet tehnyt vain yhden?" ... "Tämä ei ole valmis, ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN" ... "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" | 🔶 suunnitelma kirjoitettu, ei hyväksytty | `docs/kuvakasikirjoitus.md` luku "Kaksitoista maailmaa": jokaisessa lähde, kuva, ääni ohjaa, kamera, puu ja siemen |
+| 41 | 9.11. | maailmat 1–2, välivedos | "nyt se metsä alkaa näyttää siltä mitä pitää" ... "kummut siellä hienosti" ... parallaksi: "Lähellä olevat kappaleet liikkuvat nopeamin, kaukana hitaasti" ... "En ole varma pidänkö tuosta joulukuusesta etualalla" ... "gis-horisontti, joka elää 'hienovaraisesti' sen melodian mukana" ... ei spektrin värinää, "seurata sen melodian kaarta" ... "Ei teräviä vuoria" | 🔶 korjattu, ei todennettu | tyyliohje 4d kohdat 16–19; `visual/matka.js`: parallaksi, horisontti melodian kaaresta, sileä vaara, puu poistettu |
+| 42 | 10.11. | maailmat 1–2 ja referenssit | 13 referenssikuvaa; "valo osuu puun latvoihin, siivilöityy ... oksien välistä" ... "VALON PITÄÄ reagoida musiikkiin" ... "Lopeta. Ei näin. Et voi ottaa yhtä kuvaa, ja muuttaa kaikkea. LUE AINA ENSIN VISUALINEN TYYLI" ... "Vanha toimi paremmin, kun ne ovat kaukana" ... "mihin ne 12 maailmaa jäi? ... laita tausta-agentit puuhaamaan niitä, ja valvo" ... kriitikko tarkistaa JOKAISEN tyyliohjeen säännön; maailmat uskottavia ja heijastavat alkuideaa | ❌ auki | edellinen maailma 1 palautettu; tyyliohje 4d kohdat 20–22; yhteinen pohja `visual/yhteinen.js`, briefit `runs/maailmat/brief.md` ja `runs/maailma_XX/brief.md`; kuusi tausta-agenttia käynnistetty |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
@@ -429,8 +431,17 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   taustatutkimuksesta, kuva, mitatut signaalit, kamera, harkittu puu ja siemenen ele; kolme kaarta (siemen, Tapio,
   revontulet). Tyyliohje 4d kohdat 9–15.
 
-**Seuraavaksi:** käyttäjä lukee suunnitelman; sen jälkeen piirto maailmoille 1 ja 2 massametsänä (`visual/matka.js`
-uusiksi), alkupätkä, kriitikko käyttäjän sanoilla, ja vasta sitten maailmat 3–12 järjestyksessä.
+- 10.11. Maailmat 1 ja 2 piirretty massametsänä suolta nähtynä (`visual/maailma_01_02.js`): käyttäjä "nyt se metsä alkaa
+  näyttää siltä mitä pitää"; lisätty parallaksi, sileä vaara, horisontti melodian kaaresta; etualan puu poistettu.
+  Ohjaaja vaihtoi kuvakulman latvojen yläpuolelle yhden referenssikuvan perusteella; käyttäjä pysäytti ("Lopeta. Ei
+  näin"), ja edellinen versio palautettiin. **Opittua:** tyyliohje luetaan ennen jokaista päätöstä; yksi referenssi ei
+  kaada sitä, mikä toimii; ohjaaja ei jää hiomaan yhtä maailmaa, kun maailmoja on kaksitoista.
+- 10.11. Teos jaettu seitsemään moduuliin rajakuvin (`visual/yhteinen.js`: data, signaalit, piirtopohja, paletti, rajakuvat;
+  `render/lukittu.mjs`: yksi renderi kerrallaan; `render/arkki.py`: still-arkki). Moduulit: 01_02 (ohjaaja), 03_04, 05, 06,
+  07_08, 09, 10, 11_12 (Sonnet-tausta-agentit, briefit `runs/maailma_XX/brief.md`, yhteinen `runs/maailmat/brief.md`).
+
+**Seuraavaksi:** agenttien moduulit valmiiksi; jokaisesta kriitikko, joka tarkistaa tyyliohjeen jokaisen säännön,
+maailman uskottavuuden, siemenen ja kameran; korjaukset; rajakuvien saumat; koko teoksen kokoaminen ja mittaus.
 Aiempi suunnitelma: käyttäjä katsoo vedoksen 3 ja antaa palautteen
 
 ---

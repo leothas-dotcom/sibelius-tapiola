@@ -262,6 +262,29 @@ TAPIOLA. SIIS TAPIO JUMALAN ASUINPAIKKA. MYTOLOGINEN HAHMO." ... "haluan myös r
 14. **Yksittäinen puu on harkittu ja kertoo tarinan.** Käyttäjä: "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN
     PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" Jokainen yksittäinen puu nimetään käsikirjoituksessa lähteineen
     (pilkkapuu, ikihongat, petäjä, Tapion pöytä); puu, jolla ei ole tarinaa, ei ole kuvassa.
+16. **Parallaksi.** Käyttäjä: "mitä jos käytetään taustaa hyväksi niin, että se liikkuu? Lähellä olevat kappaleet liikkuvat
+    nopeamin, kaukana hitaasti?" Kamera etenee hieman viistoon, joten lähellä oleva liukuu nopeasti, kaukainen hitaasti
+    ja kaukaisin harjanne pysyy lähes paikallaan.
+17. **Horisontti seuraa melodian kaarta, hienovaraisesti.** Käyttäjä: "gis-horisontti, joka elää 'hienovaraisesti' sen
+    melodian mukana. Mielestäni minkään kappaleen (tai ainakaan kaikkien, voi käyttää hillitysti) ei tarvitse värähdellä
+    kuin spektri, enemmän seurata sen melodian kaarta." Mikään ei värise spektrin tahdissa; muodot seuraavat melodian
+    kaarta ja muodostuvat sekuntien kuluessa.
+18. **Ei teräviä vuoria.** Käyttäjä: "Ei suomessa ole sellaisia. On vain vaaroja, kumpuja ja korkeintaan tuntureita. Ne
+    ovat aina sileitä, jääkauden muokkaamia." Kaikki maaston muodot ovat pyöreitä ja loivia.
+19. **Etualan puu poistettu.** Käyttäjä: "En ole varma pidänkö tuosta joulukuusesta etualalla. Miksi se on siinä?" Pilkkapuu
+    oli ohjaajan ehdotus, ei käyttäjän. Sitä ei piirretä. Ydin on käyttäjän sanoin: "musiikin sisäänrakennettu
+    eteneminen, se alkuidea, ja gis-horisontti".
+20. **Valo ja varjo tekevät metsän, ja valo elää musiikin mukana.** Käyttäjä (referenssikuvista): "Näetkö noissa kuvissa
+    tuon valon ja varjon? Ne pitää nyt sovittaa tähän kappaleeseen. ... pidän erityisesti siitä miten valo osuu puun
+    latvoihin, siivilöityy tuolta oksien välistä." ja "EI METSÄ tarkoita sitä että piirrä 6 puuta=metsä. Se on tylsä.
+    VALON PITÄÄ reagoida musiikkiin, elää sen kanssa." Referenssit (13 valokuvaa, kuvaus: `docs/tutkimus/haastattelu.md`)
+    ovat suunta, mutta "VISUAALINEN TYYLI SILTI ON ETUALALLA".
+21. **Tyyliohje luetaan ennen jokaista päätöstä.** Käyttäjä: "Et voi ottaa yhtä kuvaa, ja muuttaa kaikkea. LUE AINA ENSIN
+    VISUALINEN TYYLI, ja sitten vasta teet päätökset." Yksi referenssi tai yksi palaute ei kaada sitä, mikä toimii:
+    maailman 1 kaukainen metsä suolta nähtynä säilyy ("Vanha toimi paremmin, kun ne ovat kaukana").
+22. **Maailmat ovat uskottavia ja heijastavat alkuideaa.** Käyttäjä: "ne MAAILMAT ON USKOTTAVIA, ja sitten pudomme juonen
+    kameralla kuinka kuljemme alkuideasta jokaiseen maailmaan. Niiden pitää heijastaa sitä ideaa jollain tavalla." Kriitikko
+    tarkistaa jokaisen tyyliohjeen säännön jokaisesta maailmasta (`runs/maailmat/brief.md`).
 15. **Kaikki kaksitoista maailmaa suunnitellaan taustatutkimuksesta ennen piirtämistä.** Käyttäjä: "Tämä ei ole valmis,
     ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN." Suunnitelma on käsikirjoituksen
     luvussa "Kaksitoista maailmaa".
