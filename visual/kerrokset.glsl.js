@@ -19,6 +19,7 @@ out vec4 outColor;
 uniform vec2 uRes;
 uniform float uAA, uTime, uZoom, uMist, uDark, uStack, uDrift, uSway, uTrunk, uFrost, uReflect, uCrown;
 uniform vec2 uPan;
+uniform vec4 uVeil;        // kulku jonkin läpi: verhon väri ja peittävyys (lumi, usva, pimeä, huurre)
 uniform vec3 uSkyTop, uSkyLow, uMistCol, uTreeNear, uTreeFar, uGroundCol, uLightCol, uSnowCol, uCutCol, uWarmCol, uSunCol, uReg;
 uniform vec4 uTree[72];    // x, latvan korkeus, leveys, syvyys (0 lähellä .. 1 kaukana)
 uniform vec4 uTreeB[72];   // läsnäolo, muodon siemen, huojunnan laajuus, värinä
@@ -274,7 +275,13 @@ vec3 render(vec2 frag) {
     }
   }
   float reveal = clamp(uCut.y * 0.5 + uCut.z * 2.2 + uSun.z * 0.6 + uGlow.z, 0.0, 1.0);
-  return col * (1.0 - uDark * (1.0 - reveal));
+  col *= 1.0 - uDark * (1.0 - reveal);
+  if (uVeil.w > 0.001) {
+    float vn = 0.5 + 0.5 * sin(p.x * 3.1 + uTime * 0.9 + 2.0 * sin(p.y * 6.0 - uTime * 0.6)) ;
+    float cover = smoothstep(0.0, 1.0, uVeil.w * (1.25 + 0.5 * vn) - 0.25 * vn);
+    col = mix(col, uVeil.rgb * (0.8 + 0.3 * vn), clamp(cover, 0.0, 1.0));
+  }
+  return col;
 }
 
 void main() {

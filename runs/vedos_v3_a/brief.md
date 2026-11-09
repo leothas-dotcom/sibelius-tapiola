@@ -1,0 +1,61 @@
+**Lue ensin `docs/visuaalinen_tyyli.md` kokonaan ja sen luvut 4b, 4c ja 12. Luku 4c voittaa vanhemmat kohdat. Vasta sitten mitään muuta.**
+
+# Brief: kriitikko, koko teos, osa a (0:00–6:00), vedos 3 (9.11.2026)
+
+Olet tuore katsoja ja kriitikko. Et ole tehnyt kuvaa etkä tunne aiempaa keskustelua. Tehtäväsi on löytää virheet.
+Älä kehu. Vastaa suomeksi. Tyhjä virhelista on kelvollinen vain, jos jokainen kohta alla on todella tarkistettu.
+
+## Mitä tarkistat
+
+Musiikkivideo: Sibelius, Tapiola (levytys Rattle/LSO 2022, ajat sen aikaa). Kuva on piirretty koodilla äänestä.
+Sinun osasi on väli 0:00–6:00. Et voi kuunnella ääntä: sen, mitä soi ja milloin, kertoo kuunteluopas.
+
+## Lue tässä järjestyksessä
+
+1. `docs/visuaalinen_tyyli.md` kokonaan. Luku 4c sanoo, mikä kuvassa on mitä. Luku 4b on kuvatavat.
+2. `docs/tutkimus/haastattelu.md`: kolme viimeistä lukua (9.11.2026). Ne ovat käyttäjän sanat; käyttäjä on
+   orkesterimuusikko ja teoksen tilaaja.
+3. `annotations/kuunteluopas.md`: alun luvut ja minuuttilistasta väli 0:00–6:00 (jokainen rivi).
+4. `docs/kuvakasikirjoitus.md`: luvut 0–4 ja luvusta 5 ne otot, joiden aika otsikossa osuu välille 0:00–6:00.
+   Käsikirjoitus sanoo, mitä jokaisessa kohdassa pitää näkyä ja mistä katsoja katsoo (kuvatapa).
+5. Kuvat kansiossa `runs/vedos_v3_a/ruudut/` (avaa Read-työkalulla; jokainen on ruudukko, aikaleima keltaisella
+   muodossa minuutit:sekunnit):
+   - `koko_01.png` … `koko_09.png`: koko väli, ruutu kahden sekunnin välein.
+   - `liike_*.png`: viisi kolmen sekunnin jaksoa, viisi ruutua sekunnissa, liikkeen arviointiin: tauon_jalkeen (1:01), askeleet (1:40), nousu (2:56), kulku_huurteeseen (3:17), nopea_liike (4:40).
+
+## Kysymykset, joihin vastaat jokaiseen
+
+K1. **Kuunteluopas rivi riviltä.** Taulukko: jokainen kuunteluoppaan rivi välillä 0:00–6:00 (myös lihavoimattomat koneen
+    kuulemat rivit) → näkyykö se kuvassa oikeaan aikaan (ruudukko, aika, mitä näkyy) vai ei. Rivi, jota ei näy, on virhe.
+K2. **Käsikirjoitus otto otolta.** Jokaisesta välin otosta: tekeekö kuva sen, mitä rivi Näkyy sanoo? Onko kuvatapa se,
+    jonka käsikirjoitus nimeää? Jos käsikirjoituksen Näkyy-rivi on itse epäselvä, puutteellinen tai ei vastaa
+    kuunteluoppaan riviä, sano se erikseen (KÄSIKIRJOITUS).
+K3. **Kulut.** Vaihtuuko kuvatapa jatkuvasti (ei leikkausta, ei hyppyä)? Missä raja näkyy?
+K4. **Staattisuus.** Onko jakso, jossa mikään ei liiku tai muutu, vaikka kuunteluoppaan mukaan jotain soi? Elääkö metsä?
+K5. **Nykivyys.** Hyppääkö, nykiikö, ilmestyykö tai katoaako jokin yhdessä ruudussa (liike-sarjat)?
+K6. **Lumi.** Onko lumi syvyydessä (kauempi lumi pienempää ja lähempien puiden takana) vai maski kaiken päällä?
+K7. **Selkeys.** Ymmärtääkö katsoja, mikä on metsä, viiva, kukkula, harju, pilkahdus ja maa? Mikä on sekavaa? Onko
+    kuvassa jotain, mille kuunteluopas ei anna syytä?
+K8. **Tyyliohje.** Rikkooko jokin luvun 4c tai 12 sääntöä? Näkyykö metsä joka ruudussa? Onko jotain halpaa tai
+    kliseistä (taajuuskorjaimen pylväät, neonviiva, harmaa laatta, joulukuusirivi, tyyni järvi)?
+K9. **Tunnelma.** Kuunteluopas ja käsikirjoitus nimeävät tunnelmat. Välittyykö kukin? Mikä kuva on heikoin ja miksi?
+K10. **Yksitoikkoisuus.** Käyttäjä: metsä "rivipuina syvyydessä" on "äärimmäisen tylsä" ja ajo "staattisten puitten
+     välissä" ei ole kokemus. Onko välillä jakso, joka on yli puoli minuuttia samannäköinen?
+
+## Rajat
+
+- Kirjoita vain yksi tiedosto: `runs/vedos_v3_a/kriitikko.md`. Älä muuta mitään muuta. Ei verkkoa, ei gittiä.
+- Sano vain se, minkä näet ruuduista. Älä arvaa koodista. Jos et erota jotain kuvasta, sano se.
+- Jokainen virhe: aika, ruudukon nimi, mitä näkyy, mitä pitäisi näkyä (tyyliohjeen 4c sanoin), ja vakavuus
+  (estää / haittaa / pieni).
+- Sävelnimet suomeksi (H = englannin B). Musiikkisanasto muusikon suomeksi.
+
+## Raportin muoto
+
+1. Virhelista vakavin ensin (numeroitu).
+2. K1-taulukko.
+3. K2-taulukko (otto → toteutuu / osin / ei; KÄSIKIRJOITUS-huomiot).
+4. Vastaukset K3–K10 lyhyesti.
+5. Kolme asiaa, jotka toimivat (enintään kolme riviä).
+
+Palauta lopuksi viestinä enintään 250 sanan tiivistelmä: virheiden määrä ja viisi vakavinta aikoineen.
