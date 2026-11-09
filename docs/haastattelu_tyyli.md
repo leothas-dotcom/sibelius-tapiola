@@ -465,3 +465,18 @@ sanoo, milloin kamera liikkuu ja milloin elementit, ja miten kokonaistarina kulk
   useissa paikoissa).
 - **Opas tarvitsee paljon lisää detaljia** (mikä soi, millä hetkellä), edullisesti: ei partituurin tulkintaa
   kielimallilla. Etsitään koneluettava partituuri (MIDI/MusicXML) ja kohdistetaan se ääneen.
+
+## 9.11.2026 – käyttäjä: gis-ääni, doorinen, basson huokaavat askeleet (käyttäjän sanat)
+
+> H-molli (B-minor) on hyvin synkkä. Siis puhaltimet soittavat alkuun lähes unisonossa Gis-ääntä (G sharp). Joka on
+> Doorinen asteikko H-mollille. Sillä on joku merkitys? Tutki. Ne puhaltimet nousevat ja laskevat. Ei nyt tarvitse
+> sen kummempaa tutkimusta. Yritä kuulla se datasta. Mieti mitä dataa tarvitset, miten datan käsittelyä voi
+> parantaa, että saat nämä asiat selville.
+
+> Basson "huokaavat" askeleet kuuluu melkein koko alun yli myös, eli jo sillä luodaan tunnelmaa jostain suuresta,
+> tulevasta.
+
+> Onko tämä sinulle liian vaikea tehtävä, vastaa rehellisesti.
+
+Ohjaajan merkintä: mitataan datasta tarkemmalla taajuuserottelulla (`analysis/tarkka.py`): gis-äänen kesto ja
+paisutukset, kuviot sen ympärillä, yläsävelprofiili (uusi soitin samalle sävelelle), matalat alut alun yli.

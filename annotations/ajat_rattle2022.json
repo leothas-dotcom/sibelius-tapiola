@@ -350,7 +350,7 @@
       "t": 25.4,
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
-      "peruste": "kaaret.py: pitkä pidetty ääni As4 (gis1) alkaa 25,4 s ja kestää noin 42 s asti (CREPE: midi 68, 25,43–42,07 s); sen yllä korkean ja kirkkaan kaistan purskeet 27,3 / 28,4 / 29,5–32,0 / 32,5 / 35,1 s (aksentit z 7–13); puupuhallinkanava yli 0,5 kohdassa 26,4 s."
+      "peruste": "kaaret.py: pitkä pidetty ääni As4 (gis1) alkaa 25,4 s ja kestää noin 42 s asti (CREPE: midi 68, 25,43–42,07 s); sen yllä korkean ja kirkkaan kaistan purskeet 27,3 / 28,4 / 29,5–32,0 / 32,5 / 35,1 s (aksentit z 7–13); puupuhallinkanava yli 0,5 kohdassa 26,4 s. tarkka.py 9.11.2026: Gis4:n tason huiput 23,2–44,6 s (12 paisutusta, syvyys 5–8 dB); yläsävelprofiili vaihtuu sekunneittain (parittomat−parilliset −2,8…+3,3 dB); kuviot Gis4:n yläpuolella 25–40 s: 27.6 s H4; 27.9 s Cis5; 28.2 s H4; 30.7 s Ais4; 31.2 s Cis5; 31.6 s H4; 36.9 s Ais4; 37.1 s H4; 39–44 s 3. osaääni −43…−56 dB (puhdas perusääni)."
     },
     "puhallinkuviot_loppu": {
       "t": 39.5,
@@ -369,6 +369,18 @@
       "varmuus": "analyysi",
       "luottamus": "hyvä",
       "peruste": "kaaret.py: keskirekisterin kerros ja ylälinja 54,4–57,1 s; interpret.py: jouset tulevat sisään 54,7 s; äkillinen hiljeneminen 57,5 s."
+    },
+    "gis_pitka_aani_alku": {
+      "t": 8.7,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tarkka.py (CQT 60 kaistaa/oktaavi, 12 ms): Gis4 (midi 68) soi 8,7–17,8 s ja 20,6–46,2 s (taso yli −34 dB suhteessa huippuun), eli 25,6 s yhtäjaksoisesti; Gis5 samanaikaisesti. Käyttäjä kuuli gis:n puhaltimissa lähes unisonossa."
+    },
+    "gis_pitka_aani_loppu": {
+      "t": 46.2,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tarkka.py: Gis4:n taso putoaa alle −34 dB kohdassa 46,2 s (puuskan tutti peittää); palaa heikompana 48,8–53,9 s."
     }
   }
 }

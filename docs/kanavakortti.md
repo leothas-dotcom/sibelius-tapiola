@@ -115,3 +115,18 @@ V6 680,0–685,1 s (muu ehdokas 641,6–645,1 s) · V7 685,1 s · V8 1025,5–10
 - Lähes hiljaiset kohdat (taso < −60 dBFS, huoneen kohina −66 dBFS): 58,1–61,4 s ja 845,6–865,2 s (19,6 s). Alussa soitinluokkien suurin arvo 0,17 (reuna), jälkimmäisessä 846–855 s soitinluokat 0,00 ja 856–865 s hyvin hiljaista soittoa.
 - Kellot: kuuntelukopio ja kaikki johdetut äänet 0,00 ms; kuuntelunäytteet 0,00 ms. Kohinanpoisto (`afftdn`) vaimentaa kohinan lähellä olevaa sisältöä enintään 12 dB (ks. raportti luku 4).
 - Soitinluokat, jotka eivät koskaan ylitä 0,05:tä: kontrabasso (0,049), saksofoni (0,019), rumpujen pyörre (0,000).
+
+## Tarkka kuuntelu (9.11.2026): mitä spektri kertoo, kun kysymys on tarkka
+
+`analysis/tarkka.py` (CQT 60 kaistaa oktaavissa, 12 ms, CPU). Testattu alussa 6–62 s käyttäjän kolmella havainnolla.
+
+| Käyttäjän havainto | Mitattu | Tulos |
+|---|---|---|
+| "puhaltimet soittavat alkuun lähes unisonossa gis-ääntä" | Gis4 soi 8,7–17,8 ja 20,6–46,2 s (25,6 s yhtäjaksoisesti), Gis5 sen yllä | ✅ näkyy |
+| "ne puhaltimet nousevat ja laskevat" | gis:n taso paisuu ja laskee 12 kertaa 23–45 s, noin 2 s välein, 5–8 dB; yläsävelprofiili vaihtuu sekunneittain (sama sävel, eri soitin); pienet kuviot gis:stä ylös (ais, h, cis) noin 27,8 / 30,7 / 35–37 s | ✅ näkyy; kuvioiden yksittäiset nuotit osittain |
+| "basson huokaavat askeleet kuuluu melkein koko alun yli" | matala H: 7,5 s; 13,5–20,3 s pitkänä (alut 13,5 / 14,1 / 14,8); 43,5–45,2 s kuusi sykettä; 21–43 s ei mitään yli −55 dB | 🔶 osittain: välissä ei näy |
+
+**Mitä tämä menetelmä osaa:** pitkän äänen ja sen keston, paisutukset, sävelen, oktaavin, värin vaihtumisen samalla
+sävelellä, matalat alut. **Mitä se ei osaa:** nimetä soitinta varmasti (puhdas perusääni viittaa huiluun,
+parittomat yläsävelet klarinettiin, mutta se on vihje), eikä löytää asiaa, jota ei osata kysyä. Käyttäjän yksi
+lause kertoo, mitä mitata; mittaus kertoo tarkan ajan ja löytää saman muualta.

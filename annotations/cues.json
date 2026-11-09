@@ -19,13 +19,35 @@
  },
  "sections": [
   {
+   "id": "gis_pitka_aani",
+   "nimi": "Pitkä gis",
+   "start": 8.7,
+   "end": 46.2,
+   "kesto": 37.5,
+   "luokka": "jakso",
+   "soi": "gis1 (Gis4) soi lähes katkeamatta koko alun: ensin jousten melodian sisällä, sitten yksin puhaltimissa; se on h-mollin doorinen sävel",
+   "soittimet": [
+    "jouset",
+    "puupuhaltimet"
+   ],
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "ankkuri_alku": "gis_pitka_aani_alku",
+   "ankkuri_loppu": "gis_pitka_aani_loppu",
+   "varmuus": "analyysi",
+   "luottamus": "hyvä",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
    "id": "puhallinkuviot",
    "nimi": "Puhaltimien pienet kuviot",
    "start": 25.4,
    "end": 39.5,
    "kesto": 14.1,
    "luokka": "jakso",
-   "soi": "pitkä pidetty ääni keskirekisterissä; sen yllä puhaltimet tulevat vuorotellen esiin pienin nousevin ja laskevin kuvioin",
+   "soi": "puhaltimet vuorottelevat samalla gis-äänellä: jokainen tulee esiin paisuttaen ja häipyy (noin 2 s välein), ja väliin pienet nousevat ja laskevat kuviot gis:stä ylöspäin",
    "soittimet": [
     "huilut",
     "oboet",
@@ -277,6 +299,34 @@
    "tarkista": false
   },
   {
+   "id": "gis_pitka_aani_alku",
+   "ankkuri": "gis_pitka_aani_alku",
+   "t": 8.7,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "gis_pitka_aani",
+   "reuna": "alku",
+   "nimi": "Pitkä gis: alkaa",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "alku, t. 1–20",
+   "soi": "gis1 (Gis4) soi lähes katkeamatta koko alun: ensin jousten melodian sisällä, sitten yksin puhaltimissa; se on h-mollin doorinen sävel",
+   "soittimet": [
+    "jouset",
+    "puupuhaltimet"
+   ],
+   "tarina": "Käyttäjä: \"H-molli on hyvin synkkä. Puhaltimet soittavat alkuun lähes unisonossa gis-ääntä, joka on doorinen asteikko h-mollille. Sillä on joku merkitys?\" Lähteet: Sibelius-klubi: sävellaji häilyy h-mollin ja gis-mollin välillä, ja gis voidaan kuulla doorisena sävelenä H:n ollessa tonika; Grimley: alussa harhautettu kadenssi (E7), jonka tuulenpuuska pyyhkäisee pois. Mitattu: jousten melodian sävelet ovat E, D, H ja gis (E7-sointu), bassossa H ja fis, ja gis jää yksin soimaan 25 sekunniksi. Ohjaaja: luonnollisessa h-mollissa tämä sävel olisi g. Gis on puoli sävelaskelta valoisampi: se on ainoa sävel, joka ei kuulu synkkään h-molliin, ja juuri se jää soimaan. Ohut valon viiva pimeän metsän läpi, jo ennen kuin mitään on tapahtunut. Kun väärä valo myöhemmin tulee C-duurina, siinä on g, ei gis: valo on vaihtanut puolta.",
+   "lahde": "käyttäjä 9.11.2026 (korva ja partituuri); analyysi: tarkka.py; kirjallisuus: Sibelius-klubi, Grimley",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "tarkka.py (CQT 60 kaistaa/oktaavi, 12 ms): Gis4 (midi 68) soi 8,7–17,8 s ja 20,6–46,2 s (taso yli −34 dB suhteessa huippuun), eli 25,6 s yhtäjaksoisesti; Gis5 samanaikaisesti. Käyttäjä kuuli gis:n puhaltimissa lähes unisonossa.",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
    "id": "jouset_tulevat",
    "ankkuri": "jouset_tulevat",
    "t": 8.93,
@@ -323,7 +373,7 @@
    "tahti": null,
    "tahti_loppu": null,
    "tahti_suhde": "jousten jälkeen, alku",
-   "soi": "vaskipuhaltimet, ensin käyrätorvet, vastaavat jousille jousten jälkeen",
+   "soi": "jousten jälkeen gis jää soimaan toisella värillä (parittomat yläsävelet, klarinetin kaltainen), ja sen alla matala H ja fis pitkinä; [käyttäjä: mikä soitin pitää gis:n tässä?]",
    "soittimet": [
     "käyrätorvet"
    ],
@@ -381,19 +431,19 @@
    "tahti": null,
    "tahti_loppu": null,
    "tahti_suhde": "t. 10–20",
-   "soi": "pitkä pidetty ääni keskirekisterissä; sen yllä puhaltimet tulevat vuorotellen esiin pienin nousevin ja laskevin kuvioin",
+   "soi": "puhaltimet vuorottelevat samalla gis-äänellä: jokainen tulee esiin paisuttaen ja häipyy (noin 2 s välein), ja väliin pienet nousevat ja laskevat kuviot gis:stä ylöspäin",
    "soittimet": [
     "huilut",
     "oboet",
     "klarinetit",
     "käyrätorvet"
    ],
-   "tarina": "Käyttäjä: \"puhaltajat kukin vuorollaan tulee esiin ja tekevät pienet nousevat ja laskevat kuviot (ovatko mäkiä??) jotka tulevat ikäänkuin esiin sieltä metsän siimeksestä\". Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: metsä on jo siinä; nämä ovat ensimmäiset asiat, jotka liikkuvat sen sisällä. Kumpuja tai valon kaaria, jotka nousevat esiin ja painuvat takaisin.",
+   "tarina": "Käyttäjä: \"puhaltajat kukin vuorollaan tulee esiin ja tekevät pienet nousevat ja laskevat kuviot (ovatko mäkiä??) jotka tulevat ikäänkuin esiin sieltä metsän siimeksestä\". Lähteet: Sibelius-klubi: puhaltimien vastaus korostaa autiutta. Ohjaaja: metsä on jo siinä; nämä ovat ensimmäiset asiat, jotka liikkuvat sen sisällä. Kumpuja tai valon kaaria, jotka nousevat esiin ja painuvat takaisin. Mitattu 9.11.2026: gis-äänen taso paisuu ja laskee kahdentoista kerran välillä 23–45 s (huiput noin 23,2 / 25,6 / 27,5 / 29,0 / 30,8 / 32,4 / 34,1 / 36,5 / 39,5 / 40,9 / 42,7 / 44,6 s), ja äänen yläsävelet vaihtuvat lähes joka sekunti: sama sävel, eri soitin. Noin 39–44 s gis on lähes puhdas perusääni ilman yläsäveliä (huilun kaltainen).",
    "lahde": "käyttäjä 9.11.2026; analyysi: rekisterikerrokset; partituuri s. 4",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "kohtalainen",
-   "peruste": "kaaret.py: pitkä pidetty ääni As4 (gis1) alkaa 25,4 s ja kestää noin 42 s asti (CREPE: midi 68, 25,43–42,07 s); sen yllä korkean ja kirkkaan kaistan purskeet 27,3 / 28,4 / 29,5–32,0 / 32,5 / 35,1 s (aksentit z 7–13); puupuhallinkanava yli 0,5 kohdassa 26,4 s.",
+   "peruste": "kaaret.py: pitkä pidetty ääni As4 (gis1) alkaa 25,4 s ja kestää noin 42 s asti (CREPE: midi 68, 25,43–42,07 s); sen yllä korkean ja kirkkaan kaistan purskeet 27,3 / 28,4 / 29,5–32,0 / 32,5 / 35,1 s (aksentit z 7–13); puupuhallinkanava yli 0,5 kohdassa 26,4 s. tarkka.py 9.11.2026: Gis4:n tason huiput 23,2–44,6 s (12 paisutusta, syvyys 5–8 dB); yläsävelprofiili vaihtuu sekunneittain (parittomat−parilliset −2,8…+3,3 dB); kuviot Gis4:n yläpuolella 25–40 s: 27.6 s H4; 27.9 s Cis5; 28.2 s H4; 30.7 s Ais4; 31.2 s Cis5; 31.6 s H4; 36.9 s Ais4; 37.1 s H4; 39–44 s 3. osaääni −43…−56 dB (puhdas perusääni).",
    "vahvistettu": false,
    "tarkista": false
   },
@@ -546,6 +596,33 @@
    ]
   },
   {
+   "id": "gis_pitka_aani_loppu",
+   "ankkuri": "gis_pitka_aani_loppu",
+   "t": 46.2,
+   "theme": "jakso",
+   "luokka": "jakso",
+   "tyyppi": "jakso",
+   "jakso": "gis_pitka_aani",
+   "reuna": "loppu",
+   "nimi": "Pitkä gis: päättyy",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "t. 21",
+   "soi": "gis katoaa puuskan alle",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "tarina": "Ohjaaja: valon viiva ei sammu, se peittyy. Puuska pyyhkäisee sen yli (Grimley: kadenssi pyyhkäistään pois).",
+   "lahde": "analyysi: tarkka.py",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "tarkka.py: Gis4:n taso putoaa alle −34 dB kohdassa 46,2 s (puuskan tutti peittää); palaa heikompana 48,8–53,9 s.",
+   "vahvistettu": false,
+   "tarkista": false
+  },
+  {
    "id": "fraasi_ennen_taukoa",
    "ankkuri": "fraasi_ennen_taukoa",
    "t": 54.4,
@@ -639,7 +716,7 @@
    "soittimet": [
     "matalat soittimet"
    ],
-   "tarina": "Käyttäjä: \"matalat äänet tulee eri tahtiin, vähän niin kuin askeleet ... onko ne Tapion jättiläisen askeleita\". Ohjaaja: askeleet kyllä, kävelijää ei. Jokin, jonka painon kuulee mutta jota ei näe. Kalevalan Tapio: halliparta, havuhattu, naavaturkki, mutta kuvituksissa lähes tyhjä aihe. Käyttäjä 9.11.2026: \"bassojen jättiläisaskeleet on 2:09 eteenpäin oikein. Ne toki jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla.\"",
+   "tarina": "Käyttäjä: \"matalat äänet tulee eri tahtiin, vähän niin kuin askeleet ... onko ne Tapion jättiläisen askeleita\". Ohjaaja: askeleet kyllä, kävelijää ei. Jokin, jonka painon kuulee mutta jota ei näe. Kalevalan Tapio: halliparta, havuhattu, naavaturkki, mutta kuvituksissa lähes tyhjä aihe. Käyttäjä 9.11.2026: \"bassojen jättiläisaskeleet on 2:09 eteenpäin oikein. Ne toki jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla.\" Käyttäjä 9.11.2026: \"Basson huokaavat askeleet kuuluu melkein koko alun yli myös, eli jo sillä luodaan tunnelmaa jostain suuresta, tulevasta.\" Mitattu alusta: matala H 7,5 s (patarummut), 13,5–20,3 s pitkänä kolmella alulla (13,5 / 14,1 / 14,8 s), ja 43,5–45,2 s kuutena tihenevänä sykkeenä; väliltä 21–43 s matalaa rekisteriä ei näy yli −55 dB [käyttäjä: kuuluvatko askeleet silti siinä?].",
    "lahde": "käyttäjä, partituuri",
    "varmuus": "vahvistettu",
    "lahde_aika": "vahvistettu",
