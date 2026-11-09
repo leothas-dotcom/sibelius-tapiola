@@ -374,7 +374,16 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   ei riitä tyhjään listaan: jokainen korjaus paljastaa seuraavan kerroksen, ja osa löydöksistä on makuasioita, jotka
   käyttäjä ratkaisee.
 
-**Seuraavaksi:** kierros 4 neljännestä renderistä; jäljelle jäävät estävät virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kriitikoiden kierros 4 neljännestä renderistä (`runs/vedos_v3_a|b|c/kriitikko.md`): A 1/20 korjattu, 4 osin,
+  15 ennallaan; B 5/21, 8 osin, 8 ennallaan; C 3/19, 7 osin, 9 ennallaan. Estävät: A maa puuttuu 0:26–1:06 ja
+  3:02–5:24, puut läpikuultavia 3:22–5:18, viiva ei seuraa säveltä 1:02–3:06; B tutti-isku 10:21 ei näy; C ehdollisesti
+  salaman ajoitus Q:ssa ja R:ssä sekä kulku 9 (15:38–15:45), jossa metsä lähes häviää.
+- 9.11. Kierroksen 4 jälkeen korjattu koodiin, **ei renderöity eikä kriitikon tarkistama** (vain 12 stilliä): viivan ja
+  äänten korkeus kuvassa riippuu vain sävelkorkeudesta, ei maan korkeudesta; puut ovat läpinäkymättömiä; maan korkeutta
+  säädetty kuvatavoittain; kuusiryhmä kasvaa sekunnin aikana eikä iskun ruudussa.
+
+**Seuraavaksi:** loput kierroksen 4 virheet (tutti-isku 10:21, salaman ajoitus Q ja R, kulku 9, maan sysäykset, lumi
+osassa b, nousut ja laskut viivassa, lopun rivimetsä 15:44–17:58), viides renderi ja kierros 5 → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---

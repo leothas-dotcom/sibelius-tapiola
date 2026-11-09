@@ -20,7 +20,7 @@ const C = PALETTI;
 const PERUS = {
   jouset: 1, viiva: 68, viivaVoima: 1, viivaPohja: 0.3, kukkulat: 1, harjut: 1, vaike: 0, leikkaus: 0, tuuli: 0, reuna: 0.05, puut: 1, kt: 1, seis: 0, kulku: '', sivu: 0.004, kajo: 0,
   kerroksia: 2, tiheys: 1, lahi: 4, stack: 0, pan: [0, 0], trunk: 0.07, frost: 0, reflect: 0, crown: 0,
-  maaY: 0.13, pLo: 50, pHi: 98, zoom: 1, mist: 0.6, dark: 0,
+  maaY: 0.16, pLo: 50, pHi: 98, pY: 0.34, pK: 0.016, zoom: 1, mist: 0.6, dark: 0,
   snow: [0, 0.4, 0.5, 0.5],
   skyTop: lin(C.salo, 0.08), skyLow: lin(C.salo, 0.30), mistCol: lin('#6d86a3', 0.35), treeNear: lin(C.noki, 0.55), treeFar: lin('#16243a', 0.38),
   groundCol: lin(C.noki, 0.6), lightCol: lin('#a9c4e6', 1.5), snowCol: lin(C.halla, 0.5), cutCol: lin(C.halla, 2.2), warmCol: lin(C.kajo, 1.0), sunCol: lin(C.punainen, 1.6),
@@ -35,21 +35,21 @@ const m = (...os) => Object.assign({}, PERUS, ...os);
 // Aikajana: ankkuri → tila. Roolit kuunteluoppaasta.
 const KELMEA = lin('#b9c2c4', 1.3);
 // Kuvatavat (tyyliohje 4b) saman kerrosmaiseman rajauksina. Jokainen on katsojan paikka; kerrostumat pysyvät samoina.
-const K2_MAASTA = { kt: 2, maaY: 0.26, pHi: 120, kerroksia: 5, tiheys: 0.55, reuna: 0.06, lahi: 6, zoom: 1.32, sivu: 0.016 };
-const K3_YLOS = { kt: 3, maaY: 0.28, pHi: 120, kerroksia: 5, tiheys: 0.6, reuna: 0.10, lahi: 3.6, zoom: 1.52, pan: [0, 0], sivu: 0.008,
+const K2_MAASTA = { pY: 0.30, kt: 2, maaY: 0.24, pHi: 120, kerroksia: 5, tiheys: 0.55, reuna: 0.06, lahi: 6, zoom: 1.32, sivu: 0.016 };
+const K3_YLOS = { pY: 0.30, kt: 3, maaY: 0.25, pHi: 120, kerroksia: 5, tiheys: 0.6, reuna: 0.10, lahi: 3.6, zoom: 1.52, pan: [0, 0], sivu: 0.008,
   skyLow: lin(C.salo, 0.42), skyTop: lin(C.salo, 0.16) };
-const K4_LAHI = { kt: 4, maaY: 0.28, pHi: 130, kerroksia: 5, tiheys: 0.85, reuna: 0.07, lahi: 5, zoom: 1.75, pan: [0, 0], frost: 0.75, vaike: 1, sivu: 0.01,
+const K4_LAHI = { pY: 0.30, kt: 4, maaY: 0.27, pHi: 130, kerroksia: 5, tiheys: 0.85, reuna: 0.07, lahi: 5, zoom: 1.75, pan: [0, 0], frost: 0.75, vaike: 1, sivu: 0.01,
   treeNear: lin('#0d1622', 0.9), treeFar: lin('#22364f', 0.7), mist: 0.9, skyLow: lin(C.salo, 0.26), snowCol: lin(C.halla, 0.42) };
-const K5_PINTA = { kt: 5, maaY: 0.27, pHi: 104, kerroksia: 5, tiheys: 0.6, reuna: 0.07, lahi: 7, zoom: 1.2, reflect: 0.85, snow: [0.12, 0.5, 0.4, 0.5], skyLow: lin(C.salo, 0.42), groundCol: lin(C.noki, 0.3), sivu: 0.012 };
+const K5_PINTA = { pY: 0.30, kt: 5, maaY: 0.27, pHi: 104, kerroksia: 5, tiheys: 0.6, reuna: 0.07, lahi: 7, zoom: 1.2, reflect: 0.85, snow: [0.12, 0.5, 0.4, 0.5], skyLow: lin(C.salo, 0.42), groundCol: lin(C.noki, 0.3), sivu: 0.012 };
 // Ikisalo: matalien jousten äänet ovat matalia, tummia kuusiryhmiä; kuva on sininen, usvainen ja hidas. Ääni kantaa kuvaa:
 // jokainen sointu on ryhmä puita, urkupiste on maan hohto. Kaksi tai kolme valtavaa runkoa kehystää näkymää lähellä.
-const K6_RYTMI = { kt: 6, maaY: 0.16, pHi: 92, kerroksia: 5, tiheys: 0.55, reuna: 0.055, lahi: 9, zoom: 1.1, trunk: 0.20, crown: 1, mist: 1.4, sivu: 0.009, puut: 1,
+const K6_RYTMI = { pY: 0.30, kt: 6, maaY: 0.16, pHi: 92, kerroksia: 5, tiheys: 0.55, reuna: 0.055, lahi: 9, zoom: 1.1, trunk: 0.20, crown: 1, mist: 1.4, sivu: 0.009, puut: 1,
   treeFar: lin('#1f3a61', 0.65), treeNear: lin(C.noki, 0.8), skyLow: lin(C.salo, 0.5), skyTop: lin(C.salo, 0.14), mistCol: lin('#6f8fb8', 0.45), snow: [0.10, 0.15, 0.45, 0.45] };
-const K7_PIMEA = { kt: 7, maaY: 0.2, pHi: 98, kerroksia: 5, tiheys: 0.7, reuna: 0.06, lahi: 10, zoom: 1.3, dark: 0.86 };
-const K8_ULKOA = { kt: 8, maaY: 0.30, pHi: 120, kerroksia: 3, tiheys: 1.2, reuna: 0.06, lahi: 3, zoom: 1.0, reflect: 0.12, groundCol: lin(C.noki, 0.3), mist: 1.0, skyLow: lin(C.salo, 0.4) };
-const K9_TUULI = { kt: 9, maaY: 0.24, pHi: 110, kerroksia: 4.5, tiheys: 0.8, reuna: 0.05, lahi: 7, zoom: 1.3, mist: 1.3, sivu: 0.05,
+const K7_PIMEA = { pY: 0.30, kt: 7, maaY: 0.2, pHi: 98, kerroksia: 5, tiheys: 0.7, reuna: 0.06, lahi: 10, zoom: 1.3, dark: 0.86 };
+const K8_ULKOA = { pY: 0.30, kt: 8, maaY: 0.30, pHi: 120, kerroksia: 3, tiheys: 1.2, reuna: 0.06, lahi: 3, zoom: 1.0, reflect: 0.12, groundCol: lin(C.noki, 0.3), mist: 1.0, skyLow: lin(C.salo, 0.4) };
+const K9_TUULI = { pY: 0.30, kt: 9, maaY: 0.24, pHi: 110, kerroksia: 4.5, tiheys: 0.8, reuna: 0.05, lahi: 7, zoom: 1.3, mist: 1.3, sivu: 0.05,
   skyLow: lin('#55616c', 0.8), skyTop: lin('#3a444e', 0.6) };
-const K10_YLHAALTA = { kt: 10, maaY: 0.08, pLo: 50, pHi: 86, kerroksia: 5, tiheys: 0.9, reuna: 0.045, lahi: 5.5, stack: 0.46, zoom: 1.0, puut: 0.5, mist: 0.9, sivu: 0.012 };
+const K10_YLHAALTA = { pY: 0.46, kt: 10, maaY: 0.08, pLo: 50, pHi: 86, kerroksia: 5, tiheys: 0.9, reuna: 0.045, lahi: 5.5, stack: 0.46, zoom: 1.0, puut: 0.5, mist: 0.9, sivu: 0.012 };
 const SUN = (v) => [0.80, 0.47, v, 0.26];
 const KAJO = { glow: [0.56, 0.10, 0.8, 1.2], warmCol: lin(C.kajo, 1.0), lightCol: lin(C.kajo, 1.2), kajo: 1 };   // kajo liukuu 0..1 avainten välillä
 
@@ -66,16 +66,16 @@ const AVAIMET = [
   ['patarumpu_paisuu', m({ jouset: 0, zoom: 1.18, snow: [0.03, 0.3, 0.5, 0.4], reuna: 0.08, kerroksia: 3, lahi: 5 })],
   ['vaskien_isku', m({ jouset: 1, leikkaus: 1, zoom: 1.2, snow: [0.16, 1.8, 0.4, 0.6], tuuli: 1, reuna: 0.085, kerroksia: 3 })],
   ['gis_pitka_aani_loppu', m({ jouset: 1, leikkaus: 0.8, zoom: 1.21, snow: [0.3, 2.0, 0.4, 0.65], tuuli: 1, reuna: 0.09, kerroksia: 3, viivaVoima: 0.12, viivaPohja: 1, kukkulat: 0 })],
-  ['fraasi_ennen_taukoa', m({ jouset: 1, zoom: 1.26, snow: [0.45, 1.4, 0.5, 0.7], mist: 0.9, tuuli: 0.4, reuna: 0.09, kerroksia: 3.5, lahi: 5, maaY: 0.15, viivaVoima: 0.08, viivaPohja: 1, kukkulat: 0 })],
-  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [0.55, 0.4, 0.8, 0.7], mist: 1.1, reuna: 0.07, kerroksia: 2.4, lahi: 5, maaY: 0.16, viivaVoima: 0, kukkulat: 0, puut: 0 })],
+  ['fraasi_ennen_taukoa', m({ jouset: 1, zoom: 1.26, snow: [0.45, 1.4, 0.5, 0.7], mist: 0.9, tuuli: 0.4, reuna: 0.09, kerroksia: 3.5, lahi: 5, maaY: 0.17, viivaVoima: 0.08, viivaPohja: 1, kukkulat: 0 })],
+  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [0.55, 0.4, 0.8, 0.7], mist: 1.1, reuna: 0.07, kerroksia: 2.4, lahi: 5, maaY: 0.18, viivaVoima: 0, kukkulat: 0, puut: 0 })],
   // 2 Maan tasalta: yleistauon lumessa katse laskeutuu maahan; fis on viiva; bassot ovat maa
-  ['hiljaisuus_1_loppu', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.35, 0.25, 0.7, 0.6], mist: 0.9, viivaVoima: 0, kukkulat: 0, kerroksia: 2.6, lahi: 4, maaY: 0.20 })],
-  ['fis_pitka_aani', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.3, 0.2, 0.6, 0.55], kerroksia: 2.8, lahi: 4, maaY: 0.20 })],
-  ['valo_D_duuri', m(K2_MAASTA, { jouset: 0, viiva: 66, snow: [0.1, 0.2, 0.6, 0.5], harjut: 1.8, lightCol: KELMEA, kerroksia: 4, lahi: 5, maaY: 0.23 })],
+  ['hiljaisuus_1_loppu', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.35, 0.25, 0.7, 0.6], mist: 0.9, viivaVoima: 0, kukkulat: 0, kerroksia: 2.6, lahi: 4, maaY: 0.19 })],
+  ['fis_pitka_aani', m(K2_MAASTA, { jouset: 1, viiva: 66, snow: [0.3, 0.2, 0.6, 0.55], kerroksia: 2.8, lahi: 4, maaY: 0.19 })],
+  ['valo_D_duuri', m(K2_MAASTA, { jouset: 0, viiva: 66, snow: [0.1, 0.2, 0.6, 0.5], harjut: 1.8, lightCol: KELMEA, kerroksia: 4, lahi: 5, maaY: 0.21 })],
   ['askeleet_alkavat', m(K2_MAASTA, { jouset: 1, viiva: 66 })],
-  ['askeleet_B', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.30, lahi: 6 })],
+  ['askeleet_B', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.27, lahi: 6 })],
   // 3 Ylös runkoja pitkin: katse nousee nousun mukana
-  ['urkupiste_H1_alku', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.30, lahi: 6 })],
+  ['urkupiste_H1_alku', m(K2_MAASTA, { jouset: 1, viiva: 66, maaY: 0.27, lahi: 6 })],
   ['urkupiste_H1_loppu', m(K3_YLOS, { jouset: 1, viiva: 66, viivaVoima: 0.6, warmCol: KELMEA, lightCol: KELMEA, glow: [0.85, 0.30, 0.65, 1.6] })],
   ['nousu_huippu_D', m(K3_YLOS, { jouset: 0, viiva: 66, viivaVoima: 0.6, harjut: 1.8, lightCol: KELMEA, warmCol: KELMEA, glow: [0.85, 0.32, 1.0, 1.7] })],
   // 4 Lähikuva: huurteinen oksisto, pilkahdukset
@@ -276,7 +276,7 @@ async function alusta() {
   // Mitä kuvassa on hetkellä t: lasketaan äänestä joka kerta alusta.
   function kuva(t) {
     const p = tila(t);
-    const Y = (midi) => p.maaY + 0.03 + (midi - p.pLo) / (p.pHi - p.pLo) * (0.95 - p.maaY);
+    const Y = (midi) => p.pY + (midi - 60) * p.pK;       // sävelkorkeus on korkeus kuvassa; maa ei siirrä sitä
     const puut = [], harjut = [], kukkulat = [], pilk = [];
     const i0 = ensimmainen(NUOTIT, t - PISIN - 1.2, (n) => n[0]);
     for (let i = i0; i < NUOTIT.length && NUOTIT[i][0] <= t + 0.25; i++) {
@@ -302,11 +302,11 @@ async function alusta() {
         // Ryhmä alkaa kasvaa hieman ennen äänen alkua, jotta se on pystyssä, kun ääni soi; se on aina läpinäkymätön.
         const x0 = ASP * (0.07 + 0.86 * fract(midi * KULTA + 0.31));
         const n = kesto >= 1.2 ? 4 : 2;
-        const kasvu = smooth(clamp((ika + 0.2) / 0.45, 0, 1));
+        const kasvu = smooth(clamp((ika + 0.2) / 1.0, 0, 1));
         for (let j = 0; j < n; j++) {
           const h1 = fract(midi * 0.754 + j * 0.3819 + 0.11), h2 = fract(midi * 0.317 + j * 0.6180 + 0.53);
           const syv = j === 0 ? 0.12 + 0.3 * h2 : 0.1 + 0.8 * h2;
-          const kork = (Y(midi) - p.maaY) * (j === 0 ? 1 : 0.5 + 0.45 * h1) * (0.96 + 0.08 * L);
+          const kork = Math.max(Y(midi) - p.maaY, 0.05) * (j === 0 ? 1 : 0.5 + 0.45 * h1) * (0.96 + 0.08 * L);
           const top = p.maaY + kork * (0.06 + 0.94 * kasvu) * (0.12 + 0.88 * lasku);
           puut.push({ x: x0 + ASP * (j === 0 ? 0 : (h1 - 0.5) * 0.17 + (j % 2 ? 0.03 : -0.03)), top, w: kork * (0.15 + 0.06 * h2) * (1.25 - 0.35 * syv), syv,
             a: p.puut * clamp(lasku / 0.12, 0, 1) * clamp((ika + 0.2) / 0.1, 0, 1), siemen: fract(midi * 0.137 + j * 0.291) + 0.01, huoj: Math.min((0.014 + 0.045 * L) * (1 + 0.6 * p.tuuli), 0.07),
@@ -404,7 +404,7 @@ async function alusta() {
     gl.uniform4f(U('uLine'), k.viivaY, 0.8 * k.vv, 0.0020, 0.035);
     gl.uniform4f(U('uGround'), p.maaY, Math.max(clamp(k.var_ / 14, 0, 1.5), 1.1 * clamp((k.ml + 40) / 22, 0, 1)), clamp((k.ml + 45) / 35, 0, 1), 0.30);
     gl.uniform4f(U('uCut'), ASP * (0.42 + 0.16 * fract(k.leik[2] * KULTA)), k.leik[0], k.leik[1], k.leik[2]);
-    gl.uniform3f(U('uBand'), k.reuna, 0.94, p.tuuli);
+    gl.uniform3f(U('uBand'), k.reuna, 1.0, p.tuuli);
     gl.uniform4f(U('uForest'), p.kerroksia, p.tiheys, k.reuna, p.lahi);
     gl.uniform1f(U('uStack'), p.stack); gl.uniform1f(U('uDrift'), p.drift); gl.uniform1f(U('uSway'), Math.min((0.010 + 0.03 * k.liike + 0.03 * k.heilaus) * (1 + 0.6 * p.tuuli), 0.08));
     gl.uniform1f(U('uTrunk'), p.trunk); gl.uniform1f(U('uCrown'), p.crown); gl.uniform1f(U('uFrost'), p.frost); gl.uniform1f(U('uReflect'), p.reflect);
