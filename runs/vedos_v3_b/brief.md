@@ -82,3 +82,6 @@ kansiossa `ruudut/` ovat uudet. Tee kuten toisella kierroksella, mutta lähtöli
 jokaisesta virheestä (korjattu / osin / ennallaan, ruutu) ja sen jälkeen uudet virheet kysymyksillä K1–K10.
 Lisäksi lopuksi yksi kappale: mitkä kolme asiaa estävät sinua sanomasta, että tämä osa on valmis näytettäväksi
 tilaajalle.
+
+Liikesarjoja on tällä kierroksella enemmän: yksi jokaisesta iskusta ja kulusta välillä. Tiedoston nimi kertoo kohdan
+(esimerkiksi `liike_isku_0-45_01.png` alkaa kohdasta 0:45). Jokainen on neljä sekuntia, viisi ruutua sekunnissa. Katso ne kaikki.
