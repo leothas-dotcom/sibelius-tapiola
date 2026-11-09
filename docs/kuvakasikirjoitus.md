@@ -1,7 +1,7 @@
 # Kuvakäsikirjoitus: Tapiola
 
 *Versio 1.1, 9.11.2026. Tuore lukija tarkisti tekstin tyyliohjetta vasten (`runs/kk_tarkistus_v1/kriitikko.md`), ja
-löydökset on korjattu. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat") ja C-duurin punaisen valon;
+löydökset on korjattu. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat") sekä C-duurin punaisen valon ja D-duurin hämärät välähdykset;
 luvun 8 muut päätökset ovat auki. Noudattaa tyyliohjetta
 (`docs/visuaalinen_tyyli.md` v1.3): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
 otsikoissa ovat generoituja (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu.
@@ -630,7 +630,7 @@ Muualla kamera liikkuu aina sisään ja eteen, ei peruuta, ei pyöri eikä ylit�
 2. ~~C-duurin väärä valo: punainen vai messinki.~~ **Punainen, hyväksytty 9.11.2026** ("C duuri voi olla punainen,
    sopii sibeliukseen").
 3. D-duurin välähdykset: kelmeä ja hämärä hallan valo, ei keltainen. Käyttäjä 9.11.2026: "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä."
-   Lause on kirjattu sanasta sanaan; ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); **vahvistettava**.
+   Lause on kirjattu sanasta sanaan; ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); käyttäjä samana päivänä: "tämä oli virhe minun osaltani", eli sävellajit menivät lauseessa ristiin. **Päätetty 9.11.2026.**
 4. Tyyliohjeessa sana kajo tarkoittaa kahta asiaa: käyrätorvien kaukaista valoa ja H-duurin väriä. Tässä
    käyrätorvien valo on salon värinen koko teoksen, ja kajon väri tulee vasta H-duurissa. Sopiiko?
 5. Loppu: kuva seisoo liikkumatta tiedoston loppuun eikä pimene. Sopiiko YouTube-versioon?

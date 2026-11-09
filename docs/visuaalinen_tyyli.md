@@ -95,7 +95,7 @@ Miten se tuodaan kuvaan **[ohjaajan ehdotus]**: väri seuraa sävellajia, ei soi
 ja salo. C-duurin väärä valo on punainen, koska se oli Sibeliukselle punainen: se on ainoa kerta, kun metsässä on
 punaista. D-duuri on h-mollin rinnakkaisduuri, ja sen välähdykset ovat ne "hetkelliset valon välähdykset" alun aikana
 (analyysi kuuli D-duuria 0:44–0:55 ja 1:15–1:40). Ne eivät ole keltaisia: käyttäjä 9.11.2026 "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä."
-(ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); **vahvistettava**). Välähdys on kelmeä ja hämärä hallan valo pimeän sisällä. H-duurin väriä ei tunneta lähteistä; se on kajo.
+(ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); käyttäjä samana päivänä: "tämä oli virhe minun osaltani", eli sävellajit menivät lauseessa ristiin). Välähdys on kelmeä ja hämärä hallan valo pimeän sisällä. H-duurin väriä ei tunneta lähteistä; se on kajo.
 Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niitä.
 
 ## 4. Tila
