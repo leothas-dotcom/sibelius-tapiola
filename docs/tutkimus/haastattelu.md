@@ -617,3 +617,12 @@ Käyttäjän sanat kokonaan:
 > Sinun piti ymmärtää taidehistoriasta, miten luodaan hämäryys,
 
 (Viesti päättyy pilkkuun; lause jäi kesken.)
+
+## 9.11.2026: kamera, vääjäämättömyys ja loppu (jatkoa palautteeseen vedoksesta 3)
+
+Käyttäjän sanat kokonaan:
+
+> Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä,
+> toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? Hänen tuotantonsa.
+> Sellaiseen hienoon hyväksyvään H-duuriin. Se on upea loppu, kaunis ja tuntuu että Sibeliuskin on siinä kohtaa
+> tyytyväinen omaan uraansa.

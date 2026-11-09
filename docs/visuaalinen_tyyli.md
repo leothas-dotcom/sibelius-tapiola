@@ -213,6 +213,10 @@ Käyttäjän sanat (koko palaute: `docs/tutkimus/haastattelu.md`):
 - "Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi. Meidän piti sukeltaa johonkin maailmaan sisään, mistä
   avautuu uusia maailmoita."
 - "Sinun piti ymmärtää taidehistoriasta, miten luodaan hämäryys," (lause jäi kesken)
+- "Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä,
+  toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? Hänen tuotantonsa.
+  Sellaiseen hienoon hyväksyvään H-duuriin. Se on upea loppu, kaunis ja tuntuu että Sibeliuskin on siinä kohtaa
+  tyytyväinen omaan uraansa."
 - Säilytetään: "valot on hyvät ja dramaattiset" ja "Lumisade toimii nyt hienosti".
 
 Säännöt, jotka näistä seuraavat:
@@ -231,6 +235,9 @@ Säännöt, jotka näistä seuraavat:
    metsän väkeä hämärän rajalla: ne nähdään usvan läpi ja osittain, ne eivät esiinny eivätkä katso kameraan. Ei ihmistä,
    ei säveltäjän hahmoa (luku 1, kaksi kerrosta tarinassa).
 7. **Hämäryys haetaan taidehistoriasta** (`docs/tutkimus/taide1920.md`, luku 7), ei keksitä.
+8. **Kuvakulma on tulkinta.** Kameran pitää tehdä vääjäämättömyys ja samalla kunnioittaa Sibeliuksen viimeistä teosta.
+   **Loppu on hyväksyvä:** H-duuri on kaunis ja tyytyväinen, ei surullinen eikä synkkä. Kuva sanoo "tähän se loppui"
+   ilman, että mikään kuolee tai pimenee. Kameran suunnitelma on käsikirjoituksen uudessa rungossa (ehdotus).
 
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.

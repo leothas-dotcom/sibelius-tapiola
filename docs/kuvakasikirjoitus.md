@@ -12,6 +12,63 @@ rivit, yhteensä 153 riviä. Noudattaa tyyliohjetta (`docs/visuaalinen_tyyli.md`
 ristiriidassa, tyyliohje voittaa, ja sen luku 4c voittaa vanhemmat luvut. Ajat ottojen otsikoissa ovat generoituja
 (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu. Muualla ei ole aikoja.*
 
+## Uusi runko (luonnos 9.11.2026, ohjaajan ehdotus, käyttäjä ei ole hyväksynyt)
+
+Peruste: tyyliohjeen luvut 1, 2, 5 ja 4d sekä `docs/tutkimus/taide1920.md` luku 7. Ankkurit ovat samat kuin alla.
+Tämä on runko: maailmat, kamera ja loppu. Otot kirjoitetaan vasta, kun käyttäjä on nähnyt alkupätkän.
+
+### Kamera: viisi periaatetta
+
+1. **Yksi suunta, yksi katoamispiste.** Kamera kulkee suoraan eteen eikä käänny, peruuta tai palaa (tyyliohje 2.3).
+   Määränpää on aina kuvan keskellä usvan takana: lähellä oleva näkyy, kaukana oleva vasta aavistuu (Norštein:
+   sumussa näkyy vain se, mikä on lähellä; Tōhaku: puut häipyvät maalaamattomaan). Vääjäämättömyys on sitä, että
+   katsoja näkee, minne ollaan menossa, mutta ei sitä, mitä siellä on.
+2. **Tasainen vauhti, joka ei reagoi.** Vauhti muuttuu vain musiikin suurissa käänteissä (tyyliohje 5), ei iskuissa.
+   Kun vasket repäisevät valon metsään tai myrsky tulee päälle, kamera jatkaa samaa vauhtia. Se, ettei mikään
+   pysäytä liikettä, on vääjäämättömyys; se, ettei kamera säpsähdä, on arvokkuus.
+3. **Korkeus ja kallistus kantavat merkityksen.** Silmänkorkeus: ihminen metsässä. Matalalle lumen pintaan, kun
+   paino tulee (basson askeleet). Hitaasti ylös runkoja pitkin nousussa (O'Keeffe: katse rungon alta ylös). Latvojen
+   yläpuolelle vain kerran, huudossa, ja sieltä näkyy koko metsä vaaroina horisonttiin (Järnefelt Kolilta).
+4. **Uusi maailma avautuu katoamispisteestä.** Kamera ei käänny ovelle: ovi on suoraan edessä. Se, mitä kohti on
+   kuljettu (valo, rungon pinta, huurteen kide, jään pinta, pimeä runkojen välissä), kasvaa, täyttää kuvan ja on
+   uusi maailma. Sama eteenpäin kulkeva liike jatkuu sen sisällä.
+5. **Kunnioitus on pidättyvyyttä.** Vaakasuora horisontti, ei tärinää, ei nopeita liikkeitä, pitkät katkeamattomat
+   otot. Olentoja ei jahdata eikä lähestytä: ne ovat usvan rajalla ja jäävät sinne.
+
+### Maailmat ja kulut (kaksitoista hetkeä, samat ankkurit kuin luvussa 1)
+
+| # | Hetki | Maailma ja kameran paikka | Mistä ajetaan seuraavaan |
+|---|---|---|---|
+| 1 | Metsä on jo siinä | **Idea:** tumma ilma, lumikenttä ja kaukana laaja tumma metsä. Sen takana gis on horisontin valo, joka muodostaa mäkiä hitaasti. Kamera silmänkorkeudella, hitain vauhti, suoraan kohti metsää. | metsän reuna lähestyy koko ajan |
+| 2 | Ensimmäinen repeämä | Vaskien valo repeää pystyyn kaukana metsän sisällä; tuuli ja lumi tulevat vastaan. Kamera ei hidasta. Hiljaisuudessa lumi jää ilmaan ja kamera jatkaa. | ensimmäiset rungot ohittavat kameran |
+| 3 | Jokin kulkee edellä | **Metsän sisällä.** Kamera laskeutuu lumen pintaan. Puut tulevat usvasta ja jäävät ohi. Edellä usvassa liikkuu jotain, mikä ei koskaan tule lähemmäs. | katse alkaa kohota runkoja pitkin |
+| 4 | Metsä kohoaa, maa katoaa | Kamera kallistuu hitaasti ylös ja jatkaa eteen; kelmeä valo latvojen takana. Maa jää pois kuvasta. | ajetaan huurteiseen oksistoon ja sen yhteen kiteeseen |
+| 5 | Väike | **Maailma kiteen sisällä:** ensimmäinen maailma toistuu pienenä, huurre on metsää ja valo sen horisontti. Pilkahdukset ovat väikkyvät haltiat. | ajetaan jään pintaan ja sen läpi |
+| 6 | Metsä liikkuu kokonaisena | **Jään alla:** metsä ylösalaisin tummassa, syke kulkee pinnassa kameran yllä. | pimeä runkojen välissä kasvaa ja nielee kuvan |
+| 7 | Ikisalo | **Ikimetsä:** valtavat rungot, kamera matalalla ja hitaimmillaan, katsoja pieni. Kaukana runkojen takana liikkuu jotain suurta. | punainen valo syttyy suoraan edessä |
+| 8 | Väärä valo | Kamera pysähtyy ensimmäisen kerran (nimetty) ja katsoo punaista valoa runkojen takana. | valo viedään; pimeys |
+| 9 | Petos ja hermo | Kamera lähtee uudestaan, nopeammin kuin koskaan. Metsä näkyy vain vaskien välähdyksissä. | rungot harvenevat, metsä loppuu |
+| 10 | Se näkyy ja tulee | **Ulkona jäällä:** tila on ensimmäistä kertaa katsojaa suurempi. Myrsky näkyy kaukana, tulee ja iskee; kamera kulkee sen läpi. | huuto |
+| 11 | Huuto ja jälki | Kamera nousee ainoan kerran: ylös myrskyn läpi, ei taakse. | myrsky jää alle |
+| 12 | Oikea valo | **Ylhäällä:** laaja metsä vaaroina horisonttiin. Alun kuva palaa: horisontin valo ja hitaat mäet, nyt oikeassa valossa. | ei mihinkään |
+
+### Loppu: tähän se loppui
+
+Käyttäjä: "Miten me kuvaamme sen että tähän se loppui? Hänen tuotantonsa. Sellaiseen hienoon hyväksyvään H-duuriin."
+
+- **Liike, jota mikään ei pysäyttänyt, pysähtyy itse.** Kamera on kulkenut eteenpäin koko teoksen: läpi repeämän,
+  pimeän ja myrskyn. S:stä alkaen se hidastuu omasta tahdostaan, ja H-duurissa se on paikallaan. Pysähdys ei ole
+  este eikä uupumus vaan perille tulo. Tämä on tyyliohjeen luvun 1 toinen kerros: ihminen, jota ei näytetä, näkyy
+  vain kamerassa.
+- **Katsoja näkee, mistä on tultu, katsomatta taakse.** Ylhäältä näkyy sama horisontti ja samat hitaat mäet kuin
+  alussa. Ensimmäinen maailma toistuu viimeisenä, nyt kokonaisena ja oikeassa valossa. Se on ura yhdellä katseella.
+- **Valo on lämmin ja tulee hitaasti.** Kajo nousee horisontin takaa ja etenee metsän yli kohti katsojaa. Se ei ole
+  C-duurin punainen eikä häikäise.
+- **Mikään ei kuole.** Kuva ei pimene eikä häivy. Lumi sataa edelleen hiljaa ja usva liikkuu: metsä jatkuu kuvan
+  reunojen yli ja ajassa eteenpäin (Tōhaku; tyyliohje luku 1: metsä on ollut ennen katsojaa ja on hänen jälkeensä).
+  Vain kulkija on pysähtynyt. Kuva lakkaa muuttumasta vasta musiikin jälkeen.
+- **Ei merkkejä, ei tekstiä, ei hahmoa.** Tyytyväisyys on kuvan lepo: vaakasuora, leveä, tasapainoinen, hiljainen.
+
 ## 0. Miten tätä luetaan
 
 Kuva on ääni (tyyliohje 4c). Mitään ei ole kuvassa, ellei se soi, ja mikään, mikä soi, ei jää näkymättä. Kuva lasketaan
