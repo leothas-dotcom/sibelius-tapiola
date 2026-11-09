@@ -10,6 +10,8 @@ Lukee paketin puhdistetun monon, laskee spektrin kerran (CQT, 60 kaistaa oktaavi
                           äkillinen muutos, hiljaisuus
   <paketti>/ohjaus.f32    kuvaa ohjaavat kanavat 30 fps (+ ohjaus.json): taso, rekisterikerrosten osuus, bassolinja,
                           painopisteet, ylälinja, liike kerroksittain, perheet, tremolo, suunta
+  <paketti>/spektri.u8    spektri ruututarkkuudella (30 fps x puolisävelaskelet 24..107, dB -60..0 -> 0..255):
+                          kuva piirtää tästä äänen muodon (pitkän äänen paisutus, yläsävelten määrä eli sointi)
 
 Kuvaa ohjaavat vain annotations/cues.json (make_cues.py kokoaa: ankkurit + ajat + tapahtumat + iskut) ja ohjaus.f32.
 
@@ -346,7 +348,13 @@ def analyse(d, levytys):
         chans[f] = x[:nfr]
     X = np.stack([np.asarray(v, dtype=np.float32) for v in chans.values()], axis=1)
     X.tofile(d / "ohjaus.f32")
-    (d / "ohjaus.json").write_text(json.dumps({"fps": FPS, "frames": int(nfr), "channels": list(chans), "start": t0}, ensure_ascii=False, indent=1), encoding="utf-8")
+    # --- spektri ruututarkkuudella kuvaa varten (sekunnin tarkkuus ei riitä: viiva nykii)
+    wsp = max(1, int(round(fs / FPS)))
+    isp = np.minimum(((np.arange(nfr) + 0.5) / FPS * fs).astype(int), nF - 1)
+    S8 = np.stack([EdB[:, max(0, i - wsp // 2): i + wsp // 2 + 1].max(axis=1) for i in isp])
+    np.clip((S8 + 60.0) / 60.0 * 255.0, 0, 255).astype(np.uint8).tofile(d / "spektri.u8")
+    (d / "ohjaus.json").write_text(json.dumps({"fps": FPS, "frames": int(nfr), "channels": list(chans), "start": t0,
+                                                 "spektri": {"tiedosto": "spektri.u8", "midi_alin": LO, "kaistoja": int(HI - LO + 1), "db_alin": -60}}, ensure_ascii=False, indent=1), encoding="utf-8")
     cnt = Counter(e["tyyppi"] for e in Ev)
     print(f"{d}: korvat.json ({N} s, {len(longs)} pitkää ääntä, {len(notes)} nuottia, {len(Ev)} tapahtumaa) ja ohjaus.f32 ({len(chans)} kanavaa x {nfr} ruutua)")
     print("tapahtumat: " + ", ".join(f"{k} {v}" for k, v in cnt.most_common()))

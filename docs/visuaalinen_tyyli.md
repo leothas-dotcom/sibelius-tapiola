@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.4, 9.11.2026 (v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 1.5, 9.11.2026 (v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -141,6 +141,41 @@ periaate, ei kuvaa eikä tyyliä. Valinnat ovat **[ohjaajan ehdotus]**.
 2. **Ääni näkyy kahdella akselilla joka kuvatavassa:** korkeus on korkeus kuvassa, ja voima on valon määrä ja läheisyys.
 3. **Kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella**, ei leikkauksella. Maailmoja maailmojen sisällä: kun
    kamera ajaa jonkin sisään, sieltä avautuva maailma saa olla nähty toisesta paikasta.
+
+## 4c. Kerrosmaisema: kuva on ääni
+
+Käyttäjä 9.11.2026 (koepätkä): "Olemme edelleen staattisessa metsässä. [...] Tuo viiva mikä kulkee keskellä kuvaa, ei
+seuraa ääntä mitenkään järkevästi. Se on kulmikas, nykivä. EI NÄIN." Ja: "alun metsä voisi olla vain 'siemen'
+metsästä. Sellainen ajatus, joka sitten kehittyy tästä ideasta. [...] Sieltä ne gis-äänet, mitkä tulevat esiin pitää
+näkyä vaikka kukkuloina - seurata sitä spektrin muotoa. Sibelius ajatteli ehkä horisonttia - siksi lähes unisono -
+josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää." Ja: "selkeys voittaa aina."
+
+**Kuva on kolme kerrostumaa, ja ne ovat orkesterin kerrokset.** Mitään ei ole kuvassa, ellei se soi; mikään, mikä
+soi, ei jää näkymättä. Kuva lasketaan äänestä ruutu ruudulta (nuotit, pitkät äänet, spektri, iskut), ei käsin.
+
+| Äänessä | Kuvassa | Sääntö |
+|---|---|---|
+| **Jouset** | **Tumma metsä edessä.** Jokainen jousten ääni on kuusiryhmä. Latvan korkeus on sävelkorkeus. Ryhmä kasvaa maasta, kun ääni alkaa, ja väistyy, kun se lakkaa. | Sama sävel palaa samana ryhmänä samaan paikkaan: siksi siemen tunnistuu, kun se toistuu. Voimakas ääni on lähellä (suuri, tumma), hiljainen kaukana (pieni, usvassa). |
+| **Teoksen pitkä ääni** (alussa gis, sitten fis, e, lopussa viulujen ääni) | **Horisontin viiva** metsän takana. Sen korkeus on sävelkorkeus ja kirkkaus äänen voima. | Unisono on yksi viiva. Viiva on kuvassa niin kauan kuin ääni soi, myös silloin kun metsä peittää sen. |
+| **Paisutus pitkällä äänellä** (soittaja tulee esiin ja häipyy) | **Kukkula**, joka nousee viivasta ja painuu takaisin. | Jokainen paisutus saa oman paikkansa horisontilla. Muoto tulee äänen yläsävelistä: runsas sointi on terävä huippu hartioineen, puhdas sointi on matala pyöreä kumpu. Jokaisesta jää maisemaan matala jälki: maisema kasvaa äänestä. |
+| **Puhaltimien ja käyrätorvien muut pitkät äänet** | **Harjut** metsän takana, kukin sävelkorkeutensa kohdalla; ylimmät ovat kauimpana. | Pehmeä, usvainen valo harjun alla; ei kovaa viivaa. |
+| **Lyhyet korkeat äänet** (huilut, pikkolo, staccato) | **Pilkahdukset** sävelkorkeutensa kohdalla. | Syttyy äänen alkaessa, on poissa sen loppuessa. |
+| **Bassot ja patarummut** | **Maa:** sysäys kulkee maassa, tremolo on värinä, basson voima on maan hohto. | Maa on kuvan alin kaista ja pysyy urkupisteellä paikallaan. |
+| **Vaskien isku** | **Pystysuora leikkaus** kaikkien kerrosten läpi. | Kuvan ainoa pystysuora valo. Lähimmät puut jäävät sen eteen siluetteina. |
+| **Hiljaisuus, tuuli, myrsky** | **Lumi kerrosten välissä:** kaukana pientä ja hidasta, lähellä suurta ja nopeaa. | Lumi ei ole koskaan maski kuvan päällä: lähempi kerros peittää kauemman lumen. |
+| **Sävellajin väri** | C-duuri punainen (taottu aurinko), H-duuri kajo. | Luku 3. |
+
+**Alku on metsän idea.** Ensin on vain tumma ilma ja maa. Patarumpu sysää maata. Jousten siemen kasvattaa ensimmäisen
+kuusikon horisontin viivan eteen; kun jouset lakkaavat, kuusikko väistyy ja viiva jää; puhaltajat nousevat viivasta
+kukkuloina yksi kerrallaan. Kaikki myöhempi kasvaa tästä: metsä tihenee, kun jouset soittavat enemmän, ja kuvatapa
+(luku 4b) vaihtuu, mutta kerrostumat ja niiden merkitys pysyvät samoina koko teoksen ajan. **Selkeys:** katsoja oppii
+ensimmäisen minuutin aikana, mikä on mitä, eikä sitä muuteta.
+
+**Mikä ei saa tapahtua:** mikään ei ole staattinen; mikään ei nyi (ohjaus on ruututarkkaa, ei sekunnin portaita);
+valoviivaa, joka ei ole horisontti tai harju, ei ole; lumi ei ole kaiken päällä.
+
+Tämä luku korvaa aiemmat "metsän säikeet" (valoviivat runkojen välissä) ja sen, mitä luku 7 sanoo jousista ja
+käyrätorvista siltä osin kuin ne ovat ristiriidassa.
 
 ## 5. Liike ja kamera
 

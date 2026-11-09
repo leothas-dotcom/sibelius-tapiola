@@ -195,7 +195,22 @@ def _ohjaus(rec):
     if f is None or not f.exists():
         return None
     m = json.loads(f.read_text(encoding="utf-8"))
-    return {"tiedosto": f"{pak}/ohjaus.f32", "fps": m["fps"], "frames": m["frames"], "channels": m["channels"]}
+    out = {"tiedosto": f"{pak}/ohjaus.f32", "fps": m["fps"], "frames": m["frames"], "channels": m["channels"]}
+    if m.get("spektri"):
+        out["spektri"] = dict(m["spektri"], tiedosto=f"{pak}/{m['spektri']['tiedosto']}")
+    return out
+
+
+def _korvat_aanet(rec):
+    """Korvien kuulemat pitkät äänet ja nuotit: kuva piirtää jokaisen niistä (alku, kesto, sävel, sointi)."""
+    pak = rec.get("paketti")
+    f = ROOT / pak / "korvat.json" if pak else None
+    if f is None or not f.exists():
+        return [], []
+    k = json.loads(f.read_text(encoding="utf-8"))
+    pitkat = [{"alku": p["alku"], "loppu": p["loppu"], "midi": p["midi"], "muoto": p.get("muoto"), "tremolo": p.get("tremolo"),
+               "varina_hz": p.get("varina_hz"), "sointi": p.get("sointi")} for p in k.get("pitkat", [])]
+    return pitkat, k.get("nuotit", [])
 
 
 def leimaa_kasikirjoitus(cues, kesto):
@@ -266,6 +281,8 @@ def main():
         "iskut": iskut,
         "tapahtumat": _korvat_tapahtumat(rec),
         "ohjaus": _ohjaus(rec),
+        "pitkat": _korvat_aanet(rec)[0],
+        "nuotit": _korvat_aanet(rec)[1],
         "analyses": [{"levytys": levytys, "paketti": str(pak.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_lahde": str(aks_file.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_kynnys_z": aks.get("zmin"), "ajat_lahde": f"annotations/ajat_{levytys}.json"}],

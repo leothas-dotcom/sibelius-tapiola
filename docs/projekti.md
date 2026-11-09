@@ -290,6 +290,45 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 33 | 9.11. | – | "Hyvä. Tee vedokset kohtauksista" | 🔶 tehty, ei katsottu | vedos 1: 16 stilliä (otot 2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58), kontaktiarkki `runs/vedos_v1/stills/arkki.png`; mitattu: toistettavuus ja camcheck (0,8 °/s); kolme pahinta ongelmaa ja tekemättömät `runs/vedos_v1/run.json` |
 | 34 | 9.11. | vedos 1 | "se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka on niin kuin syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." ... "tee vaikka semmoinen taidehistoriahaku" ... "sumussa näkyviä kaukaisia vuoria" ... "puun indikaatio" ... "en nyt nähnyt noista vedoksista ... miten se äänen korkeus siinä otettiin huomioon" ... "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä" ... "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus" ... "tää täytyy nyt niin kuin kirjoittaa uudelleen" (koko palaute: `docs/tutkimus/haastattelu.md`) | 🔶 korjattu, ei todennettu | taidehistoriahaku (`docs/tutkimus/taide1920.md` luku 7); tyyliohje v1.4 luku 4b kuvatavat; käsikirjoitus v1.2 luvut 1 ja 2; vedos 2 (`runs/vedos_v2/`): eri kuvatapa joka tunnelmalle, säikeet piirtävät ylälinjan korkeuden ja valo seuraa äänen tasoa; käyttäjä ei ole vielä katsonut |
 | 35 | 9.11. | – | "Tee koepätkä" | 🔶 tehty, ei katsottu | `runs/vedos_v2/koepatka_alku.mp4`: alku ensimmäiseen D-duurin valoon, 75,2 s; latvojen huojunta ja iskujen vastineet lisätty; mitattu: ääni 0,00 ms kuuntelukopiosta, kuva muuttuu iskujen ruuduissa, ei leikkauksia (`runs/vedos_v2/run.json`) |
+| 36 | 9.11. | koepätkä | "Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen" ... "Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva ... on kulmikas, nykivä. EI NÄIN." ... "torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?" ... "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina." ... lumi "on KAIKEN PÄÄLLÄ oleva maski" ... "alun metsä voisi olla vain 'siemen' metsästä" ... "gis-äänet ... kukkuloina - seurata sitä spektrin muotoa" ... "horisonttia - siksi lähes unisono - josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää" (koko palaute: `docs/tutkimus/haastattelu.md`) | ❌ auki | työ käynnissä: katso luku Työn tila heti tämän taulukon alla |
+
+### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
+
+Käyttäjä ei halua kysymyksiä. Työ jatkuu, kunnes kuunteluoppaan jokainen kohta näkyy kuvassa tyyliohjeen mukaan ja
+kriitikon lista on tyhjä. Selkeys voittaa aina.
+
+**Mitä löytyi:** (a) ohjauskanavat (`ylalinja_midi` ym.) on laskettu sekunnin tarkkuudella ja toistettu 30 ruutuun:
+siksi viiva oli kulmikas; (b) `korvat.json` tuntee 10 873 nuottia ja 1 402 pitkää ääntä (alku, kesto, sävel, muoto,
+soinnin vihje), mutta piirtäjä ei lukenut niitä; (c) staattinen 3D-metsä ei kanna kuvaa.
+
+**Uusi rakenne (päätetty 9.11.2026):**
+1. **Data:** `korvat.py` kirjoittaa spektrin ruututarkkuudella (`spektri.u8`), ja `make_cues.py` vie nuotit ja pitkät
+   äänet ohjaustiedostoon. Kuva piirretään niistä: jokainen nuotti ja pitkä ääni on kuvan tapahtuma.
+2. **Kuva:** kerrosmaisema. Kolme kerrostumaa ovat orkesterin kerrokset: **maa** (bassot, patarummut), **metsä**
+   (jouset: tummat siluetit, joiden ääriviiva on jousten linja) ja **valo metsän takana** (käyrätorvet ja puhaltimet:
+   horisontin viiva ja siitä nousevat kukkulat, muoto äänen yläsävelistä). Vasket leikkaavat pystysuoraan läpi, huilujen
+   lyhyet äänet ovat pilkahduksia korkeuden mukaan, lumi kulkee kerrosten välissä.
+3. **Alku on metsän idea:** vaakasuora horisontti (unisono gis). Jousten siemenmotiivi piirtää ensimmäisen metsän
+   ääriviivan; kun jouset lakkaavat, metsä väistyy ja takana ollut viiva jää; puhaltajat nousevat siitä kukkuloina
+   yksi kerrallaan. Kaikki myöhempi kasvaa tästä kuvasta.
+4. **Kuvatavat** (tyyliohje 4b) ovat tämän saman kerrosmaiseman katsomispaikkoja.
+
+**Järjestys:** data → kerrosmaiseman piirtäjä ja alku → kriitikko (ruudut kuunteluopasta vasten) → käsikirjoitus
+uudestaan kuunteluoppaan jokaisesta kohdasta → kriitikko (käsikirjoitus kuunteluopasta vasten) → jaksot yksi
+kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
+
+**Tehty:**
+- 9.11. Data: `korvat.py` kirjoittaa `spektri.u8` (30 r/s x 84 puolisävelaskelta); `make_cues.py` vie `pitkat`, `nuotit` ja
+  spektrin osoitteen ohjaustiedostoon. `ohjaus.f32` ei muuttunut (tavu tavulta sama).
+- 9.11. Piirtäjä: `visual/kerrokset.glsl.js` (kerrosmaisema) ja `visual/kohtaus.js` (kuva lasketaan nuoteista, spektristä
+  ja iskuista joka ruudulle). Vanha `visual/metsa.glsl.js` (3D-metsä) ei ole käytössä; poistetaan, kun kuvatavat on
+  toteutettu kerrosmaisemassa.
+- 9.11. Tyyliohje v1.5 luku 4c: kerrosmaiseman kielioppi.
+- 9.11. Alku 0:00–1:15 renderöity (`runs/vedos_v3/alku.mp4`); kriitikko katsoo ruudut (`runs/vedos_v3/brief.md`);
+  toinen agentti käy kuunteluoppaan jokaisen rivin kuvaksi (`runs/kk_v2_luonnos/brief.md`).
+
+**Seuraavaksi:** kriitikon virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+(`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---
 

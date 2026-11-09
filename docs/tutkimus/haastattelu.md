@@ -543,3 +543,31 @@ Ohjaajan luenta: (1) metsä pysyy, mutta sitä ei kuvata runkorivinä syvyydess�
 kuvatapansa: kuvakulma, rajaus ja se, millä puu vihjataan; (3) metsä saa olla kerroksina, kaukaiset vaarat usvassa, puut
 vain vihjeinä; (4) kuva seuraa ääntä näkyvästi, välillä korkeutta, välillä voimaa; (5) ajo paikallaan seisovien
 puiden välissä ei riitä liikkeeksi.
+
+## 9.11.2026: palaute koepätkästä (alku, 75 s)
+
+> Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen tuloksen. Käytä kriitikkoa huomaamaan virheet.
+>
+> Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva mikä kulkee keskellä kuvaa, ei seuraa ääntä
+> mitenkään järkevästi. Se on kulmikas, nykivä. EI NÄIN.
+>
+> Minusta sanoin melko selvästi, että ne torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?
+>
+> Käytä kriitikkoa myös huomaamaan, että kuvakäsikirjoitusta ei ole toteutettu kuunteluoppaan mukaan.
+>
+> Työskentele, kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina.
+>
+> Käytä kriitikkoa huomaamaan, että lumisade on hyvä, mutta siinä ei ole syvyyttä. Se on KAIKEN PÄÄLLÄ oleva maski, joka
+> ei toimi. Sen pitää tapahtua syvyydessä.
+>
+> Mielestäni alun metsä voisi olla vain "siemen" metsästä. Sellainen ajatus, joka sitten kehittyy tästä ideasta. Eli
+> miten kuvaamme alkuksi vain "idean" metsästä, mikä on metsä? Sieltä ne gis-äänet, mitkä tulevat esiin pitää näkyä
+> vaikka kukkuloina - seurata sitä spektrin muotoa. Sibelius ajatteli ehkä horisonttia - siksi lähes unisono - josta
+> sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää.
+>
+> Olemme tehneet paljon työtä sen taustamateriaalin lukemiseen. Sen pitää nyt NÄKYÄ tässä teoksessa.
+
+Ohjaajan luenta: (1) ei kysymyksiä, kriitikko etsii virheet, työ jatkuu kunnes kuunteluoppaan jokainen kohta näkyy;
+(2) selkeys voittaa; (3) alku on metsän idea: unisono on horisontti, jouset ovat tumma metsä sen edessä, ja puhaltajat
+nousevat yksi kerrallaan kukkuloina puiden takaa, muoto äänen spektristä; (4) kaikki kehittyy tästä siemenestä;
+(5) lumi tapahtuu syvyydessä, kerrosten välissä; (6) mikään ei saa olla staattista eikä nykivää.
