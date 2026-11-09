@@ -75,6 +75,31 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
 | 10 → 11 | myrskyn läpi ylös | koko metsä vaaroina: alun kuva ylhäältä |
 | 11 → 12 | ei mihinkään: kamera hidastuu ja pysähtyy | sama kuva levossa, oikeassa valossa |
 
+**Mytologian ainekset maailmoittain** (`docs/tapiola_tutkimus.md` luku 8). Käyttäjä: "Miten me visualisoimme nuo
+Ainekset? Onko ne tässä uudessa suunnitelmassa?" Jokaisella aineksella on paikka ja muoto:
+
+| Aines (lähde) | Maailma | Miten se näkyy |
+|---|---|---|
+| Tapion talot kaukana, "ukset kulta kuumottivat poikki suosta" (K14) | 1, 12 | kaukaisin vaara on talo; ikkunat kuumottavat hopeisina suon yli; perille ei päästä ennen loppua |
+| Kolme linnaa: puinen, luinen, kivinen; kussakin kuusi ikkunaa (K14) | 5 | kiteen sisällä kolme kerrosta kolmesta aineesta (puun syy, luun vaalea huokoisuus, kiven tumma kide); kussakin kuusi ikkunaa, jotka eivät syty yhtä aikaa |
+| "Alta harva, päältä tiheä, keskeltä läpinäkyvä" (SKVR III1 1231) | 1–3, 7 | metsän massan rakenne: tyvellä raot, keskellä usvan kaista, latvusto tiheä |
+| Metsänpeitto (SKVR VI2 5391) | 2, 7, 10 | hiljaisuudet: äänen elementit katoavat, usva peittää, polku päättyy; se mikä kulki edellä ei näy |
+| Hiidenväki näkymättömillä poluillaan, helinä | 5 | väike: valo, joka vaihtaa paikkaa ja jättää hetkeksi jäljen kulkemastaan polusta |
+| Pilkut ja rastit (K14) | 1, 3, 12 | pilkkapuu suolla; pilkat ikihongissa syttyvät askelten tahdissa; sama puu lopussa |
+| Tapion pöytä ja karsikko (SKVR IX3 982) | 7, 12 | kolme ikihonkaa ja valon lauta; lopussa pystysuora (pilkkapuu) kohtaa vaakasuoran (horisontti) |
+| Valo houkutellaan soitolla puun latvaan (K47, K49) | 4 | nousussa valo laskeutuu suuren petäjän latvaan: soitto on houkutellut sen |
+| Valo suljetaan vuoreen yhdeksän oven taakse; yö pilkkopimeä (K49) | 9 | M:n jälkeen yhdeksän tummaa kerrosta sulkeutuu peräkkäin kuin ovet; niiden läpi ajetaan |
+| Taottu aurinko, joka ei paista (K49) | 8 | punainen aurinko pylväiden takana; ei valaise mitään |
+| Jättitammi peittää taivaan, "päivän peitti paistamasta" (K2) | 8 → 9 | M:ssä pimeys ei laskeudu vaan kasvaa: latvusto leviää taivaan yli ja peittää punaisen auringon |
+| Kipinä "läpi taivahan yheksän"; Ukon tuli kerrosten läpi (K47, SKVR II 699) | 2, 8, 9, 10 | vaskien isku on pystysuora valo kaikkien kerrosten läpi; taivaaseen jää repeämä, joka hehkuu hetken |
+| "Pakkanen Puhurin poika", halla (SKVR II 625a) | 6, 10 | huurre etenee jään pintaa pitkin sykkeiden tahdissa; myrskyssä kylmä tulee kerros kerrokselta |
+| Revontulet "kähähtelivät", tulevat alas lumelle (SKVR XII2 7950) | 11 | vain huudon jälkeen: kaari laskeutuu kohti lunta; tremolo on sen kähinä |
+| "Soi metsä, kumisi korpi"; Tapion torvi (K46) | 1, 12 | kaiku: kun käyrätorvien ääni paljastuu, valo vastaa kaukaa vaaralta hetkeä myöhemmin; lopussa metsä vastaa viimeisen kerran |
+| Sininen salo ja synkkä salo: sama massa kahtena sävynä | kaikki | jousten soidessa metsä on synkkä (musta, läsnä), niiden vaietessa sininen ja kaukainen |
+| Halliparta, havuhattu, naavaturkki (Tapion kolme sanaa) | 1, 7, 12 | ei kasvoja: vaaran laki on havuhattu (kuusikon siluetti), ikisalon pylväistä riippuu harmaa naava (parta ja turkki), usva on harmaa |
+| Pyöreä: "kuun kehänen", "pimeä pyörre" | 8, 10 | taotun auringon ympärillä on kehä; myrskyn keskus on pimeä pyörre, jota kohti ajetaan |
+| Värit: sininen, hopea ja kulta, harmaa, sysi, hämy, punamulta | kaikki | salo ja hämy perustilana, hopea ikkunoissa ja pilkoissa, harmaa naavassa ja usvassa, punainen vain taotussa auringossa, lämmin vasta kajossa |
+
 **Kolme kaarta koko teoksen läpi.**
 - **Siemen.** Jousten motiivi on tumma aalto, joka kulkee metsän massan läpi kaukaa lähelle. Se on sama ele joka kerta ja
   kehittyy: alussa yksi aalto (1), sitten aallot painon kanssa (3), hitaat syvät aallot (7), hermostunut värinä (9),
@@ -96,7 +121,7 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
 - **Kuva:** tumma suo lumen alla, kaukana laaja metsän massa kerroksittain usvaan, sen takana vaara, joka on Tapion talo.
   Gis on horisontin valo, joka muodostaa mäkiä hitaasti yläsävelten voimasta (käyttäjä). Kun jouset lakkaavat, metsä
   väistyy usvaan ja horisontin valo kirkastuu: paljastuminen. Käyrätorvien soidessa vaaran rinteessä kuumottaa hopeisia
-  ikkunoita. Puupuhaltimet (`puhaltimet_tulevat`) tuovat väikkeen metsän latvustoon: valoa, joka vaihtaa paikkaa ennen kuin katsoja ehtii katsoa.
+  ikkunoita, hetkeä äänen jälkeen: kaiku ("soi metsä, kumisi korpi"). Vaaran laki on havuhattu. Puupuhaltimet (`puhaltimet_tulevat`) tuovat väikkeen metsän latvustoon: valoa, joka vaihtaa paikkaa ennen kuin katsoja ehtii katsoa.
 - **Ääni ohjaa:** gis-kaista → horisontin valo; yläsävelet → mäet (3 s); jousten rekisteri 50–79 → metsän tummuus ja
   latvuston aalto; matalan kaistan alut → valo lumen pinnassa (patarumpu); puupuhaltimet 72–100 → väike latvustossa.
 - **Kamera:** silmänkorkeus, suoraan kohti metsää, hitain vauhti. Maa on tasainen suo kameran alla.
@@ -167,7 +192,8 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
   hämmästyttävän pitkään; "sininen salo"; SKVR IX3 982 Tapion pöytä: kolme runkoa pystyyn, vaakalauta päälle, pisarat
   juurelle; karsikko; metsänpeitto hiljaisuudessa.
 - **Kuva:** kolmas maailma: Tapion talo sisältä. Valtavat rungot pylväinä, kaikki sinistä, usva kerroksina, hitainta.
-  Kolmen rungon välissä vaakasuora valon lauta: Tapion pöytä. H:n neljätoista sykettä (`h_palaa_ennen_hiljaisuutta`) kulkevat valona pöydän
+  Pylväistä riippuu harmaata naavaa: halliparta ja naavaturkki, Tapion ainoat tuntomerkit. Kolmen rungon välissä
+  vaakasuora valon lauta: Tapion pöytä. H:n neljätoista sykettä (`h_palaa_ennen_hiljaisuutta`) kulkevat valona pöydän
   lautaa pitkin: talon syke. Hiljaisuudessa (`hiljainen_jakso_alku`) valo sammuu pöydältä ja usva peittää pylväät: metsänpeitto.
 - **Ääni ohjaa:** matalat jouset → massan tummuus ja usvan paksuus; urkupiste → pöydän valo; matalan kaistan alut → syke
   laudalla; `hiljaisuus` → valo pois.
@@ -180,7 +206,7 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
   paistakana"; Sibeliuksen värikuulo C-duuri = punainen (käyttäjä hyväksyi); Europadisc ja Inkpot: matalat valonsäteet,
   himmeä auringonvalo.
 - **Kuva:** tutti-isku (`vaski_tutti_620`) repäisee valon pylväiden läpi; sitten punainen aurinko nousee kolmesti pylväiden takaa ja jää
-  (C-duuri ennen M:ää). Se ei valaise mitään: pylväät pysyvät mustina, vain usva ja ikkunat Tapion talossa punertuvat.
+  (C-duuri ennen M:ää); sen ympärillä on kehä ("kuun kehänen"). Se ei valaise mitään: pylväät pysyvät mustina, vain usva ja ikkunat Tapion talossa punertuvat.
   Kamera pysähtyy ensimmäisen kerran ja katsoo sitä.
 - **Ääni ohjaa:** `vaski_tutti_620` → leikkaus; C-duurin ankkurit → auringon nousu; jousten voima → usvan punerrus.
 - **Kamera:** nimetty pysähdys. **Puu:** sama kolme pylvästä kehystää auringon. **Siemen:** aalto pysähtyy auringon eteen.
@@ -189,7 +215,8 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
 - **Lähde:** K47 ja K49: valo houkutellaan latvaan ja suljetaan "vuorehen teräksisehen" yhdeksän oven taakse, yö "pitkä,
   pilkkoisen pimeä"; Mäkelä: kuolema ja tyhjyys; tyyliohje 2.10: ahdistus on sallittu tässä; 7b: tremolo on väre
   paikallaan, vuorottelu on kaksi paikkaa.
-- **Kuva:** M: vaskien pystyvalo sulkee auringon; pimeys. Kamera lähtee uudestaan ja kiihtyy. Metsä näkyy vain vaskien
+- **Kuva:** M: vaskien pystyvalo sulkee auringon, ja pimeys kasvaa kuin jättitammi (K2): latvusto leviää taivaan yli ja
+  peittää valon. Kamera lähtee uudestaan ja kiihtyy. Metsä näkyy vain vaskien
   välähdyksissä: yhdeksän ovea ovat peräkkäiset tummat kerrokset, joiden läpi ajetaan. Jousten hermo on massan värinä
   paikallaan. Vaskien vuorottelu on kaksi valon paikkaa, jotka vastaavat toisilleen pimeässä.
 - **Ääni ohjaa:** nimetyt iskut → leikkaukset; `tremolo` → värinä; vuorottelu → kaksi paikkaa; jousten voima → värinän
@@ -202,7 +229,7 @@ MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???" Vastaus o
   Ukon tuli kerrosten läpi; tyyliohje 4: horisonttia ei näytetä ennen tätä.
 - **Kuva:** metsä loppuu, ja kamera on ulkona jäällä: tila on ensimmäistä kertaa katsojaa suurempi. Horisontti paljastuu,
   ja kaukana metsä on matala musta reuna. Myrsky näkyy kaukana lumiseinänä ja tulee kerros kerrokselta; se iskee, kerrokset
-  romahtavat yhdeksi; Q:n ja R:n iskut ovat pystyvaloja myrskyn sisällä. Kamera ajaa läpi.
+  romahtavat yhdeksi; Q:n ja R:n iskut ovat pystyvaloja myrskyn sisällä. Myrskyn keskus on pimeä pyörre, jota kohti kamera ajaa ja jonka läpi se menee.
 - **Ääni ohjaa:** jousten voima → lumen tiheys ja massan liike; `Q_koko_metsa`, `myrsky_huippu`, `R_vasket` → leikkaukset;
   matalat alut → maan valo; `tremolo` → väre.
 - **Kamera:** sama suunta, myrskyn läpi. **Puu:** ei: metsä on reuna. **Siemen:** aalto on kasvanut koko tilaksi.

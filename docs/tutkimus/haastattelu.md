@@ -665,3 +665,11 @@ Käyttäjä jatkoi samana päivänä kolmella viestillä:
 
 > MAAILMOITA! JOIDEN SISÄLTÄ LÖYTYY MAAILMOITA!!!! SIEMEN-IDEA, JOKA KASVAA. MITEN ME KUVAAMME TÄMÄN???
 
+## 9.11.2026: suunta hyväksytty, ainekset
+
+> Olet tehnyt hienoa työtä tähän asti maailmoiden ja tyylien kanssa. Kaikkiin kysymyksiisi pitäisi nyt löytyä vastaukset
+> taustamateriaalista ja visuaalisen tyylin dokumentista.
+
+> Luitko tuon tapiola_tutkimus.md:en? Siellähän on UPEAA materiaalia. BRAVO! Olet tehnyt sen kanssa hienoa työtä. Miten me
+> visualisoimme nuo Ainekset? Onko ne tässä uudessa suunnitelmassa?
+
