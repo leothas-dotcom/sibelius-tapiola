@@ -1,7 +1,7 @@
 # Kuvakäsikirjoitus: Tapiola
 
-*Versio 1, 9.11.2026. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat"); luvun 8
-muut päätökset ovat auki. Noudattaa tyyliohjetta
+*Versio 1, 9.11.2026. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat") ja C-duurin punaisen valon;
+luvun 8 muut päätökset ovat auki. Noudattaa tyyliohjetta
 (`docs/visuaalinen_tyyli.md` v1.2): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
 otsikoissa ovat generoituja (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu.
 Kaikki muu viittaa ankkureihin (`annotations/teemat.json`), ei sekunteihin. Kuunteluoppaan sisältöä (lähteet,
@@ -71,10 +71,10 @@ jatkuvasti, eikä katsoja huomaa rajaa. Kulun alku- ja loppuankkuri on nimetty o
 | Maailma | Perusväri | Valon lähde ja suunta | Kirkkain hetki | Ei koskaan |
 |---|---|---|---|---|
 | 1 Kuusikko | hämy, noki | kapea valo runkojen välistä suoraan edestä kaukaa (käyrätorvien kajo, salon värinen) | `vaskien_isku`: sama rako leimahtaa hallan värisenä | yleisvaloa |
-| 2 Askelten metsä | hämy, salo | sama rako, askelta alempana ja himmeämpänä | `nousu_huippu_D`: kelmeä valo kaikissa kerroksissa **[käyttäjä päättää: kelmeä halla vai keltainen]** | lämpöä |
+| 2 Askelten metsä | hämy, salo | sama rako, askelta alempana ja himmeämpänä | `nousu_huippu_D`: kelmeä, hämärä valo kaikissa kerroksissa (ei keltaista; käyttäjä 9.11.2026, ks. luku 8) | lämpöä |
 | 3 Huurremetsä | salo, halla | kaukaisin kidekerros, josta valo siroaa lähempiin kiteisiin (väike) | `nopea_liike_1_alku`: tihein kimallus | maata, varjoja maassa |
 | 4 Jäänalainen metsä | hämy, lähes noki | alhaalta lumesta; jääkatto ylhäällä himmeä | `h_urkupiste_vyory`: koko metsä samassa himmeässä valossa | suoraa valoa ylhäältä |
-| 5 Ikisalo | salo | kaukaa edestä, hyvin heikko; lopussa taottu aurinko **sivulta** latvojen korkeudelta | `auringonsade`: punainen valo **[käyttäjä päättää: punainen vai messinki]** | punaista ennen `c_duuri_valahdykset` |
+| 5 Ikisalo | salo | kaukaa edestä, hyvin heikko; lopussa taottu aurinko **sivulta** latvojen korkeudelta | `auringonsade`: punainen valo (käyttäjä hyväksyi 9.11.2026) | punaista ennen `c_duuri_valahdykset` |
 | 6 Pilkkopimeä | noki | ei pysyvää lähdettä: vain vaskien leikkaukset ja kaukainen kajo | `P_vaskipaisunta` | punaista, lämpöä |
 | 7 Aukea | noki, halla | horisontin kapea hallanvalkea nauha, joka kasvaa myrskyksi | `myrsky_huippu`: koko kuva hallaa | syvyyttä myrskyn sisällä |
 | 8 Myrskyn jälkeen | salo, lopussa kajo | suoraan edestä kerrosten takaa, matalalta | `loppu_Hduuri_alku`: kajo, hellä, ei häikäisevä | pimenemistä lopussa |
@@ -585,9 +585,10 @@ Muualla kamera liikkuu aina sisään ja eteen, ei peruuta, ei pyöri eikä ylit�
 
 **Käyttäjä päättää:**
 1. ~~Kahdeksan maailmaa ja seitsemän kulkua (luku 2).~~ **Hyväksytty 9.11.2026.**
-2. C-duurin väärä valo: punainen (synestesia) vai messinki. Tässä on oletettu punainen.
-3. D-duurin välähdykset: kelmeä hallan valo vai keltainen. Tässä on oletettu kelmeä, koska tyyliohje kieltää
-   lämmön ennen loppua.
+2. ~~C-duurin väärä valo: punainen vai messinki.~~ **Punainen, hyväksytty 9.11.2026** ("C duuri voi olla punainen,
+   sopii sibeliukseen").
+3. D-duurin välähdykset: kelmeä ja hämärä hallan valo, ei keltainen. Käyttäjä 9.11.2026: "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä."
+   Lause on kirjattu sanasta sanaan; ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); **vahvistettava**.
 4. Tyyliohjeessa sana kajo tarkoittaa kahta asiaa: käyrätorvien kaukaista valoa ja H-duurin väriä. Tässä
    käyrätorvien valo on salon värinen koko teoksen, ja kajon väri tulee vasta H-duurissa. Sopiiko?
 5. Loppu: kuva seisoo liikkumatta tiedoston loppuun eikä pimene. Sopiiko YouTube-versioon?

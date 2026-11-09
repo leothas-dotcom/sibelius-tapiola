@@ -74,12 +74,12 @@ valinta]**, ja mytologian sanat ovat niiden lähde.
 | **Salo** | syvä sininen ("siniset salot") | kaukaiset kerrokset; mitä kauempana, sitä sinisempi |
 | **Halla** | kylmä sinivalkoinen | lumi, jää, myrskyn valo; kylmä ei lämmitä |
 | **Noki** | musta, lämmin | varjot lähellä; patarumpujen ja pohjan väri |
-| **Taottu aurinko** | **punainen** valo kullan sijasta **[ohjaajan ehdotus synestesiasta, käyttäjä päättää]**: Sibeliuksen kerrotaan kuulleen C-duurin punaisena (ks. alla). Punainen valo sinivihreässä metsässä on väärä ja groteski. Vaihtoehto (v1): messinki, rikinkeltainen | **vain** C-duuri (t. 385–396) ja sen välähdykset sitä ennen: väärä valo; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
+| **Taottu aurinko** | **punainen** valo kullan sijasta (ohjaajan ehdotus synestesiasta, **käyttäjä hyväksyi 9.11.2026**: "C duuri voi olla punainen, sopii sibeliukseen"): Sibeliuksen kerrotaan kuulleen C-duurin punaisena (ks. alla). Punainen valo sinivihreässä metsässä on väärä ja groteski. Hylätty vaihtoehto (v1): messinki, rikinkeltainen | **vain** C-duuri (t. 385–396) ja sen välähdykset sitä ennen: väärä valo; "näyttää kullalta mutta ei lämmitä" (Kalevala 49) |
 | **Kajo** | vaalea, pehmeä, hieman lämmin valkoinen | **vain** H-duuri (t. 605–634): oikea valo, hellä, mezzoforte |
 
 Säännöt: koko teos on tumma; valoisin kohta ennen loppua on taottu aurinko, ja sekin on väärän värinen. Värit
 eivät vaihdu iskussa; ne vaihtuvat kerroksen tullessa etualalle. Ei kirkkaita puhtaita värejä. Punaista on vain
-taotussa auringossa, jos käyttäjä hyväksyy synestesiaehdotuksen; ei tulta, ei auringonlaskua (kansien klisee).
+taotussa auringossa (käyttäjä hyväksyi 9.11.2026); ei tulta, ei auringonlaskua (kansien klisee).
 Ei hehkua tai bloomia ilman lähdettä kerroksessa.
 
 **Synestesia (käyttäjän kysymys 9.11.2026).** Sibelius oli värikuuloinen: hän liitti sävellajeihin värejä.
@@ -91,8 +91,9 @@ Lähteet ovat toissijaisia [tarkista Tawaststjernasta tai Ainolasta]:
 - Hänen kerrotaan salanneen kykynsä, ettei häntä pilkattaisi (classical-music.com).
 Miten se tuodaan kuvaan **[ohjaajan ehdotus]**: väri seuraa sävellajia, ei soitinta. Perustila h-molli on hämy
 ja salo. C-duurin väärä valo on punainen, koska se oli Sibeliukselle punainen: se on ainoa kerta, kun metsässä on
-punaista. Jos D-duurin keltainen pitää (rinnakkaisduuri), sen välähdykset ovat ne "hetkelliset valon välähdykset"
-alun aikana (analyysi kuuli D-duuria 0:44–0:55 ja 1:15–1:40). H-duurin väriä ei tunneta lähteistä; se on kajo.
+punaista. D-duuri on h-mollin rinnakkaisduuri, ja sen välähdykset ovat ne "hetkelliset valon välähdykset" alun aikana
+(analyysi kuuli D-duuria 0:44–0:55 ja 1:15–1:40). Ne eivät ole keltaisia: käyttäjä 9.11.2026 "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä."
+(ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); **vahvistettava**). Välähdys on kelmeä ja hämärä hallan valo pimeän sisällä. H-duurin väriä ei tunneta lähteistä; se on kajo.
 Emme väitä tietävämme Sibeliuksen värejä: kuvaamme, että hän näki niitä.
 
 ## 4. Tila
@@ -258,8 +259,8 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 ### Valo ja väri
 14. Valolla on aina lähde jossain kerroksessa. Ei hehkua ilman lähdettä.
 15. Koko teos on tumma: hämy, salo, halla, noki. Ei lämpöä ennen loppua. Punaista vain taotussa auringossa
-    (C-duuri), jos käyttäjä hyväksyy synestesiaehdotuksen.
-16. Taottu aurinko (punainen tai messinki, käyttäjä päättää) vain C-duurissa. Kajo (pehmeä vaalea) vain H-duurissa.
+    (C-duuri); käyttäjä hyväksyi punaisen 9.11.2026.
+16. Taottu aurinko (punainen) vain C-duurissa. Kajo (pehmeä vaalea) vain H-duurissa.
 17. Värit vaihtuvat kerroksen tullessa etualalle, eivät iskussa.
 
 ### Hiljaisuus

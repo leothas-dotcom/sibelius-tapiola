@@ -84,7 +84,7 @@
     {
       "id": "taottu_aurinko",
       "sääntö": 16,
-      "kysymys": "Näkyykö taotun auringon väri (punainen tai messinki, käyttäjän päätöksen mukaan) muualla kuin C-duurissa ja sen nimetyissä välähdyksissä? Näkyykö kajo muualla kuin H-duurissa?"
+      "kysymys": "Näkyykö taotun auringon väri (punainen, käyttäjän päätös 9.11.2026) muualla kuin C-duurissa ja sen nimetyissä välähdyksissä? Näkyykö kajo muualla kuin H-duurissa?"
     },
     {
       "id": "vari_ei_iskussa",
