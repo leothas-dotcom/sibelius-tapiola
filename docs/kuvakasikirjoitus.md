@@ -1,6 +1,6 @@
 # Kuvakäsikirjoitus: Tapiola
 
-*Versio 2.1, 9.11.2026 (2.1: kolmen kriitikon huomiot käsikirjoituksen epäselvistä riveistä korjattu). Kirjoitettu kokonaan uudestaan koepätkän palautteen jälkeen (käyttäjä: "kuvakäsikirjoitusta ei
+*Versio 2.2, 9.11.2026 (2.2: ikisalo, huurre ja kulut kuvattu kolmannen kriitikkokierroksen jälkeisen toteutuksen mukaan; 2.1: kolmen kriitikon huomiot käsikirjoituksen epäselvistä riveistä korjattu). Kirjoitettu kokonaan uudestaan koepätkän palautteen jälkeen (käyttäjä: "kuvakäsikirjoitusta ei
 ole toteutettu kuunteluoppaan mukaan"; "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan";
 "selkeys voittaa aina"). Luvun 5 otot on koottu kuunteluoppaan jokaisesta rivistä: nimetyt kohdat ja koneen kuulemat
 rivit, yhteensä 153 riviä. Noudattaa tyyliohjetta (`docs/visuaalinen_tyyli.md` v1.5): jos tämä ja tyyliohje ovat
@@ -46,8 +46,8 @@ voimasta. Kaikki kerrostumat (maa, metsä, viiva ja valo) ovat kuvassa joka kuva
 | 4 | Metsä kohoaa, maa katoaa | `urkupiste_H1_alku` – `pohja_katoaa` | hetken valon ja sitten pohjattomuuden | 3 Ylös runkoja pitkin | katse nousee nousun mukana latvoihin; kelmeä valo on latvojen yläpuolella; maa jää kuvan alle |
 | 5 | Väike | `e_pitka_ja_kuviot` – `peikot_G_loppu` | leikin, jota ei saa kiinni | 4 Lähikuva | huurteinen oksisto täyttää kuvan; pilkahdukset syttyvät sävelkorkeutensa kohdalla ja ovat poissa |
 | 6 | Metsä liikkuu kokonaisena | `peikot_G_loppu` – `hajoaa_hiljaisuuteen` | ensimmäisen pelon | 5 Pinnan sisään | metsä seisoo mustan jään päällä ja näkyy siinä ylösalaisin; syke kulkee jäässä aaltona |
-| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen | 6 Runkojen rytmi | lähimmät puut ovat valtavia runkoja, joiden oksisto on kuvan yläpuolella; niiden välistä näkyvät kaukainen metsä, horisontin viiva ja maa; kuva liukuu hitaasti runkojen ohi |
-| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen | 6 Runkojen rytmi, punainen | punainen valo nousee runkojen taakse ja värjää usvan ja runkojen reunat |
+| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen | 6 Ikisalo | matalien jousten äänet kasvattavat matalia, tummia kuusiryhmiä siniseen usvaan; urkupiste on maan hohto; kaksi tai kolme valtavaa runkoa kehystää näkymää lähellä; kaikki on hidasta |
+| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen | 6 Ikisalo, punainen | punainen valo nousee runkojen taakse ja värjää usvan ja runkojen reunat |
 | 9 | Petos ja hermo | `M_ennakko` – `dim_possibile` | ahdistuksen: liikettä ei voi pysäyttää | 7 Pimeä ja välähdys | kuva pimenee; metsä näkyy vain, kun vaskien leikkaus valaisee sen |
 | 10 | Se näkyy ja tulee | `hiljaisuus_2_alku` – `R_vasket` | kauhun ja ylivoiman | 8 Ulkoa ja kaukaa, sitten 9 Tuulen sisällä | jään yli: metsä on matala reuna suuren tumman ilman alla; lumi tulee kaukaa kerros kerrokselta ja on sitten viiruina joka syvyydessä, puiden välissä |
 | 11 | Huuto ja jälki | `toinen_paisunta` – `yksinaiset_aanet` | paljauden | 10 Ylhäältä | katse nousee myrskyn läpi; metsä on vaaroja kerroksina horisonttiin; yksittäiset äänet nousevat viivasta kukkuloina |
@@ -63,16 +63,17 @@ kerrosmaisema nähtynä toisesta paikasta; kerrostumat ja niiden merkitys pysyv�
 | 1 Metsän idea | kaukana, vaakasuoraan | horisontti keskellä kuvaa; metsä on aluksi matala reuna ja kasvaa |
 | 2 Maan tasalta | lumen pinnassa | maa on kuvan alin viidennes ja kasvaa askelten lähestyessä; lähimmät kuuset jatkuvat kuvan yli; kuva liukuu hitaasti runkojen ohi |
 | 3 Ylös runkoja pitkin | katse kohoaa | maa jää kuvan alle; latvat ja niiden yläpuolinen valo |
-| 4 Lähikuva | oksiston vieressä | suuri suurennos; huurre vaalentaa puut, kiteet välkkyvät |
+| 4 Lähikuva | oksiston vieressä | suurennos; metsä pysyy tummana, oksien yläpinnoilla on kylmä huurteen hohde ja kiteet välkkyvät; maa pysyy kuvassa |
 | 5 Pinnan sisään | mustan jään yllä | kuvan alin viidennes on tumma jää, jossa metsä ja viiva näkyvät himmeinä ja väreilevinä; ei täydellinen peili |
-| 6 Runkojen rytmi | ikimetsän sisällä | lähimmät puut ovat valtavia runkoja (oksisto kuvan yläpuolella); niiden välistä näkyvät kaukainen metsä, viiva ja maa |
+| 6 Ikisalo | ikimetsän sisällä | sininen, usvainen metsä; lähin kerros on kaksi tai kolme valtavaa runkoa, joiden oksisto on kuvan yläpuolella; kaukainen metsä, viiva ja maa näkyvät niiden välistä |
 | 7 Pimeä ja välähdys | metsän sisällä | kuva on lähes musta; valo tulee vain leikkauksesta |
 | 8 Ulkoa ja kaukaa | jäällä metsän ulkopuolella | metsä on matala reuna; suuri tumma ilma ja lumen peittämä jää (ei peiliä) |
 | 9 Tuulen sisällä | myrskyssä | lumi on viiruja joka syvyydessä; metsä taipuu |
 | 10 Ylhäältä | latvojen yläpuolella | metsäkerrokset ovat vaaroja allekkain; horisontti on ylhäällä |
 
-Kulut (tyyliohje 2.4 ja 8.4): jokainen kestää vähintään neljä sekuntia, rajaus muuttuu jatkuvasti, eikä katsoja huomaa
-rajaa. Kulkujen ankkurit (kesto mitataan: `analysis/check_package.py`):
+Kulut (tyyliohje 2.4 ja 8.4): jokainen kestää vähintään neljä sekuntia, rajaus muuttuu jatkuvasti koko kulun ajan, eikä
+katsoja huomaa rajaa. Viidessä kulussa (4, 5, 6, 7 ja 9) kuva kulkee huurteen, usvan, pimeän tai lumen läpi: verho on
+paksuimmillaan kulun keskellä, mutta metsä näkyy sen läpi koko ajan. Kulkujen ankkurit (kesto mitataan: `analysis/check_package.py`):
 - Kulku 1: `fraasi_ennen_taukoa` → `hiljaisuus_1_loppu`
 - Kulku 2: `urkupiste_H1_alku` → `urkupiste_H1_loppu`
 - Kulku 3: `nousu_huippu_D` → `pohja_katoaa`
@@ -92,7 +93,7 @@ rajaa. Kulkujen ankkurit (kesto mitataan: `analysis/check_package.py`):
 | 3 Ylös | hämy | kelmeä valo latvojen yläpuolella | lämpöä |
 | 4 Lähikuva | salo, halla | huurteen kiteet | maata |
 | 5 Pinnan sisään | hämy, lähes noki | viiva ja sen peilikuva | suoraa valoa ylhäältä |
-| 6 Runkojen rytmi | salo | sininen usva runkojen välissä; lopussa punainen | punaista ennen `c_duuri_valahdykset` |
+| 6 Ikisalo | salo | sininen usva runkojen välissä; lopussa punainen | punaista ennen `c_duuri_valahdykset` |
 | 7 Pimeä | noki | vain vaskien leikkaus | punaista, lämpöä |
 | 8 Ulkoa | noki, salo | hämärä horisontti | kirkasta |
 | 9 Tuuli | halla, noki | lumi itse | kerrosten katoamista |
@@ -350,7 +351,7 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 - Kone kuuli: Keskikerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Kuusiryhmä tai harju pitkänä.
 - **Kulku 5 alkaa:** jäästä runkojen sekaan; päättyy `jousijakso_urkupiste_E_alku`.
 
-### Kuvatapa 6 Runkojen rytmi
+### Kuvatapa 6 Ikisalo
 
 #### 34 Jousijakso urkupisteen päällä alkaa · `jousijakso_urkupiste_E_alku` → `jousijakso_urkupiste_E_loppu` · <!--aika-->8:16–8:22<!--/aika-->
 - **Kuuluu:** Jousijakso urkupisteen päällä alkaa (E) *Soittaa:* jouset (matalat).

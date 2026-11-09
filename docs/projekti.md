@@ -362,7 +362,19 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 - **Opittua kriitikoista:** ruudukko kahden sekunnin välein ei näytä iskuja eikä verhon kestoa; liikesarjoja tarvitaan
   jokaisesta iskusta ja kulusta. Kriitikko löytää joka kierroksella uutta, koska korjaus paljastaa seuraavan kerroksen.
 
-**Seuraavaksi:** kierroksen 3 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kriitikoiden kierros 3 (`runs/vedos_v3_a|b|c/palaute_k3.md`): A 2/19, B 0/15, C 1/18 korjattu. Kolme asiaa
+  jokaisesta osasta esti näyttämisen: A maa ei erotu, huurre paperinen, jättipuu peittää; B pylväsmetsä ei seuraa
+  ääntä, iskut vajaita, punainen jatkuva; C kajo väärin päin, kulut tyhjän läpi, pitkät samannäköiset jaksot.
+  Korjattu: kajon kerroin koskee myös liukua; kulut liukuvat jatkuvasti ja verho jää läpinäkyväksi; ikisalo on
+  matalien jousten äänistä kasvava sininen metsä; punainen on kolme vilahdusta ennen C-duuria; maan lumipinta on leveä
+  kaista; huurre on tumma. Neljäs koko renderi tehty. Käsikirjoitus v2.2.
+- **Opittua:** (1) kuvatapa, joka ei synny äänestä (pylväsmetsä), on kriitikolle ja käyttäjälle sama virhe kuin
+  staattinen metsä: ensin ääni, sitten rajaus. (2) Verho, joka peittää kuvan, on leikkaus. (3) Jokainen ehto, joka
+  koskee aikaa avaimen jälkeen, pitää tarkistaa myös liu'un ajalta ennen avainta (kajo). (4) Kolme kriitikkokierrosta
+  ei riitä tyhjään listaan: jokainen korjaus paljastaa seuraavan kerroksen, ja osa löydöksistä on makuasioita, jotka
+  käyttäjä ratkaisee.
+
+**Seuraavaksi:** kierros 4 neljännestä renderistä; jäljelle jäävät estävät virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---
