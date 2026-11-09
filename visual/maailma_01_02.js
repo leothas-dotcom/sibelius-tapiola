@@ -168,11 +168,16 @@ vec3 scene(vec2 p) {
     if (yw < LE[k]) { col = mix(vec3(0.007, 0.011, 0.019), fogc, min(fg + 0.30, 1.0)); continue; }      // rinteen lumi kerroksen alla
     float hn = (yw - LE[k]) / LH[k];
     if (hn > 1.25) continue;
-    float amp = 0.3 + 1.2 * min(live, 1.2) + 2.4 * uWind;
+    float amp = 0.5 + 2.0 * min(live, 1.2) + 3.2 * uWind;
     float ph = wx * 0.040 - uTime * (0.50 + 0.3 * uWind) + fk * 1.3;
     float xs = wx - hn * hn * amp * sin(ph) - hn * 0.3 * amp * sin(wx * 0.31 + uTime * 1.3 + fk);       // latvat taipuvat yhdessä; tyvi ei liiku
     float top = canopy(xs, fk);
     float a = smoothstep(0.012, -0.012, hn - top);
+    float tuuli = 0.22 * min(live, 1.2) + 1.1 * uWind;
+    if (tuuli > 0.01 && hn > top - 0.02) {
+      float pl = smoothstep(top + 0.34, top, hn) * vnoise(vec2(wx * 0.05 - uTime * (0.5 + 1.6 * uWind) + fk * 3.0, hn * 5.0 - uTime * 0.3));
+      col += SNOWC * 0.16 * tuuli * pl * pl * (1.0 - 0.6 * fg) * (0.35 + uGis + uCut.y);
+    }
     if (a <= 0.0) continue;
     // alta harva, keskeltä läpinäkyvä, päältä tiheä
     float gap = smoothstep(0.68, 0.92, vnoise(vec2(xs * 0.8 + fk * 4.0, fk))) * (0.3 + 0.7 * vnoise(vec2(xs * 3.1, fk + 2.0)))
