@@ -9,16 +9,45 @@
   "levytys": "rattle_lso_2022",
   "komento": "node render/render.mjs --data build/rattle_koko --otot 2:0.7,3:0.6,7:0.15,9,11:0.5,12:0.6,14:0.95,15:0.9,19:0.3,25:0.5,30,37,39:0.2,47:0.7,48:0.7,49:0.5,55:0.5,56:0.8,58:0.8 --dir runs/vedos_v2/stills",
   "kuvatavat_otoittain": {
-    "1 Usvan läpi": [2, 3, 7, 9],
-    "2 Maan tasalta": [11, 12],
-    "3 Ylös runkoja pitkin": [14, 15],
-    "4 Lähikuva (huurre)": [19],
-    "5 Pinnan sisään (heijastus mustassa jäässä)": [25],
-    "6 Runkojen rytmi": [30, 37],
-    "7 Pimeä ja välähdys": [39],
-    "8 Ulkoa ja kaukaa": [47],
-    "9 Tuulen sisällä": [48, 49],
-    "10 Ylhäältä: vaarat kerroksina": [55, 56, 58]
+    "1 Usvan läpi": [
+      2,
+      3,
+      7,
+      9
+    ],
+    "2 Maan tasalta": [
+      11,
+      12
+    ],
+    "3 Ylös runkoja pitkin": [
+      14,
+      15
+    ],
+    "4 Lähikuva (huurre)": [
+      19
+    ],
+    "5 Pinnan sisään (heijastus mustassa jäässä)": [
+      25
+    ],
+    "6 Runkojen rytmi": [
+      30,
+      37
+    ],
+    "7 Pimeä ja välähdys": [
+      39
+    ],
+    "8 Ulkoa ja kaukaa": [
+      47
+    ],
+    "9 Tuulen sisällä": [
+      48,
+      49
+    ],
+    "10 Ylhäältä: vaarat kerroksina": [
+      55,
+      56,
+      58
+    ]
   },
   "aani_ohjaa": {
     "ylalinja_midi": "säikeet piirtävät ylälinjan korkeuden: kuvan vasen reuna on 2,5 s mennyttä, oikea 2,5 s tulevaa (otot 2 ja 3); pilkahdusten korkeus huurteessa",
@@ -40,5 +69,26 @@
     "usvan läpi (otot 2, 3, 7) on yhä lähinnä runkoja syvyydessä: usva ei vielä kanna kuvaa niin kuin on tarkoitus",
     "ulkoa ja kaukaa (otto 47): vaarojen kerrokset eivät erotu, ja jään peilikuva on lähellä tyynen järven kliseetä",
     "ylhäältä (otot 55, 56) lähimmän kerroksen latvat ovat piikkejä eivätkä kuusia, ja ylös runkoja pitkin (14, 15) on harmaa ilman väriä"
-  ]
+  ],
+  "koepatka": {
+    "tiedosto": "runs/vedos_v2/koepatka_alku.mp4 (1080p, ei gitissä) ja koepatka_alku_720p.mp4",
+    "jakso": "tiedoston_alku – valo_D_duuri (75,2 s, 2256 ruutua, 30 r/s)",
+    "aani": "kuuntelukopio rattle_kuuntelu.wav; vain käyttäjän omaan katseluun, ei jaettavaksi (työäänitys, tekijänoikeus)",
+    "uutta": [
+      "latvat huojuvat äänen liikkeen tiheyden mukaan (uusia_keski, uusia_korkea)",
+      "matala isku liikauttaa maata ja nostaa valoaallon runkoja ylös",
+      "muu isku saa metsän massan etääntymään hetkeksi (usva tihenee iskun ruudussa)"
+    ],
+    "mitattu": {
+      "aani": "kellot.py: ero kuuntelukopioon 0,00 ms kolmessa kohdassa, ajautuminen 0 ppm",
+      "iskujen_ruudut": "kuva muuttuu iskun ruudussa: 7,73 s ero 2,58 (ennen 0,61), 20,48 s 3,62 (0,62), 45,33 s 2,90 (0,74), 61,39 s 2,95 (0,40); asteikko 0-255, 160x90 harmaa",
+      "jatkuvuus": "suurin ruutuero 4,27, mediaani 0,54; kahdeksasta suurimmasta viisi osuu iskuun, kolme yleistauon siirtymään; ei leikkauksia",
+      "nopeus": "noin 5 ruutua sekunnissa 2x2 ylinäytteistyksellä"
+    },
+    "omat_havainnot": [
+      "ensimmäinen minuutti on yhä ajo runkojen välissä: usva ei vielä kanna kuvaa",
+      "kamera kulkee yhden kuusen oksien läpi noin puolen minuutin kohdalla",
+      "siirtymä yleistauossa maan tasalle on pelkkä liuku"
+    ]
+  }
 }

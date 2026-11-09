@@ -51,6 +51,8 @@ uniform float uMist, uZen, uDrift, uRipple, uRidgeFade, uTooth, uSparkY, uMelOn,
 uniform vec3 uZenCol, uRidgeCol, uRidgeMist, uSpotCol;
 uniform vec4 uRidge;     // näkyviä kerroksia, kauimman harjan korkeus (rad), lähimmän harjan korkeus (rad), harjan vaihtelu (rad)
 uniform vec4 uSpot;      // suunta sivulle (rad), korkeus (rad), voimakkuus, kerros jonka takana (0 kaukana .. 6 lähellä)
+uniform float uSway;      // latvan huojunnan laajuus (m); tulee äänen liikkeen tiheydestä
+uniform vec2 uHitLow;     // matalan iskun ikä (s) ja voima 0..1: maa liikahtaa ja aalto nousee runkoja ylös
 uniform float uMel[32];  // ylälinjan korkeus ajan yli: vasen reuna on mennyttä, oikea tulevaa; alle 0 on tauko
 
 const float PI = 3.14159265;
@@ -70,6 +72,8 @@ float gH(vec2 xz) {
   float h = uTerrain * (vnoise(xz * 0.017) * 2.0 - 1.0) + 0.10 * (1.0 - uIce) * vnoise(xz * 0.8) + uDrift * (vnoise(xz * 0.45 + 3.1) * 2.0 - 1.0);
   vec2 d = xz - vec2(0.0, uCam.z + uStep.x);
   h -= uStep.y * exp(-dot(d, d) / 0.35);
+  float dl = length(xz - uCam.xz);
+  h += uHitLow.y * 0.06 * exp(-uHitLow.x * 2.5) * sin(dl * 2.0 - uHitLow.x * 11.0) * exp(-dl * 0.07);
   return h;
 }
 
@@ -77,6 +81,7 @@ float gH(vec2 xz) {
 float sdTree(vec3 p, float h, out float mat) {
   float H = uTreeH * (0.7 + 0.6 * h);
   float y01 = clamp(p.y / H, 0.0, 1.0);
+  p.xz -= uSway * y01 * y01 * vec2(sin(uTime * 0.9 + h * 40.0), cos(uTime * 0.7 + h * 23.0));
   float ang = atan(p.z, p.x);
   float rad = length(p.xz);
   float r = uTrunkR * (0.7 + 0.6 * fract(h * 7.3)) * (1.0 - 0.65 * y01) * (1.0 + 0.12 * vnoise(vec2(ang * 5.0 + h * 9.0, p.y * 1.3)));
@@ -251,6 +256,7 @@ vec3 render(vec2 frag) {
       alb = vec3(0.03, 0.05, 0.07) * (0.5 + vnoise(p.xz * 0.6));
     }
     vec3 sunLit = vec3(0.0);
+    float wave = uHitLow.y * exp(-uHitLow.x * 1.3) * exp(-pow((p.y - uHitLow.x * 8.0) / 0.9, 2.0));
     vec3 lit = uAmb * (0.35 + 0.65 * max(n.y, 0.0));
     lit += uSlitCol * uSlit.w * 0.25 * max(dot(n, Lslit), 0.0);
     float sheen = pow(max(dot(reflect(rd, n), Lslit), 0.0), 6.0);
@@ -265,6 +271,7 @@ vec3 render(vec2 frag) {
     lit += uCutCol * uCut.z * 0.7 * exp(-pow(sc / (uCut.y * 4.0), 2.0)) * (0.4 + 0.6 * abs(dot(n, cn)));
     lit += (uGlowCol * uGlow.z * 0.22 + uLineCol * uLine.z * 0.05) * uHorizon * (0.4 + 0.6 * max(n.y, 0.0)) * (0.4 + snow);
     if (mat > 2.5) lit += uSlitCol * uSlit.w * 0.5 * pow(max(dot(reflect(rd, n), Lslit), 0.0), 10.0);
+    if (mat > 0.5 && mat < 2.5) lit += uSlitCol * 0.5 * wave;
     col = alb * lit + sunLit * (0.10 + 0.5 * dot(alb, vec3(0.333)));
     // musta jää: metsä näkyy pinnassa ylösalaisin; syke kulkee pinnassa aaltona
     if (uIce > 0.0 && mat < 0.5) {

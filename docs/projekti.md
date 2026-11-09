@@ -289,6 +289,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 32 | 9.11. | – | "Aja tarkistus" | ✅ todennettu | tuore Sonnet-lukija, brief tiedostona; raportti `runs/kk_tarkistus_v1/kriitikko.md` (9 rikkomusta, 5 ristiriitaa, 5 aukkoa, 8 huomiota, 12 tyyliohjeen omaa ristiriitaa); ohjaajan todennus löydös löydökseltä `runs/kk_tarkistus_v1/tarkistus.md`; käsikirjoitus v1.1 ja tyyliohje v1.3; mitattu `check_package.py --cues-only`: kaikki kunnossa, seitsemän kulkua vähintään 4 s |
 | 33 | 9.11. | – | "Hyvä. Tee vedokset kohtauksista" | 🔶 tehty, ei katsottu | vedos 1: 16 stilliä (otot 2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58), kontaktiarkki `runs/vedos_v1/stills/arkki.png`; mitattu: toistettavuus ja camcheck (0,8 °/s); kolme pahinta ongelmaa ja tekemättömät `runs/vedos_v1/run.json` |
 | 34 | 9.11. | vedos 1 | "se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka on niin kuin syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." ... "tee vaikka semmoinen taidehistoriahaku" ... "sumussa näkyviä kaukaisia vuoria" ... "puun indikaatio" ... "en nyt nähnyt noista vedoksista ... miten se äänen korkeus siinä otettiin huomioon" ... "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä" ... "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus" ... "tää täytyy nyt niin kuin kirjoittaa uudelleen" (koko palaute: `docs/tutkimus/haastattelu.md`) | 🔶 korjattu, ei todennettu | taidehistoriahaku (`docs/tutkimus/taide1920.md` luku 7); tyyliohje v1.4 luku 4b kuvatavat; käsikirjoitus v1.2 luvut 1 ja 2; vedos 2 (`runs/vedos_v2/`): eri kuvatapa joka tunnelmalle, säikeet piirtävät ylälinjan korkeuden ja valo seuraa äänen tasoa; käyttäjä ei ole vielä katsonut |
+| 35 | 9.11. | – | "Tee koepätkä" | 🔶 tehty, ei katsottu | `runs/vedos_v2/koepatka_alku.mp4`: alku ensimmäiseen D-duurin valoon, 75,2 s; latvojen huojunta ja iskujen vastineet lisätty; mitattu: ääni 0,00 ms kuuntelukopiosta, kuva muuttuu iskujen ruuduissa, ei leikkauksia (`runs/vedos_v2/run.json`) |
 
 ---
 
@@ -312,6 +313,9 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
   Valon määrä tulee äänen tasosta. Basso, iskut ja tapahtumat puuttuvat vielä.
 - **Kolme pahinta ongelmaa** (`runs/vedos_v2/run.json`): usvakuva on yhä runkoja syvyydessä; metsän reuna ulkoa on lähellä
   tyynen järven kliseetä; latvat ylhäältä ovat piikkejä.
+- **Koepätkä (75 s alusta):** liike mitattiin, ei arvattu. Ääni on 0,00 ms kuuntelukopiosta, ja kuva muuttuu iskujen ruuduissa
+  neljä kertaa enemmän kuin niiden edellä. Ensimmäinen minuutti on silti ajo runkojen välissä: kuvatapa 1 ei vielä ole se,
+  mitä tyyliohje lupaa. Renderöintityökalu vaatii kohtaukselta myös `contextOk`-funktion; se puuttui ja kaatoi ensimmäisen ajon.
 - **Työkaluvirhe:** tiedoston kirjoitus epäonnistui, koska tiedostoa oli muokattu komentoriviltä lukemisen jälkeen, ja yksi
   kierros piirtyi vanhalla aikajanalla. Tulos pitää tarkistaa ennen renderiä, ei sen jälkeen.
 

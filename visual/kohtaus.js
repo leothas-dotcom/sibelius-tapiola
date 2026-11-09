@@ -2,6 +2,8 @@
 // Kaikki ajat tulevat ankkureista (annotations/cues.json); tässä tiedostossa ei ole sekunteja.
 // VEDOS 2: jokaisella tunnelmalla on oma kuvatapansa (tyyliohje 4b, kuvakäsikirjoitus luku 1), ja ääni ohjaa kuvaa:
 // säikeet piirtävät ylälinjan korkeuden (kanava ylalinja_midi) ja valon määrä seuraa äänen tasoa (taso_dbfs).
+// Metsä elää äänestä: latvat huojuvat äänen liikkeen tiheyden mukaan (uusia_keski, uusia_korkea), matala isku liikauttaa maata
+// ja nostaa aallon runkoja ylös, ja muu isku saa metsän massan etääntymään hetkeksi (ohjaustiedoston iskut).
 // Kulut kuvatavasta toiseen ovat vielä pelkkä liuku parametreissa.
 
 import { VERT, FRAG } from './metsa.glsl.js';
@@ -137,13 +139,19 @@ async function alusta() {
   const NK = oh.channels.length;
   if (kan.length !== oh.frames * NK) throw new Error('ohjaus.f32: koko ei vastaa kanavia');
   const ki = Object.fromEntries(oh.channels.map((n, i) => [n, i]));
-  for (const n of ['taso_dbfs', 'ylalinja_midi']) if (ki[n] == null) throw new Error('kanava puuttuu: ' + n);
+  for (const n of ['taso_dbfs', 'ylalinja_midi', 'uusia_keski', 'uusia_korkea']) if (ki[n] == null) throw new Error('kanava puuttuu: ' + n);
   const arvo = (n, t) => kan[clamp(Math.round(t * oh.fps), 0, oh.frames - 1) * NK + ki[n]];
   const keski = (n, t, w) => { let s = 0, c = 0; for (let u = -w; u <= w + 1e-9; u += 1 / oh.fps) { s += arvo(n, t + u); c++; } return s / c; };
   // äänen voima 0..1 (hiljainen .. voimakas), puolen sekunnin keskiarvona
   const voima = (t) => clamp((keski('taso_dbfs', t, 0.5) + 52) / 30, 0, 1.2);
   // ylälinjan korkeus 0..1 (matala .. korkea); tauko on -1
   const korkeus = (t) => (arvo('taso_dbfs', t) < -56 ? -1 : clamp((keski('ylalinja_midi', t, 0.12) - 52) / 46, 0, 1));
+  // äänen liike 0..1: uusia säveliä sekunnissa keski- ja ylärekisterissä, sekunnin keskiarvona
+  const liike = (t) => clamp((keski('uusia_keski', t, 1.0) + keski('uusia_korkea', t, 1.0)) / 80, 0, 1);
+  // iskut: viimeisin matala isku ja viimeisin isku ylipäätään ennen hetkeä t
+  const iskut = cues.iskut.map((x) => ({ t: x.t, v: clamp(x.pisteet / 70, 0.15, 1), m: clamp((x.kaistat_z.matala || 0) / 12, 0, 1) }));
+  const matalat = iskut.filter((x) => x.m > 0.35);
+  const viimeisin = (lista, t) => { let a = 0, b = lista.length - 1, r = null; while (a <= b) { const c = (a + b) >> 1; if (lista[c].t <= t) { r = lista[c]; a = c + 1; } else b = c - 1; } return r; };
   const MEL_IKKUNA = 2.5;   // säikeen piirtämä jakso kumpaankin suuntaan nykyhetkestä; kuvan mitta, ei musiikin aika
 
   // Kameran matka: nopeuden integraali avainten yli (nopeus liukuu kuten muukin tila).
@@ -182,7 +190,9 @@ async function alusta() {
   const mel = new Float32Array(32);
 
   window.duration = aika.tiedoston_loppu;
+  window.contextOk = () => !gl.isContextLost();
   window.seek = (t) => {
+    if (gl.isContextLost()) return false;
     const p = tila(t);
     // Ääni → kuva: voima on valon määrä, korkeus on säikeen ja pilkahdusten korkeus.
     const v = 0.4 + 0.8 * voima(t);
@@ -192,6 +202,9 @@ async function alusta() {
     p.strand = [p.strand[0] * v, p.strand[1], p.strand[2], p.strand[3]];
     p.zen *= v;
     for (let i = 0; i < 32; i++) mel[i] = korkeus(t + (i / 31 * 2 - 1) * MEL_IKKUNA);
+    const im = viimeisin(matalat, t), ia = viimeisin(iskut, t);
+    const hitLow = im ? [t - im.t, im.m] : [99, 0];
+    if (ia) p.fogDen *= 1 + 0.5 * ia.v * Math.exp(-(t - ia.t) / 0.18);
     const nyt = korkeus(t);
     p.sparkY = p.camY + (nyt < 0 ? 0 : (nyt - 0.5) * 3.0) + 1.0;
     gl.viewport(0, 0, canvas.width, canvas.height);
@@ -201,6 +214,8 @@ async function alusta() {
     gl.uniform3f(U('cam'), 0, p.camY, p.camZ);
     gl.uniform1fv(gl.getUniformLocation(prog, 'uMel'), mel);
     gl.uniform1f(U('melOn'), 1);
+    gl.uniform1f(U('sway'), 0.05 + 0.45 * liike(t));
+    gl.uniform2fv(U('hitLow'), hitLow);
     for (const n of UNIFORMIT) {
       const val = p[n];
       if (!Array.isArray(val)) gl.uniform1f(U(n), val);
