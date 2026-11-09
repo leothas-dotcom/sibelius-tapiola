@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.6, 9.11.2026 (v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 2.0, 9.11.2026 (v2.0: käyttäjä hylkäsi vedoksen 3; **luku 4c on hylätty**, luku 4d kirjaa käyttäjän sanat, ja luvut 1, 2 ja 5 ovat taas peruste; v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -146,7 +146,13 @@ periaate, ei kuvaa eikä tyyliä. Valinnat ovat **[ohjaajan ehdotus]**.
 3. **Kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella**, ei leikkauksella. Maailmoja maailmojen sisällä: kun
    kamera ajaa jonkin sisään, sieltä avautuva maailma saa olla nähty toisesta paikasta.
 
-## 4c. Kerrosmaisema: kuva on ääni
+## 4c. HYLÄTTY 9.11.2026: kerrosmaisema, kuva on ääni
+
+**Käyttäjä hylkäsi tämän luvun mukaan tehdyn vedoksen 3** ("pomppivat ja hyppivät kumikuuset", "tanssivia joulukuusia",
+"METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA"). Luku oli ohjaajan oma kielioppi, jonka ohjaaja julisti voittavaksi ilman
+käyttäjän hyväksyntää. Se rikkoi lukuja 2.2, 2.3, 2.4, 4 ja 5: puut kasvoivat ja kutistuivat nuottien mukana, kamera ei
+kulkenut eteenpäin, maailmat eivät avautuneet toistensa sisältä, ja metsä oli viisi riviä sivusta. **Tätä lukua ei
+noudateta.** Se jää tähän, jotta virhe ei toistu. Voimassa on luku 4d.
 
 Käyttäjä 9.11.2026 (koepätkä): "Olemme edelleen staattisessa metsässä. [...] Tuo viiva mikä kulkee keskellä kuvaa, ei
 seuraa ääntä mitenkään järkevästi. Se on kulmikas, nykivä. EI NÄIN." Ja: "alun metsä voisi olla vain 'siemen'
@@ -193,6 +199,41 @@ valoviivaa, joka ei ole horisontti tai harju, ei ole; lumi ei ole kaiken pääll
 
 Tämä luku korvaa aiemmat "metsän säikeet" (valoviivat runkojen välissä) ja sen, mitä luku 7 sanoo jousista ja
 käyrätorvista siltä osin kuin ne ovat ristiriidassa.
+
+## 4d. Syvä metsä ja matka sisään (käyttäjä 9.11.2026, vedoksen 3 jälkeen)
+
+Käyttäjän sanat (koko palaute: `docs/tutkimus/haastattelu.md`):
+- "METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA. Koita ymmärtää. Haluan laajan metsän, missä on syvyyttä."
+- "Kaukaiset puut on niin kaukana, että niitä juuri ja juuri erottaa usvan seasta."
+- "Tämän pitää olla kalevalalainen metsä. Jossa on mystisiä olentoja."
+- "EI POMPPIVIA KUUSIA kiitos." ... "Ei mitään tanssivia joulukuusia"
+- "se Gis on tavallaan niinkuin horisontti - joka sitten hellävaraisesti muodostaa mäkiä. EI NOITA POMPPIVIA MITÄ LIENEE."
+- "Maailma maailmojen sisällä. Idea, josta kasvaa ensimmäinen maailma, joka toistuu. Metsä on mukana, mutta se pitää
+  esittää kaukaisena, laajana ja tummana."
+- "Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi. Meidän piti sukeltaa johonkin maailmaan sisään, mistä
+  avautuu uusia maailmoita."
+- "Sinun piti ymmärtää taidehistoriasta, miten luodaan hämäryys," (lause jäi kesken)
+- Säilytetään: "valot on hyvät ja dramaattiset" ja "Lumisade toimii nyt hienosti".
+
+Säännöt, jotka näistä seuraavat:
+1. **Metsä on pysyvä.** Puu ei kasva, kutistu, pompi, heilahda iskusta eikä vaihda paikkaa äänen mukana. Maa ei pompi.
+   Ääni näkyy valona, usvana, lumena, tuulena ja siinä, mikä metsässä liikkuu (luku 2.2 ja 2.9), ei puiden koossa.
+2. **Metsä on laaja ja syvä, ei rivi.** Puita on jatkuvasti kaikilla etäisyyksillä. Syvyys tehdään usvalla ja valolla:
+   jokainen etäisyys on edellistä himmeämpi, ja kaukaisimmat puut erottuvat juuri ja juuri.
+3. **Kamera kulkee eteenpäin koko ajan** (luvut 2.3 ja 5). Puut tulevat usvasta, suurenevat lähestyessä ja jäävät ohi.
+   Liike on kameran, ei puiden.
+4. **Maailmoja maailmojen sisällä** (luvut 1 ja 2.4). Jokainen maailma löytyy edellisen sisältä, kun kamera ajaa jonkin
+   läpi. Ensimmäinen maailma kasvaa ideasta ja toistuu myöhemmin. Maailmat ovat eri maailmoja, eivät saman maiseman
+   rajauksia.
+5. **Gis on horisontti, joka muodostaa mäkiä hellävaraisesti:** hitaasti, sekuntien kuluessa. Ei piikkejä, ei pomppuja.
+6. **Kalevalainen metsä, jossa on mystisiä olentoja.** Tämä muuttaa luvun 1, kohdan 8.8 ja luvun 9 kiellot (keijut,
+   peikot, eläimet): käyttäjän uudet sanat voittavat. **[ohjaajan ehdotus, käyttäjä ei ole vahvistanut]** Olennot ovat
+   metsän väkeä hämärän rajalla: ne nähdään usvan läpi ja osittain, ne eivät esiinny eivätkä katso kameraan. Ei ihmistä,
+   ei säveltäjän hahmoa (luku 1, kaksi kerrosta tarinassa).
+7. **Hämäryys haetaan taidehistoriasta** (`docs/tutkimus/taide1920.md`, luku 7), ei keksitä.
+
+**Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
+Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.
 
 ## 5. Liike ja kamera
 

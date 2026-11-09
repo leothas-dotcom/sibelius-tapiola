@@ -571,3 +571,49 @@ Ohjaajan luenta: (1) ei kysymyksiä, kriitikko etsii virheet, työ jatkuu kunnes
 (2) selkeys voittaa; (3) alku on metsän idea: unisono on horisontti, jouset ovat tumma metsä sen edessä, ja puhaltajat
 nousevat yksi kerrallaan kukkuloina puiden takaa, muoto äänen spektristä; (4) kaikki kehittyy tästä siemenestä;
 (5) lumi tapahtuu syvyydessä, kerrosten välissä; (6) mikään ei saa olla staattista eikä nykivää.
+
+## 9.11.2026: palaute vedoksesta 3 (koko teos, renderi 7)
+
+Käyttäjän sanat kokonaan:
+
+> hahahaha mitä ihmettä olet kokkaillut nyt? hahahaha 😃 😃 😃 mitä ihmeen kumikuusia olet keksinyt 😃 😃 😃 tämä on ihan
+> naurettava. Missä kohtaa visuaalista sääntöjä meillä lukee pomppivat ja hyppivät kumikuuset. Eikö mikään kriitikko
+> huomauttanut tästä? Nämähän on ihan naurettavia.
+>
+> Mutta hyviä puolia. No valot on hyvät ja dramaattiset.
+>
+> Lumisade toimii nyt hienosti
+>
+> Et saanut ehkä kiinni mun mäki-ideasta, mutta siis ajattelin että se Gis on tavallaan niinkuin horisontti - joka
+> sitten hellävaraisesti muodostaa mäkiä. EI NOITA POMPPIVIA MITÄ LIENEE.
+>
+> Missä on ne kuvakäsikirjoituksen vaatimat asiat? Missä on se visuaalinen tyyli minkä loimme.
+>
+> Eli joudut tekemään kaiken uusiksi.
+>
+> METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA. Koita ymmärtää. Haluan laajan metsän, missä on syvyyttä.
+>
+> Kaukaiset puut on niin kaukana, että niitä juuri ja juuri erottaa usvan seasta.
+>
+> Tämän pitää olla kalevalalainen metsä. Jossa on mystisiä olentoja.
+>
+> EI POMPPIVIA KUUSIA kiitos.
+>
+> Eli aloita sillä tavalla, että luet sen visuaalisen tyylin, että ymmärrät mitä haetaan. Sitten kuvakäsikirjoitus.
+>
+> Mitä siellä sanotaan? Tässä piti olla 60 kohtausta? En näe niitä.
+>
+> Muistetaan nyt siis se meidän alkuperäinen idea. Maailma maailmojen sisällä. Idea, josta kasvaa ensimmäinen maailma,
+> joka toistuu. Metsä on mukana, mutta se pitää esittää kaukaisena, laajana ja tummana. Ei mitään tanssivia joulukuusia
+> 😃 😃 :D
+>
+> Sain ainakin päivän naurut tästä nyt.
+>
+> Eli, jos saisin pyytä mun krediitit takaisin, nyt sen tekisin.
+>
+> Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi. Meidän piti sukeltaa johonkin maailmaan sisään, mistä
+> avautuu uusia maailmoita. EI NOITA POMPPIVIA KUUSIA.
+>
+> Sinun piti ymmärtää taidehistoriasta, miten luodaan hämäryys,
+
+(Viesti päättyy pilkkuun; lause jäi kesken.)

@@ -290,7 +290,8 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 33 | 9.11. | – | "Hyvä. Tee vedokset kohtauksista" | 🔶 tehty, ei katsottu | vedos 1: 16 stilliä (otot 2, 4, 7, 9, 16, 19, 22, 30, 37, 39, 47, 49, 50, 54, 56, 58), kontaktiarkki `runs/vedos_v1/stills/arkki.png`; mitattu: toistettavuus ja camcheck (0,8 °/s); kolme pahinta ongelmaa ja tekemättömät `runs/vedos_v1/run.json` |
 | 34 | 9.11. | vedos 1 | "se nyt metsää kuvaa sillä tavalla, että sulla on vaan rivipuita. Jotka on niin kuin syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." ... "tee vaikka semmoinen taidehistoriahaku" ... "sumussa näkyviä kaukaisia vuoria" ... "puun indikaatio" ... "en nyt nähnyt noista vedoksista ... miten se äänen korkeus siinä otettiin huomioon" ... "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä" ... "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus" ... "tää täytyy nyt niin kuin kirjoittaa uudelleen" (koko palaute: `docs/tutkimus/haastattelu.md`) | 🔶 korjattu, ei todennettu | taidehistoriahaku (`docs/tutkimus/taide1920.md` luku 7); tyyliohje v1.4 luku 4b kuvatavat; käsikirjoitus v1.2 luvut 1 ja 2; vedos 2 (`runs/vedos_v2/`): eri kuvatapa joka tunnelmalle, säikeet piirtävät ylälinjan korkeuden ja valo seuraa äänen tasoa; käyttäjä ei ole vielä katsonut |
 | 35 | 9.11. | – | "Tee koepätkä" | 🔶 tehty, ei katsottu | `runs/vedos_v2/koepatka_alku.mp4`: alku ensimmäiseen D-duurin valoon, 75,2 s; latvojen huojunta ja iskujen vastineet lisätty; mitattu: ääni 0,00 ms kuuntelukopiosta, kuva muuttuu iskujen ruuduissa, ei leikkauksia (`runs/vedos_v2/run.json`) |
-| 36 | 9.11. | koepätkä | "Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen" ... "Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva ... on kulmikas, nykivä. EI NÄIN." ... "torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?" ... "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina." ... lumi "on KAIKEN PÄÄLLÄ oleva maski" ... "alun metsä voisi olla vain 'siemen' metsästä" ... "gis-äänet ... kukkuloina - seurata sitä spektrin muotoa" ... "horisonttia - siksi lähes unisono - josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää" (koko palaute: `docs/tutkimus/haastattelu.md`) | 🔶 korjattu, ei todennettu (käyttäjä ei ole nähnyt; kriitikon kierrokset 5–7 ilman estäviä virheitä, `runs/vedos_v3/run.json`) | työ käynnissä: katso luku Työn tila heti tämän taulukon alla |
+| 36 | 9.11. | koepätkä | "Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen" ... "Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva ... on kulmikas, nykivä. EI NÄIN." ... "torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?" ... "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina." ... lumi "on KAIKEN PÄÄLLÄ oleva maski" ... "alun metsä voisi olla vain 'siemen' metsästä" ... "gis-äänet ... kukkuloina - seurata sitä spektrin muotoa" ... "horisonttia - siksi lähes unisono - josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää" (koko palaute: `docs/tutkimus/haastattelu.md`) | ❌ hylätty: käyttäjä näki vedoksen 3 ja hylkäsi sen, ks. rivi 37 (aiemmin: kriitikon kriitikon kierrokset 5–7 ilman estäviä virheitä, `runs/vedos_v3/run.json`) | työ käynnissä: katso luku Työn tila heti tämän taulukon alla |
+| 37 | 9.11. | vedos 3 (koko teos) | "pomppivat ja hyppivät kumikuuset" ... "METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA" ... "Kaukaiset puut ... juuri ja juuri erottaa usvan seasta" ... "kalevalalainen metsä. Jossa on mystisiä olentoja" ... "Gis on ... horisontti - joka sitten hellävaraisesti muodostaa mäkiä" ... "Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi" ... "joudut tekemään kaiken uusiksi". Hyvää: valot, lumisade. Koko teksti: `docs/tutkimus/haastattelu.md` | ❌ auki | tyyliohje v2.0: luku 4c hylätty, luku 4d kirjaa sanat; käsikirjoitus v2.2 merkitty hylätyksi; uutta kuvaa ei ole |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
@@ -399,7 +400,20 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   (6) Kolmen kierroksen jälkeen ilman estäviä virheitä lista ei enää lyhene korjaamalla: jäljellä on käsikirjoituksen
   ratkaisuja, jotka käyttäjän pitää nähdä.
 
-**Seuraavaksi:** käyttäjä katsoo vedoksen 3 (`runs/vedos_v3/tapiola_vedos3_720p.mp4`) ja antaa palautteen
+- 9.11. **Käyttäjä hylkäsi vedoksen 3** (palautelista rivi 37). Syy on ohjaajan: koepätkän palautteen jälkeen ohjaaja
+  kirjoitti tyyliohjeeseen oman luvun 4c ("jousten ääni on kuusiryhmä, joka kasvaa maasta"), julisti sen voittavaksi,
+  kirjoitti käsikirjoituksen sen mukaan uudestaan ja antoi kriitikoille briefit, jotka nojasivat siihen. Seitsemän
+  renderiä ja seitsemän kriitikkokierrosta hioivat väärää kuvaa.
+- **Opittua:** (1) Kriitikko, jonka brief on johdettu ohjaajan omasta tulkinnasta, ei voi huomata, että tulkinta on
+  väärä. Kriitikon pitää saada käyttäjän sanat ja tyyliohjeen luvut 1, 2 ja 5 sellaisinaan ja kysymys "onko tämä se,
+  mitä käyttäjä pyysi", ja hänen pitää nähdä liikettä, ei 2 s:n ruudukkoa. (2) Uusi kuvakielioppi näytetään käyttäjälle
+  lyhyenä pätkänä ennen kuin koko teos renderöidään. (3) CLAUDE.md:n sääntö "elementit eivät ilmesty, katoa eivätkä
+  loikkaa iskussa" koskee myös puita ja maata. (4) "Jouset kuvaa sitä tummaa metsää" tarkoitti, että metsä on tumma ja
+  läsnä, ei että jokainen nuotti on puu.
+
+**Seuraavaksi:** käsikirjoituksen runko uudestaan tyyliohjeen lukujen 1, 2, 5 ja 4d pohjalta (maailmat ja se, minkä läpi
+kuhunkin ajetaan), sitten uusi piirto (syvä metsä, kamera eteenpäin) ja siitä lyhyt alkupätkä käyttäjälle ennen muuta.
+Aiempi suunnitelma: käyttäjä katsoo vedoksen 3 ja antaa palautteen
 
 ---
 

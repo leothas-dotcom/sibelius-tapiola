@@ -1,6 +1,11 @@
 # Kuvakäsikirjoitus: Tapiola
 
 *Versio 2.2, 9.11.2026 (2.2: ikisalo, huurre ja kulut kuvattu kolmannen kriitikkokierroksen jälkeisen toteutuksen mukaan; 2.1: kolmen kriitikon huomiot käsikirjoituksen epäselvistä riveistä korjattu). Kirjoitettu kokonaan uudestaan koepätkän palautteen jälkeen (käyttäjä: "kuvakäsikirjoitusta ei
+
+> **HYLÄTTY 9.11.2026 (käyttäjän palaute vedoksesta 3).** Tämä versio kirjoitettiin tyyliohjeen hylätyn luvun 4c
+> varaan: jokainen kuvatapa on saman kerrosmaiseman rajaus ja jousten äänet kasvattavat kuusiryhmiä. Se ei ole
+> "maailmoja maailmojen sisällä", eikä siinä ole erillisiä kohtauksia. Käsikirjoitus kirjoitetaan uudestaan tyyliohjeen
+> lukujen 1, 2, 5 ja 4d pohjalta. Ankkurit ja "Kuuluu"-rivit pätevät; "Näkyy"-rivit eivät.
 ole toteutettu kuunteluoppaan mukaan"; "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan";
 "selkeys voittaa aina"). Luvun 5 otot on koottu kuunteluoppaan jokaisesta rivistä: nimetyt kohdat ja koneen kuulemat
 rivit, yhteensä 153 riviä. Noudattaa tyyliohjetta (`docs/visuaalinen_tyyli.md` v1.5): jos tämä ja tyyliohje ovat
