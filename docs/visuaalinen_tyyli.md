@@ -118,6 +118,10 @@ syvyydessä. Vaan se on niin kuin äärimmäisen tylsä." Ja: "sumussa näkyviä
 puun niin kun indikaatio". Ja: "kuvan pitää seurata sitä ääntä. Milloin sen korkeutta, milloin sen intensiteettiä."
 Ja: "zoomataan kameralla staattisten puitten välissä, niin ei ole kauhean kiinnostava kokemus."
 
+**Voimassa 9.11.2026 alkaen:** kuvatavat ovat luvun 4c kerrosmaiseman rajauksia, ja ne on määritelty kuvakäsikirjoituksen
+luvussa 2. Kaikki kerrostumat (maa, metsä, viiva ja valo) pysyvät kuvassa joka kuvatavassa. Alla oleva taulukko on
+vedoksen 2 ajalta: se kertoo, mistä ajatus tuli. Missä se on ristiriidassa luvun 4c kanssa (kuvatavat 6, 7 ja 9), 4c voittaa.
+
 **Periaate:** metsä syntyy vihjeestä ja rajauksesta, ei puiden lukumäärästä. Jokaisella tunnelmalla on oma kuvatapansa:
 katsojan paikka, rajaus ja se, millä puu vihjataan. Lähteet ovat `docs/tutkimus/taide1920.md` luvussa 7; niistä otetaan
 periaate, ei kuvaa eikä tyyliä. Valinnat ovat **[ohjaajan ehdotus]**.
@@ -341,7 +345,7 @@ kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään v
 17. Värit vaihtuvat kerroksen tullessa etualalle, eivät iskussa.
 
 ### Hiljaisuus
-18. Hiljaisuudessa kamera jatkaa, elementit lakkaavat, metsä jää. Kuva ei pimene vahingossa eikä jatka entistä.
+18. Hiljaisuudessa kamera jatkaa, äänen elementit lakkaavat (ei viivaa, ei kuusiryhmiä), ja metsästä jää kaukainen reuna, maa ja lumi. Kuva ei pimene vahingossa eikä jatka entistä.
 
 ### Mitä ei koskaan
 19. Ei paperia, mustetta, rasteria, nukkeja, leikattuja tasoja, hahmoja (edellinen projekti).
