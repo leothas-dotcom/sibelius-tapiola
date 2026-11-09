@@ -1,0 +1,43 @@
+{
+  "nimi": "alku_v4",
+  "pvm": "2026-11-09",
+  "mika": "Alkupätkä 0:00–1:04 uudella piirrolla (visual/matka.js): perspektiivi, kamera kulkee eteenpäin tasaista vauhtia lumikentän yli kohti kaukaista metsää, joka häipyy usvaan vaaran rinteellä; gis on horisontin valo, joka muodostaa mäkiä hitaasti spektrin muodosta; vaskien isku on pystysuora valo metsässä; lumi syvyydessä.",
+  "pyynto": "Käyttäjä hylkäsi vedoksen 3 (palautelista rivit 37 ja 38) ja pyysi: lue tyyliohje ja käsikirjoitus, tee kaikki uusiksi; sitten 'Tee alkupätkä'.",
+  "peruste": "docs/visuaalinen_tyyli.md luvut 1, 2, 5, 4d; docs/kuvakasikirjoitus.md 'Uusi runko' hetket 1 ja 2; docs/tutkimus/taide1920.md luku 7 (Tōhaku, Guo Xi, Norštein, Sohlberg).",
+  "tekija": "ohjaaja (pääistunto); kriitikko Sonnet-aliagentti (runs/alku_v4/brief.md)",
+  "kohtaus": "visual/matka.html (visual/matka.js, varjostin tiedoston sisällä)",
+  "levytys": "rattle_lso_2022 (työäänitys: ei videoon, ei gittiin; pätkä vain käyttäjän omaan katseluun)",
+  "komento": "node render/render.mjs --data build/rattle_koko --page \"visual/matka.html?aa=2\" --start 0 --end 64 --workers 2 --chunk 40 --audio build/kuuntelu/rattle_kuuntelu.wav --out runs/alku_v4/alku.mp4",
+  "tulos": {
+    "tiedosto": "runs/alku_v4/alku.mp4",
+    "kesto_s": 64.0,
+    "katselukopio": "runs/alku_v4/tapiola_alku_v4_720p.mp4"
+  },
+  "mitattu": {
+    "aani_totuutta_vasten": "0,00 ms (analysis/kellot.py)"
+  },
+  "mita_aani_ohjaa": {
+    "gis (68)": "horisontin valon kirkkaus, 1 s keskiarvo",
+    "gis ja sen yläsävelet (oktaavi, kvintti, kaksi oktaavia, terssi)": "viiden mäen korkeus horisontissa, 2,5 s keskiarvo",
+    "keskirekisteri 55–76 (jouset)": "usvan oheneminen metsän edestä, 1,5 s keskiarvo",
+    "matalan kaistan tason nousut (patarumpu)": "valo, joka kulkee lumen pinnassa",
+    "vaskien_isku": "pystysuora valo metsän sisällä, lähemmät puut sen edessä; tuulenpuuska lumeen",
+    "hiljaisuus_1": "lumen putoaminen hidastuu; kamera jatkaa"
+  },
+  "mika_ei_seuraa_aanta": [
+    "puiden koko, paikka ja määrä",
+    "maan muoto",
+    "kameran vauhti (2,3 m/s)"
+  ],
+  "ei_tehty": [
+    "mystiset olennot (tyyliohje 4d.6) eivät ole vielä kuvassa",
+    "kuvakäsikirjoituksen otot 1–2 eivät ole vielä kirjoitettu uusiksi",
+    "käyttäjä ei ole nähnyt",
+    "alun 0:00–0:40 tyhjä alapuoli ja horisontti kuvan keskellä (kriitikko 2)"
+  ],
+  "kriitikko": {
+    "kierros_1": "kolme estävää: alku 0:00–0:44 kaista ja tyhjä alapuoli; kameran eteneminen ei näy ja isku yhdessä ruudussa; lähipuu joulukuusi, olentoja ei",
+    "kierros_2": "kaikki kolme osin korjattu: metsä kohoaa 0:30–0:44 ja 0:44–1:04 on tiheä, usvainen ja monikorkeinen; eteneminen näkyy hitaana; iskun valo tulee 0,2–0,4 s:ssa; alku on yhä kaista ja alapuoli tyhjää, horisontti keskellä; pyöreälatvaiset männyt lukevat kliseeksi; kalevalaisuutta ei erota. Toimii: ei pomppivia puita, valot, lumi, hiljaisuus 0:57–1:04.",
+    "bugilista_tyhja": false
+  }
+}

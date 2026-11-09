@@ -292,7 +292,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 35 | 9.11. | – | "Tee koepätkä" | 🔶 tehty, ei katsottu | `runs/vedos_v2/koepatka_alku.mp4`: alku ensimmäiseen D-duurin valoon, 75,2 s; latvojen huojunta ja iskujen vastineet lisätty; mitattu: ääni 0,00 ms kuuntelukopiosta, kuva muuttuu iskujen ruuduissa, ei leikkauksia (`runs/vedos_v2/run.json`) |
 | 36 | 9.11. | koepätkä | "Lopeta kysely minulta. Työskentele, kunnes olet täysin tyytyväinen" ... "Olemme edelleen staattisessa metsässä. Puiden huojunta ei näy. Tuo viiva ... on kulmikas, nykivä. EI NÄIN." ... "torvet ja puhaltajat tulevat esiin jousien alta alussa. Miten se näkyy tässä?" ... "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan. Muista, selkeys voittaa aina." ... lumi "on KAIKEN PÄÄLLÄ oleva maski" ... "alun metsä voisi olla vain 'siemen' metsästä" ... "gis-äänet ... kukkuloina - seurata sitä spektrin muotoa" ... "horisonttia - siksi lähes unisono - josta sitten nousee yksittäisiä soittajia puiden takaa - Jouset kuvaa sitä tummaa metsää" (koko palaute: `docs/tutkimus/haastattelu.md`) | ❌ hylätty: käyttäjä näki vedoksen 3 ja hylkäsi sen, ks. rivi 37 (aiemmin: kriitikon kriitikon kierrokset 5–7 ilman estäviä virheitä, `runs/vedos_v3/run.json`) | työ käynnissä: katso luku Työn tila heti tämän taulukon alla |
 | 37 | 9.11. | vedos 3 (koko teos) | "pomppivat ja hyppivät kumikuuset" ... "METSÄ EI EDELLEENKÄÄN OLE RIVI PUITA" ... "Kaukaiset puut ... juuri ja juuri erottaa usvan seasta" ... "kalevalalainen metsä. Jossa on mystisiä olentoja" ... "Gis on ... horisontti - joka sitten hellävaraisesti muodostaa mäkiä" ... "Kameran piti koko ajan mennä eteenpäin, vääjäämättömästi" ... "joudut tekemään kaiken uusiksi". Hyvää: valot, lumisade. Koko teksti: `docs/tutkimus/haastattelu.md` | ❌ auki | tyyliohje v2.0: luku 4c hylätty, luku 4d kirjaa sanat; käsikirjoitus v2.2 merkitty hylätyksi; uutta kuvaa ei ole |
-| 38 | 9.11. | vedos 3 (jatkoa) | "Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä, toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? ... Sellaiseen hienoon hyväksyvään H-duuriin." | ❌ auki | ehdotus kirjoitettu (`docs/kuvakasikirjoitus.md`, Uusi runko: kamera, maailmat, loppu); kuvaa ei ole |
+| 38 | 9.11. | vedos 3 (jatkoa) | "Sinun piti miettiä myös niitä kuvakulmia: miten se kamera liikkuu? Mitkä kuvakulmat luo sellaista vääjäämättömyyttä, toisaalta kunnioittaa sibeliuksen viimeistä teosta. Miten me kuvaamme sen että tähän se loppui? ... Sellaiseen hienoon hyväksyvään H-duuriin." | 🔶 ehdotus ja alkupätkä tehty, ei todennettu | ehdotus kirjoitettu (`docs/kuvakasikirjoitus.md`, Uusi runko: kamera, maailmat, loppu); kuvaa ei ole |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
@@ -412,8 +412,15 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   loikkaa iskussa" koskee myös puita ja maata. (4) "Jouset kuvaa sitä tummaa metsää" tarkoitti, että metsä on tumma ja
   läsnä, ei että jokainen nuotti on puu.
 
-**Seuraavaksi:** käsikirjoituksen runko uudestaan tyyliohjeen lukujen 1, 2, 5 ja 4d pohjalta (maailmat ja se, minkä läpi
-kuhunkin ajetaan), sitten uusi piirto (syvä metsä, kamera eteenpäin) ja siitä lyhyt alkupätkä käyttäjälle ennen muuta.
+- 9.11. Käsikirjoituksen uusi runko ehdotuksena (kamera, kaksitoista maailmaa, loppu). **Alkupätkä 0:00–1:04 uudella
+  piirrolla** (`visual/matka.js`, `runs/alku_v4/run.json`): perspektiivi, kamera eteenpäin tasaista vauhtia, metsä
+  kaukana vaaran rinteellä ja häipyy usvaan, gis horisontin valona ja hitaina mäkinä, vaskien isku pystyvalona, lumi
+  syvyydessä. Mikään ei kasva eikä pompi äänen mukana. Kaksi kriitikkokierrosta: estävät korjattu osin; auki alun
+  tyhjä alapuoli, pyöreälatvaiset männyt, kalevalaiset olennot puuttuvat. Pätkä näytetään käyttäjälle suunnan
+  tarkistuksena ennen muuta työtä (tyyliohje 4d, prosessisääntö).
+
+**Seuraavaksi:** käyttäjä katsoo alkupätkän (`runs/alku_v4/tapiola_alku_v4_720p.mp4`); sen palautteen mukaan joko
+jatketaan tällä piirrolla (otot 1–2 uusiksi, olennot, alun sommittelu) tai korjataan suuntaa.
 Aiempi suunnitelma: käyttäjä katsoo vedoksen 3 ja antaa palautteen
 
 ---
