@@ -292,7 +292,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 - **Sääntö:** uusi tieto menee olemassa olevan tiedoston lukuun. Uusi tiedosto tai skripti vaatii käyttäjän luvan.
   Ennen kuin jotain poistetaan, sen ainutkertainen sisältö siirretään: poistolistalta löytyi neljä asiaa, joita ei
   ollut muualla (25 partituurisivun taulukko, elementtien iskusarake, siirto omaan äänitykseen, kirjaintaulukko).
-- **Ei tehty:** arkiston 13 tiedostoa on luettu ja tiivistetty, ei tarkistettu lähde lähteeltä uudelleen. Koneen
+- **Ei tehty:** arkistosta luettiin kokonaan mytologia, soittimet, tehokeinot, viitteet, 1920-luvun taide ja kanavakortti; tiedostoista teos, konteksti, esitysmerkinnät ja auringonsäde luettiin yhteenveto- ja rakenneluvut (loput niistä on aiemman tiivistelmän varassa); haastattelua ja Kajanus-levytystä ei luettu uudelleen. Lähteitä ei tarkistettu uudelleen. Koneen
   kuulemia 270 tapahtumaa ei ole karsittu korvalla.
 
 ## 9.11.2026 – Visualisaattori äänelle: tunnistin, kuulijan opas, yksityiskohdat
