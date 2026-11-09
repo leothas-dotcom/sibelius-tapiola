@@ -124,6 +124,7 @@ def load_background(rec):
     if not pak:
         return None, None, []
     d = ROOT / pak
+    PAKDIR[0] = d
     taso = liike = None
     kj = d / "kanavat.json"
     if kj.exists() and (d / "kanavat.f32").exists():
@@ -135,6 +136,71 @@ def load_background(rec):
     if (d / "aikajana.json").exists():
         rows = read_json(d / "aikajana.json")
     return taso, liike, rows
+
+
+PAKDIR = [None]
+
+
+def linjat_line(a, b):
+    """Minuutin linjat (analysis/linjat.py): bassolinja, suunta, uusia säveliä/s kerroksittain, tremolo."""
+    d = PAKDIR[0]
+    if d is None:
+        return ""
+    jp = d / f"linjat_{int(a):04d}-{int(b):04d}.json"
+    if not jp.exists():
+        return ""
+    j = read_json(jp)
+    rows = j["rivit"]
+    if not rows:
+        return ""
+    path, last, run = [], None, 0
+    for r in rows:
+        bn = r["basso"]
+        if bn is not None and bn[-1] not in "123":
+            bn = None  # matalin vahva sävel ei ole bassorekisterissä: basso vaikenee
+        if bn == last:
+            run += 1
+        else:
+            if last is not None and run >= 2:
+                path.append(last)
+            elif last is None and run >= 3 and path and path[-1] != "–":
+                path.append("–")
+            last, run = bn, 1
+    if last is not None and run >= 2:
+        path.append(last)
+    comp = []
+    for x in path:
+        if not comp or comp[-1] != x:
+            comp.append(x)
+    ons = [sum(r["uusia"][k] for r in rows) / max(1, len(rows)) for k in range(3)]
+    tt = [r["t"] for r in rows]
+    mid = [r["painopiste"][1] for r in rows]
+    top = [r["painopiste"][2] for r in rows]
+    moves = []
+    for lab, ser in (("keskikerros", mid), ("yläkerros", top)):
+        i = 0
+        while i + 8 <= len(ser):
+            seg = [(tt[k], ser[k]) for k in range(i, i + 8) if ser[k] is not None]
+            if len(seg) >= 6:
+                x = np.array([q[0] for q in seg]); y = np.array([q[1] for q in seg])
+                sl = float(np.polyfit(x, y, 1)[0] * 10)
+                if abs(sl) >= 7:
+                    moves.append(f"{lab} {'nousee' if sl > 0 else 'laskee'} {mm(tt[i])}–{mm(tt[i] + 8)} ({sl:+.0f} psa/10 s)")
+                    i += 8
+                    continue
+            i += 4
+    longs = j.get("pitkat", [])
+    trem = sum(1 for r in longs if "tremolo" in r["varina"])
+    swell = sum(1 for r in longs if "< >" in r["muoto"])
+    parts = []
+    if comp:
+        parts.append("bassolinja " + " → ".join(comp[:12]))
+    parts.append(f"uusia säveliä/s matala {ons[0]:.1f}, keski {ons[1]:.1f}, korkea {ons[2]:.1f}")
+    if moves:
+        parts.append("; ".join(moves[:3]))
+    if longs:
+        parts.append(f"pitkiä ääniä {len(longs)}, joista paisuu ja hiipuu {swell}, tremolo {trem}")
+    return "Linjat: " + "; ".join(parts) + "."
 
 
 def minute_line(a, b, taso, liike, rows):
@@ -185,6 +251,11 @@ def gen_minutes(m, td, rec):
         ml = minute_line(a, b, taso, liike, rows)
         if ml:
             out.append(ml + "\n")
+        ll = linjat_line(a, min(b, end))
+        if not ll:
+            ll = linjat_line(a, b)
+        if ll:
+            out.append(ll + "\n")
         act = [s for s in secs if s["a"] < b and s["b"] > a]
         if act:
             out.append("Jaksot: " + "; ".join(f"**{s['nimi']}** {mm(s['a'])}–{mm(s['b'])} ({s['soi']})" for s in act) + "\n")
@@ -237,6 +308,148 @@ def gen_check(m, td):
     return "\n".join(L)
 
 
+
+# ---------------------------------------------------------------------------------------------
+# Kuulijan opas (käyttäjä 9.11.2026): "kuunteluopas ei ole tekninen kuvaus desibeleistä ja keskiarvoista: sinne
+# pitää tulla kuvaus kuulijalle mitä tapahtuu. Tekninen data menee json-fileen."
+# Opas (md) = kuulijan kieli. Tekninen (peruste, varmuus, mitatut luvut) = annotations/tekninen_<levytys>.json.
+
+EV_ALLOW = {"nousu", "lasku", "kerros katoaa", "kerros tulee", "urkupiste", "basso liikkuu", "basso vaikenee", "vuorottelu",
+            "tremolo", "hengittävä sointu", "hiljaisuus", "äkillinen voimistuminen", "äkillinen hiljeneminen", "isku",
+            "artikulaatio", "liike", "purske"}
+
+
+def kuulijalle(e):
+    """Tunnistimen tapahtuma kuulijan kielellä (ei desibelejä)."""
+    typ, k, dur = e["tyyppi"], e["kuvaus"], e["loppu"] - e["alku"]
+    perhe = f" ({e['perhe']})" if e.get("perhe") else ""
+    if typ == "nousu":
+        who = k.split(" nousee")[0]
+        return f"Musiikki nousee: {who} kohoaa ylöspäin noin {dur:.0f} sekunnin ajan{perhe}."
+    if typ == "lasku":
+        who = k.split(" laskee")[0]
+        return f"Musiikki laskeutuu: {who} painuu alaspäin noin {dur:.0f} sekunnin ajan{perhe}."
+    if typ == "kerros katoaa":
+        if k.startswith("pohja"):
+            return f"Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin ({dur:.0f} s). Ääni muuttuu kevyeksi ja pohjattomaksi."
+        if k.startswith("ylä"):
+            return f"Ylärekisteri sammuu ({dur:.0f} s): jäljelle jää tumma, matala sointi."
+        return f"Keskirekisteri vaikenee ({dur:.0f} s): ääni ohenee."
+    if typ == "kerros tulee":
+        if k.startswith("pohja"):
+            return "Matalat soittimet palaavat: ääni saa pohjan."
+        if k.startswith("ylä"):
+            return f"Ylärekisteri syttyy{perhe}."
+        return f"Keskirekisteri tulee mukaan{perhe}."
+    if typ == "urkupiste":
+        sav = k.split("sävelellä ")[1].split(" ")[0]
+        return f"Basso jää paikalleen yhdelle sävelelle ({sav}) noin {dur:.0f} sekunniksi: kaikki muu liikkuu sen päällä."
+    if typ == "basso liikkuu":
+        return "Basso lähtee liikkeelle pitkän paikallaan olon jälkeen."
+    if typ == "basso vaikenee":
+        return "Basso vaikenee."
+    if typ == "vuorottelu":
+        return "Kaksi ryhmää vuorottelee: nopea kuvio välähtää ylhäällä ja väistyy, yhä uudestaan" + (" (" + k.split(":")[0].replace("purskeet toistuvat ", "") + ")." if "välein" in k else ".")
+    if typ == "purske":
+        return f"Ylhäällä välähtää nopea kuvio{perhe}."
+    if typ == "tremolo":
+        return "Pitkät korkeat äänet alkavat väristä (tremolo)."
+    if typ == "hengittävä sointu":
+        return "Soinnut hengittävät: paisuvat ja hiipuvat vuorotellen."
+    if typ == "hiljaisuus":
+        return f"Lähes hiljaista noin {dur:.0f} sekuntia."
+    if typ == "äkillinen voimistuminen":
+        return f"Äkkiä voimakkaampaa{perhe}."
+    if typ == "äkillinen hiljeneminen":
+        return "Äkkiä hiljaisempaa."
+    if typ == "isku":
+        return "Isku."
+    if typ == "artikulaatio":
+        lay = k.split(":")[0]
+        return f"{lay.capitalize()} soittaa lyhyitä, irrallisia ääniä (staccato)." if "staccato" in k else f"{lay.capitalize()} soittaa pitkiä, sidottuja ääniä (legato)."
+    if typ == "liike":
+        to = k.split("→ ")[1].split(" ")[0]
+        return {"hidas": "Liike hidastuu: ääniä tulee harvakseltaan.", "kohtalainen": "Liike tasaantuu.", "nopea": "Liike kiihtyy: ääniä tulee tiheään."}.get(to, "")
+    return ""
+
+
+def gen_kuulijalle(m, td, rec):
+    """Minuutti minuutilta kuulijan kielellä: ankkurit (kuratoitu) + tunnistimen tapahtumat (kone)."""
+    ajat, ank = td["ajat"], m["ankkurit"]
+    items = []
+    for a in ank:
+        e = ajat.get(a["id"], {})
+        if e.get("t") is None:
+            continue
+        items.append((e["t"], "ankkuri", a, e))
+    evs = []
+    pak = rec.get("paketti")
+    if pak and (ROOT / pak / "tapahtumat.json").exists():
+        evs = read_json(ROOT / pak / "tapahtumat.json")["tapahtumat"]
+    at = sorted(x[0] for x in items)
+    strong = lambda e: not ((e["tyyppi"] == "isku" and e["voima"] < 12) or (e["tyyppi"] in ("äkillinen voimistuminen", "äkillinen hiljeneminen") and e["voima"] < 13)
+                            or (e["tyyppi"] in ("nousu", "lasku") and e["loppu"] - e["alku"] < 6) or (e["tyyppi"] == "urkupiste" and e["loppu"] - e["alku"] < 12))
+    last_txt = {}
+    for e in evs:
+        if e["tyyppi"] not in EV_ALLOW or not strong(e):
+            continue
+        if any(abs(e["alku"] - t) <= 4.0 for t in at):
+            continue  # nimetty kohta kertoo saman tarkemmin
+        txt = kuulijalle(e)
+        if not txt:
+            continue
+        if last_txt.get(txt) is not None and e["alku"] - last_txt[txt] < 20:
+            continue
+        last_txt[txt] = e["alku"]
+        items.append((e["alku"], "kone", txt, e))
+    items.sort(key=lambda z: z[0])
+    end = max([z[0] for z in items] + [60.0])
+    out = ["*Lihavoidut kohdat ovat ohjaajan ja käyttäjän nimeämiä; muut rivit on kone kuullut äänestä itse (nousut, laskut, kerroksen "
+           "katoaminen, urkupisteet, tremolo, staccato ja legato, vuorottelu). Soitinryhmä suluissa on koneen arvaus. Ajat ovat "
+           "Rattlen äänitteen aikaa; mitään ei ole vielä tarkistettu korvalla, ellei rivillä lue niin.*\n"]
+    for minute in range(0, int(math.ceil(end / 60))):
+        a0, b0 = 60.0 * minute, 60.0 * (minute + 1)
+        here = [z for z in items if a0 <= z[0] < b0]
+        out.append(f"##### {minute}:00–{minute + 1}:00\n")
+        if not here:
+            out.append("*(edellinen jatkuu)*\n")
+            continue
+        for t, kind, x, e in here:
+            ts = mm(t).split(".")[0]
+            if kind == "ankkuri":
+                kuultu = " *(kuultu)*" if e.get("varmuus") == "vahvistettu" else ""
+                soi = x.get("soi", "").strip()
+                soi = soi[0].upper() + soi[1:] if soi else ""
+                out.append(f"- **{ts} {x['nimi']}.**{kuultu} {soi}.")
+                if x.get("etuala"):
+                    out.append(f"  - *Edessä ja takana:* {x['etuala']}. *Tunnelma:* {x.get('tunnelma', '')}.")
+                if x.get("esitysmerkinta"):
+                    out.append(f"  - *Partituurissa:* {x['esitysmerkinta']}")
+                if x.get("tarina"):
+                    out.append(f"  - {x['tarina']}")
+            else:
+                out.append(f"- {ts} {x}")
+        out.append("")
+    return "\n".join(out)
+
+
+def write_tekninen(m, td, rec):
+    """Tekninen data JSONiin: ankkurien mitattu peruste ja varmuus, minuuttien mitatut luvut, tarkistuslista."""
+    ajat, ank = td["ajat"], m["ankkurit"]
+    taso, liike, rows = load_background(rec)
+    mins = []
+    ts = [e["t"] for e in ajat.values() if e["t"] is not None]
+    end = max(ts + [60.0])
+    for minute in range(0, int(math.ceil(end / 60))):
+        a0, b0 = 60.0 * minute, 60.0 * (minute + 1)
+        mins.append({"minuutti": minute, "mitattu": minute_line(a0, b0, taso, liike, rows), "linjat": linjat_line(a0, b0) or linjat_line(a0, min(b0, end))})
+    out = {"levytys": rec["id"], "ankkurit": [{"id": a["id"], "nimi": a["nimi"], "partituuri": partituuri(a), **ajat.get(a["id"], {})} for a in ank],
+           "minuutit": mins, "tarkistuslista": gen_check(m, td)}
+    pth = ROOT / "annotations" / f"tekninen_{rec['id']}.json"
+    pth.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8", newline="\n")
+    return pth
+
+
 def replace(text, name, body):
     pat = re.compile(rf"(<!-- GEN:{name} -->\n).*?(<!-- /GEN:{name} -->)", re.S)
     if not pat.search(text):
@@ -265,9 +478,14 @@ def main():
         GUIDE.write_bytes(RUNKO.replace("\r\n", "\n").encode("utf-8"))
         print(f"{GUIDE.relative_to(ROOT)}: runko luotu (tarinaotsikot tyhjinä)")
     text = GUIDE.read_text(encoding="utf-8")
-    text = replace(text, "ankkurit", gen_anchors(m, td, rec))
-    text = replace(text, "minuutit", gen_minutes(m, td, rec))
-    text = replace(text, "tarkista", gen_check(m, td))
+    # Opas on kuulijan kieltä: käsin kirjoitettu alku säilyy, tekniset osat (ankkuritaulukko, tarkistuslista) pois.
+    cut = min([i for i in (text.find("## Ankkurit aikakoodein"), text.find("## Minuutti minuutilta")) if i >= 0] or [len(text)])
+    head = text[:cut].rstrip() + "\n\n"
+    body = "## Minuutti minuutilta: mitä kuulet\n\n<!-- GEN:minuutit -->\n" + gen_kuulijalle(m, td, rec).rstrip("\n") + "\n<!-- /GEN:minuutit -->\n"
+    tp = write_tekninen(m, td, rec)
+    foot = (f"\n## Tekninen data\n\nMitatut perusteet, varmuudet ja luvut eivät ole tässä oppaassa. Ne ovat tiedostoissa "
+            f"`annotations/{tp.name}`, `annotations/ajat_{rec['id']}.json`, `annotations/cues.json` ja paketin `tapahtumat.json`.\n")
+    text = head + body + foot
     GUIDE.write_bytes(text.replace("\r\n", "\n").encode("utf-8"))
     n_t = sum(1 for e in td["ajat"].values() if e["t"] is not None)
     print(f"{GUIDE.relative_to(ROOT)}: levytys {rec['id']}, {len(m['ankkurit'])} ankkuria ({n_t} ajalla)")

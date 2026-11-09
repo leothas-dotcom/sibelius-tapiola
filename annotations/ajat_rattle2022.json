@@ -26,18 +26,6 @@
         }
       ]
     },
-    "kayratorvet_vastaavat": {
-      "t": 13.13,
-      "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "V3-vaihtoehto: vaskikanava 0,30 → 0,45 kohdissa 13,0–13,2 s, PANNs käyrätorvi 0,10 kohdassa 13,5 s (huippu 0,17), vaski 0,24; jouset-kanava laskee 0,67 (12,0 s) → 0,21 (13,2 s). interpret.py: vaskipuhaltimet tulevat sisään 12,4 s (0,001 → 0,304). puupuhaltimet-kanavan nousu samassa kohdassa ei ole PANNs-puupuhaltimia (huilu 0,001, klarinetti 0,01).",
-      "vaihtoehdot": [
-        {
-          "t": 12.4,
-          "huom": "interpret.py: vaskipuhaltimet tulevat sisään"
-        }
-      ]
-    },
     "puhaltimet_tulevat": {
       "t": 26.43,
       "varmuus": "analyysi",
@@ -103,17 +91,17 @@
       ]
     },
     "urkupiste_H1_alku": {
-      "t": 179.33,
-      "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "kanavat.py urkupiste: sama sävel midi 35,1 (H1; englanniksi B1) yhtäjaksoisesti 179,33–191,83 s (12,5 s; vähimmäiskesto 4 s). Liiketiheys keskimäärin 0,1 alkua/s, taso −42…−28 dBFS (keskiarvo −34,1), jännite 0,0–0,7. Ei jaksorajaa eikä tapahtumaa alussa; ajan tarkkuus on kanavan ruutuväli (33 ms) ja sävelkorkeuden seurannan tarkkuus.",
+      "t": 176.1,
+      "varmuus": "vahvistettu",
+      "luottamus": "hyvä",
+      "peruste": "Käyttäjä 9.11.2026 (korva): 3:00 eteenpäin alkaa nousu. linjat.py: H1 ja H2 pitkinä 2:56.1–3:12.4; soinnut noin 2 s välein: 2:56 D3–Fis3–Fis4, 2:57 E3–Gis3–E4–Gis4, 2:59 D3–D4–Fis4, 3:01 Cis3–E3–Gis4–H4, 3:03 D3–D4–Fis4–Fis5, 3:05 E3–Gis3–Gis4–Gis5–H4, 3:07 Ais3–Ais4–Ais5–F5, 3:08 Gis3–H3–Gis4–H4–Gis5–H5, 3:10 Cis4–Cis5–Ais4–Cis6; keskikerroksen painopiste +15 psa/10 s ja ylälinja +19 psa/10 s välillä 3:04–3:12.",
       "t_loppu": 191.83
     },
     "urkupiste_H1_loppu": {
-      "t": 191.83,
+      "t": 191.4,
       "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "kanavat.py urkupiste päättyy kohdassa 191,83 s (sama sävel midi 35,1 yhtäjaksoisesti 179,33 s alkaen, 12,5 s). Jaksoraja 193,49 s (uutuus 8,2); jännite 0,04 (179,3 s) → 0,46 (191,8 s)."
+      "luottamus": "hyvä",
+      "peruste": "linjat.py: bassolinja H1 (2:56.1–3:12.4) → Cis2 3:11.4–3:13.4 → D2 3:13.4–3:15.8 → E2 3:15.0–3:18.0 → D2 3:16.8–3:22.6; basson kulmakerroin +5,4 psa/10 s välillä 3:08–3:16."
     },
     "nopea_liike_1_alku": {
       "t": 280.9,
@@ -398,18 +386,18 @@
       "peruste": "tarkka.py: pitkät sävelet D4, D5, H3, H4 1:15.2–1:21.4 ja uudestaan 1:29.1–1:36.3; aikajana: käyrätorvet, trumpetit ja pasuunat, puupuhaltimet 1:15.2–1:40, sävellajivihje D-duuri (0,83)."
     },
     "askeleet_alkavat": {
-      "t": 84.8,
-      "t_loppu": 118.4,
-      "varmuus": "analyysi",
+      "t": 100.1,
+      "t_loppu": 176.0,
+      "varmuus": "vahvistettu",
       "luottamus": "hyvä",
-      "peruste": "tarkka.py: matalat alut 1:24.8–1:58.4, 17 kpl (D2 x7, H1 x5, Fis2 x2), välin mediaani 1,83 s; ryhmät 1:24.8, 1:30.6, 1:37.4, 1:50.9, 1:54.9."
+      "peruste": "Käyttäjä 9.11.2026 (korva): 1:40 bassojen eritahtiset iskut alkavat. linjat.py: bassolinja D2 → H1 kohdassa 1:40.1 (H1 0…−5 dB, välin vahvin sävel); matalan kerroksen uusia säveliä/s 1:55–2:11: 4, 2, 5, 0, 3, 2, 2, 0, 0, 5, 1, 6, 0, 2, 0, 7 (epäsäännöllinen). Sitä ennen pitkä D2 pohjana 1:24.8 alkaen."
     },
     "ylarekisteri_heraa": {
-      "t": 200.0,
-      "t_loppu": 238.0,
+      "t": 203.0,
+      "t_loppu": 240.0,
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
-      "peruste": "tarkka.py: matalat alut loppuvat 3:18.7, D4-urkupiste 3:23.7; taso −33 → −40 dBFS; korkeat sävelet 3:21.2 Cis6, 3:24.1 E6, 3:26.3 Cis6, 3:28.3 E6, 3:37.2 C6, 3:51–3:54 C6; aikajana: puupuhaltimet 3:23–3:38."
+      "peruste": "linjat.py: matala rekisteri tyhjä 3:23 alkaen; pitkät äänet keskirekisterissä: Ais4 3:21.2–3:25.8 ja 3:26.2–3:29.6 (< >), D4 3:29.7–3:33.7, Gis4 3:31.1–3:33.9, Fis4 3:34.0, F4 3:43.7–3:50.4, Dis4 3:50.3–3:52.7; kuvassa matalin vahva linja laskee E4 → D4 → C4 (3:25–3:37); pitkät korkeat: Cis6 3:21.2–3:23.7 (värisee 5 Hz), Cis6 3:26.3–3:28.0 (tremolo 9 Hz), H5 3:30.3 (4 Hz), D6 3:38.1–3:41.8 (5 Hz), D6 3:47.0 (5 Hz); yläkerroksessa 5–27 uutta säveltä/s."
     },
     "e_pitka_ja_kuviot": {
       "t": 240.0,
@@ -545,18 +533,11 @@
       "peruste": "tarkka.py: matalat alut H1 x17: 17:04.4–17:08.4 (8), 17:11.9–17:20.3 (8), 17:23.6–17:24.7 (2); väli 1,09 s."
     },
     "fis_hengittaa": {
-      "t": 120.0,
-      "t_loppu": 177.7,
+      "t": 100.8,
+      "t_loppu": 176.0,
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
-      "peruste": "tarkka.py: Fis4 14 jaksoa 2:00.0–2:57.7 (2,0–5,9 s kukin); pitkät H4 ja E4 2:04.6–2:07.9, E4 2:12.1, Gis4 2:18.2–2:21.6, E4 2:33.0, H3 2:35.3."
-    },
-    "d_pitka_urkupisteen_paalla": {
-      "t": 182.9,
-      "t_loppu": 203.7,
-      "varmuus": "analyysi",
-      "luottamus": "hyvä",
-      "peruste": "tarkka.py: D4 3:02.9–3:15.1 ja 3:15.6–3:23.7; matalat alut H1 x18, 23 kpl 3:00.4–3:18.7, väli 0,57 s."
+      "peruste": "linjat.py 1:36–2:12: sellojen rekisterin soinnut vuorottelevat noin 2 s välein: (D3, Fis3, D4, Fis4) ja (E3, Gis3, E4, Gis4, H4), useimmat muodolla paisuu ja hiipuu < >; yläkerroksen uusia säveliä/s hyppää 4:stä 40–66:een kohdissa 1:37, 1:44–1:46, 1:51–1:52, 1:58–2:00, 2:05–2:07, eli puhaltimien purskeet noin 7 s välein; välissä keskikerros johtaa."
     },
     "askeleet_fis": {
       "t": 252.7,
@@ -585,6 +566,39 @@
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
       "peruste": "aikajana: 779–805 s taso −32…−41 dBFS, liike 0–2 alkua/s; jouset 769–780 s, puupuhaltimet 781 ja 799 s."
+    },
+    "nousu_tremolo": {
+      "t": 186.7,
+      "t_loppu": 195.8,
+      "varmuus": "analyysi",
+      "luottamus": "kohtalainen",
+      "peruste": "linjat.py: tremolo noin 8–10 Hz pitkissä äänissä Ais5 3:06.7–3:08.5, Cis6 ja Ais5 3:10.3–3:12.1, H5 3:12.1–3:15.6, D6 3:12.2–3:14.1, E6 3:14.0–3:15.8; yläkerroksessa 13–25 uutta säveltä/s."
+    },
+    "nousu_huippu_D": {
+      "t": 195.7,
+      "t_loppu": 203.0,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "linjat.py: D5 3:15.7–3:21.2, D6 3:15.7–3:18.9, D4 3:15.8–3:22.9, A5 3:16.0–3:18.8, Fis5; basso D2 3:16.8–3:22.6; ylälinja E6 → D6; taso −11 → −18 dB."
+    },
+    "pohja_katoaa": {
+      "t": 203.0,
+      "t_loppu": 205.0,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "linjat.py: bassolinja D2 loppuu 3:22.6 (D2 −27,9 dB 3:22.9–3:24.5); sen jälkeen matalin vahva sävel on keskirekisterissä (E4, D4, C4); matalan kerroksen painopiste 38 → 32."
+    },
+    "gis_paljastuu": {
+      "t": 12.5,
+      "varmuus": "vahvistettu",
+      "luottamus": "hyvä",
+      "peruste": "Käyttäjä 9.11.2026 (korva): käyrätorvet soittavat gis:tä taustalla koko ajan ja tulevat esiin, kun jouset lopettavat. tarkka.py: Gis4 soi 8,7–17,8 s katkeamatta; jousten sävelet E4 (8,62–12,85 s), D4, H4, E5, H5 lakkaavat noin 12,0–12,9 s; sen jälkeen Gis4:n yläsävelprofiili vaihtuu (3. osaääni −9 dB kohdissa 14–15 s).",
+      "vaihtoehdot": [
+        {
+          "t": 12.4,
+          "huom": "interpret.py: vaskipuhaltimet tulevat sisään"
+        }
+      ]
     }
   }
 }

@@ -2,6 +2,28 @@
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 9.11.2026 – Visualisaattori äänelle: tunnistin, kuulijan opas, yksityiskohdat
+
+**Ei toiminut**
+- Ohjaaja kirjoitti minuutit 1–17 lukujen perusteella katsomatta kuvia ja kutsui nousua (3:00–3:16) sanoilla
+  "metsä seisoo". Käyttäjä kuuli nousun. Sääntö: lue kuva ennen kuin kirjoitat, mitä siinä on.
+- "Käyrätorvet vastaavat" oli väärä tulkinta: ne soittavat gis:tä taustalla koko ajan ja paljastuvat, kun jouset
+  lopettavat. Mittaus näytti sen (gis katkeamaton), mutta ohjaaja sanoitti muutoksen uutena äänenä.
+- Opas oli täynnä desibelejä ja keskiarvoja. Käyttäjä: opas on kuvaus kuulijalle, tekninen data JSONiin.
+
+**Toimi**
+- `linjat.py`: bassolinja, kerrosten painopiste, suunta, pitkien äänten muoto ja värinä. Sillä näkyi nousu soinnuittain
+  ja tremolo ylälinjassa.
+- `tapahtumat.py`: tunnistin löysi itse käyttäjän kolme esimerkkiä (nousu 3:06, basso lähtee 68 s jälkeen, pohja
+  katoaa 3:25 42 sekunniksi) ja 271 tapahtumaa koko teoksesta. Vääriä osumia on; ei vielä kuultu.
+- Opas generoituu nyt kuulijan kielellä; tekninen data `annotations/tekninen_rattle2022.json`.
+- Tyyliohjeen luku 7b: jokaisella äänen tapahtumalla on kuvavastine, ja kriitikko tarkistaa sen.
+
+**Oppi**
+- Sibeliuksen kieli on usein poisottamista: kerros väistyy ja paljastaa toisen. Kun mittaus näyttää jatkuvan äänen ja
+  muutoksen sen ympärillä, kysy ensin "mikä lakkasi", ei "mikä tuli".
+- Käyttäjän esimerkit ovat esimerkkejä: sama pitää löytää itse koko teoksesta.
+
 ## 9.11.2026 – Jokainen minuutti, ei vain ensimmäinen
 
 **Ei toiminut**

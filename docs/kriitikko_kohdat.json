@@ -7,6 +7,11 @@
       "kysymys": "Tietääkö katsoja joka hetki olevansa metsässä (rungot, kuuset, oksisto, lumi, usva)? Onko jakso, jossa metsä on abstrahoitu pois?"
     },
     {
+      "id": "aani_nakyy",
+      "sääntö": "tyyliohje 7b",
+      "kysymys": "Käy läpi tapahtumat.json: näkyykö jokainen äänen tapahtuma kuvassa taulukon 7b mukaisesti (nousu, lasku, kerros katoaa tai tulee, paljastuminen, urkupiste, basso liikkuu, staccato, legato, tremolo, vuorottelu, isku, hiljaisuus)? Tapahtuuko kuvassa jotain, mille äänessä ei ole syytä?"
+    },
+    {
       "id": "kamera_liikkuu",
       "sääntö": 1,
       "kysymys": "Liikkuuko kamera koko ajan paitsi nimetyissä pysähdyksissä (C-duuri, H-duuri)? Onko pysähdys, jota kuvakäsikirjoitus ei nimeä?"

@@ -89,23 +89,23 @@
       "esitysmerkinta": "t. 1–9: jouset f heti patarumpujen perään (s. 3)."
     },
     {
-      "id": "kayratorvet_vastaavat",
-      "nimi": "Käyrätorvet vastaavat jousille",
+      "id": "gis_paljastuu",
+      "nimi": "Jouset lopettavat: käyrätorvien gis paljastuu",
       "kirjain": null,
       "tahti": null,
       "tahti_loppu": null,
       "tahti_suhde": "jousten jälkeen, alku",
       "luokka": "soitin",
       "tyyppi": "hetki",
-      "soi": "jousten jälkeen gis jää soimaan toisella värillä (parittomat yläsävelet, klarinetin kaltainen), ja sen alla matala H ja fis pitkinä; [käyttäjä: mikä soitin pitää gis:n tässä?]",
+      "soi": "käyrätorvet ovat soittaneet gis:tä taustalla koko ajan jousten alla; kun jouset lopettavat, gis jää yksin kuuluviin",
       "soittimet": [
         "käyrätorvet"
       ],
-      "tarina": "Käyttäjä kuuli: \"jouset, taustalla vasket\". Ohjaaja: käyrätorvet ovat etäisyys, se mikä on puiden takana. Ensimmäinen kerros syvyyteen.",
-      "lahde": "analyysi: varmat kohdat (V3, vaihtoehto)",
+      "tarina": "Käyttäjä 9.11.2026 (korva): \"tuo alun 'käyrätorvet vastaavat' ei ole oikein. Ne kuuluvat siellä taustalla soittaen gis-ääntä koko ajan. Ne tulevat vain esiin kun jouset lopettavat. Näillä yksityiskohdilla on väliä!\" Mitattu: gis soi katkeamatta jousten sisääntulosta alkaen, ja kun jousten sävelet (e, d, h) lakkaavat, gis jatkuu samana. Ohjaaja: Sibelius ei tuo uutta ääntä, hän ottaa pois. Se, mikä oli koko ajan takana, jää. Tämä on teoksen kieli pienoiskoossa: kerros väistyy ja paljastaa toisen.",
+      "lahde": "käyttäjä 9.11.2026 (korva); analyysi: tarkka.py",
       "tarkista": true,
-      "etuala": "jouset edessä, käyrätorvet takana (kaukana)",
-      "tunnelma": "syvyys avautuu",
+      "etuala": "mikään uusi ei tule: jousten kerros väistyy, ja takana ollut gis-linja jää näkyviin",
+      "tunnelma": "paljastuva, hiljainen",
       "esitysmerkinta": ""
     },
     {
@@ -230,7 +230,7 @@
     },
     {
       "id": "urkupiste_H1_alku",
-      "nimi": "Pitkä urkupiste H:lla alkaa",
+      "nimi": "Nousu alkaa h-urkupisteen päällä",
       "kirjain": null,
       "tahti": null,
       "tahti_loppu": null,
@@ -239,37 +239,37 @@
       "tyyppi": "jakso",
       "jakso": "urkupiste_H1",
       "reuna": "alku",
-      "soi": "pitkä urkupiste H:lla (H1)",
+      "soi": "matala h pysyy paikallaan kuusitoista sekuntia, ja sen päällä soinnut alkavat nousta portaittain, askel noin kahden sekunnin välein",
       "soittimet": [
         "matalat soittimet"
       ],
-      "tarina": "Lähteet: urkupisteet luovat synkkyyden (Europadisc, Kolly). Ohjaaja: maan oma aika, hitaampi kuin ihmisen ja tuulen. Kun urkupiste soi, metsä pidättää hengitystään. Mitattu 9.11.2026: matala h sykkii 23 kertaa 3:00.4–3:18.7 (väli 0,57 s), ja d1 soi pitkänä 3:02.9–3:23.7.",
+      "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:00 eteenpäin alkaa nousu, koko orkesteri nousee ylöspäin\". Mitattu: soinnut d, e, d, e, fis, gis, ais nousevat h-urkupisteen päällä; ylin ääni kulkee fis1:stä e3:een, lähes kaksi oktaavia kuudessatoista sekunnissa. Lähteet: Tovey: teos on valtava hidas crescendo. Ohjaaja: ensimmäinen kerta, kun metsä ei vain ole, vaan kohoaa. Aiempi rivini \"metsä seisoo\" oli väärin.",
       "lahde": "analyysi: aikajana",
       "tarkista": true,
-      "etuala": "kontrabassot pohjana, kaikki muu sen päällä",
-      "tunnelma": "staattinen syvyys",
+      "etuala": "pohja pysyy; kaikki muu nousee sen päällä kerros kerrokselta",
+      "tunnelma": "nouseva, kasvava",
       "esitysmerkinta": ""
     },
     {
       "id": "urkupiste_H1_loppu",
-      "nimi": "Pitkä urkupiste H:lla päättyy",
+      "nimi": "Basso lähtee liikkeelle",
       "kirjain": null,
       "tahti": null,
       "tahti_loppu": null,
       "tahti_suhde": null,
-      "luokka": "soitin",
+      "luokka": "isku",
       "tyyppi": "jakso",
       "jakso": "urkupiste_H1",
       "reuna": "loppu",
-      "soi": "pitkä urkupiste H:lla (H1)",
+      "soi": "kuudentoista sekunnin paikallaan olon jälkeen basso itse alkaa nousta: h, cis, d, e",
       "soittimet": [
         "matalat soittimet"
       ],
-      "tarina": "Ohjaaja: pohja irtoaa; metsä hengittää ulos.",
+      "tarina": "Ohjaaja: koko nousun ajan pohja on pysynyt. Kun se lähtee, kaikki on liikkeessä: tämä on nousun käännekohta.",
       "lahde": "analyysi: aikajana",
       "tarkista": true,
-      "etuala": "pohja väistyy",
-      "tunnelma": "vapautuva",
+      "etuala": "pohja nousee muiden mukana",
+      "tunnelma": "maa liikkuu",
       "esitysmerkinta": ""
     },
     {
@@ -857,7 +857,7 @@
       ],
       "lahde": "analyysi: rekisterikerrokset (kaaret.py); partituuri s. 3",
       "tarina": "Ohjaaja: siemen sanotaan kahdesti, ennen kuin mikään kasvaa. Minimalismi (käyttäjä): sama asia uudestaan, ja juuri siksi se jää mieleen.",
-      "etuala": "jouset edessä, käyrätorvien pitkä ääni väistyy",
+      "etuala": "jouset palaavat eteen; käyrätorvien gis jää taas niiden taakse",
       "tunnelma": "staattinen, synkkä",
       "esitysmerkinta": "t. 1–9: jouset f, sitten poco f (s. 3)."
     },
@@ -960,13 +960,14 @@
       "tyyppi": "jakso",
       "jakso": "gis_pitka_aani",
       "reuna": "alku",
-      "soi": "gis1 (Gis4) soi lähes katkeamatta koko alun: ensin jousten melodian sisällä, sitten yksin puhaltimissa; se on h-mollin doorinen sävel",
+      "soi": "gis1 soi lähes katkeamatta koko alun: käyrätorvet pitävät sitä taustalla jousten melodian alla, ja kun jouset lopettavat, se paljastuu; myöhemmin puhaltimet vuorottelevat sillä. Se on h-mollin doorinen sävel",
       "soittimet": [
-        "jouset",
-        "puupuhaltimet"
+        "käyrätorvet",
+        "puupuhaltimet",
+        "jouset"
       ],
       "lahde": "käyttäjä 9.11.2026 (korva ja partituuri); analyysi: tarkka.py; kirjallisuus: Sibelius-klubi, Grimley",
-      "tarina": "Käyttäjä: \"H-molli on hyvin synkkä. Puhaltimet soittavat alkuun lähes unisonossa gis-ääntä, joka on doorinen asteikko h-mollille. Sillä on joku merkitys?\" Lähteet: Sibelius-klubi: sävellaji häilyy h-mollin ja gis-mollin välillä, ja gis voidaan kuulla doorisena sävelenä H:n ollessa tonika; Grimley: alussa harhautettu kadenssi (E7), jonka tuulenpuuska pyyhkäisee pois. Mitattu: jousten melodian sävelet ovat E, D, H ja gis (E7-sointu), bassossa H ja fis, ja gis jää yksin soimaan 25 sekunniksi. Ohjaaja: luonnollisessa h-mollissa tämä sävel olisi g. Gis on puoli sävelaskelta valoisampi: se on ainoa sävel, joka ei kuulu synkkään h-molliin, ja juuri se jää soimaan. Ohut valon viiva pimeän metsän läpi, jo ennen kuin mitään on tapahtunut. Kun väärä valo myöhemmin tulee C-duurina, siinä on g, ei gis: valo on vaihtanut puolta.",
+      "tarina": "Käyttäjä: \"H-molli on hyvin synkkä. Puhaltimet soittavat alkuun lähes unisonossa gis-ääntä, joka on doorinen asteikko h-mollille. Sillä on joku merkitys?\" Lähteet: Sibelius-klubi: sävellaji häilyy h-mollin ja gis-mollin välillä, ja gis voidaan kuulla doorisena sävelenä H:n ollessa tonika; Grimley: alussa harhautettu kadenssi (E7), jonka tuulenpuuska pyyhkäisee pois. Mitattu: jousten melodian sävelet ovat E, D, H ja gis (E7-sointu), bassossa H ja fis, ja gis jää yksin soimaan 25 sekunniksi. Ohjaaja: luonnollisessa h-mollissa tämä sävel olisi g. Gis on puoli sävelaskelta valoisampi: se on ainoa sävel, joka ei kuulu synkkään h-molliin, ja juuri se jää soimaan. Ohut valon viiva pimeän metsän läpi, jo ennen kuin mitään on tapahtunut. Kun väärä valo myöhemmin tulee C-duurina, siinä on g, ei gis: valo on vaihtanut puolta. Käyttäjä 9.11.2026: käyrätorvet soittavat gis:tä taustalla koko ajan ja tulevat esiin vasta, kun jouset lopettavat.",
       "etuala": "gis on ohut pysyvä linja keskikerroksessa; kaikki muu tulee ja menee sen ympärillä",
       "tunnelma": "synkkä, yksi valoisa sävel",
       "esitysmerkinta": "t. 1–20: jouset f, puupuhaltimet poco f → p, käyrätorvet dim. molto (s. 3–4)."
@@ -1041,14 +1042,14 @@
         "sellot"
       ],
       "id": "askeleet_alkavat",
-      "nimi": "Basson askeleet alkavat",
+      "nimi": "Basson eritahtiset iskut alkavat",
       "esitysmerkinta": "",
       "tahti_suhde": "ennen kirjainta B",
-      "soi": "matalat äänet alkavat tulla yksi kerrallaan, d ja h, noin 1,8 sekunnin välein",
-      "etuala": "pohja liikkuu omassa ajassaan valon alla",
+      "soi": "basso putoaa matalalle h:lle ja alkaa iskeä eri tahtiin kuin muut; iskut jatkuvat alttoviulujen alla",
+      "etuala": "basson iskut pohjalla omassa ajassaan; sellojen sointumatto niiden päällä; alttoviulut ja puhaltimet vuorottelevat ylempänä",
       "tunnelma": "jokin suuri on tulossa",
-      "tarina": "Käyttäjä: \"Basson huokaavat askeleet kuuluu melkein koko alun yli myös, eli jo sillä luodaan tunnelmaa jostain suuresta, tulevasta.\" Ohjaaja: askeleet alkavat valon alla, eivät pimeässä. Se, mikä tulee, tulee jo silloin kun on valoisinta.",
-      "lahde": "käyttäjä 9.11.2026; analyysi: tarkka.py"
+      "tarina": "Käyttäjä 9.11.2026 (korva, 1:40): \"bassojen eritahtiset iskut alkavat, jatkuvat alttoviulujen alla. Altot vuorottelevat puhaltimien kanssa, sellot tekevät sointumattoa (metsä).\" Ja: \"Basson huokaavat askeleet ... jo sillä luodaan tunnelmaa jostain suuresta, tulevasta.\" Ohjaaja: askeleet alkavat valon alla, eivät pimeässä.",
+      "lahde": "käyttäjä 9.11.2026 (korva); analyysi: linjat.py"
     },
     {
       "kirjain": null,
@@ -1063,13 +1064,13 @@
         "oboet"
       ],
       "id": "ylarekisteri_heraa",
-      "nimi": "Ylärekisteri herää: puupuhaltimien kuviot",
+      "nimi": "Pohja katoaa: puupuhaltimien kuviot ja pitkä laskeva linja",
       "esitysmerkinta": "",
       "tahti_suhde": "urkupisteen jälkeen",
-      "soi": "urkupiste lakkaa, taso laskee, ja korkealla alkavat lyhyet sävelet (cis3, e3, c3): puupuhaltimien kuviot",
-      "etuala": "pienet korkeat kuviot etualalla; pohja tyhjä",
-      "tunnelma": "väike, levoton",
-      "tarina": "Lähteet: Goodwin (BSO): pitkät puhallintaustat katkeavat äkkiä ja jäljelle jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät; Inkpot: pikkolo ja huilu \"viheltävät ohi\". Ohjaaja: kun pohja lakkaa, metsän ylin kerros alkaa liikkua.",
+      "soi": "matala rekisteri katoaa kokonaan; ylhäällä puupuhaltimien nopeat lyhyet kuviot, ja niiden alla pitkien äänten linja laskee hitaasti askel kerrallaan (e1, d1, c1 … f1, dis1); välillä pitkä korkea ääni, joka värisee hitaasti",
+      "etuala": "nopeat kuviot ylhäällä edessä; pitkä hidas linja keskellä; pohja tyhjä",
+      "tunnelma": "väike, levoton, pohjaton",
+      "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!\" Mitattu: kaksi kerrosta yhtä aikaa: nopeat korkeat kuviot (10–27 uutta säveltä sekunnissa) ja pitkät äänet, jotka laskevat hitaasti keskirekisterissä; pitkät korkeat äänet (cis3, h2, d3) värisevät 4–5 kertaa sekunnissa. Ohjaaja ei pysty mittauksesta sanomaan varmasti, kumpi kerros on viulut [käyttäjä kertoo]. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.",
       "lahde": "analyysi: tarkka.py, aikajana"
     },
     {
@@ -1443,30 +1444,12 @@
       "soittimet": [],
       "esitysmerkinta": "",
       "id": "fis_hengittaa",
-      "nimi": "Fis hengittää, melodian katkelmia",
+      "nimi": "Sointumatto hengittää: kaksi sointua vuorotellen",
       "tahti_suhde": "kirjaimen B ympärillä",
-      "soi": "fis1 jatkuu sykäyksinä, jokainen kolmesta viiteen sekuntia, kuin hengenvetoja; keskirekisterissä melodian katkelmia (e, h, gis pitkinä)",
-      "etuala": "fis hengittää keskellä; melodian katkelmat tulevat ja menevät; askeleet pohjalla",
+      "soi": "sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein",
+      "etuala": "sointumatto keskellä hengittää; basso iskee alla; puhaltimet välähtävät ylhäällä ja väistyvät alttoviuluille",
       "tunnelma": "odottava, tasainen",
-      "tarina": "Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua; Wilker: koko teos on pääajatuksen rönsyilyä. Ohjaaja: siemen ei enää tule kokonaisena, vain palasina. Metsä kasvaa siitä.",
-      "lahde": "analyysi: tarkka.py"
-    },
-    {
-      "kirjain": null,
-      "tahti": null,
-      "tahti_loppu": null,
-      "tarkista": false,
-      "tyyppi": "hetki",
-      "luokka": "soitin",
-      "soittimet": [],
-      "esitysmerkinta": "",
-      "id": "d_pitka_urkupisteen_paalla",
-      "nimi": "Pitkä d sykkivän pohjan päällä",
-      "tahti_suhde": "kirjaimen B jälkeen",
-      "soi": "d1 soi pitkänä kaksikymmentä sekuntia, ja sen alla matala h sykkii tiheästi",
-      "etuala": "pitkä d keskellä, pohja sykkii alla; muu pysähtyy",
-      "tunnelma": "staattinen syvyys",
-      "tarina": "Lähteet: Europadisc ja Kolly: pitkät urkupisteet luovat synkkyyden. Ohjaaja: h ja d, molli ja sen valoisa terssi, pidettynä paikallaan: metsä seisoo.",
+      "tarina": "Käyttäjä: \"Sellot tekevät sointumattoa (metsä)\"; \"Altot vuorottelevat puhaltimien kanssa\". Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua. Ohjaaja: metsä hengittää: kaksi sointua, sisään ja ulos.",
       "lahde": "analyysi: tarkka.py"
     },
     {
@@ -1546,6 +1529,60 @@
       "tunnelma": "tyven",
       "tarina": "Ohjaaja: tyven ennen viimeistä varoitusta (P).",
       "lahde": "partituuri s. 47; analyysi: aikajana"
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "tyyppi": "hetki",
+      "luokka": "soitin",
+      "soittimet": [],
+      "esitysmerkinta": "",
+      "id": "nousu_tremolo",
+      "nimi": "Nousun ylimmät äänet alkavat väristä",
+      "tahti_suhde": "kirjaimen B jälkeen",
+      "soi": "nousun ylimmät äänet alkavat väristä (tremolo): ais2, cis3, h2, d3, e3",
+      "etuala": "värisevä ylälinja nousee kärjessä",
+      "tunnelma": "kiihtyvä, kirkastuva",
+      "tarina": "Ohjaaja: mitä korkeammalle nousu menee, sitä enemmän se värisee: valo alkaa väreillä latvoissa.",
+      "lahde": "analyysi: linjat.py"
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "tyyppi": "hetki",
+      "luokka": "huippu",
+      "soittimet": [],
+      "esitysmerkinta": "",
+      "id": "nousu_huippu_D",
+      "nimi": "Nousu päätyy D-duuriin",
+      "tahti_suhde": "kirjaimen B jälkeen",
+      "soi": "nousu päätyy pitkään D-duurisointuun kolmessa oktaavissa (d1, d2, d3, fis, a), basso d:llä; se soi seitsemän sekuntia ja hiipuu",
+      "etuala": "koko sointu edessä kaikissa kerroksissa, sitten hiipuu",
+      "tunnelma": "valo, hetken",
+      "tarina": "Käyttäjä: \"synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä\". Ohjaaja: nousu päätyy rinnakkaisduuriin: tämä on metsän oma valo, ja se on teoksen alkupuolen kirkkain hetki. Se ei jää: pohja katoaa sen alta. Synestesia [tarkista]: D-duuri keltainen.",
+      "lahde": "analyysi: linjat.py"
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
+      "tarkista": false,
+      "tyyppi": "hetki",
+      "luokka": "tauko",
+      "soittimet": [],
+      "esitysmerkinta": "",
+      "id": "pohja_katoaa",
+      "nimi": "Pohja katoaa",
+      "tahti_suhde": "kirjaimen B jälkeen",
+      "soi": "matala rekisteri vaikenee kokonaan: basso ja sellot poissa",
+      "etuala": "pohja tyhjä; vain ylä- ja keskikerros",
+      "tunnelma": "pohjaton",
+      "tarina": "Ohjaaja: kahden minuutin ajan basso on kulkenut mukana. Nyt maa on poissa, ja se, mikä jää, leijuu.",
+      "lahde": "analyysi: linjat.py"
     }
   ]
 }

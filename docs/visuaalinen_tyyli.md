@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.1, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin). Kirjoitettu käyttäjän ideoista (`docs/haastattelu_tyyli.md`) ja tutkimuksesta
+*Versio 1.2, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin, luku 7b ääni → kuva). Kirjoitettu käyttäjän ideoista (`docs/haastattelu_tyyli.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan ja `docs/kuvasaannot.md` ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -153,6 +153,39 @@ elementin, ei soitinta. Kanavakortti sanoo, mitä kanavaa elementti saa seurata.
 
 Elementtien yhteinen laki: **väike ja kajo ovat kaukana, paino ja massa lähellä.** Kun soitin tulee etualalle
 musiikissa, sen elementti tulee lähemmäs kerroksissa, ei suuremmaksi paikallaan.
+
+## 7b. Ääni → kuva: mitä äänessä tapahtuu, se näkyy
+
+Käyttäjä 9.11.2026: "teemme visualisaattoria ÄÄNELLE nimenomaan. ÄÄNEN MUKAAN tuon visualisaation pitää pyöriä.
+RYTMI, ÄÄNENKORKEUS, KETKÄ SOITTAVAT, MITÄ ÄÄNESSÄ TAPAHTUU, HIDAS, NOPEA, STACCATO, LEGATO. Kaikella näillä oli väliä
+Sibeliukselle." Ja: "Jos koko orkesteri nousee, ja sitten spektristä katoaa puolet, ääni muuttuu. NE PITÄÄ NÄKYÄ
+VISUAALISESTI." Tämä taulukko on sitova: jokaisella tunnistetulla äänen tapahtumalla (`tapahtumat.json`,
+`cues.json`) on kuvassa vastine, ja kuvakäsikirjoitus käyttää näitä. Vastineet ovat **[ohjaajan ehdotus]**.
+
+| Äänessä | Mitattu (kanava tai tapahtuma) | Kuvassa |
+|---|---|---|
+| **Äänenkorkeus** | sävel, rekisterikerros (matala, keski, korkea) | korkeus kuvassa: matala on maassa ja juurissa, keski runkojen korkeudella, korkea latvoissa ja taivaassa |
+| **Nousu** (koko orkesteri kohoaa) | tapahtuma `nousu` | kaikki kerrokset ja valo kohoavat rungoista latvoihin; kamera pysyy suunnassaan, metsä kasvaa sen ohi ylöspäin |
+| **Lasku** | tapahtuma `lasku` | valo ja liike painuvat latvoista maahan |
+| **Kerros katoaa** (spektristä häviää osa) | tapahtuma `kerros katoaa` | se osa kuvasta häviää: jos pohja katoaa, maa ja juuret katoavat alta ja metsä leijuu; jos ylärekisteri sammuu, latvat ja taivas pimenevät |
+| **Kerros tulee** | tapahtuma `kerros tulee` | se osa kuvasta syttyy tai tulee näkyviin, ei ilmesty tyhjästä vaan paljastuu |
+| **Paljastuminen** (ääni oli taustalla, muut lopettavat) | pitkä ääni jatkuu, kun toinen kerros lakkaa (esim. alun gis) | etummainen kerros väistyy ja takana koko ajan ollut jää näkyviin; mitään uutta ei tuoda |
+| **Urkupiste** | tapahtuma `urkupiste` | maa ja horisontti pysyvät paikallaan; kaikki muu liikkuu sen päällä |
+| **Basso lähtee liikkeelle** | tapahtuma `basso liikkuu` | maa liikahtaa; se on aina iso hetki |
+| **Basson askeleet** | matalat alut eri tahtiin | paino, joka siirtyy maassa omassa ajassaan (ei jalka, ei hahmo) |
+| **Pitkä ääni** (legato) | pitkät äänet, `artikulaatio legato` | yhtenäinen viiva tai säie, joka jatkuu |
+| **Lyhyet äänet** (staccato) | `artikulaatio staccato` | erilliset pisteet ja välähdykset, ei viivaa |
+| **Nopea / hidas** | uusia säveliä sekunnissa, tapahtuma `liike` | kuinka nopeasti elementit liikkuvat ja vaihtuvat; kameran nopeus seuraa vain suuria muutoksia |
+| **Rytmi, vuorottelu** | toistuvat purskeet, `vuorottelu`, `hengittävä sointu` | kaksi paikkaa kuvassa vuorottelee samassa tahdissa; sointumatto hengittää (kirkastuu ja himmenee) |
+| **Tremolo** | tapahtuma `tremolo` | valo tai massa väreilee paikallaan |
+| **Paisutus < >** | pitkän äänen muoto | elementti kirkastuu ja himmenee, tulee lähemmäs ja vetäytyy |
+| **Isku, sforzato** | `aksentit`, tapahtuma `isku` | ympäristö reagoi iskun ruudussa: tärähdys maassa, valon leikkaus |
+| **Äkillinen muutos, hiljaisuus** | `äkillinen …`, `hiljaisuus` | valo ja liike katkeavat samassa ruudussa; hiljaisuudessa kamera jatkaa, elementit poissa |
+| **Ketkä soittavat** | perhevihje, yläsävelväri, käyttäjän korva, partituuri | soittimen elementti (luku 7) on se, joka liikkuu; kun soitin vaihtuu samalla sävelellä, sama linja vaihtaa väriä |
+| **Sävellajin väri** | duuri, molli, synestesia | valon väri (luku 3) |
+
+Sääntö: jos äänessä tapahtuu jokin näistä eikä kuvassa tapahdu mitään, se on virhe. Jos kuvassa tapahtuu jotain,
+mille ei ole äänessä syytä, sekin on virhe.
 
 ## 8. Selkeyden säännöt
 

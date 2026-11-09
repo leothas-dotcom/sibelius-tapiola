@@ -480,3 +480,38 @@ sanoo, milloin kamera liikkuu ja milloin elementit, ja miten kokonaistarina kulk
 
 Ohjaajan merkintä: mitataan datasta tarkemmalla taajuuserottelulla (`analysis/tarkka.py`): gis-äänen kesto ja
 paisutukset, kuviot sen ympärillä, yläsävelprofiili (uusi soitin samalle sävelelle), matalat alut alun yli.
+
+## 9.11.2026 – käyttäjän kuunteluhavainnot 1:40, 3:00, 3:20 (käyttäjän sanat)
+
+> Ooh, joo juuri nuo kummut. Nehän jopa näyttää kummuilta tuossa spektrissä. Tuostahan saa selville vaikka mitä
+> analyysiä: jos viiva liikkuu nopeammin, silloin on enemmän liikettä, eikö niin? Tuosta ei saa irti eri soittimia,
+> mutta ne oli eri työkaluissa? Saatko nyt päivitettyä tuota kuunteluopasta niin että siellä voi tulla tällaisia
+> asioita vaikka esille?
+
+> 0.01:40 (rattle_lso_2022_44k) bassojen eritahtiset iskut alkavat, jatkuvat alttoviulujen alla. Altot vuorottelevat
+> puhaltimien kanssa, Sellot tekevät sointumattoa (metsä)
+
+> 0:03:00 eteenpäin alkaa nousu, koko orkesteri nousee ylöspäin, kuulitko tätä?
+> 0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!!!! NÄMÄ KAIKKI PUUTTUU!!!! KUUNTELE NYT TARKKAAN SE
+
+Ohjaajan merkintä: mitattu `analysis/linjat.py`:llä (bassolinja, kerrosten painopiste, suunta, pitkien äänten
+muoto ja värinä). 1:40 ja 3:00 näkyvät datassa selvästi; rivi "metsä seisoo" kohdassa 3:02 oli väärin ja on
+poistettu. 3:20: kaksi kerrosta mitattu, mutta soitinta (viulut) ei voi nimetä mittauksesta.
+
+> Eli tosta spektristä sun pitäis pystyä päätellä paljon enemmän ja tuoda noita visuaalisia juttuja
+> kuvakäsikirjoitukseen: Jos koko orkesteri nousee, ja sitten spektristä katoaa puolet, ääni muuttuu!!!! Etsi sieltä
+> ne kohdat, ja analysoi. NE PITÄÄ NÄKYÄ VISUAALISESTI. Muista, teemme siis visualisaattoria ÄÄNELLE nimenomaan. ÄÄNEN
+> MUKAAN tuon visualisaation pitää pyöriä. RYTMI: ÄÄNENKORKEUS: KETKÄ SOITTAVAT: MITÄ ÄÄNESSÄ TAPAHTUU, HIDAS, NOPEA,
+> STACCATO, LEGATO. Kaikella näillä oli väliä sibeliukselle
+
+> Annoin nuo kolme kohtaa vaan esimerkiksi: sinun pitää ITSE pystyä tunnistamaan KAIKKI TUOLLAISET KOHDAT musiikista
+
+> Ja kuunteluopas ei ole "tekninen kuvaus" jostain desibeleistä ja keskiarvoista: vaan sinne pitää tulla kuvaus
+> kuulijalle mitä tapahtuu. Tekninen data menee json fileen.
+
+> Ja tuo alun "käyrätorvet vastaavat" ei ole oikein. NE KUULUVAT SIELLÄ TAUSTALLA SOITTAEN GIS-ääntä KOKO AJAN. NE
+> TULEVAT VAIN ESIIN kun jouset lopettavat. NÄILLÄ YKSITYISKOHDILLA ON VÄLIÄ!!!!
+
+Ohjaajan merkintä (sitova): video on visualisaattori äänelle. Tyyliohjeen luku 7b antaa jokaiselle äänen
+tapahtumalle kuvavastineen. Tunnistin `analysis/tapahtumat.py` etsii tapahtumat koko teoksesta. Opas on kuulijan
+kieltä, tekninen data JSONissa. Sibeliuksen keino "kerros väistyy ja paljastaa toisen" on oma rivinsä taulukossa.

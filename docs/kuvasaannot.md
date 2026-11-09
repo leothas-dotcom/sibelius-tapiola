@@ -3,6 +3,11 @@
 *Johdettu `docs/visuaalinen_tyyli.md`:stä 1.11.2026. Tyyliohje voittaa, jos nämä ovat ristiriidassa. Jokainen
 osa, brief ja kriitikko lukee nämä tyyliohjeen jälkeen. Palaute kirjoitetaan briefiin näillä sanoilla.*
 
+## Ääni ohjaa
+0. Kuva on äänen visualisointi. Jokaisella äänen tapahtumalla on vastine (tyyliohje 7b): nousu, lasku, kerros katoaa
+   tai tulee, paljastuminen, urkupiste, basso liikkuu, staccato, legato, nopea, hidas, tremolo, vuorottelu, isku,
+   hiljaisuus. Ääni tapahtuu eikä kuva reagoi = virhe. Kuva tapahtuu ilman äänen syytä = virhe.
+
 ## Kamera
 1. Kamera liikkuu aina, hitaasti sisään ja eteen. Ei peruuta, ei palaa.
 2. Pysähdys vain nimetyissä kohdissa: C-duuri (taottu aurinko), H-duuri (loppu). Nimeämätön pysähdys on virhe.
