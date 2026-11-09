@@ -1,6 +1,6 @@
 **Lue ensin `docs/visuaalinen_tyyli.md` kokonaan ja sen luvut 4c ja 12. Luku 4c voittaa vanhemmat kohdat. Vasta sitten mitään muuta.**
 
-# Brief: kriitikko, vedos 3, teoksen alku 0:00–1:15 (9.11.2026)
+# Brief: kriitikko, toinen kierros, vedos 3, teoksen alku 0:00–1:15 (9.11.2026)
 
 Olet tuore katsoja ja kriitikko. Et ole tehnyt kuvaa etkä tunne aiempaa keskustelua. Tehtäväsi on löytää virheet.
 Älä kehu. Vastaa suomeksi. Tyhjä virhelista on kelvollinen vain, jos jokainen kohta alla on todella tarkistettu.
@@ -18,9 +18,9 @@ Koepätkä teoksen alusta (Sibelius: Tapiola; levytys Rattle/LSO 2022, ajat sen 
 3. `annotations/kuunteluopas.md`: alusta kohtaan 1:15 asti (luvut ennen minuuttilistaa ja jaksot 0:00–1:00 ja
    1:00–2:00 kohtaan "1:15 Ensimmäinen valon välähdys" asti). Jokainen rivi kertoo, mitä kuuluu ja milloin.
 4. Kuvat kansiossa `runs/vedos_v3/kriitikko/` (avaa Read-työkalulla, jokainen on ruudukko, aikaleima keltaisella):
-   - `koko_2fps_1.png` … `koko_2fps_6.png`: koko pätkä, ruutu puolen sekunnin välein (0–75 s).
+   - `koko_2fps_1.png` … `koko_2fps_8.png`: koko pätkä, ruutu puolen sekunnin välein (0–75 s).
    - `liike_rumpu_*.png` (6,5–9,5 s), `liike_paljastuu_*.png` (11,5–14,5 s), `liike_kukkula_*.png` (26,5–31,5 s),
-     `liike_isku_*.png` (44,5–48 s), `liike_tauko_*.png` (56,5–61,5 s): kymmenen ruutua sekunnissa, liikkeen
+     `liike_varina_*.png` (40–45 s), `liike_isku_*.png` (44,8–48,3 s), `liike_tauko_*.png` (56,5–61,5 s): kymmenen ruutua sekunnissa, liikkeen
      arviointiin. Vertaa peräkkäisiä ruutuja.
 
 ## Kysymykset, joihin vastaat jokaiseen
@@ -61,3 +61,17 @@ K9. **Kauneus ja tunnelma.** Kuunteluopas nimeää tunnelmat (pimeä, odottava; 
 4. Kolme asiaa, jotka toimivat (enintään kolme riviä).
 
 Palauta lopuksi viestinä enintään 250 sanan tiivistelmä: virheiden määrä ja viisi vakavinta.
+
+## Toinen kierros: mitä ensimmäinen kriitikko löysi
+
+Ensimmäinen kriitikko löysi 18 virhettä (`runs/vedos_v3/k1/kriitikko.md`). Kuva on korjattu sen jälkeen. Lue se lista
+ja tarkista jokainen kohta uudestaan näistä uusista ruuduista: onko korjattu, osin korjattu vai ennallaan. Etsi sen
+lisäksi uudet virheet samoilla kysymyksillä K1–K9. Lisäkysymys:
+
+K10. **Metsä hiljaisuudessa ja koko ajan.** Näkyykö metsä jossain muodossa joka ruudussa (myös 0–7 s, 26–45 s ja
+     hiljaisuudessa 58–61,4 s)? Tyyliohjeen sääntö 18: hiljaisuudessa elementit lakkaavat, metsä jää.
+
+Tieto, jota ruuduista ei näe: äänitteessä gis-äänen taso putoaa lähes nollaan noin 17,8–20,4 s (soittajat hengittävät),
+ja kuva pitää silloin viivan himmeänä näkyvissä. Vaskien isku on äänitteessä kohdassa 45,33 s.
+
+Raportin alkuun taulukko: ensimmäisen kierroksen 18 virhettä → korjattu / osin / ennallaan, ja mistä ruudusta sen näkee.

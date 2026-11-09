@@ -18,8 +18,8 @@ export const PALETTI = { hamy: '#0b1719', salo: '#163a66', halla: '#cfe1ee', nok
 const C = PALETTI;
 
 const PERUS = {
-  jouset: 1, viiva: 68, viivaVoima: 1, harjut: 1, vaike: 0.5, leikkaus: 0, tuuli: 0,
-  maaY: 0.11, pLo: 50, pHi: 98, zoom: 1, mist: 0.6, dark: 0,
+  jouset: 1, viiva: 68, viivaVoima: 1, viivaPohja: 0.3, kukkulat: 1, harjut: 1, vaike: 0, leikkaus: 0, tuuli: 0, reuna: 0.05,
+  maaY: 0.13, pLo: 50, pHi: 98, zoom: 1, mist: 0.6, dark: 0,
   snow: [0, 0.4, 0.5, 0.5],
   skyTop: lin(C.salo, 0.08), skyLow: lin(C.salo, 0.30), mistCol: lin('#6d86a3', 0.35), treeNear: lin(C.noki, 0.55), treeFar: lin('#16243a', 0.38),
   groundCol: lin(C.noki, 0.6), lightCol: lin('#a9c4e6', 1.5), snowCol: lin(C.halla, 0.5), cutCol: lin(C.halla, 2.2), warmCol: lin(C.kajo, 1.0), sunCol: lin(C.punainen, 2.0),
@@ -30,22 +30,26 @@ const ASKEL = new Set(['jouset', 'viiva']);
 const m = (...os) => Object.assign({}, PERUS, ...os);
 
 // Aikajana: ankkuri → tila. Roolit kuunteluoppaasta.
+const KELMEA = lin('#b9c2c4', 1.3);
 const AVAIMET = [
-  ['tiedoston_alku', m({ jouset: 1 })],
-  ['jouset_tulevat', m({ jouset: 1 })],                       // siemen: jouset piirtävät ensimmäisen metsän
-  ['gis_paljastuu', m({ jouset: 0, zoom: 1.03 })],            // jouset väistyvät, takana ollut gis jää
-  ['siemen_toistuu', m({ jouset: 1, zoom: 1.06 })],           // sama metsä uudestaan
-  ['puhallinkuviot_alku', m({ jouset: 0, zoom: 1.09 })],      // puhaltajat nousevat viivasta kukkuloina yksi kerrallaan
-  ['puhallinkuviot_loppu', m({ jouset: 0, zoom: 1.16 })],
-  ['patarumpu_paisuu', m({ jouset: 0, zoom: 1.18, snow: [0.05, 0.4, 0.5, 0.4] })],
-  ['vaskien_isku', m({ jouset: 1, leikkaus: 1, zoom: 1.2, snow: [0.25, 1.6, 0.4, 0.6], tuuli: 1 })],
-  ['fraasi_ennen_taukoa', m({ jouset: 1, leikkaus: 0, zoom: 1.26, snow: [0.7, 2.2, 0.5, 0.7], mist: 0.9, tuuli: 0.5 })],
-  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [1.0, 0.8, 0.9, 0.8], mist: 1.2 })],
-  ['hiljaisuus_1_loppu', m({ jouset: 1, viiva: 66, zoom: 1.34, snow: [0.5, 0.3, 0.7, 0.6], mist: 0.9 })],
-  ['fis_pitka_aani', m({ jouset: 1, viiva: 66, zoom: 1.36, snow: [0.2, 0.2, 0.6, 0.5] })],
-  ['valo_D_duuri', m({ jouset: 0, viiva: 66, zoom: 1.42 })],
-  ['askeleet_alkavat', m({ jouset: 1, viiva: 66, zoom: 1.5 })],
-  ['tiedoston_loppu', m({ jouset: 1, viiva: 66, zoom: 1.5 })],
+  ['tiedoston_alku', m({ jouset: 1, reuna: 0.03, viivaPohja: 0 })],                       // metsän idea: tumma ilma, maa, matala reuna
+  ['avaus_patarumpu', m({ jouset: 1, reuna: 0.032, viivaPohja: 0, zoom: 1.01 })],           // patarumpu sysää maata
+  ['gis_pitka_aani_alku', m({ jouset: 1, reuna: 0.035, zoom: 1.015 })],                    // pitkä gis alkaa: horisontti
+  ['jouset_tulevat', m({ jouset: 1, reuna: 0.04, zoom: 1.02 })],                           // siemen: jouset kasvattavat ensimmäisen kuusikon
+  ['gis_paljastuu', m({ jouset: 0, zoom: 1.03, reuna: 0.05 })],                           // jouset väistyvät, takana ollut gis jää
+  ['siemen_toistuu', m({ jouset: 1, zoom: 1.06, reuna: 0.055 })],                                        // sama kuusikko uudestaan
+  ['puhallinkuviot_alku', m({ jouset: 0, zoom: 1.09, reuna: 0.06 })],                                   // puhaltajat nousevat viivasta kukkuloina
+  ['puhallinkuviot_loppu', m({ jouset: 0, zoom: 1.16, reuna: 0.07 })],                                  // pitkä ääni yksin
+  ['patarumpu_paisuu', m({ jouset: 0, zoom: 1.18, snow: [0.03, 0.3, 0.5, 0.4], reuna: 0.075 })],         // maa alkaa väristä
+  ['vaskien_isku', m({ jouset: 1, leikkaus: 1, zoom: 1.2, snow: [0.16, 1.8, 0.4, 0.6], tuuli: 1, reuna: 0.085 })],
+  ['gis_pitka_aani_loppu', m({ jouset: 1, leikkaus: 0.8, zoom: 1.21, snow: [0.3, 2.0, 0.4, 0.65], tuuli: 1, reuna: 0.09, viivaVoima: 0.3, viivaPohja: 1, kukkulat: 0 })],
+  ['fraasi_ennen_taukoa', m({ jouset: 1, zoom: 1.26, snow: [0.45, 1.4, 0.5, 0.7], mist: 0.9, tuuli: 0.4, reuna: 0.11, viivaVoima: 0.25, viivaPohja: 1, kukkulat: 0 })],
+  ['hiljaisuus_1_alku', m({ jouset: 1, zoom: 1.3, snow: [0.55, 0.4, 0.8, 0.7], mist: 1.1, reuna: 0.13, viivaVoima: 0, kukkulat: 0 })],
+  ['hiljaisuus_1_loppu', m({ jouset: 1, viiva: 66, zoom: 1.34, snow: [0.35, 0.25, 0.7, 0.6], mist: 0.9, reuna: 0.13, viivaVoima: 0, kukkulat: 0 })],
+  ['fis_pitka_aani', m({ jouset: 1, viiva: 66, zoom: 1.345, snow: [0.3, 0.2, 0.6, 0.55], reuna: 0.12 })],
+  ['valo_D_duuri', m({ jouset: 0, viiva: 66, zoom: 1.42, snow: [0.1, 0.2, 0.6, 0.5], reuna: 0.11, harjut: 1.5, lightCol: KELMEA })],
+  ['askeleet_alkavat', m({ jouset: 1, viiva: 66, zoom: 1.5, reuna: 0.11 })],
+  ['tiedoston_loppu', m({ jouset: 1, viiva: 66, zoom: 1.5, reuna: 0.11 })],
 ];
 
 const lerp = (a, b, k) => (Array.isArray(a) ? a.map((x, i) => x + (b[i] - x) * k) : a + (b - a) * k);
@@ -82,6 +86,25 @@ async function alusta() {
   const ISKUT = cues.iskut.map((x) => ({ t: x.t, v: clamp(x.pisteet / 70, 0.15, 1) }));
   const ensimmainen = (lista, t, avain) => { let a = 0, b = lista.length; while (a < b) { const c = (a + b) >> 1; if (avain(lista[c]) < t) a = c + 1; else b = c; } return a; };
   const PISIN = NUOTIT.reduce((s, n) => Math.max(s, n[1]), 0);
+  // Yläsävelet pois: kuuntelutyökalu kirjaa nuotiksi myös vahvan äänen yläsävelet (oktaavi, kvintti, terssi ylempänä).
+  // Ne eivät ole soittajia. HARM: jonkin vahvemman äänen yläsävel; BHARM: basson tai patarummun yläsävel.
+  const YLA = new Set([12, 19, 24, 28, 31, 34, 36, 38, 40]);
+  const HARM = new Uint8Array(NUOTIT.length), BHARM = new Uint8Array(NUOTIT.length);
+  for (let i = 0, j0 = 0; i < NUOTIT.length; i++) {
+    const [a, k, mi] = NUOTIT[i];
+    while (j0 < NUOTIT.length && NUOTIT[j0][0] < a - PISIN) j0++;
+    for (let j = j0; j < NUOTIT.length && NUOTIT[j][0] <= a + k; j++) {
+      if (j === i) continue;
+      const [a2, k2, m2] = NUOTIT[j];
+      if (!YLA.has(mi - m2)) continue;
+      const yht = Math.min(a + k, a2 + k2) - Math.max(a, a2);
+      if (yht < 0.5 * k) continue;
+      const f = Math.round((Math.max(a, a2) + yht / 2) * FPS);
+      if (m2 < 48) BHARM[i] = 1; else if (dbRuutu(m2, f) >= dbRuutu(mi, f) - 4) HARM[i] = 1;
+    }
+  }
+  const PURSKEET = cues.tapahtumat.filter((e) => e.tyyppi === 'purske');
+  const purske = (t) => PURSKEET.some((e) => t >= e.alku && t <= e.loppu);
 
   function tila(t) {
     t = clamp(t, 0, aika.tiedoston_loppu);
@@ -109,7 +132,7 @@ async function alusta() {
         while (l > 1 && e[l - 1] <= e[l] && f - l < 3 * FPS) l--;
         while (r < NF - 2 && e[r + 1] <= e[r] && r - f < 3 * FPS) r++;
         const pohja = Math.max(e[l], e[r]);
-        if (e[f] - pohja >= 1.2 && (!out.length || f - out[out.length - 1].f > 0.8 * FPS)) {
+        if (e[f] - pohja >= 0.7 && (!out.length || f - out[out.length - 1].f > 0.8 * FPS)) {
           const run = Math.max(dbRuutu(midi + 12, f), dbRuutu(midi + 19, f), dbRuutu(midi + 24, f), dbRuutu(midi + 28, f)) - e[f];
           out.push({ f, t0: l / FPS, t1: r / FPS, tp: f / FPS, pohja: Math.min(e[l], e[r]), huippu: e[f], runsaus: clamp((run + 26) / 20, 0, 1), k: out.length });
         }
@@ -143,37 +166,39 @@ async function alusta() {
     const Y = (midi) => p.maaY + 0.03 + (midi - p.pLo) / (p.pHi - p.pLo) * (0.95 - p.maaY);
     const puut = [], harjut = [], kukkulat = [], pilk = [];
     const i0 = ensimmainen(NUOTIT, t - PISIN - 1.2, (n) => n[0]);
-    for (let i = i0; i < NUOTIT.length && NUOTIT[i][0] <= t + 0.05; i++) {
+    for (let i = i0; i < NUOTIT.length && NUOTIT[i][0] <= t + 0.25; i++) {
       const [alku, kesto, midi] = NUOTIT[i];
       const ika = t - alku, jalki = t - (alku + kesto);
       if (jalki > 1.2 || midi < 48) continue;
       const r = rooli(alku + 0.05);
+      if (BHARM[i] || (ika < 0 && r.jouset <= 0.5)) continue;
       const L = voima(midi, Math.min(t, alku + kesto));
       if (Math.abs(midi - r.viiva) < 0.5) continue;                       // teoksen pitkä ääni on viiva, ei puu
       if (kesto < 0.35 && midi >= 76) {                                    // lyhyt korkea ääni: pilkahdus
-        if (jalki < 0.25) pilk.push({ x: ASP * fract(alku * 7.13 + midi * 0.17), y: Y(midi), v: p.vaike * L * Math.sin(Math.PI * clamp(ika / (kesto + 0.25), 0, 1)), koko: 0.004 + 0.004 * L });
+        const vg = Math.max(p.vaike, purske(alku) ? 1 : 0);
+        if (jalki < 0.25 && ika >= 0 && !HARM[i] && vg > 0) pilk.push({ x: ASP * fract(alku * 7.13 + midi * 0.17), y: Y(midi), v: vg * L * Math.sin(Math.PI * clamp(ika / (kesto + 0.25), 0, 1)), koko: 0.004 + 0.004 * L });
         continue;
       }
       if (kesto < 0.3) continue;
       const nousu = smooth(clamp(ika / 0.45, 0, 1));
       const lasku = 1 - smooth(clamp(jalki / 0.9, 0, 1));
       if (r.jouset > 0.5) {
-        // jousten ääni on puuryhmä: paikka on sävelen oma, joten sama sävel palaa samana ryhmänä samaan paikkaan.
-        // Korkein puu yltää sävelen korkeuteen; voimakas ääni on lähellä (suuri ja tumma), hiljainen kaukana.
+        // jousten ääni on kuusiryhmä. Paikka, syvyys ja muoto ovat sävelen omat: sama sävel palaa samana ryhmänä samaan
+        // paikkaan (siemen tunnistuu). Korkein puu yltää sävelen korkeuteen. Äänen voima näkyy huojuntana ja kokona.
+        // Ryhmä alkaa kasvaa hieman ennen äänen alkua, jotta se on pystyssä, kun ääni soi; se on aina läpinäkymätön.
         const x0 = ASP * (0.07 + 0.86 * fract(midi * KULTA + 0.31));
-        const Lk = voima(midi, alku + Math.min(kesto, 0.6));
         const n = kesto >= 1.2 ? 6 : 3;
+        const kasvu = smooth(clamp((ika + 0.2) / 0.45, 0, 1));
         for (let j = 0; j < n; j++) {
           const h1 = fract(midi * 0.754 + j * 0.3819 + 0.11), h2 = fract(midi * 0.317 + j * 0.6180 + 0.53);
-          const syv = clamp(1.05 - 1.1 * Lk + (h2 - 0.5) * 0.5, 0.04, 0.96);
-          const kork = (Y(midi) - p.maaY) * (j === 0 ? 1 : 0.55 + 0.4 * h1);
-          const viive = j * 0.07;
-          const nj = smooth(clamp((ika - viive) / 0.5, 0, 1));
-          const top = p.maaY + kork * (0.12 + 0.88 * nj) * (0.8 + 0.2 * lasku);
-          puut.push({ x: x0 + ASP * (j === 0 ? 0 : (h1 - 0.5) * 0.16 + (j % 2 ? 0.035 : -0.035)), top, w: kork * 0.17 * (1.3 - 0.4 * syv), syv,
-            a: nj * lasku * clamp(kesto / 0.8, 0.4, 1), huoj: (0.004 + 0.016 * L) * (1 + 3 * p.tuuli), tarkeys: kesto * (0.3 + Lk) * (j === 0 ? 2 : 1) });
+          const syv = j === 0 ? 0.12 + 0.3 * h2 : 0.1 + 0.8 * h2;
+          const kork = (Y(midi) - p.maaY) * (j === 0 ? 1 : 0.5 + 0.45 * h1) * (0.96 + 0.08 * L);
+          const top = p.maaY + kork * (0.06 + 0.94 * kasvu) * (0.7 + 0.3 * lasku);
+          puut.push({ x: x0 + ASP * (j === 0 ? 0 : (h1 - 0.5) * 0.17 + (j % 2 ? 0.03 : -0.03)), top, w: kork * (0.15 + 0.06 * h2) * (1.25 - 0.35 * syv), syv,
+            a: lasku * clamp((ika + 0.2) / 0.1, 0, 1), siemen: fract(midi * 0.137 + j * 0.291) + 0.01, huoj: (0.008 + 0.03 * L) * (1 + 2.5 * p.tuuli),
+            tarkeys: kesto * (0.5 + L) * (j === 0 ? 2 : 1) });
         }
-      } else if (kesto >= 0.6) {
+      } else if (kesto >= 0.6 && !HARM[i]) {
         // puhaltimen ääni on harju metsän takana; lyhyt kuvio viivan yläpuolella on kaari, joka nousee viivasta ja palaa
         const kaari = midi > r.viiva && midi <= r.viiva + 10 && kesto < 1.6;
         if (kaari) kukkulat.push({ x: ASP * (0.15 + 0.7 * fract(alku * 0.41 + 0.2)), h: (Y(midi) - Y(r.viiva)) * Math.sin(Math.PI * clamp(ika / (kesto + 0.3), 0, 1)) * (0.4 + 0.6 * L), w: 0.035, ter: 0.2 });
@@ -183,14 +208,17 @@ async function alusta() {
     }
     // viiva ja sen kukkulat
     const vm = Math.round(p.viiva);
-    const vv = p.viivaVoima * voima(vm, t);
+    let vs = 0; for (let i = -4; i <= 4; i++) vs += voima(vm, t + i * 0.07);
+    const vv = p.viivaVoima * Math.max(vs / 9, p.viivaPohja);
     const { e, out } = viivanPaisutukset(vm);
     const fNyt = clamp(Math.round(t * FPS), 0, NF - 1);
     for (let k = out.length - 1; k >= 0 && kukkulat.length < 12; k--) {
       const s = out[k];
       if (s.t0 > t || t - s.t1 > 40) continue;
-      const kork = 0.13 * clamp((s.huippu - s.pohja) / 6, 0.35, 1.3);
-      let g = t <= s.t1 ? clamp((e[fNyt] - s.pohja) / Math.max(s.huippu - s.pohja, 0.5), 0, 1.1) : 0;
+      const kork = p.kukkulat * 0.13 * clamp((s.huippu - s.pohja) / 6, 0.35, 1.3);
+      const fr = clamp(t * FPS, 0, NF - 1.001), fa = Math.floor(fr), eN = e[fa] + (e[fa + 1] - e[fa]) * (fr - fa);
+      const ala = Math.max(s.huippu - s.pohja, 0.5);
+      let g = t <= s.t1 ? clamp((eN - s.pohja) / ala, 0, 1.1) : clamp((e[Math.round(s.t1 * FPS)] - s.pohja) / ala, 0, 1.1) * Math.exp(-(t - s.t1) / 0.35);
       const jaanne = t > s.tp ? 0.18 * Math.exp(-(t - s.tp) / 30) : 0;      // jokaisesta paisutuksesta jää maisemaan matala kumpu
       g = Math.max(smooth(clamp(g, 0, 1)), jaanne);
       kukkulat.push({ x: ASP * (0.12 + 0.76 * fract(s.k * KULTA + 0.15)), h: kork * g, w: 0.06 + 0.06 * (1 - s.runsaus), ter: s.runsaus });
@@ -206,15 +234,17 @@ async function alusta() {
       if (midi >= 48) continue;
       sys.push({ x: ASP * (0.2 + 0.6 * fract(midi * KULTA + 0.5)), ika: t - alku, v: voima(midi, alku + 0.1) });
     }
+    for (let i = ensimmainen(ISKUT, t - 1.6, (x) => x.t); i < ISKUT.length && ISKUT[i].t <= t; i++) sys.push({ x: ASP * 0.5, ika: t - ISKUT[i].t, v: ISKUT[i].v });
     sys.sort((a, b) => b.v * Math.exp(-b.ika) - a.v * Math.exp(-a.ika));
     // vaskien isku: leikkaus
-    let leik = 0;
-    if (p.leikkaus > 0.01) { const ii = ensimmainen(ISKUT, t + 1e-6, (x) => x.t) - 1; if (ii >= 0) leik = p.leikkaus * ISKUT[ii].v * Math.exp(-(t - ISKUT[ii].t) / 0.7); }
+    let leik = [0, 0, 0];
+    if (p.leikkaus > 0.01) { const ii = ensimmainen(ISKUT, t + 1e-6, (x) => x.t) - 1;
+      if (ii >= 0) { const ag = t - ISKUT[ii].t, vk = p.leikkaus * ISKUT[ii].v; leik = [vk * 2.6 * Math.exp(-ag / 0.16), vk * 0.5 * Math.exp(-ag / 1.1), ii]; } }
     puut.sort((a, b) => b.tarkeys - a.tarkeys); puut.length = Math.min(puut.length, 72); puut.sort((a, b) => b.syv - a.syv);
     harjut.sort((a, b) => b.tarkeys - a.tarkeys); harjut.length = Math.min(harjut.length, 16); harjut.sort((a, b) => b.y - a.y);
     pilk.length = Math.min(pilk.length, 32);
     let kes = -60; for (let mi = 55; mi <= 76; mi++) if (Math.abs(mi - vm) > 0.5) kes = Math.max(kes, dB(mi, t));
-    const reuna = 0.045 + 0.07 * p.jouset * clamp((kes + 40) / 30, 0, 1);
+    const reuna = p.reuna * (1 + 0.9 * p.jouset * clamp((kes + 40) / 30, 0, 1));
     return { p, Y, puut, harjut, kukkulat, pilk, viivaY: Y(p.viiva), vv, ml, var_, sys, leik, reuna };
   }
 
@@ -227,7 +257,7 @@ async function alusta() {
     if (gl.isContextLost()) return false;
     const k = kuva(t), p = k.p;
     fTree.fill(0); fTreeB.fill(0); fRidge.fill(0); fRidgeB.fill(0); fHill.fill(0); fGlint.fill(0); fPulse.fill(0);
-    k.puut.forEach((x, i) => { fTree.set([x.x, x.top, x.w, x.syv], i * 4); fTreeB.set([x.a, 0, x.huoj, 0], i * 4); });
+    k.puut.forEach((x, i) => { fTree.set([x.x, x.top, x.w, x.syv], i * 4); fTreeB.set([x.a, x.siemen, x.huoj, 0], i * 4); });
     k.harjut.forEach((x, i) => { fRidge.set([x.y, x.v, x.x, x.h], i * 4); fRidgeB.set([x.ter, x.w, 0, 0], i * 4); });
     k.kukkulat.slice(0, 12).forEach((x, i) => fHill.set([x.x, x.h, x.w, x.ter], i * 4));
     k.pilk.forEach((x, i) => fGlint.set([x.x, x.y, x.v, x.koko], i * 4));
@@ -239,9 +269,9 @@ async function alusta() {
     gl.uniform4fv(U('uTree'), fTree); gl.uniform4fv(U('uTreeB'), fTreeB); gl.uniform4fv(U('uRidge'), fRidge); gl.uniform4fv(U('uRidgeB'), fRidgeB);
     gl.uniform4fv(U('uHill'), fHill); gl.uniform4fv(U('uGlint'), fGlint); gl.uniform4fv(U('uPulse'), fPulse);
     gl.uniform1i(U('uNTree'), k.puut.length); gl.uniform1i(U('uNRidge'), k.harjut.length); gl.uniform1i(U('uNHill'), Math.min(k.kukkulat.length, 12)); gl.uniform1i(U('uNGlint'), k.pilk.length);
-    gl.uniform4f(U('uLine'), k.viivaY, 0.9 * k.vv, 0.0022, 0.03);
-    gl.uniform4f(U('uGround'), p.maaY, clamp(k.var_ / 14, 0, 1.5), clamp((k.ml + 45) / 35, 0, 1), 0.10);
-    gl.uniform4f(U('uCut'), ASP * 0.47, 2.2 * k.leik, 0.0035, 0);
+    gl.uniform4f(U('uLine'), k.viivaY, 0.8 * k.vv, 0.0020, 0.035);
+    gl.uniform4f(U('uGround'), p.maaY, Math.max(clamp(k.var_ / 14, 0, 1.5), 1.1 * clamp((k.ml + 40) / 22, 0, 1)), clamp((k.ml + 45) / 35, 0, 1), 0.09);
+    gl.uniform4f(U('uCut'), ASP * (0.42 + 0.16 * fract(k.leik[2] * KULTA)), k.leik[0], k.leik[1], k.leik[2]);
     gl.uniform3f(U('uBand'), k.reuna, 0.92, p.tuuli);
     gl.uniform4fv(U('uSnow'), p.snow); gl.uniform4fv(U('uGlow'), p.glow); gl.uniform4fv(U('uSun'), [p.sun[0] * ASP, p.sun[1], p.sun[2], p.sun[3]]);
     gl.drawArrays(gl.TRIANGLES, 0, 3);

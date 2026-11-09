@@ -327,7 +327,16 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 - 9.11. Alku 0:00–1:15 renderöity (`runs/vedos_v3/alku.mp4`); kriitikko katsoo ruudut (`runs/vedos_v3/brief.md`);
   toinen agentti käy kuunteluoppaan jokaisen rivin kuvaksi (`runs/kk_v2_luonnos/brief.md`).
 
-**Seuraavaksi:** kriitikon virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kriitikko 1 (alku): 18 virhettä, 5 estävää (`runs/vedos_v3/k1/kriitikko.md`). Korjattu: viiva pysyy, puut huojuvat
+  näkyvästi ja ovat läpinäkymättömiä, leikkaus on lyhyt repeämä eikä viiva, lumi viidessä syvyydessä, metsän reuna on
+  kuvassa aina (hiljaisuudessakin), kukkuloiden alta poistettu pystysäteet, yläsävelet suodatettu (basson ja vahvan
+  äänen yläsävelet eivät ole soittajia), maa tummennettu, sysäys etenee maassa. Kriitikko 2 katsoo korjatun alun.
+- 9.11. Luonnos (`runs/kk_v2_luonnos/luonnos.md`): kuunteluoppaan kaikki 153 riviä kuvaksi 4c:n sanoin, roolien aikajana
+  koko teokselle ja kuusi puuttuvaa sääntöä (S1 liikkeen tiheys, S2 korkea tremolo, S3 hiljaisuus, S4 D-duuri,
+  S5 maan korkeus bassosta, S6 vaskien pitkä ääni). Kuvatavat 6, 7 ja 9 ovat ristiriidassa 4c:n kanssa: 4c voittaa,
+  ja kuvatavat määritellään uudestaan saman kerrosmaiseman rajauksina.
+
+**Seuraavaksi:** kriitikon 2 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---
