@@ -345,7 +345,16 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 - 9.11. Kuvakäsikirjoitus v2.0: generoitu luonnoksen 153 rivistä (70 ottoa, 9 kulkua, kaikki 76 ankkuria); generaattori
   oli kertakäyttöinen, käsikirjoitusta muokataan tästä eteenpäin käsin. `check_package.py` hyväksyy vähintään 7 kulkua.
 
-**Seuraavaksi:** kolme kriitikkoa koko teokselle (kolmannekset) kuunteluopasta ja käsikirjoitusta vasten → virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kolme kriitikkoa koko teokselle, kierros 1 (`runs/vedos_v3_a|b|c/palaute_k1.md`): 21 + 17 + 15 virhettä.
+  Juurisyyt ja korjaukset: (1) ikisalo pudotti kerrostumat (vain pystyraitoja) → lähimmät puut runkoina, kaukainen
+  metsä, viiva ja maa niiden välissä; (2) myrskyn lumi oli puiden edessä → lumen paino kauas, lähelle harvaa;
+  (3) puut hyppivät myrskyssä → huojunta rajattu, tiheässä kohdassa vain pidemmät äänet saavat puun; (4) kajo ennen
+  H-duuria → avain siirretty; (5) kuvatavan vaihtuessa kuva loittoni → kulut verhon läpi, mitattu ettei kamera peruuta
+  näkyvästi; (6) hiljaisuus, nousu, viivan korkeus sävelkorkeutena, nimetyt iskut, äänen voima valon määränä.
+- 9.11. Käsikirjoitus v2.1: hiljaisuus, liikkeen tiheys, legato ja nimetön isku määritelty; kuvatavat 5, 6, 8 kuvattu
+  toteutuksen mukaan. Toinen koko renderi tehty (ääni 0,00 ms); kierros 2 käynnissä samoilla kolmella kriitikolla.
+
+**Seuraavaksi:** kierroksen 2 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---

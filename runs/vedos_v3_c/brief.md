@@ -59,3 +59,18 @@ K10. **Yksitoikkoisuus.** Käyttäjä: metsä "rivipuina syvyydessä" on "ääri
 5. Kolme asiaa, jotka toimivat (enintään kolme riviä).
 
 Palauta lopuksi viestinä enintään 250 sanan tiivistelmä: virheiden määrä ja viisi vakavinta aikoineen.
+
+## Toinen kierros
+
+Ensimmäinen kriitikko katsoi aiemman renderin ja kirjoitti raportin `palaute_k1.md` (samassa kansiossa). Kuva on
+korjattu sen jälkeen ja renderöity uudestaan; ruudut kansiossa `ruudut/` ovat uudet. Käsikirjoitus on nyt versio 2.1
+ja tyyliohjeen luku 4b viittaa käsikirjoituksen lukuun 2 (kuvatavat ovat kerrosmaiseman rajauksia, ja kaikki
+kerrostumat pysyvät kuvassa).
+
+Tee näin:
+1. Lue `palaute_k1.md`. Raportin alkuun taulukko: ensimmäisen kierroksen jokainen virhe → korjattu / osin / ennallaan,
+   ja mistä ruudusta sen näkee.
+2. Etsi uudet virheet samoilla kysymyksillä K1–K10.
+
+Tieto, jota ruuduista ei näe: kuvatapa vaihtuu kulussa jonkin läpi (lumi, usva, pimeä, huurre). Kulun keskellä verho
+peittää kuvan hetkeksi, ja uusi rajaus on sen takana. Se on tarkoitettu; arvioi, näyttääkö se kululta vai leikkaukselta.
