@@ -1,6 +1,7 @@
 # Kuvakäsikirjoitus: Tapiola
 
-*Versio 1, 9.11.2026. Ohjaajan ehdotus, odottaa käyttäjän hyväksyntää. Noudattaa tyyliohjetta
+*Versio 1, 9.11.2026. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat"); luvun 8
+muut päätökset ovat auki. Noudattaa tyyliohjetta
 (`docs/visuaalinen_tyyli.md` v1.2): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
 otsikoissa ovat generoituja (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu.
 Kaikki muu viittaa ankkureihin (`annotations/teemat.json`), ei sekunteihin. Kuunteluoppaan sisältöä (lähteet,
@@ -49,7 +50,7 @@ mukaan, vaikka sitä ei tässä nimetä. Tässä nimetään oton pääasia ja se
 
 Käyttäjän idea: kamera ajaa jonkin sisään, se suurenee, ja sieltä löytyy uusi maailma. Jokainen maailma on metsä.
 Jokainen löytyy jostakin pienestä edellisen sisältä ja on silti edellistä suurempi. Maailmat ja kulut ovat
-**[ohjaajan ehdotus]**; perustelu on musiikissa, ei mytologiassa, ellei toisin sanota.
+ohjaajan ehdotus, jonka **käyttäjä hyväksyi 9.11.2026**; perustelu on musiikissa, ei mytologiassa, ellei toisin sanota.
 
 | # | Maailma | Alkaa | Mikä se on | Kulku sinne | Miksi juuri tässä |
 |---|---|---|---|---|---|
@@ -583,8 +584,7 @@ Muualla kamera liikkuu aina sisään ja eteen, ei peruuta, ei pyöri eikä ylit�
 ## 8. Auki: käyttäjän päätökset ja puuttuva data
 
 **Käyttäjä päättää:**
-1. Hyväksytkö kahdeksan maailmaa ja seitsemän kulkua (luku 2)? Erityisesti huurremetsä, jäänalainen metsä ja
-   kaarnan sisältä löytyvä ikisalo ovat ohjaajan ehdotuksia, eivät sinun sanojasi.
+1. ~~Kahdeksan maailmaa ja seitsemän kulkua (luku 2).~~ **Hyväksytty 9.11.2026.**
 2. C-duurin väärä valo: punainen (synestesia) vai messinki. Tässä on oletettu punainen.
 3. D-duurin välähdykset: kelmeä hallan valo vai keltainen. Tässä on oletettu kelmeä, koska tyyliohje kieltää
    lämmön ennen loppua.

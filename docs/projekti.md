@@ -22,7 +22,7 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 4 | Kuuntelutyökalu | ✅ yksi työkalu `analysis/korvat.py`: 270 tapahtumaa, 17 ruutukanavaa (`build/rattle_koko/ohjaus.f32`); mitä ääni antaa ja mitä ei: tutkimuksen luku 13; **vääriä osumia ei ole karsittu korvalla** |
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.2 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12); **odottaa käyttäjän hyväksyntää** (myös C-duurin väri) |
-| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1 (12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **odottaa käyttäjän hyväksyntää** (maailmat, värit, loppu) |
+| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1 (12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; auki: C- ja D-duurin väri, sana kajo, loppukuva, puuttuva data, tuoreen lukijan tarkistus |
 | 8 | Tekniikka ja mittarit | ⬜ |
 | 9 | Perusta, sitten osat | ⬜ |
 | 10 | Luonnokset ennen renderiä | ⬜ |
@@ -277,6 +277,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 26 | 9.11. | – | "ei voi olla niin että meillä on kymmenen tiedostoa, mihin data on ripoteltu ... MONTAKO DOC FILEÄ / ANALYSAATTORIA TARVITSET" | ✅ todennettu | luettavia tiedostoja kolme (kuunteluopas, tyyliohje, taustatutkimus) ja projekti.md; docs/ 17 → 4 tiedostoa + arkisto (koko docs 49 → 20 tiedostoa); analysis/ 30 → 16 skriptiä, yksi kuuntelutyökalu korvat.py; kuvaa ohjaa yksi cues.json; check_package: kaikki kunnossa |
 | 27 | 9.11. | – | "älä siis vaan poista niitä, vaan ne täytyy lukea, syntetisoida ... käyttökelpoisessa" | ✅ todennettu | tapiola_tutkimus.md v2 kirjoitettu arkiston ja poistettujen tiedostojen pohjalta (15 lukua: periaatetaulukot mytologiasta, viitteistä ja 1920-luvun taiteesta, kirjain- ja tahtitaulukko, mitä ääni antaa); partituurin 25 sivun taulukko arkistoon; iskusarake tyyliohjeen lukuun 7; siirto omaan äänitykseen projekti.md:hen; mitään ei poistettu arkistosta |
 | 28 | 9.11. | – | "Aloita käsikirjoitus" ... "tarkista ensin netistä, millainen on hyvä kuvakäsikirjoitus. Voitko löytää vaikka jonkun skillin" | 🔶 kirjoitettu, ei hyväksytty | `docs/kuvakasikirjoitus.md` v1; kriteerit haettu (9 lähdettä, käsikirjoituksen luku 9); skilliä ei löytynyt käyttäjän skilleistä, hakemiston kolme lähintä eivät sovi (oma tyyli tai eri laji); tarkistus: 60 ottoa, 76/76 ankkuria, ei käsin kirjoitettuja aikoja, kaksi nimettyä pysähdystä |
+| 29 | 9.11. | – | "Hyväksyn maailmat" | ✅ todennettu | kahdeksan maailmaa ja seitsemän kulkua kirjattu hyväksytyiksi (`docs/kuvakasikirjoitus.md` alku, luku 2 ja luku 8 kohta 1); hyväksyntä koskee runkoa, ei luvun 8 muita päätöksiä |
 
 ---
 
