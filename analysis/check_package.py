@@ -84,12 +84,7 @@ def check_package(d):
             check(all(a["start"] - 0.1 <= float(r["alku_s"]) <= a["start"] + a["duration"] + 0.1 for r in rows),
                   "notes.csv: ajat kuuntelukopion aikaa")
     check((d / "LUE_MINUT.md").exists(), "LUE_MINUT.md löytyy")
-    ev = load_json(d / "events.json") if (d / "events.json").exists() else None
-    if check(ev is not None, "events.json löytyy (interpret.py)"):
-        t = [e["t"] for e in ev["events"]]
-        check(t == sorted(t) and all("kuvaus" in e for e in ev["events"]),
-              f"events.json: {len(t)} tapahtumaa järjestyksessä, kuvaukset mukana")
-    check((d / "yhteenveto.md").exists(), "yhteenveto.md löytyy")
+    check((d / "korvat.json").exists(), "korvat.json löytyy (korvat.py)")
 
 
 def check_cues():

@@ -120,27 +120,24 @@ vasta kun mitään ei enää odoteta.
 - **1:01 Yleistauon jälkeen: pitkä fis.** Jouset aloittavat uudestaan; fis1 jää pitkäksi ääneksi lähes koko minuutiksi, kuten gis alussa.
   - *Edessä ja takana:* fis ohut linja keskikerroksessa; jouset ja vasket vuorottelevat sen ympärillä lohkoina. *Tunnelma:* sulkeutuva, synkempi kuin alku.
   - Ohjaaja: valon viiva on laskenut sävelaskelen: alun gis (doorinen, valoisa) on nyt fis, h-mollin oma dominantti. Metsä on sulkeutunut tauon aikana. Lähteet: Hayes: teos ei koskaan poistu h-mollistaan; Tovey: väri pysyy samalla sointitaustalla hämmästyttävän pitkään.
-- 1:09 Pitkät korkeat äänet alkavat väristä (tremolo).
 - 1:10 Liike kiihtyy: ääniä tulee tiheään.
+- 1:11 Ylhäällä välähtää nopea kuvio (jouset).
 - **1:15 Ensimmäinen valon välähdys: D ja H pitkinä.** Vasket ja puupuhaltimet ottavat vuoron: d ja h pitkinä kahdessa oktaavissa (rinnakkaisduurin D väri), kahdesti.
   - *Edessä ja takana:* vasket ja puupuhaltimet tulevat etualalle pitkinä sointuina; jouset väistyvät. *Tunnelma:* hetkellinen valo.
   - Käyttäjä: "synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä". Ohjaaja: ensimmäinen välähdys on rinnakkaisduuri D: valo, joka kuuluu tähän metsään, toisin kuin myöhempi C-duuri. Synestesia [tarkista]: Sibeliuksen kerrotaan kuulleen D-duurin keltaisena.
-- 1:20 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
-- 1:22 Musiikki laskeutuu: keskikerros ja yläkerros painuu alaspäin noin 6 sekunnin ajan.
-- 1:34 Basso lähtee liikkeelle pitkän paikallaan olon jälkeen.
+- 1:20 Liike tasaantuu.
+- 1:30 Liike kiihtyy: ääniä tulee tiheään.
 - **1:40 Basson eritahtiset iskut alkavat.** *(kuultu)* Basso putoaa matalalle h:lle ja alkaa iskeä eri tahtiin kuin muut; iskut jatkuvat alttoviulujen alla.
   - *Edessä ja takana:* basson iskut pohjalla omassa ajassaan; sellojen sointumatto niiden päällä; alttoviulut ja puhaltimet vuorottelevat ylempänä. *Tunnelma:* jokin suuri on tulossa.
   - Käyttäjä 9.11.2026 (korva, 1:40): "bassojen eritahtiset iskut alkavat, jatkuvat alttoviulujen alla. Altot vuorottelevat puhaltimien kanssa, sellot tekevät sointumattoa (metsä)." Ja: "Basson huokaavat askeleet ... jo sillä luodaan tunnelmaa jostain suuresta, tulevasta." Ohjaaja: askeleet alkavat valon alla, eivät pimeässä.
 - **1:40 Sointumatto hengittää: kaksi sointua vuorotellen.** Sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein.
   - *Edessä ja takana:* sointumatto keskellä hengittää; basso iskee alla; puhaltimet välähtävät ylhäällä ja väistyvät alttoviuluille. *Tunnelma:* odottava, tasainen.
   - Käyttäjä: "Sellot tekevät sointumattoa (metsä)"; "Altot vuorottelevat puhaltimien kanssa". Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua. Ohjaaja: metsä hengittää: kaksi sointua, sisään ja ulos.
-- 1:49 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 7 sekunnin ajan (jouset).
-- 1:52 Ylhäällä välähtää nopea kuvio.
+- 1:49 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 6 sekunnin ajan.
+- 1:55 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 
 ##### 2:00–3:00
 
-- 2:00 Liike tasaantuu.
-- 2:05 Basso jää paikalleen yhdelle sävelelle (H1) noin 68 sekunniksi: kaikki muu liikkuu sen päällä.
 - **2:09 Matalat äänet "askeleina".** *(kuultu)* Matalat äänet tulevat eri tahtiin kuin muu orkesteri.
   - *Edessä ja takana:* sellot ja kontrabassot omassa ajassaan muun orkesterin alla. *Tunnelma:* painava, näkymätön läsnäolo.
   - *Partituurissa:* B = t. 69: kontrabassot toistuvat kahdeksasosat poco a poco cresc.; fagotit pitkät äänet; alttoviulut mf, fz >, dolce, p; patarummut p (s. 8).
@@ -160,13 +157,16 @@ vasta kun mitään ei enää odoteta.
 - **3:15 Nousu päätyy D-duuriin.** Nousu päätyy pitkään D-duurisointuun kolmessa oktaavissa (d1, d2, d3, fis, a), basso d:llä; se soi seitsemän sekuntia ja hiipuu.
   - *Edessä ja takana:* koko sointu edessä kaikissa kerroksissa, sitten hiipuu. *Tunnelma:* valo, hetken.
   - Käyttäjä: "synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä". Ohjaaja: nousu päätyy rinnakkaisduuriin: tämä on metsän oma valo, ja se on teoksen alkupuolen kirkkain hetki. Se ei jää: pohja katoaa sen alta. Synestesia [tarkista]: D-duuri keltainen.
-- **3:23 Pohja katoaa: puupuhaltimien kuviot ja pitkä laskeva linja.** Matala rekisteri katoaa kokonaan; ylhäällä puupuhaltimien nopeat lyhyet kuviot, ja niiden alla pitkien äänten linja laskee hitaasti askel kerrallaan (e1, d1, c1 … f1, dis1); välillä pitkä korkea ääni, joka värisee hitaasti.
-  - *Edessä ja takana:* nopeat kuviot ylhäällä edessä; pitkä hidas linja keskellä; pohja tyhjä. *Tunnelma:* väike, levoton, pohjaton.
-  - Käyttäjä 9.11.2026 (korva): "0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!" Mitattu: kaksi kerrosta yhtä aikaa: nopeat korkeat kuviot (10–27 uutta säveltä sekunnissa) ja pitkät äänet, jotka laskevat hitaasti keskirekisterissä; pitkät korkeat äänet (cis3, h2, d3) värisevät 4–5 kertaa sekunnissa. Ohjaaja ei pysty mittauksesta sanomaan varmasti, kumpi kerros on viulut [käyttäjä kertoo]. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.
+- **3:23 Kirjain C: pohja katoaa, viulut vajoavat, puhaltimet kuvioivat.** Alttoviulut, sellot ja bassot vaikenevat; viulut, neljään jaettuina, soittavat pitkiä kaarella sidottuja ääniä, jotka keinuvat pareittain ja vajoavat hitaasti alaspäin; niiden yllä huilut ja klarinetit soittavat pieniä liikkuvia kuvioita hyvin hiljaa ja lempeästi.
+  - *Edessä ja takana:* puhaltimien pienet kuviot ylhäällä edessä; viulujen hidas vajoava matto keskellä; pohja tyhjä. *Tunnelma:* leijuva, pohjaton, lempeä.
+  - *Partituurissa:* C = t. 106: huilut mf, klarinetit p sempre dolciss.; viulut I ja II div., pitkät kaarella sidotut äänet; kaikilla poco a poco meno p; alttoviulut, sellot ja bassot tauolla. t. 121: oboet pp sempre (s. 10).
+  - Käyttäjä 9.11.2026 (korva): "0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!" Ohjaaja kuuli ja tarkisti partituurin sivulta 10: viulut ovat se hidas kerros. Nousun jälkeen maa on poissa, ja se, mikä äsken kohosi, vajoaa nyt hiljaa takaisin, askel kerrallaan, keinuen. Puhaltimet leikkivät sen päällä. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.
 - **3:23 Pohja katoaa.** Matala rekisteri vaikenee kokonaan: basso ja sellot poissa.
   - *Edessä ja takana:* pohja tyhjä; vain ylä- ja keskikerros. *Tunnelma:* pohjaton.
   - Ohjaaja: kahden minuutin ajan basso on kulkenut mukana. Nyt maa on poissa, ja se, mikä jää, leijuu.
-- 3:30 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 3:30 Liike hidastuu: ääniä tulee harvakseltaan.
+- 3:50 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
+- 3:50 Liike tasaantuu.
 
 ##### 4:00–5:00
 
@@ -174,15 +174,15 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* korkeat kuviot edessä, pitkä e keskellä, askeleet pohjalla: kolme kerrosta yhtä aikaa. *Tunnelma:* levoton, kolme aikaa päällekkäin.
   - Lähteet: Hayes: sekoittumattomat kerrostetut lohkot ja kaksi tempoa suhteessa 2:1, vuorotellen ja yhtä aikaa. Ohjaaja: tässä kerrokset kuuluvat selvimmin erillään: nopea ylhäällä, pysyvä keskellä, hidas alhaalla.
 - 4:07 Matalat soittimet palaavat: ääni saa pohjan.
+- 4:07 Ylhäällä välähtää nopea kuvio.
 - **4:12 Askeleet palaavat fis:llä.** Basson askeleet palaavat, nyt fis:llä, noin 1,7 sekunnin välein, korkeiden kuvioiden alla.
   - *Edessä ja takana:* askeleet pohjalla kuvioiden alla. *Tunnelma:* jokin kulkee mukana.
   - Käyttäjä: askeleet "jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla". Ohjaaja: se, mikä kulkee, ei ole pysähtynyt; se on vain vaihtanut paikkaa.
-- 4:24 Ylhäällä välähtää nopea kuvio.
-- 4:30 Liike tasaantuu.
+- 4:20 Liike tasaantuu.
 - **4:40 Nopean kuvioinnin jakso alkaa.** Nopea kuviointi, puupuhaltimia ja jousia.
   - *Edessä ja takana:* puupuhaltimet ja nopea kuviointi edessä; jouset ja vasket kaukana. *Tunnelma:* väike, levoton leikki.
   - Lähteet: Sibelius Jalakselle: puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät". Ohjaaja: pilkahduksia, joita ei saa kiinni; metsänpeiton eläin, "vaikka kulkisit aivan eläimen ohitse, niin et sitä näe" (SKVR). Ääniä, ei hahmoja.
-- 4:55 Basso lähtee liikkeelle pitkän paikallaan olon jälkeen.
+- 4:46 Basso vaikenee.
 
 ##### 5:00–6:00
 
@@ -192,23 +192,21 @@ vasta kun mitään ei enää odoteta.
 - **5:10 Jännitteiset pitkät soinnut H:n päällä.** Pitkä H pohjana; sen päällä a ja dis pitkinä kahdesti (h–dis–a: jännitteinen, purkautumaton sointu).
   - *Edessä ja takana:* pitkät soinnut keskellä, kaikki pysähtyy. *Tunnelma:* uhka, odotus.
   - Lähteet: Whitman: monoliittiset taustasoinnut; Europadisc: dissonanssia käytetään säästeliäästi mutta jyrkästi. Ohjaaja: metsä pidättää hengitystä kahdesti.
-- 5:30 Liike kiihtyy: ääniä tulee tiheään.
+- 5:26 Musiikki nousee: yläkerros kohoaa ylöspäin noin 6 sekunnin ajan.
+- 5:30 Liike tasaantuu.
 - **5:36 Pohja vaihtuu: matala d sykkii.** Ensimmäinen kerta kun pohja ei ole h: matala d sykkii kaksikymmentä kertaa, ja sen päällä a, f, c ja e pitkinä.
   - *Edessä ja takana:* pohja sykkii edessä; pitkät soinnut sen päällä. *Tunnelma:* vieras, tummuva.
   - Ohjaaja: maa liikahtaa sivuun. Sama metsä, toinen pohja: ensimmäinen merkki siitä, että metsä voi muuttua. Juuri ennen: c, g, ais ja dis pitkinä (5:30–5:36), vieras sointu.
-- 5:46 Musiikki nousee: koko orkesteri kohoaa ylöspäin noin 8 sekunnin ajan (puupuhaltimet).
-- 5:50 Liike tasaantuu.
-- 5:54 Musiikki laskeutuu: koko orkesteri painuu alaspäin noin 9 sekunnin ajan (jouset).
-- 5:55 Keskikerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 5:45 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 5:48 Basso vaikenee.
+- 5:50 Liike hidastuu: ääniä tulee harvakseltaan.
+- 5:54 Musiikki laskeutuu: keskikerros ja yläkerros painuu alaspäin noin 9 sekunnin ajan (jouset).
 
 ##### 6:00–7:00
 
-- 6:00 Liike hidastuu: ääniä tulee harvakseltaan.
-- 6:02 Musiikki nousee: basso ja keskikerros kohoaa ylöspäin noin 8 sekunnin ajan.
 - **6:06 Gis palaa hetkeksi.** Alun gis1 palaa pitkänä seitsemäksi sekunniksi, hiljaa.
   - *Edessä ja takana:* gis ohut linja keskellä, yksin. *Tunnelma:* muisto alusta.
   - Ohjaaja: alun valon viiva näkyy vielä kerran ennen kuin metsän olennot heräävät. Lähteet: Sibelius-klubi: sävellaji häilyy h-mollin ja gis-mollin välillä.
-- 6:13 Musiikki laskeutuu: basso painuu alaspäin noin 20 sekunnin ajan (puupuhaltimet).
 - 6:15 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 - **6:23 Puupuhallinkuviot G:ssä alkavat.** Puupuhallinkuviot, nopeat kahdeksasosat.
   - *Edessä ja takana:* huilut ja klarinetit edessä. *Tunnelma:* väike, hämyn äänet.
@@ -216,12 +214,14 @@ vasta kun mitään ei enää odoteta.
 - **6:30 Puupuhallinkuviot G:ssä päättyvät.** Puupuhallinkuviot päättyvät.
   - *Edessä ja takana:* käyrätorvipulssit takana, puupuhaltimet välissä. *Tunnelma:* hidas hengitys.
   - Ohjaaja: liike jatkuu hetken jousissa ja vaskissa ilman puupuhaltimia, sitten laantuu. Käyrätorvet ja puupuhaltimet alkavat pulssata noin neljän sekunnin välein: jokin hengittää hitaasti puiden takana.
-- 6:40 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 6:35 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
+- 6:36 Musiikki nousee: koko orkesteri kohoaa ylöspäin noin 6 sekunnin ajan.
+- 6:40 Liike tasaantuu.
 - 6:42 Musiikki laskeutuu: koko orkesteri painuu alaspäin noin 6 sekunnin ajan.
-- 6:43 Ylhäällä välähtää nopea kuvio.
-- 6:45 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
+- 6:44 Ylhäällä välähtää nopea kuvio.
 - 6:45 Ylärekisteri sammuu (5 s): jäljelle jää tumma, matala sointi.
 - 6:49 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 10 sekunnin ajan.
+- 6:50 Liike kiihtyy: ääniä tulee tiheään.
 
 ##### 7:00–8:00
 
@@ -231,15 +231,20 @@ vasta kun mitään ei enää odoteta.
 - **7:16 Vasket ja puupuhaltimet sykkivät hitaasti.** Vyöryn jälkeen käyrätorvet ja puupuhaltimet soittavat pitkiä sykäyksiä noin neljän sekunnin välein.
   - *Edessä ja takana:* kaukainen sykäys takana, jouset välissä hiljaa. *Tunnelma:* hidas hengitys.
   - Ohjaaja: jokin hengittää hitaasti puiden takana. Sama ele palaa suurempana kirjaimen O jälkeen.
+- 7:30 Yläkerros soittaa pitkiä, sidottuja ääniä (legato).
+- 7:36 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 11 sekunnin ajan (puupuhaltimet).
 - **7:42 Metsä harvenee: hiljaisia pudotuksia.** Sykäykset loppuvat, puupuhaltimet vilahtavat nopeasti, ja sitten musiikki harvenee: lyhyitä jousilohkoja ja niiden välissä hiljaisuutta.
   - *Edessä ja takana:* yksittäiset lohkot edessä, tyhjää välissä. *Tunnelma:* harveneva, syvenevä.
   - Lähteet: Goodwin: tauot, jotka tuntuvat venyvän loputtomiin. Ohjaaja: metsä harvenee, ja katsoja menee syvemmälle.
+- 7:48 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 11 sekunnin ajan (puupuhaltimet).
 - 7:49 Basso jää paikalleen yhdelle sävelelle (H1) noin 12 sekunniksi: kaikki muu liikkuu sen päällä.
+- 7:50 Liike hidastuu: ääniä tulee harvakseltaan.
 
 ##### 8:00–9:00
 
 - 8:01 Basso vaikenee.
-- 8:04 Musiikki laskeutuu: koko orkesteri painuu alaspäin noin 9 sekunnin ajan.
+- 8:04 Musiikki laskeutuu: keskikerros ja yläkerros painuu alaspäin noin 10 sekunnin ajan.
+- 8:10 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
 - **8:16 Jousijakso urkupisteen päällä alkaa.** Jousivaltainen matalarekisterinen jakso, urkupiste E:llä.
   - *Edessä ja takana:* matalat jouset edessä urkupisteen päällä; muu orkesteri poissa. *Tunnelma:* syvä, tumma, kaukainen.
   - *Partituurissa:* K = t. 290: viulut I con sord. div., viulut II senza sord., sellot con sord. mezza; ppp sempre; flageoletit mf (s. 32).
@@ -247,17 +252,17 @@ vasta kun mitään ei enää odoteta.
 - **8:22 Jousijakso urkupisteen päällä päättyy.** Jousivaltainen matalarekisterinen jakso, urkupiste E:llä.
   - *Edessä ja takana:* kaikki väistyy. *Tunnelma:* pimenevä.
   - Ohjaaja: pudotus hiljaisuuteen; metsä syvenee vielä.
-- 8:27 Ylärekisteri syttyy.
-- 8:30 Ylhäällä välähtää nopea kuvio.
+- 8:28 Ylärekisteri syttyy.
 - **8:38 Maan värinä hiljaisuudessa.** Hiljaisuuden keskellä matala d värisee tiheästi kahdeksan sekuntia.
   - *Edessä ja takana:* pohja värisee yksin; yllä pitkä fis. *Tunnelma:* syvä, pidätetty.
   - *Partituurissa:* K = t. 290: viulut I ja sellot con sord., ppp sempre, flageoletit; t. 302 patarummut ppp > pp (s. 32).
   - Ohjaaja: teoksen hiljaisimmassa metsässä maa ei ole hiljaa. Sama ääni, joka avasi teoksen, on nyt tuskin kuultava. Lähteet: Judd: äänet juuri hiljaisuuden yläpuolella.
 - 8:46 Keskirekisteri vaikenee (5 s): ääni ohenee.
-- 8:49 Musiikki nousee: keskikerros ja yläkerros kohoaa ylöspäin noin 6 sekunnin ajan.
+- 8:49 Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin (19 s). Ääni muuttuu kevyeksi ja pohjattomaksi.
 - 8:50 Basso vaikenee.
-- 8:50 Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin (18 s). Ääni muuttuu kevyeksi ja pohjattomaksi.
-- 8:51 Ylärekisteri syttyy.
+- 8:51 Musiikki nousee: keskikerros ja yläkerros kohoaa ylöspäin noin 7 sekunnin ajan.
+- 8:52 Keskirekisteri tulee mukaan (jouset).
+- 8:52 Ylärekisteri syttyy (jouset).
 
 ##### 9:00–10:00
 
@@ -265,11 +270,10 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* ei etualaa: kaikki kaukana, hitaasti muuttuvia kerroksia. *Tunnelma:* ikisalot, ajaton.
   - Lähteet: Hepokoski: hitaasti muuntuvat ääniarkit; Whitman: monoliittiset taustasoinnut; Nørgård piti tätä äärettömyyssarjansa edeltäjänä. Ohjaaja: Tapiolan "ikisalat": aika lakkaa.
 - 9:08 Matalat soittimet palaavat: ääni saa pohjan.
-- 9:10 Liike tasaantuu.
-- 9:15 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
-- 9:20 Basso lähtee liikkeelle pitkän paikallaan olon jälkeen.
+- 9:10 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 9:20 Liike hidastuu: ääniä tulee harvakseltaan.
+- 9:25 Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin (11 s). Ääni muuttuu kevyeksi ja pohjattomaksi.
 - 9:33 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 11 sekunnin ajan.
-- 9:35 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 - **9:40 H palaa ja sykkii ennen hiljaisuutta.** H soi pitkänä ja matala h sykkii neljätoista kertaa; sitten kaikki vaimenee.
   - *Edessä ja takana:* pohja sykkii, muu häipyy. *Tunnelma:* hiipuva.
   - Ohjaaja: askeleet palaavat kotisävelelle ennen kuin metsä vaikenee.
@@ -296,13 +300,13 @@ vasta kun mitään ei enää odoteta.
 - **10:41 C-duuri välähtää ennen pysähtymistään.** C-duuri näyttäytyy lyhyesti kolmesti ennen kuin se pysähtyy viideksi sekunniksi.
   - *Edessä ja takana:* valo vilahtaa kerrosten takana ja katoaa. *Tunnelma:* väärä valo lähestyy.
   - Ohjaaja: väärä valo ei tule yllättäen: se käy katsomassa kolme kertaa. Kolmannella kerralla se jää. Käyttäjä: "väärän toivon mielikuva ja vähän semmoista groteskia valoa".
-- 10:56 Matalat soittimet palaavat: ääni saa pohjan.
+- 10:55 Matalat soittimet palaavat: ääni saa pohjan.
 
 ##### 11:00–12:00
 
-- 11:08 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 12 sekunnin ajan (jouset).
+- 11:01 Pitkät korkeat äänet alkavat väristä (tremolo).
 - 11:10 Yläkerros soittaa pitkiä, sidottuja ääniä (legato).
-- 11:15 Keskikerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 11:10 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 10 sekunnin ajan (jouset).
 - **11:20 C-duuri ennen kirjainta M.** Yllättävä C-duuri, noin viisi tahtia.
   - *Edessä ja takana:* korkeat jouset edessä, hymnimäisesti; vasket ja puupuhaltimet taustalla hiljaa. *Tunnelma:* väärä toivo, groteski valo, pysähtynyt.
   - *Partituurissa:* t. 385–396: huilut f, jouset div. f, bassoklarinetti ja fagotit mf, bassot mf; englannintorvi 'messa' [epäselvä] (s. 38). Sointu on forte, ei hiljainen.
@@ -314,23 +318,19 @@ vasta kun mitään ei enää odoteta.
 - **11:31 M:n jälkeen: raskaat askeleet vaskien alla.** Vaskien jyrinän alla matala ais sykkii kahdeksantoista kertaa noin sekunnin välein.
   - *Edessä ja takana:* pohja ja vasket yhdessä edessä; jouset poissa. *Tunnelma:* raskas, väistämätön.
   - Käyttäjä: "onko ne sitten sen Tapion jättiläisen askeleita". Ohjaaja: askeleet, jotka alkoivat valon alla, ovat nyt kovat ja lähellä, ja niiden sävel on puoli sävelaskelta alempana kuin kotisävel. Se, mikä oli tulossa, on täällä.
-- 11:40 Yläkerros soittaa pitkiä, sidottuja ääniä (legato).
-- 11:45 Musiikki laskeutuu: koko orkesteri painuu alaspäin noin 7 sekunnin ajan.
+- 11:42 Pitkät korkeat äänet alkavat väristä (tremolo).
 - **11:51 Jännitteinen jousijakso alkaa.** Jousivaltainen jakso, korkea jännite ja nopea liike.
   - *Edessä ja takana:* jouset edessä nopeassa kuvioinnissa; vasket ja patarummut takana. *Tunnelma:* ahdistava, hermostunut.
   - Ohjaaja: teoksen jännitteisin jakso, nopea, dissonoiva, kromaattinen kuviointi ilman selvää sävellajia. Ei myrsky, vaan hermo. Tämä on kohta, josta kuulijat kirjoittavat ahdistavana.
+- 11:58 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 9 sekunnin ajan.
 
 ##### 12:00–13:00
 
-- 12:00 Liike kiihtyy: ääniä tulee tiheään.
-- 12:02 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 6 sekunnin ajan (jouset).
 - 12:09 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 8 sekunnin ajan (jouset).
 - **12:14 Kirjain O: puupuhaltimet ja vasket vuorottelevat.** Jousten hermon keskellä oboet ja klarinetit tulevat esiin, vasket hiljaa alla.
   - *Edessä ja takana:* puupuhaltimet nousevat jousten kuvioinnin läpi. *Tunnelma:* ahdistava, tihenevä.
   - *Partituurissa:* O = t. 442: oboet ja klarinetit poco f, bassoklarinetti ja kontrafagotti mf, fz, trumpetit ja pasuunat p → mp (s. 43); t. 455 poco rallentando al, puupuhaltimet al fff (s. 45).
   - Ohjaaja: hermo saa äänen. Kuulija (YouTube): "one of the most terrifying pieces of music ever written".
-- 12:20 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
-- 12:30 Yläkerros soittaa pitkiä, sidottuja ääniä (legato).
 - **12:35 Jännitteinen jousijakso päättyy.** Jousijakso päättyy, vaskit tulevat.
   - *Edessä ja takana:* jouset väistyvät, vasket nousevat. *Tunnelma:* vaihtuva.
   - Ohjaaja: jousten hermo lakkaa; vasket ottavat tilan.
@@ -341,7 +341,7 @@ vasta kun mitään ei enää odoteta.
 - **12:48 Allegro moderato O:n jälkeen: vaskivuorottelu päättyy.** Käyrätorvien < > ja trumpettien hidas vuorottelu päättyy.
   - *Edessä ja takana:* jouset palaavat edessä. *Tunnelma:* laskeva.
   - Ohjaaja: hengitys hiljenee; harva kuviointi ja toinen vaskipaisunta, sitten pitkä lasku kohti hiljaisuutta.
-- 12:55 Musiikki nousee: keskikerros ja yläkerros kohoaa ylöspäin noin 6 sekunnin ajan (puupuhaltimet).
+- 12:55 Musiikki nousee: keskikerros ja yläkerros kohoaa ylöspäin noin 7 sekunnin ajan.
 
 ##### 13:00–14:00
 
@@ -349,22 +349,19 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* pienet kuviot keskellä, paljon tyhjää. *Tunnelma:* tyven.
   - *Partituurissa:* t. 471: huilu poco f, oboet ja englannintorvi mf, dim. > p; käyrätorvet mf dim. > pp; t. 481: huilut, oboet, klarinetit cresc. > f (s. 47).
   - Ohjaaja: tyven ennen viimeistä varoitusta (P).
-- 13:05 Keskikerros soittaa lyhyitä, irrallisia ääniä (staccato).
-- 13:05 Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin (21 s). Ääni muuttuu kevyeksi ja pohjattomaksi.
-- 13:10 Liike hidastuu: ääniä tulee harvakseltaan.
-- 13:15 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
-- 13:20 Liike tasaantuu.
+- 13:05 Pohja katoaa: matalat soittimet vaikenevat ja ylempi kerros jää soimaan yksin (23 s). Ääni muuttuu kevyeksi ja pohjattomaksi.
+- 13:10 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 13:20 Liike kiihtyy: ääniä tulee tiheään.
 - **13:26 Kirjain P: vaskien suuri paisutus.** Vasket ja patarummut paisuvat hiljaisesta täyteen voimaan, jouset mukana; yksi teoksen kovimmista kohdista.
   - *Edessä ja takana:* vasket tulevat takaa eteen yhdellä paisutuksella. *Tunnelma:* viimeinen varoitus.
   - *Partituurissa:* P = t. 490: käyrätorvet, trumpetit, pasuunat fp cresc. molto > ff, patarummut f cresc. molto > ff, jouset ff; sitten puupuhaltimet yhtä aikaa f (s. 48).
   - Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Ohjaaja: se motiivi käy tässä vielä kerran yksin, ennen kuin metsä hiljenee.
-- 13:33 Musiikki nousee: yläkerros kohoaa ylöspäin noin 10 sekunnin ajan (jouset).
+- 13:33 Musiikki nousee: keskikerros ja yläkerros kohoaa ylöspäin noin 6 sekunnin ajan (jouset).
 - **13:45 Kaikki vaimenee: vasket häipyvät.** Vasket vaimenevat niin hiljaa kuin mahdollista, jouset sanovat vielä jotain ilmeikkäästi ja hiljenevät.
   - *Edessä ja takana:* jouset edessä, vasket katoavat taakse. *Tunnelma:* tyhjenevä.
   - *Partituurissa:* t. 505: käyrätorvet, trumpetit, pasuunat dim. possibile; jouset espress. > p (s. 50).
   - Ohjaaja: metsä tyhjenee ennen myrskyä. Viimeinen asia, jonka jouset sanovat, on merkitty espressivo.
-- 13:50 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 6 sekunnin ajan.
-- 13:50 Liike tasaantuu.
+- 13:50 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 
 ##### 14:00–15:00
 
@@ -392,10 +389,10 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* kaikki kerrokset yhdessä edessä. *Tunnelma:* pelottava, ylivoimainen.
   - *Partituurissa:* Q = t. 550: trumpetit, pasuunat, patarummut p cresc. molto > ff; bassoklarinetti, fagotit mf cresc. molto (s. 53).
   - Lähteet: de.wikipedia (Harenberg): noin 40 tahdin nouseva jousten crescendo johtaa koko orkesterin sisääntuloon; Grimley: myrsky on piste, jonka jälkeen ei ole paluuta. Ohjaaja: myrsky oli siihen asti vain jousia, eli vain metsä. Nyt maa ja taivas liittyvät.
+- 14:57 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 11 sekunnin ajan.
 
 ##### 15:00–16:00
 
-- 15:01 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 7 sekunnin ajan.
 - **15:10 Myrskyn voimakkain kohta.** Koko äänitteen voimakkain jakso, tiheä tutti.
   - *Edessä ja takana:* kaikki edessä. *Tunnelma:* huippu, ylivoima.
   - *Partituurissa:* Q = t. 550: trumpetit, pasuunat, patarummut p cresc. molto → ff (s. 53); t. 559 ff, puolivälistä kaikki puupuhaltimet ja vasket poco ff cresc. possibile (s. 54); ~t. 569 Allegro moderato: koko orkesteri fff, jouset fffz, kontrabassot fff saltato, sitten dim. molto > p, klarinetti 2. Solo p (s. 55). R = t. 577: vasket < > ff, jouset ff (s. 56).
@@ -404,12 +401,10 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* vasket edessä, sitten jouset. *Tunnelma:* jälkiaalto.
   - *Partituurissa:* R = t. 577: vasket poco f < / mf < > ff, jouset ff; huilu ja klarinetti fff > p; kontrafagotti ja patarummut ppp (s. 56).
   - Ohjaaja: myrsky ei lopu kerralla; se käy vielä kerran läpi.
-- 15:30 Liike tasaantuu.
 - **15:35 Huuto alkaa: jousten nouseva asteikko.** Hiljaisesta alkaa jousten nouseva asteikko kaikissa jousissa peräkkäin, puupuhaltimien laskevan kuvion jälkeen.
   - *Edessä ja takana:* vasket nousevat takaa edelle. *Tunnelma:* velloava.
   - *Partituurissa:* t. 587: puupuhaltimet ff yhden tahdin laskeva kuvio; jouset mf nouseva asteikko (viulut, alttoviulut, sellot peräkkäin) (s. 57).
   - Ohjaaja: myrsky palaa vielä kerran hiljaisesta; aallot eivät lopu yhteen. Lähteet: Grimley: oudon tuskainen huudahdus ohjaa kuulijan katseen ylös maasta turbulenttiseen ilmaan.
-- 15:40 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
 - 15:40 Liike kiihtyy: ääniä tulee tiheään.
 - **15:45 Huuto.** Asteikko päätyy korkeisiin pitkiin ääniin täydellä voimalla: "huuto".
   - *Edessä ja takana:* korkeat jouset yksin edessä. *Tunnelma:* yksinäinen, paljas.
@@ -422,30 +417,31 @@ vasta kun mitään ei enää odoteta.
   - *Edessä ja takana:* yksi ääni kerrallaan edessä, tyhjä tila ympärillä. *Tunnelma:* paljas, hiljenevä.
   - *Partituurissa:* t. 593: pikkolo mf < >; klarinetti 1. Solo p < >, marc.; bassoklarinetti mf < >; käyrätorvet poco f dim.; jouset meno f (s. 58).
   - Lähteet: Madetoja 1927: hetkittäin haltian murheellinen toistuva kutsu. Ohjaaja: myrskyn jälkeen metsässä on jäljellä vain yksittäisiä ääniä, ja ne ovat samoja, jotka alussa tulivat esiin vuorotellen.
-- 16:10 Liike hidastuu: ääniä tulee harvakseltaan.
+- 16:10 Liike tasaantuu.
 - **16:21 Kirjain S: viulut alkavat pitää ääntä.** Viulut alkavat pitkän äänen, joka ei enää lakkaa; sen päälle koko orkesteri kasvaa hiljaisesta.
   - *Edessä ja takana:* viulujen pitkä ääni edessä; muu orkesteri nousee takaa. *Tunnelma:* rauhoittuva, kokoava.
   - *Partituurissa:* S = t. 605: viulut I ja II mf, sempre mf; bassot p < > mf; patarummut p trilli; S:n jälkeen koko orkesteri pp cresc. (s. 59).
   - Ohjaaja: koodan mezzoforte alkaa jo tässä, kolmetoista tahtia ennen viimeistä huipennusta. Lopun ääni on läsnä ennen loppua.
-- 16:30 Keskikerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 16:30 Liike hidastuu: ääniä tulee harvakseltaan.
 - 16:39 Matalat soittimet palaavat: ääni saa pohjan.
+- 16:40 Liike tasaantuu.
 - 16:44 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 7 sekunnin ajan.
-- 16:45 Keskikerros soittaa pitkiä, sidottuja ääniä (legato).
-- 16:47 Basso vaikenee.
+- 16:47 Basso lähtee liikkeelle pitkän paikallaan olon jälkeen.
 - **16:52 Loppuhuipennus.** Viimeinen suuri huipennus ennen H-duuria.
   - *Edessä ja takana:* koko orkesteri edessä, sitten ei mitään. *Tunnelma:* viimeinen aalto, sitten pimeys.
   - *Partituurissa:* S = t. 605 (s. 59): viulut I ja II mf, sempre mf; bassot p < > mf; patarummut p trilli; S:n jälkeen koko orkesteri pp cresc.; t. 618 kaikki ff dim. pp fermaatein (s. 60).
   - Ohjaaja: viimeinen tutti-huipennus ei ole voitto: se on viimeinen aalto, joka vyöryy ohi. Sen jälkeen pimeys.
+- 16:57 Basso vaikenee.
 
 ##### 17:00–18:00
 
-- 17:00 Musiikki laskeutuu: basso ja keskikerros painuu alaspäin noin 7 sekunnin ajan.
-- 17:00 Liike tasaantuu.
+- 17:00 Keskikerros soittaa lyhyitä, irrallisia ääniä (staccato).
+- 17:00 Musiikki laskeutuu: koko orkesteri painuu alaspäin noin 7 sekunnin ajan.
+- 17:00 Liike hidastuu: ääniä tulee harvakseltaan.
 - **17:04 H-duuri-loppu alkaa.** H-duurisointu monijakoisissa jousissa (divisi); dynamiikka partituurista [tarkista].
   - *Edessä ja takana:* divisi-jouset edessä, ei taustaa. *Tunnelma:* hellä, koskettava, avoin.
   - *Partituurissa:* S = t. 605: viulut sempre mf (s. 59). t. 618: puhaltimet, vasket ja patarummut ff dim. pp fermaatein ja pois; jouset: viulut I ja II mf sempre, alttoviulut, sellot ja bassot mp, div.; viimeinen sointu fermaatilla (s. 60). Mezzoforte on painettu.
   - Lähteet: Tovey: "aamen"; Pursglove: tunnustus; BSO: kolme puhtaan duurisoinnun sykäystä, rauha voi olla petollinen; Hayes, Sibelius-klubi, Kallio: jäähyväiset; Whitehouse: heikko siunaus; Oramo: levollinen; Kallio: teoksen ainoa siirtymä mollista duuriin. Dynamiikkamerkintää ei anna yksikään lähde. Käyttäjä: "toivo kiitos hiljaisuus ... huokaus ... massiivinen päätöspiste, mutta ei julistava, vaan hellä, mezzoforte-sävy". Ohjaaja: C-duuri oli väärä valo, H-duuri on oikea, ja se tulee vasta kun mitään ei enää odoteta. Sama sävel kuin alussa, mutta duurissa: metsä on sama, kuuntelija ei. Jäähyväinen, joka ei ole jäähyväinen, koska hän aikoi jatkaa; siksi mezzoforte eikä pianissimo. Se jättää oven auki.
-- 17:10 Liike hidastuu: ääniä tulee harvakseltaan.
 - **17:24 Viimeiset askeleet H-duurin alla.** H-duurisoinnun alla matala h sykkii vielä kuusitoista kertaa noin sekunnin välein ja lakkaa.
   - *Edessä ja takana:* pohja sykkii hiljaa soinnun alla. *Tunnelma:* hellä, viimeinen.
   - Lähteet: Wilker: bassoissa vielä viimeinen hidas syke; BSO (Goodwin): kolme puhtaan duurisoinnun sykäystä. Ohjaaja: askeleet, jotka alkoivat toisella minuutilla, kävelevät loppuun asti. Viimeiset kuusitoista, ja sitten ne pysähtyvät.
@@ -458,6 +454,6 @@ vasta kun mitään ei enää odoteta.
   - Ohjaaja: kolmas hiljaisuus, teoksen jälkeinen. Se ei jatkunut kolmeenkymmeneen vuoteen. Kuuntelija ei voi tietää sitä teoksen sisällä; me tiedämme, ja siksi tämä hiljaisuus painaa enemmän kuin sen kesto. Kunnianosoitus. Lähteet: yhteyttä Tapiolan hiljaisuuksien ja Ainolan hiljaisuuden välillä ei ole kirjallisuudessa; tämä on meidän tulkintamme.
 <!-- /GEN:minuutit -->
 
-## Tekninen data
+## Mistä tämä opas syntyy
 
-Mitatut perusteet, varmuudet ja luvut eivät ole tässä oppaassa. Ne ovat tiedostoissa `annotations/tekninen_rattle2022.json`, `annotations/ajat_rattle2022.json`, `annotations/cues.json` ja paketin `tapahtumat.json`.
+Sisältö: `annotations/teemat.json`. Ajat ja mitatut perusteet: `annotations/ajat_rattle2022.json`. Kuvaa ohjaa `annotations/cues.json`, johon nämä ja koneen kuulemat tapahtumat kootaan.

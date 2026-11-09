@@ -1,35 +1,34 @@
-# Tapiola: ohjaajan tutkimustiivistelmä
+# Tapiola: taustatutkimus (synteesi)
 
-*Vaihe 2, versio 1, 1.11.2026. Tämä on tiivistelmä ja dramaturginen luenta kolmesta tutkimusdokumentista, jotka
-Sonnet-agentit kokosivat verkkolähteistä briefien mukaan:*
-- `docs/tutkimus/teos.md` (noin 4900 sanaa, 39 lähdettä): synty, esipuhe, rakenne, teemat, soitinnus, aikansa maailma.
-- `docs/tutkimus/levytys.md` (noin 1500 sanaa): Kajanus/LSO 1932, Sibelius Society, Bob Varneyn siirto.
-- `docs/tutkimus/viitteet.md`: miten levynkannet, kuvataide ja Kalevala-kuvitukset ovat tulkinneet Sibeliusta ja Tapiolaa.
+*Versio 2, 9.11.2026. Tämä on **yksi tiedosto, johon koko taustatutkimus on koottu käyttökelpoiseen muotoon**: mitä
+teoksesta, säveltäjästä, mytologiasta ja kuvataiteesta tiedetään, ja mitä se antaa kuvalle. Kuvakäsikirjoitusta
+kirjoittaessa riittää lukea tämä, `docs/visuaalinen_tyyli.md` ja `annotations/kuunteluopas.md`.*
 
-*Lähdeviitteet ja [tarkista]-merkinnät ovat alkuperäisissä dokumenteissa. Tähän on nostettu se, mikä vaikuttaa
-kuunteluoppaaseen, tyyliin ja kuvakäsikirjoitukseen. Visuaalisia päätöksiä täällä ei tehdä.*
+*Alkuperäiset tutkimustiedostot (lähdeviitteet, URL:t, luotettavuusluokat) ovat arkistossa `docs/tutkimus/`; niitä
+ei tarvitse avata muuten kuin lähdettä tarkistaessa. Luvun otsikon perässä on arkistotiedoston nimi. Merkinnät:
+**[tarkista]** = epävarma; **tulkinta** = meidän tai käyttäjän luenta, ei lähteen väite. Aikoja ei ole tässä
+tiedostossa: ne ovat `annotations/ajat_<levytys>.json`:ssa. Sävelnimet suomeksi (h-molli = B minor, H-duuri = B major).*
 
 ---
 
-## 1. Faktat lyhyesti
+## 1. Teos lyhyesti (`teos.md`)
 
 | Asia | Tieto | Varmuus |
 |---|---|---|
 | Teos | *Tapiola*, sinfoninen runo op. 112, 1926, Breitkopf & Härtel | varma |
-| Tilaus | Walter Damrosch, New York Symphony Society, sähke 4.1.1926, 400 dollaria | varma (FMQ); orkesterin nimi vaihtelee lähteissä |
-| Kantaesitys | New York 26.12.1926, Damrosch | varma |
-| Suomen ensiesitys | 25.4.1927, Kajanus, samassa konsertissa 7. sinfonia ja Myrsky-alkusoitto | varma |
-| Asema | Sibeliuksen viimeinen suuri orkesteriteos; sen jälkeen noin 30 vuoden "Ainolan hiljaisuus", 8. sinfonia tuhottiin | varma |
-| Perussävellaji | h-molli (engl. B minor; rinnakkaisduuri D-duuri, 2 ylennystä), loppu H-duurissa (B major) divisi-jousissa; dynamiikka partituurista (käyttäjä: mezzoforte-sävy), lähteet eivät anna merkintää | varma; dynamiikka [tarkista partituurista] |
-| Kokoonpano | 3 huilua (3. pikkolo), 2 oboeta, englannintorvi, 2 klarinettia, bassoklarinetti, 2 fagottia, kontrafagotti, 4 käyrätorvea, 3 trumpettia, 3 pasuunaa, patarummut, jouset. **Ei harppua, ei muita lyömäsoittimia.** | varma (Dahlström) |
-| Kesto | 15–21 min levytyksissä; tämä lähde 17:43 | varma |
-| Levytys | Kajanus / LSO, Abbey Road Studio 1, 29.(–30.)6.1932, HMV Sibelius Society Vol. 1 (DB 1739–1745), USA Victor M-333, levyt 11503–11509 (1937) | varma; matriisit [tarkista] |
-| Tiedosto | Bob Varneyn siirto omasta Victor-setistään, Internet Archive 2012; **tiedostomme on bitilleen sama (MD5 täsmää)**. Häviötöntä versiota ei ole. | varma |
-| Siirron nopeus | Varneyn siirto on noin 1–2 % lyhyempi kuin Naxosin (Obert-Thorn) ja sama ero toistuu albumin kolmessa teoksessa. Jos ero on nopeutta, vire on noin 20–35 senttiä korkea. | **[tarkista mittaamalla vaiheessa 3]** |
+| Tilaus | Walter Damrosch, New York Symphony Society, sähke 4.1.1926, 400 dollaria, kesto enintään 20 min | varma (FMQ) |
+| Kantaesitys | New York 26.12.1926, Damrosch. Vastaanotto laimea. | varma |
+| Suomen ensiesitys | 25.4.1927, Kajanus; samassa konsertissa 7. sinfonia ja Myrsky-alkusoitto | varma |
+| Asema | Viimeinen suuri orkesteriteos; sen jälkeen noin 30 vuoden "Ainolan hiljaisuus", 8. sinfonia tuhottiin | varma |
+| Sävellaji | h-molli (rinnakkaisduuri D-duuri), loppu H-duurissa. Teos ei lähteiden mukaan koskaan moduloi pois h-mollistaan (Hayes); kooda on ainoa siirtymä mollista duuriin (Kallio). | varma |
+| Pituus | 634 tahtia (Wilker; painetut tahtinumerot partituurissa) | varma |
+| Kokoonpano | 3 huilua (3. myös pikkolo), 2 oboeta, englannintorvi, 2 klarinettia, bassoklarinetti, 2 fagottia, kontrafagotti, 4 käyrätorvea, 3 trumpettia, 3 pasuunaa, patarummut, jouset. **Ei harppua, ei muita lyömäsoittimia.** | varma (Dahlström) |
+| Kesto levyillä | 14:52 (Berglund 1987) – 21:08 (Segerstam 1992); useimmat 17–19 min. Rattle / LSO 2022: 17:58. | varma |
+| Partituuri | Breitkopf 1926, IMSLP #15925, "Revised and edited by Carl Ettler". **Painoksen merkinnät eivät ole varmasti kaikki Sibeliuksen omia** (Breitkopf tarkisti partituurin USA:n tekijänoikeuden vuoksi); tarkistettu Urtext on JSW I/16. Ei julkista omaisuutta EU:ssa ennen 1.1.2028: PDF ei mene gittiin. | varma |
 
-## 2. Sibeliuksen esipuhe
+## 2. Mistä teos kertoo: esipuhe ja Sibeliuksen omat sanat (`teos.md`, `soittimet.md`)
 
-Partituurin englanninkielinen nelisäe (Breitkopf; Wikipedia, BSO) ja suomenkielisen Wikipedian lähteetön suomennos:
+Partituurin nelisäe (englanniksi painettu; suomennos suomenkielisestä Wikipediasta, lähteetön):
 
 > Wide-spread they stand, the Northland's dusky forests,
 > Ancient, mysterious, brooding savage dreams;
@@ -41,308 +40,304 @@ Partituurin englanninkielinen nelisäe (Breitkopf; Wikipedia, BSO) ja suomenkiel
 > Asunnot Tapion on siellä kummat,
 > haltiat väikkyy, hämyn äänet soi
 
-Säe ei ole Sibeliuksen oma runo: kustantaja pyysi ohjelmaselitystä, Sibelius vastasi proosalla Tapiosta, ja
-kustantaja muotoili nelisäkeen. Sibeliuksen alkuperäinen sanamuoto on kadonnut [tarkista]. Alaotsikko ("villi
-pohjoinen metsä, jossa asuvat metsien jumala ja hänen nymfinsä") on Damroschin ehdotus, jonka Sibelius hyväksyi.
+- Säe ei ole Sibeliuksen runo: kustantaja pyysi ohjelmaselitystä, Sibelius vastasi proosalla Tapiosta, ja kustantaja
+  muotoili nelisäkeen. Alaotsikko ("villi pohjoinen metsä, jossa asuvat metsien jumala ja hänen nymfinsä") on
+  Damroschin, Sibelius hyväksyi sen. Aino-rouvan nimiehdotus oli "The Forest" (Wilker).
+- **Ohjelma on tila, ei tapahtuma:** metsä, metsän jumala, hämärässä kutovat haltiat. **Myrskyä ei ole esipuheessa
+  eikä alaotsikossa.** "Myrsky" on kirjallisuuden ja käyttäjän luenta, ja sen saa tehdä, kun se merkitään tulkinnaksi.
+- Sibeliuksen ainoa oma tapahtumakuvaus (vävy Jussi Jalakselle): puupuhallinjaksossa "metsänpeikot ja -eläimet
+  ilmestyvät".
+- Sibeliuksen sanat esityksestä (Jalakselle 1943): Kajanuksen levy "liian hidas" ja liian eloton, pitäisi soittaa
+  "paljon dramaattisemmin"; **"Elegantti ranskalainen pehmeys ei sovi Tapiolaan. Iskevyys ei ole T:lle vierasta."**
+- Wilker torjuu luontokuvat: Sibelius kertoo kasvun ja rappion tarinaa, ei maalaa maisemaa.
 
-**Dramaturgialle:** teoksen "ohjelma" on kolme asiaa: metsä, metsän jumala, hämärässä kutovat haltiat. Sibelius
-itse ei kuvannut tapahtumia, vain tilan. Ainoa hänen omansa tapahtumakuvaus on vävy Jussi Jalakselle sanottu:
-puupuhallinjaksossa "metsänpeikot ja -eläimet ilmestyvät".
+**Kuvalle:** kolme säiettä, jotka ovat kuunteluoppaan alussa: metsä (tila, joka ei muutu), se joka metsässä asuu
+(jumala, haltiat, peikot: voimia, ei hahmoja) ja ihminen sen sisällä (Madetojan "yksinäinen vaeltaja", säveltäjän
+tuska). Iskevyys ja hellyys eivät sulje toisiaan pois: loppu saa olla hellä, mutta teos ei ole pehmeä.
 
-## 3. Rakenne lähteiden mukaan (ilman tahtinumeroita)
+## 3. Rakenne: kirjaimet, tahdit ja mitä kirjallisuus niistä sanoo (`teos.md`, `partituuri.md`, `auringonsade.md`)
 
-Verkkolähteistä **ei löytynyt kokonaista tahtinumeroitua jaksokarttaa**. Löydetyt tahtinumerot (kaikki
-[tarkista partituurista]): Grimley: oktatoninen "tuulenpuuska" t. 21–25, "huuto" t. 586–587. Wilker: myrsky alkaa
-t. 523, loppu-H-duuri t. 624–634; teos on 634 tahtia. Del Mar: sordiinot alttoviuluun t. 130, jousiin t. 208,
-uusinta t. 290 ja 296, pois t. 359; sävelvirhe t. 25. **Käyttäjä partituurista 1.11.2026: alussa ei sordiinoja,
-ensimmäinen con sord. on kirjaimen J jälkeen.** Del Marin t. 130 on tämän kanssa ristiriidassa, ellei J ole ennen
-t. 130 [tarkista: kirjaimen J tahtinumero]. Grimley: myrskyjakso t. 513–577 (eri alku kuin Wilkerin 523) [tarkista].
-**Käyttäjä partituurista 1.11.2026: kirjain B = t. 69, kirjain M = t. 397, O:n jälkeen Allegro moderato = t. 462.**
-C-duuri noin t. 392–396 ennen M:ää. **Käyttäjä 1.11.2026 (kuunneltuaan Rattlen ehdokkaat): M (t. 397) ei ole vielä
-talvimyrsky vaan sen ennakko; talvimyrsky alkaa t. 540.** Kirjallisuuden 513–577 on sama jakso eri rajauksella. Jaksokartta täydennetään
-partituurista käyttäjän kanssa vaiheissa 2–5. (`docs/tutkimus/soittimet.md`)
+**Harjoituskirjaimet ja tempomerkinnät** (painetut tahtinumerot; käyttäjältä ja luetuilta partituurin sivuilta):
 
-Sibelius-klubin kuvaama kulku:
-1. **Largamente, h-molli.** Patarumpusoolo avaa teoksen ("tututum"; käyttäjä, partituuri; Judd). Sitten ydinmotiivi jousissa, sitten puhaltimet mukaan; Sibelius-klubi kutsuu puhaltimien vastausta autiudeksi.
-2. **Vaskien isku avaa Allegro moderaton.** Sävellaji häilyy h-mollin ja gis-mollin välillä.
-3. **Puupuhallinsekvenssi.** Jalaksen "metsänpeikot ja -eläimet"; Europadisc liittää kirjainkohdan G
-   kahdeksasosakuviot nelisäkeen haltioihin.
-4. **Kirkastuva, leikkisämpi osa.** Motiivit valoisammiksi, varjot pitenevät, katkelmat yhtyvät hymnimäiseksi
-   sekvenssiksi korkeassa jousirekisterissä (verrataan 7. sinfoniaan).
-5. **Vaskien jyrinä** kuin salama ja ukkonen.
-6. **Vilkkaampi Allegro, sitten hitaampi Allegro moderato.**
-7. **Myrsky:** jousitremolot (BBC: kimmeltävä puolisävelaskelin liikkuva jousiparvi, joka purkautuu vaskien ja
-   puupuhaltimien huutoon). Myrskyn jälkeen "huuto" korkeissa jousissa.
-8. **Kooda:** jäähyväiset orkesterille; H-duurisointu monijakoisissa jousissa, t. 624–634 (Wilker). Dynamiikkaa ei yksikään lähde anna; "pianissimo" oli agentin lisäys ja on poistettu. Käyttäjä: mezzoforte-sävy, hellä, huokaus, ei julistava.
-
-Muoto: Sibelius itse puhui sonaattimuodosta; Murtomäki sonaatti + variaatio; Salmenhaara: ei yksi teema vaan
-neljä perusmotiivia ja noin 30 johdettua; Whitman: kolmikaari (esittely, levoton kehittely, kooda joka liukenee
-hiljaisuuteen). Hayes: kaksi tempoa, toinen kaksinkertainen, vuorotellen ja päällekkäin.
-
-**Käyttäjän lempikohta: "juuri ennen talvimyrskyä aurinko hetkellisesti valaisee (C-duuri)".** Mikään lähde ei
-nimeä C-duuria *Tapiolassa*. Hayes: teos ei koskaan modulaatiolla poistu h-mollistaan; Taylor (2018): sävelkieli
-on asteikkokokoelmia, ei funktionaalista harmoniaa, joten "sävellaji" on jaksoissa pikemmin asteikkotila kuin
-kadenssi. Lähin lähteistetty kuvaus on kohta 4 yllä: kirkastuva, hymnimäinen jousijakso ennen vaskien jyrinää.
-**Käyttäjän partituurihavainto 1.11.2026 (ei kirjallisuuslähde):** talvimyrsky alkaa harjoituskirjaimesta **M**,
-ja sitä ennen on noin **5 tahtia yllättävää C-duuria**. Käyttäjän tulkinta: "niinkuin auringon säde synkän metsän
-läpi". Tämä on videon avainkohta. Aika kuuntelukopiossa mitataan vaiheessa 5 ennen kuin sitä kutsutaan kuulluksi.
-Huomio: C-duuri ei ole h-mollin rinnakkaisduuri (se on D-duuri), joten kohta on tonaalisesti vieras, ei
-"kotiin palaava" kirkastus. Tämä tukee käyttäjän luentaa "toivo on turha".
-
-**Kohdennettu haku "väärä / sairas toivo"** (`docs/tutkimus/auringonsade.md`): ilmausta **ei löytynyt
-keneltäkään** (Tovey luettu kokonaan; Salmenhaara 1970, Taylor 2018, Howell, Grimley 2011, Tawaststjerna ja
-Del Mar jäivät maksumuurin tai digitoimattomuuden taakse, joten haku ei kumoa muistoa). Kallio (2022): kooda on
-teoksen ensimmäinen ja ainoa siirtymä mollista duuriin, eli myrskyä edeltävä C-duuri on korkeintaan
-paikallinen sointu, ei sävellajin vaihdos. Grimley (Cambridge Companion 2004, vain hakuote): myrskyjakso
-t. 513–577, sen alku "kahisevaa jousifiguraatiota ilman selvää tahtilajin tuntua", ja myrsky on paikallisesti
-"terrifyingly unmotivated". Tämä on dramaturgisesti sama asia kuin käyttäjän "toivo on turha: siitä alkaakin
-myrsky": myrskyllä ei ole syytä. Hypoteesi sekaannuksesta: 7. sinfoniassa c-mollin myrsky edeltää C-duurin
-"täyttä päivänvaloa" (Simpson 1965?), ja muisto voi yhdistää kaksi teosta [tarkista].
-
-### Soitinryhmät kuvina kirjallisuudessa (`docs/tutkimus/soittimet.md`)
-Haku suomeksi, englanniksi, saksaksi ja ruotsiksi. Käyttäjän muistama "puhaltimet nousevat kuin vuoret" **ei
-löytynyt keneltäkään**; vuoret esiintyvät vain 7. sinfonian vastakohtana Tapiolalle (Yungkans). Lähimmät:
-Goodwin (BSO): pitkät pidetyt puhallinsävelet ovat staattinen tausta, joka huomataan vasta kun se katkeaa;
-Whitman (Cleveland): "monoliittiset" taustasoinnut; Tovey: värit pysyvät pitkään saman sointitaustan päällä.
-Kirjallisuuden kolme kuvaa: jouset = ydinmotiivi ja metsä, sitten tuuli (Goodwin) ja myrskyn tremolot, lopuksi
-"huuto"; puupuhaltimet = metsän olennot (Jalas, Europadisc) tai autio tausta; vasket = salama ja ukkonen, myrskyn
-huuto, Grimleyn mukaan koko teoksen läpi kulkevan vaskimotiivin yhteenvetopaluu. Tovey: lopun hirmumyrsky
-taivuttaa latvat ja uhkaa metsän jättiläisiä, sitten kirkkaiden duurisointujen "aamen". Wilker torjuu
-luontokuvat: Sibelius kertoo kasvun ja rappion tarinaa. Käyrätorvia, trumpetteja, pasuunoita, englannintorvea,
-bassoklarinettia, kontrafagottia ja kontrabassoja ei kuvaa erikseen mikään lähde.
-
-## 4. Soitinnus kanavakorttia varten
-
-Hayes: Sibelius ei sekoita ryhmiä vaan kerrostaa puupuhaltimet, vaskit, patarummut ja jouset erillisinä lohkoina.
-Pitkät urkupisteet, runsaat jousitremolot, ostinatot. Dissonanssi säästeliäs mutta jyrkkä.
-
-| Ryhmä | Lähteiden mukaan kuultavissa | Tarkistettava |
+| Paikka | Tahti | Mitä siinä on |
 |---|---|---|
-| Jouset | avaus ilman sordiinoa; hymnimäinen korkea jakso; myrskyn tremolot; "huuto" myrskyn jälkeen; päätössointu divisi, dynamiikka partituurista | ensimmäinen con sord. kirjaimen J jälkeen (käyttäjä); Del Marin tahdit [tarkista] |
-| Puupuhaltimet | vastaus avaukseen; "peikkojakso"; kuviot kirjaimesta G; pikkolo ja huilu | englannintorvi, bassoklarinetti, kontrafagotti: ei lähdekuvausta |
-| Vaskit | isku Allegro moderaton alkuun; "salama ja ukkonen"; myrskyn huuto | käyrätorvien soinnut: ei lähdekuvausta |
-| Patarummut | **Avaus on patarumpusoolo** (käyttäjä partituurista 1.11.2026; Judd). Muut lähteet ohittavat sen ja aloittavat jousista. | ensimmäinen kanavakortin testikohta |
-| Kontrabassot | matalat urkupisteet | kohdat partituurista |
+| Largamente | 1 | Patarumpusoolo *mf* avaa teoksen; jouset *f* heti perään; käyrätorvet, trumpetit, huilut tahtien 1–8 aikana. Wilker: pääajatus asettuu t. 13. |
+| Allegro moderato | 21 | Vasket ja patarummut *fp cresc. molto*, viulut div. kuudestoistaosin: Grimleyn oktatoninen "tuulenpuuska" t. 21–25 |
+| Huippu | 25 | kaikki *ff* (Sibelius-klubin "vaskien isku") |
+| A | ~36 | puupuhaltimet *f*, *fz*, *dolce* |
+| B | 69 | kontrabassojen toistuvat kahdeksasosat *poco a poco cresc.* (käyttäjän "askeleet"), fagotit pitkinä |
+| C | 106 | alttoviulut, sellot ja bassot tacet; viulut div. pitkin sidotuin äänin, huilut ja klarinetit kuvioivat |
+| D–I | **auki** | G: nopeat puupuhallinkuviot (Europadisc: esipuheen haltiat; Jalas: peikot ja eläimet) |
+| J | ~274 | |
+| K | 290 | viulut I con sord., sellot con sord.; patarummut *ppp* |
+| L | 342 | matalat puhaltimet, vasket ja patarummut yhtä aikaa *fp cresc. possibile* → *fff* t. ~356 |
+| Allegro | ~359 | *senza sord.* |
+| C-duuri | noin 392–396 | noin 5 tahtia ennen M:ää (käyttäjä); sivun merkinnät: jouset div. **forte**, huilut *f* |
+| M | 397 | isku monessa kerroksessa: pizz. *ff* → arco *fff*, patarummut *sfz* ja *ff* tremolo, vasket *sfz* / *ff* |
+| N | **auki** | |
+| O | 442 | *poco rallentando al* t. 455, puupuhaltimet *al fff* |
+| Allegro moderato | 462 | vasket pitkät soinnut *poco a poco meno f*; käyttäjä: käyrätorvien < > ja trumpettien vuorottelu |
+| P | 490 | vasket *fp cresc. molto* → *ff*; t. 505 vasket *dim. possibile* |
+| Allegro | 513 | viulut *pp*, *poco a poco senza sordini*. **Ei tauko.** |
+| Myrsky näkyy | 523 | vain jouset, *ppp*, kromaattiset kuviot |
+| Myrsky iskee | 540 | jouset *fff*, edelleen vain jouset |
+| Q | 550 | trumpetit, pasuunat ja patarummut *p cresc. molto* → *ff*; tutti t. ~559; koko orkesteri *fff* t. ~569 (Allegro moderato) |
+| R | 577 | vasket *ff*, jouset *ff* |
+| Huuto | 586–587 | puupuhaltimet *ff* yhden tahdin, jouset nouseva asteikko → *ff* korkeat pitkät äänet (Grimley, Europadisc) |
+| S | 605 | viulut *sempre mf*; yksinäiset klarinetti- ja pikkoloäänet < > ennen sitä |
+| Loppu | 618–634 | kaikki *ff dim. pp* ja pois; jouset jäävät: viulut ***mf sempre***, muut *mp*, div., fermaatti. H-duuri t. 624–634. |
 
-## 5. Säveltäjä 1926: aikansa maailma ja tuska
+**Kulku kirjallisuuden mukaan** (Sibelius-klubi): Largamente h-mollissa, ydinmotiivi jousissa, puhaltimien vastaus
+(autius) → vaskien isku ja Allegro moderato, sävellaji häilyy h-mollin ja gis-mollin välillä (gis voidaan kuulla
+doorisena, kun H on tonika) → puupuhallinsekvenssi (peikot ja eläimet) → kirkastuva, leikkisämpi osa, joka yhtyy
+hymnimäiseksi sekvenssiksi korkeissa jousissa → vaskien jyrinä kuin salama ja ukkonen → vilkkaampi Allegro, sitten
+hitaampi ja syvempi Allegro moderato → myrsky ja huuto → kooda.
 
-Käyttäjän teema: "Sibeliuksen luomisen tuskaa, teoksen ollen hänen viimeinen. Miten hän taistelee muuttuvan
-maailman ja tonaliteettien kanssa." Lähteet tukevat tätä seuraavasti:
-- Sibelius katui tilauksen hyväksymistä (Sibelius-klubi). Syyskuussa 1926 hän pyysi partituurin takaisin
-  korjattavaksi sähkeellä. Vuosi 1926 on Botsteinin mukaan "jyrkän ja pysyvän laskun" alku.
-- Päiväkirja: epäilyt ja viski *Tapiolan* aikaan (Composers Datebook); Ainon 50-vuotispuheessa 1921 säveltäminen on
-  "pitkä taistelu yön pimeässä". Vuoden 1927 merkinnät ovat keskenään ristiriidassa (yksinäisyys ja riippuvuus vs.
-  "erittäin maltillinen") [tarkista alkuperäisestä].
-- Modernismi: Sibelius Berliinissä 1914, Schönberg "veti puoleensa"; Adornon hyökkäys 1938, Leibowitz 1955;
-  Kundera: "anti-modernistinen modernisti". Lähteiden luenta: ei taistelu tonaliteetin hylkäämisestä vaan sen
-  **tiivistäminen äärimmilleen** (Oramo: 7. sinfonia ja *Tapiola* vievät kondensaation rajoilleen; Ross: "tiukin ja
-  tiivein"). Hepokoski: harmoninen liikkumattomuus, hitaasti muuntuvat ääniarkit; Nørgård piti *Tapiolaa*
-  äärettömyyssarjansa edeltäjänä.
-- Kantaesityksen vastaanotto New Yorkissa oli laimea (Downes ymmällään; Gilman: ohjelma parempi kuin musiikki;
-  Chotzinoff: avausmotiivilta puuttuu luonne). Amerikkalaiset arvioivat teoksen uudelleen vasta Koussevitzkyn
-  jälkeen 1932. Suomessa Madetoja: "hetkittäin haltian murheellinen toistuva kutsu, hetkittäin yksinäinen
-  vaeltaja, joka purkaa elämän tuskaa". Gray 1931: teos yksin riittäisi paikkaan suurimpien joukossa.
-- Whittall: "yhdessä jäätyneessä hetkessä nähty maisema, maalaus". Del Mar: "yhteenveto luovasta elämästä".
+**Muoto:** Sibelius itse puhui sonaattimuodosta; Murtomäki sonaatti ja variaatio; Salmenhaara: neljä perusmotiivia ja
+noin 30 johdettua; Whitman: kolme kaarta (salaperäinen alku, levoton kehittely, kooda joka liukenee hiljaisuuteen);
+Tovey: **koko teos on yksi laaja, hidas crescendo huippuun ja lyhyt juhlallinen lasku hiljaisuuteen**; Hayes: kaksi
+tempoa suhteessa 2:1, vuorotellen ja päällekkäin (Largamente ja Allegro moderato on merkitty samalla puolinuotilla).
 
-**Dramaturgialle:** lähteet antavat kaksi tasoa, jotka käyttäjä jo nimesi: (1) tila, joka ei muutu (metsä,
-liikkumattomuus, yksi motiivi) ja (2) ihminen sen sisällä (vaeltaja, tuska, kutsu, johon ei vastata). Madetojan
-"yksinäinen vaeltaja" on aikalaisen, ei meidän, luenta, ja se on lainattavissa lähteellä.
+**Myrsky** (käyttäjän luenta partituurista, 1.11.2026): M ei ole vielä talvimyrsky vaan sen ennakko. Myrsky "alkaa
+ppp tahdissa 523 ja suurenee nopeasti, niinkuin kaukaa tuleva lumi ja jää. Aluksi se vain näkyy, ja iskee sitten
+päälle" t. 540; koko metsä vastaa Q:ssa. Kirjallisuus rajaa saman jakson t. 513–577 (Grimley) tai alkavaksi t. 523
+(Wilker). Kuvaukset: Grimley: "terrifyingly unmotivated", piste jonka jälkeen ei ole paluuta, koko teoksen alla
+kulkeneen vaskimotiivin yhteenvetopaluu; alku "kahisevaa jousifiguraatiota ilman selvää tahtilajin tuntua"; huuto
+kääntää kuulijan katseen maasta ylös pyörteiseen ilmaan. Tovey: hirmumyrsky taivuttaa latvat ja uhkaa metsän
+jättiläisiä. Ross: fyysinen tai henkinen myrsky, kokosävelharmonia hajoaa lähes täydeksi kromatiikaksi. Muhi:
+jousiston "jäinen viima". Knussen: vaikea olla ajattelematta lunta.
 
-### Konteksti 1926 ja miksi viimeinen (`docs/tutkimus/konteksti.md`)
-- **Modernismi Sibeliuksen silmin:** päiväkirja 9.2.1914 Berliinistä (Vignalin kautta): kiinnostus Schönbergiin,
-  ihailun ja epäilyn sekoitus; huoli omasta asemasta vuosisadalla (päiväkirja 1910). **Mikään lähde ei yhdistä
-  hänen luomisen tuskaansa suoraan atonaalisuuteen**: se on käyttäjän tulkinta, ja se saa olla, kun se merkitään.
-  Mahler-keskustelu 1907 on Ekmanin (1935) sanamuoto, jonka aitoutta Vignal epäilee. "Kylmä lähdevesi": alkuperää
-  ei löytynyt.
-- **1918–26:** sisällissodan Ainola-tapahtumat, rahatilanne ja 60-vuotislahja 1925 lähteistetty. Eurooppalaisen ja
-  suomalaisen taiteen tapahtumat (Wozzeck 14.12.1925, kaksitoistasävelmenetelmä, Bauhaus, Dada, Tulenkantajat,
-  Merikanto) ovat vain ajoituksia, eivät todettuja vaikutussuhteita.
-- **Miksi viimeinen, tutkijat erimielisiä:** itsekritiikki ja täydellisyys (Barnett, Kilpeläinen, Ross);
-  tiivistämisen raja, "kahdeksas toteutui jo Tapiolassa" (Oramo, Whitehouse; tulkinta); 1930-luvun poliittinen
-  paine (Oramo pitää uskottavampana kuin terveyttä); vapina ja alkoholi (Sirén, Stearns); oma sana "kirjoittanut
-  tarpeeksi" (ei viitettä). Kahdeksas: Koussevitzky-lupaukset 1930–33, Voigtin kopiolasku 4.9.1933 (23 sivua),
-  poltto todennäköisesti 1945. **Viimeisyys on jälkikäteinen lukutapa:** Kilpeläisen mukaan Sibelius siirtyi
-  Tapiolasta kahdeksanteen ja ajatteli yhdeksättä; Kallio: jäähyväinen oli tahaton. Dramaturgialle: Tapiola ei
-  tiennyt olevansa viimeinen. Se on vahvempi kuin tietoinen jäähyväinen.
-- **Lopun H-duuri, tulkinnat:** Tovey "aamen"; Pursglove torjuu aamenin ja kuulee "tunnustuksen"; Europadisc
-  "kirkastettu"; BSO "kolme sykäystä, rauha voi olla petollinen"; Hayes, Sibelius-klubi, Kallio "jäähyväiset";
-  Whitehouse "heikko siunaus"; Oramo "levollinen". Wilker: t. 624–634, bassoissa yksi sidos t. 629–630, "viimeinen
-  hidas syke". Käyttäjän sanat "hellä", "huokaus", "kiitos" eivät esiinny lähteissä; lähin on "jäähyväiset".
-  **Sibelius Jalasille 1943:** Kajanuksen levytys liian hidas, ja "ranskalainen pehmeys" ei sovi Tapiolalle vaan
-  iskevyys (Sibelius-klubin kautta, [tarkista]). Tämä asettuu hellyyttä vastaan ja on syytä pitää mielessä, kun
-  lopun kuva päätetään: hellä ja iskevä eivät sulje toisiaan pois.
+**C-duuri ennen M:ää** (käyttäjän lempikohta: "niinkuin auringon säde synkän metsän läpi"; "toivo on turha: siitä
+alkaakin myrsky"). Mikään lähde ei nimeä kohtaa; ilmausta "väärä / sairas toivo" ei löytynyt keneltäkään (Salmenhaara
+1970 ja Tawaststjerna lukematta, joten haku ei kumoa muistoa). Mitä tiedetään: C-duuri ei ole h-mollin rinnakkaisduuri
+vaan tonaalisesti vieras; se on paikallinen sointu, ei sävellajin vaihdos (Kallio, Taylor); **partituurissa se on
+forte, ei hiljainen**: aurinko paistaa kovaa. Myrskyllä ei ole syytä (Grimley), mikä on sama asia kuin "toivo on turha".
 
-## 6. Kajanus ja levytys
+**Loppu:** Tovey "aamen"; Pursglove torjuu aamenin ja kuulee tunnustuksen; BSO "kolme puhtaan duurisoinnun sykäystä,
+rauha voi olla petollinen"; Wilker: bassoissa yksi sidos t. 629–630, "viimeinen hidas syke"; Hayes, Sibelius-klubi,
+Kallio: jäähyväiset; Inkpot: loppusointu "usvainen". Käyttäjän "hellä", "huokaus", "mezzoforte-sävy": dynamiikka on
+painettu partituuriin (*mf sempre*), sanat ovat käyttäjän.
 
-- Kajanus (1856–1933) johti Suomen ensiesityksen 1927 ja on Sibeliuksen pitkäaikainen esitaistelija. Walter Legge
-  perusti HMV:n Sibelius Societyn 1932; Vol. 1 sisälsi 5. sinfonian, *Pohjolan tyttären* ja *Tapiolan* (neljä
-  levypuolta, albumin viimeinen teos). Kajanus kuoli heinäkuussa 1933.
-- **Sibeliuksen oma mielipide tästä levystä** (Jussi Jalaksen muistiinpanot, siteerattu Jani A. Suominen 2017,
-  *Finland Suomi 100*, s. 253–267, [tarkista alkuperäisestä]): Kajanuksen Tapiola-levy oli hänestä liian hidas
-  (9.4.1943) ja liian eloton, sen olisi pitänyt olla paljon dramaattisempi (4.1.1944); Kajanus ei tuntenut Tapiolaa
-  kyllin hyvin (7.12.1943). Layton (2001) sanoo päinvastoin: Kajanuksen hidas myrsky lisää kauhua ja
-  majesteettisuutta. Erimielisyys kirjataan tulkinnaksi. Videon dramaturgialle tämä on kiinnostava: kuva voi
-  antaa myrskylle sen dramatiikan, jota Sibelius levyltä kaipasi, tai kunnioittaa Kajanuksen hitautta.
-- Kajanus on yksi nopeimmista Sibelius-johtajista levyllä (Vänskä ykkösen finaalista). Tempo ja siirtonopeus
-  sekoittuvat korvakuulolta: **vire mitataan vaiheessa 3** (avauksen h-molli A=440:aa vasten; LSO:n 1932 vire
-  voi olla hieman alle 440 [tarkista]).
-- Siirron lähde: Varneyn antiikkikaupasta löytämä Victor-setti, Northville, Michigan. Levypuolten liitoskohtia ei
-  ole dokumentoitu; jos ne kuuluvat, ne mitataan.
+## 4. Miten Sibelius rakentaa: tehokeinot ja mikä niistä kuuluu äänestä (`tehokeinot.md`)
 
-## 7. Partituuri
+| Tehokeino | Tapiolassa (lähde) | Kuuluuko mittauksessa |
+|---|---|---|
+| **Yhden motiivin ituminen** | alun jousikuvio on siemen: itseensä kääntyvä käänne, josta lähes kaikki johtuu (Europadisc, Murtomäki, Wilker: "rönsyily", metamorfoosi; Layton: mahtuu kanteleen viiteen säveleen) | osittain (sävelkorkeudet) |
+| **Kerrostetut lohkot** | puupuhaltimet, vasket, patarummut ja jouset sekoittumattomina kerroksina, eri tempoissa (Hayes, Inkpot) | kyllä (rekisterikerrokset) |
+| **Pitkä tausta, joka huomataan vasta kun se katkeaa** | pitkät pidetyt puhallinäänet; katkeaminen jättää "aavemaisen tyhjän hiljaisuuden", jonka huilujen ja viulujen juoksut täyttävät (Goodwin); "monoliittiset" taustasoinnut (Whitman); väri pysyy samalla taustalla "hämmästyttävän pitkään" (Tovey) | kyllä (kerros katoaa) |
+| **Urkupisteet** | laskevat urkupisteet syvässä päässä (Europadisc); "humisevat kuin maapallon pyöriminen" (Inkpot) | kyllä (bassolinja) |
+| **Ääniarkit, liikkumattomuus** | hitaasti muuttuva pinta hitaan syväliikkeen päällä (Hepokoski) | osittain |
+| **Paisutukset** | koko teos crescendona (Tovey); noin 40 tahdin nouseva jousicrescendo tuttiin (de.wikipedia) | kyllä (taso, suunta) |
+| **Jousitremolo ja kromaattinen kenttä** | myrsky t. 523 alkaen (Wilker); äänimaailma kahiseva, rapiseva, jylisevä, viheltävä (Grimley) | kyllä (tremolo, liike) |
+| **Asteikkokokoelmat** | ei funktionaalista harmoniaa vaan asteikkotiloja (Taylor); oktatoninen puuska t. 21–25 pyyhkäisee harhautetun kadenssin pois (Grimley) | osittain |
+| **Hiljaisuus** | äänet "juuri hiljaisuuden yläpuolella" (Judd); tauot, jotka tuntuvat venyvän loputtomiin (Goodwin); lasku hiljaisuuteen lopussa (Grimley, Tovey) | kyllä (taso) |
+| **Patarummut** | alun tonikatremolo kuten 7. sinfoniassa (Boyer); "ankara kutsu" (Judd) | kyllä (iskut) |
 
-IMSLP: tiedosto #15925, Breitkopf & Härtel 1926 (levynumero 29598), 58 sivua, uusintapainos Part.B. 3328 (1954).
-Teos on julkista omaisuutta Yhdysvalloissa ja Kanadassa, **ei EU:ssa ennen 1.1.2028** (Sibelius k. 20.9.1957).
-Käyttäjällä on partituuri käytössään (1.11.2026). Harjoituskirjaimet ja tahtinumerot otetaan siitä käyttäjän kautta tai projektiin tuotavasta kopiosta.
-Ilman partituuria tahtinumerot jäävät pois, ja jaksokartta tehdään korvilla ja spektrogrammista.
+- **Alun yleistauko:** yksikään lähde ei mainitse sitä; käyttäjän partituuri ja mitattu hiljaisuus ovat ainoat lähteet.
+- **Yhteys Tapiolan hiljaisuuksien ja Ainolan hiljaisuuden välillä on meidän tulkintamme**, ei lähteen. Sibelius 1948:
+  "Täällä Ainolassa hiljaisuus puhuu."
+- Ei löytynyt: "kaukaa tuleva" -efekti nimettynä, "Sibelius-aalto" terminä.
+- **Oma havaintomme kuuntelusta (9.11.2026):** Sibelius ei lisää kerroksia vaan **poistaa** niitä: käyrätorvet pitävät
+  gis-ääntä taustalla koko ajan ja paljastuvat, kun jouset lopettavat. Kysymys on "mikä lakkasi", ei "mikä tuli".
+  Tämä on Goodwinin havainto pienoiskoossa.
 
-## 8. Mitä jäi auki (vaiheisiin 3–5)
+## 5. Soitinryhmät ja kuvasto kirjallisuudessa (`soittimet.md`)
 
-1. C-duurikohta ennen myrskyä: käyttäjä paikansi sen partituurista (noin 5 tahtia ennen kirjainta M). Tahtinumero ja aika kuuntelukopiossa vielä mittaamatta.
-2. Myrskyn alku: kirjain M (käyttäjä). Huipun tahti ja molempien ajat mittaamatta.
-3. Siirron nopeus ja vire: mitataan; päätetään, korjataanko (muuttaa kaikkia aikoja, joten päätös ennen
-   kuuntelukopiota).
-4. Tahtinumeroitu jaksokartta: partituurista käyttäjän kanssa (kirjaimet A–N ja niiden tahdit).
-5. Sibelius–Rodziński-kirje (FMQ 1991) tempo-ohjeista: paras tempolähde, jos saatavilla.
-6. Painettu kirjallisuus, jota ei saatu luettua: **Salmenhaara 1970** (tärkein suomenkielinen; Finna / kirjasto),
-   Taylor 2018, Grimley 2011, Howell 2001, Tawaststjerna, Del Mar 2023. Tovey 1939 on luettu kokonaan.
-7. "Väärä toivo" -luennan alkuperä: ei löytynyt verkosta; voi olla Salmenhaarassa tai Tawaststjernassa.
-8. Lopun dynamiikka ja soitinnus (t. 618–634), kirjainten P ja Q paikka ("dim. possibile", pp; Inkpot), Rossin
-   "ontto" h-mollisointu vaskissa: partituurista.
-9. Ristiriidat partituurista ratkaistaviksi: Del Marin sordiinotahti 130 vs. käyttäjän "ensimmäinen con sord. J:n
-   jälkeen"; myrskyn alku 513 (Grimley) vs. 523 (Wilker) vs. kirjain M (käyttäjä).
+| Ryhmä | Mitä kirjallisuus kuulee |
+|---|---|
+| Jouset | ydinmotiivi ja metsä; tuulenhenkäyksiä ja jäisiä puuskia, jotka kahisuttavat lehtiä (Goodwin); hymni korkealla; myrskyn tremolot; huuto; loppupuolella metsän "elävä puu" (Inkpot); loppusointu |
+| Puupuhaltimet | autio vastaus avaukseen; peikot, eläimet ja haltiat (nopeat kahdeksasosat, G); pikkolo ja huilu "viheltävät ohi"; pitkä staattinen tausta |
+| Vasket | isku; jyrinä kuin salama ja ukkonen; myrskyn huuto. Käyrätorvia, trumpetteja ja pasuunoita ei kuvaa erikseen kukaan. |
+| Patarummut | alun "ankara kutsu" (Judd); myrskyn lopun iskut |
+| Syvä pää | urkupisteet; kontrabassoja ei kuvaa erikseen kukaan |
 
-## 9. Visuaaliset viitteet (katsaus `docs/tutkimus/viitteet.md`)
+Käyttäjän muistama "puhaltimet nousevat taustalta kuin vuoret" **ei löytynyt keneltäkään**; vuoret ovat lähteissä
+7. sinfonian kuva ja Tapiolan vastakohta (Yungkans: seitsemäs on päivänpaisteiset vuoret, Tapiola syöksyy paksun,
+monivarjoisen metsän syvyyksiin). Lähin on "taustalta": Goodwinin staattinen puhallintausta.
 
-Agentti katsoi noin 45 Tapiola-levyn kantta (MusicBrainz / Cover Art Archive, pikkukuvina, mitään ei tallennettu)
-sekä kuvataiteen, Kalevala-kuvitusten ja liikkuvan kuvan lähteet. Tulokset ovat **periaatteita**, eivät malleja:
-mitään kantta tai maalausta ei jäljennetä.
+**Kuvasto, jota aikalaiset ja kirjoittajat ovat käyttäneet** (lainattavissa lähteellä): haltian murheellinen, toistuva
+kutsu ja yksinäinen vaeltaja, joka purkaa elämän tuskaa (Madetoja 1927); kotkan lento, nevan tuoksu (Klemetti);
+tummanvihreät metsät ja jäiset tuulet (Damrosch); matalat valonsäteet, himmeä auringonvalo (Europadisc, Inkpot); usva
+(Inkpot); lumi (Knussen); kuolema ja tyhjyys (Mäkelä); "yhdessä jäätyneessä hetkessä nähty maisema, maalaus"
+(Whittall). Käyttäjän oma: matalat äänet "Tapion jättiläisen askeleita".
 
-**Vahvimmat viitteet käyttäjän ajatukselle**
-1. Andrew Davis / Finlandia 1997: sepianharmaa valokuva, valonsäteet usvan läpi kahden tumman rungon välistä.
-   Lähin kuva ajatukselle "aurinko hetkellisesti valaisee synkässä metsässä". Samaan suuntaan Karajan / DG 1988:
-   taustavalaistut rungot hehkuvat (maalaus Reinhard Brandner).
-2. Okko Kamu / BIS 2011: sininen taivas vaihtuu tulenpunaiseksi, alareunassa mustat kuusten siluetit. Lähin kuva
-   "ennen myrskyä" -hetkelle, mutta pysähtynyt.
-3. Gallen-Kallela, *En Saga* (1894): ainoa löydetty maalaus, jossa taiteilija yritti kuvata Sibeliuksen
-   sävelrunoa suoraan. Järnefelt ei nähnyt siinä yhteyttä musiikkiin. Varoittava viite: kirjaimellinen kuvitus
-   ei kanna.
-4. Myrskyn periaatteet taidehistoriasta: Turner, *Hannibal* (aurinko pyörteisten pilvien takana); Hokusai,
-   *Ukkosmyrsky huipun alla* (valoisa huippu uhkaavan tyvenen yläpuolella). Yksikään kansi ei kuvaa myrskyä.
+## 6. Säveltäjä 1926 (`konteksti.md`, `teos.md`)
 
-**Kliseet, jotka vältämme** (otoksesta laskettuna)
-- Kapellimestarin muotokuva (noin 16 kantta).
-- Tyyni järvi tai ranta vaalealla taivaalla, ihmisetön, pastellinen (noin 9).
-- Auringonlasku tulisella taivaalla, usein lintujen siluetteineen (noin 5).
+Käyttäjän teema: "Sibeliuksen luomisen tuskaa, teoksen ollen hänen viimeinen. Miten hän taistelee muuttuvan maailman
+ja tonaliteettien kanssa."
 
-**Rajat ja aukot**
-- Tapio kuvana on lähes tyhjä aihe. Kalevala antaa vain kolme sanaa: *halliparta*, *havuhattu*, *naavaturkki*.
-  Löytyi yksi kuva (C. E. Sjöstrand, *Tapio and his folk*, 1898) vain tekstinä. Tila on siis vapaa.
-- Tapiolalle tehtyä animaatiota, videota tai konserttiprojisointia ei löytynyt. Lähin on Marikki Hakolan
-  *Luonnotar* (2010), eri teos. Tanssi: Joanna Priest, *Winter Landscape* (Adelaide 1947) [tarkista].
-- **Myrsky ei ole Sibeliuksen esipuheessa eikä Damroschin alaotsikossa.** Niissä on pimeä metsä, metsän jumala ja
-  haltiat. "Myrsky" on kirjallisuuden ja käyttäjän luenta jaksosta kirjaimesta M. Se on hyvä tietää, kun
-  kuunteluoppaassa sanotaan, mitä tapahtuu: myrsky on tulkinta, ja tulkintaa saa tehdä, kun se merkitään.
+| Aihe | Lähteet tukevat | Lähteet eivät tue | Jää tulkinnaksi |
+|---|---|---|---|
+| Tuska | katui tilausta, pyysi partituurin takaisin korjattavaksi syyskuussa 1926; päiväkirjassa epäilyt ja viski; säveltäminen "pitkä taistelu yön pimeässä" (1921) | | |
+| Tonaalinen → atonaalinen | seurasi Schönbergiä (Berliini 1914: kiinnostus ja epäily), huoli omasta asemasta | kärsimystä atonaalisuudesta, "taistelua" | muuttuvan maailman tuska hänen näkökulmastaan |
+| Hänen ratkaisunsa | ei tonaliteetin hylkääminen vaan **tiivistäminen äärimmilleen** (Oramo, Ross); radikaalius on muodossa, ei tonaalisessa pinnassa (IRCAM); Kundera: "anti-modernistinen modernisti" | | |
+| Miksi viimeinen | itsekritiikki (Barnett, Kilpeläinen), tiivistämisen raja: "kahdeksas toteutui jo Tapiolassa" (Oramo), 1930-luvun paine, vapina ja alkoholi | yhtä todistettua syytä | mikä selityksistä |
+| Jäähyväiset | Hayes, Sibelius-klubi, Kallio | tarkoitettua jäähyväistä: hän siirtyi Tapiolasta kahdeksanteen ja ajatteli yhdeksättä (Kilpeläinen) | jäähyväisen tunne |
 
-**Mitä tämä antaa vaiheelle 6**
-- Kannet toistavat maisemaa ilman ihmistä ja ilman liikettä. Käyttäjän ydinidea (säveltäjän tuska, kamppailu)
-  on juuri se, mitä kansissa ei ole. Se on videon oma alue.
-- Valo rungoista ja usvasta läpi on viitteissä vahvin yksittäinen kuva, ja se osuu avainkohtaan (C-duuri ennen M).
-- Tapiolle ei ole vakiintunutta hahmoa, joten jos Tapio näkyy, hän on meidän.
+**Dramaturgialle:** Tapiola ei tiennyt olevansa viimeinen. Se on vahvempi kuin tietoinen jäähyväinen. Vastaanotto:
+New York ymmällään (Gilman: ohjelma parempi kuin musiikki); Gray 1931: teos yksin riittäisi paikkaan suurimpien
+joukossa; Adorno 1938 tuomitsi; Nørgård piti Tapiolaa äärettömyyssarjansa edeltäjänä.
 
-## 10. 1920-luvun kuvataide: kipuilu abstraktin ja esittävän välillä (`docs/tutkimus/taide1920.md`)
+## 7. Esitys ja tempot (`esitysmerkinnat.md`)
 
-Noin 2800 sanaa, 59 lähdettä. Viisi periaatetta (agentin ehdotuksia lähteiden pohjalta, eivät lähteiden väitteitä):
-1. **Luonto uutetaan, sitä ei kuvata.** Dove: "extraction"; Klee: taide tekee näkyväksi; Mondrianin puusarja.
-   Luonnon rakenne ja voima säilyvät, kuvaus katoaa.
-2. **Rakenne syntyy vastavoimien jännitteestä.** Kandinsky: elementin sisältö on jännite; Mondrianilla pysty ja vaaka;
-   Kleen *Fuge in Rot* rakentuu fuugan tapaan.
-3. **Valo ja pimeys ovat aine, josta tila rakennetaan.** Kandinskyn *Several Circles* (1926), Munchin *Stjernenatt*
-   (1922–24), Moholy-Nagyn valosommittelu, Harrisin valo avoveden yllä.
-4. **Liike on artikuloitua aikaa: rytmiä ja kontrapunktia.** Richter: liike on rytmiä. Kuva rinnastuu musiikkiin,
-   se ei kuvita sitä (Eggeling, Hirschfeld-Mack).
-5. **Kipuilua ei ratkaista.** Kandinsky otti geometrian mutta torjui "mekanistisen"; Burchfield, Carr ja Harris
-   pitivät luonnon jäljen ja rakenteen samassa kuvassa. Suomessa luontosidosta ei katkaistu (Huusko 2025).
+- Painetussa partituurissa ei ole metronomilukuja. Sibeliuksen omat merkinnät ovat hänen käsikappaleessaan ja
+  Rodziński-kirjeessä (FMQ 3/1991; JSW I/16:n kommentaari): **hankittava kirjastosta**, paras tempolähde.
+- Sibelius tempoista yleisesti: muutokset ovat aina pieniä (poco, pochettino), ja esityksessä niitä liioitellaan joka
+  tapauksessa; ei absoluuttista tempoa.
+- Levytysten ero on suuri (15–21 min), mutta mikään lähde ei kerro, missä kohdissa ero syntyy.
 
-**Absoluuttinen elokuva samalta vuosikymmeneltä:** Ruttmann *Lichtspiel Opus I* (27.4.1921, lasille maalattu,
-Buttingin musiikki, Ruttmann itse sellossa), Richter *Rhythmus 21* (mykkä, suorakulmiot), Eggeling *Symphonie
-diagonale* (1924), Hirschfeld-Mackin värivaloleikit Bauhausissa (21.6.1922), Fischingerin musiikkiin ajastetut
-*Studien* vasta 1920-luvun lopulta. Lähteet eivät ratkaise, onko kuva musiikin kuvitusta vai rinnakkainen sommitelma.
+**Kuvalle:** kuvan tempo tulee äänestä, ei merkinnöistä. Teoksen kaksi tempoa (2:1) ovat kerrosten ominaisuus: sama
+metsä liikkuu kahdella nopeudella yhtä aikaa.
 
-**Mitä ei kannata ottaa:** Mondrian-ruudukko, Kandinskyn ympyrät, Bauhaus-perusmuodot, visualisaattori-synestesia,
-myrskymeri-ekspressionismi, pohjoisen hengen ylevöinti (sitoutunut kansallismieliseen puheeseen).
+## 8. Suomalainen metsämytologia kuvan aineksina (`mytologia.md`)
 
-**Korjauksia briefin oletuksiin:** Tulenkantajat oli kirjallinen ryhmä; Burchfieldin *Night Wind* on 1918; Harrisin
-jäävuoret 1930 ja Carrin metsäpyörteet 1935 jatkavat 1920-lukua; Thesleffin lähes abstrakti vaihe on myöhäinen.
+Lähteet: Kalevala (K + runo), Suomen Kansan Vanhat Runot (SKVR), Ganander. **Tapiola on aineistossa tila, ei hahmo.**
+Tapiosta on vain kolme sanaa: *halliparta*, *havuhattu*, *naavaturkki*. Sarake "musiikissa" on ehdotus.
 
-## 11. Suomalainen metsämytologia abstraktin kuvan aineksina (`docs/tutkimus/mytologia.md`)
+| Aines | Kuva tai voima (ei hahmo) | Musiikissa (ehdotus) |
+|---|---|---|
+| Matka soiden, korpien, "sysimäkien" ja "hiilikankaiden" yli; "Tapion talot näkyivät, ukset kulta kuumottivat poikki suosta" (K14) | etäinen himmeä kulta tumman massan takana; perille ei pääse | avaus |
+| Kolme linnaa: puinen, luinen, kivinen; kussakin kuusi kultaikkunaa (K14) | kerrokset aineksittain, hohtavat aukot pimeässä | puupuhallinjaksot |
+| Metsä "alta harva, päältä tiheä, keskeltä läpinäkyvä" (SKVR III1 1231) | kolme kerrosta, läpinäkyvä keskus | avaus, kerrokset |
+| **Metsänpeitto:** "vaikka kulkisit aivan eläimen ohitse, niin et sitä näe"; äänet vaimenevat, polku päättyy, latvat sidotaan yhteen (SKVR VI2 5391) | näkymättömyys ja hiljeneminen: kyse on poissaolosta, ei loistosta | kerroksen katoaminen, hiljaisuudet |
+| Hiidenväki kulkee näkymättömiä polkujaan helinän tai surinan saattelemana | liike, jolla ei ole näkyvää tekijää | nopeat kuviot |
+| Pilkut ja rastit puissa: "veistä pilkut pitkin maita, rastit vaaroihin" (K14) | pienet toistuvat merkit polulla | askeleet |
+| Tapion pöytä: kolme runkoa pystyyn, vaakalauta, pisarat juurelle (SKVR IX3 982); karsikko | pystysuora kohtaa vaakasuoran | loppu |
+| Valo houkutellaan soitolla puun latvaan ja suljetaan "vuorehen teräksisehen", yhdeksän oven ja sadan salvan taakse; yö "pitkä, pilkkoisen pimeä" (K47, K49) | valon poistuminen ylhäältä | C-duurin jälkeen |
+| **Taottu aurinko:** kullasta ja hopeasta, nostetaan kuusen latvaan, mutta "eipä kuu kumotakana eikä päivyt paistakana" (K49) | kullalta näyttävä valo, joka ei valaise | C-duuri ennen M:ää (**tulkinta**: lähin vastine valolle, joka pettää) |
+| Jättitammi peittää taivaan: "päivän peitti paistamasta" (K2) | pimeys, jonka tekee kasvu | |
+| Kipinä putoaa "läpi taivahan yheksän", "taivas reikihin repesi" (K47); Ukko iskee tulta "kolmannessa kerroksessa", tuli menee läpi maan (SKVR II 699) | pystysuora isku ylhäältä alas kaikkien kerrosten läpi; reiät | vaskien iskut, myrsky |
+| "Pakkanen Puhurin poika, kylmä soita, kylmä maita" (SKVR II 625a); halla | kylmä, joka etenee pintoja pitkin | myrskyn lähestyminen |
+| Revontulet "kähähtelivät, kähisivät", tulevat alas lumelle (SKVR XII2 7950) | välkkyvä kaari, joka laskeutuu; kuiskaava ääni | tremolot |
+| "Soi metsä, kumisi korpi"; Tapion torvi, metsän pilli (K46, SKVR) | ääni, joka kimpoaa takaisin | avaus, loppu |
+| Sininen salo ("salo siintääpi sininen", kaukana) ja synkkä salo | sama massa kahtena sävynä | sävellajin vaihdot |
 
-Noin 2300 sanaa, painopiste Kalevalassa ja SKVR:n runoissa (Haavio, Siikala, Pentikäinen vain välillisesti).
-Viisi vahvinta ainesta (agentin poiminta, lähteet tiedostossa):
-1. **Matka Tapiolaan ja sen tila:** soiden ja korpien yli, "Tapion talot näkyivät, ukset kulta kuumottivat poikki
-   suosta" (Kalevala 14); kolme linnaa, puinen, luinen ja kivinen, kussakin kuusi kultaikkunaa. Kuva: himmeä kulta
-   tumman massan takana, kerroksina.
-2. **Metsänpeitto:** näkymättömyys ja hiljeneminen, ei valoilmiö: "vaikka kulkisit aivan eläimen ohitse, niin et sitä
-   näe" (SKVR VI2 5391); polku päättyy, latvat sidotaan yhteen.
-3. **Metsä kolmena kerroksena ja sininen salo:** "alta harva, päältä tiheä, keskeltä läpinäkyvä" (SKVR III1 1231);
-   salo on synkkä tai sininen; "kuuna paistoi kuusen oksat, päivänä petäjän latvat" (Kalevala 14).
-4. **Tapion pöytä ja merkit:** kolme runkoa pystyyn, vaakalauta, pisarat juurille (SKVR IX3 982); "pilkut pitkin
-   maita, rastit vaaroihin"; karsikko. Pystysuora kohtaa vaakasuoran.
-5. **Ääni ja iskut:** "soi metsä, kumisi korpi"; torvi, pilli, kantele; revontulet kähisevät; Ukon tuli iskee
-   pystysuoraan kerrosten läpi (SKVR II 699), kipinä repäisee taivaan "läpi taivahan yheksän" (Kalevala 47).
+**Värit lähteistä:** sininen (salo, korpi), kulta ja hopea ("kuuna paistoi kuusen oksat, päivänä petäjän latvat"),
+harmaa (halliparta, naava), sysi ja hiili (tumma), hämy ("hämärien hämmetessä", "utuinen niemi"), punamulta
+(kalliomaalaukset; "punasukka suon emäntä"). **Muodot:** pysty (kuusi, honka, karsikko), vaaka (pöydän lauta, suo),
+pyöreä ("kuun kehänen", "pimeä pyörre"), kerroksellinen (yhdeksän taivasta, kolme linnaa), välkkyvä (kultaovet, kipinä).
+Halonen (*Lumisia puita*): täyttö ja oksien verkko, ei syvyys; lumen varjot sinivioletit, valo kultainen.
+Ei löytynyt: kaiun haltia; valo, joka pettäisi juuri ennen myrskyä (se on käyttäjän tulkinta, mytologia antaa kaiun).
 
-**Auringon kätkeminen (Kalevala 47–49):** kuu ja päivä houkutellaan puun latvaan, viedään "pimeähän Pohjolahan",
-"vuorehen teräksisehen", yhdeksän oven ja sadan salvan taakse; yö "pitkä, pilkkoisen pimeä". Uusi aurinko taotaan
-kullasta ja nostetaan kuusen latvaan, **mutta se ei loista**: "eipä kuu kumotakana", "ei salvat sanoilla taitu".
-Agentin merkitty tulkinta: lähin vastine auringonsäteelle, joka pettää, on **taottu aurinko, joka näyttää kullalta
-mutta ei valaise**. Lähteistä ei löytynyt valoa, joka pettäisi juuri ennen myrskyä; tämä on käyttäjän tulkinta ja
-mytologia antaa sille kaiun, ei lähteen.
+## 9. Kuvalliset viitteet: mitä on tehty ja mikä on tyhjää tilaa (`viitteet.md`)
 
-Aukot: kuvataideluku ohut; Gallen-Kallelan ornamentit, Simbergin metsät, Tapiola-ryijyt ja Aalto varmistamatta;
-kaiun haltiaa ei löytynyt SKVR:stä.
+Noin 45 Tapiola-levyn kantta katsottu (mitään ei tallennettu), lisäksi kuvataide, Kalevala-kuvitus ja liikkuva kuva.
+Tulokset ovat periaatteita: **mitään kantta tai maalausta ei jäljennetä.**
 
-## 12. Sibeliuksen tehokeinot Tapiolassa (`docs/tutkimus/tehokeinot.md`)
+- **Kansien kliseet (vältämme):** kapellimestarin muotokuva (noin 16), tyyni järvi tai ranta vaalealla taivaalla (noin 9),
+  auringonlasku tulisella taivaalla ja lintujen siluetit (5), kesäpostikortti, lumi koristeena eikä uhkana.
+- **Tyhjä tila (meidän):** yksikään kansi ei kuvaa myrskyä, liikettä tai metsän muutosta; metsä sisältä päin valon
+  kanssa on vain parilla (A. Davis 1997: valonsäteet usvassa kahden tumman rungon välistä; Karajan 1988:
+  taustavalaistut rungot hehkuvat). Tapiolle ei ole vakiintunutta kuvaa. Tapiolalle tehtyä animaatiota tai
+  projisointia ei löytynyt; lähin on Hakolan *Luonnotar* (2010), eri teos.
+- **Varoitus:** Gallen-Kallelan *En Saga* (1894) on ainoa löydetty yritys maalata Sibeliuksen sävelrunoa suoraan, ja
+  Järnefelt ei nähnyt siinä yhteyttä musiikkiin. Kirjaimellinen kuvitus ei kanna.
 
-Viisi tehokeinoa, jotka kirjallisuus liittää nimenomaan Tapiolaan (lähteet tiedostossa, luotettavuus A–C):
-1. **Alun patarumputremolo tonikalla**, samaan tapaan kuin 7. sinfoniassa (Boyer, DMA 2012, A). Vahvistaa käyttäjän
-   partituurihavainnon; Sibelius-klubi ja de-Wikipedia aloittavat jousista.
-2. **Yhden motiivin ituminen:** Wilker (A): pääajatus asetetaan **t. 13** ja koko teos on sen "rönsyilyä" (Wucherung);
-   Salmenhaara: 4 + noin 30 motiivia; Murtomäki; Hayes; Europadisc.
-3. **Asteikkokokoelmat ja oktatoninen puuska:** Grimley (A): harhautettu kadenssi (E7), jonka oktatoninen
-   "tuulenpuuska" pyyhkäisee pois t. 21–25. Taylor 2018: sävelkieli asteikkokokoelmista, ei funktionaalista harmoniaa.
-4. **Kerrostetut lohkot ja pitkät taustasoinnut:** Hayes (sekoittumattomat kerrokset, kaksi tempoa 2:1), Whitman
-   ("monoliittiset"), Tovey (väri pysyy samalla sointitaustalla "hämmästyttävän pitkään"), laskevat urkupisteet.
-   Tämä on käyttäjän kerrosajatuksen kirjallinen tuki.
-5. **Jousitremolojen myrsky ja huuto:** Wilker: kromaattinen tremolokenttä alkaa t. 523; Grimley: myrsky on koko
-   teoksen alla kulkevan vaskimotiivin yhteenvetopaluu, huuto t. 586–587; H-duuri t. 624–634, Toveyn "aamen".
+| Periaate | Mistä |
+|---|---|
+| Valo on harvinainen ja kapea kiila rungoista ja usvasta läpi, ei yleisvalo | A. Davis -kansi |
+| Metsä voi hehkua värinä, ei vain olla pimeä | Karajan 1988 |
+| Metsä on aina isompi kuin katsoja | Friedrich, *Munkki meren rannalla* (taivas kolme neljäsosaa kuvasta) |
+| Hetken lämpö kuvataan kylmää vasten; lumen varjot ovat sinivioletit ja valo kultainen | Halonen |
+| Myrsky näkyy ennen kuin sitä on: aurinko pyörteisten pilvien takana, pyörre ja kaaret, ei vaaka- eikä pystysuoria | Turner, *Hannibal* |
+| Valoisa huippu yllä ja uhkaava tyvi alla yhtä aikaa; salama abstraktina siksakkina | Hokusai, *Ukkosmyrsky huipun alla* |
+| Pystysuorat ilman puita lukeutuvat metsäksi, ruovikoksi tai revontuliksi | Sibelius-monumentti |
+| Musiikin ja kuvan suhde ei saa olla kuvitus | *En Saga* |
 
-**Hiljaisuus:** yksikään lähde ei mainitse yleistaukoa alussa; käyttäjän partituuri on ainoa lähde. Goodwin (BSO):
-pitkät puhallintaustat katkeavat äkkiä ja jättävät "aavemaisen tyhjän hiljaisuuden", jonka huilujen ja viulujen
-juoksut täyttävät (ei tahtia). Judd: äänet "juuri hiljaisuuden yläpuolella". Grimley ja Tovey: lasku hiljaisuuteen
-lopussa. 7. sinfoniassa yksi fermaatti ja yksi Luftpause (Boyer); 5. sinfonian lopun iskut hiljaisuuden erottamia.
-**Yhteyttä Tapiolan hiljaisuuksien ja Ainolan hiljaisuuden välillä ei löytynyt lähteestä: se on meidän tulkintamme.**
-Wilker pohtii, oliko Myrskyn alkusoitto viimeinen mahdollinen sinfoninen kehittely.
+## 10. 1920-luvun kuvataide: kipuilu abstraktin ja esittävän välillä (`taide1920.md`)
 
-Ei löytynyt: "Sibelius-aalto" nimityksenä, "kaukaa tuleva" -efekti Tapiolassa, terssikulut, "luontoääni".
+Käyttäjän kysymys: onko kuvataiteessa samaa kipuilua kuin Tapiolan tonaalis-atonaalisessa taistelussa? Vastaus: kyllä.
+Kaksi vetoa yhtä aikaa: abstraktio tiivistyi geometriaksi (Bauhaus, De Stijl, konstruktivismi), ja sodan jälkeen
+palattiin järjestykseen ja esittävyyteen. Kolmas, hiljaisempi joukko ei valinnut: se uutti luonnosta muodon ja jätti
+luonnon jäljen näkyviin. **Sibeliuksen asema muistuttaa tätä kolmatta** (Dove, Klee, Burchfield; tulkinta). Suomessa
+abstraktion este oli luonto itse: luontosidosta ei katkaistu (Huusko 2025).
 
-## 13. Esitysmerkinnät ja mitä Sibelius tarkoitti (`docs/tutkimus/esitysmerkinnat.md`)
+| Periaate | Mistä | Kuvalle (ehdotus) |
+|---|---|---|
+| Luonto uutetaan, sitä ei kuvata | Dove ("extraction"), Klee (taide tekee näkyväksi), Mondrianin puusarja | muoto syntyy luonnonilmiön rakenteesta, ei esineestä |
+| Elementin sisältö on jännite | Kandinsky, *Punkt und Linie zu Fläche* (1926) | jännite ohjaa liikettä, ei muotoa |
+| Pimeä, äärettömältä tuntuva tila; mattapinnan ja kiillon vuorottelu | Kandinsky, *Several Circles* (1926) | tumma ilmakehä tilana; pintojen ero valona |
+| Polyfoninen, päällekkäinen kasvu; työ kasvaa kuin itsestään | Klee, *Fuge in Rot* (1921) | kerrokset ohjautuvat teemoista; kuva kasvaa musiikin ehdoilla |
+| Kaksi vastavoimaa samassa kehyksessä | af Klint, *Joutsen* | kaksi voimaa samassa kuvassa |
+| Valo on muovaava aine, varjo on kuva | Moholy-Nagy | valo ja varjo ainoina "esineinä" |
+| Liike on rytmiä, "artikuloitua aikaa" | Richter, Eggeling | rytmi johtaa, kuva ei kuvita |
+| Pimeys ja heikko valo samassa kuvassa | Munch, *Stjernenatt* (1922–24) | horisontin hehku suhteuttaa pimeyden |
+| Sää ja luonnonvoima tunteena; äänen renkaat veden yllä | Burchfield, Nolde, Dove (*Fog Horns*) | tuuli ja vesi tapahtumina, eivät taustoina |
+| Pimeässä valaistu, fasetoitu metsämuoto | Carr, *Wood Interior* | |
 
-- **Rodziński-kirje** (FMQ 3/1991, "Tempo markings in Sibelius' Tapiola"): Rodziński kirjoitti, koska tempomerkintöjä
-  puuttui useasta kohdasta, ja Sibelius vastasi yksityiskohtaisesti (Ylivuori, FMQ 2026). Sisältö on vain painetussa
-  FMQ:ssa ja JSW I/16:n kriittisessä kommentaarissa ("Sibelius's notes concerning Tapiola as reported to Jussi Jalas").
-  **Hankittava kirjastosta.**
-- **Metronomiluvut:** painetussa partituurissa ei lukuja, vain suluissa puolinuotti Largamenten ja Allegro moderaton
-  (t. 21) perässä. Kilpeläinen: Handexemplar ja kirjeet sisältävät Sibeliuksen omat metronomimerkinnät; arvoja ei
-  verkossa. Sibelius metronomista: ei absoluuttista tempoa, luvut vain pahimpien virheiden estämiseksi (Boyer/Jalas).
-- **Vuoden 1926 painos on "Revised and edited by Carl Ettler"**: Breitkopf tarkisti partituurin Yhdysvaltain
-  tekijänoikeuden vuoksi eikä alkuperäistä ja tarkistusta voi erottaa (kirje Sibeliukselle 3.5.1926). **Painoksen
-  merkintöjä ei voi varmasti pitää Sibeliuksen omina; JSW I/16 on tarkistettu Urtext.** Tämä koskee myös projektin
-  IMSLP-skannausta.
-- **Sibeliuksen omat sanat Tapiolan esityksestä** (Jalakselle, Sibelius-klubin "Omin sanoin"): 9.4.1943 "Kajanuksen
-  Tapiola-levy on liian hidas"; 7.12.1943 Kajanus ei tuntenut Tapiolaa kyllin hyvin; **12.12.1943 "Elegantti
-  ranskalainen pehmeys ei sovi Tapiolaan. Iskevyys ei ole T:lle vierasta."** (Aiempi "suoruus" oli käännösvirhe
-  englannin "directness"-sanasta; korjattu 1.11.2026.) Kilpeläinen: liian hidas ja eloton, "must be played much more
-  dramatically". Yleisemmin: tempovaihdokset hänellä hyvin vähäisiä, pochettino liioitellaan (24.8.1940).
-- Ei löytynyt: Sibeliuksen omaa selitystä Largamentolle, Allegro moderatolle, dim. possibilelle, sordiinoille.
-- **Partituurihuomio:** näytesivulla (ja projektin skannauksen s. 6) selloissa "con sord. div." t. 39–48, ristiriidassa
-  käyttäjän "ensimmäinen con sord. J:n jälkeen" kanssa [käyttäjä tarkistaa].
+**Absoluuttinen elokuva** on saman vuosikymmenen abstraktio ajassa: Ruttmann *Lichtspiel Opus I* (1921, lasille
+maalattu, "maalaus ajassa"), Richter *Rhythmus 21*, Eggeling *Symphonie diagonale* (1924), Hirschfeld-Mackin
+värivaloleikit, Fischingerin musiikkiin ajastetut *Studien*. Kirjallisuus ei ratkaise, onko kuva musiikin kuvitusta vai
+rinnakkainen sommitelma.
+
+**Ei oteta:** Mondrian-ruudukko ja päävärit (ne nimenomaan jättivät luonnon pois), Kandinskyn ympyrät ja
+Bauhaus-perusmuodot, Ruttmannin ja Richterin neliöt sellaisenaan ("musiikki = värikkäät muodot"), ekspressionistinen
+myrskymeri ja huutava taivas, pohjoisen hengen ylevöinti (sitoutui Suomessa kansallismieliseen puheeseen: riski, että
+metsä liukuu kansallisromantiikaksi).
+
+## 11. Sibeliuksen värikuulo
+
+Sibelius liitti sävellajeihin värejä. Lähteet ovat toissijaisia: **F-duuri = vihreä** (Ainolan ruokasalin vihreä
+takka, jonka värin hän kerrotaan "kuulleen" F-duurina; useita lähteitä); **C-duuri = punainen, D-duuri = keltainen**
+yhden heikon lähteen varassa **[tarkista]**. Käyttö ja päätös: `docs/visuaalinen_tyyli.md` luku 3 (ohjaajan ehdotus:
+C-duurin "taottu aurinko" punaisena; käyttäjä päättää).
+
+## 12. Äänitykset (`levytys.md`)
+
+- **Työäänitys:** Rattle / London Symphony Orchestra 2022, 17:58. Vain kuunteluoppaan ja analyysin kalibrointiin; ei
+  videoon, ei gittiin.
+- **Lopullinen:** käyttäjän oma äänitys, myöhemmin. Sama analyysi ajetaan sille; teemakartan ankkurit ovat partituurin
+  paikkoja, joten vain ajat vaihtuvat (`docs/projekti.md`, "Siirto omaan äänitykseen").
+- **Arkisto:** Kajanus / LSO, Abbey Road 29.–30.6.1932, HMV Sibelius Society Vol. 1; tiedosto on Bob Varneyn siirto
+  Victor-levyistä (Internet Archive 2012). Vuoden 1932 kaistanleveys ei anna soitinkanavia. Kajanus johti Suomen
+  ensiesityksen, joten levyllä on arvovaltaa; Sibeliuksen mielestä se oli liian hidas ja eloton, Laytonin mielestä
+  hitaus lisää myrskyn kauhua.
+
+## 13. Mitä ääni antaa ja mitä ei (`kanavakortti.md`)
+
+Kolmen mittauskierroksen tulos lyhyesti. Tämä ratkaisee, mihin kuvan ajoitus saa nojata.
+
+| Luotettava | Suuntaa antava | Ei toimi |
+|---|---|---|
+| taso ja hiljaisuudet; iskut 10 ms tarkkuudella; bassolinja ja urkupisteet; rekisterikerrosten painopisteet ja se, mikä kerros soi; ylälinjan suunta (nousu, lasku); uusien äänten tiheys kerroksittain (hidas, nopea, staccato, legato); pitkän äänen kesto, paisutus ja tremolo | soitinperhe (jouset, puupuhaltimet, vasket): karkea ja 2–3 s myöhässä; käyrätorvi erottuu osittain; huilu ja klarinetti vuorottelevat luokkina; sävellajivihje (C-duuri, H-duuri) | patarummut erillisenä raitana (Demucs laittaa ne muiden joukkoon); kontrabasso erillään sellosta; trumpetti erillään pasuunasta; oboe, englannintorvi, fagotti (mallissa ei ole luokkia); vanha jousitremolokanava; divisi-jouset hiljaisessa kohdassa |
+
+- Tarkka spektri (60 kaistaa oktaavissa) kertoo pitkän äänen, sen keston, paisutukset, sävelen ja värin vaihtumisen
+  samalla sävelellä. **Se ei nimeä soitinta varmasti** (puhdas perusääni viittaa huiluun, parittomat yläsävelet
+  klarinettiin: vihje). Soitin tulee partituurista ja ankkurista, ajoitus äänestä.
+- Kaikki mitattu on `annotations/cues.json`:ssa (tapahtumat) ja `build/<paketti>/ohjaus.f32`:ssa (ruutukanavat).
+  Rattlen vire on +5,6 senttiä A=440:stä, ei korjattu. Tiedoston alussa on 5 s digitaalista hiljaisuutta; aplodeja ei ole.
+
+## 14. Auki ja hankittava
+
+1. **Kirjaimet D–I ja N:** tahtinumerot partituurista (käyttäjä). G on tärkein (puupuhallinkuviot).
+2. **Sordiinot:** painoksessa sellot con sord. jo ~t. 40 ja viulut ~t. 85; käyttäjän "ensimmäinen con sord. J:n
+   jälkeen" ei täsmää tähän painokseen. Ei vaikuta kuvaan (merkittävyyden testi), kirjataan vain.
+3. **Missä alun motiivi palaa alkuperäisessä muodossaan** (Europadiscin "tiivistetty kertaus" lopussa) ja palaako
+   alun patarumpukuvio.
+4. **Onko Sibelius-klubin "hymnimäinen jousisekvenssi" sama kuin C-duuri t. 392–396** vai sitä edeltävä jakso.
+5. **Kirjastosta:** Salmenhaara 1970 (tärkein suomenkielinen analyysi; "väärä toivo" voi olla siellä tai
+   Tawaststjernassa), FMQ 3/1991 (Rodziński-kirje), JSW I/16.
+6. **Synestesian värit** C- ja D-duurille: yksi heikko lähde.
+7. Koneen kuulemista tapahtumista ei ole karsittu vääriä osumia korvalla, ja useimmat ajat ovat mittausta, ei kuultuja.
+
+## 15. Lähdearkisto (`docs/tutkimus/`)
+
+| Tiedosto | Sisältö |
+|---|---|
+| `teos.md` | synty, esipuhe, rakenne, teemat, soitinnus, vastaanotto, kestot; 39 lähdettä |
+| `soittimet.md` | mitä kirjallisuus sanoo soitinryhmistä; kuvaston luettelo |
+| `tehokeinot.md` | Sibeliuksen tehokeinot ja hiljaisuus |
+| `auringonsade.md` | haku "väärä toivo", jakso M:n ympärillä, myrskyn kuvaukset |
+| `konteksti.md` | 1926, modernismi, miksi viimeinen, lopun H-duuri |
+| `esitysmerkinnat.md` | tempot, Rodziński-kirje, Sibeliuksen sanat esityksestä |
+| `mytologia.md` | Kalevala ja SKVR: Tapiola, metsänpeitto, auringon kätkeminen, värit, äänet |
+| `viitteet.md` | levynkannet, kuvataide Sibeliuksen ympärillä, Tapio kuvana, myrsky ja aurinko kuvana |
+| `taide1920.md` | 1920-luvun kuvataide ja absoluuttinen elokuva; 59 lähdettä |
+| `levytys.md` | Kajanus 1932 ja siirto |
+| `partituuri.md` | partituurin merkinnät nimetyissä kohdissa ja luettujen 25 sivun taulukko |
+| `kanavakortti.md` | soitin → kanava → luotettavuus, kaikki mittauskierrokset |
+| `haastattelu.md` | **käyttäjän omat sanat** sanatarkasti, päivämäärittäin |
+| `ulkoiset/` | käyttäjän tuoma ulkoinen aineisto |
+
+Vaiheraportit, työkaluarvio ja aiemmat analyysitulosteet (vaiheet 1, 3–5) ovat git-historiassa (commit `fb48800`);
+niiden johtopäätökset ovat luvussa 13 ja `docs/projekti.md`:n luvussa 3.

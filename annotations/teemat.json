@@ -1052,26 +1052,26 @@
       "lahde": "käyttäjä 9.11.2026 (korva); analyysi: linjat.py"
     },
     {
-      "kirjain": null,
-      "tahti": null,
+      "kirjain": "C",
+      "tahti": 106,
       "tahti_loppu": null,
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "soitin",
       "soittimet": [
+        "viulut",
         "huilut",
-        "klarinetit",
-        "oboet"
+        "klarinetit"
       ],
       "id": "ylarekisteri_heraa",
-      "nimi": "Pohja katoaa: puupuhaltimien kuviot ja pitkä laskeva linja",
-      "esitysmerkinta": "",
-      "tahti_suhde": "urkupisteen jälkeen",
-      "soi": "matala rekisteri katoaa kokonaan; ylhäällä puupuhaltimien nopeat lyhyet kuviot, ja niiden alla pitkien äänten linja laskee hitaasti askel kerrallaan (e1, d1, c1 … f1, dis1); välillä pitkä korkea ääni, joka värisee hitaasti",
-      "etuala": "nopeat kuviot ylhäällä edessä; pitkä hidas linja keskellä; pohja tyhjä",
-      "tunnelma": "väike, levoton, pohjaton",
-      "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!\" Mitattu: kaksi kerrosta yhtä aikaa: nopeat korkeat kuviot (10–27 uutta säveltä sekunnissa) ja pitkät äänet, jotka laskevat hitaasti keskirekisterissä; pitkät korkeat äänet (cis3, h2, d3) värisevät 4–5 kertaa sekunnissa. Ohjaaja ei pysty mittauksesta sanomaan varmasti, kumpi kerros on viulut [käyttäjä kertoo]. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.",
-      "lahde": "analyysi: tarkka.py, aikajana"
+      "nimi": "Kirjain C: pohja katoaa, viulut vajoavat, puhaltimet kuvioivat",
+      "esitysmerkinta": "C = t. 106: huilut mf, klarinetit p sempre dolciss.; viulut I ja II div., pitkät kaarella sidotut äänet; kaikilla poco a poco meno p; alttoviulut, sellot ja bassot tauolla. t. 121: oboet pp sempre (s. 10).",
+      "tahti_suhde": "kirjain C, t. 106",
+      "soi": "alttoviulut, sellot ja bassot vaikenevat; viulut, neljään jaettuina, soittavat pitkiä kaarella sidottuja ääniä, jotka keinuvat pareittain ja vajoavat hitaasti alaspäin; niiden yllä huilut ja klarinetit soittavat pieniä liikkuvia kuvioita hyvin hiljaa ja lempeästi",
+      "etuala": "puhaltimien pienet kuviot ylhäällä edessä; viulujen hidas vajoava matto keskellä; pohja tyhjä",
+      "tunnelma": "leijuva, pohjaton, lempeä",
+      "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!\" Ohjaaja kuuli ja tarkisti partituurin sivulta 10: viulut ovat se hidas kerros. Nousun jälkeen maa on poissa, ja se, mikä äsken kohosi, vajoaa nyt hiljaa takaisin, askel kerrallaan, keinuen. Puhaltimet leikkivät sen päällä. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.",
+      "lahde": "käyttäjä 9.11.2026; analyysi: korvat.py; partituuri s. 10"
     },
     {
       "kirjain": null,
@@ -1567,8 +1567,8 @@
       "lahde": "analyysi: linjat.py"
     },
     {
-      "kirjain": null,
-      "tahti": null,
+      "kirjain": "C",
+      "tahti": 106,
       "tahti_loppu": null,
       "tarkista": false,
       "tyyppi": "hetki",
@@ -1577,7 +1577,7 @@
       "esitysmerkinta": "",
       "id": "pohja_katoaa",
       "nimi": "Pohja katoaa",
-      "tahti_suhde": "kirjaimen B jälkeen",
+      "tahti_suhde": "kirjain C, t. 106",
       "soi": "matala rekisteri vaikenee kokonaan: basso ja sellot poissa",
       "etuala": "pohja tyhjä; vain ylä- ja keskikerros",
       "tunnelma": "pohjaton",

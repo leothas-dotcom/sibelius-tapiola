@@ -21,15 +21,15 @@ Tapiolan visuaalinen kieli luodaan käyttäjän ideoista vaiheessa 6. Jos huomaa
 on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 
 ## Työtapa
-- Projekti etenee `docs/kokonaissuunnitelma.md`:n vaiheissa 1–12, järjestys sitova.
+- Projekti etenee `docs/projekti.md`:n vaiheissa 1–12, järjestys sitova.
   **Jokainen vaihe alkaa vasta käyttäjän pyynnöstä.** Ei generointia, analyysiä eikä renderöintiä ilman pyyntöä.
 - Git alusta asti. Commit jokaisen vaiheen lopussa. Etäpalvelin: github.com/leothas-dotcom/sibelius-tapiola.
   **Isot tiedostot (ääni, video, stillit, painot, build) eivät mene gittiin**; `.gitignore` rajaa ne.
   `runs/` on ajojen kansio; sieltä versioidaan vain brief, run.json, storyboard, tarkistus ja kriitikon raportti.
-- `docs/opit.md` elää: jokainen kierros kirjaa, mikä toimi ja mikä ei.
+- `docs/projekti.md` (luku 3, opit) elää: jokainen kierros kirjaa, mikä toimi ja mikä ei.
 - Faktat (teos, historia, levytys, työkalut) tarkistetaan lähteistä. Epävarma merkitään **[tarkista]**.
 - Pääistunto on ohjaaja. Osatyöt (analyysi, kohtaukset, kriitikko) tehdään omissa istunnoissaan tai
-  aliagenteilla, **aina `model: sonnet`**. Osa saa briefin tiedostona `docs/brief_malli.md`:n mukaan.
+  aliagenteilla, **aina `model: sonnet`**. Osa saa briefin tiedostona (`runs/<nimi>/brief.md`).
   Chatissa sanottu ei siirry osille: kaikki sitova kirjoitetaan tiedostoon, jonka osa lukee.
 - Tarina ennen tekniikkaa. Kun olet epävarma, kysy käyttäjän tarinaa, älä arvaa tekniikkaa.
 - **Merkittävyyden testi (1.11.2026):** ennen jokaista hakua, analyysia, dokumenttia tai agenttia yksi lause: mihin
@@ -42,12 +42,12 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
   kuuntelee. Kaikki ajat dokumenteissa ja datassa ovat sen aikaa ja nimeävät levytyksen. Videon ääni mitataan sitä
   vasten (`kellot.py`), ja 0 ms on tavoite.
 - **Teemakartta on levytysriippumaton:** ankkurit ovat partituurin paikkoja (harjoituskirjain, tahti, mitä soi),
-  ja jokaisella levytyksellä on oma aikataulukkonsa. Ks. `docs/teemakartta_rakenne.md`.
+  ja jokaisella levytyksellä on oma aikataulukkonsa (`annotations/ajat_<levytys>.json`).
 - Analyysi tehdään puhdistetusta monokopiosta; ääniraita on alkuperäinen, rahinoineen.
 - **Teemakartta (`annotations/teemat.json`) on ainoa paikka, jossa jaksojen, teemojen ja iskujen ajat ovat.**
   `cues.json` ja kuunteluoppaan aikakoodit generoidaan siitä. Aikoja ei kirjoiteta käsin muualle.
-- Aika kutsutaan kuulluksi vasta, kun se on tarkistettu korvilla (`kuuntele.py`, `rekisteri.py`).
-- Kanavat eivät ole totuus. Kanavakortti (`docs/kanavakortti.md`): soitin → mitattu kanava → luotettavuus
+- Aika kutsutaan kuulluksi vasta, kun käyttäjä on kuullut sen kuuntelukopiosta (`ajat_<levytys>.json`: varmuus `vahvistettu`).
+- Kanavat eivät ole totuus. Kanavakortti (`docs/tutkimus/kanavakortti.md`): soitin → mitattu kanava → luotettavuus
   varmassa kohdassa → korvaava lähde. **Kuollutta kanavaa ei käytetä kuvan ajoitukseen.**
 - Partituuri on tarkistusta varten, ei kellona. Tahtinumeroita ei lasketa äänestä.
 - **Sävelnimet suomeksi:** H = englannin B (h-molli = B minor, H-duuri = B major), B = englannin B♭.
@@ -59,8 +59,8 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 
 ## Tyyli ja ohjaus
 - `docs/visuaalinen_tyyli.md` kirjoitetaan **vasta käyttäjän haastattelun jälkeen** (vaihe 6). Se on kaiken
-  peruste ja **voittaa briefin, palautteen ja ohjauksen**. Siitä johdetaan samalla kertaa
-  `docs/kuvasaannot.md`, soitinroolit ja kriitikon kohdat: yksi lähde, kolme näkymää.
+  peruste ja **voittaa briefin, palautteen ja ohjauksen**. Kuvasäännöt ovat sen luvussa 12 ja
+  soitinroolit luvussa 7; kriitikon kohdat (`docs/kriitikko_kohdat.json`) johdetaan siitä.
 - Jokainen soitin on **elementti, ei esine**. Palaute käännetään briefiin elementiksi kuvasääntöjen sanoin,
   ei muotoon "tunnistuu X:ksi" tai "X näkyy selvästi". Käyttäjän omat sanat lainataan erikseen.
 - Jokainen osaistunto ja kriitikko lukee tyyliohjeen kokonaan ja kuvasäännöt ennen mitään muuta.
@@ -86,7 +86,7 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 
 ## Säännöt, jotka eivät neuvottele
 - **Valmis tarkoittaa mitattua.** Raportoi vain se, minkä mittaus tai kuva näyttää. "Koodi tekee näin" ei riitä.
-- **Palautelista `docs/palautelista.md`:** jokainen käyttäjän palaute yhdeksi riviksi, tila
+- **Palautelista (`docs/projekti.md`, luku 2):** jokainen käyttäjän palaute yhdeksi riviksi, tila
   ✅ todennettu / 🔶 korjattu, ei todennettu / ❌ auki, ja todennus riville. Mobiilipalaute kirjataan heti
   aikakoodeineen.
 - Hahmot ja elementit eivät ilmesty, katoa eivätkä loikkaa iskussa. **Iskun elementti on ympäristössä.**
@@ -98,13 +98,24 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 - Koko renderi ajetaan vain ketjuna, joka mittaa itsensä (renderi → ääni totuutta vasten → iskujen ruudut →
   jatkuvuus → kontaktiarkki → stillit → WhatsApp-versio). Sitten master 2160p-reseptillä (`docs/youtube.md`).
 
+## Data: mikä ohjaa kuvaa (9.11.2026)
+- **Käsin muokataan kahta tiedostoa:** `annotations/teemat.json` (mitä: ankkurit, mitä soi, etuala, tunnelma, tarina,
+  partituurin merkinnät) ja `annotations/ajat_<levytys>.json` (milloin: aika, varmuus, mitattu peruste).
+- **Kuvaa ohjaa yksi generoitu tiedosto:** `annotations/cues.json` (`make_cues.py`): ankkurit aikoineen, jaksot, iskut,
+  koneen kuulemat tapahtumat ja osoite ruutukanaviin `build/<paketti>/ohjaus.f32`. Renderi lukee vain nämä kaksi.
+- **Kuulijalle:** `annotations/kuunteluopas.md` (generoitu, kuulijan kieltä, ei mittalukuja).
+- **Yksi kuuntelutyökalu:** `analysis/korvat.py`. Uusia analyysiskriptejä tai dokumentteja ei lisätä: olemassa olevaa
+  täydennetään. Putki: prepare → analyze → listen → aksentit → kanavat → korvat → make_cues → kuunteluopas.
+
 ## Kansiot
-- `docs/` – suunnitelma, tutkimus, tyyliohje, kuvasäännöt, ohjaus, kuvakäsikirjoitus, palautelista, opit.
-- `docs/references/` – lähdekuvat (albumikansi, aaltomuoto). Ei jäljennettäväksi, vain tiedoksi.
-- `analysis/` – Python-työkalut (kopioidaan vaiheessa 1). `render/` – Node-työkalut.
-- `audio/` (ei gitissä) – äänilähde. `build/` (ei gitissä) – paketit, kuuntelukopiot.
-- `annotations/` – teemakartta, cues, kuunteluopas. `visual/` – kohtauskoodi.
-- `runs/<nimi>/` – ajot. `models/` (ei gitissä) – painot.
+- **Kolme luettavaa tiedostoa:** `annotations/kuunteluopas.md` (mitä kuuluu ja milloin), `docs/visuaalinen_tyyli.md` (miten kuva
+  vastaa), `docs/tapiola_tutkimus.md` (tausta, synteesi). Numerot ovat JSON-tiedostoissa. Kaikki muu on prosessia tai arkistoa.
+- `docs/` – **vain neljä:** `visuaalinen_tyyli.md` (tyyli ja kuvasäännöt), `tapiola_tutkimus.md` (taustatutkimus),
+  `projekti.md` (suunnitelma, palautelista, opit), `kriitikko_kohdat.json`. `docs/tutkimus/` on lähdearkisto
+  (haastattelu eli käyttäjän sanat, kanavakortti, partituurin merkinnät, hakujen tulokset). **Uusia dokumentteja ei lisätä.**
+- `annotations/` – teemat.json, ajat_*.json, levytykset.json (lähteet), cues.json ja kuunteluopas.md (generoidut).
+- `analysis/` – Python-työkalut. `render/` – Node-työkalut. `visual/` – kohtauskoodi. `runs/<nimi>/` – ajot.
+- `audio/`, `build/`, `models/` – ei gitissä.
 
 ## Ympäristö (Windows 11)
 - PowerShell ensisijainen. Python `uv`:lla (`.venv\Scripts\python.exe`), Node 22, git 2.51, ffmpeg PATHissa.

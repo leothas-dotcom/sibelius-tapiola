@@ -1,6 +1,6 @@
 r"""Kriitikkoportti: aineisto tuoreelle tarkistajalle, joka vertaa aikomusta kuvaan.
 
-Tarkistaja lukee ensin kokonaan docs/visuaalinen_tyyli.md ja docs/kuvasaannot.md (kirjoitetaan vaiheessa 6);
+Tarkistaja lukee ensin kokonaan docs/visuaalinen_tyyli.md (kuvasäännöt luvussa 12);
 palautekohdat ovat docs/kriitikko_kohdat.json. Kaksi osaa (kumpikin valinnainen, index.md kokoaa):
 
 1. Palautekohdat (--items, oletus docs/kriitikko_kohdat.json): ruutusarja (tile) jokaisesta kohdasta,
@@ -69,7 +69,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     md = [f"# Kriitikkoportti: {os.path.basename(a.video)}\n",
-          "Lue ensin kokonaan `docs/visuaalinen_tyyli.md` ja `docs/kuvasaannot.md`. Ne voittavat briefin ja palautteen.\n"]
+          "Lue ensin kokonaan `docs/visuaalinen_tyyli.md` (kuvasäännöt ovat luvussa 12). Se voittaa briefin ja palautteen.\n"]
 
     # 1. palautekohdat
     if os.path.exists(a.items):

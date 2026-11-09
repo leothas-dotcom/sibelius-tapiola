@@ -1,5 +1,5 @@
 {
-  "_ohje": "Kriitikon tarkistuskohdat, johdettu docs/visuaalinen_tyyli.md:stä ja docs/kuvasaannot.md:stä (1.11.2026). Kriitikko lukee ensin tyyliohjeen kokonaan ja kuvasäännöt, sitten ruutusarjat. Jokainen kohta vastataan: OK / BUGI (ruutu, aika, mitä näkyy) / TARKOITETTU (perustelu kuvakäsikirjoituksesta). Bugilista tyhjä = renderi kelpaa.",
+  "_ohje": "Kriitikon tarkistuskohdat, johdettu docs/visuaalinen_tyyli.md:stä (kuvasäännöt luvussa 12) (1.11.2026). Kriitikko lukee ensin tyyliohjeen kokonaan ja kuvasäännöt, sitten ruutusarjat. Jokainen kohta vastataan: OK / BUGI (ruutu, aika, mitä näkyy) / TARKOITETTU (perustelu kuvakäsikirjoituksesta). Bugilista tyhjä = renderi kelpaa.",
   "kohdat": [
     {
       "id": "metsa_nakyy",

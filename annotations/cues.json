@@ -947,23 +947,23 @@
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
-   "nimi": "Pohja katoaa: puupuhaltimien kuviot ja pitkä laskeva linja",
-   "kirjain": null,
-   "tahti": null,
+   "nimi": "Kirjain C: pohja katoaa, viulut vajoavat, puhaltimet kuvioivat",
+   "kirjain": "C",
+   "tahti": 106,
    "tahti_loppu": null,
-   "tahti_suhde": "urkupisteen jälkeen",
-   "soi": "matala rekisteri katoaa kokonaan; ylhäällä puupuhaltimien nopeat lyhyet kuviot, ja niiden alla pitkien äänten linja laskee hitaasti askel kerrallaan (e1, d1, c1 … f1, dis1); välillä pitkä korkea ääni, joka värisee hitaasti",
+   "tahti_suhde": "kirjain C, t. 106",
+   "soi": "alttoviulut, sellot ja bassot vaikenevat; viulut, neljään jaettuina, soittavat pitkiä kaarella sidottuja ääniä, jotka keinuvat pareittain ja vajoavat hitaasti alaspäin; niiden yllä huilut ja klarinetit soittavat pieniä liikkuvia kuvioita hyvin hiljaa ja lempeästi",
    "soittimet": [
+    "viulut",
     "huilut",
-    "klarinetit",
-    "oboet"
+    "klarinetit"
    ],
-   "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!\" Mitattu: kaksi kerrosta yhtä aikaa: nopeat korkeat kuviot (10–27 uutta säveltä sekunnissa) ja pitkät äänet, jotka laskevat hitaasti keskirekisterissä; pitkät korkeat äänet (cis3, h2, d3) värisevät 4–5 kertaa sekunnissa. Ohjaaja ei pysty mittauksesta sanomaan varmasti, kumpi kerros on viulut [käyttäjä kertoo]. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.",
-   "lahde": "analyysi: tarkka.py, aikajana",
+   "tarina": "Käyttäjä 9.11.2026 (korva): \"0:03:20 puupuhaltimet, mutta mitä viulut tekevät? Tärkeä!\" Ohjaaja kuuli ja tarkisti partituurin sivulta 10: viulut ovat se hidas kerros. Nousun jälkeen maa on poissa, ja se, mikä äsken kohosi, vajoaa nyt hiljaa takaisin, askel kerrallaan, keinuen. Puhaltimet leikkivät sen päällä. Lähteet: Goodwin (BSO): taustan katkettua jää aavemaisen tyhjä hiljaisuus, jonka huilujen ja viulujen levottomat juoksut täyttävät.",
+   "lahde": "käyttäjä 9.11.2026; analyysi: korvat.py; partituuri s. 10",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
-   "luottamus": "kohtalainen",
-   "peruste": "linjat.py: matala rekisteri tyhjä 3:23 alkaen; pitkät äänet keskirekisterissä: Ais4 3:21.2–3:25.8 ja 3:26.2–3:29.6 (< >), D4 3:29.7–3:33.7, Gis4 3:31.1–3:33.9, Fis4 3:34.0, F4 3:43.7–3:50.4, Dis4 3:50.3–3:52.7; kuvassa matalin vahva linja laskee E4 → D4 → C4 (3:25–3:37); pitkät korkeat: Cis6 3:21.2–3:23.7 (värisee 5 Hz), Cis6 3:26.3–3:28.0 (tremolo 9 Hz), H5 3:30.3 (4 Hz), D6 3:38.1–3:41.8 (5 Hz), D6 3:47.0 (5 Hz); yläkerroksessa 5–27 uutta säveltä/s.",
+   "luottamus": "hyvä",
+   "peruste": "korvat.py: matala rekisteri katoaa 3:23 (44 s); keskirekisterin pitkät äänet laskevat askel kerrallaan (Ais4 3:21–3:29, D4 ja Gis4 3:29–3:34, Fis4 3:34, F4 3:43–3:50, Dis4 3:50), sointi runsas ja suora (jousimainen); niiden yllä 5–27 uutta säveltä sekunnissa. Partituuri s. 10: kirjain C = t. 106, viulut div. pitkät sidotut äänet, huilut ja klarinetit kuviot, alttoviulut, sellot ja bassot tauolla.",
    "vahvistettu": false,
    "tarkista": false
   },
@@ -976,10 +976,10 @@
    "luokka": "tauko",
    "tyyppi": "hetki",
    "nimi": "Pohja katoaa",
-   "kirjain": null,
-   "tahti": null,
+   "kirjain": "C",
+   "tahti": 106,
    "tahti_loppu": null,
-   "tahti_suhde": "kirjaimen B jälkeen",
+   "tahti_suhde": "kirjain C, t. 106",
    "soi": "matala rekisteri vaikenee kokonaan: basso ja sellot poissa",
    "soittimet": [],
    "tarina": "Ohjaaja: kahden minuutin ajan basso on kulkenut mukana. Nyt maa on poissa, ja se, mikä jää, leijuu.",
@@ -3515,6 +3515,2192 @@
    "pisteet": 8.7
   }
  ],
+ "tapahtumat": [
+  {
+   "alku": 5.0,
+   "loppu": 10.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 13.0,
+   "perhe": ""
+  },
+  {
+   "alku": 7.0,
+   "loppu": 8.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 128.7,
+   "perhe": ""
+  },
+  {
+   "alku": 7.0,
+   "loppu": 13.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 6 s (ylälinja 18 puolisävelaskelta)",
+   "voima": 18.5,
+   "perhe": ""
+  },
+  {
+   "alku": 7.7,
+   "loppu": 7.8,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 7.8,
+   "loppu": 7.9,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 10.9,
+   "perhe": ""
+  },
+  {
+   "alku": 8.0,
+   "loppu": 9.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 96.5,
+   "perhe": ""
+  },
+  {
+   "alku": 8.0,
+   "loppu": 9.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 21.1,
+   "perhe": ""
+  },
+  {
+   "alku": 9.0,
+   "loppu": 11.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 1.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 9.0,
+   "loppu": 13.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (51 uutta säveltä/s)",
+   "voima": 51.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 10.0,
+   "loppu": 20.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hiljaisuus → kohtalainen (18 uutta säveltä/s)",
+   "voima": 18.1,
+   "perhe": ""
+  },
+  {
+   "alku": 13.0,
+   "loppu": 14.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 26.8,
+   "perhe": ""
+  },
+  {
+   "alku": 20.0,
+   "loppu": 26.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 6 s (ylälinja 15 puolisävelaskelta)",
+   "voima": 15.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 20.5,
+   "loppu": 20.6,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 19.8,
+   "perhe": ""
+  },
+  {
+   "alku": 22.0,
+   "loppu": 24.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 1.0,
+   "perhe": ""
+  },
+  {
+   "alku": 22.0,
+   "loppu": 25.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (54 uutta säveltä/s)",
+   "voima": 54.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 27.3,
+   "loppu": 27.4,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.4,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 28.4,
+   "loppu": 28.5,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.1,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 30.0,
+   "loppu": 40.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (8 uutta säveltä/s)",
+   "voima": 8.2,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 35.1,
+   "loppu": 35.2,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 12.6,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 37.0,
+   "loppu": 47.0,
+   "tyyppi": "lasku",
+   "kuvaus": "keskikerros ja yläkerros laskee 10 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 40.0,
+   "loppu": 50.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (22 uutta säveltä/s)",
+   "voima": 21.6,
+   "perhe": ""
+  },
+  {
+   "alku": 41.0,
+   "loppu": 42.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 16.2,
+   "perhe": ""
+  },
+  {
+   "alku": 45.0,
+   "loppu": 46.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 20.3,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 45.3,
+   "loppu": 45.4,
+   "tyyppi": "isku",
+   "kuvaus": "isku (korkea isku)",
+   "voima": 32.9,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 50.0,
+   "loppu": 60.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (78 uutta säveltä/s)",
+   "voima": 78.0,
+   "perhe": ""
+  },
+  {
+   "alku": 50.0,
+   "loppu": 54.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (120 uutta säveltä/s)",
+   "voima": 120.0,
+   "perhe": ""
+  },
+  {
+   "alku": 55.0,
+   "loppu": 57.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 57.0,
+   "loppu": 58.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 17.9,
+   "perhe": ""
+  },
+  {
+   "alku": 58.0,
+   "loppu": 61.0,
+   "tyyppi": "hiljaisuus",
+   "kuvaus": "lähes hiljaista 3 s",
+   "voima": 3.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 58.0,
+   "loppu": 59.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 21.5,
+   "perhe": ""
+  },
+  {
+   "alku": 60.0,
+   "loppu": 70.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (28 uutta säveltä/s)",
+   "voima": 28.4,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 61.0,
+   "loppu": 62.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 32.6,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 61.0,
+   "loppu": 62.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 45.7,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 61.6,
+   "loppu": 61.7,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.4,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 61.8,
+   "loppu": 61.9,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.4,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 62.0,
+   "loppu": 63.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 24.5,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 65.0,
+   "loppu": 70.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 11.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 65.0,
+   "loppu": 70.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 15.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 70.0,
+   "loppu": 80.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (33 uutta säveltä/s)",
+   "voima": 32.6,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 70.0,
+   "loppu": 71.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 12.6,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 71.0,
+   "loppu": 73.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (65 uutta säveltä/s)",
+   "voima": 65.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 74.0,
+   "loppu": 75.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 22.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 75.0,
+   "loppu": 76.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 14.7,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 77.0,
+   "loppu": 78.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 19.3,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 77.0,
+   "loppu": 100.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 23 s",
+   "voima": 23.0,
+   "perhe": ""
+  },
+  {
+   "alku": 80.0,
+   "loppu": 90.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (22 uutta säveltä/s)",
+   "voima": 21.6,
+   "perhe": ""
+  },
+  {
+   "alku": 82.0,
+   "loppu": 87.0,
+   "tyyppi": "lasku",
+   "kuvaus": "keskikerros ja yläkerros laskee 5 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 89.0,
+   "loppu": 94.0,
+   "tyyppi": "nousu",
+   "kuvaus": "yläkerros nousee 5 s (ylälinja 10 puolisävelaskelta)",
+   "voima": 9.5,
+   "perhe": ""
+  },
+  {
+   "alku": 90.0,
+   "loppu": 100.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (31 uutta säveltä/s)",
+   "voima": 30.9,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 97.0,
+   "loppu": 103.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 6 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 14.0,
+   "perhe": ""
+  },
+  {
+   "alku": 100.0,
+   "loppu": 101.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 23 s paikallaan olon jälkeen: D2 → H1",
+   "voima": 23.0,
+   "perhe": ""
+  },
+  {
+   "alku": 100.0,
+   "loppu": 110.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (17 uutta säveltä/s)",
+   "voima": 16.6,
+   "perhe": ""
+  },
+  {
+   "alku": 101.0,
+   "loppu": 103.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 109.0,
+   "loppu": 115.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 6 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 4.5,
+   "perhe": ""
+  },
+  {
+   "alku": 111.0,
+   "loppu": 112.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 12.4,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 115.0,
+   "loppu": 120.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 20.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 118.0,
+   "loppu": 120.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 1.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 125.0,
+   "loppu": 130.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 5 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 1.5,
+   "perhe": ""
+  },
+  {
+   "alku": 125.0,
+   "loppu": 127.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 1.0,
+   "perhe": ""
+  },
+  {
+   "alku": 126.0,
+   "loppu": 127.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 14.7,
+   "perhe": ""
+  },
+  {
+   "alku": 126.0,
+   "loppu": 192.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 66 s",
+   "voima": 66.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 137.0,
+   "loppu": 139.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 161.0,
+   "loppu": 163.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 185.0,
+   "loppu": 193.0,
+   "tyyppi": "nousu",
+   "kuvaus": "koko orkesteri nousee 8 s (ylälinja 10 puolisävelaskelta)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 190.0,
+   "loppu": 195.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 19.0,
+   "perhe": ""
+  },
+  {
+   "alku": 192.0,
+   "loppu": 193.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 66 s paikallaan olon jälkeen: H1 → Cis2",
+   "voima": 66.0,
+   "perhe": ""
+  },
+  {
+   "alku": 193.0,
+   "loppu": 195.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 200.0,
+   "loppu": 206.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 6 s (ylälinja 13 puolisävelaskelta)",
+   "voima": 13.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 203.0,
+   "loppu": 247.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 44 s; muu soi edelleen",
+   "voima": 15.2,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 208.6,
+   "loppu": 208.7,
+   "tyyppi": "isku",
+   "kuvaus": "isku (matala isku (patarumpu/bassot))",
+   "voima": 8.9,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 210.0,
+   "loppu": 220.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (10 uutta säveltä/s)",
+   "voima": 9.9,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 223.7,
+   "loppu": 223.8,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.8,
+   "perhe": ""
+  },
+  {
+   "alku": 224.0,
+   "loppu": 225.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 11.3,
+   "perhe": ""
+  },
+  {
+   "alku": 230.0,
+   "loppu": 235.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 11.0,
+   "perhe": ""
+  },
+  {
+   "alku": 230.0,
+   "loppu": 235.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 5 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.5,
+   "perhe": ""
+  },
+  {
+   "alku": 230.0,
+   "loppu": 240.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (15 uutta säveltä/s)",
+   "voima": 15.3,
+   "perhe": ""
+  },
+  {
+   "alku": 231.0,
+   "loppu": 231.1,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.9,
+   "perhe": ""
+  },
+  {
+   "alku": 240.0,
+   "loppu": 250.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (42 uutta säveltä/s)",
+   "voima": 41.8,
+   "perhe": ""
+  },
+  {
+   "alku": 247.0,
+   "loppu": 248.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 21.0,
+   "perhe": ""
+  },
+  {
+   "alku": 247.0,
+   "loppu": 249.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (66 uutta säveltä/s)",
+   "voima": 66.5,
+   "perhe": ""
+  },
+  {
+   "alku": 248.0,
+   "loppu": 253.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 5 s (ylälinja 6 puolisävelaskelta)",
+   "voima": 5.5,
+   "perhe": ""
+  },
+  {
+   "alku": 251.0,
+   "loppu": 256.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 5 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 260.0,
+   "loppu": 270.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (17 uutta säveltä/s)",
+   "voima": 17.0,
+   "perhe": ""
+  },
+  {
+   "alku": 265.0,
+   "loppu": 270.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 5 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.5,
+   "perhe": ""
+  },
+  {
+   "alku": 275.0,
+   "loppu": 286.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä E2 11 s",
+   "voima": 11.0,
+   "perhe": ""
+  },
+  {
+   "alku": 280.0,
+   "loppu": 285.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 19.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 281.0,
+   "loppu": 286.0,
+   "tyyppi": "nousu",
+   "kuvaus": "yläkerros nousee 5 s (ylälinja 10 puolisävelaskelta)",
+   "voima": 10.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 286.0,
+   "loppu": 287.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 11 s urkupisteen jälkeen (E2)",
+   "voima": 11.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 290.4,
+   "loppu": 290.5,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.2,
+   "perhe": ""
+  },
+  {
+   "alku": 296.0,
+   "loppu": 304.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä E2 8 s",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 299.1,
+   "loppu": 299.2,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.3,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 303.0,
+   "loppu": 308.0,
+   "tyyppi": "nousu",
+   "kuvaus": "koko orkesteri nousee 5 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 13.5,
+   "perhe": ""
+  },
+  {
+   "alku": 304.0,
+   "loppu": 305.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 8 s paikallaan olon jälkeen: E2 → Fis2",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 310.0,
+   "loppu": 320.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (11 uutta säveltä/s)",
+   "voima": 10.8,
+   "perhe": ""
+  },
+  {
+   "alku": 313.0,
+   "loppu": 318.0,
+   "tyyppi": "nousu",
+   "kuvaus": "koko orkesteri nousee 5 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 13.5,
+   "perhe": ""
+  },
+  {
+   "alku": 326.0,
+   "loppu": 332.0,
+   "tyyppi": "nousu",
+   "kuvaus": "yläkerros nousee 6 s (ylälinja 9 puolisävelaskelta)",
+   "voima": 9.0,
+   "perhe": ""
+  },
+  {
+   "alku": 330.0,
+   "loppu": 340.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (20 uutta säveltä/s)",
+   "voima": 20.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 333.0,
+   "loppu": 339.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja keskikerros laskee 6 s (ylälinja 0 puolisävelaskelta)",
+   "voima": 0.5,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 335.0,
+   "loppu": 348.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 13 s",
+   "voima": 13.0,
+   "perhe": ""
+  },
+  {
+   "alku": 340.0,
+   "loppu": 345.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 345.0,
+   "loppu": 350.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 9.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 348.0,
+   "loppu": 349.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 13 s urkupisteen jälkeen (D2)",
+   "voima": 13.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 348.0,
+   "loppu": 349.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 12.1,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 350.0,
+   "loppu": 360.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (7 uutta säveltä/s)",
+   "voima": 6.6,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 354.0,
+   "loppu": 363.0,
+   "tyyppi": "lasku",
+   "kuvaus": "keskikerros ja yläkerros laskee 9 s (ylälinja 1 puolisävelaskelta)",
+   "voima": 1.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 356.2,
+   "loppu": 356.3,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 362.9,
+   "loppu": 363.0,
+   "tyyppi": "isku",
+   "kuvaus": "isku (korkea isku)",
+   "voima": 9.6,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 364.0,
+   "loppu": 370.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 6 s (ylälinja 6 puolisävelaskelta)",
+   "voima": 6.0,
+   "perhe": ""
+  },
+  {
+   "alku": 375.0,
+   "loppu": 380.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 16.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 380.0,
+   "loppu": 390.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (18 uutta säveltä/s)",
+   "voima": 17.7,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 382.0,
+   "loppu": 383.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 16.5,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 382.0,
+   "loppu": 393.0,
+   "tyyppi": "lasku",
+   "kuvaus": "kerrokset laskee 11 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.5,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 388.0,
+   "loppu": 393.0,
+   "tyyppi": "nousu",
+   "kuvaus": "yläkerros nousee 5 s (ylälinja 10 puolisävelaskelta)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 390.0,
+   "loppu": 400.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (31 uutta säveltä/s)",
+   "voima": 31.3,
+   "perhe": ""
+  },
+  {
+   "alku": 395.0,
+   "loppu": 400.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 16.0,
+   "perhe": ""
+  },
+  {
+   "alku": 396.0,
+   "loppu": 402.0,
+   "tyyppi": "nousu",
+   "kuvaus": "koko orkesteri nousee 6 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 3.5,
+   "perhe": ""
+  },
+  {
+   "alku": 400.0,
+   "loppu": 410.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (28 uutta säveltä/s)",
+   "voima": 28.3,
+   "perhe": ""
+  },
+  {
+   "alku": 402.0,
+   "loppu": 408.0,
+   "tyyppi": "lasku",
+   "kuvaus": "koko orkesteri laskee 6 s (ylälinja 18 puolisävelaskelta)",
+   "voima": 17.5,
+   "perhe": ""
+  },
+  {
+   "alku": 404.0,
+   "loppu": 405.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (40 uutta säveltä/s)",
+   "voima": 39.5,
+   "perhe": ""
+  },
+  {
+   "alku": 405.0,
+   "loppu": 410.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "ylärekisteri katoaa 5 s; muu soi edelleen",
+   "voima": 17.4,
+   "perhe": ""
+  },
+  {
+   "alku": 409.0,
+   "loppu": 419.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 10 s (ylälinja 3 puolisävelaskelta)",
+   "voima": 3.0,
+   "perhe": ""
+  },
+  {
+   "alku": 410.0,
+   "loppu": 420.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (32 uutta säveltä/s)",
+   "voima": 32.2,
+   "perhe": ""
+  },
+  {
+   "alku": 417.0,
+   "loppu": 425.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso laskee 8 s (ylälinja 6 puolisävelaskelta)",
+   "voima": 6.0,
+   "perhe": ""
+  },
+  {
+   "alku": 419.0,
+   "loppu": 421.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 421.0,
+   "loppu": 433.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 12 s",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 426.0,
+   "loppu": 431.0,
+   "tyyppi": "nousu",
+   "kuvaus": "yläkerros nousee 5 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 433.0,
+   "loppu": 434.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 12 s paikallaan olon jälkeen: H1 → D2",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 434.0,
+   "loppu": 465.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 31 s",
+   "voima": 31.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 440.0,
+   "loppu": 450.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (21 uutta säveltä/s)",
+   "voima": 21.2,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 450.0,
+   "loppu": 455.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 14.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 456.0,
+   "loppu": 467.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 11 s (ylälinja 9 puolisävelaskelta)",
+   "voima": 9.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 465.0,
+   "loppu": 466.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 31 s paikallaan olon jälkeen: H1 → H2",
+   "voima": 31.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 466.2,
+   "loppu": 466.3,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 10.2,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 468.0,
+   "loppu": 479.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 11 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 14.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 469.0,
+   "loppu": 481.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 12 s",
+   "voima": 12.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 470.0,
+   "loppu": 480.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (11 uutta säveltä/s)",
+   "voima": 10.9,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 481.0,
+   "loppu": 482.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 12 s urkupisteen jälkeen (H1)",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 484.0,
+   "loppu": 494.0,
+   "tyyppi": "lasku",
+   "kuvaus": "keskikerros ja yläkerros laskee 10 s (ylälinja 37 puolisävelaskelta)",
+   "voima": 37.0,
+   "perhe": ""
+  },
+  {
+   "alku": 487.2,
+   "loppu": 487.3,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 488.1,
+   "loppu": 488.2,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.1,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 490.0,
+   "loppu": 495.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 493.0,
+   "loppu": 505.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 12 s",
+   "voima": 12.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 495.0,
+   "loppu": 496.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 16.3,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 503.0,
+   "loppu": 510.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 7 s (ylälinja 15 puolisävelaskelta)",
+   "voima": 15.0,
+   "perhe": ""
+  },
+  {
+   "alku": 505.0,
+   "loppu": 506.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 12 s urkupisteen jälkeen (D2)",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 505.0,
+   "loppu": 506.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 14.2,
+   "perhe": ""
+  },
+  {
+   "alku": 507.0,
+   "loppu": 508.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 11.1,
+   "perhe": ""
+  },
+  {
+   "alku": 508.0,
+   "loppu": 509.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 20.8,
+   "perhe": ""
+  },
+  {
+   "alku": 516.0,
+   "loppu": 518.0,
+   "tyyppi": "hiljaisuus",
+   "kuvaus": "lähes hiljaista 2 s",
+   "voima": 2.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 519.0,
+   "loppu": 520.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 21.6,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 519.0,
+   "loppu": 520.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 19.1,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 519.0,
+   "loppu": 530.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 11 s",
+   "voima": 11.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 519.0,
+   "loppu": 520.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 11.9,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 526.0,
+   "loppu": 531.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "keskirekisteri katoaa 5 s; muu soi edelleen",
+   "voima": 16.6,
+   "perhe": ""
+  },
+  {
+   "alku": 529.0,
+   "loppu": 548.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 19 s; muu soi edelleen",
+   "voima": 14.1,
+   "perhe": ""
+  },
+  {
+   "alku": 530.0,
+   "loppu": 531.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 11 s urkupisteen jälkeen (D2)",
+   "voima": 11.0,
+   "perhe": ""
+  },
+  {
+   "alku": 531.0,
+   "loppu": 538.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 7 s (ylälinja 5 puolisävelaskelta)",
+   "voima": 5.2,
+   "perhe": ""
+  },
+  {
+   "alku": 531.0,
+   "loppu": 532.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 10.6,
+   "perhe": ""
+  },
+  {
+   "alku": 532.0,
+   "loppu": 533.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 14.2,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 532.0,
+   "loppu": 533.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 23.7,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 540.0,
+   "loppu": 550.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (17 uutta säveltä/s)",
+   "voima": 17.1,
+   "perhe": ""
+  },
+  {
+   "alku": 547.0,
+   "loppu": 552.0,
+   "tyyppi": "lasku",
+   "kuvaus": "koko orkesteri laskee 5 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 548.0,
+   "loppu": 549.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 16.6,
+   "perhe": ""
+  },
+  {
+   "alku": 550.0,
+   "loppu": 555.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 560.0,
+   "loppu": 570.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (8 uutta säveltä/s)",
+   "voima": 8.1,
+   "perhe": ""
+  },
+  {
+   "alku": 563.0,
+   "loppu": 568.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 5 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 565.0,
+   "loppu": 576.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 11 s; muu soi edelleen",
+   "voima": 17.1,
+   "perhe": ""
+  },
+  {
+   "alku": 573.0,
+   "loppu": 584.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 11 s (ylälinja 5 puolisävelaskelta)",
+   "voima": 5.0,
+   "perhe": ""
+  },
+  {
+   "alku": 580.0,
+   "loppu": 597.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H2 17 s",
+   "voima": 17.0,
+   "perhe": ""
+  },
+  {
+   "alku": 596.0,
+   "loppu": 621.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 25 s; muu soi edelleen",
+   "voima": 14.3,
+   "perhe": ""
+  },
+  {
+   "alku": 597.0,
+   "loppu": 598.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 17 s urkupisteen jälkeen (H2)",
+   "voima": 17.0,
+   "perhe": ""
+  },
+  {
+   "alku": 598.0,
+   "loppu": 600.0,
+   "tyyppi": "hiljaisuus",
+   "kuvaus": "lähes hiljaista 2 s",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 615.0,
+   "loppu": 620.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 15.0,
+   "perhe": ""
+  },
+  {
+   "alku": 620.0,
+   "loppu": 630.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → nopea (80 uutta säveltä/s)",
+   "voima": 80.3,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 621.0,
+   "loppu": 622.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 22.4,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 621.6,
+   "loppu": 621.7,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 8.5,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 623.0,
+   "loppu": 625.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 3.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 626.0,
+   "loppu": 631.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (120 uutta säveltä/s)",
+   "voima": 119.5,
+   "perhe": ""
+  },
+  {
+   "alku": 630.0,
+   "loppu": 640.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (27 uutta säveltä/s)",
+   "voima": 26.7,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 637.0,
+   "loppu": 658.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 21 s (ylälinja 16 puolisävelaskelta)",
+   "voima": 16.5,
+   "perhe": ""
+  },
+  {
+   "alku": 640.0,
+   "loppu": 650.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (44 uutta säveltä/s)",
+   "voima": 44.0,
+   "perhe": ""
+  },
+  {
+   "alku": 655.0,
+   "loppu": 656.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 14.0,
+   "perhe": ""
+  },
+  {
+   "alku": 661.0,
+   "loppu": 664.0,
+   "tyyppi": "tremolo",
+   "kuvaus": "pitkät äänet värisevät (tremolo), 3 ääntä välillä Ais5–Cis6",
+   "voima": 3.0,
+   "perhe": ""
+  },
+  {
+   "alku": 670.0,
+   "loppu": 675.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 52.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 670.0,
+   "loppu": 680.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 10 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 14.5,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 674.0,
+   "loppu": 676.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 1.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 680.0,
+   "loppu": 690.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 10 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 4.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 680.0,
+   "loppu": 689.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä C2 9 s",
+   "voima": 9.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 689.0,
+   "loppu": 690.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 9 s paikallaan olon jälkeen: C2 → E2",
+   "voima": 9.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 702.0,
+   "loppu": 707.0,
+   "tyyppi": "tremolo",
+   "kuvaus": "pitkät äänet värisevät (tremolo), 4 ääntä välillä Dis6–Fis7",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 709.0,
+   "loppu": 717.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 8 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 711.0,
+   "loppu": 712.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 14.0,
+   "perhe": "puupuhaltimet"
+  },
+  {
+   "alku": 713.0,
+   "loppu": 718.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 5 s; muu soi edelleen",
+   "voima": 18.1,
+   "perhe": ""
+  },
+  {
+   "alku": 718.0,
+   "loppu": 727.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 9 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 729.0,
+   "loppu": 737.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 8 s (ylälinja 13 puolisävelaskelta)",
+   "voima": 13.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 734.6,
+   "loppu": 734.7,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.7,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 754.0,
+   "loppu": 766.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 12 s (ylälinja 3 puolisävelaskelta)",
+   "voima": 3.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 769.0,
+   "loppu": 771.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 3.0,
+   "perhe": ""
+  },
+  {
+   "alku": 770.0,
+   "loppu": 780.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (25 uutta säveltä/s)",
+   "voima": 24.8,
+   "perhe": ""
+  },
+  {
+   "alku": 775.0,
+   "loppu": 782.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 7 s (ylälinja 6 puolisävelaskelta)",
+   "voima": 6.0,
+   "perhe": ""
+  },
+  {
+   "alku": 782.0,
+   "loppu": 783.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 16.2,
+   "perhe": ""
+  },
+  {
+   "alku": 782.0,
+   "loppu": 784.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 3.0,
+   "perhe": ""
+  },
+  {
+   "alku": 785.0,
+   "loppu": 808.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "pohja (matala rekisteri) katoaa 23 s; muu soi edelleen",
+   "voima": 19.9,
+   "perhe": ""
+  },
+  {
+   "alku": 790.0,
+   "loppu": 795.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 15.0,
+   "perhe": ""
+  },
+  {
+   "alku": 800.0,
+   "loppu": 810.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (32 uutta säveltä/s)",
+   "voima": 32.4,
+   "perhe": ""
+  },
+  {
+   "alku": 803.0,
+   "loppu": 816.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 13 s (ylälinja 6 puolisävelaskelta)",
+   "voima": 6.0,
+   "perhe": ""
+  },
+  {
+   "alku": 805.0,
+   "loppu": 810.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 40.0,
+   "perhe": ""
+  },
+  {
+   "alku": 806.0,
+   "loppu": 807.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 21.6,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 813.0,
+   "loppu": 819.0,
+   "tyyppi": "nousu",
+   "kuvaus": "keskikerros ja yläkerros nousee 6 s (ylälinja 12 puolisävelaskelta)",
+   "voima": 12.5,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 826.0,
+   "loppu": 828.0,
+   "tyyppi": "paisuva sointu",
+   "kuvaus": "sointu paisuu ja hiipuu",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 830.0,
+   "loppu": 835.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 33.0,
+   "perhe": ""
+  },
+  {
+   "alku": 830.0,
+   "loppu": 835.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 5 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 840.0,
+   "loppu": 850.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → hidas (6 uutta säveltä/s)",
+   "voima": 5.8,
+   "perhe": ""
+  },
+  {
+   "alku": 842.0,
+   "loppu": 869.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "ylärekisteri katoaa 27 s; muu soi edelleen",
+   "voima": 20.0,
+   "perhe": ""
+  },
+  {
+   "alku": 845.0,
+   "loppu": 866.0,
+   "tyyppi": "hiljaisuus",
+   "kuvaus": "lähes hiljaista 21 s",
+   "voima": 21.0,
+   "perhe": ""
+  },
+  {
+   "alku": 860.0,
+   "loppu": 870.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hiljaisuus → hidas (2 uutta säveltä/s)",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 867.0,
+   "loppu": 881.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 14 s (ylälinja 26 puolisävelaskelta)",
+   "voima": 26.3,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 868.0,
+   "loppu": 869.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "keskirekisteri tulee",
+   "voima": 16.7,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 868.0,
+   "loppu": 869.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 18.9,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 870.0,
+   "loppu": 875.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 71.0,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 870.0,
+   "loppu": 880.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → nopea (102 uutta säveltä/s)",
+   "voima": 102.5,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 888.0,
+   "loppu": 893.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja keskikerros laskee 5 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 14.5,
+   "perhe": ""
+  },
+  {
+   "alku": 889.0,
+   "loppu": 890.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 20.5,
+   "perhe": ""
+  },
+  {
+   "alku": 893.0,
+   "loppu": 894.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 11.1,
+   "perhe": "jouset"
+  },
+  {
+   "alku": 897.0,
+   "loppu": 908.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 11 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 3.5,
+   "perhe": ""
+  },
+  {
+   "alku": 900.0,
+   "loppu": 901.0,
+   "tyyppi": "äkillinen hiljeneminen",
+   "kuvaus": "taso putoaa äkkiä",
+   "voima": 10.4,
+   "perhe": ""
+  },
+  {
+   "alku": 907.0,
+   "loppu": 910.0,
+   "tyyppi": "tremolo",
+   "kuvaus": "pitkät äänet värisevät (tremolo), 2 ääntä välillä Fis6–Fis7",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 914.0,
+   "loppu": 920.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 6 s (ylälinja 14 puolisävelaskelta)",
+   "voima": 13.5,
+   "perhe": ""
+  },
+  {
+   "alku": 916.0,
+   "loppu": 924.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 8 s",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 920.0,
+   "loppu": 925.0,
+   "tyyppi": "kerros katoaa",
+   "kuvaus": "ylärekisteri katoaa 5 s; muu soi edelleen",
+   "voima": 14.7,
+   "perhe": ""
+  },
+  {
+   "alku": 920.0,
+   "loppu": 930.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (12 uutta säveltä/s)",
+   "voima": 12.1,
+   "perhe": ""
+  },
+  {
+   "alku": 922.0,
+   "loppu": 929.0,
+   "tyyppi": "nousu",
+   "kuvaus": "koko orkesteri nousee 7 s (ylälinja 40 puolisävelaskelta)",
+   "voima": 40.0,
+   "perhe": ""
+  },
+  {
+   "alku": 924.0,
+   "loppu": 925.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 8 s urkupisteen jälkeen (D2)",
+   "voima": 8.0,
+   "perhe": "vasket"
+  },
+  {
+   "alku": 925.0,
+   "loppu": 930.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 12.0,
+   "perhe": ""
+  },
+  {
+   "alku": 925.0,
+   "loppu": 930.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: legato (pitkät, sidotut)",
+   "voima": 15.0,
+   "perhe": ""
+  },
+  {
+   "alku": 936.0,
+   "loppu": 937.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 21.6,
+   "perhe": ""
+  },
+  {
+   "alku": 936.0,
+   "loppu": 937.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 10.3,
+   "perhe": ""
+  },
+  {
+   "alku": 937.0,
+   "loppu": 938.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 23.4,
+   "perhe": ""
+  },
+  {
+   "alku": 940.0,
+   "loppu": 950.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (87 uutta säveltä/s)",
+   "voima": 86.7,
+   "perhe": ""
+  },
+  {
+   "alku": 947.0,
+   "loppu": 953.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja keskikerros nousee 6 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.5,
+   "perhe": ""
+  },
+  {
+   "alku": 949.0,
+   "loppu": 965.0,
+   "tyyppi": "tremolo",
+   "kuvaus": "pitkät äänet värisevät (tremolo), 10 ääntä välillä H5–F7",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 964.0,
+   "loppu": 970.0,
+   "tyyppi": "lasku",
+   "kuvaus": "koko orkesteri laskee 6 s (ylälinja 16 puolisävelaskelta)",
+   "voima": 16.0,
+   "perhe": ""
+  },
+  {
+   "alku": 970.0,
+   "loppu": 980.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → kohtalainen (28 uutta säveltä/s)",
+   "voima": 27.8,
+   "perhe": ""
+  },
+  {
+   "alku": 975.0,
+   "loppu": 980.0,
+   "tyyppi": "lasku",
+   "kuvaus": "basso ja yläkerros laskee 5 s (ylälinja 4 puolisävelaskelta)",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 985.0,
+   "loppu": 994.0,
+   "tyyppi": "lasku",
+   "kuvaus": "koko orkesteri laskee 9 s (ylälinja 2 puolisävelaskelta)",
+   "voima": 2.2,
+   "perhe": ""
+  },
+  {
+   "alku": 990.0,
+   "loppu": 1000.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → hidas (11 uutta säveltä/s)",
+   "voima": 11.0,
+   "perhe": ""
+  },
+  {
+   "alku": 999.0,
+   "loppu": 1000.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 17.3,
+   "perhe": ""
+  },
+  {
+   "alku": 999.0,
+   "loppu": 1007.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 8 s",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1000.0,
+   "loppu": 1010.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: hidas → kohtalainen (17 uutta säveltä/s)",
+   "voima": 17.2,
+   "perhe": ""
+  },
+  {
+   "alku": 1004.0,
+   "loppu": 1011.0,
+   "tyyppi": "nousu",
+   "kuvaus": "basso ja yläkerros nousee 7 s (ylälinja 8 puolisävelaskelta)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1007.0,
+   "loppu": 1008.0,
+   "tyyppi": "basso liikkuu",
+   "kuvaus": "basso lähtee liikkeelle 8 s paikallaan olon jälkeen: H1 → D2",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1007.0,
+   "loppu": 1017.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä D2 10 s",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1009.0,
+   "loppu": 1010.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "ylärekisteri tulee",
+   "voima": 16.2,
+   "perhe": ""
+  },
+  {
+   "alku": 1010.0,
+   "loppu": 1020.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: kohtalainen → nopea (56 uutta säveltä/s)",
+   "voima": 55.9,
+   "perhe": ""
+  },
+  {
+   "alku": 1010.0,
+   "loppu": 1016.0,
+   "tyyppi": "purske",
+   "kuvaus": "ylärekisterin nopea purske (88 uutta säveltä/s)",
+   "voima": 88.5,
+   "perhe": ""
+  },
+  {
+   "alku": 1011.0,
+   "loppu": 1015.0,
+   "tyyppi": "tremolo",
+   "kuvaus": "pitkät äänet värisevät (tremolo), 2 ääntä välillä H5–Fis6",
+   "voima": 2.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1015.0,
+   "loppu": 1020.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "yläkerros: staccato (lyhyet, irralliset)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1017.0,
+   "loppu": 1018.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 10 s urkupisteen jälkeen (D2)",
+   "voima": 10.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1020.0,
+   "loppu": 1025.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: staccato (lyhyet, irralliset)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1020.0,
+   "loppu": 1027.0,
+   "tyyppi": "lasku",
+   "kuvaus": "koko orkesteri laskee 7 s (ylälinja 0 puolisävelaskelta)",
+   "voima": 0.5,
+   "perhe": ""
+  },
+  {
+   "alku": 1020.0,
+   "loppu": 1030.0,
+   "tyyppi": "liike",
+   "kuvaus": "liike muuttuu: nopea → hidas (8 uutta säveltä/s)",
+   "voima": 8.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1024.0,
+   "loppu": 1052.0,
+   "tyyppi": "urkupiste",
+   "kuvaus": "basso pysyy sävelellä H1 28 s",
+   "voima": 28.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1025.0,
+   "loppu": 1030.0,
+   "tyyppi": "artikulaatio",
+   "kuvaus": "keskikerros: legato (pitkät, sidotut)",
+   "voima": 15.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1025.0,
+   "loppu": 1026.0,
+   "tyyppi": "kerros tulee",
+   "kuvaus": "pohja (matala rekisteri) tulee",
+   "voima": 20.5,
+   "perhe": ""
+  },
+  {
+   "alku": 1025.0,
+   "loppu": 1026.0,
+   "tyyppi": "äkillinen voimistuminen",
+   "kuvaus": "taso nousee äkkiä",
+   "voima": 19.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1046.0,
+   "loppu": 1051.0,
+   "tyyppi": "lasku",
+   "kuvaus": "yläkerros laskee 5 s (ylälinja 10 puolisävelaskelta)",
+   "voima": 9.5,
+   "perhe": ""
+  },
+  {
+   "alku": 1052.0,
+   "loppu": 1053.0,
+   "tyyppi": "basso vaikenee",
+   "kuvaus": "basso vaikenee 28 s urkupisteen jälkeen (H1)",
+   "voima": 28.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1052.0,
+   "loppu": 1056.0,
+   "tyyppi": "hiljaisuus",
+   "kuvaus": "lähes hiljaista 4 s",
+   "voima": 4.0,
+   "perhe": ""
+  },
+  {
+   "alku": 1056.6,
+   "loppu": 1056.7,
+   "tyyppi": "isku",
+   "kuvaus": "isku (aksentti)",
+   "voima": 9.2,
+   "perhe": ""
+  },
+  {
+   "alku": 1057.1,
+   "loppu": 1057.2,
+   "tyyppi": "isku",
+   "kuvaus": "isku (matala isku (patarumpu/bassot))",
+   "voima": 8.7,
+   "perhe": ""
+  }
+ ],
+ "ohjaus": {
+  "tiedosto": "build/rattle_koko/ohjaus.f32",
+  "fps": 30,
+  "frames": 32340,
+  "channels": [
+   "taso_dbfs",
+   "osuus_matala",
+   "osuus_keski",
+   "osuus_korkea",
+   "bassolinja_midi",
+   "painopiste_matala",
+   "painopiste_keski",
+   "painopiste_korkea",
+   "ylalinja_midi",
+   "uusia_matala",
+   "uusia_keski",
+   "uusia_korkea",
+   "tremolo",
+   "suunta",
+   "jouset",
+   "puupuhaltimet",
+   "vasket"
+  ]
+ },
  "analyses": [
   {
    "levytys": "rattle2022",

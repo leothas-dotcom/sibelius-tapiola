@@ -1,5 +1,5 @@
 {
-  "_ohje": "Ajat levytykselle rattle2022 (docs/teemakartta_rakenne.md). Ajat sekunteina Rattlen kuuntelukopion (build/kuuntelu/rattle_kuuntelu.wav) alusta. varmuus: vahvistettu (käyttäjä kuullut) / analyysi (mitattu, ei kuultu) / arvio (t = null: ei perustetta mittauksesta). MIKÄÄN aika ei ole vahvistettu: käyttäjä ei ole kuullut. luottamus (hyvä / kohtalainen / heikko / ei) kuvaa, kuinka hyvin mitattu piirre vastaa ankkurin kuvausta. t_loppu = tapahtuman loppu (hetkiankkureilla, joilla on kesto); vaihtoehdot ja ehdokkaat = muut mitatut kohdat, jotka voivat olla oikea. Vahvistettua aikaa ei kirjoiteta yli koneellisesti. Tahtinumeroita ei lasketa äänestä.",
+  "_ohje": "Ajat levytykselle rattle2022 (docs/projekti.md, Data ja siirto omaan äänitykseen). Ajat sekunteina Rattlen kuuntelukopion (build/kuuntelu/rattle_kuuntelu.wav) alusta. varmuus: vahvistettu (käyttäjä kuullut) / analyysi (mitattu, ei kuultu) / arvio (t = null: ei perustetta mittauksesta). MIKÄÄN aika ei ole vahvistettu: käyttäjä ei ole kuullut. luottamus (hyvä / kohtalainen / heikko / ei) kuvaa, kuinka hyvin mitattu piirre vastaa ankkurin kuvausta. t_loppu = tapahtuman loppu (hetkiankkureilla, joilla on kesto); vaihtoehdot ja ehdokkaat = muut mitatut kohdat, jotka voivat olla oikea. Vahvistettua aikaa ei kirjoiteta yli koneellisesti. Tahtinumeroita ei lasketa äänestä.",
   "levytys": "rattle2022",
   "kuuntelukopio": "build/kuuntelu/rattle_kuuntelu.wav",
   "ajat": {
@@ -396,8 +396,8 @@
       "t": 203.0,
       "t_loppu": 240.0,
       "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "linjat.py: matala rekisteri tyhjä 3:23 alkaen; pitkät äänet keskirekisterissä: Ais4 3:21.2–3:25.8 ja 3:26.2–3:29.6 (< >), D4 3:29.7–3:33.7, Gis4 3:31.1–3:33.9, Fis4 3:34.0, F4 3:43.7–3:50.4, Dis4 3:50.3–3:52.7; kuvassa matalin vahva linja laskee E4 → D4 → C4 (3:25–3:37); pitkät korkeat: Cis6 3:21.2–3:23.7 (värisee 5 Hz), Cis6 3:26.3–3:28.0 (tremolo 9 Hz), H5 3:30.3 (4 Hz), D6 3:38.1–3:41.8 (5 Hz), D6 3:47.0 (5 Hz); yläkerroksessa 5–27 uutta säveltä/s."
+      "luottamus": "hyvä",
+      "peruste": "korvat.py: matala rekisteri katoaa 3:23 (44 s); keskirekisterin pitkät äänet laskevat askel kerrallaan (Ais4 3:21–3:29, D4 ja Gis4 3:29–3:34, Fis4 3:34, F4 3:43–3:50, Dis4 3:50), sointi runsas ja suora (jousimainen); niiden yllä 5–27 uutta säveltä sekunnissa. Partituuri s. 10: kirjain C = t. 106, viulut div. pitkät sidotut äänet, huilut ja klarinetit kuviot, alttoviulut, sellot ja bassot tauolla."
     },
     "e_pitka_ja_kuviot": {
       "t": 240.0,

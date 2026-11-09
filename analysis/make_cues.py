@@ -1,6 +1,6 @@
 r"""Merkinnät teemakartasta ja levytyksen ajoista: kirjoittaa annotations/cues.json.
 
-Lähteet (docs/teemakartta_rakenne.md):
+Lähteet (docs/projekti.md, Data ja siirto omaan äänitykseen):
   annotations/teemat.json            ankkurit: partituurin paikka ja musiikillinen sisältö (levytysriippumaton, ei aikoja)
   annotations/ajat_<levytys>.json    ankkuri-id -> aika sekunteina ko. levytyksen kuuntelukopiossa, varmuus, peruste
   annotations/levytykset.json        levytysten luettelo (kuuntelukopio, kesto, rooli, analyysipaketti)
@@ -64,7 +64,7 @@ def worst(values, order):
 def load_times(levytys):
     path = ROOT / "annotations" / f"ajat_{levytys}.json"
     if not path.exists():
-        raise SystemExit(f"{path.relative_to(ROOT)} puuttuu: levytyksen ajat kirjoitetaan analyysistä (docs/teemakartta_rakenne.md)")
+        raise SystemExit(f"{path.relative_to(ROOT)} puuttuu: levytyksen ajat kirjoitetaan analyysistä (docs/projekti.md, Data ja siirto omaan äänitykseen)")
     d = read_json(path)
     if d.get("levytys") != levytys:
         raise SystemExit(f"{path.name}: levytys '{d.get('levytys')}' ei vastaa '{levytys}'")
@@ -174,6 +174,26 @@ def build_cues(anchors, times, iskut):
     return cues
 
 
+
+def _korvat_tapahtumat(rec):
+    """Korvien (analysis/korvat.py) tunnistamat äänen tapahtumat levytyksen paketista."""
+    pak = rec.get("paketti")
+    f = ROOT / pak / "korvat.json" if pak else None
+    if f is None or not f.exists():
+        return []
+    return json.loads(f.read_text(encoding="utf-8"))["tapahtumat"]
+
+
+def _ohjaus(rec):
+    """Kuvaa ohjaavien 30 fps -kanavien tiedosto ja kanavaluettelo."""
+    pak = rec.get("paketti")
+    f = ROOT / pak / "ohjaus.json" if pak else None
+    if f is None or not f.exists():
+        return None
+    m = json.loads(f.read_text(encoding="utf-8"))
+    return {"tiedosto": f"{pak}/ohjaus.f32", "fps": m["fps"], "frames": m["frames"], "channels": m["channels"]}
+
+
 def main():
     ap = argparse.ArgumentParser(description="annotations/cues.json teemakartasta, levytyksen ajoista ja iskuista")
     ap.add_argument("--levytys", help="levytyksen id (annotations/levytykset.json); oletus: ensimmäinen työlevytys")
@@ -217,6 +237,8 @@ def main():
         "sections": sections,
         "cues": cues,
         "iskut": iskut,
+        "tapahtumat": _korvat_tapahtumat(rec),
+        "ohjaus": _ohjaus(rec),
         "analyses": [{"levytys": levytys, "paketti": str(pak.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_lahde": str(aks_file.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_kynnys_z": aks.get("zmin"), "ajat_lahde": f"annotations/ajat_{levytys}.json"}],

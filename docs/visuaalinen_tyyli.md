@@ -1,8 +1,8 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 1.2, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin, luku 7b ääni → kuva). Kirjoitettu käyttäjän ideoista (`docs/haastattelu_tyyli.md`) ja tutkimuksesta
+*Versio 1.2, 9.11.2026 (v1 1.11.2026; muutokset: metsä näkyy, synestesia väriin, luku 7b ääni → kuva). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
-osaistunto, aliagentti ja kriitikko lukee tämän kokonaan ja `docs/kuvasaannot.md` ennen mitään muuta. Käyttäjä
+osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
 merkitty **[ohjaajan valinta]**.*
 
@@ -136,20 +136,20 @@ Säveltäjä ei näy; hän on kamera.
 ## 7. Soitin → elementti
 
 Jokainen soitin on elementti, ei esine. Elementillä on kerros, liike ja valo. Kuvakäsikirjoitus nimeää
-elementin, ei soitinta. Kanavakortti sanoo, mitä kanavaa elementti saa seurata.
+elementin, ei soitinta. Sarake Iskussa sanoo, miten elementti vastaa iskuun (iskun elementti on ympäristössä; mikään ei ilmesty eikä katoa). Mitä äänestä voi luotettavasti mitata: `docs/tapiola_tutkimus.md` luku 13.
 
-| Soitin | Elementti | Kerros | Miten se liikkuu | Mittaus (kanavakortti) |
-|---|---|---|---|---|
-| Patarummut | **Pohjan tärähdys**: vaakasuora paino, joka välähtää kerrosten alta ja etenee ylös | pohja | isku: koko tilan alin kerros liikahtaa; tremolo: pohja värisee | aksentit (10 ms), patarumpu_matala |
-| Viulut, alttoviulut | **Metsän massa ja säikeet**: pystysuorat tummat massat ja niiden välissä kulkevat valosäikeet | kaikki kerrokset | pitkät äänet: massa pysyy; kuviot: säikeet liikkuvat; tremolo: massa väreilee | jouset-kanava, liiketiheys |
-| Sellot, kontrabassot | **Pohjan askeleet ja urkupiste**: vaakasuora pohja, joka siirtyy omassa ajassaan tai pysyy | pohja | askeleet: pohja nytkähtää eri tahtiin kuin muu; urkupiste: pohja pysyy, kaikki muu liikkuu sen päällä | urkupiste, askel (rakennetaan) |
-| Käyrätorvet | **Kaukainen kajo ja hengitys**: himmeä valo kaukaisimmassa kerroksessa, joka paisuu ja laskee | kaukana | < >: kajo hengittää; pulssit: kajo sykkii | PANNs käyrätorvi (osittain), vaskiaalto (rakennetaan) |
-| Trumpetit, pasuunat | **Läpi tuleva valo**: valo, joka leikkaa kerrosten läpi pystysuoraan (Ukon tuli) | takaa eteen | isku: leikkaus; jyrinä: useita leikkauksia; myrsky: kerrokset repeävät | vaskikanava, aksentit |
-| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia oksistossa ja kerrosten välissä, jotka nousevat, laskevat ja katoavat | lähellä ja keskellä | nopeat kuviot: pilkahduksia; alun "nousevat ja laskevat kuviot" (käyttäjä: "ovatko mäkiä??"): valon kaari, joka nousee esiin metsän siimeksestä ja painuu takaisin | PANNs huilu, liiketiheys, sävelkaaret |
-| Klarinetit, bassoklarinetti | **Hämyn äänet**: puoliksi näkyvä liike keskikerroksessa, muoto joka ei tarkennu | keskellä | kuviot: muoto liikkuu; pitkät: muoto jää puoliksi näkyviin | PANNs klarinetti |
-| Oboet, englannintorvi | **Ohut linja**: yksi kapea valojuova kaukaa | kaukana | yksin: linja näkyy; muuten ei | ei mitattavissa; partituuri |
-| Fagotit, kontrafagotti | **Pohjan toinen ääni**: pohjan sisällä liikkuva tummempi massa | pohja | pitkät: massa hengittää pohjan sisällä | ei mitattavissa; partituuri |
-| Koko orkesteri (tutti) | **Kerrokset yhtenä**: kaikki kerrokset samassa valossa ja liikkeessä | kaikki | myrsky: kerrokset romahtavat yhdeksi; loppuhuipennus: viimeinen aalto | taso, jännite |
+| Soitin | Elementti | Kerros | Miten se liikkuu | Mittaus (kanavakortti) | Iskussa |
+|---|---|---|---|---|---|
+| Patarummut | **Pohjan tärähdys**: vaakasuora paino, joka välähtää kerrosten alta ja etenee ylös | pohja | isku: koko tilan alin kerros liikahtaa; tremolo: pohja värisee | aksentit (10 ms), patarumpu_matala | alin kerros liikahtaa, aalto etenee ylös |
+| Viulut, alttoviulut | **Metsän massa ja säikeet**: pystysuorat tummat massat ja niiden välissä kulkevat valosäikeet | kaikki kerrokset | pitkät äänet: massa pysyy; kuviot: säikeet liikkuvat; tremolo: massa väreilee | jouset-kanava, liiketiheys | massa etääntyy hetkeksi |
+| Sellot, kontrabassot | **Pohjan askeleet ja urkupiste**: vaakasuora pohja, joka siirtyy omassa ajassaan tai pysyy | pohja | askeleet: pohja nytkähtää eri tahtiin kuin muu; urkupiste: pohja pysyy, kaikki muu liikkuu sen päällä | urkupiste, askel (rakennetaan) | pohja painuu |
+| Käyrätorvet | **Kaukainen kajo ja hengitys**: himmeä valo kaukaisimmassa kerroksessa, joka paisuu ja laskee | kaukana | < >: kajo hengittää; pulssit: kajo sykkii | PANNs käyrätorvi (osittain), vaskiaalto (rakennetaan) | kajo välähtää |
+| Trumpetit, pasuunat | **Läpi tuleva valo**: valo, joka leikkaa kerrosten läpi pystysuoraan (Ukon tuli) | takaa eteen | isku: leikkaus; jyrinä: useita leikkauksia; myrsky: kerrokset repeävät | vaskikanava, aksentit | leikkaus iskun ruudussa |
+| Huilut, pikkolo | **Väike**: pieniä valon pilkahduksia oksistossa ja kerrosten välissä, jotka nousevat, laskevat ja katoavat | lähellä ja keskellä | nopeat kuviot: pilkahduksia; alun "nousevat ja laskevat kuviot" (käyttäjä: "ovatko mäkiä??"): valon kaari, joka nousee esiin metsän siimeksestä ja painuu takaisin | PANNs huilu, liiketiheys, sävelkaaret | ei reagoi |
+| Klarinetit, bassoklarinetti | **Hämyn äänet**: puoliksi näkyvä liike keskikerroksessa, muoto joka ei tarkennu | keskellä | kuviot: muoto liikkuu; pitkät: muoto jää puoliksi näkyviin | PANNs klarinetti | ei reagoi |
+| Oboet, englannintorvi | **Ohut linja**: yksi kapea valojuova kaukaa | kaukana | yksin: linja näkyy; muuten ei | ei mitattavissa; partituuri | ei reagoi |
+| Fagotit, kontrafagotti | **Pohjan toinen ääni**: pohjan sisällä liikkuva tummempi massa | pohja | pitkät: massa hengittää pohjan sisällä | ei mitattavissa; partituuri | ei reagoi |
+| Koko orkesteri (tutti) | **Kerrokset yhtenä**: kaikki kerrokset samassa valossa ja liikkeessä | kaikki | myrsky: kerrokset romahtavat yhdeksi; loppuhuipennus: viimeinen aalto | taso, jännite | kerrokset romahtavat yhdeksi (myrsky) |
 
 Elementtien yhteinen laki: **väike ja kajo ovat kaukana, paino ja massa lähellä.** Kun soitin tulee etualalle
 musiikissa, sen elementti tulee lähemmäs kerroksissa, ei suuremmaksi paikallaan.
@@ -225,3 +225,48 @@ nousee. Lasku, viimeinen aalto. S: kamera hidastuu. H-duuri: pysähdys, kajo, hi
 
 Tyyli vaatii: jatkuva 3D-tila, jossa kamera voi ajaa kerrosten läpi ilman leikkauksia; syvyyssumu ja valo
 kerroksittain; kaikki koodilla; `seek(t)` ilman tilaa. Tekniikka päätetään vaiheessa 8 tätä vasten, ei ennen.
+
+## 12. Kuvasäännöt (tiivistys briefeille ja kriitikolle)
+
+*Sama asia lyhyesti. Jos tämä ja yllä oleva ovat ristiriidassa, yllä oleva voittaa.*
+
+### Ääni ohjaa
+0. Kuva on äänen visualisointi. Jokaisella äänen tapahtumalla on vastine (tyyliohje 7b): nousu, lasku, kerros katoaa
+   tai tulee, paljastuminen, urkupiste, basso liikkuu, staccato, legato, nopea, hidas, tremolo, vuorottelu, isku,
+   hiljaisuus. Ääni tapahtuu eikä kuva reagoi = virhe. Kuva tapahtuu ilman äänen syytä = virhe.
+
+### Kamera
+1. Kamera liikkuu aina, hitaasti sisään ja eteen. Ei peruuta, ei palaa.
+2. Pysähdys vain nimetyissä kohdissa: C-duuri (taottu aurinko), H-duuri (loppu). Nimeämätön pysähdys on virhe.
+3. Ei pyörimistä, ei kallistusta, enintään 20 °/s. Suunnanvaihdot jatkuvia.
+4. Kamera ei reagoi iskuun. Elementit reagoivat.
+5. Siirtymä maailmasta toiseen on kulku jonkin läpi, kestää vähintään 4 s, mittakaava muuttuu jatkuvasti.
+
+### Kerrokset
+6. Aina vähintään kolme syvyyskerrosta: lähellä (tumma, terävä, nopea), keskellä, kaukana (sininen, himmeä, hidas).
+7. Se, joka musiikissa puhuu, tulee lähemmäs kerroksissa. Ei suuremmaksi paikallaan.
+8. Kerros on etäisyys ja valo, ei taso eikä pahvi. Kerrosten reunat eivät vuoda; tyhjä tausta on virhe.
+
+### Elementit
+9. Metsä näkyy: rungot, kuuset, oksisto, lumi, usva, kerroksittain. Jokainen soitin on elementti metsän sisällä
+   (tyyliohje luku 7), ei esine: ei soittimia, nuotteja, kasvoja, eläimiä, ihmisiä, hahmoja.
+10. Iskun elementti on ympäristössä (pohjan tärähdys, valon leikkaus, kerrosten etääntyminen) ja näkyy iskun ruudussa.
+11. Elementti ei ilmesty, katoa eikä loiki iskussa. Se on jo kuvassa ja muuttaa tilaa.
+12. Enintään kolme elementtiä liikkuu yhtä aikaa.
+13. Väike ja kajo ovat kaukana; paino ja massa lähellä.
+
+### Valo ja väri
+14. Valolla on aina lähde jossain kerroksessa. Ei hehkua ilman lähdettä.
+15. Koko teos on tumma: hämy, salo, halla, noki. Ei lämpöä ennen loppua. Punaista vain taotussa auringossa
+    (C-duuri), jos käyttäjä hyväksyy synestesiaehdotuksen.
+16. Taottu aurinko (punainen tai messinki, käyttäjä päättää) vain C-duurissa. Kajo (pehmeä vaalea) vain H-duurissa.
+17. Värit vaihtuvat kerroksen tullessa etualalle, eivät iskussa.
+
+### Hiljaisuus
+18. Hiljaisuudessa kamera jatkaa, elementit lakkaavat. Kuva ei pimene vahingossa eikä jatka entistä.
+
+### Mitä ei koskaan
+19. Ei paperia, mustetta, rasteria, nukkeja, leikattuja tasoja, hahmoja (edellinen projekti).
+20. Ei kansien kliseitä (kapellimestari, tyyni järvi, auringonlasku), ei Mondrian-ruudukkoa, Kandinskyn ympyröitä,
+    visualisaattori-synestesiaa.
+21. Ei tekoälykuvia, ei jäljennöksiä. Ei natsitervehdystä muistuttavia muotoja (ei hahmoja, joten ei eleitä).

@@ -324,7 +324,7 @@ def main():
         "urkupisteet": [{"alku": round(start + t0, 2), "loppu": round(start + t1, 2), "midi": m} for t0, t1, m in ped_runs],
         "soitinluokat": [k for k in SOITIN if f"panns_{k}" in L],
         "soitinluokat_huom": "soitin_* = PANNs raaka-arvo sellaisenaan; AudioSetissä ei ole oboe-, fagotti- eikä englannintorvi-luokkaa",
-        "huom": "Kanavat ovat ensimmäinen versio; luotettavuus todetaan kanavakortissa pöytäkirjasta (kuuntele.py).",
+        "huom": "Kanavat ovat ensimmäinen versio; luotettavuus: docs/tapiola_tutkimus.md luku 13 ja docs/tutkimus/kanavakortti.md.",
     }
     (d / "kanavat.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False), encoding="utf-8")
     print(f"{n} ruutua x {len(names)} kanavaa -> {d / 'kanavat.f32'}")

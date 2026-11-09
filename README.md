@@ -1,8 +1,8 @@
 # Tapiola-videoprojekti
 
-Jean Sibelius, *Tapiola*, sinfoninen runo op. 112. Projektin säännöt ovat `CLAUDE.md`:ssä, työkalupäätös `docs/tyokalut.md`:ssä, kuuntelutyökalun suunnitelma
-`docs/analyysisuunnitelma.md`:ssä, vaiheen 1 tulokset `docs/tutkimus/vaihe1_raportti.md`:ssä ja vaiheiden 3–4 tulokset (koko Rattle-äänitys)
-`docs/tutkimus/vaihe3_4_raportti.md`:ssä.
+Jean Sibelius, *Tapiola*, sinfoninen runo op. 112. Projektin säännöt ovat `CLAUDE.md`:ssä. Luettavia tiedostoja on kolme: `annotations/kuunteluopas.md`
+(mitä kuuluu ja milloin), `docs/visuaalinen_tyyli.md` (miten kuva vastaa) ja `docs/tapiola_tutkimus.md` (tausta). Suunnitelma, palautelista ja opit:
+`docs/projekti.md`. Lähdearkisto: `docs/tutkimus/`.
 
 **Äänitykset (päätös 1.11.2026):** työäänitys on Rattle / London Symphony Orchestra 2022 (`audio/vertailu/rattle_lso_2022.webm`, opus 48 kHz, 1078,02 s).
 Kajanus / LSO 1932 (`audio/05_Tapiola.mp3`, siirto Bob Varney; 1062,85 s, 44,1 kHz) on arkisto. Lopullinen äänitys tulee myöhemmin käyttäjältä, ja silloin sama
@@ -47,27 +47,18 @@ $py = ".venv\Scripts\python.exe"
 & $py -I analysis\kuuntelukopio.py                 # lähde -> build/kuuntelu/rattle_kuuntelu.wav + kellomittaus (4 vertailua, tavoite 0 ms)
 & $py -I analysis\kohinaikkuna.py --choose start   # hiljaisin EI-digitaalinen 1 s ikkuna -> config.json; digitaaliset jaksot ja huone
 & $py -I analysis\prepare.py --start 0 --duration 1078.016 --out build\rattle_koko
-& $py -I analysis\afftdn_vertailu.py build\rattle_koko   # afftdn: orig_mono vs clean_mono hiljaisissa kohdissa
 & $py -I analysis\analyze.py build\rattle_koko     # CPU: voimakkuus, kaistat, chroma, sävellaji, uutuuskäyrä, patina
 & $py -I analysis\listen.py build\rattle_koko --steps stemmit,soittimet,savelet   # GPU: Demucs, PANNs (+ saksofoni), CREPE
 & $py -I analysis\listen.py build\rattle_koko --steps iskut --beats               # GPU: beat_this (tahteja ei raportoida tahtinumeroina)
 & $py -I analysis\aksentit.py build\rattle_koko    # iskut 10 ms tarkkuudella, patarummun lyönnit
 & $py -I analysis\kanavat.py build\rattle_koko     # kanavat + soitin_<luokka> (PANNs-luokat raakana)
-& $py -I analysis\interpret.py build\rattle_koko   # tapahtumat lauseina
-& $py -I analysis\segments.py build\rattle_koko    # jaksorajat
 & $py -I analysis\check_package.py build\rattle_koko
 & $py -I analysis\kellot.py build\rattle_koko      # johdetut äänet kuuntelukopiota vasten (tavoite 0 ms, raja 1 ms)
-& $py -I analysis\aikajana.py build\rattle_koko --out build\rattle_koko   # aikajana.md: jaksot, hiljaiset kohdat, 10 vahvinta rajaa
-& $py -I analysis\varmat_kohdat.py build\rattle_koko   # V1-V8 ehdokasajat perusteineen, soitinluokkien erottuminen
-& $py -I analysis\vire.py build\rattle_koko --from 0 --to 60   # vire A=440:aan nähden (senttiä); ei korjata
 # kuuntelupöytäkirjat 60 s paloina + kuuntelunäytteet build/kuuntelu/otteet/rattle2022_<alku>-<loppu>.wav
-& $py -I analysis\kuuntele.py --from 0 --to 60 --package build\rattle_koko         # ... 60 120 ... 1020 1080 (18 kpl)
-& $py -I analysis\kuuntele.py --from 0 --to 1078.016 --step 1.0 --no-sample --name koko --package build\rattle_koko   # yleiskuva poytakirja_koko.png
 & $py -I analysis\kellot.py --file build\kuuntelu\otteet\rattle2022_0000-0060.wav --start 0   # kuuntelunäyte kuuntelukopiota vasten
 ```
 
 Lyhyempi paketti (esim. 60 s alusta): `prepare.py --start 0 --duration 60 --out build\testi60`; loput samoin. Jos muisti ei riitä (muu GPU-käyttö), ajetaan 420 s osina
-limittäin (30 s) ja `themes.stitch` / `aikajana.py` yhdistää ne (`aikajana.py build\osa1 build\osa2 ...`); Rattlella tätä ei tarvittu.
 
 | Tiedosto | Tehtävä |
 |---|---|
@@ -76,16 +67,9 @@ limittäin (30 s) ja `themes.stitch` / `aikajana.py` yhdistää ne (`aikajana.py
 | `analysis/kuuntelukopio.py` | tekee kuuntelukopion ja mittaa sen 0 ms lähdettä vasten (webm/opus: kaksi opus-dekooderia + aiempi wav) |
 | `analysis/kohinaikkuna.py` | kohinaikkuna tiedostosta (ei digitaalista hiljaisuutta), digitaaliset jaksot, huoneen kohina, ensimmäinen ääni ja musiikin loppu |
 | `analysis/prepare.py` | paketti: soundtrack, mono, naksahdukset ja kohina pois, 44,1 kHz GPU:lle; `--source`, `--noise-window` |
-| `analysis/afftdn_vertailu.py` | `afftdn`-kohinanpoiston vaikutus (orig_mono / clean_mono) valituissa ikkunoissa |
-| `analysis/analyze.py`, `listen.py`, `aksentit.py`, `interpret.py`, `segments.py` | analyysi, kuuntelu, iskut, tulkinta, jaksot |
 | `analysis/kanavat.py` | Tapiolan kanavat (`kanavat.json`/`.f32`, 30 fps) ja yksittäiset PANNs-soitinluokat `soitin_<luokka>` |
-| `analysis/kuuntele.py` | kuuntelupöytäkirja (`poytakirja_<alku>-<loppu>.md/.png`, soitinluokkataulukko ja -kuva, näytteet `build/kuuntelu/otteet/`) |
-| `analysis/varmat_kohdat.py` | V1–V8 ehdokasajat (analyysi, ei kuultu) ja soitinluokkien erottuminen (`varmat_kohdat.md/.json`) |
 | `analysis/kellot.py` | kellotarkistus (`--file`, `--ref`, paketit) |
-| `analysis/vire.py` | vire senttinä pitkistä tasaisista sävelistä |
-| `analysis/rekisteri.py` | rekisterit ja sävelet kohinatason yläpuolella kuuntelukopiosta |
 | `analysis/check_package.py` | paketin ja merkintöjen tarkistus |
-| `analysis/themes.py`, `aikajana.py` | apufunktiot ja koko äänitteen aikajana (jaksot, hiljaiset kohdat, 10 vahvinta rajaa; teematunnistimet kirjoitetaan vaiheessa 5) |
 | `analysis/make_cues.py`, `kuunteluopas.py` | `cues.json` ja kuunteluoppaan GEN-osat teemakartasta (`annotations/teemat.json`) ja levytyksen ajoista (`annotations/ajat_<levytys>.json`); `--levytys <id>` (vaihe 5) |
 | `analysis/videotarkistus.py`, `kriitikko.py` | valmiin videon tarkistus ja kriitikkoaineisto (vaiheet 8–10) |
 | `render/render.mjs`, `camcheck.mjs`, `serve.mjs`, `check-webgl.mjs` | renderöinnin runko ja kameramittari (kohtaus kirjoitetaan vaiheessa 8) |
@@ -94,9 +78,9 @@ limittäin (30 s) ja `themes.stitch` / `aikajana.py` yhdistää ne (`aikajana.py
 
 ## Teemakartta, ajat ja merkinnät (vaihe 5)
 
-Rakenne: `docs/teemakartta_rakenne.md`. Ankkurit (`annotations/teemat.json`) ovat levytysriippumattomia partituurin paikkoja ilman sekunteja ja ilman tarinaa;
+Rakenne: `docs/projekti.md`, luku "Data ja siirto omaan äänitykseen". Ankkurit (`annotations/teemat.json`) ovat levytysriippumattomia partituurin paikkoja ilman sekunteja ja ilman tarinaa;
 ajat ovat levytyskohtaisia (`annotations/ajat_rattle2022.json`: aika, varmuus `analyysi` / `arvio` / `vahvistettu`, luottamus, peruste). Mikään aika ei ole vahvistettu, ennen kuin käyttäjä
-on kuullut sen. Aikajanan sanallistus: `docs/aikajana_tulkinta.md`; vaiheen raportti: `docs/tutkimus/vaihe5_raportti.md`.
+on kuullut sen.
 
 ```powershell
 $py = ".venv\Scripts\python.exe"
@@ -111,3 +95,13 @@ Uusi levytys: lisää se `annotations/levytykset.json`:iin (kentät `kuuntelukop
 
 `docs/` suunnitelmat ja tutkimus · `analysis/` Python-työkalut · `render/` Node-työkalut · `annotations/` levytykset, teemakartta, cues, kuunteluopas ·
 `audio/`, `build/`, `models/` (ei gitissä) · `runs/<nimi>/` ajot.
+
+## Kuuntelu ja kuvan ohjaus
+
+```powershell
+$py = '.venv\Scripts\python.exe'
+& $py -I analysis\korvat.py build\rattle_koko --levytys rattle2022   # kuuntelee koko teoksen: korvat.json (tapahtumat) + ohjaus.f32 (kanavat)
+& $py -I analysis\make_cues.py --levytys rattle2022                    # teemat.json + ajat + korvat -> annotations\cues.json (kuvaa ohjaa tämä)
+& $py -I analysis\kuunteluopas.py --levytys rattle2022                 # kuulijan opas
+& $py -I analysis\check_package.py --cues-only
+```
