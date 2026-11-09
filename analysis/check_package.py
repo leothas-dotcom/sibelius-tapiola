@@ -2,12 +2,14 @@ r"""Tarkistaa analyysipaketin ja merkinnät: JSON kelpaa, binääridata vastaa m
 
   .venv\Scripts\python.exe -I analysis/check_package.py build/testi60     paketti + annotations/cues.json (jos on)
   .venv\Scripts\python.exe -I analysis/check_package.py --cues-only       vain merkinnät (teemat.json, ajat_<levytys>.json, cues.json)
+                                                                          ja kuvakäsikirjoitus (docs/kuvakasikirjoitus.md)
 Tarkistaa myös kanavat.json/kanavat.f32 (analysis/kanavat.py): 30 fps, ruutumäärä sama kuin analysis ja
 listen, ei NaN/inf-arvoja. Palauttaa virhekoodin 1, jos jokin tarkistus ei mene läpi.
 """
 import argparse
 import csv
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -140,6 +142,51 @@ def check_cues():
             print(f"INFO    ilman aikaa: {nulls if nulls else 'ei yhtään'}")
 
 
+def check_storyboard():
+    """Kuvakäsikirjoitus: jokainen tunniste on olemassa, jokainen ankkuri on käytetty, ajat vain generoituina."""
+    path = ROOT / "docs" / "kuvakasikirjoitus.md"
+    cpath = ROOT / "annotations" / "cues.json"
+    print(f"--- {path.relative_to(ROOT)}")
+    if not path.exists() or not cpath.exists():
+        print("OHITETTU kuvakäsikirjoitus (ei vielä)")
+        return
+    c = load_json(cpath)
+    if c is None:
+        return
+    text = path.read_text(encoding="utf-8")
+    kesto = c["recording"].get("kesto_s")
+    t = {x["id"]: x["t"] for x in c["cues"]}
+    t.update({"tiedoston_alku": 0.0, "tiedoston_loppu": kesto})
+    sallitut = set(t) | {s["id"] for s in c["sections"]} | set(c.get("ohjaus", {}).get("channels", []))
+    sallitut |= {e["tyyppi"] for e in c.get("tapahtumat", [])}
+    tunnisteet = [x for x in re.findall(r"`([^`\n]+)`", text) if "/" not in x and "." not in x]
+    vieraat = sorted({x for x in tunnisteet if x not in sallitut})
+    check(not vieraat, f"jokainen tunniste on ankkuri, jakso, kanava tai tapahtumatyyppi {vieraat if vieraat else ''}")
+    kayttamatta = sorted(set(t) - set(tunnisteet))
+    check(not kayttamatta, f"jokainen teemakartan ankkuri on käytetty ({len(set(t) & set(tunnisteet))}/{len(t)}) {kayttamatta if kayttamatta else ''}")
+    otot = re.findall(r"^#### (\d+) [^\n]*?`([^`\n]+)` → `([^`\n]+)` · <!--aika-->([^\n]*?)<!--/aika-->", text, re.M)
+    n_otsikot = len(re.findall(r"^#### ", text, re.M))
+    check(otot and len(otot) == n_otsikot, f"{len(otot)} ottoa, jokaisella alku- ja loppuankkuri ({n_otsikot} otsikkoa)")
+    nrot = [int(o[0]) for o in otot]
+    check(nrot == list(range(1, len(nrot) + 1)), "ottojen numerot juoksevat 1..n")
+    huonot = [o[0] for o in otot if t.get(o[1]) is None or t.get(o[2]) is None or not t[o[1]] < t[o[2]]]
+    check(not huonot, f"jokaisen oton alku on ennen loppua {huonot if huonot else ''}")
+    ketju = [f"{a[0]}→{b[0]}" for a, b in zip(otot, otot[1:]) if t.get(a[2]) is not None and t.get(b[1]) is not None and t[b[1]] - t[a[2]] > 2.0]
+    check(not ketju, f"otot kattavat teoksen ilman yli 2 s aukkoja {ketju if ketju else ''}")
+    check(bool(otot) and otot[0][1] == "tiedoston_alku" and otot[-1][2] == "tiedoston_loppu", "ensimmäinen otto alkaa tiedoston alusta ja viimeinen päättyy sen loppuun")
+
+    def mmss(x):
+        return f"{int(x // 60)}:{int(x % 60):02d}"
+
+    vanhat = [o[0] for o in otot if t.get(o[1]) is not None and t.get(o[2]) is not None and o[3] != f"{mmss(t[o[1]])}–{mmss(t[o[2]])}"]
+    check(not vanhat, f"ottojen ajat vastaavat ankkureita (muuten aja make_cues.py) {vanhat if vanhat else ''}")
+    ilman = re.sub(r"<!--aika-->[^\n]*?<!--/aika-->", "", text)
+    kasin = sorted(set(re.findall(r"(?<![\w/.])\d{1,2}:\d{2}(?![\w])", ilman)))
+    check(not kasin, f"ei käsin kirjoitettuja aikoja {kasin if kasin else ''}")
+    pys = len(re.findall(r"Nimetty pysähdys", text))
+    check(pys == 2, f"nimettyjä pysähdyksiä kaksi (C-duuri ja H-duuri), löytyi {pys}")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser()
@@ -150,6 +197,7 @@ def main():
         for d in a.packages:
             check_package(d if d.is_absolute() else ROOT / d)
     check_cues()
+    check_storyboard()
     print(f"{len(errors)} virhettä." if errors else "Kaikki tarkistukset kunnossa.")
     sys.exit(1 if errors else 0)
 

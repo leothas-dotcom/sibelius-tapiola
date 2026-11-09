@@ -110,7 +110,8 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 ## Kansiot
 - **Kolme luettavaa tiedostoa:** `annotations/kuunteluopas.md` (mitä kuuluu ja milloin), `docs/visuaalinen_tyyli.md` (miten kuva
   vastaa), `docs/tapiola_tutkimus.md` (tausta, synteesi). Numerot ovat JSON-tiedostoissa. Kaikki muu on prosessia tai arkistoa.
-- `docs/` – **vain neljä:** `visuaalinen_tyyli.md` (tyyli ja kuvasäännöt), `tapiola_tutkimus.md` (taustatutkimus),
+- `docs/` – **vain viisi:** `visuaalinen_tyyli.md` (tyyli ja kuvasäännöt), `tapiola_tutkimus.md` (taustatutkimus),
+  `kuvakasikirjoitus.md` (kaari, maailmat, otot ankkureittain; ottojen ajat generoi `make_cues.py`),
   `projekti.md` (suunnitelma, palautelista, opit), `kriitikko_kohdat.json`. `docs/tutkimus/` on lähdearkisto
   (haastattelu eli käyttäjän sanat, kanavakortti, partituurin merkinnät, hakujen tulokset). **Uusia dokumentteja ei lisätä.**
 - `annotations/` – teemat.json, ajat_*.json, levytykset.json (lähteet), cues.json ja kuunteluopas.md (generoidut).

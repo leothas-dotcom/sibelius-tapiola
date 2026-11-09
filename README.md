@@ -1,7 +1,7 @@
 # Tapiola-videoprojekti
 
 Jean Sibelius, *Tapiola*, sinfoninen runo op. 112. Projektin säännöt ovat `CLAUDE.md`:ssä. Luettavia tiedostoja on kolme: `annotations/kuunteluopas.md`
-(mitä kuuluu ja milloin), `docs/visuaalinen_tyyli.md` (miten kuva vastaa) ja `docs/tapiola_tutkimus.md` (tausta). Suunnitelma, palautelista ja opit:
+(mitä kuuluu ja milloin), `docs/visuaalinen_tyyli.md` (miten kuva vastaa) ja `docs/tapiola_tutkimus.md` (tausta). Kuvakäsikirjoitus: `docs/kuvakasikirjoitus.md`. Suunnitelma, palautelista ja opit:
 `docs/projekti.md`. Lähdearkisto: `docs/tutkimus/`.
 
 **Äänitykset (päätös 1.11.2026):** työäänitys on Rattle / London Symphony Orchestra 2022 (`audio/vertailu/rattle_lso_2022.webm`, opus 48 kHz, 1078,02 s).

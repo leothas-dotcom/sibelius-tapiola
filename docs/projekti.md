@@ -22,7 +22,7 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 4 | Kuuntelutyökalu | ✅ yksi työkalu `analysis/korvat.py`: 270 tapahtumaa, 17 ruutukanavaa (`build/rattle_koko/ohjaus.f32`); mitä ääni antaa ja mitä ei: tutkimuksen luku 13; **vääriä osumia ei ole karsittu korvalla** |
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.2 (metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12); **odottaa käyttäjän hyväksyntää** (myös C-duurin väri) |
-| 7 | Ohjaus ja kuvakäsikirjoitus | ⬜ |
+| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1 (12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **odottaa käyttäjän hyväksyntää** (maailmat, värit, loppu) |
 | 8 | Tekniikka ja mittarit | ⬜ |
 | 9 | Perusta, sitten osat | ⬜ |
 | 10 | Luonnokset ennen renderiä | ⬜ |
@@ -156,13 +156,17 @@ Tarkistuslista:
 ## Vaihe 7: Ohjaus ja kuvakäsikirjoitus
 
 Tarkistuslista:
-- [ ] `docs/ohjaus.md`: pääosasääntö (kuvaa johtaa se, joka musiikissa puhuu), jokaisessa otossa teko,
-  otot ja leikkaukset, kameran säännöt.
-- [ ] `docs/kuvakasikirjoitus.md`: jokainen rivi nimeää ankkurin, iskun tai mitatun kanavan. Ei sekunteja.
-- [ ] Jokainen ankkuri löytyy teemakartasta; puuttuva ankkuri on virhe.
-- [ ] Kuvakäsikirjoituksessa ei ole kuunteluoppaan sisältöä.
-- [ ] Ei keksittyjä lainauksia; viittaukset lähteistetty ja merkitty tulkinnaksi.
-- [ ] Iskujen elementit ovat ympäristössä, eivät hahmojen kehossa.
+- [x] Ohjaus: ei omaa dokumenttia. Pääosasääntö ja kameran säännöt ovat tyyliohjeessa (luvut 2, 5, 8, 12);
+  kuvakäsikirjoituksen jokaisessa otossa on kentät Teko ja Tunne ja johtaja; kameran nimetyt kohdat sen luvussa 7.
+- [x] `docs/kuvakasikirjoitus.md`: jokainen otto nimeää alku- ja loppuankkurin, jokainen kuvan tapahtuma ankkurin,
+  tapahtumatyypin tai kanavan. Ei käsin kirjoitettuja aikoja: otsikoiden ajat generoi `make_cues.py` (mitattu:
+  `check_package.py --cues-only`).
+- [x] Jokainen ankkuri löytyy teemakartasta ja jokainen teemakartan ankkuri on käytetty (mitattu, 76/76).
+- [x] Kuvakäsikirjoituksessa ei ole kuunteluoppaan sisältöä (lähteet ja tulkinnat jäävät oppaaseen; ankkurin nimi vie sinne).
+- [x] Ei keksittyjä lainauksia: lainaukset ovat käyttäjän sanoja haastattelusta; yksi Kalevala-viite on merkitty tulkinnaksi.
+- [x] Iskujen elementit ovat ympäristössä (rivi Iskut otoissa, yleissääntö luvussa 6); hahmoja ei ole.
+- [ ] Tyyliohjeen kohta kohdalta -tarkistus tuoreella lukijalla (kriitikko) on tekemättä: tarkistin itse.
+- [ ] Puuttuva data (käsikirjoituksen luku 8) korjattu teemakarttaan tai kuuntelutyökaluun.
 - [ ] Käyttäjä on lukenut ja hyväksynyt.
 - [ ] Opit ja commit.
 
@@ -272,12 +276,34 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 25 | 9.11. | – | "NIIN MITÄHÄN NE VIULUT TEKEVÄT? ... ET VOI MINULTA KYSYÄ" | 🔶 korjattu, ei todennettu | kirjain C (t. 106): viulut div. pitkin sidotuin äänin, vajoavat hitaasti; huilut ja klarinetit kuvioivat; alttoviulut, sellot ja bassot tacet (ääni + partituurin s. 10); käyttäjä ei ole vielä vahvistanut |
 | 26 | 9.11. | – | "ei voi olla niin että meillä on kymmenen tiedostoa, mihin data on ripoteltu ... MONTAKO DOC FILEÄ / ANALYSAATTORIA TARVITSET" | ✅ todennettu | luettavia tiedostoja kolme (kuunteluopas, tyyliohje, taustatutkimus) ja projekti.md; docs/ 17 → 4 tiedostoa + arkisto (koko docs 49 → 20 tiedostoa); analysis/ 30 → 16 skriptiä, yksi kuuntelutyökalu korvat.py; kuvaa ohjaa yksi cues.json; check_package: kaikki kunnossa |
 | 27 | 9.11. | – | "älä siis vaan poista niitä, vaan ne täytyy lukea, syntetisoida ... käyttökelpoisessa" | ✅ todennettu | tapiola_tutkimus.md v2 kirjoitettu arkiston ja poistettujen tiedostojen pohjalta (15 lukua: periaatetaulukot mytologiasta, viitteistä ja 1920-luvun taiteesta, kirjain- ja tahtitaulukko, mitä ääni antaa); partituurin 25 sivun taulukko arkistoon; iskusarake tyyliohjeen lukuun 7; siirto omaan äänitykseen projekti.md:hen; mitään ei poistettu arkistosta |
+| 28 | 9.11. | – | "Aloita käsikirjoitus" ... "tarkista ensin netistä, millainen on hyvä kuvakäsikirjoitus. Voitko löytää vaikka jonkun skillin" | 🔶 kirjoitettu, ei hyväksytty | `docs/kuvakasikirjoitus.md` v1; kriteerit haettu (9 lähdettä, käsikirjoituksen luku 9); skilliä ei löytynyt käyttäjän skilleistä, hakemiston kolme lähintä eivät sovi (oma tyyli tai eri laji); tarkistus: 60 ottoa, 76/76 ankkuria, ei käsin kirjoitettuja aikoja, kaksi nimettyä pysähdystä |
 
 ---
 
 # 3. Opit
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
+
+## 9.11.2026 – Kuvakäsikirjoitus: ensin kaari, sitten otot, ja kaikki mitattavaksi
+
+- **Mitä haettiin ensin:** millainen on hyvä kuvakäsikirjoitus (käyttäjän pyyntö). Tulos seitsemänä kohtana
+  käsikirjoituksen luvussa 0: tunteen kaari ennen ottoja, yksi ajatus per otto, vakiokentät, värin kaari rinnalla,
+  nimetyt hengähdykset, ajoitus sidottu musiikkiin etukäteen, ja käsikirjoitus on työkalu eikä taideteos.
+- **Skilli:** käyttäjän omista skilleistä ei löytynyt; hakemiston lähimmät (animation-studio,
+  scripting-and-storyboarding, CineFlo) tuovat oman tyylin tai ovat eri lajia. Yhteisön "Pixar story-driven
+  storyboarding" -ohjeesta otettiin periaatteet (kaari, hengähdykset, värikaari), ei muotoa: se on hahmovetoinen.
+- **Mikä toimi:** käsikirjoitus on teksti, mutta sen voi mitata. Jokainen tunniste takahipsuissa on ankkuri, jakso,
+  kanava tai tapahtumatyyppi; tarkistus kaataa vieraan tunnisteen, käyttämättömän ankkurin, aukon ottojen välillä,
+  käsin kirjoitetun ajan ja väärän määrän nimettyjä pysähdyksiä. Ajat otsikoihin generoidaan, joten ne vaihtuvat
+  levytyksen mukana.
+- **Mikä toimi:** koneen tapahtumalista aikajärjestyksessä ankkurien välissä (ei oppaan valikoima) näytti, mitä
+  kussakin otossa oikeasti tapahtuu: esimerkiksi jyrkin nousu on kirjaimen R jälkeen, ja myrskyn sisältä ei löydy
+  yhtään aksenttia.
+- **Tyyliohjeen aukot, jotka kirjoittaminen paljasti:** sana kajo tarkoittaa sekä käyrätorvien valoa että
+  H-duurin väriä; sääntö 13 (väike kaukana) ja luvun 7 taulukko (väike lähellä ja keskellä) ovat ristiriidassa.
+  Molemmat on jätetty käyttäjän päätettäväksi, tyyliohjetta ei muutettu.
+- **Ei tehty:** tuore lukija ei ole tarkistanut käsikirjoitusta tyyliohjetta vasten. Maailmat ovat ohjaajan
+  ehdotus, eivät käyttäjän sanoja. Kolmen C-duurin vilahduksen ajat ja vaskivuorottelun osapuolet puuttuvat datasta.
 
 ## 9.11.2026 – Vähemmän tiedostoja, ja synteesi ennen poistoa
 

@@ -13,6 +13,7 @@ Tulos annotations/cues.json:
   cues       yksi merkintä per ankkuri (t = null, jos aikaa ei ole voitu perustella: varmuus "arvio")
   iskut      levytyksen iskut (aksentit.json); isku-ankkureihin liitetään lähin isku (+-0,15 s), jos sellainen on
   analyses   mistä paketista iskut ovat
+Lisäksi docs/kuvakasikirjoitus.md: ottojen otsikoiden ajat (<!--aika-->...<!--/aika-->) kirjoitetaan ankkureista.
 
 Aikoja ei keksitä: ne luetaan vain ajat_<levytys>.json:sta. Tämä työkalu ei koskaan kirjoita ajat-tiedostoa, joten
 siihen merkityt vahvistetut ajat (varmuus "vahvistettu") säilyvät. Tahtinumeroita ei lasketa äänestä; tahtiruudukkoa
@@ -24,6 +25,7 @@ Ajat ovat kuuntelukopion aikaa (s).
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -37,6 +39,8 @@ RECORDINGS = ROOT / "annotations" / "levytykset.json"
 VARMUUDET = ("vahvistettu", "analyysi", "arvio")  # vahvimmasta heikoimpaan
 LUOTTAMUS = ("hyvä", "kohtalainen", "heikko", "ei")  # parhaasta huonoimpaan
 ISKU_RAJA_S = 0.15
+STORYBOARD = ROOT / "docs" / "kuvakasikirjoitus.md"
+OTTO_RE = re.compile(r"^(#### [^\n]*?`([^`\n]+)` → `([^`\n]+)` · )<!--aika-->[^\n]*?<!--/aika-->", re.M)
 
 
 def read_json(path):
@@ -194,6 +198,29 @@ def _ohjaus(rec):
     return {"tiedosto": f"{pak}/ohjaus.f32", "fps": m["fps"], "frames": m["frames"], "channels": m["channels"]}
 
 
+def leimaa_kasikirjoitus(cues, kesto):
+    """Kirjoittaa kuvakäsikirjoituksen ottojen otsikoihin ajat ankkureista. Muualla käsikirjoituksessa ei ole aikoja."""
+    if not STORYBOARD.exists():
+        return None
+    t = {c["id"]: c["t"] for c in cues}
+    t.update({"tiedoston_alku": 0.0, "tiedoston_loppu": kesto})
+
+    def mmss(x):
+        return "?" if x is None else f"{int(x // 60)}:{int(x % 60):02d}"
+
+    n = [0]
+
+    def korvaa(m):
+        n[0] += 1
+        return f"{m.group(1)}<!--aika-->{mmss(t.get(m.group(2)))}–{mmss(t.get(m.group(3)))}<!--/aika-->"
+
+    vanha = STORYBOARD.read_text(encoding="utf-8")
+    uusi = OTTO_RE.sub(korvaa, vanha)
+    if uusi != vanha:
+        STORYBOARD.write_text(uusi, encoding="utf-8", newline="\n")
+    return n[0]
+
+
 def main():
     ap = argparse.ArgumentParser(description="annotations/cues.json teemakartasta, levytyksen ajoista ja iskuista")
     ap.add_argument("--levytys", help="levytyksen id (annotations/levytykset.json); oletus: ensimmäinen työlevytys")
@@ -254,6 +281,9 @@ def main():
         print("HUOM", w)
     if out["puuttuu"]["ilman_aikaa"]:
         print("ilman aikaa:", ", ".join(out["puuttuu"]["ilman_aikaa"]))
+    n_otot = leimaa_kasikirjoitus(cues, kesto)
+    if n_otot is not None:
+        print(f"{STORYBOARD.relative_to(ROOT)}: {n_otot} oton ajat kirjoitettu ankkureista")
 
 
 if __name__ == "__main__":
