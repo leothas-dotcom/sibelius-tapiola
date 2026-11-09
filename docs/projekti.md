@@ -354,7 +354,15 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 - 9.11. Käsikirjoitus v2.1: hiljaisuus, liikkeen tiheys, legato ja nimetön isku määritelty; kuvatavat 5, 6, 8 kuvattu
   toteutuksen mukaan. Toinen koko renderi tehty (ääni 0,00 ms); kierros 2 käynnissä samoilla kolmella kriitikolla.
 
-**Seuraavaksi:** kierroksen 2 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kriitikoiden kierros 2 (`runs/vedos_v3_a|b|c/palaute_k2.md`): A 6/21 korjattu, B 4/17, C 2/15; loput osin tai
+  ennallaan, uusia yhteensä 25. Korjattu sen jälkeen: kuusiryhmien välinen lumi harvaksi, verho on ajelehtivaa usvaa,
+  kajo nousee H-duurin alusta kuudessa sekunnissa, huudon viiva pysyy kuvassa, nousussa viiva ei laske, maa pysyy
+  kuvassa lähikuvassa, ikisalossa kaksi lähintä kerrosta ovat runkoja ja kolme kaukaisinta metsää, M on repeämien sarja,
+  pimeässä äänen voima ja askeleet näyttävät metsän. Kolmas koko renderi ja kierros 3 käynnissä.
+- **Opittua kriitikoista:** ruudukko kahden sekunnin välein ei näytä iskuja eikä verhon kestoa; liikesarjoja tarvitaan
+  jokaisesta iskusta ja kulusta. Kriitikko löytää joka kierroksella uutta, koska korjaus paljastaa seuraavan kerroksen.
+
+**Seuraavaksi:** kierroksen 3 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---

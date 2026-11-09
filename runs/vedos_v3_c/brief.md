@@ -74,3 +74,11 @@ Tee näin:
 
 Tieto, jota ruuduista ei näe: kuvatapa vaihtuu kulussa jonkin läpi (lumi, usva, pimeä, huurre). Kulun keskellä verho
 peittää kuvan hetkeksi, ja uusi rajaus on sen takana. Se on tarkoitettu; arvioi, näyttääkö se kululta vai leikkaukselta.
+
+## Kolmas kierros
+
+Toisen kierroksen raportti on `palaute_k2.md` (samassa kansiossa). Kuva on korjattu ja renderöity uudestaan; ruudut
+kansiossa `ruudut/` ovat uudet. Tee kuten toisella kierroksella, mutta lähtölistana `palaute_k2.md`: taulukko sen
+jokaisesta virheestä (korjattu / osin / ennallaan, ruutu) ja sen jälkeen uudet virheet kysymyksillä K1–K10.
+Lisäksi lopuksi yksi kappale: mitkä kolme asiaa estävät sinua sanomasta, että tämä osa on valmis näytettäväksi
+tilaajalle.
