@@ -95,3 +95,19 @@ jatkuvasti. Tee kuten ennen, lähtölistana `palaute_k3.md`. Erottele lopuksi se
 (a) virheet, jotka estävät näyttämästä osaa tilaajalle;
 (b) virheet, jotka haittaavat mutta eivät estä;
 (c) makuasiat, jotka tilaajan pitää itse ratkaista (esimerkiksi värin voimakkuus tai puiden muoto).
+
+## Viides kierros
+
+Neljännen kierroksen raportti on `palaute_k4.md`. Kuva on korjattu ja renderöity uudestaan; ruudut ovat uudet. Tee kuten
+ennen, lähtölistana `palaute_k4.md`: taulukko sen jokaisesta virheestä (korjattu / osin / ennallaan, ruutu), sitten uudet
+virheet kysymyksillä K1–K10, ja lopuksi sama kolmijako (a) estää, (b) haittaa, (c) tilaajan makuasia.
+
+Tieto, jota ruuduista ei näe:
+- Ruudukoiden aikaleimat ovat nyt ruudun tarkkuudella oikeat. Aiemmilla kierroksilla `koko_*`-ruudukon leima saattoi
+  olla sekunnin pielessä; iskun ajoituksen voi nyt arvioida kummasta tahansa ruudukosta.
+- Viivan korkeus kuvassa riippuu vain sävelestä ja lähestymisen määrästä, ei maan korkeudesta. Sävelen vaihtuessa viiva
+  liukuu uuteen korkeuteen.
+- Pystysuora leikkaus tulee vain kuunteluoppaan ja käsikirjoituksen nimeämissä iskuissa. Muut aksentit ovat maan sysäyksiä.
+- Puhaltimen pitkä ääni on usvainen harju (pehmeä hohde ilman terävää viivaa); terävä valoviiva on vain teoksen pitkä ääni.
+
+Pidä raportti tiiviinä: K1- ja K2-taulukoissa riittää rivi niistä kohdista, jotka eivät toteudu tai toteutuvat osin.

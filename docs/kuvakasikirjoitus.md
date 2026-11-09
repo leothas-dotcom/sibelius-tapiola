@@ -290,7 +290,7 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
   - **Tunne → keino:** uhka, odotus → pysähtyvä liike, valon puute
 - Kone kuuli: Musiikki nousee: yläkerros noin 6 s **Näkyy:** Latvat nousevat noin kuuden sekunnin ajan.
 - Kone kuuli: Liike tasaantuu **Näkyy:** Metsän huojunta ja kuusiryhmien vaihtuminen tasaantuvat.
-- **Kulku 4 alkaa:** katse painuu mustaan jäähän; päättyy `pohja_vaihtuu_D`.
+- **Kulku 4 alkaa:** kuva kulkee usvan läpi jään reunalle, ja metsä näkyy usvan läpi koko ajan; päättyy `pohja_vaihtuu_D`.
 
 ### Kuvatapa 5 Pinnan sisään
 
@@ -377,7 +377,7 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 
 #### 37 Hitaasti vaihtuvat soinnut · `hitaat_soinnut` → `h_palaa_ennen_hiljaisuutta` · <!--aika-->9:00–9:40<!--/aika-->
 - **Kuuluu:** Hitaasti vaihtuvat soinnut (gis, ais, d, f, g, dis) *Soittaa:* ei tietoa.
-  - **Näkyy:** Kuusiryhmiä kaukana usvassa; ne vaihtuvat hitaasti toisikseen; ei etualaa. Selkeys: ei lunta, ei leikkauksia.
+  - **Näkyy:** Kuusiryhmiä kaukana usvassa; ne vaihtuvat hitaasti toisikseen; lähellä vain ikisalon kehystävät rungot. Selkeys: ei lunta, ei leikkauksia.
   - **Tunne → keino:** ikisalot, ajaton → etäisyys, hitaus
 - Kone kuuli: Matalat soittimet palaavat **Näkyy:** Maa syttyy.
 - Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
@@ -392,7 +392,7 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 
 #### 39 Hiljainen jakso alkaa · `hiljainen_jakso_alku` → `hiljainen_jakso_loppu` · <!--aika-->9:57–10:13<!--/aika-->
 - **Kuuluu:** Hiljainen jakso alkaa *Soittaa:* jouset (heikot).
-  - **Näkyy:** Heikkoja kuusiryhmiä kaukana usvassa; ei etualaa; kuva lähes tyhjä mutta ei tyhjä.
+  - **Näkyy:** Heikkoja kuusiryhmiä kaukana usvassa; lähellä vain ikisalon kehystävät rungot; kuva lähes tyhjä mutta ei tyhjä.
   - **Tunne → keino:** tyhjyys, odotus → pieni koko, etäisyys
 
 #### 40 Hiljainen jakso päättyy · `hiljainen_jakso_loppu` → `vaski_tutti_620` · <!--aika-->10:13–10:21<!--/aika-->
@@ -539,7 +539,7 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 
 #### 63 Huuto alkaa · `toinen_paisunta` → `huuto` · <!--aika-->15:35–15:45<!--/aika-->
 - **Kuuluu:** Huuto alkaa: jousten nouseva asteikko *Soittaa:* jouset.
-  - **Näkyy:** Kuusiryhmien latvat nousevat peräkkäin asteikkona (viulut, alttoviulut, sellot); vaskien harjut nousevat takaa edelle.
+  - **Näkyy:** Kuusiryhmien latvat nousevat peräkkäin asteikkona (viulut, alttoviulut, sellot); viiva liukuu ylös kohti huudon korkeutta koko kulun ajan.
   - **Tunne → keino:** velloava → korkeus (nousee)
 - Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
 - **Kulku 9 alkaa:** myrskyn läpi ylös latvojen yläpuolelle; päättyy `huuto`.
