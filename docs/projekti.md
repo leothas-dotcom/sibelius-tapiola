@@ -22,7 +22,7 @@ Teos: Jean Sibelius, *Tapiola* op. 112. Työäänitys (1.11.2026 alkaen): Rattle
 | 4 | Kuuntelutyökalu | ✅ yksi työkalu `analysis/korvat.py`: 270 tapahtumaa, 17 ruutukanavaa (`build/rattle_koko/ohjaus.f32`); mitä ääni antaa ja mitä ei: tutkimuksen luku 13; **vääriä osumia ei ole karsittu korvalla** |
 | 5 | Kuunteluopas ja teemakartta | 🔶 76 ankkuria (`annotations/teemat.json`), ajat Rattlesta, viisi käyttäjän vahvistamaa; opas kuulijan kielellä generoituu; **useimmat ajat mittausta, ei kuultuja** |
 | 6 | Visuaalinen tyyli (haastattelu) | 🔶 tyyliohje v1.4 (luku 4b: kymmenen kuvatapaa vedoksen 1 palautteen jälkeen; metsä näkyy, synestesia, luku 7b ääni → kuva, kuvasäännöt luvussa 12; omat ristiriidat korjattu 9.11.2026); **odottaa käyttäjän hyväksyntää**; C-duurin punainen hyväksytty 9.11.2026 |
-| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v1.2 (luvut 1 ja 2: kuvatapa joka hetkelle; ottojen rivit kirjoitetaan uudestaan vedoksen 2 jälkeen; tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä 9.11.2026; auki: sana kajo, loppukuva, puuttuva data |
+| 7 | Ohjaus ja kuvakäsikirjoitus | 🔶 `docs/kuvakasikirjoitus.md` v2.0 (9.11.2026: kirjoitettu uudestaan kuunteluoppaan 153 rivistä, 70 ottoa, tyyliohjeen 4c kielioppi; aiempi: v1.2 (luvut 1 ja 2: kuvatapa joka hetkelle; ottojen rivit kirjoitetaan uudestaan vedoksen 2 jälkeen; tuore lukija tarkisti tyyliohjetta vasten 9.11.2026, 27 löydöstä, korjattu: `runs/kk_tarkistus_v1/tarkistus.md`; 12 hetken kaari, 8 maailmaa, 7 kulkua, 60 ottoa, kaikki 76 ankkuria käytetty; tarkistus `check_package.py --cues-only`); **maailmat hyväksytty 9.11.2026**; **C-duuri punainen 9.11.2026**; D-duuri kelmeä ja hämärä 9.11.2026; auki: sana kajo, loppukuva, puuttuva data |
 | 8 | Tekniikka ja mittarit | 🔶 tekniikka valittu vedosta varten (yksi säteenseurantavarjostin, WebGL2, ei uusia riippuvuuksia); `seek(t)` toistettava ja camcheck mitattu; muut mittarit puuttuvat |
 | 9 | Perusta, sitten osat | ⬜ |
 | 10 | Luonnokset ennen renderiä | 🔶 vedos 2: 19 stilliä, kymmenen kuvatapaa, ääni ohjaa säikeitä ja valoa (`runs/vedos_v2/`); vedos 1 hylätty palautteessa (rivipuut syvyydessä); **odottaa käyttäjän katsomista** |
@@ -336,7 +336,16 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   S5 maan korkeus bassosta, S6 vaskien pitkä ääni). Kuvatavat 6, 7 ja 9 ovat ristiriidassa 4c:n kanssa: 4c voittaa,
   ja kuvatavat määritellään uudestaan saman kerrosmaiseman rajauksina.
 
-**Seuraavaksi:** kriitikon 2 virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
+- 9.11. Kriitikko 2 (alku): 6 korjattu, 7 osin, 5 ennallaan. Korjattu sen jälkeen: huojunta (mitattu: 80 000 pikseliä
+  vaihtuu puolessa sekunnissa puiden reunoilla), puut väistyvät vajoamalla eivätkä läpikuultavina, kukkula alkaa ja
+  päättyy nollasta, leikkauksen jälkihohto lyhyt, jokainen isku sysää maata ja heilauttaa metsää.
+- 9.11. Piirtäjä koko teokselle: pysyvä viisikerroksinen metsä (huojuu liikkeen tiheydestä, kohoaa rekistereittäin),
+  kymmenen kuvatapaa saman kerrosmaiseman rajauksina (`visual/kohtaus.js`: K2_MAASTA … K10_YLHAALTA), roolit
+  kuunteluoppaasta joka ankkurille. Koko teos renderöity (`runs/vedos_v3/koko.mp4`, ei gitissä).
+- 9.11. Kuvakäsikirjoitus v2.0: generoitu luonnoksen 153 rivistä (70 ottoa, 9 kulkua, kaikki 76 ankkuria); generaattori
+  oli kertakäyttöinen, käsikirjoitusta muokataan tästä eteenpäin käsin. `check_package.py` hyväksyy vähintään 7 kulkua.
+
+**Seuraavaksi:** kolme kriitikkoa koko teokselle (kolmannekset) kuunteluopasta ja käsikirjoitusta vasten → virheet korjataan → käsikirjoituksen luku 5 kirjoitetaan uudestaan luonnoksesta → aikajana
 (`AVAIMET` tiedostossa `visual/kohtaus.js`) koko teokselle → kuvatavat 2–10 kerrosmaisemaan → kriitikko jaksoittain.
 
 ---

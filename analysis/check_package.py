@@ -184,7 +184,7 @@ def check_storyboard():
     kasin = sorted(set(re.findall(r"(?<![\w/.])\d{1,2}:\d{2}(?![\w])", ilman)))
     check(not kasin, f"ei käsin kirjoitettuja aikoja {kasin if kasin else ''}")
     kulut = re.findall(r"^- Kulku (\d+): `([^`\n]+)` → `([^`\n]+)`", text, re.M)
-    check([int(x[0]) for x in kulut] == list(range(1, 8)), f"kulkuja seitsemän, numerot 1..7 (löytyi {len(kulut)})")
+    check(len(kulut) >= 7 and [int(x[0]) for x in kulut] == list(range(1, len(kulut) + 1)), f"kulkuja vähintään seitsemän, numerot juoksevat (löytyi {len(kulut)})")
     tunnetut = [(n, t[x], t[y]) for n, x, y in kulut if t.get(x) is not None and t.get(y) is not None]
     kestot = ", ".join(f"{n}: {y - x:.0f} s" for n, x, y in tunnetut)
     lyhyet = [n for n, x, y in tunnetut if y - x < 4.0]

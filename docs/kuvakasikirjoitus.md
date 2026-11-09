@@ -1,664 +1,628 @@
 # Kuvakäsikirjoitus: Tapiola
 
-*Versio 1.2, 9.11.2026. Luvut 1 ja 2 on ajateltu uudestaan vedoksen 1 palautteen jälkeen: jokaisella hetkellä on oma
-kuvatapansa (tyyliohje luku 4b). Ottojen rivit Näkyy ja Kamera puhuvat vielä paikoin vedoksen 1 runkometsästä; ne
-kirjoitetaan uudestaan maailma kerrallaan, kun käyttäjä on nähnyt vedoksen 2. Versio 1.1: Tuore lukija tarkisti tekstin tyyliohjetta vasten (`runs/kk_tarkistus_v1/kriitikko.md`), ja
-löydökset on korjattu. Käyttäjä hyväksyi kahdeksan maailmaa rungoksi 9.11.2026 ("Hyväksyn maailmat") sekä C-duurin punaisen valon ja D-duurin hämärät välähdykset;
-luvun 8 muut päätökset ovat auki. Noudattaa tyyliohjetta
-(`docs/visuaalinen_tyyli.md` v1.4): jos tämä ja tyyliohje ovat ristiriidassa, tyyliohje voittaa. Ajat ottojen
-otsikoissa ovat generoituja (`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu.
-Kaikki muu viittaa ankkureihin (`annotations/teemat.json`), ei sekunteihin. Kuunteluoppaan sisältöä (lähteet,
-tulkinnat) ei toisteta tässä: ankkurin nimi vie sinne.*
+*Versio 2.0, 9.11.2026. Kirjoitettu kokonaan uudestaan koepätkän palautteen jälkeen (käyttäjä: "kuvakäsikirjoitusta ei
+ole toteutettu kuunteluoppaan mukaan"; "kunnes kuunteluoppaan KAIKKI asiat on visualisoitu VISUAALISEN TYYLIN mukaan";
+"selkeys voittaa aina"). Luvun 5 otot on koottu kuunteluoppaan jokaisesta rivistä: nimetyt kohdat ja koneen kuulemat
+rivit, yhteensä 153 riviä. Noudattaa tyyliohjetta (`docs/visuaalinen_tyyli.md` v1.5): jos tämä ja tyyliohje ovat
+ristiriidassa, tyyliohje voittaa, ja sen luku 4c voittaa vanhemmat luvut. Ajat ottojen otsikoissa ovat generoituja
+(`analysis/make_cues.py`, levytys Rattle 2022) ja vaihtuvat, kun levytys vaihtuu. Muualla ei ole aikoja.*
 
-## 0. Miten tämä on tehty ja miten sitä luetaan
+## 0. Miten tätä luetaan
 
-**Mitä hyvä kuvakäsikirjoitus on** (haettu 9.11.2026, lähteet lopussa):
-1. Ensin tunteen kaari, sitten otot. Jokainen otto palvelee yhtä kaaren hetkeä; otto, joka ei palvele, poistetaan.
-2. Yksi ajatus per otto. Katsoja katsoo yhtä asiaa kerrallaan.
-3. Otosta kirjataan: numero, mitä tapahtuu, mikä on katseen kohde, kamera, valo, siirtymä, ajoitus ja ääni.
-4. Värin ja valon kaari kulkee rinnalla: suuri tunteen muutos on myös valon muutos.
-5. Hengähdykset merkitään: otto, jossa mitään ei tapahdu, on valinta ja saa nimen.
-6. Ajoitus sidotaan musiikkiin etukäteen (animaation tahtikaavio). Meillä tahtikaavio on teemakartta.
-7. Käsikirjoitus on työkalu, ei taideteos: se toimii, jos tekijä ymmärtää siitä, mitä piirtää.
+Kuva on ääni (tyyliohje 4c). Mitään ei ole kuvassa, ellei se soi, ja mikään, mikä soi, ei jää näkymättä. Kuva lasketaan
+äänestä ruutu ruudulta: nuotit, pitkät äänet, spektri ja iskut tulevat kuuntelutyökalusta. Tämä käsikirjoitus sanoo
+vain sen, mitä kone ei voi tietää: **kuka soittaa** (jouset vai puhaltimet), **mikä on teoksen pitkä ääni**, **mistä
+katsoja katsoo** (kuvatapa) ja **mikä tunne kuvalla tehdään**.
 
-**Otto** tarkoittaa tässä jaksoa kahden ankkurin välillä. Leikkauksia ei ole: kuva on yksi ajo. Otsikossa on oton
-alku- ja loppuankkuri. Kentät:
-- **Teko:** yksi lause siitä, mitä otossa tapahtuu.
-- **Tunne ja johtaja:** mitä katsoja kokee, ja mikä elementti puhuu (tyyliohje luku 7).
-- **Näkyy:** ankkuri tai koneen kuulema tapahtuma ja sen vastine kuvassa.
-- **Kamera:** vain, jos se poikkeaa maailman perusliikkeestä.
-- **Iskut:** mikä ympäristössä vastaa iskuun tässä otossa.
+**Otto** on jakso kahden ankkurin välillä. Leikkauksia ei ole: kuva on yksi matka. Jokaisessa otossa:
+- **Kuuluu:** kuunteluoppaan rivi ja se, kuka soittaa.
+- **Näkyy:** vastine kuvassa tyyliohjeen 4c sanoin.
+- **Tunne → keino:** kuunteluoppaan tunnelma ja se, millä kuva tekee sen.
+- Rivit ilman lihavointia ovat koneen kuulemia tapahtumia; nekin näkyvät.
 
-**Yleissääntö:** jokainen koneen kuulema tapahtuma (`cues.json`, kenttä tapahtumat) näkyy tyyliohjeen luvun 7b
-mukaan, vaikka sitä ei tässä nimetä. Tässä nimetään oton pääasia ja se, mikä poikkeaa. Enintään kolme elementtiä
-liikkuu yhtä aikaa: jos tapahtuma toisi neljännen, se vastaa valollaan omassa kerroksessaan liikkumatta.
+**Kielioppi yhdellä silmäyksellä** (tyyliohje 4c): jouset ovat tumma metsä (jokainen ääni on kuusiryhmä, latva on
+sävelkorkeus); teoksen pitkä ääni on horisontin viiva; paisutus on kukkula; puhaltimen ääni on harju; lyhyt korkea ääni
+on pilkahdus; bassot ja patarummut ovat maa (sysäys, värinä, hohto); vaskien isku on pystysuora leikkaus; lumi kulkee
+kerrosten välissä. Metsä on kuvassa aina, viidessä syvyydessä, ja se huojuu äänen liikkeestä ja kohoaa rekisterin
+voimasta. Hiljaisuudessa äänen elementit lakkaavat ja metsä jää.
 
 ## 1. Kaari: kaksitoista hetkeä
 
-| # | Hetki | Ankkurit | Katsoja kokee | Kuvatapa (tyyliohje 4b) | Miten tunne tehdään kuvassa |
+| # | Hetki | Ankkurit | Katsoja kokee | Kuvatapa | Miten tunne tehdään kuvassa |
 |---|---|---|---|---|---|
-| 1 | Metsä on jo siinä | `avaus_patarumpu` – `patarumpu_paisuu` | läsnäolon: jokin on ollut täällä ennen minua | 1 Usvan läpi | kuva on melkein pelkkää usvaa; lähellä mustat oksat, niiden takana rungot vain vihjeinä; valo on usvan sisällä eikä näytä lähdettään |
-| 2 | Ensimmäinen repeämä | `vaskien_isku` – `hiljaisuus_1_loppu` | säikähdyksen ja pidätetyn hengityksen | 1 Usvan läpi, repeää | valo leikkaa usvan ja näyttää hetkeksi koko metsän; sitten lumi peittää kaiken paitsi runkojen varjot |
-| 3 | Jokin kulkee edellä | `fis_pitka_aani` – `askeleet_B` | painon, jota ei näe, ja halun seurata | 2 Maan tasalta | kamera laskeutuu lumen pintaan; maa täyttää puolet kuvasta, ja paino painaa lunta linssin edessä |
-| 4 | Metsä kohoaa, maa katoaa | `urkupiste_H1_alku` – `pohja_katoaa` | hetken valon ja sitten pohjattomuuden | 3 Ylös runkoja pitkin | katse nousee nousun mukana rungoista latvoihin; valo on latvojen aukossa; kun pohja katoaa, maata ei enää ole kuvassa |
-| 5 | Väike | `e_pitka_ja_kuviot` – `peikot_G_loppu` | leikin, jota ei saa kiinni | 4 Lähikuva | yksi huurteinen oksa täyttää kuvan; pilkahdukset syttyvät kiteissä äänen korkeuden mukaan ja ovat poissa, kun niihin katsoo |
-| 6 | Metsä liikkuu kokonaisena | `peikot_G_loppu` – `hajoaa_hiljaisuuteen` | ensimmäisen pelon | 5 Pinnan sisään | katse painuu mustaan jäähän; metsä on pinnan alla ylösalaisin, ja syke kulkee pinnassa aaltona |
-| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen | 6 Runkojen rytmi | ei maata, ei taivasta: valtavat rungot pystyraitoina, jotka liukuvat hitaasti; sävyt porrastuvat sinisestä usvaan |
-| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen | 6 Runkojen rytmi, punainen | sama rytmi; punainen valo sytyttää raidat toiselta reunaltaan, ja varjot lankeavat kuvan poikki |
-| 9 | Petos ja hermo | `M_ennakko` – `dim_possibile` | ahdistuksen: liikettä ei voi pysäyttää | 7 Pimeä ja välähdys | kuva on musta; metsä on olemassa vain silloin, kun valo leikkaa, ja joka kerta se on lähempänä |
-| 10 | Se näkyy ja tulee | `hiljaisuus_2_alku` – `R_vasket` | kauhun ja ylivoiman | 8 Ulkoa ja kaukaa, sitten 9 Tuulen sisällä | metsän reuna ja vaarat kerroksina usvassa; myrsky nielee kerroksen kerrallaan kauimmasta alkaen, kunnes se on päällä |
-| 11 | Huuto ja jälki | `toinen_paisunta` – `yksinaiset_aanet` | paljauden | 10 Ylhäältä | kamera nousee myrskyn läpi; vaarat ja metsä kerroksina horisonttiin, ja yksittäiset äänet ovat valoja eri laaksoissa |
-| 12 | Oikea valo | `S_sempre_mf` – `musiikki_loppuu` | hellyyden, levon, kunnioituksen | 10 Ylhäältä, pysähtyy | sama näkymä; kajo nousee kauimman vaaran takaa, usva laaksoissa alkaa hehkua, ja kaikki lakkaa liikkumasta |
+| 1 | Metsä on jo siinä | `avaus_patarumpu` – `patarumpu_paisuu` | läsnäolon: jokin on ollut täällä ennen minua | 1 Metsän idea | tumma ilma, maa ja horisontin viiva; jousten siemen kasvattaa ensimmäisen kuusikon viivan eteen ja väistyy; puhaltajat nousevat viivasta kukkuloina |
+| 2 | Ensimmäinen repeämä | `vaskien_isku` – `hiljaisuus_1_loppu` | säikähdyksen ja pidätetyn hengityksen | 1 Metsän idea, repeää | pystysuora leikkaus kaikkien kerrosten läpi; tuuli taivuttaa metsän ja lumi nousee kerrosten väliin; hiljaisuudessa jää vain metsä ja lumi |
+| 3 | Jokin kulkee edellä | `fis_pitka_aani` – `askeleet_B` | painon, jota ei näe, ja halun seurata | 2 Maan tasalta | katse on lumen pinnassa; maa täyttää kolmanneksen kuvasta, ja basson askeleet ovat sysäyksiä maassa |
+| 4 | Metsä kohoaa, maa katoaa | `urkupiste_H1_alku` – `pohja_katoaa` | hetken valon ja sitten pohjattomuuden | 3 Ylös runkoja pitkin | katse nousee nousun mukana latvoihin; kelmeä valo on latvojen yläpuolella; maa jää kuvan alle |
+| 5 | Väike | `e_pitka_ja_kuviot` – `peikot_G_loppu` | leikin, jota ei saa kiinni | 4 Lähikuva | huurteinen oksisto täyttää kuvan; pilkahdukset syttyvät sävelkorkeutensa kohdalla ja ovat poissa |
+| 6 | Metsä liikkuu kokonaisena | `peikot_G_loppu` – `hajoaa_hiljaisuuteen` | ensimmäisen pelon | 5 Pinnan sisään | metsä seisoo mustan jään päällä ja näkyy siinä ylösalaisin; syke kulkee jäässä aaltona |
+| 7 | Ikisalo | `jousijakso_urkupiste_E_alku` – `hiljainen_jakso_loppu` | oman pienuutensa, ajan pysähtymisen | 6 Runkojen rytmi | oksisto on kuvan yläpuolella: valtavat rungot pystyraitoina sinisessä usvassa, hitaasti |
+| 8 | Väärä valo | `hiljainen_jakso_loppu` – `auringonsade` | toivon, joka on väärän värinen | 6 Runkojen rytmi, punainen | punainen valo nousee runkojen taakse ja värjää usvan ja runkojen reunat |
+| 9 | Petos ja hermo | `M_ennakko` – `dim_possibile` | ahdistuksen: liikettä ei voi pysäyttää | 7 Pimeä ja välähdys | kuva pimenee; metsä näkyy vain, kun vaskien leikkaus valaisee sen |
+| 10 | Se näkyy ja tulee | `hiljaisuus_2_alku` – `R_vasket` | kauhun ja ylivoiman | 8 Ulkoa ja kaukaa, sitten 9 Tuulen sisällä | jään yli: metsä on matala reuna ja sen peilikuva; lumi tulee kaukaa kerros kerrokselta ja on sitten päällä viiruina |
+| 11 | Huuto ja jälki | `toinen_paisunta` – `yksinaiset_aanet` | paljauden | 10 Ylhäältä | katse nousee myrskyn läpi; metsä on vaaroja kerroksina horisonttiin; yksittäiset äänet nousevat viivasta kukkuloina |
+| 12 | Oikea valo | `S_sempre_mf` – `musiikki_loppuu` | hellyyden, levon, kunnioituksen | 10 Ylhäältä, pysähtyy | viulujen ääni on horisontin viiva; kajo nousee sen taakse ja usva vaarojen välissä alkaa hehkua |
 
-Joka hetkessä pätee kolme asiaa (tyyliohje 4b): metsä elää äänen mukana, äänen korkeus on korkeus kuvassa ja äänen voima
-on valon määrä ja läheisyys, ja kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella.
+## 2. Kuvatavat ja kulut
 
-## 2. Maailmat ja kulut
+Käyttäjän idea: kamera ajaa jonkin sisään, se suurenee, ja sieltä löytyy uusi maailma. Jokainen kuvatapa on sama
+kerrosmaisema nähtynä toisesta paikasta; kerrostumat ja niiden merkitys pysyvät samoina koko teoksen ajan.
 
-Käyttäjän idea: kamera ajaa jonkin sisään, se suurenee, ja sieltä löytyy uusi maailma. Jokainen maailma on metsä,
-mutta nähty eri paikasta (luku 1, sarake Kuvatapa): maailma ei ole uusi rivi puita vaan uusi tapa nähdä metsä.
-Jokainen löytyy jostakin pienestä edellisen sisältä ja on silti edellistä suurempi. Maailmat ja kulut ovat
-ohjaajan ehdotus, jonka **käyttäjä hyväksyi 9.11.2026**; perustelu on musiikissa, ei mytologiassa, ellei toisin sanota.
+| Kuvatapa | Katsojan paikka | Mitä rajaus tekee |
+|---|---|---|
+| 1 Metsän idea | kaukana, vaakasuoraan | horisontti keskellä kuvaa; metsä on aluksi matala reuna ja kasvaa |
+| 2 Maan tasalta | lumen pinnassa | maa on kolmannes kuvasta; lähimmät kuuset jatkuvat kuvan yli |
+| 3 Ylös runkoja pitkin | katse kohoaa | maa jää kuvan alle; latvat ja niiden yläpuolinen valo |
+| 4 Lähikuva | oksiston vieressä | suuri suurennos; huurre vaalentaa puut, kiteet välkkyvät |
+| 5 Pinnan sisään | mustan jään yllä | kuvan alaosa on peili: metsä ja viiva ylösalaisin |
+| 6 Runkojen rytmi | runkojen korkeudella | oksisto on kuvan yläpuolella; rungot ovat pystyraitoja |
+| 7 Pimeä ja välähdys | metsän sisällä | kuva on lähes musta; valo tulee vain leikkauksesta |
+| 8 Ulkoa ja kaukaa | jäällä metsän ulkopuolella | metsä on matala reuna; suuri tumma ilma ja jää |
+| 9 Tuulen sisällä | myrskyssä | lumi on viiruja joka syvyydessä; metsä taipuu |
+| 10 Ylhäältä | latvojen yläpuolella | metsäkerrokset ovat vaaroja allekkain; horisontti on ylhäällä |
 
-| # | Maailma | Alkaa | Mikä se on | Kulku sinne | Miksi juuri tässä |
-|---|---|---|---|---|---|
-| 1 | **Kuusikko** | `tiedoston_alku` | tumma kuusimetsä sisältä: rungot lähellä, lunta maassa, usvaa | ei kulkua: metsä on jo siinä | esipuhe: sankat, tummat metsät |
-| 2 | **Askelten metsä** | `hiljaisuus_1_loppu` | sama metsä syvempänä: rungot paksumpia, maa ja lumi painavia | **repeämän ja lumipölyn läpi:** vaskien iskussa valo leikkaa raon kohdalta kerrosten läpi, puuska nostaa lumen ilmaan, ja kamera, joka on ajanut rakoa kohti alusta asti, ajaa lumipölyyn | yleistauko on sokea lumi: polku päättyy, ja kun näkyvyys palaa, metsä on toinen |
-| 3 | **Huurremetsä** | `pohja_katoaa` | metsä oksan huurteessa: kiteet ovat kuusten kokoisia, maata ei ole, kaikki leijuu | **oksan huurteeseen:** nousu vie valon latvoihin, kamera ajaa edessään olevan lumisen oksan pintaan, kiteet kasvavat rungoiksi | pohja katoaa äänestä: maailma, jolla ei ole maata |
-| 4 | **Jäänalainen metsä** | `pohja_vaihtuu_D` | hämärä metsä mustan jään alla: jää on kattona latvojen yllä, lumi maassa heijastaa kaukaista valoa | **mustan pinnan läpi:** huurremetsän alla on tumma jään pinta, kamera painuu sen läpi | pohja vaihtuu toiseksi säveleksi: sama metsä, toinen pohja; ja alun valo palaa muistona |
-| 5 | **Ikisalo** | `jousijakso_urkupiste_E_alku` | ikimetsä puun sisällä: valtavat rungot kaukana toisistaan, kaikki sinistä, hitainta | **rungon kaarnaan:** metsä harvenee, yksi runko täyttää kuvan, kaarnan uurteet syvenevät rungoiksi | matalin ja hiljaisin jakso; esipuhe: ne ikisalat |
-| 6 | **Pilkkopimeä** | `M_raskaat_askeleet` | metsä, josta valo on viety: musta, rungot niin kaukana, että tila on liian suuri | **väärän valon läpi:** kamera ajaa siihen, missä taottu aurinko on; kylmät leikkaukset tulevat sen eteen, ja punainen haalistuu pois | C-duuri ei johda mihinkään; Kalevala 47 ja 49: valo suljetaan vuoreen, yö on pilkkopimeä (tulkinta) |
-| 7 | **Aukea** | `hiljaisuus_2_alku` | metsän takana avautuva jäinen aukea, jonka takana on vastarannan kuusikon tumma reuna: ensimmäinen horisontti | **pimeän läpi:** metsä tyhjenee, kamera ajaa kahden viimeisen rungon välistä pimeään usvaan | myrsky näkyy ensin kaukana: tarvitaan etäisyys, jonka yli se tulee |
-| 8 | **Metsä myrskyn jälkeen** | `yksinaiset_aanet` | koko metsä ylhäältä latvojen tasalta: uusi lumi, tyyni kylmä ilma, horisontti | **myrskyn läpi ylös:** huudossa kamera nousee lumen ja jään läpi tyyneen | huuto vie katseen ylös; sen jälkeen jää vain yksittäisiä ääniä |
-
-Kulkujen säännöt (tyyliohje 2.4 ja 8.4): jokainen kulku kestää vähintään neljä sekuntia, mittakaava muuttuu
-jatkuvasti, eikä katsoja huomaa rajaa. Kulkujen ankkurit (kesto mitataan: `analysis/check_package.py`):
-- Kulku 1: `tuulenpuuska` → `hiljaisuus_1_loppu`
-- Kulku 2: `nousu_huippu_D` → `pohja_katoaa`
-- Kulku 3: `jannitesoinnut` → `pohja_vaihtuu_D`
-- Kulku 4: `hajoaa_hiljaisuuteen` → `jousijakso_urkupiste_E_alku`
-- Kulku 5: `M_ennakko` → `M_raskaat_askeleet`
-- Kulku 6: `dim_possibile` → `myrsky_nakyy`
-- Kulku 7: `toinen_paisunta` → `yksinaiset_aanet`
+Kulut (tyyliohje 2.4 ja 8.4): jokainen kestää vähintään neljä sekuntia, rajaus muuttuu jatkuvasti, eikä katsoja huomaa
+rajaa. Kulkujen ankkurit (kesto mitataan: `analysis/check_package.py`):
+- Kulku 1: `fraasi_ennen_taukoa` → `hiljaisuus_1_loppu`
+- Kulku 2: `urkupiste_H1_alku` → `urkupiste_H1_loppu`
+- Kulku 3: `nousu_huippu_D` → `pohja_katoaa`
+- Kulku 4: `jannitesoinnut` → `pohja_vaihtuu_D`
+- Kulku 5: `hajoaa_hiljaisuuteen` → `jousijakso_urkupiste_E_alku`
+- Kulku 6: `M_ennakko` → `M_raskaat_askeleet`
+- Kulku 7: `dim_possibile` → `hiljaisuus_2_alku`
+- Kulku 8: `myrsky_kasvu` → `myrsky_iskee`
+- Kulku 9: `toinen_paisunta` → `huuto`
 
 ## 3. Valon ja värin kaari
 
-| Maailma | Perusväri | Valon lähde ja suunta | Kirkkain hetki | Ei koskaan |
-|---|---|---|---|---|
-| 1 Kuusikko | hämy, noki | kapea valo runkojen välistä suoraan edestä kaukaa (käyrätorvien kajo, salon värinen) | `vaskien_isku`: valon leikkaus raon kohdalta; leikkaus on hallan värinen, rako pysyy salon värisenä | yleisvaloa |
-| 2 Askelten metsä | hämy, salo | sama rako, askelta alempana ja himmeämpänä | `nousu_huippu_D`: kelmeä, hämärä valo kaikissa kerroksissa (ei keltaista; käyttäjä 9.11.2026, ks. luku 8) | lämpöä |
-| 3 Huurremetsä | salo, halla | kaukaisin kidekerros, josta valo siroaa lähempiin kiteisiin (väike) | `nopea_liike_1_alku`: tihein kimallus | lunta tai maata alla, varjoja maassa |
-| 4 Jäänalainen metsä | hämy, lähes noki | kaukainen valorako edestä; lumi maassa heijastaa sen, joten valoisin on alhaalla; jääkatto ylhäällä himmeä | `h_urkupiste_vyory`: koko metsä samassa himmeässä valossa | suoraa valoa ylhäältä |
-| 5 Ikisalo | salo | kaukaa edestä, hyvin heikko; lopussa taottu aurinko **sivulta** latvojen korkeudelta | `auringonsade`: punainen valo (käyttäjä hyväksyi 9.11.2026) | punaista ennen `c_duuri_valahdykset` |
-| 6 Pilkkopimeä | noki | ei pysyvää lähdettä: vain vaskien leikkaukset ja kaukainen kajo | `P_vaskipaisunta` | punaista, lämpöä |
-| 7 Aukea | noki, halla | horisontin kapea hallanvalkea nauha, joka kasvaa myrskyksi | `myrsky_huippu`: tihein, hallaa ja nokea koko kuvassa; himmeämpi kuin taottu aurinko | kerrosten omia värejä myrskyn sisällä |
-| 8 Myrskyn jälkeen | salo, lopussa kajo | suoraan edestä kerrosten takaa, matalalta | `loppu_Hduuri_alku`: kajo, hellä, ei häikäisevä | häivytystä mustaan |
+| Kuvatapa | Perusväri | Valo | Ei koskaan |
+|---|---|---|---|
+| 1 Metsän idea | hämy, salo | horisontin viiva ja kukkulat; kylmä | yleisvaloa, lämpöä |
+| 2 Maan tasalta | hämy, noki | viiva runkojen takana; D-duurissa kelmeä ja hämärä | keltaista |
+| 3 Ylös | hämy | kelmeä valo latvojen yläpuolella | lämpöä |
+| 4 Lähikuva | salo, halla | huurteen kiteet | maata |
+| 5 Pinnan sisään | hämy, lähes noki | viiva ja sen peilikuva | suoraa valoa ylhäältä |
+| 6 Runkojen rytmi | salo | sininen usva runkojen välissä; lopussa punainen | punaista ennen `c_duuri_valahdykset` |
+| 7 Pimeä | noki | vain vaskien leikkaus | punaista, lämpöä |
+| 8 Ulkoa | noki, salo | hämärä horisontti | kirkasta |
+| 9 Tuuli | halla, noki | lumi itse | kerrosten katoamista |
+| 10 Ylhäältä | salo, lopussa kajo | viiva horisontissa; H-duurissa kajo sen takana | häivytystä mustaan |
 
-**Kolme valoa, kolme suuntaa.** Metsän oma valo tulee edestä kerrosten takaa ja on kylmä (rako, D-duurin välähdykset).
-Lumi ja jää heijastavat sitä, mutta lähde on aina edessä.
-Väärä valo tulee sivulta ja on punainen: varjot lankeavat kuvan poikki, eivät katsojaa kohti. Oikea valo tulee
-samasta suunnasta kuin metsän oma valo, mutta on kajon värinen. Katsojan ei tarvitse tietää tätä: hän näkee, että
-C-duurin valo on väärässä paikassa.
+Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin välähdykset ovat kelmeitä ja hämäriä
+(käyttäjä 9.11.2026). Kajon väri on vain H-duurissa.
 
 ## 4. Neljä lankaa läpi koko teoksen
 
-1. **Valon viiva.** Kapea valo kaukana runkojen välissä. Se on alun pitkä gis (`gis_pitka_aani_alku`), laskee
-   yleistauon jälkeen (`fis_pitka_aani`), laskee vielä (`e_pitka_ja_kuviot`), palaa muistona (`gis_palaa`) ja on
-   lopussa viulujen ääni, joka ei enää lakkaa (`S_sempre_mf`). Korkeus kuvassa on sävelkorkeus. Lopun kajo on sama
-   valo kokonaan nähtynä: se, mikä oli koko ajan takana, jää, kun kaikki muu on viety pois.
-2. **Askeleet.** Paino maassa, aina kameran edellä, ei koskaan saavutettu. Kamera seuraa sitä sisään. Alkavat
-   `askeleet_alkavat`, kuuluvat kaukaa alhaalta (`askeleet_fis`), ovat kovat ja lähellä (`M_raskaat_askeleet`) ja
-   pysähtyvät (`viimeiset_askeleet`). Kun ne pysähtyvät, kuva lakkaa muuttumasta.
-3. **Väärä ja oikea valo.** Luku 3.
-4. **Kolme tyhjyyttä.** Yleistauko on sokea lumi lähellä (`hiljaisuus_1_alku`). Hiljaisuus ennen myrskyä on tumma
-   aukea: jää, usva ja reunoille jäävät viimeiset rungot (`hiljaisuus_2_alku`). Teoksen jälkeinen hiljaisuus on kuva, joka ei enää
-   muutu (`musiikki_loppuu`). Kaikissa kamera jatkaa tai on jo pysähtynyt nimetysti; elementit ovat poissa, metsä jää.
+1. **Horisontin viiva.** Teoksen pitkä ääni: alussa gis (`gis_pitka_aani_alku`), yleistauon jälkeen askelta alempana
+   (`fis_pitka_aani`), vielä alempana (`e_pitka_ja_kuviot`), muistona takaisin (`gis_palaa`) ja lopussa viulujen ääni,
+   joka ei enää lakkaa (`S_sempre_mf`). Viivan korkeus kuvassa on sävelkorkeus. Lopun kajo nousee saman viivan taakse.
+2. **Siemen.** Jousten ensimmäinen aihe kasvattaa ensimmäisen kuusikon (`jouset_tulevat`), ja sama kuusikko palaa
+   samaan paikkaan (`siemen_toistuu`). Sama sävel on aina sama puuryhmä: koko metsä kasvaa tästä.
+3. **Askeleet.** Basson äänet ovat sysäyksiä maassa (`askeleet_alkavat`, `askeleet_B`, `askeleet_fis`,
+   `M_raskaat_askeleet`, `viimeiset_askeleet`). Kävelijää ei näy.
+4. **Väärä ja oikea valo.** C-duurin punainen (`auringonsade`) tulee sivulta ja viedään pois; H-duurin kajo
+   (`loppu_Hduuri_alku`) nousee suoraan horisontin viivan taakse.
 
 ## 5. Otot
 
-### Maailma 1: Kuusikko
-
-Perusliike: hidas ajo suoraan sisään runkojen välistä. Kerrokset: lähellä mustat rungot ja oksat, keskellä rungot
-ja usva, kaukana siniset rungot ja valorako.
-
-#### 01 Metsä ennen ääntä · `tiedoston_alku` → `avaus_patarumpu` · <!--aika-->0:00–0:07<!--/aika-->
-- **Teko:** kuva on auki ja kamera jo liikkeessä, ennen kuin mikään soi.
-- **Tunne ja johtaja:** odotus. Ei johtajaa: metsä yksin, lähes musta.
-- **Näkyy:** rungot erottuvat juuri ja juuri kaukaisinta kerrosta vasten, joka on aavistuksen vaaleampi: se on ainoa
-  valo. Ei elementtejä; valorako on vielä peitossa.
-
-#### 02 Maa sysää, siemen · `avaus_patarumpu` → `gis_paljastuu` · <!--aika-->0:07–0:12<!--/aika-->
-- **Teko:** maa tärähtää, ja säikeet piirtävät siemenen ensimmäisen kerran.
-- **Tunne ja johtaja:** jokin suuri lähtee liikkeelle. Ensin pohjan tärähdys, sitten metsän säikeet.
-- **Näkyy:** `avaus_patarumpu`: lumi maassa liikahtaa kahdesti, aalto kulkee runkoja ylös ja tuo ne näkyviin.
-  `jouset_tulevat`: valosäikeet lähikerroksessa kulkevat runkojen välissä melodian korkeuksia pitkin, vahvoina.
-  `gis_pitka_aani_alku`: kaukana säikeiden takana on kapea valo. Se on jo siinä, mutta säikeet peittävät sen.
-- **Iskut:** pohjan tärähdys; aalto etenee ylös.
-
-#### 03 Mikä oli takana, jää · `gis_paljastuu` → `siemen_toistuu` · <!--aika-->0:12–0:20<!--/aika-->
-- **Teko:** säikeet väistyvät, ja takana ollut valo jää näkyviin.
-- **Tunne ja johtaja:** paljastuminen, hiljainen. Kaukainen kajo.
-- **Näkyy:** `gis_paljastuu`: mitään uutta ei tuoda. Lähikerros himmenee ja kaukainen valorako on yksin.
-  `kerros tulee` (pohja): maa tummuu ja painuu näkyviin valon alle.
-
-#### 04 Siemen toisen kerran · `siemen_toistuu` → `puhallinkuviot_alku` · <!--aika-->0:20–0:25<!--/aika-->
-- **Teko:** säikeet piirtävät saman kuvion samaa reittiä.
-- **Tunne ja johtaja:** sama uudestaan, siksi se jää mieleen. Metsän säikeet.
-- **Näkyy:** `siemen_toistuu`: täsmälleen sama liike kuin otossa 02, ei muunnelmaa. Valorako jää taas taakse.
-- **Iskut:** metsän massa etääntyy hetkeksi.
-
-#### 05 Kummut · `puhallinkuviot_alku` → `puhallinkuviot_loppu` · <!--aika-->0:25–0:39<!--/aika-->
-- **Teko:** valorako hengittää, ja siitä nousee pieniä valon kaaria, jotka painuvat takaisin.
-- **Tunne ja johtaja:** autius, ensimmäinen liike. Kaukainen kajo hengittää; väike ja hämyn äänet vuorotellen samalla
-  viivalla.
-- **Näkyy:** `puhaltimet_tulevat`: valorako kirkastuu ja himmenee paisutus kerrallaan, ja sen sävy vaihtuu joka
-  kerta hieman (sama viiva, eri soitin), aina kylmän sisällä. Väliin matalat kaaret nousevat viivasta ja palaavat
-  siihen. Käyttäjä: "pienet nousevat ja laskevat kuviot (ovatko mäkiä??) ... esiin sieltä metsän siimeksestä".
-- **Iskut:** kajo välähtää: valorako, joka on jo kuvassa, kirkastuu iskun ruudussa.
-
-#### 06 Maa alkaa väristä · `puhallinkuviot_loppu` → `vaskien_isku` · <!--aika-->0:39–0:45<!--/aika-->
-- **Teko:** kaaret lakkaavat, ja lumi maassa alkaa väristä.
-- **Tunne ja johtaja:** varoitus. Pohjan tärähdys.
-- **Näkyy:** `puhallinkuviot_loppu`: valorako yksin, tasaisena. `patarumpu_paisuu`: lumi värisee paikallaan,
-  värinä kasvaa ja tihenee, matalaa lumipölyä irtoaa.
-
-#### 07 Repeämä ja puuska · `vaskien_isku` → `fraasi_ennen_taukoa` · <!--aika-->0:45–0:54<!--/aika-->
-- **Teko:** valo leikkaa raon kohdalta kaikkien kerrosten läpi, ja puuska nostaa lumen ilmaan.
-- **Tunne ja johtaja:** säikähdys. Läpi tuleva valo, sitten metsän säikeet.
-- **Näkyy:** `vaskien_isku`: valon leikkaus kulkee pystysuoraan raon kohdalta takaa eteen kaikkien kerrosten läpi.
-  Leikkaus on vaskien valoa ja hallan värinen kuten aina; rako itse pysyy salon värisenä. `tuulenpuuska`: säikeet ryntäävät kaikissa kerroksissa, lumi irtoaa oksilta. `gis_pitka_aani_loppu`:
-  valon viiva ei sammu, se peittyy lumeen.
-- **Kamera:** ei reagoi: suunta ja nopeus ovat samat kuin alusta asti. **Kulku 1 alkaa** `tuulenpuuska`: lumipöly
-  alkaa peittää näkymää.
-- **Iskut:** valon leikkaus iskun ruudussa.
-
-#### 08 Lause, joka jää kesken · `fraasi_ennen_taukoa` → `hiljaisuus_1_alku` · <!--aika-->0:54–0:58<!--/aika-->
-- **Teko:** säikeet sanovat yhden lauseen lumipölyn seassa, ja se katkeaa.
-- **Tunne ja johtaja:** kesken jääminen. Metsän säikeet.
-- **Näkyy:** `fraasi_ennen_taukoa`: säikeet erottuvat vielä lumen läpi. `äkillinen hiljeneminen`: valo ja liike
-  katkeavat samassa ruudussa.
-
-#### 09 Ensimmäinen tyhjyys · `hiljaisuus_1_alku` → `hiljaisuus_1_loppu` · <!--aika-->0:58–1:01<!--/aika-->
-- **Teko:** lumipöly peittää kaiken paitsi runkojen varjot, ja kamera jatkaa.
-- **Tunne ja johtaja:** pidätetty hengitys. Ei johtajaa. **Nimetty hengähdys.**
-- **Näkyy:** harmaanvalkea lumipöly koko kuvassa kolmessa syvyydessä (lähin nopein). Sen läpi erottuvat runkojen
-  tummat varjot, jotka liukuvat ohi ja paksunevat: mittakaava muuttuu jatkuvasti. Edessä pöly on vaaleinta: raon valo
-  siroaa sen läpi. Ei elementtejä. Kuva ei pimene.
-- **Kamera:** sama nopeus kuin ennen. **Kulku 1 päättyy** `hiljaisuus_1_loppu`.
-
-### Maailma 2: Askelten metsä
-
-Perusliike: sama ajo, hieman hitaampi; urkupisteillä hitain. Kerrokset: lähellä paksut rungot ja lumiset juuret,
-keskellä runkoryhmät (sointumatto), kaukana valorako, nyt alempana. Maa on tässä maailmassa näkyvin.
-
-#### 10 Toinen asento · `hiljaisuus_1_loppu` → `valo_D_duuri` · <!--aika-->1:01–1:15<!--/aika-->
-- **Teko:** lumi laskeutuu, ja metsä on toinen: valon viiva on alempana.
-- **Tunne ja johtaja:** helpotus, joka ei kestä. Metsän säikeet ja läpi tuleva valo vuorotellen.
-- **Näkyy:** `fis_pitka_aani`: valorako askelta alempana ja himmeämpänä kuin maailmassa 1. Säikeet ja vaskien
-  valo vuorottelevat sen ympärillä lohkoina. `purske`: säikeet välähtävät nopeasti latvoissa.
-- **Iskut:** metsän massa etääntyy hetkeksi.
-
-#### 11 Ensimmäinen välähdys · `valo_D_duuri` → `askeleet_alkavat` · <!--aika-->1:15–1:40<!--/aika-->
-- **Teko:** kelmeä valo tulee runkojen välistä eteen kahdesti ja vetäytyy.
-- **Tunne ja johtaja:** hetkellinen valo, metsän oma. Kaukainen kajo ja hämyn äänet pitkinä.
-- **Näkyy:** `valo_D_duuri`: valo levenee raosta kahdessa korkeudessa (kaksi oktaavia), säikeet väistyvät.
-  `urkupiste`: maa ei liiku. Käyttäjä: "synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä".
-
-#### 12 Maa liikahtaa, askeleet alkavat · `askeleet_alkavat` → `askeleet_B` · <!--aika-->1:40–2:09<!--/aika-->
-- **Teko:** maa liikahtaa, ja jokin painava alkaa kulkea kameran edellä.
-- **Tunne ja johtaja:** aavistus. Pohjan askeleet; sointumatto hengittää keskellä.
-- **Näkyy:** `basso liikkuu`: koko maa siirtyy kerran. `askeleet_alkavat`: lumen pinta painuu ja palautuu
-  paikassa, joka on aina edellä ja siirtyy syvemmälle omassa ajassaan. Ei jalkaa, ei jälkeä: paino.
-  `fis_hengittaa`: kaksi runkoryhmää keskikerroksessa kirkastuu ja himmenee vuorotellen. Väike välähtää latvoissa
-  harvakseltaan. Kolme liikkuvaa elementtiä, ei enempää.
-
-#### 13 Askeleet tulevat lähemmäs · `askeleet_B` → `urkupiste_H1_alku` · <!--aika-->2:09–2:56<!--/aika-->
-- **Teko:** painumat tulevat kerros kerrokselta lähemmäs, ja valo vähenee.
-- **Tunne ja johtaja:** painava, näkymätön läsnäolo. Pohjan askeleet.
-- **Näkyy:** `askeleet_B`: askeleet ovat nyt lähikerroksen maassa, mutta yhä edellä. `urkupiste`: maan taso
-  pysyy, kaikki muu liikkuu sen päällä. `paisuva sointu`: runkoryhmä kirkastuu ja himmenee.
-- **Kamera:** hidastuu urkupisteen ajaksi.
-
-#### 14 Metsä kohoaa · `urkupiste_H1_alku` → `urkupiste_H1_loppu` · <!--aika-->2:56–3:11<!--/aika-->
-- **Teko:** valo ja kerrokset nousevat rungoista latvoihin porras portaalta, maa pysyy.
-- **Tunne ja johtaja:** kasvu. Kerrokset yhtenä.
-- **Näkyy:** `urkupiste_H1_alku`: maa paikallaan. `nousu`: valaistu vyöhyke kiipeää runkoja ylös portaittain,
-  ja metsä kasvaa kameran ohi ylöspäin. `nousu_tremolo`: ylin valo alkaa väreillä latvoissa.
-- **Kamera:** pysyy suunnassaan.
-
-#### 15 Maa lähtee mukaan · `urkupiste_H1_loppu` → `nousu_huippu_D` · <!--aika-->3:11–3:15<!--/aika-->
-- **Teko:** maa itse alkaa nousta.
-- **Tunne ja johtaja:** käännekohta: kaikki on liikkeessä. Pohjan askeleet.
-- **Näkyy:** `basso liikkuu`: lumen pinta kohoaa neljässä portaassa muiden mukana.
-
-#### 16 Metsän oma valo · `nousu_huippu_D` → `pohja_katoaa` · <!--aika-->3:15–3:23<!--/aika-->
-- **Teko:** kelmeä valo täyttää kaikki kerrokset maasta latvoihin ja hiipuu.
-- **Tunne ja johtaja:** valo, hetken. Kerrokset yhtenä.
-- **Näkyy:** `nousu_huippu_D`: valo tulee raosta edestä. Alkupuolen kirkkain hetki, silti kylmä, hämärä ja selvästi
-  himmeämpi kuin taottu aurinko.
-  Valo hiipuu, ja lumen painama oksa on kameran edessä.
-- **Kamera:** **Kulku 2** alkaa `nousu_huippu_D` ja päättyy `pohja_katoaa`: suunta on yhden oksan huurre, ja kiteet
-  kasvavat rungon kokoisiksi.
-
-### Maailma 3: Huurremetsä
-
-Perusliike: hidas ajo eteen; koska kaikki vajoaa ja kamera pitää linjansa, kuva tuntuu leijuvan. Kerrokset: lähellä
-suuret kiteet ja niiden oksat, keskellä kiderungot, kaukana sininen kidemetsä. Kiteet ovat kuusen muotoisia (runko,
-oksat ja neulaset huurretta), joten metsä on yhä metsä. Alla ei ole maata vaan tumma usva: kerros, ei tyhjä tausta.
-Kun pohja soi, usvan alta erottuu syvällä musta jään pinta, seuraavan maailman katto.
-
-#### 17 Pohja katoaa · `pohja_katoaa` → `e_pitka_ja_kuviot` · <!--aika-->3:23–4:00<!--/aika-->
-- **Teko:** maa ja juuret häviävät alta, ja metsä jää leijumaan ja vajoaa hitaasti keinuen.
-- **Tunne ja johtaja:** leijuva, pohjaton, lempeä. Väike johtaa ja on siksi tullut lähioksiin ylhäälle; metsän massa on
-  hidas kerros keskellä.
-- **Näkyy:** `pohja_katoaa`: maa ja juuret häviävät usvaan. `ylarekisteri_heraa`: pienet pilkahdukset lähioksissa,
-  hiljaa. Keskikerroksen massat keinuvat pareittain ja vajoavat. Käyttäjä: "mitä viulut tekevät? Tärkeä!"
-- **Iskut:** kidemassa etääntyy hetkeksi; väike ei reagoi iskuun.
-
-#### 18 Kolme aikaa päällekkäin · `e_pitka_ja_kuviot` → `nopea_liike_1_alku` · <!--aika-->4:00–4:40<!--/aika-->
-- **Teko:** ylhäällä kimaltaa nopeasti, keskellä on yksi pysyvä viiva, ja syvällä alla paino liikkuu taas.
-- **Tunne ja johtaja:** levoton. Väike johtaa; valon viiva ja askeleet pysyvät kerroksissaan.
-- **Näkyy:** `e_pitka_ja_kuviot`: valon viiva on taas kuvassa, alempana kuin koskaan. `kerros tulee` (pohja):
-  usvan alta paljastuu syvällä musta jään pinta. `askeleet_fis`: paino liikkuu sen pinnassa, kaukana.
-
-#### 19 Pilkahdukset, joita ei saa kiinni · `nopea_liike_1_alku` → `jannitesoinnut` · <!--aika-->4:40–5:10<!--/aika-->
-- **Teko:** erilliset valopisteet syttyvät ja sammuvat kerrosten välissä nopeammin kuin katse ehtii.
-- **Tunne ja johtaja:** väike, levoton leikki. Väike ja hämyn äänet.
-- **Näkyy:** `nopea_liike_1_alku`: staccato on pisteitä, ei viivoja. `basso vaikenee`: tumma pinta alla häviää
-  taas. `nopea_liike_1_loppu`: pisteet katoavat, kun niitä katsoo; kimallus laantuu.
-- **Kamera:** nopeutuu jakson ajaksi (`uusia_korkea` hitaana keskiarvona: suuri muutos, ei yksittäinen ääni).
-- **Iskut:** kidemassa etääntyy hetkeksi, sitä vähemmän mitä heikompi isku. Väike ei reagoi iskuun: pisteet seuraavat
-  staccatoa.
-
-#### 20 Metsä pidättää hengitystä · `jannitesoinnut` → `pohja_vaihtuu_D` · <!--aika-->5:10–5:36<!--/aika-->
-- **Teko:** elementit pysähtyvät paikalleen kahdesti, ja tumma pinta alla lähestyy.
-- **Tunne ja johtaja:** uhka, odotus. Metsän massa, liikkumatta.
-- **Näkyy:** `jannitesoinnut`: kiteet lakkaavat kimaltamasta, valo kiristyy ja himmenee kaksi kertaa.
-  `urkupiste`: tumma pinta alla on taas näkyvissä ja pysyy.
-- **Kamera:** jatkaa hitaasti; linja painuu vähitellen kohti pintaa (nimetty painuminen, luku 7). **Kulku 3** alkaa
-  `jannitesoinnut` ja päättyy `pohja_vaihtuu_D`. Tämä ei ole pysähdys.
-
-### Maailma 4: Jäänalainen metsä
-
-Perusliike: hidas ajo eteen jääkaton alla. Kerrokset: lähellä mustat rungot, keskellä hämärät rungot ja puoliksi
-näkyvä liike, kaukana valorako kuten maailmassa 1. Ylimpänä jääkatto, joka on tämän maailman taivas.
-
-#### 21 Pinnan läpi · `pohja_vaihtuu_D` → `gis_palaa` · <!--aika-->5:36–6:06<!--/aika-->
-- **Teko:** kamera on painunut mustan pinnan läpi, ja sen alla on sama metsä toisella pohjalla.
-- **Tunne ja johtaja:** vieras, tummuva. Pohjan askeleet.
-- **Näkyy:** `pohja_vaihtuu_D`: pinta on nyt jääkatto kameran yllä, ja jokainen sykäys on aalto, joka kulkee sitä
-  pitkin (ei sisäkkäisiä ympyröitä). Lumi maassa heijastaa kaukaista valoa: valoisin on alhaalla.
-  `äkillinen hiljeneminen`: aallot lakkaavat samassa ruudussa. `lasku`: valo painuu maahan.
-- **Kamera:** kulku 3 on päättynyt; linja on taas vaakasuora.
-- **Iskut:** metsän massa etääntyy hetkeksi.
-
-#### 22 Muisto alusta · `gis_palaa` → `peikot_G_alku` · <!--aika-->6:06–6:23<!--/aika-->
-- **Teko:** alun valorako näkyy vielä kerran, yksin ja hiljaa.
-- **Tunne ja johtaja:** muisto. Kaukainen kajo.
-- **Näkyy:** `gis_palaa`: sama kapea valo samalla korkeudella kuin maailmassa 1, nyt jään alta nähtynä.
-  `artikulaatio` (staccato): ensimmäiset yksittäiset pilkahdukset.
-
-#### 23 Hämyn äänet · `peikot_G_alku` → `peikot_G_loppu` · <!--aika-->6:23–6:30<!--/aika-->
-- **Teko:** runkojen välit täyttyvät liikkeestä, jolla ei ole tekijää.
-- **Tunne ja johtaja:** väike, teoksen tihein liike. Väike ja hämyn äänet.
-- **Näkyy:** `peikot_G_alku`: pilkahduksia kaikissa väleissä ja niiden takana muoto, joka ei tarkennu. Ei
-  olentoja: liike, joka on poissa, kun siihen katsoo. `peikot_G_loppu`: liike jatkuu hetken ilman pilkahduksia.
-
-#### 24 Jokin hengittää puiden takana · `peikot_G_loppu` → `h_urkupiste_vyory` · <!--aika-->6:30–7:00<!--/aika-->
-- **Teko:** kaukainen valo sykkii hitaasti, ja jääkatto pimenee hetkeksi.
-- **Tunne ja johtaja:** hidas hengitys. Kaukainen kajo.
-- **Näkyy:** kajo sykkii pitkin sykäyksin. `nousu` ja `lasku`: valo kohoaa latvoihin ja putoaa maahan.
-  `kerros katoaa` (ylärekisteri): jääkatto ja latvat pimenevät, jäljelle jää vain tumma maa.
-
-#### 25 Metsä velloo · `h_urkupiste_vyory` → `vaskipulssit` · <!--aika-->7:00–7:16<!--/aika-->
-- **Teko:** koko metsä liikkuu yhtenä kuin virta kulkisi sen läpi.
-- **Tunne ja johtaja:** ensimmäinen pelko. Kerrokset yhtenä; maa sykkii.
-- **Näkyy:** `h_urkupiste_vyory`: kaikki rungot ja oksat huojuvat samaan suuntaan, maa sykkii tiheästi mutta pysyy
-  tasollaan. Käyttäjä: "vyöryviä kohtia, jotka velloo ja on tosi pelottaviakin".
-- **Kamera:** nopeutuu hieman, ei heilu mukana.
-
-#### 26 Hengitys palaa · `vaskipulssit` → `hajoaa_hiljaisuuteen` · <!--aika-->7:16–7:42<!--/aika-->
-- **Teko:** vellonta laantuu, ja kaukainen valo hengittää taas.
-- **Tunne ja johtaja:** hidas hengitys. Kaukainen kajo; säikeet hiljaa välissä.
-- **Näkyy:** `vaskipulssit`: kajo kirkastuu ja himmenee hitaasti. `urkupiste`: maa paikallaan.
-
-#### 27 Metsä harvenee · `hajoaa_hiljaisuuteen` → `jousijakso_urkupiste_E_alku` · <!--aika-->7:42–8:16<!--/aika-->
-- **Teko:** rungot harvenevat, ja yksi valtava runko täyttää vähitellen kuvan.
-- **Tunne ja johtaja:** syveneminen. Metsän massa lohkoina, tyhjää välissä.
-- **Näkyy:** `hajoaa_hiljaisuuteen`: runkoryhmä, tyhjä, runkoryhmä. `basso vaikenee`: maa himmenee pois.
-  `lasku`: valo putoaa latvoista maahan asti. Edessä yhden rungon kaarna.
-- **Kamera:** **Kulku 4** alkaa `hajoaa_hiljaisuuteen` ja päättyy `jousijakso_urkupiste_E_alku`: kaarnan uurteet
-  ovat syventyneet rungoiksi.
-- **Iskut:** metsän massa etääntyy hetkeksi.
-
-### Maailma 5: Ikisalo
-
-Perusliike: teoksen hitain ajo. Kerrokset ovat kauimpana toisistaan: lähellä yksi runko kerrallaan, keskellä
-harvat rungot, kaukana sininen seinä. Kaikki on salon sinistä.
-
-#### 28 Ikisalo · `jousijakso_urkupiste_E_alku` → `patarumpu_ppp` · <!--aika-->8:16–8:38<!--/aika-->
-- **Teko:** valtavat rungot liukuvat ohi hitaasti, ja sitten kaikki himmenee.
-- **Tunne ja johtaja:** syvä, tumma, kaukainen. Metsän massa matalalla.
-- **Näkyy:** `jousijakso_urkupiste_E_alku`: massa on maan tasalla, latvoja ei näy. `jousijakso_urkupiste_E_loppu`:
-  kerrokset väistyvät. `kerros tulee` (ylärekisteri): hyvin korkealla latvojen välistä paljastuu ohut valo kaukaisimmasta
-  kerroksesta.
-
-#### 29 Maa ei ole hiljaa · `patarumpu_ppp` → `hitaat_soinnut` · <!--aika-->8:38–9:00<!--/aika-->
-- **Teko:** tyhjässä metsässä maa värisee tuskin näkyvästi.
-- **Tunne ja johtaja:** pidätetty. Pohjan tärähdys, hiljaisin koko teoksessa.
-- **Näkyy:** `patarumpu_ppp`: lumen pinta värisee paikallaan. `kerros katoaa` (pohja): maa häviää usvaan ja rungot
-  jäävät leijumaan.
-
-#### 30 Aika lakkaa · `hitaat_soinnut` → `h_palaa_ennen_hiljaisuutta` · <!--aika-->9:00–9:40<!--/aika-->
-- **Teko:** kerrokset vaihtavat sävyä yksi kerrallaan, eikä mikään tule eteen.
-- **Tunne ja johtaja:** ajaton. Ei johtajaa: ei etualaa, kaikki on kaukana.
-- **Näkyy:** `hitaat_soinnut`: yksi kerros kerrallaan kirkastuu tai tummuu hitaasti, ilman rytmiä. Maa tulee ja
-  häviää (`kerros tulee`, `kerros katoaa`).
-- **Kamera:** hitain nopeus, jolla liike vielä näkyy.
-
-#### 31 Askeleet käyvät kotona · `h_palaa_ennen_hiljaisuutta` → `hiljainen_jakso_alku` · <!--aika-->9:40–9:57<!--/aika-->
-- **Teko:** paino sykkii maassa vielä hetken ja vaimenee.
-- **Tunne ja johtaja:** hiipuva. Pohjan askeleet.
-- **Näkyy:** `h_palaa_ennen_hiljaisuutta`: painumat edellä, yhä pienempinä. `urkupiste`: maa paikallaan.
-
-#### 32 Kuinka vähän tapahtuu · `hiljainen_jakso_alku` → `hiljainen_jakso_loppu` · <!--aika-->9:57–10:13<!--/aika-->
-- **Teko:** metsä on lähes tyhjä, ja kamera jatkaa.
-- **Tunne ja johtaja:** tyhjyys, odotus. Ei johtajaa. **Nimetty hengähdys** (ei yksi kolmesta tyhjyydestä: rungot
-  näkyvät).
-- **Näkyy:** `kerros katoaa` (pohja): maa usvassa. Heikko väreily kaukaisissa massoissa.
-
-#### 33 Jokin lähestyy kaukaa · `hiljainen_jakso_loppu` → `vaski_tutti_620` · <!--aika-->10:13–10:21<!--/aika-->
-- **Teko:** kaukainen valo ja maan värinä kasvavat yhtä aikaa.
-- **Tunne ja johtaja:** lähestyvä. Kaukainen kajo ja pohjan tärähdys.
-- **Näkyy:** `hiljainen_jakso_loppu`: kajo paisuu, lumi alkaa väristä, molemmat tulevat lähemmäs kerroksissa.
-
-#### 34 Isku, joka käynnistää · `vaski_tutti_620` → `allegro_359` · <!--aika-->10:21–10:32<!--/aika-->
-- **Teko:** valo leikkaa ikisalon läpi, ja maa tärähtää.
-- **Tunne ja johtaja:** vyöryvä. Läpi tuleva valo.
-- **Näkyy:** `vaski_tutti_620`: leikkaus kaikkien kerrosten läpi, hallan värinen. `purske`: säikeet ryöpsähtävät
-  latvoissa. Valo vaimenee nopeasti.
-- **Iskut:** valon leikkaus ja pohjan tärähdys samassa ruudussa.
-
-#### 35 Liike palaa · `allegro_359` → `c_duuri_valahdykset` · <!--aika-->10:32–10:41<!--/aika-->
-- **Teko:** pilkahdukset ja säikeet lähtevät liikkeelle, ja kamera kiihtyy.
-- **Tunne ja johtaja:** levoton, kiihtyvä. Ensin väike ja pohjan toinen ääni, sitten säikeet väikkeen tilalle.
-- **Näkyy:** `allegro_359`: nopea kuviointi lähikerroksessa. `nousu`: valo kiipeää pitkään.
-- **Kamera:** nopeutuu (`uusia_keski`, `uusia_korkea` hitaana keskiarvona).
-
-#### 36 Väärä valo käy katsomassa · `c_duuri_valahdykset` → `auringonsade` · <!--aika-->10:41–11:20<!--/aika-->
-- **Teko:** punainen valo vilahtaa sivulla kerrosten takana kolme kertaa ja katoaa.
-- **Tunne ja johtaja:** väärä valo lähestyy. Metsän säikeet; taottu aurinko takana.
-- **Näkyy:** `c_duuri_valahdykset`: valo ei tule edestä vaan sivulta, latvojen korkeudelta. Jokainen vilahdus on
-  edellistä selvempi. `tremolo`: korkeat säikeet värisevät. `lasku`: liike painuu ja hidastuu.
-- **Kamera:** hidastuu jatkuvasti laskun aikana kohti pysähdystä.
-- **Puuttuu datasta:** kolmen vilahduksen omat ajat (luku 8).
-
-#### 37 Taottu aurinko · `auringonsade` → `M_ennakko` · <!--aika-->11:20–11:25<!--/aika-->
-- **Teko:** kamera pysähtyy, ja punainen valo nousee sivulla latvojen taakse.
-- **Tunne ja johtaja:** väärä toivo, pysähtynyt. Metsän säikeet korkealla, suorina ja liikkumatta.
-- **Näkyy:** `auringonsade`: punainen valo sinisen metsän läpi sivulta. Runkojen reunat hehkuvat, varjot lankeavat
-  kuvan poikki, lumi varjossa pysyy kylmän sinisenä. Valo on vahva (forte), ei hento. Ei kiekkoa, ei horisonttia, ei
-  lämmintä taivasta: tämä ei ole auringonlasku. `urkupiste`: maa paikallaan.
-  Käyttäjä: "auringon säde synkän metsän läpi"; "groteski valo"; "toivo on turha".
-- **Kamera:** **Nimetty pysähdys 1.** Ensimmäinen koko teoksessa.
-
-#### 38 Petos · `M_ennakko` → `M_raskaat_askeleet` · <!--aika-->11:25–11:31<!--/aika-->
-- **Teko:** kylmät leikkaukset tulevat punaisen valon eteen, ja kamera lähtee liikkeelle.
-- **Tunne ja johtaja:** isku, pelottava. Läpi tuleva valo ja pohjan tärähdys; säikeet pysyvät paikallaan ja jäävät
-  leikkausten taakse.
-- **Näkyy:** `M_ennakko`: useita pystysuoria leikkauksia peräkkäin (jyrinä). Ne tulevat edestä kerrosten takaa,
-  ikisalon omasta heikosta valosta, ja ovat hallan värisiä. Punainen valo ei sammu iskussa: se jää leikkausten taakse
-  ja haalistuu koko oton ajan. Punaista ei ole oton jälkeen. Liikkuu kolme: leikkaukset, tärähdys ja haalistuva punainen.
-- **Kamera:** lähtee liikkeelle jatkuvalla kiihdytyksellä (ei nykäystä iskun ruudussa) ja kääntyy hitaasti siihen,
-  missä väärä valo on. Nopein ajo tähän asti. **Kulku 5** alkaa `M_ennakko`.
-- **Iskut:** valon leikkaukset ja pohjan tärähdys.
-
-### Maailma 6: Pilkkopimeä
-
-Perusliike: teoksen nopein ajo ennen myrskyä; liikettä ei voi pysäyttää. Kerrokset: rungot niin kaukana toisistaan,
-että kuvassa on kerrallaan yksi lähellä, muutama keskellä ja kaukana sinimusta usva, jossa runkojen varjot juuri ja
-juuri erottuvat. Pysyvää valoa ei ole.
-
-#### 39 Askeleet ovat täällä · `M_raskaat_askeleet` → `jannitejakso_alku` · <!--aika-->11:31–11:51<!--/aika-->
-- **Teko:** maa painuu lähellä kameraa raskaasti, isku iskulta.
-- **Tunne ja johtaja:** raskas, väistämätön. Pohjan askeleet ja läpi tuleva valo.
-- **Näkyy:** `M_raskaat_askeleet`: painumat ovat lähempänä kuin koskaan, mutta yhä edellä. Leikkaukset valaisevat
-  ne. `tremolo`: korkea valo värisee ylhäällä.
-- **Kamera:** **Kulku 5 päättyy** `M_raskaat_askeleet`.
-
-#### 40 Hermo · `jannitejakso_alku` → `O_kirjain` · <!--aika-->11:51–12:14<!--/aika-->
-- **Teko:** säikeet täyttävät lähikerroksen nykivällä liikkeellä, joka ei asetu viivaksi.
-- **Tunne ja johtaja:** ahdistava, hermostunut. Metsän säikeet.
-- **Näkyy:** `jannitejakso_alku`: lyhyitä, katkeilevia säikeitä tiheästi, ei yhtään pitkää. Maa häviää hetkeksi
-  (`kerros katoaa`). `lasku`, `nousu`: säikeiden parvi painuu ja kohoaa.
-- **Iskut:** metsän massa etääntyy hetkeksi.
-
-#### 41 Hermo saa äänen · `O_kirjain` → `jannitejakso_loppu` · <!--aika-->12:14–12:35<!--/aika-->
-- **Teko:** ohut valojuova ja puoliksi näkyvä muoto työntyvät säikeiden läpi.
-- **Tunne ja johtaja:** tihenevä. Ohut linja ja hämyn äänet; säikeet jatkavat.
-- **Näkyy:** `O_kirjain`: linja tulee kaukaa lähemmäs säikeiden välistä. Vaskien valo pysyy alla himmeänä ja liikkumatta. Lopussa kaikki
-  kirkastuu yhdessä ja katkeaa `jannitejakso_loppu`.
-- **Iskut:** valon leikkaus.
-
-#### 42 Kaksi hengitystä · `allegro_moderato_O_alku` → `allegro_moderato_O_loppu` · <!--aika-->12:36–12:48<!--/aika-->
-- **Teko:** kaksi valoa pimeän takana paisuu ja laskee vuorotellen.
-- **Tunne ja johtaja:** hidas, painava hengitys. Kaukainen kajo ja läpi tuleva valo vuorotellen.
-- **Näkyy:** `allegro_moderato_O_alku`: kajo kaukana paisuu ja himmenee; kun se himmenee, läpi tuleva valo toisessa
-  kohdassa paisuu. Kaksi paikkaa, sama tahti. Käyttäjä: "hitaat vuorottelut kornojen <> ja trumpettien välillä".
-- **Kamera:** hidastuu selvästi.
-- **Puuttuu datasta:** kumpi paisutus on kumman (luku 8).
-
-#### 43 Tyven · `allegro_moderato_O_loppu` → `P_vaskipaisunta` · <!--aika-->12:48–13:26<!--/aika-->
-- **Teko:** pienet kuviot liikkuvat keskellä, ja niiden ympärillä on paljon tyhjää.
-- **Tunne ja johtaja:** tyven ennen viimeistä varoitusta. Väike ja ohut linja harvakseltaan.
-- **Näkyy:** `harva_kuviointi`: yksittäiset pisteet ja lyhyet viivat. `kerros katoaa` (pohja): maa poissa pitkään.
-
-#### 44 Viimeinen varoitus · `P_vaskipaisunta` → `dim_possibile` · <!--aika-->13:26–13:45<!--/aika-->
-- **Teko:** valo tulee takaa eteen yhdellä paisutuksella, ja maa palaa sen alle.
-- **Tunne ja johtaja:** viimeinen varoitus. Läpi tuleva valo ja pohjan tärähdys.
-- **Näkyy:** `P_vaskipaisunta`: yksi leveä leikkaus, joka kasvaa hiljaisesta täyteen ja kulkee kaikkien kerrosten
-  läpi. Säikeet mukana. Pilkkopimeän kirkkain hetki.
-- **Iskut:** valon leikkaus.
-
-#### 45 Metsä tyhjenee · `dim_possibile` → `hiljaisuus_2_alku` · <!--aika-->13:45–14:05<!--/aika-->
-- **Teko:** metsä tyhjenee: leikkaukset himmenevät pois, ja rungot harvenevat kahteen viimeiseen.
-- **Tunne ja johtaja:** tyhjenevä. Metsän säikeet.
-- **Näkyy:** `dim_possibile`: leikkaukset himmenevät pois. Säikeet lähellä, lämpimimmillään muodoltaan (pitkä,
-  kaartuva viiva), eivät väriltään. `kerros katoaa` (ylärekisteri): latvat ja taivas pimenevät.
-- **Kamera:** hidastuu. **Kulku 6 alkaa** `dim_possibile`: suunta on kahden viimeisen rungon väli.
-
-### Maailma 7: Aukea
-
-Perusliike: hyvin hidas ajo suoraan kohti horisonttia. Aukea on metsän sisällä: jäinen selkä, jonka takana on
-vastarannan kuusikko. Kerrokset: lähellä musta jää ja reunoilla viimeiset rungot, keskellä jäätä pitkin ajelehtiva
-pakkasusva, kaukana horisontti ja kuusikon tumma sahalaita. Tila on ensimmäisen kerran suurempi kuin katsoja.
-Myrskyssä kerrokset menettävät eronsa (tyyliohjeen nimetty poikkeus): sama valo, sama väri, sama suunta. Lumi kulkee
-silti kolmessa etäisyydessä, joten ajo näkyy.
-
-#### 46 Toinen tyhjyys · `hiljaisuus_2_alku` → `myrsky_nakyy` · <!--aika-->14:05–14:17<!--/aika-->
-- **Teko:** viimeiset rungot jäävät reunoille ja taakse, ja edessä on tumma jää ja usva.
-- **Tunne ja johtaja:** tyhjä, uhkaava. Ei johtajaa: jouset soittavat kuulokynnyksellä, ja niiden vastine on tuskin
-  näkyvä väreily kaukaisessa usvassa. **Nimetty hengähdys.**
-- **Näkyy:** `hiljaisuus_2_alku`: ei elementtejä, ei horisonttia vielä. Kuva ei ole musta: lähellä jään pinta erottuu
-  juuri ja juuri kameran alla ja liukuu ohi, ja viimeiset rungot jäävät reunoilla taakse; keskellä usva liikkuu
-  hitaammin; kaukana on sininen usvaseinä ilman viivaa, ja sen heikko hämärä on kuvan ainoa valo.
-- **Kamera:** jatkaa hyvin hitaasti. **Kulku 6 päättyy** `myrsky_nakyy`.
-
-#### 47 Se näkyy · `myrsky_nakyy` → `myrsky_kasvu` · <!--aika-->14:17–14:27<!--/aika-->
-- **Teko:** horisontti paljastuu usvan takaa kapeana vaaleana nauhana, ja nauha alkaa liikkua.
-- **Tunne ja johtaja:** etäinen uhka. Metsän säikeet hyvin kaukana, tuskin erottuvina.
-- **Näkyy:** `myrsky_nakyy`: usvaseinä ohenee, ja sen takaa paljastuu ensimmäinen horisontti koko teoksessa:
-  vastarannan kuusikon sahalaita ja sen yllä kapea vaalea nauha. Nauha väreilee, koska jouset soittavat jo.
-  `hiljaisuus_2_loppu`: mitattu hiljaisuus päättyy, ja väreily on jo selvää. Käyttäjä: "niinkuin kaukaa tuleva lumi ja jää. Aluksi se vain näkyy".
-
-#### 48 Se tulee · `myrsky_kasvu` → `myrsky_iskee` · <!--aika-->14:27–14:33<!--/aika-->
-- **Teko:** nauha kasvaa ja lähestyy paljon nopeammin kuin kamera sitä.
-- **Tunne ja johtaja:** lähestyvä, vyöryvä. Metsän säikeet.
-- **Näkyy:** `myrsky_kasvu`: vaalea seinä nousee horisontista, peittää kuusikon ja täyttää lähestyessään kuvan
-  reunasta reunaan. `nousu`: sen yläreuna kohoaa
-  koko kuvan korkeudelle. Säikeet erottuvat siinä yksittäin.
-- **Kamera:** ei kiihdytä, ei väistä.
-
-#### 49 Se iskee · `myrsky_iskee` → `Q_koko_metsa` · <!--aika-->14:33–14:50<!--/aika-->
-- **Teko:** lumi ja jää ovat päällä, ja kerrosten erot häviävät.
-- **Tunne ja johtaja:** pelottava, velloava. Kerrokset yhtenä (vain säikeet: metsä itse).
-- **Näkyy:** `myrsky_iskee`: lähellä, keskellä ja kaukana on sama valo, sama väri ja sama suunta. Lumi kulkee silti
-  kolmessa etäisyydessä. Hallan valkeaa ja nokea, ei muuta. Käyttäjä: "iskee sitten päälle kuin myrsky".
-- **Iskut:** kerrokset menettävät eronsa `myrsky_iskee`; se on tämän oton vastine iskuun.
-
-#### 50 Maa ja taivas liittyvät · `Q_koko_metsa` → `myrsky_huippu` · <!--aika-->14:50–15:10<!--/aika-->
-- **Teko:** pystysuorat leikkaukset iskevät massan läpi, ja maa tärähtää sen alla.
-- **Tunne ja johtaja:** ylivoimainen. Kerrokset yhtenä; läpi tuleva valo ja pohjan tärähdys sen sisällä.
-- **Näkyy:** `Q_koko_metsa`: leikkaukset ylhäältä alas; jokainen näyttää hetkeksi kuusikon rungot lumen läpi: metsä
-  on edessä. `äkillinen hiljeneminen`: valo ja liike katkeavat
-  ruudussa ja palaavat.
-- **Kamera:** on myrskyn sisällä ja ajaa sen läpi samaa suuntaa. Ei tärinää.
-- **Iskut:** valon leikkaus ja pohjan tärähdys. Aksentteja ei tässä erotu: ajoitus `taso_dbfs`.
-
-#### 51 Huippu · `myrsky_huippu` → `R_vasket` · <!--aika-->15:10–15:23<!--/aika-->
-- **Teko:** kuva on täynnä, mitään yksittäistä ei erota, ja sitten se alkaa ohentua.
-- **Tunne ja johtaja:** huippu. Kerrokset yhtenä.
-- **Näkyy:** `myrsky_huippu`: teoksen tihein kuva, hallaa ja nokea; ei kirkkaampi kuin taottu aurinko. `lasku`: massa painuu. `kerros katoaa`
-  (ylärekisteri): yläosa pimenee. `urkupiste`: maa erottuu taas ja pysyy.
-
-#### 52 Jälkiaalto · `R_vasket` → `toinen_paisunta` · <!--aika-->15:23–15:35<!--/aika-->
-- **Teko:** yksi leikkausten aalto kulkee vielä läpi, ja säikeet vastaavat.
-- **Tunne ja johtaja:** se ei lopu kerralla. Läpi tuleva valo, sitten säikeet.
-- **Näkyy:** `R_vasket`: vaskien valo paisuu ja laskee. `nousu`: kaikki ampaisee ylös, jyrkin nousu koko teoksessa.
-
-#### 53 Nousu · `toinen_paisunta` → `huuto` · <!--aika-->15:35–15:45<!--/aika-->
-- **Teko:** säikeet kiipeävät maasta ylös vuoron perään, ja kamera alkaa nousta niiden mukana.
-- **Tunne ja johtaja:** velloava, kohoava. Metsän säikeet.
-- **Näkyy:** `toinen_paisunta`: ensin lyhyt laskeva välähdys (väike), sitten säieryhmä toisensa jälkeen alhaalta
-  ylös.
-- **Kamera:** **nousee ensimmäisen kerran**: ylös, ei taakse; eteenpäin kulku jatkuu. `toinen_paisunta` on huudon
-  alku (tyyliohje luku 5). **Kulku 7 alkaa.**
-
-#### 54 Huuto · `huuto` → `yksinaiset_aanet` · <!--aika-->15:45–16:00<!--/aika-->
-- **Teko:** kamera tulee myrskyn yläpuolelle, ja korkeat säikeet jäävät yksin latvojen ylle.
-- **Tunne ja johtaja:** yksinäinen, paljas. Metsän säikeet korkeimmillaan.
-- **Näkyy:** `huuto`: muutama pitkä, värisevä säie ylhäällä (`tremolo`), ei muita elementtejä niiden ympärillä. Myrsky
-  vajoaa alle, ja siitä nousevat esiin ensimmäiset lumiset latvat; kaukana on himmeä horisontti. Maa tärähtää kaukana
-  alhaalla yhä heikommin. Ei hahmoa: ääni, joka jäi.
-- **Kamera:** **Kulku 7 päättyy** `yksinaiset_aanet`.
-
-### Maailma 8: Metsä myrskyn jälkeen
-
-Perusliike: hidas ajo eteen latvojen tasalla; hidastuu `S_sempre_mf`:stä alkaen ja pysähtyy H-duuriin. Kerrokset:
-lähellä lumiset latvat, keskellä metsän selänteet, kaukana horisontti ja valo sen takana.
-
-#### 55 Yksi kerrallaan · `yksinaiset_aanet` → `S_sempre_mf` · <!--aika-->16:00–16:21<!--/aika-->
-- **Teko:** yksi elementti kerrallaan paisuu latvojen yllä ja häipyy.
-- **Tunne ja johtaja:** paljas, hiljenevä. Hämyn ääni, väike ja toinen, matalampi hämyn ääni: vuorotellen, ei yhtä
-  aikaa.
-- **Näkyy:** `yksinaiset_aanet`: puoliksi näkyvä muoto keskellä, pilkahdus ylhäällä, toinen puoliksi näkyvä muoto
-  alempana keskikerroksessa. Jokainen
-  paisuu ja laskee. `lasku`: näkymä asettuu, ja koko metsä on alla ja edessä uuden lumen alla.
-
-#### 56 Ääni, joka ei enää lakkaa · `S_sempre_mf` → `loppuhuipennus` · <!--aika-->16:21–16:52<!--/aika-->
-- **Teko:** valon viiva paljastuu horisontissa ja pysyy, ja metsä alkaa kasvaa sen edessä.
-- **Tunne ja johtaja:** rauhoittuva, kokoava. Valon viiva (metsän säikeet yhtenä pitkänä viivana).
-- **Näkyy:** `S_sempre_mf`: sama viiva kuin alussa. Se ei kasva: mikään ei enää peitä sitä, ja se näkyy koko
-  pituudeltaan horisontissa. `kerros tulee` (pohja) ja
-  `urkupiste`: maa palaa ja pysyy. `basso liikkuu`: maa liikahtaa vielä kerran.
-- **Kamera:** alkaa hidastua jatkuvasti.
-
-#### 57 Viimeinen aalto · `loppuhuipennus` → `loppu_Hduuri_alku` · <!--aika-->16:52–17:04<!--/aika-->
-- **Teko:** kaikki kerrokset kulkevat ohi yhdessä valossa, ja elementit lähtevät yksi kerrallaan.
-- **Tunne ja johtaja:** viimeinen aalto, ei voitto. Kerrokset yhtenä.
-- **Näkyy:** `loppuhuipennus`: aalto vyöryy kameran ohi, ei sitä kohti. Sen jälkeen leikkaukset, kajo ja tärähdys
-  himmenevät pois, kukin vuorollaan. Jäljelle jää metsä ja valon viiva. Lopun hiljaisin kuva ennen kajoa: elementit
-  ovat lähteneet, metsä ja viiva pysyvät, eikä kuva pimene.
-- **Iskut:** kerrokset yhtenä; ei leikkauksia.
-
-#### 58 Oikea valo · `loppu_Hduuri_alku` → `viimeiset_askeleet` · <!--aika-->17:04–17:24<!--/aika-->
-- **Teko:** kamera pysähtyy, ja kajo tulee kerrosten takaa.
-- **Tunne ja johtaja:** hellä, koskettava, avoin. Metsän massa kaikissa kerroksissa, tasaisesti.
-- **Näkyy:** `loppu_Hduuri_alku`: valo tulee suoraan edestä matalalta, samasta suunnasta kuin metsän oma valo on
-  aina tullut, mutta nyt kajon värisenä. Se ei häikäise eikä kasva: mezzoforte. Pystysuorat rungot ja yksi
-  vaakasuora horisontti levossa. `urkupiste`: maa ja horisontti paikallaan. Käyttäjä: "massiivinen päätöspiste,
-  mutta ei julistava, vaan hellä".
-- **Kamera:** **Nimetty pysähdys 2.** Pysähtyminen on lopun tapahtuma.
-
-#### 59 Viimeiset askeleet · `viimeiset_askeleet` → `musiikki_loppuu` · <!--aika-->17:24–17:31<!--/aika-->
-- **Teko:** paino sykkii maassa vielä hetken valon alla ja pysähtyy.
-- **Tunne ja johtaja:** viimeinen. Pohjan askeleet.
-- **Näkyy:** `viimeiset_askeleet`: painumat lumessa edessä, jokainen edellistä pienempi. Ne eivät enää siirry
-  eteenpäin. `loppu_Hduuri_loppu`: massan liike lakkaa, kajo jää ennalleen.
-
-#### 60 Kolmas tyhjyys · `musiikki_loppuu` → `tiedoston_loppu` · <!--aika-->17:31–17:58<!--/aika-->
-- **Teko:** kuva lakkaa muuttumasta.
-- **Tunne ja johtaja:** hiljaisuus, joka jäi. Ei johtajaa. **Nimetty hengähdys.**
-- **Näkyy:** sama kuva kuin oton 59 lopussa, liikkumatta loppuun asti. Ei pimennystä, ei tekstiä.
-- **Iskut:** ei mitään. Äänitteen loppukohinan iskut ohitetaan (luku 8).
-
-## 6. Iskut ja ruutukanavat: yleissäännöt
-
-**Iskut** (`cues.json`, kenttä iskut). Jokainen isku saa ympäristön vastineen iskun ruudussa. Otossa, jossa on rivi
-**Iskut**, vastine on rivin nimeämä. Muissa otoissa matalan kaistan isku on pohjan tärähdys ja muu isku metsän massan
-hetkellinen etääntyminen. Vastineen suuruus seuraa iskun voimaa. Vastaaja on aina jo kuvassa: mikään ei ilmesty eikä
-katoa iskussa, väri ei vaihdu iskussa, ja kamera ei reagoi. Väike, hämyn äänet, ohut linja ja pohjan toinen ääni eivät
-reagoi iskuun (tyyliohje luku 7).
-
-**Ruutukanavat** (`build/<paketti>/ohjaus.f32`). Luotettavuus: `docs/tapiola_tutkimus.md` luku 13.
-
-| Kanava | Ohjaa kuvassa |
-|---|---|
-| `taso_dbfs` | valon kokonaismäärä; kuinka lähelle johtava elementti tulee |
-| `osuus_matala`, `osuus_keski`, `osuus_korkea` | kuinka näkyvä on maa ja juuret, runkojen korkeus, latvat ja taivas |
-| `bassolinja_midi` | maan taso; urkupisteellä se ei liiku |
-| `painopiste_matala`, `painopiste_keski`, `painopiste_korkea` | valon korkeus kunkin kerroksen sisällä |
-| `ylalinja_midi` | ylimmän säikeen tai pilkahduksen korkeus |
-| `uusia_matala`, `uusia_keski`, `uusia_korkea` | liikkeen tiheys kerroksittain; askeleet (`uusia_matala`); kameran nopeus vain hitaana keskiarvona |
-| `tremolo` | väreily paikallaan |
-| `suunta` | kohoaako vai painuuko valo |
-| `jouset`, `puupuhaltimet`, `vasket` | vain hidas painotus siitä, mikä elementtiperhe on esillä; ei koskaan ajoitusta (karkea ja myöhässä) |
+### Kuvatapa 1 Metsän idea
+
+#### 01 Ennen ääntä · `tiedoston_alku` → `avaus_patarumpu` · <!--aika-->0:00–0:07<!--/aika-->
+- **Kuuluu:** ei vielä mitään.
+- **Näkyy:** tumma ilma, maa ja metsän matala reuna. Usva ajelehtii; kuva lähestyy hitaasti. Viivaa ei vielä ole.
+- **Tunne → keino:** odotus → pimeys, jossa metsä on jo.
+
+#### 02 Avaus · `avaus_patarumpu` → `gis_pitka_aani_alku` · <!--aika-->0:07–0:08<!--/aika-->
+- **Kuuluu:** Avaus: patarumpusoolo ("tututum"), ei muita *Soittaa:* patarummut.
+  - **Näkyy:** Vain tumma ilma ja maa. Maa saa yhden sysäyksen, ei muuta.
+  - **Tunne → keino:** pimeä, odottava → pimeys ja yksi maan sysäys
+
+#### 03 Pitkä gis alkaa · `gis_pitka_aani_alku` → `gis_paljastuu` · <!--aika-->0:08–0:12<!--/aika-->
+- **Kuuluu:** Pitkä gis alkaa: soi lähes katkeamatta, käyrätorvet taustalla *Soittaa:* puhaltimet (käyrätorvet taustalla).
+  - **Näkyy:** Horisontin viiva syttyy tumman ilman takaa gis:n korkeudelle, ohut ja kirkas; pysyy koko ajan.
+  - **Tunne → keino:** synkkä, yksi valoisa sävel → valo (viivan kirkkaus) ja korkeus
+- **Kuuluu:** (`jouset_tulevat`) Jouset tulevat: ydinmotiivi, "siemen" *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmä kasvaa maasta viivan eteen; latvat ovat melodian sävelten korkeudella. Jouset johtavat kuvaa, viiva jää taakse.
+  - **Tunne → keino:** staattinen, synkkä → tummuus ja tiheys
+
+#### 04 Jouset lopettavat · `gis_paljastuu` → `siemen_toistuu` · <!--aika-->0:12–0:20<!--/aika-->
+- **Kuuluu:** Jouset lopettavat: käyrätorvien gis paljastuu (kuultu) *Soittaa:* jouset lopettavat, käyrätorvet jäävät.
+  - **Näkyy:** Kuusiryhmät väistyvät maahan; viiva jää yksin näkyviin. Mitään uutta ei tule.
+  - **Tunne → keino:** paljastuva, hiljainen → väistyminen, etäisyys
+
+#### 05 Siemen toisen kerran · `siemen_toistuu` → `puhallinkuviot_alku` · <!--aika-->0:20–0:25<!--/aika-->
+- **Kuuluu:** Siemen toisen kerran *Soittaa:* jouset.
+  - **Näkyy:** Sama kuusiryhmä kasvaa samaan paikkaan samalla korkeudella kuin ensimmäisellä kerralla; viiva pysyy takana.
+  - **Tunne → keino:** staattinen, synkkä → sama paikka, toisto
+
+#### 06 Puhaltimien pienet kuviot alkavat · `puhallinkuviot_alku` → `puhaltimet_tulevat` · <!--aika-->0:25–0:26<!--/aika-->
+- **Kuuluu:** Puhaltimien pienet kuviot alkavat *Soittaa:* puhaltimet.
+  - **Näkyy:** Viivasta nousee kukkuloita yksi kerrallaan ja painuu takaisin (noin 2 s välein); jokaisesta jää matala jälki. Huipun terävyys seuraa soinnin runsautta, puhdas sointi on matala pyöreä kumpu. Kuusiryhmät väistyvät taaksepäin.
+  - **Tunne → keino:** autius, ensimmäinen liike → liike ja korkeus
+
+#### 07 Puupuhaltimet tulevat mukaan jousten jälkeen · `puhaltimet_tulevat` → `puhallinkuviot_loppu` · <!--aika-->0:26–0:39<!--/aika-->
+- **Kuuluu:** Puupuhaltimet tulevat mukaan jousten jälkeen *Soittaa:* puhaltimet.
+  - **Näkyy:** Kukkulat tulevat esiin kuusiryhmien takaa; jousten kuusiryhmät pienenevät ja vetäytyvät usvaan. Puhaltimet johtavat kuvaa.
+  - **Tunne → keino:** autius → etäisyys, vuoronperään
+- Kone kuuli: Isku (ei muuta tietoa) **Näkyy:** Jos isku on vaskien: pystysuora leikkaus. Jos ei: maan sysäys. Kuunteluopas ei sano.
+
+#### 08 Puhaltimien pienet kuviot päättyvät · `puhallinkuviot_loppu` → `patarumpu_paisuu` · <!--aika-->0:39–0:41<!--/aika-->
+- **Kuuluu:** Puhaltimien pienet kuviot päättyvät *Soittaa:* puhaltimet.
+  - **Näkyy:** Kukkulat painuvat viivaan; viiva jää.
+  - **Tunne → keino:** odottava → liike lakkaa
+
+#### 09 Patarumpujen paisutus ennen puuskaa · `patarumpu_paisuu` → `vaskien_isku` · <!--aika-->0:41–0:45<!--/aika-->
+- **Kuuluu:** Patarumpujen paisutus ennen puuskaa *Soittaa:* patarummut.
+  - **Näkyy:** Maa alkaa väristä ja hohtaa; viiva soi yllä.
+  - **Tunne → keino:** varoitus → värinä ja hohto
+
+#### 10 Vaskien isku avaa Allegro moderaton · `vaskien_isku` → `fraasi_ennen_taukoa` · <!--aika-->0:45–0:54<!--/aika-->
+- **Kuuluu:** Vaskien isku avaa Allegro moderaton *Soittaa:* vasket (patarummut, jouset vastaavat).
+  - **Näkyy:** Pystysuora leikkaus kaikkien kerrosten läpi; lähimmät kuusiryhmät jäävät sen eteen siluetteina; maa saa sysäyksen.
+  - **Tunne → keino:** uhka → valo (ainoa pystysuora valo)
+- **Kuuluu:** (`tuulenpuuska`) Tuulenpuuska (kuultu) *Soittaa:* ei tietoa (partituuri: vasket, patarummut, jouset).
+  - **Näkyy:** Lumi alkaa liikkua kerrosten välissä: kaukana pientä ja hidasta, lähellä suurta ja nopeaa; jouset kasvattavat kuusiryhmiä. Lumi ei peitä lähempää kerrosta.
+  - **Tunne → keino:** levoton → lumen vauhti kerroksittain
+- **Kuuluu:** (`gis_pitka_aani_loppu`) Pitkä gis päättyy: peittyy puuskan alle *Soittaa:* puhaltimet (gis).
+  - **Näkyy:** Viiva peittyy lumen ja lähimmän kuusiryhmän taakse mutta ei sammu: viiva on kuvassa niin kauan kuin ääni soi.
+  - **Tunne → keino:** peittyvä → etäisyys
+
+#### 11 Jousten fraasi ennen yleistaukoa, jää kesken · `fraasi_ennen_taukoa` → `hiljaisuus_1_alku` · <!--aika-->0:54–0:58<!--/aika-->
+- **Kuuluu:** Jousten fraasi ennen yleistaukoa, jää kesken *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmän latvat nousevat ja pysähtyvät kesken; ryhmä jää edessä.
+  - **Tunne → keino:** kesken jäävä → pysähtyvä nousu
+- **Kulku 1 alkaa:** lumen läpi maan tasalle; päättyy `hiljaisuus_1_loppu`.
+
+#### 12 Ensimmäinen hiljaisuus alkaa · `hiljaisuus_1_alku` → `hiljaisuus_1_loppu` · <!--aika-->0:58–1:01<!--/aika-->
+- **Kuuluu:** Ensimmäinen hiljaisuus alkaa (yleistauko) *Soittaa:* ei kukaan (tauko).
+  - **Näkyy:** Kuvassa ei ole mitään, mikä soisi: ei viivaa, ei kuusiryhmiä, ei kukkuloita. Jäljelle jäävät maa ja tumma ilma; kamera jatkaa.
+  - **Tunne → keino:** pidätetty hengitys → tyhjyys
+
+### Kuvatapa 2 Maan tasalta
+
+#### 13 Ensimmäinen hiljaisuus päättyy · `hiljaisuus_1_loppu` → `valo_D_duuri` · <!--aika-->1:01–1:15<!--/aika-->
+- **Kuuluu:** Ensimmäinen hiljaisuus päättyy: jouset aloittavat *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmät kasvavat maasta uudelleen, mutta latvat ovat alempana kuin ennen.
+  - **Tunne → keino:** helpotus, joka ei kestä → korkeus (alempana)
+- **Kuuluu:** (`fis_pitka_aani`) Yleistauon jälkeen: pitkä fis (lähes minuutin) *Soittaa:* jouset ja vasket vuorotellen lohkoina.
+  - **Näkyy:** Viiva laskee sävelaskelen gis:stä fis:iin ja jää. Jouset kasvattavat kuusiryhmiä ja vaskien lohkot vuorottelevat niiden kanssa.
+  - **Tunne → keino:** sulkeutuva, synkempi → laskeva viiva, tiheys
+- Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy ja väistyy tiheämmin.
+- Kone kuuli: Ylhäällä välähtää nopea kuvio (jouset) **Näkyy:** Pilkahdus korkealla: syttyy kuvion alkaessa ja sammuu sen loppuessa.
+
+#### 14 Ensimmäinen valon välähdys · `valo_D_duuri` → `askeleet_alkavat` · <!--aika-->1:15–1:40<!--/aika-->
+- **Kuuluu:** Ensimmäinen valon välähdys: D ja H pitkinä, kahdesti *Soittaa:* vasket ja puhaltimet.
+  - **Näkyy:** Kaksi harjua nousee jousten kuusiryhmien takaa kahdelle korkeudelle (d ja h kahdessa oktaavissa); hetken kelmeä, kylmä valo; jouset väistyvät.
+  - **Tunne → keino:** hetkellinen valo → valo ja korkeus
+- Kone kuuli: Liike tasaantuu **Näkyy:** Kuusiryhmien ja pilkahdusten syntytahti hidastuu.
+- Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
+
+#### 15 Basson eritahtiset iskut alkavat · `askeleet_alkavat` → `askeleet_B` · <!--aika-->1:40–2:09<!--/aika-->
+- **Kuuluu:** Basson eritahtiset iskut alkavat (kuultu) *Soittaa:* bassot (alttoviulut ja puhaltimet vuorottelevat ylempänä).
+  - **Näkyy:** Maa sysää omassa tahdissaan matalan h:n korkeudella ja hohtaa; kuusiryhmät ja kukkulat vuorottelevat sen yllä. Maa johtaa kuvaa.
+  - **Tunne → keino:** jokin suuri on tulossa → paino (maan hohto)
+- **Kuuluu:** (`fis_hengittaa`) Sointumatto hengittää: kaksi sointua vuorotellen *Soittaa:* jouset (sellot), bassot, puhaltimet.
+  - **Näkyy:** Kaksi kuusiryhmää (d–fis ja e–gis) kasvaa ja väistyy vuorotellen noin kahden sekunnin välein; maa sysää niiden alla; ylhäällä pilkahduksia noin seitsemän sekunnin välein. Johtaja: kuusiryhmien hengitys.
+  - **Tunne → keino:** odottava, tasainen → tiheys ja rytmi
+- Kone kuuli: Musiikki laskeutuu: basso ja yläkerros noin 6 s **Näkyy:** Latvat, viiva ja maan hohto painuvat alemmas noin kuudessa sekunnissa.
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla, ei viivaa.
+
+#### 16 Matalat äänet "askeleina" · `askeleet_B` → `urkupiste_H1_alku` · <!--aika-->2:09–2:56<!--/aika-->
+- **Kuuluu:** Matalat äänet "askeleina" (kuultu) *Soittaa:* bassot (sellot, kontrabassot).
+  - **Näkyy:** Maan sysäykset eri tahtiin kuin muu; maan hohto painaa; ei jalkaa eikä hahmoa. Noin 28 sysäystä –.
+  - **Tunne → keino:** painava, näkymätön läsnäolo → maan hohto ja sysäys
+
+#### 17 Nousu alkaa h-urkupisteen päällä · `urkupiste_H1_alku` → `nousu_tremolo` · <!--aika-->2:56–3:06<!--/aika-->
+- **Kuuluu:** Nousu alkaa h-urkupisteen päällä (kuultu) *Soittaa:* koko orkesteri.
+  - **Näkyy:** Maa pysyy paikallaan; kuusiryhmien latvat, viiva ja kukkulat nousevat portaittain noin kahden sekunnin välein (fis:stä e:hen, lähes kaksi oktaavia).
+  - **Tunne → keino:** nouseva, kasvava → korkeus
+- **Kulku 2 alkaa:** katse nousee runkoja pitkin; päättyy `urkupiste_H1_loppu`.
+
+#### 18 Nousun ylimmät äänet alkavat väristä · `nousu_tremolo` → `urkupiste_H1_loppu` · <!--aika-->3:06–3:11<!--/aika-->
+- **Kuuluu:** Nousun ylimmät äänet alkavat väristä *Soittaa:* ei tietoa (nousun ylimmät äänet).
+  - **Näkyy:** Ylimpien latvojen kärki väreilee.
+  - **Tunne → keino:** kiihtyvä, kirkastuva → valon väreily
+
+### Kuvatapa 3 Ylös runkoja pitkin
+
+#### 19 Basso lähtee liikkeelle kuudentoista sekunnin jälkeen · `urkupiste_H1_loppu` → `nousu_huippu_D` · <!--aika-->3:11–3:15<!--/aika-->
+- **Kuuluu:** Basso lähtee liikkeelle kuudentoista sekunnin jälkeen *Soittaa:* bassot.
+  - **Näkyy:** Maa liikahtaa ja alkaa nousta muiden mukana: urkupiste päättyy.
+  - **Tunne → keino:** maa liikkuu → paino
+
+#### 20 Nousu päätyy D-duuriin · `nousu_huippu_D` → `ylarekisteri_heraa` · <!--aika-->3:15–3:23<!--/aika-->
+- **Kuuluu:** Nousu päätyy D-duuriin *Soittaa:* koko orkesteri.
+  - **Näkyy:** Kaikki kerrokset syttyvät yhtä aikaa D-duurisoinnun korkeuksilla (d1, d2, d3, fis, a); kelmeä, kylmä valo; seitsemän sekunnin jälkeen hiipuu.
+  - **Tunne → keino:** valo, hetken → valo
+- **Kulku 3 alkaa:** ylhäällä olevan oksan huurteeseen; päättyy `pohja_katoaa`.
+
+### Kuvatapa 4 Lähikuva
+
+#### 21 Kirjain C · `ylarekisteri_heraa` → `e_pitka_ja_kuviot` · <!--aika-->3:23–4:00<!--/aika-->
+- **Kuuluu:** Kirjain C: pohja katoaa, viulut vajoavat, puhaltimet kuvioivat *Soittaa:* jouset (viulut, jaettuina) ja puhaltimet (huilut, klarinetit).
+  - **Näkyy:** Kuusiryhmien latvat vajoavat hitaasti alas, keinuen pareittain; niiden yllä pieniä pilkahduksia; maa on tyhjä. Johtaja: hitaasti vajoava kuusiryhmä.
+  - **Tunne → keino:** leijuva, pohjaton, lempeä → etäisyys, hidas laskeva liike
+- **Kuuluu:** (`pohja_katoaa`) Pohja katoaa: basso ja sellot poissa *Soittaa:* bassot (poissa).
+  - **Näkyy:** Maa sammuu: hohto ja värinä loppuvat; kuusiryhmät leijuvat.
+  - **Tunne → keino:** pohjaton → maan puuttuminen
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- Kone kuuli: Keskikerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Kuusiryhmä tai harju pitkänä; ei tiedetä kumpi.
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasainen.
+
+#### 22 Pitkä e ja tiheät korkeat kuviot; askeleet · `e_pitka_ja_kuviot` → `askeleet_fis` · <!--aika-->4:00–4:12<!--/aika-->
+- **Kuuluu:** Pitkä e ja tiheät korkeat kuviot; askeleet *Soittaa:* ei tietoa (askeleet: bassot).
+  - **Näkyy:** Viiva e:n korkeudella; ylhäällä tiheitä pilkahduksia; maassa sysäykset noin 1,7 s välein. Kolme kerrosta kolmella vauhdilla yhtä aikaa.
+  - **Tunne → keino:** levoton, kolme aikaa päällekkäin → kolme kerrosta
+- Kone kuuli: Matalat soittimet palaavat: ääni saa pohjan **Näkyy:** Maa syttyy: hohto palaa.
+- Kone kuuli: Ylhäällä välähtää nopea kuvio **Näkyy:** Pilkahdus korkealla.
+
+#### 23 Askeleet palaavat fis · `askeleet_fis` → `nopea_liike_1_alku` · <!--aika-->4:12–4:40<!--/aika-->
+- **Kuuluu:** Askeleet palaavat fis:llä *Soittaa:* bassot.
+  - **Näkyy:** Maan sysäykset noin 1,7 s välein fis:n korkeudella korkeiden pilkahdusten alla; maa kulkee mukana.
+  - **Tunne → keino:** jokin kulkee mukana → maan sysäys
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasaantuu.
+
+#### 24 Nopean kuvioinnin jakso alkaa · `nopea_liike_1_alku` → `nopea_liike_1_loppu` · <!--aika-->4:40–5:03<!--/aika-->
+- **Kuuluu:** Nopean kuvioinnin jakso alkaa *Soittaa:* puhaltimet (puupuhaltimet ja jouset).
+  - **Näkyy:** Pilkahduksia tiheään puhaltimien korkeuksilla; jousten kuusiryhmät kaukana usvassa. Puhaltimet johtavat.
+  - **Tunne → keino:** väike, levoton leikki → tiheys ja liike
+- Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
+
+#### 25 Nopean kuvioinnin jakso päättyy · `nopea_liike_1_loppu` → `jannitesoinnut` · <!--aika-->5:03–5:10<!--/aika-->
+- **Kuuluu:** Nopean kuvioinnin jakso päättyy *Soittaa:* puhaltimet.
+  - **Näkyy:** Pilkahdukset sammuvat; kuva tyhjenee.
+  - **Tunne → keino:** tyhjenevä → tiheyden lasku
+
+#### 26 Jännitteiset pitkät soinnut H · `jannitesoinnut` → `pohja_vaihtuu_D` · <!--aika-->5:10–5:36<!--/aika-->
+- **Kuuluu:** Jännitteiset pitkät soinnut H:n päällä *Soittaa:* ei tietoa.
+  - **Näkyy:** Maa hohtaa h:lla; sen yllä kaksi pitkää ääntä (a ja dis) kahdesti: kaksi korkeutta, joiden muoto (kuusiryhmä vai harju) riippuu soittajasta. Kaikki pysähtyy.
+  - **Tunne → keino:** uhka, odotus → pysähtyvä liike, valon puute
+- Kone kuuli: Musiikki nousee: yläkerros noin 6 s **Näkyy:** Latvat nousevat noin kuuden sekunnin ajan.
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasaantuu.
+- **Kulku 4 alkaa:** katse painuu mustaan jäähän; päättyy `pohja_vaihtuu_D`.
+
+### Kuvatapa 5 Pinnan sisään
+
+#### 27 Pohja vaihtuu · `pohja_vaihtuu_D` → `gis_palaa` · <!--aika-->5:36–6:06<!--/aika-->
+- **Kuuluu:** Pohja vaihtuu: matala d sykkii *Soittaa:* bassot.
+  - **Näkyy:** Maa siirtyy sivuun: sysäys noin kaksikymmentä kertaa d:n korkeudella; pitkät äänet yllä. Ensimmäinen kerta, kun maa ei ole h:ssa.
+  - **Tunne → keino:** vieras, tummuva → maan korkeus muuttuu
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
+- Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- Kone kuuli: Musiikki laskeutuu: keskikerros ja yläkerros noin 9 s (jouset) **Näkyy:** Kuusiryhmien latvat painuvat alemmas noin yhdeksässä sekunnissa.
+
+#### 28 Gis palaa hetkeksi · `gis_palaa` → `peikot_G_alku` · <!--aika-->6:06–6:23<!--/aika-->
+- **Kuuluu:** Gis palaa hetkeksi (7 s, hiljaa) *Soittaa:* ei tietoa.
+  - **Näkyy:** Viiva syttyy uudelleen gis:n korkeudelle hiljaa ja yksin seitsemäksi sekunniksi: sama viiva kuin alussa.
+  - **Tunne → keino:** muisto alusta → sama korkeus, sama paikka
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
+
+#### 29 Puupuhallinkuviot G · `peikot_G_alku` → `peikot_G_loppu` · <!--aika-->6:23–6:30<!--/aika-->
+- **Kuuluu:** Puupuhallinkuviot G:ssä alkavat *Soittaa:* puhaltimet (huilut, klarinetit).
+  - **Näkyy:** Pilkahduksia teoksen tiheimmällä tahdilla puhaltimien korkeuksilla; ei melodiaa.
+  - **Tunne → keino:** väike, hämyn äänet → tiheys
+
+#### 30 Puupuhallinkuviot G · `peikot_G_loppu` → `h_urkupiste_vyory` · <!--aika-->6:30–7:00<!--/aika-->
+- **Kuuluu:** Puupuhallinkuviot G:ssä päättyvät; käyrätorvipulssit *Soittaa:* puhaltimet ja käyrätorvet.
+  - **Näkyy:** Pilkahdukset sammuvat; takana harjut paisuvat ja laskevat noin neljän sekunnin välein pehmeässä valossa; jouset hiljaa edessä. Käyrätorvien harjut johtavat.
+  - **Tunne → keino:** hidas hengitys → pehmeä valo harjun alla
+- Kone kuuli: Keskikerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Kuusiryhmä tai harju pitkänä; ei tiedetä kumpi.
+- Kone kuuli: Musiikki nousee: koko orkesteri noin 6 s **Näkyy:** Kaikki latvat, viiva ja harjut nousevat noin kuuden sekunnin ajan.
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasaantuu.
+- Kone kuuli: Musiikki laskeutuu: koko orkesteri noin 6 s **Näkyy:** Kaikki latvat, viiva ja harjut painuvat noin kuuden sekunnin ajan.
+- Kone kuuli: Ylhäällä välähtää nopea kuvio **Näkyy:** Pilkahdus korkealla.
+- Kone kuuli: Ylärekisteri sammuu (5 s): tumma, matala sointi jää **Näkyy:** Viiva ja pilkahdukset ylhäällä sammuvat; maa ja matalat kuusiryhmät jäävät.
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 10 s **Näkyy:** Maan hohto, latvat ja viiva nousevat noin kymmenen sekuntia.
+- Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
+
+#### 31 Ensimmäinen vyöry H-urkupisteellä · `h_urkupiste_vyory` → `vaskipulssit` · <!--aika-->7:00–7:16<!--/aika-->
+- **Kuuluu:** Ensimmäinen vyöry H-urkupisteellä (25 s) *Soittaa:* koko orkesteri.
+  - **Näkyy:** Maa pysyy h:ssa ja sysää alle sekunnin välein; kuusiryhmiä, pilkahduksia ja lunta syntyy tiheään kaikissa kerroksissa yhtä aikaa. Kuvaa johtaa maa ja tihein kuusiryhmien kuviointi.
+  - **Tunne → keino:** vyöryvä, velloava → tiheys ja liike
+
+#### 32 Vasket ja puupuhaltimet sykkivät hitaasti · `vaskipulssit` → `hajoaa_hiljaisuuteen` · <!--aika-->7:16–7:42<!--/aika-->
+- **Kuuluu:** Vasket ja puupuhaltimet sykkivät hitaasti *Soittaa:* käyrätorvet ja puhaltimet.
+  - **Näkyy:** Takana harjut paisuvat ja laskevat noin neljän sekunnin välein; jouset hiljaa välissä.
+  - **Tunne → keino:** hidas hengitys → etäisyys, harjun valo
+- Kone kuuli: Yläkerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Viiva tai harju korkealla pitkänä.
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 11 s (puupuhaltimet) **Näkyy:** Kukkulat ja harjut nousevat korkeammalle noin yhdentoista sekunnin ajan.
+
+#### 33 Metsä harvenee · `hajoaa_hiljaisuuteen` → `jousijakso_urkupiste_E_alku` · <!--aika-->7:42–8:16<!--/aika-->
+- **Kuuluu:** Metsä harvenee: hiljaisia pudotuksia *Soittaa:* jouset (lyhyet lohkot), puhaltimet vilahtavat.
+  - **Näkyy:** Yksittäisiä kuusiryhmiä kasvaa ja väistyy kokonaan; niiden välissä tyhjää ilmaa ja maa.
+  - **Tunne → keino:** harveneva, syvenevä → tyhjyys, etäisyys
+- Kone kuuli: Musiikki laskeutuu: basso ja yläkerros noin 11 s (puupuhaltimet) **Näkyy:** Kukkulat ja harjut painuvat noin yhdentoista sekunnin ajan.
+- Kone kuuli: Basso jää H1:lle noin 12 s **Näkyy:** Maa pysyy paikallaan; kaikki muu liikkuu sen päällä.
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
+- Kone kuuli: Musiikki laskeutuu: keskikerros ja yläkerros noin 10 s **Näkyy:** Latvat ja viiva painuvat noin kymmenen sekuntia.
+- Kone kuuli: Keskikerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Kuusiryhmä tai harju pitkänä.
+- **Kulku 5 alkaa:** jäästä runkojen sekaan; päättyy `jousijakso_urkupiste_E_alku`.
+
+### Kuvatapa 6 Runkojen rytmi
+
+#### 34 Jousijakso urkupisteen päällä alkaa · `jousijakso_urkupiste_E_alku` → `jousijakso_urkupiste_E_loppu` · <!--aika-->8:16–8:22<!--/aika-->
+- **Kuuluu:** Jousijakso urkupisteen päällä alkaa (E) *Soittaa:* jouset (matalat).
+  - **Näkyy:** Maa pysyy E:llä paikallaan; matalat kuusiryhmät edessä; muu poissa. Matalin spektri koko teoksessa.
+  - **Tunne → keino:** syvä, tumma, kaukainen → etäisyys, tummuus
+
+#### 35 Jousijakso urkupisteen päällä päättyy · `jousijakso_urkupiste_E_loppu` → `patarumpu_ppp` · <!--aika-->8:22–8:38<!--/aika-->
+- **Kuuluu:** Jousijakso urkupisteen päällä päättyy *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmät väistyvät.
+  - **Tunne → keino:** pimenevä → väistyminen
+- Kone kuuli: Ylärekisteri syttyy **Näkyy:** Pilkahdus tai viiva syttyy korkealle.
+
+#### 36 Maan värinä hiljaisuudessa · `patarumpu_ppp` → `hitaat_soinnut` · <!--aika-->8:38–9:00<!--/aika-->
+- **Kuuluu:** Maan värinä hiljaisuudessa (matala d, 8 s) *Soittaa:* patarummut (partituuri).
+  - **Näkyy:** Maa värisee tiheästi yksin, tuskin näkyvästi; yllä pitkä fis viivana.
+  - **Tunne → keino:** syvä, pidätetty → värinä
+- Kone kuuli: Keskirekisteri vaikenee (5 s) **Näkyy:** Keskikorkeudella olevat kuusiryhmät väistyvät.
+- Kone kuuli: Pohja katoaa: ylempi kerros soittaa yksin (19 s) **Näkyy:** Maa sammuu; ylempi kuusiryhmä jää leijumaan.
+- Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
+- Kone kuuli: Musiikki nousee: keskikerros ja yläkerros noin 7 s **Näkyy:** Latvat nousevat noin seitsemän sekuntia.
+- Kone kuuli: Keskirekisteri tulee mukaan (jouset) **Näkyy:** Kuusiryhmät kasvavat keskikorkeudelle.
+- Kone kuuli: Ylärekisteri syttyy (jouset) **Näkyy:** Kuusiryhmien latvat nousevat korkealle.
+
+#### 37 Hitaasti vaihtuvat soinnut · `hitaat_soinnut` → `h_palaa_ennen_hiljaisuutta` · <!--aika-->9:00–9:40<!--/aika-->
+- **Kuuluu:** Hitaasti vaihtuvat soinnut (gis, ais, d, f, g, dis) *Soittaa:* ei tietoa.
+  - **Näkyy:** Kuusiryhmiä kaukana usvassa; ne vaihtuvat hitaasti toisikseen; ei etualaa. Selkeys: ei lunta, ei leikkauksia.
+  - **Tunne → keino:** ikisalot, ajaton → etäisyys, hitaus
+- Kone kuuli: Matalat soittimet palaavat **Näkyy:** Maa syttyy.
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- Kone kuuli: Pohja katoaa: ylempi kerros yksin (11 s) **Näkyy:** Maa sammuu; ylempi kuusiryhmä leijuu.
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 11 s **Näkyy:** Maan hohto, latvat ja viiva nousevat noin yksitoista sekuntia.
+
+#### 38 H palaa ja sykkii neljätoista kertaa ennen hiljaisuutta · `h_palaa_ennen_hiljaisuutta` → `hiljainen_jakso_alku` · <!--aika-->9:40–9:57<!--/aika-->
+- **Kuuluu:** H palaa ja sykkii neljätoista kertaa ennen hiljaisuutta *Soittaa:* bassot.
+  - **Näkyy:** Maa sysää neljätoista kertaa h:n korkeudella; muu häipyy.
+  - **Tunne → keino:** hiipuva → maan sysäys
+
+#### 39 Hiljainen jakso alkaa · `hiljainen_jakso_alku` → `hiljainen_jakso_loppu` · <!--aika-->9:57–10:13<!--/aika-->
+- **Kuuluu:** Hiljainen jakso alkaa *Soittaa:* jouset (heikot).
+  - **Näkyy:** Heikkoja kuusiryhmiä kaukana usvassa; ei etualaa; kuva lähes tyhjä mutta ei tyhjä.
+  - **Tunne → keino:** tyhjyys, odotus → pieni koko, etäisyys
+
+#### 40 Hiljainen jakso päättyy · `hiljainen_jakso_loppu` → `vaski_tutti_620` · <!--aika-->10:13–10:21<!--/aika-->
+- **Kuuluu:** Hiljainen jakso päättyy: vasket ja patarummut kasvavat *Soittaa:* vasket ja patarummut.
+  - **Näkyy:** Maa hohtaa ja väristyy; vaskien pitkät äänet nousevat takaa harjuina.
+  - **Tunne → keino:** lähestyvä → hohto, läheisyys
+
+#### 41 Vaskien ja patarumpujen tutti-isku · `vaski_tutti_620` → `allegro_359` · <!--aika-->10:21–10:32<!--/aika-->
+- **Kuuluu:** Vaskien ja patarumpujen tutti-isku *Soittaa:* vasket ja patarummut.
+  - **Näkyy:** Pystysuora leikkaus kaikkien kerrosten läpi; maan sysäys; lähimmät kuusiryhmät jäävät sen eteen siluetteina.
+  - **Tunne → keino:** vyöryvä, levoton → valo
+- Kone kuuli: Ylhäällä välähtää nopea kuvio **Näkyy:** Pilkahdus korkealla.
+
+#### 42 Allegro · `allegro_359` → `c_duuri_valahdykset` · <!--aika-->10:32–10:41<!--/aika-->
+- **Kuuluu:** Allegro: liike palaa *Soittaa:* puhaltimet (huilut, fagotit) ja jouset.
+  - **Näkyy:** Pilkahduksia tiheään; jousten kuusiryhmät nopeasti; leikkaus sammuu, vaskien harjut vetäytyvät taakse.
+  - **Tunne → keino:** levoton, kiihtyvä → tiheys
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 21 s **Näkyy:** Maan hohto, latvat ja viiva nousevat noin kaksikymmentä sekuntia.
+
+#### 43 C-duuri välähtää kolmesti ennen pysähtymistä · `c_duuri_valahdykset` → `auringonsade` · <!--aika-->10:41–11:20<!--/aika-->
+- **Kuuluu:** C-duuri välähtää kolmesti ennen pysähtymistä *Soittaa:* ei tietoa.
+  - **Näkyy:** Taottu aurinko välähtää kolmesti kerrosten takana ja katoaa; kolmannella kerralla se jää.
+  - **Tunne → keino:** väärä valo lähestyy → valo (punainen), etäisyys
+- Kone kuuli: Matalat soittimet palaavat **Näkyy:** Maa syttyy.
+- Kone kuuli: Pitkät korkeat äänet alkavat väristä (tremolo) **Näkyy:** Korkeiden pitkien äänten viiva väreilee.
+- Kone kuuli: Yläkerros soittaa pitkiä sidottuja ääniä (legato) **Näkyy:** Viiva tai harju korkealla pitkänä.
+- Kone kuuli: Musiikki laskeutuu: basso ja yläkerros noin 10 s (jouset) **Näkyy:** Kuusiryhmien latvat painuvat noin kymmenen sekuntia.
+
+#### 44 C-duuri ennen kirjainta M · `auringonsade` → `M_ennakko` · <!--aika-->11:20–11:25<!--/aika-->
+- **Kuuluu:** C-duuri ennen kirjainta M (noin viisi tahtia) *Soittaa:* jouset (korkeat), vasket ja puupuhaltimet hiljaa taustalla.
+  - **Näkyy:** Taottu aurinko nousee kerrosten taakse; korkeat kuusiryhmät edessä; taustalla harjut hiljaa. Kamera pysähtyy (nimetty).
+  - **Tunne → keino:** väärä toivo, groteski valo, pysähtynyt → punainen valo, etäisyys
+- **Kamera:** **Nimetty pysähdys 1.** Lähestyminen pysähtyy: väärä valo seisoo paikallaan, ja kaikki muu jatkaa elämistä äänestä.
+
+#### 45 Kirjain M · `M_ennakko` → `M_raskaat_askeleet` · <!--aika-->11:25–11:31<!--/aika-->
+- **Kuuluu:** Kirjain M: vaskien jyrinä *Soittaa:* vasket ja patarummut.
+  - **Näkyy:** Useita pystysuoria leikkauksia peräkkäin; maa värisee; jousten kuusiryhmät katoavat niiden alle; taottu aurinko sammuu. Vaskit johtavat.
+  - **Tunne → keino:** isku, pelottava → valo (leikkaus)
+- **Kulku 6 alkaa:** väärä valo viedään: pimeään; päättyy `M_raskaat_askeleet`.
+
+### Kuvatapa 7 Pimeä ja välähdys
+
+#### 46 M · `M_raskaat_askeleet` → `jannitejakso_alku` · <!--aika-->11:31–11:51<!--/aika-->
+- **Kuuluu:** M:n jälkeen: raskaat askeleet vaskien alla (matala ais, 18 kertaa) *Soittaa:* bassot ja vasket.
+  - **Näkyy:** Maan sysäykset noin sekunnin välein ais:n korkeudella, kovat ja lähellä; leikkaukset yllä.
+  - **Tunne → keino:** raskas, väistämätön → maan sysäys, läheisyys
+- Kone kuuli: Pitkät korkeat äänet alkavat väristä (tremolo) **Näkyy:** Korkeiden pitkien äänten viiva väreilee.
+
+#### 47 Jännitteinen jousijakso alkaa · `jannitejakso_alku` → `O_kirjain` · <!--aika-->11:51–12:14<!--/aika-->
+- **Kuuluu:** Jännitteinen jousijakso alkaa *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmiä kasvaa ja väistyy nopeasti ja tiheään; vaskit ja patarummut takana.
+  - **Tunne → keino:** ahdistava, hermostunut → tiheys, nopeus
+- Kone kuuli: Musiikki laskeutuu: basso ja yläkerros noin 9 s **Näkyy:** Maan hohto ja latvat painuvat noin yhdeksän sekuntia.
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 8 s (jouset) **Näkyy:** Kuusiryhmien latvat nousevat noin kahdeksan sekuntia.
+
+#### 48 Kirjain O · `O_kirjain` → `jannitejakso_loppu` · <!--aika-->12:14–12:35<!--/aika-->
+- **Kuuluu:** Kirjain O: puupuhaltimet ja vasket vuorottelevat *Soittaa:* puhaltimet (oboet, klarinetit), vasket hiljaa.
+  - **Näkyy:** Kukkulat nousevat jousten kuusiryhmien läpi; harjut hiljaa taustalla. Puhaltimet johtavat.
+  - **Tunne → keino:** ahdistava, tihenevä → tiheys
+
+#### 49 Jännitteinen jousijakso päättyy, vaskit tulevat · `jannitejakso_loppu` → `allegro_moderato_O_alku` · <!--aika-->12:35–12:36<!--/aika-->
+- **Kuuluu:** Jännitteinen jousijakso päättyy, vaskit tulevat *Soittaa:* jouset väistyvät, vasket nousevat.
+  - **Näkyy:** Kuusiryhmät väistyvät; vaskien harjut nousevat edelle.
+  - **Tunne → keino:** vaihtuva → väistyminen
+
+#### 50 Allegro moderato O · `allegro_moderato_O_alku` → `allegro_moderato_O_loppu` · <!--aika-->12:36–12:48<!--/aika-->
+- **Kuuluu:** Allegro moderato O:n jälkeen: vaskivuorottelu alkaa *Soittaa:* käyrätorvet ja trumpetit.
+  - **Näkyy:** Kaksi harjua paisuu ja laskee vuorotellen hitaasti: käyrätorvien kaukana, trumpettien lähempänä; pehmeä valo harjun alla.
+  - **Tunne → keino:** hidas hengitys, painava → valo (harjun), etäisyys
+
+#### 51 Vaskivuorottelu päättyy · `allegro_moderato_O_loppu` → `harva_kuviointi` · <!--aika-->12:48–13:00<!--/aika-->
+- **Kuuluu:** Vaskivuorottelu päättyy *Soittaa:* jouset palaavat.
+  - **Näkyy:** Harjut laskeutuvat; kuusiryhmät palaavat eteen.
+  - **Tunne → keino:** laskeva → väistyminen
+- Kone kuuli: Musiikki nousee: keskikerros ja yläkerros noin 7 s **Näkyy:** Latvat nousevat noin seitsemän sekuntia.
+
+#### 52 Harva, hiljainen kuviointi · `harva_kuviointi` → `P_vaskipaisunta` · <!--aika-->13:00–13:26<!--/aika-->
+- **Kuuluu:** Harva, hiljainen kuviointi *Soittaa:* jouset ja puhaltimet.
+  - **Näkyy:** Pieniä pilkahduksia ja pieniä kuusiryhmiä keskellä; paljon tyhjää ilmaa.
+  - **Tunne → keino:** tyven → harvuus
+- Kone kuuli: Pohja katoaa: ylempi kerros yksin (23 s) **Näkyy:** Maa sammuu; ylempi kuusiryhmä leijuu.
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
+- Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
+
+#### 53 Kirjain P · `P_vaskipaisunta` → `dim_possibile` · <!--aika-->13:26–13:45<!--/aika-->
+- **Kuuluu:** Kirjain P: vaskien suuri paisutus *Soittaa:* vasket ja patarummut (jouset mukana).
+  - **Näkyy:** Harjut kasvavat takaa eteen yhdellä paisutuksella ja kirkastuvat; maan hohto ja värinä nousevat.
+  - **Tunne → keino:** viimeinen varoitus → valo, läheisyys
+- Kone kuuli: Musiikki nousee: keskikerros ja yläkerros noin 6 s (jouset) **Näkyy:** Kuusiryhmien latvat nousevat noin kuusi sekuntia.
+
+#### 54 Kaikki vaimenee · `dim_possibile` → `hiljaisuus_2_alku` · <!--aika-->13:45–14:05<!--/aika-->
+- **Kuuluu:** Kaikki vaimenee: vasket häipyvät *Soittaa:* vasket, jouset.
+  - **Näkyy:** Harjut vetäytyvät taakse usvaan ja sammuvat; jousten kuusiryhmät jäävät edessä.
+  - **Tunne → keino:** tyhjenevä → väistyminen, etäisyys
+- Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- **Kulku 7 alkaa:** metsän reunasta ulos jäälle; päättyy `hiljaisuus_2_alku`.
+
+### Kuvatapa 8 Ulkoa ja kaukaa
+
+#### 55 Lähes hiljaisuus · `hiljaisuus_2_alku` → `myrsky_nakyy` · <!--aika-->14:05–14:17<!--/aika-->
+- **Kuuluu:** Lähes hiljaisuus: jouset kuulokynnyksellä (10 s) *Soittaa:* jouset (pp).
+  - **Näkyy:** Kuvassa ei ole juuri mitään: maa ja tumma ilma; kamera jatkaa. Toinen hiljaisuus: jokin jo liikkuu.
+  - **Tunne → keino:** tyhjä, uhkaava → tyhjyys
+
+#### 56 Myrsky näkyy · `myrsky_nakyy` → `hiljaisuus_2_loppu` · <!--aika-->14:17–14:25<!--/aika-->
+- **Kuuluu:** Myrsky näkyy (ppp, t. 523) *Soittaa:* jouset.
+  - **Näkyy:** Kauimmassa kerroksessa alkaa pientä ja hidasta lunta; hyvin pieni kuusiryhmä usvassa; lumi kasvaa.
+  - **Tunne → keino:** etäinen uhka, näkyvä muttei kuultava → lumi, etäisyys
+
+#### 57 Toinen hiljaisuus päättyy · `hiljaisuus_2_loppu` → `myrsky_kasvu` · <!--aika-->14:25–14:27<!--/aika-->
+- **Kuuluu:** Toinen hiljaisuus päättyy *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmät nousevat takaa; lumi kasvaa.
+  - **Tunne → keino:** kasvava → tiheys
+
+#### 58 Nopea voimistuminen alkaa · `myrsky_kasvu` → `myrsky_iskee` · <!--aika-->14:27–14:33<!--/aika-->
+- **Kuuluu:** Nopea voimistuminen alkaa *Soittaa:* jouset (opas sanoo "vasket vastaavat", partituuri: ei vaskia).
+  - **Näkyy:** Kuusiryhmät tulevat lähemmäs, suuriksi ja tummiksi; lumi tulee kerros kerrokselta lähemmäs: kaukana pientä ja hidasta muuttuu lähellä suureksi ja nopeaksi.
+  - **Tunne → keino:** lähestyvä, vyöryvä → etäisyys vähenee
+- **Kulku 8 alkaa:** myrsky saavuttaa katsojan; päättyy `myrsky_iskee`.
+
+### Kuvatapa 9 Tuulen sisällä
+
+#### 59 Talvimyrsky iskee · `myrsky_iskee` → `Q_koko_metsa` · <!--aika-->14:33–14:50<!--/aika-->
+- **Kuuluu:** Talvimyrsky iskee (t. 540) *Soittaa:* jouset (partituuri); opas sanoo myös "koko orkesteri edessä".
+  - **Näkyy:** Kuusiryhmien latvat korkealla (oktaavia ylempänä); lumi tiheänä kaikissa kerroksissa; erot pysyvät: lähempi kerros peittää kauemman lumen.
+  - **Tunne → keino:** pelottava, velloava, vyöryvä → tiheys, lumi
+
+#### 60 Kirjain Q · `Q_koko_metsa` → `myrsky_huippu` · <!--aika-->14:50–15:10<!--/aika-->
+- **Kuuluu:** Kirjain Q: vasket ja patarummut liittyvät myrskyyn *Soittaa:* koko orkesteri.
+  - **Näkyy:** Pystysuorat leikkaukset (vasket) ja maan sysäys ja värinä (patarummut) liittyvät lumeen ja kuusiryhmiin; kaikki kerrokset syttyvät.
+  - **Tunne → keino:** pelottava, ylivoimainen → valo (leikkaukset), tiheys
+- Kone kuuli: Musiikki laskeutuu: basso ja yläkerros noin 11 s **Näkyy:** Latvat ja maan hohto painuvat noin yksitoista sekuntia.
+
+#### 61 Myrskyn voimakkain kohta · `myrsky_huippu` → `R_vasket` · <!--aika-->15:10–15:23<!--/aika-->
+- **Kuuluu:** Myrskyn voimakkain kohta: tiheä tutti *Soittaa:* koko orkesteri.
+  - **Näkyy:** Kaikki kerrokset täynnä: kuusiryhmät, lumi, leikkaukset, maan hohto. Kuvaa johtaa tihein lumi ja kuusiryhmät; leikkaus vain iskuissa.
+  - **Tunne → keino:** huippu, ylivoima → tiheys ja valo
+
+#### 62 Kirjain R · `R_vasket` → `toinen_paisunta` · <!--aika-->15:23–15:35<!--/aika-->
+- **Kuuluu:** Kirjain R: vasket paisuvat vielä kerran *Soittaa:* vasket ja jouset.
+  - **Näkyy:** Harjut paisuvat lyhyesti ja kirkastuvat; jousten kuusiryhmät vastaavat täydellä voimalla.
+  - **Tunne → keino:** jälkiaalto → valo, läheisyys
+
+#### 63 Huuto alkaa · `toinen_paisunta` → `huuto` · <!--aika-->15:35–15:45<!--/aika-->
+- **Kuuluu:** Huuto alkaa: jousten nouseva asteikko *Soittaa:* jouset.
+  - **Näkyy:** Kuusiryhmien latvat nousevat peräkkäin asteikkona (viulut, alttoviulut, sellot); vaskien harjut nousevat takaa edelle.
+  - **Tunne → keino:** velloava → korkeus (nousee)
+- Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
+- **Kulku 9 alkaa:** myrskyn läpi ylös latvojen yläpuolelle; päättyy `huuto`.
+
+### Kuvatapa 10 Ylhäältä
+
+#### 64 Huuto · `huuto` → `yksinaiset_aanet` · <!--aika-->15:45–16:00<!--/aika-->
+- **Kuuluu:** Huuto: korkeat pitkät äänet täydellä voimalla *Soittaa:* jouset.
+  - **Näkyy:** Horisontin viiva nousee korkealle ja kirkastuu yksin; muu väistyy; ei hahmoa, vain viiva.
+  - **Tunne → keino:** yksinäinen, paljas → valo ja korkeus
+
+#### 65 Myrskyn jälkeen · `yksinaiset_aanet` → `S_sempre_mf` · <!--aika-->16:00–16:21<!--/aika-->
+- **Kuuluu:** Myrskyn jälkeen: yksittäiset äänet *Soittaa:* puhaltimet (klarinetti, pikkolo, bassoklarinetti).
+  - **Näkyy:** Yksi kukkula kerrallaan nousee viivasta ja painuu; pikkolo on pilkahdus; ympärillä tyhjää.
+  - **Tunne → keino:** paljas, hiljenevä → harvuus
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasaantuu.
+
+#### 66 Kirjain S · `S_sempre_mf` → `loppuhuipennus` · <!--aika-->16:21–16:52<!--/aika-->
+- **Kuuluu:** Kirjain S: viulut alkavat pitää ääntä *Soittaa:* jouset (viulut).
+  - **Näkyy:** Viiva syttyy uudelleen viulujen korkeudelle mf-voimalla eikä enää lakkaa; sen yli kasvaa takaa koko orkesterin kuusiryhmät ja harjut.
+  - **Tunne → keino:** rauhoittuva, kokoava → valo (viiva)
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+- Kone kuuli: Matalat soittimet palaavat **Näkyy:** Maa syttyy.
+- Kone kuuli: Liike tasaantuu **Näkyy:** Syntytahti tasaantuu.
+- Kone kuuli: Musiikki nousee: basso ja yläkerros noin 7 s **Näkyy:** Maan hohto, latvat ja viiva nousevat noin seitsemän sekuntia.
+- Kone kuuli: Basso lähtee liikkeelle pitkän paikallaan olon jälkeen **Näkyy:** Maa liikahtaa: urkupiste päättyy.
+
+#### 67 Loppuhuipennus · `loppuhuipennus` → `loppu_Hduuri_alku` · <!--aika-->16:52–17:04<!--/aika-->
+- **Kuuluu:** Loppuhuipennus *Soittaa:* koko orkesteri.
+  - **Näkyy:** Kaikki kerrokset syttyvät kerran, viiva kirkkaimmillaan; sitten kuva ei sisällä mitään, mikä soisi.
+  - **Tunne → keino:** viimeinen aalto, sitten pimeys → valo ja sen puuttuminen
+- Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
+- Kone kuuli: Keskikerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia keskikorkeudella.
+- Kone kuuli: Musiikki laskeutuu: koko orkesteri noin 7 s **Näkyy:** Kaikki latvat, viiva ja harjut painuvat noin seitsemän sekuntia.
+- Kone kuuli: Liike hidastuu **Näkyy:** Syntytahti harvenee.
+
+#### 68 H-duuri-loppu alkaa · `loppu_Hduuri_alku` → `viimeiset_askeleet` · <!--aika-->17:04–17:24<!--/aika-->
+- **Kuuluu:** H-duuri-loppu alkaa (divisi-jouset, mezzoforte) *Soittaa:* jouset (divisi).
+  - **Näkyy:** Kajo nousee kauimman takaa; jousten kuusiryhmät edessä, hellät; viiva viulujen korkeudella, ei kirkas; kamera pysähtyy (nimetty).
+  - **Tunne → keino:** hellä, koskettava, avoin → valo (kajo)
+- **Kamera:** **Nimetty pysähdys 2.** Lähestyminen pysähtyy lopullisesti; kuva jää elämään vain äänestä ja lakkaa muuttumasta, kun ääni lakkaa.
+
+#### 69 Viimeiset askeleet H-duurin alla · `viimeiset_askeleet` → `loppu_Hduuri_loppu` · <!--aika-->17:24–17:31<!--/aika-->
+- **Kuuluu:** Viimeiset askeleet H-duurin alla (16 kertaa) *Soittaa:* bassot.
+  - **Näkyy:** Maan sysäykset noin sekunnin välein kajon alla, hiljaa h:n korkeudella; lakkaavat.
+  - **Tunne → keino:** hellä, viimeinen → maan sysäys
+
+#### 70 H-duuri-loppu päättyy · `loppu_Hduuri_loppu` → `tiedoston_loppu` · <!--aika-->17:31–17:58<!--/aika-->
+- **Kuuluu:** H-duuri-loppu päättyy *Soittaa:* jouset.
+  - **Näkyy:** Jousten kuusiryhmät hiljenevät ja väistyvät; kajo jää.
+  - **Tunne → keino:** hiljenevä → väistyminen
+- **Kuuluu:** (`musiikki_loppuu`) Musiikki loppuu: teoksen jälkeinen hiljaisuus *Soittaa:* ei kukaan.
+  - **Näkyy:** Kaari: kuva ei pimene, se lakkaa muuttumasta. Ei mitään, mikä soisi; kajo ja maa jäävät paikoilleen.
+  - **Tunne → keino:** hiljaisuus, joka jäi → pysähtynyt kuva
+
+## 6. Mistä kuva lasketaan
+
+Kuva lukee vain ohjaustiedoston (`annotations/cues.json`) ja kaksi ruututiedostoa. Käsin ei ajoiteta mitään.
+
+| Äänestä | Mistä | Kuvassa |
+|---|---|---|
+| nuotit (alku, kesto, sävel) | kuuntelutyökalu | jousten äänet kuusiryhminä, puhaltimien äänet harjuina, lyhyet korkeat pilkahduksina, matalat maan sysäyksinä |
+| spektri ruututarkkuudella | kuuntelutyökalu | viivan kirkkaus, kukkulan korkeus ja muoto (yläsävelet), maan hohto ja värinä, metsän kohoaminen rekistereittäin |
+| iskut | aksenttien tunnistus | maan sysäys, metsän heilahdus; vahva isku vaskijaksossa on leikkaus |
+| koneen tapahtumat | kuuntelutyökalu | `purske` sallii pilkahdukset; muut tyypit (`nousu`, `lasku`, `kerros katoaa`, `kerros tulee`, `urkupiste`, `tremolo`, `liike`) näkyvät, koska kuva lasketaan samasta äänestä |
+| ankkurit | teemakartta | kuka soittaa, mikä on pitkä ääni, kuvatapa, lumi, tuuli, väri |
+
+Vahvan äänen ja basson yläsävelet suodatetaan pois: ne eivät ole soittajia. Ruutukanavia (`taso_dbfs` ja muut) ei
+enää käytetä kuvan ohjaukseen, koska ne on laskettu sekunnin tarkkuudella.
 
 ## 7. Kameran nimetyt kohdat
 
-| Kohta | Ankkuri | Mitä kamera tekee |
-|---|---|---|
-| Hengähdys | `hiljaisuus_1_alku` | jatkaa samaa nopeutta sokeassa lumessa |
-| Hengähdys | `hiljainen_jakso_alku` | jatkaa hitaimmillaan |
-| Painuminen | `jannitesoinnut` | linja painuu vähitellen mustaa pintaa kohti ja sen läpi; eteenpäin kulku jatkuu; linja oikenee `pohja_vaihtuu_D` |
-| **Pysähdys 1** | `auringonsade` | seisoo; lähtee `M_ennakko` jatkuvalla kiihdytyksellä ja kääntyy hitaasti väärän valon kohtaan |
-| Hengähdys | `hiljaisuus_2_alku` | jatkaa hyvin hitaasti mustan yli |
-| Nousu | `toinen_paisunta` | huudon alku: nousee ylös myrskyn läpi; ainoa kerta |
-| Hidastus | `S_sempre_mf` | hidastuu jatkuvasti |
-| **Pysähdys 2** | `loppu_Hduuri_alku` | seisoo loppuun asti |
+Kuva lähestyy hitaasti koko ajan. Katseen korkeus ja etäisyys muuttuvat vain kuluissa (luku 2), jatkuvasti. Kamera ei
+reagoi iskuun: maa ja metsä reagoivat. Pysähdyksiä on kaksi, ja ne on nimetty otoissa: C-duurissa (`auringonsade`) ja
+H-duurissa (`loppu_Hduuri_alku`).
 
-Muualla kamera liikkuu aina sisään ja eteen, ei peruuta, ei pyöri eikä ylitä 20 °/s.
-
-## 8. Auki: käyttäjän päätökset ja puuttuva data
+## 8. Auki
 
 **Käyttäjä päättää:**
-1. ~~Kahdeksan maailmaa ja seitsemän kulkua (luku 2).~~ **Hyväksytty 9.11.2026.**
-2. ~~C-duurin väärä valo: punainen vai messinki.~~ **Punainen, hyväksytty 9.11.2026** ("C duuri voi olla punainen,
-   sopii sibeliukseen").
-3. D-duurin välähdykset: kelmeä ja hämärä hallan valo, ei keltainen. Käyttäjä 9.11.2026: "H-duuri on D mollin rinnakkaisduuri. Synkkä ja hämärä."
-   Lause on kirjattu sanasta sanaan; ohjaajan tulkinta: tarkoittaa D-duuria h-mollin rinnakkaisduurina, kuten haastattelussa ("Sen rinnakkaisduuri on D"); käyttäjä samana päivänä: "tämä oli virhe minun osaltani", eli sävellajit menivät lauseessa ristiin. **Päätetty 9.11.2026.**
-4. Tyyliohjeessa sana kajo tarkoittaa kahta asiaa: käyrätorvien kaukaista valoa ja H-duurin väriä. Tässä
-   käyrätorvien valo on salon värinen koko teoksen, ja kajon väri tulee vasta H-duurissa. Sopiiko?
-5. Loppu: kuva seisoo liikkumatta tiedoston loppuun eikä pimene. Sopiiko YouTube-versioon?
+1. Sana kajo tarkoittaa tyyliohjeessa sekä käyrätorvien valoa että H-duurin väriä. Tässä käyrätorvien valo on viiva ja
+   harjut, ja kajon väri tulee vasta H-duurissa.
+2. Loppu: kuva jää paikalleen tiedoston loppuun eikä pimene.
 
-**Puuttuu datasta** (korjataan teemakarttaan tai kuuntelutyökaluun ennen kuin kyseinen otto piirretään):
-1. `c_duuri_valahdykset`: kolmen vilahduksen omat ajat.
-2. `allegro_moderato_O_alku`: kumpi paisutus on käyrätorvien ja kumpi trumpettien. Mittaus ei erota niitä.
-3. Puhaltimien paisutukset alun pitkällä äänellä on mitattu, mutta ne eivät ole tapahtumina: otto 05 nojaa
-   kanavaan `taso_dbfs`, ja se on todennettava luonnoksesta.
-4. Iskut `musiikki_loppuu` jälkeen ovat kohinaa ja ohitetaan.
-5. Myrskyn sisältä (`myrsky_iskee` – `toinen_paisunta`) ei löytynyt yhtään aksenttia.
-6. Useimpien ankkurien aika on analyysin ehdotus, ei korvalla vahvistettu.
+**Tiedossa olevat puutteet:**
+1. Kuuntelutyökalu ei erota soittimia toisistaan. Se, onko ääni puu vai harju, tulee ankkurista (kuka soittaa
+   kuunteluoppaan mukaan), ei äänestä. Jaksoissa, joissa jouset ja puhaltimet soivat yhtä aikaa, kaikki äänet saavat
+   saman roolin.
+2. Kolmen C-duurin vilahduksen omia aikoja ei ole (`c_duuri_valahdykset`): punainen kasvaa tasaisesti.
+3. Vaskivuorottelun osapuolia ei eroteta (`allegro_moderato_O_alku`): molemmat ovat harjuja.
+4. Useimpien ankkurien aika on analyysin ehdotus, ei korvalla vahvistettu.
 
-## 9. Lähteet: millainen on hyvä kuvakäsikirjoitus
+## 9. Lähteet
 
-- Kentät ja prosessi: [Boords, How to storyboard a video](https://boords.com/how-to-storyboard/video);
-  [Mister Chad, Storyboards](https://publish.obsidian.md/mister-chad/animation/storyboards).
-- Tunteen kaari, hengähdykset, värikaari: [Pixar Story-Driven Storyboarding](https://www.thepromptindex.com/skill/916-storyboard-pixar-story-driven)
-  (yhteisön kirjoittama ohje, ei Pixarin oma); [Color scripting and emotional arc, BINUS](https://animation.binus.ac.id/2025/12/09/color-scripting-and-emotional-arch/).
-- Selkeys ja yksi ajatus per ruutu: [StudioBinder, Storyboard rules](https://www.studiobinder.com/blog/storyboard-rules);
-  [Mike Milo's advice](https://wrmilleronline.com/mike-milos-advice-for-becoming-a-storyboard-artist/).
-- Kuvan ajoitus musiikkiin, tahtikaavio: [Animation Resources, Musical timing rediscovered](https://animationresources.org/?p=637);
-  [AWN, Animation and music](https://www.awn.com/print/animationworld/animation-and-music-you-cant-have-one-without-other).
-- Valmista skilliä ei otettu käyttöön: hakemiston lähimmät (animation-studio, scripting-and-storyboarding, CineFlo)
-  tuovat oman tyylinsä tai ovat näytelmäelokuvaa ja somevideoita varten.
+Kuunteluopas (`annotations/kuunteluopas.md`), tyyliohje (`docs/visuaalinen_tyyli.md`), käyttäjän sanat
+(`docs/tutkimus/haastattelu.md`), taidehistorian haku (`docs/tutkimus/taide1920.md` luku 7). Hyvän kuvakäsikirjoituksen
+kriteerit haettiin versiota 1 varten (kaari ennen ottoja, yksi ajatus per otto, ajoitus sidottu musiikkiin); ne
+pätevät yhä.
