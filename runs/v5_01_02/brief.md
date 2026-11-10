@@ -77,3 +77,51 @@ latvat erottuvat edessä ja sulavat usvaan kauempana) ja kulkee eteenpäin mets�
 - `gis_paljastuu` ± 2 s: metsä väistyy, viiva paljastuu.
 - Kumipuutodiste puuskasta. Kamera ei mene maan eikä latvojen läpi ennen kohtaa 10.
 - Vertaa lopun kuvaan (`runs/maailma_11_12/osa.mp4`, loppupuoli): sama vaara, sama metsä, tunnistettavasti sama paikka.
+
+## KIERROS 2 (10.11.2026): kriitikon raportti `runs/alku_v4/kriitikko_v5.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Suunta on oikea** (kriitikko ja ohjaaja): suora valon viiva, vaarat yksi kerrallaan, Tapion talo viimeisenä, jousten lakkaaminen
+paljastaa viivan, kamera etenee, ei kumipuita, lumi liikkuu. **Säilytä nämä.** Renderi ei silti kelpaa: paljastus on nopea tuike,
+ei hidas ja uljas tulo. Korjaa kaikki alla olevat; numerot viittaavat kriitikon bugilistaan.
+
+1. **Ajoitus (bugi 1, estävä).** Mitattu nyt: tulo 0,5–0,6 s, lasku alle sekunnissa. Vaadittu ja mitattava valmiista renderistä:
+   - **Vaaran näkyvyys** (maamassa usvasta): pehmeä tulo **1,4 s** (alkaa noin 0,8 s ennen paisutuksen huippua, täysi huipussa),
+     vajoaminen eksponentiaalisesti **aikavakiolla 8 s** lattiaan **0,35** (jää siintämään). Näkyvyys ei koskaan laske nopeammin.
+   - **Harjan valo** on eri käyrä: se seuraa paisutuksen muotoa 0,6 s tasoitettuna ja hiipuu noin 3 sekunnissa, ei alle sekunnissa.
+   - Koska paisutuksia on kahden sekunnin välein, vaarat limittyvät: katsoja näkee maiseman **kertyvän**, ei kahtatoista välähdystä.
+   - Raportoi mittaus kolmesta vaarasta ruutu ruudulta (harjan kirkkaus ja rungon erottuvuus taivaasta): tulo 10→90 % ja lasku.
+2. **Vaara on maata, ei valokaari (bugi 2, estävä).** Rungon pitää erottua taivaasta myös ilman harjan valoa: sinertävä, usvainen
+   massa (salo), kauimmat tasot vaaleimpia ja sinisimpiä (ilmaperspektiivi), lähimmät tummempia, tyvi usvassa. Paljastuminen etenee
+   ylhäältä alas: harja tulee esiin ensin, sitten rinne, kun usva laskee. Lähimmän tason harjassa saa olla hienoinen metsän
+   pintarakenne (ei sahalaitaa, ei piikkejä).
+3. **Muoto (kriitikon vastaus b).** Ei symmetrisiä kellokäyriä. Jokainen vaara on kahden tai kolmen leveän, eri levyisen kummun
+   summa: pitkä loiva rinne toisella puolella, lyhyempi toisella; leveys 40–90 % kuvan leveydestä, matala. Vaarat limittyvät
+   syvyydessä eivätkä ole rivissä vierekkäin. Kolme oikean reunan pientä vaaraa, joista näkyy vain osa: siirrä tai levennä.
+4. **Vaarat ovat maailmassa, eivät kuvaruudussa (bugi 4, estävä).** Jokainen taso liikkuu kameran sivuttaisliikkeen ja etenemisen
+   mukana etäisyytensä suhteessa: lähin vaarataso liukuu ja kasvaa näkyvästi minuutin aikana, kaukaisin lähes ei. Raportoi siirtymä.
+5. **Lähimmät kuuset eivät saa vaaleta pylväiksi (bugi 3, estävä; kriitikon vastaus c ja bugi 11).** Käytä kuusille samaa muotoa,
+   kapeutta ja hienoa pintarakennetta kuin `maailma_11_12.js` (älä pehmennä tai suurenna niitä toisin kuin lopussa); tuo ne lähelle
+   kameran korkeudella, ei skaalalla. Valo osuu vain latvojen kärkiin ja lumisiin reunoihin ohuena reunavalona. Lähimetsän
+   kirkkaus (p99) saa nousta paisutuksissa ja iskussa enintään noin 1,3-kertaiseksi tummaan tilaan verrattuna.
+6. **Metsä jatkuu horisonttiin (bugi 6, estävä).** Piirteetön sumukaistale ja terävä vaakareuna pois: latvat pienenevät ja
+   sulavat usvaan kerroksittain, usvan reunat ovat pehmeitä. Ainoa suora vaakaviiva kuvassa on valon viiva.
+7. **Jouset ovat metsän läsnäolo, ei pelkkä himmennys (bugit 7 ja 13).** Kun jouset soittavat (`jouset_tulevat`, `siemen_toistuu`,
+   `fraasi_ennen_taukoa`): metsä tummuu **ja terävöityy** (kontrasti kasvaa, latvojen kärjet saavat viivan valosta ohuen reunan),
+   tuulen aalto kulkee latvojen yli läheltä kauas ja lumi pöllyää latvoista. Tummimmillaankin metsä on luettava kuusikko.
+   Fraasin 0:54 pitää olla selvä ele, ei 12 % himmennys.
+8. **Patarumpu (bugit 5 ja 8).** Avauksen rengas kulkee maassa latvojen välissä ulospäin 1,5–2 sekuntia pehmeänä aaltona, ei kahden
+   ruudun naksahdus. `patarumpu_paisuu` (0:41–0:45): maan valo latvojen väleissä värisee ja kasvaa mitattavasti (vähintään 10 %
+   kirkkauden muutos maan kaistalla) ja usva lähtee liikkeelle.
+9. **Vaskien isku (bugi 9).** Valo ei saa ilmestyä tyhjästä: paisutuksen aikana (0:41–0:45) horisontin valo kerääntyy siihen kohtaan,
+   josta leikkaus nousee (kirkastuva kohta viivalla), ja iskun ruudussa se leikkaa pystysuoraan. Huippu on iskun ruudussa.
+10. **Tapion talo (bugi 10).** Sama koko suhteessa kuvaan, sama profiili ja sama pintarakenne kuin lopussa: katsojan pitää
+    tunnistaa lopussa sama vaara. Tee rinnakkaisvertailu lopun kuvan kanssa ja liitä se todisteisiin.
+11. **Puupuhaltimien tulo 0:26 (bugi 12).** Harjaa pitkin kulkeva valo etenee kulun sävelten mukaan (jokainen sävel on askel
+    harjalla), niin että kulku näkyy valon matkana.
+12. **Kulku metsän sisään (bugi 14).** Viimeiset noin kaksi sekuntia: latvat nousevat kameran ohi, oksat ja rungot kulkevat läheltä,
+    ja niiden välinen pimeä kasvaa täyttämään kuvan. Rakenne näkyy viimeisiin ruutuihin asti; vasta viimeinen ruutu on rajakuva.
+13. Alun 7,6 sekuntia: niin valoisa, että metsä ja kameran eteneminen erottuvat (pimeä, ei musta).
+
+Renderöi koko väli uudelleen samaan paikkaan, tee todisteet (liikesarjat, mittaukset kohdista 1, 4, 5 ja 8, vertailu loppuun) ja
+kirjoita `runs/alku_v4/tarkistus.md` uudelleen.
+
