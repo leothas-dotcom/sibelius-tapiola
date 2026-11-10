@@ -1,0 +1,38 @@
+{
+  "nimi": "vedos_v7",
+  "tehty": "2026-11-11",
+  "levytys": "rattle2022 (työäänitys; ei julkaisuun, ei gittiin)",
+  "lahtokohta": "vedos 6 + käyttäjän palaute riveillä 80-94 (docs/projekti.md luku 2); brief runs/vedos_v7/brief.md",
+  "moduulit": {
+    "01_02": "runs/alku_v4/osa.mp4",
+    "03_04": "runs/maailma_03_04/osa.mp4",
+    "05": "runs/maailma_05/osa.mp4",
+    "06": "runs/maailma_06/osa.mp4",
+    "07_08": "runs/maailma_07_08/osa.mp4",
+    "09": "runs/maailma_09/osa.mp4",
+    "10": "runs/maailma_10/osa.mp4",
+    "11_12": "runs/maailma_11_12/osa.mp4 (ei muutettu)"
+  },
+  "mitattu": {
+    "ruutuja": 32340,
+    "kesto_s": 1078.016,
+    "aani_ero_ms": 0.0,
+    "saumojen_suurin_ero": 0,
+    "loppu_11_12_md5": "790baba21c0c8569ed0ca020d0c83947 (sama kuin vedoksissa 4-6)",
+    "vertailu": "render/kokoa.py vertaa vedos_v7 vedos_v5 ja vedos_v6u: 11_12 0 muuttunutta jaksoa; 07_08 sama kuin vedos 5 kohtaan 10:26 asti; 03_04 sama kuin vedos 5 välillä 1:07-2:51 (mse enintään 5,2)"
+  },
+  "tiedostot": [
+    "runs/vedos_v7/koko.mp4",
+    "runs/vedos_v7/tapiola_vedos7_720p.mp4",
+    "runs/vedos_v7/tapiola_vedos7_whatsapp.mp4",
+    "runs/vedos_v7/kontakti.jpg"
+  ],
+  "kriitikko": "runs/vedos_v7/kriitikko.md (käynnissä 11.11. yöllä)",
+  "tiedossa_auki": [
+    "03_04: heikkoja vinoja viiruja latvuksissa 3:07-3:12; puiden liike vedoksen 4-5 mukainen (rakentajan laskelman mukaan yli 4d.31:n rajan), ei muutettu",
+    "06: osa askelhalkeamista pitkiä ja suoria; askelhalkeaman syntykirkkaus sama kuin muilla (ei rajattu 1,5-kertaiseksi)",
+    "09: vaskisointujen huipussa (13:31-13:33) kuva on hyvin vaalea (keskikirkkaus noin 108/255); yksi kaistan reuna hieman kova",
+    "lumen nopeus ja kulma on mitattu rakentajien malleista, ei kuvasta",
+    "master 2160p tekemättä; lopullinen äänitys on käyttäjän oma (myöhemmin)"
+  ]
+}
