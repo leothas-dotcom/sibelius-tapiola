@@ -821,3 +821,10 @@ vaara vajoaa takaisin hitaasti ja jää siintämään, joten maisema kertyy.
 Ohjaajan tarkistus: partituurin s. 35, t. 356–358: trumpetit, pasuunat ja patarummut fff, toistuvat painotetut äänet
 (aksentit), sitten dim. molto; sen jälkeen Allegro (puolinuotti). Mitattu: 10:26–10:30 on jakson voimakkain kohta (−18 dBFS),
 taso putoaa kohtaan 10:34 (−45 dBFS) ja uusi nopeampi liike alkaa siitä; nousu jatkuu noin 10:58 asti.
+
+## 10.11.2026: aksentti 14:30
+
+> Aksentti 14:30 ei näy
+
+Ohjaajan tarkistus: partituurin s. 52, t. 537: kaikilla jousilla aksentti kohdassa, jossa kuvio hyppää ylemmäs (8va alkaa
+t. 538, fff t. 540). Mitattu: jyrkin tason hyppy on kohdassa 14:32,0 (+8 dB kymmenesosasekunnissa), pienempi 14:30,2.

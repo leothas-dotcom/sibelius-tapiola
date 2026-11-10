@@ -2282,6 +2282,33 @@
    "tarkista": true
   },
   {
+   "id": "myrsky_aksentti_537",
+   "ankkuri": "myrsky_aksentti_537",
+   "t": 872.0,
+   "theme": "isku",
+   "luokka": "isku",
+   "tyyppi": "hetki",
+   "nimi": "Jousten aksentti: myrsky hyppää lähemmäs",
+   "kirjain": null,
+   "tahti": 537,
+   "tahti_loppu": null,
+   "tahti_suhde": null,
+   "soi": "kasvavan jousikuvion keskellä kaikki jouset painottavat yhtä aikaa, ja kuvio hyppää ylemmäs; siitä kolme tahtia täyteen voimaan",
+   "soittimet": [
+    "viulut",
+    "alttoviulut",
+    "sellot"
+   ],
+   "tarina": "Käyttäjä 10.11.2026: \"Aksentti 14:30 ei näy\". Ohjaaja: myrsky ei kasva tasaisesti: se ottaa askeleen. Kaukaa tuleva lumi on yhtäkkiä paljon lähempänä.",
+   "lahde": "käyttäjä (korva), partituuri s. 52, mittaus",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "spektri.u8: koko taso −17,6 → −12,9 dB kohdassa 871,9–872,0 s (jyrkin hyppy välillä 867–874 s); pienempi kohouma 870,2 s; käyttäjä kuuli aksentin kohdassa 14:30; partituuri t. 537 aksentit kaikilla jousilla",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
    "id": "myrsky_iskee",
    "ankkuri": "myrsky_iskee",
    "t": 873.0,

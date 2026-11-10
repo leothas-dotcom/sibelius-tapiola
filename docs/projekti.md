@@ -313,6 +313,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 56 | 10.11. | vedos 4, kuuntelu ja kriitikko | "kuuntele vielä kappale, yritä tunnistaa ne nymphit, taitekohdat vielä paremmin ... milloin tapahtuu jotain uutta ja yllättävää" ... "päivitä kuunteluopas" ... "kriitikon pitäisi tarkemmin vahtia sitä, onko tyyliopas toteutunut. Ja onko nuo kuunteluoppaassa mainitut asiat näkyvissä." | ❌ auki |  |
 | 57 | 10.11. | alku, gis | "Se gis idea ei nyt oikein välity ... Jousien (eli metsän) takaa pitäsi jotenkin tulla ESIIN ne mäet (nousevat ja laskevat kulut). Eli dynaaminen. Mutta ... ei ole koomisia, vaan hitaita ja uljaita. Nythän ne on vaan tuossa kuvassa paikallaan." | ❌ auki | |
 | 58 | 10.11. | 10:28 ja 10:34 | "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa. Sitten 10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee? Miksi ei näy mitenkään?" | ❌ auki | |
+| 59 | 10.11. | 14:30 | "Aksentti 14:30 ei näy" | ❌ auki | |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 

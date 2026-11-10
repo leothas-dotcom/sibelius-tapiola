@@ -1821,6 +1821,28 @@
       "etuala": "vasket ja patarummut iskevät edessä; kaikki muu jää niiden alle",
       "tunnelma": "iskevä, pelottava, uusi",
       "esitysmerkinta": "t. 356–358: trumpetit ja pasuunat fff, aksentoidut toistuvat äänet; patarummut fff aksentein; klarinetit, fagotit, kontrafagotti, käyrätorvet, sellot, kontrabassot fff; kaikilla dim. molto (s. 35)"
+    },
+    {
+      "id": "myrsky_aksentti_537",
+      "nimi": "Jousten aksentti: myrsky hyppää lähemmäs",
+      "kirjain": null,
+      "tahti": 537,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "kasvavan jousikuvion keskellä kaikki jouset painottavat yhtä aikaa, ja kuvio hyppää ylemmäs; siitä kolme tahtia täyteen voimaan",
+      "soittimet": [
+        "viulut",
+        "alttoviulut",
+        "sellot"
+      ],
+      "tarina": "Käyttäjä 10.11.2026: \"Aksentti 14:30 ei näy\". Ohjaaja: myrsky ei kasva tasaisesti: se ottaa askeleen. Kaukaa tuleva lumi on yhtäkkiä paljon lähempänä.",
+      "lahde": "käyttäjä (korva), partituuri s. 52, mittaus",
+      "tarkista": true,
+      "etuala": "jouset yksin, äkkiä edessä",
+      "tunnelma": "säpsähdys, uhka on lähellä",
+      "esitysmerkinta": "t. 532 kaikilla jousilla molto (cresc.); t. 537 aksentit kaikilla jousilla; t. 538 viulut 8va; t. 540 fff (s. 52)"
     }
   ]
 }

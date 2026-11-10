@@ -410,6 +410,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* jouset tulevat edestä, vasket vastaavat. *Tunnelma:* lähestyvä, vyöryvä.
   - *Partituurissa:* t. 532–539: jouset cresc. molto, 8va; ei vaskia eikä patarumpuja (s. 52).
   - Ohjaaja: kolmekymmentä desibeliä kymmenessä sekunnissa, kuin jokin tulisi pellon yli. Lumi ja jää lähestyvät.
+- **14:32 Jousten aksentti: myrsky hyppää lähemmäs.** Kasvavan jousikuvion keskellä kaikki jouset painottavat yhtä aikaa, ja kuvio hyppää ylemmäs; siitä kolme tahtia täyteen voimaan.
+  - *Edessä ja takana:* jouset yksin, äkkiä edessä. *Tunnelma:* säpsähdys, uhka on lähellä.
+  - *Partituurissa:* t. 532 kaikilla jousilla molto (cresc.); t. 537 aksentit kaikilla jousilla; t. 538 viulut 8va; t. 540 fff (s. 52)
+  - Käyttäjä 10.11.2026: "Aksentti 14:30 ei näy". Ohjaaja: myrsky ei kasva tasaisesti: se ottaa askeleen. Kaukaa tuleva lumi on yhtäkkiä paljon lähempänä.
 - **14:33 Talvimyrsky iskee.** Jouset saavuttavat täyden voiman (fff, oktaavia ylempänä), edelleen yksin: myrsky on päällä, mutta se on vasta metsä.
   - *Edessä ja takana:* koko orkesteri edessä; kerrokset romahtavat yhdeksi. *Tunnelma:* pelottava, velloava, vyöryvä.
   - *Partituurissa:* t. 540: jouset fff, 8va, kromaattiset kuviot; edelleen vain jouset (s. 52). Vasket ja patarummut liittyvät Q = t. 550 p cresc. molto → ff (s. 53).

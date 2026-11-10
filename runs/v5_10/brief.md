@@ -31,3 +31,15 @@ jotain syvempää näkyä taustalla?"
 Kontaktiarkki `myrsky_iskee` → `huuto` 5 s välein (vaihtelu ja syvyys näkyvät), `Q_koko_metsa` ± 1 s (leikkaus samassa
 ruudussa), hiljainen kohta ennen `toinen_paisunta` (tausta näkyy), pyörteen keskuksen paikka 2 s välein (liikkuu), `toinen_paisunta`
 + 8 s (virtaus kääntyy ylös).
+
+## LISÄYS 10.11.2026 (käyttäjän uusi palaute; teemakartta ja kuunteluopas päivitetty, lue rivit 14:17–14:50 uudelleen)
+Käyttäjä: "Aksentti 14:30 ei näy".
+- **Uusi ankkuri `myrsky_aksentti_537`** (nimetty isku, välillä `myrsky_kasvu` → `myrsky_iskee`): kaikki jouset painottavat yhtä aikaa ja
+  kuvio hyppää ylemmäs; mitattuna taso nousee noin 8 dB kymmenesosasekunnissa. **Myrsky ei kasva tasaisesti, se ottaa askeleen:**
+  samassa ruudussa lähestyvä lumirintama on selvästi lähempänä ja kirkkaampi (rintama on jo kuvassa, joten mikään ei ilmesty:
+  se syöksähtää), puuska iskee lähimpiin latvoihin (taipuma kumipuusäännön rajoissa, lumi pöllähtää niistä) ja horisontin valo
+  välähtää lumen läpi. Ei pystysuoraa valon leikkausta (vain jouset, ei vaskia). Sen jälkeen kasvu jatkuu `myrsky_iskee`en.
+- Sama koskee muita äkillisiä hyppyjä tällä välillä: mittaa `d.koko`sta (tai spektristä) kohdat, joissa taso nousee vähintään 4 dB
+  0,2 sekunnissa välillä `myrsky_kasvu` → `myrsky_iskee`, ja anna jokaiselle pienempi vastaava puuska. Käyttäjä kuuli aksentin
+  kohdassa 14:30; mittaus löytää pienemmän kohouman 14:30,2 ja suurimman 14:32,0. Molempien pitää näkyä, suurimman selvimmin.
+- Tarkista liikesarjasta: `myrsky_aksentti_537` − 0,5 s … + 1,5 s, 1 ruudun välein (muutos näkyy ankkurin ruudussa).

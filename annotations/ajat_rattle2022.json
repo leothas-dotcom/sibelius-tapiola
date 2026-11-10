@@ -654,6 +654,12 @@
       "varmuus": "analyysi",
       "luottamus": "hyvä",
       "peruste": "spektri.u8: ylärekisteri +7,8 dB kohdassa 626,27 s; taso −18…−20 dBFS 10:27–10:29 (jakson huippu), lasku alkaa 631,37 s; käyttäjä kuuli kohdan 10:28; partituuri t. 356–358"
+    },
+    "myrsky_aksentti_537": {
+      "t": 872.0,
+      "varmuus": "analyysi",
+      "luottamus": "kohtalainen",
+      "peruste": "spektri.u8: koko taso −17,6 → −12,9 dB kohdassa 871,9–872,0 s (jyrkin hyppy välillä 867–874 s); pienempi kohouma 870,2 s; käyttäjä kuuli aksentin kohdassa 14:30; partituuri t. 537 aksentit kaikilla jousilla"
     }
   }
 }
