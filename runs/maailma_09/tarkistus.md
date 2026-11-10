@@ -1,141 +1,37 @@
-# Maailma 9: Petos ja hermo (`visual/maailma_09.js`)
+# Maailma 9: Petos ja hermo (`visual/maailma_09.js`), tarkistus, vedos 5 kierros 2 (10.11.2026)
 
-Aikaväli: `M_raskaat_askeleet` → `hiljaisuus_2_alku` (Rattle / LSO 2022, kuuntelukopion ajat; ajat tulevat `d.aika`sta ja
-`annotations/cues.json`:sta, ei käsin kirjoitettuja sekunteja). Alku: `RAJA.PIMEYS`, loppu: `RAJA.PIMEA_MASSA`.
+Aikaväli `M_raskaat_askeleet` (691,6 s) -> `hiljaisuus_2_alku` (845,6 s), Rattle / LSO 2022. Video `runs/maailma_09/osa.mp4`
+(154,000 s, 4620 ruutua, `--workers 2 --chunk 40`, `aa=2`). Videon aika alkaa moduulin alusta. Liikesarjat: `runs/maailma_09/ruudut_v5/k2/`
+(`render/sarja.py`). Huom: sarjat `laatta_6_7`, `laatta_119_123`, `O_ankkuri`, `vuorottelu`, `P_paisutus`, `hermo_30`, `askeleet_0_5`, `kontakti`
+(vanha versio, ks. alla) on otettu renderistä, jossa oksan tyvi oli vielä pystysuoraan leikattu; ero lopulliseen on vain lopun oksat (aika 133-154 s),
+jotka on otettu uudelleen lopullisesta videosta (`loppu_133_154`, `loppu_148_154`, `lasku_26_nousu_37`, `s1_8`, `s1_116`).
+Kriitikon raportti: `runs/maailma_09/kriitikko_v5.md`; päätökset: `runs/v5_09/brief.md` luku KIERROS 2.
 
-## 1. Suunnitelma (kirjoitettu ennen koodia)
+## 1. Kierroksen 2 kohdat
 
-**Maailma yhdellä kappaleella.** Kalevalan pimeä metsä, josta valo on viety vuoreen yhdeksän oven taakse ("yö pitkä,
-pilkkoisen pimeä", K49). Katsoja ajaa silmänkorkeudella tasaisen lumisen maan yli vanhan metsän läpi: rungot eri
-etäisyyksillä (parvet, ei rivi), latvusto päällä, usva kaikkialla, kaukana heikko kajo. Mikään ei ole näkyvissä, ellei
-jokin valaise sitä: maasta nouseva valo (askeleet, aksentit), iskun pystyvalo ja himmeä jälkihohto. Yhdeksän ovea ovat
-yhdeksän tummaa, sileää kumpua (vuori) polun poikki, joihin on avattu kaareva aukko; niiden läpi ajetaan yksi
-kerrallaan. Yhdeksäs kumpu on umpinainen: se kasvaa ja täyttää kuvan. Ahdistus on sallittu (tyyliohje 2.10): vauhti on
-teoksen suurin, eikä liikettä voi pysäyttää.
+| # | Kohta | Mitä tehtiin | Mitä kuva näyttää | Tila | Todiste |
+|---|---|---|---|---|---|
+| 1 | Loppu 133-154 s: metsä pysyy metsänä | runkotiheyden ohennus ja yhdeksäs umpikumpu poistettu; vauhti ei hidastu; viimeinen kajo hiipuu, tumma aalto 138-145 s; lumiset kuusenoksat tulevat polun reunoilta lähelle ja ohi (maailmassa kiinteät oksat), kasvavat ja täyttävät kuvan vain viimeisinä ~2,4 s, sitten rajakuva | suorakaideseinä ja massa pois: rungot, kolme syvyyskerrosta ja lumi näkyvät 2:13-2:30; oksat 2:20-2:33; viimeinen ruutu rajakuva. Videon kirkkaus (YAVG) 133-154 s: pienin 27,2, ei yhtään alle 24 (aiemmin 6,4 s alle 24) | toteutuu; oksat ovat tummia haaravuoria, rosoisia, tosin hieman graafisia | `k2/loppu_133_154.png`, `k2/loppu_148_154.png`, `yavg`-luvut `runs/v5_09/yavg.txt` |
+| 2 | Laattarungot pois | runkojen säde rajattu (enintään ~0,9 m, harvoin 1,3 m; ennen 1,65 m), vapaa kaista polun ympärillä 2,6 m + säde, juurenniska (leveä tyvi, joka kapenee), lumikinos tyvellä (tyvi sulaa lumen väriin, ei leikkausviivaa), kaarnan pystysuuntainen pinta sidottuna runkoon, valoreuna ei pääty tyvessä koukkuun; ovikumpu ei ole enää umpiseinä (reunat kuultavat, aukon tyvi sulaa) | 36-41 s, 119-123 s ja 129-131 s ei enää leveitä suorakaiteita: rungot ovat kapenevia, tyvet uppoavat lumeen; sivuilla matalat tummat kumpumassat näkyvät yhä oven kaaren vierellä (`laatta_119_123`) | pääosin korjattu; **6,4-6,8 s lähirunko kirkastuu askeleen renkaassa leveäksi vaaleaksi pilariksi (`laatta_6_7`)** ja oven aukon lattia näkyy suorakulmaisena laikkuna: jäi | `k2/laatta_6_7.png`, `k2/laatta_119_123.png` |
+| 3 | Kirjain P: paisutus | valo seuraa mitattua tason käyrää (`pkAt`, `P_vaskipaisunta` -> huippu): syttyy ankkurin ruudussa, kasvaa kerros kerrokselta lähemmäs (rungot siluetteina, valon etureuna 170 m -> 6 m), huippu 810-812 s, sitten vetäytyy; pystyleikkaus vain iskun ruudussa | mitattu paisutus: 806,6 s 0,02; 808 s 0,49; 810 s 0,98; 812 s 1,00; 814 s 0,65; 817 s 0,37; 820 s 0,29. Ruuduissa 1:55-2:11 (115-131 s) kaari ja keila kirkastuvat ja palautuvat, yli 10 s | näkyy | `k2/P_paisutus.png` (115-126 s, 3 s välein) |
+| 4 | Askeleet 18 | herkempi mittaus: ais:n (midi 34) tason nousut, kynnys 0,05 minimistä 12 ruudun ikkunassa, väh. 14 ruutua välein | löytyi **19 sykettä** 0-19,2 s: 0,07; 1,57; 2,53; 3,27; 3,73; 4,87; 5,33; 6,40; 8,13; 8,60; 9,60; 10,10; 11,60; 12,07; 14,80; 15,27; 17,50; 18,50; 19,20 s. Aukot 6,4->8,1, 12,1->14,8, 15,3->17,5 s ovat äänessä (mittaus ei löydä sykettä niistä; rytmiä ei ole keksitty). Jokainen syke on pehmeä maan renkaan valo | toteutuu (19 >= 18) | `k2/askeleet_0_5.png`, ajat `window.kuvaus().askel_ajat` |
+| 5 | Jousten hermo 19,4-43 s | usvan ja valon nopea hienojakoinen väre (vaihe = liiketiheyteen sidottu kertymä, 4-6 Hz), kajon pimeneminen ja terävöityminen jousten voiman mukana, lumi nopeampaa ja puuskissa suunta vaihtuu, lumen määrä purskeina, tuulenpuuskat; rungot eivät liiku | `hermo_30`: usva ja valo väreilevät ja tummat juovat kulkevat ruudun yli 0,5 s välein, lumi virtaa vaihtelevasti | näkyy; väre on silti hienovarainen | `k2/hermo_30.png`, `k2/lasku_26_nousu_37.png` (24-35 s) |
+| 6 | Kirjain O ajallaan | vastine alkaa ankkurin ruudussa: vasket matalana hehkuna (alkaa 42,85 s), oboet = ohut valojuova kaukana runkojen välissä (nuotin korkeus = sivuasema), klarinetit = puoliksi näkyvä liike keskellä, pilkahdukset runkojen välissä | 43,0-43,2 s valojuova ja hehku syttyvät; 44-46 s juovia ja pisteitä (44,6 s kaksi pistettä oikealla) | näkyy | `k2/O_ankkuri.png`, `k2/O_myohemmin.png` |
+| 7 | Hehku ei suorakaiteeksi, vuorottelun lähde | pilkun kehä pienennetty; vuorottelun kaksi valoa ovat pystysuoria keiloja horisontista ylös runkojen takaa (rungot peittävät, keilat usvassa), ei palloja | 65-69,5 s: vasen ja oikea keila vuorotellen, ei suorakaidetta | näkyy | `k2/vuorottelu.png` |
+| 8 | Nousut/laskut ja tremolo | nousu/lasku: kajon korkeus siirtyy 0,28 kuvan korkeudesta (ennen 0,11) ja kajo kirkastuu (väh. 0,40) niiden aikana; tremolo: usvan ja valon väre | siirtymää ja väreitä on lähes kaikissa sarjoissa, mutta nousun/laskun korkeuden muutos ei lue erillisenä tapahtumana ruuduista | osin / en erota luotettavasti | `k2/lasku_26_nousu_37.png`, `k2/tremolo_10.png` |
 
-**Siemenen kuva tässä maailmassa.** Horisontin heikko kajo kaukana polun päässä (gis-horisontti pimeässä), sen alla tumma
-massa, sileät loivat kummut kajoa vasten (horisontin profiili seuraa melodian kaarta hitaasti; kummut ovat myös ovet),
-lumi maassa ja usvana. Joka valaistuksessa sama asetelma: valo keskellä kaukana, tumma massa sen ympärillä, kummut.
+## 2. Säilytetyt (mitattu / katsottu uudelleen)
+- **Runkojen paikallaan pysyminen:** nopeus 1,3-2,4 m/s (mitattu koko väli: suurin 2,40, pienin 1,30 välillä 700-835 s; matka 266,9 m). 1 ruudun sarjoissa 8 s, 56 s ja 116 s lähimmän rungon reuna siirtyy 2-6 px / ruutu 1920 px leveydellä (<= 0,3 % leveydestä; raja 2 %); `k2/s1_8.png`, `k2/s1_116.png`, siirtomittaus korrelaatiolla (8 s: 2-3 px, 56 s: 4-5 px, 116 s: 2 px).
+- Kumipuusääntö: taipuma enintään 3,7 % korkeudesta (0,12 Hz, vaimenee yli 80 m), ei muodonmuutoksia.
+- Vauhti ei hidastu lopussa (1,31 m/s 840 s kohdassa; ennen 0,99).
+- Vaskien vuorottelu, harva kuviointi, pohjan katoaminen (usvapankki), valo ja lumen valuminen, siirtymien paikat (rajat ennallaan, alku PIMEYS ja loppu PIMEA_MASSA).
+- Kirkkaus (YAVG) alueittain: 0-20 s keski 34,8 (alku 15,4 = rajakuvan pimeys); 20-43 s 29,2; 43-64 s 32,6; 64-88 s 30,6; 88-115 s 35,9; 115-133 s 42,0; 133-154 s 32,6. Missään osassa ei ole yli 10 s lähes mustaa.
 
-**Kameran reitti.** Alku: pimeys täyttää kuvan (rajakuva) ja osoittautuu ensimmäisen kummun seinäksi, jonka aukko
-kasvaa kolmessa-neljässä sekunnissa koko kuvan kokoiseksi (jatkuva mittakaavan muutos), kamera lähtee levosta ja
-kiihtyy. Kamera kulkee suoraan eteen ilman pyörimistä; sivusuuntainen ajautuminen (viistoon) antaa parallaksin. Korkeus
-on vakio 1,7 m tasaisen maan yllä. Ovet 1–8 ylitetään musiikin rakennekohdissa (ankkurit), vauhti = soivien nuottien
-tiheyden hidas keskiarvo (4 s). Loppu: rungot harvenevat dim_possibilen aikana, yhdeksäs kumpu kasvaa horisontista
-koko kuvaksi ja kuva sulaa täsmälleen rajakuvaan PIMEA_MASSA.
-
-**Kuunteluoppaan rivi → kuvassa → signaali.**
-
-| Rivi (kuunteluopas) | Mitä kuvassa tapahtuu | Signaali |
-|---|---|---|
-| 11:31 raskaat askeleet | maasta välähtää valo: rengas kulkee lumen pintaa eteenpäin ja valaisee runkojen tyvet ja kummun seinän | `d.alut` (matalan kaistan alut) |
-| 11:42 tremolo | massan reunat väreilevät paikallaan, hienojakoisesti (ei pomppua) | `d.tapahtuu("tremolo")` |
-| 11:51 jännitteinen jousijakso | jousten hermo: väre massassa, kajo seuraa jousten voimaa, vauhti nousee | `d.keski`, jakson ankkurit |
-| aksentit jaksossa | pieni maan valo (rengas), ei pystyleikkausta | `d.aksentit` |
-| 11:58 / 12:09 laskut ja nousut | kajon korkeus laskee ja nousee | `d.tapahtumat` nousu, lasku |
-| 12:14 kirjain O | puupuhaltimien pilkahdukset (väike) syttyvät usvaan jousten värinän lomaan | `d.nuotit` ankkurien välissä |
-| 12:36 vaskivuorottelu | kaksi valon paikkaa vasemmalla ja oikealla pimeässä, vuorotellen | matalan rekisterin voima (käyrätorvet), vastakohta (trumpetit, tulkinta) |
-| 13:00 harva kuviointi | lähes täysi pimeys, yksittäisiä pisteitä usvassa | `d.nuotit`, `d.keski` |
-| 13:05 pohja katoaa | maa ja runkojen tyvet häviävät alta, metsä leijuu | tapahtuma "kerros katoaa" |
-| 13:26 kirjain P | nimetty isku: pystyvalo kerrosten läpi, rungot, usva ja varjot kohti katsojaa; sitten kajo paisuu ja laskee | `d.iskut`, `d.keski` |
-| 13:45 vasket häipyvät → 14:05 | rungot harvenevat, valo hiipuu, yhdeksäs kumpu edessä kasvaa ja täyttää kuvan | taso, ankkurit |
-
-
-## 2. Toteutus lyhyesti
-Varjostin laskee maiseman ruutu ruudulta aikafunktiona: 52 runkokerrosta (parvet eri etäisyyksillä, sijainti hajautettu, ei rivi),
-latvusto, lumen pinta, usva, yhdeksän kumpua (ovet) ja kaukainen horisontti. Kamera on vauhdin integraali (`d.sarja`), vauhti =
-alkavien nuottien tiheyden 4 s keskiarvo (3 -> noin 10 m/s, alku levosta). Ovet 1-8 ylitetään ankkureissa
-(`M_raskaat_askeleet`+3,8 s, `jannitejakso_alku`, `O_kirjain`, `jannitejakso_loppu`, `allegro_moderato_O_loppu`,
-`harva_kuviointi`, `P_vaskipaisunta` t_end, `dim_possibile`); yhdeksäs on umpinainen ja saavutetaan `hiljaisuus_2_alku`:ssa.
-Mittaus: `window.kuvaus(t)` (vauhti, kajo, pystyvalo, väre, tuuli, kaksi valoa, maa, renkaat, pilkut, seuraava ovi).
-
-**Miten metsä elää (ohjaajan korjaus 10.11.2026).** Puut huojuvat tuulessa: runko taipuu latvaa kohti (siirtymä ~ korkeus^2),
-latvusto kulkee mukana, ja tuuliaalto kulkee metsän läpi syvyyssuunnassa. Tuulen voima (`wind`) = jousten/kokonaistason hidas
-keskiarvo (`lvl`, 1 s) + nimetyn iskun puuska (hidas jälkihohto 4 s). Puut eivät kasva, kutistu, pompi eivätkä vaihda paikkaa;
-maa ei liiku. Tremolo on erillinen pieni väre rungon leveydessä (jännitejakso ja `tremolo`-tapahtuma). Huojunta näkyy
-ruuduissa 806,6-807,4 s (kaarevat rungot) ja arkissa `ruudut/liike_O_ja_P.png`.
-
-## 3. Säännöt (tyyliohje luku 12 ja 4d)
-Kaikki tarkistettu stilleistä 691,6-845,6 s (arkit `tark/`, `ruudut/`). Ei koko liikesarjaa jokaisesta kohdasta: vain O (734,2-735,2) ja P (806,4-807,4).
-
-| Sääntö | Tila | Peruste / ruutu |
-|---|---|---|
-| 0 ääni ohjaa (korkeus, voima, tapahtumat) | osin | kajo = taso, askeleet = renkaat, tremolo = väre, vuorottelu = kaksi valoa, pohja katoaa = maa sulaa, pilkut = korkeus; nousu/lasku siirtää kajoa vain 0,045 (vaikea erottaa) |
-| 1 kamera sisään ja eteen | toteutuu | koko väli |
-| 2 pysähdys vain nimetyissä | toteutuu | alkuhetki levosta (kiihdytys), muuten ei pysähdystä |
-| 3 ei pyöri, alle 20 °/s | toteutuu | ei kiertoa lainkaan |
-| 4 kamera ei reagoi iskuun | toteutuu | vauhti vain 4 s keskiarvosta |
-| 5 siirtymä kulku, vähintään 4 s | toteutuu | alku: kummun aukko kasvaa 691,6-695,4; loppu: yhdeksäs kumpu 828-840 |
-| 6 vähintään kolme syvyyskerrosta | toteutuu | 705 s, 745 s |
-| 7 puhuva tulee lähemmäs | osin | pilkut tulevat kameraa kohti, mutta eivät erikseen "etualalle" |
-| 8 kerrokset etäisyyttä, reunat eivät vuoda | toteutuu | usva ja kerrokset; ei tyhjää reunaa |
-| 9 metsä näkyy, ei rivi, ei esineitä | toteutuu | 705, 730 s; latvusto heikosti näkyvä (heikkous) |
-| 10 iskun elementti ympäristössä | toteutuu | P 806,6: pystyvalo ja varjot maassa; askeleet: maan rengas |
-| 11 ei ilmesty/katoa/loiki iskussa | toteutuu | 806,4-807,4 |
-| 12 enintään kolme elementtiä liikkuu | toteutuu | tuuli, värinä, valo |
-| 13 väikkeen koti kaukana | toteutuu | pilkut 20-110 m päässä |
-| 14 valolla lähde | toteutuu | kajo kaukana, maa, kolonni |
-| 15-16 ei punaista, ei kajoa (H-duuri) | toteutuu | väri vain hämy, salo, halla |
-| 17 värit eivät vaihdu iskussa | toteutuu | |
-| 18 hiljaisuus | ei koske | väli päättyy hiljaisuuden alkuun; musiikin häipyessä kajo ja rungot häviävät, kumpu täyttää |
-| 19-21 ei edellistä tyyliä, kliseitä, tekoälyä | toteutuu | koodilla |
-| 4d.1 puut käyttäytyvät kuin puut | toteutuu | huojunta, ei pomppua |
-| 4d.2 metsä laaja ja syvä | toteutuu | 705, 745 s |
-| 4d.3 kamera eteen, puut ohi | toteutuu | |
-| 4d.4 maailmoja sisäkkäin | toteutuu | ovet, kaukainen oven aukko näkyy jo kaukaa (705, 730, 765 s) |
-| 4d.5 gis-horisontti hitaasti | osin | horisontti piirtyy vain aukkojen kautta, melodian kaari 0,8 s portain |
-| 4d.6 mystiset olennot | ei koske | tämän maailman brief ei vaadi; väike on ainoa |
-| 4d.9 metsä massa, 4d.10 jouset näkyvät | osin | jousten voima = tuuli ja kajo; massa on enemmän runkoja kuin latvuston massaa |
-| 4d.11-12 Tapion talo, revontulet | ei koske | |
-| 4d.13 kamera ei maan läpi | toteutuu | tasainen maa, korkeus 1,7 m; polku vapaa rungoista |
-| 4d.14 yksittäinen puu | toteutuu | ei yksittäisiä puita |
-| 4d.16 parallaksi | toteutuu | viisto ajautuminen |
-| 4d.17 mikään ei väri spektrin tahdissa | toteutuu | signaalit 0,4-4 s keskiarvoja; väre 7 Hz on vain tremolon vastine |
-| 4d.18 ei teräviä vuoria | toteutuu | kummut sileitä |
-| 4d.19-22 | toteutuu / ei koske | |
-
-## 4. Kuunteluoppaan rivit
-| Rivi | Tila |
-|---|---|
-| 11:31 raskaat askeleet | osin: renkaat vain `d.alut`:n kohdista (8 kpl, ei 18) |
-| 11:42 tremolo | osin: väre on pieni, vain liikesarjalla nähtävä |
-| 11:51 jännitejakso | osin: tuuli, kajo ja vauhti seuraavat; hermoa on vähän |
-| 11:58/12:09 lasku ja nousu | en erota |
-| 12:14 O | näkyy: pilkkuja 735 s |
-| 12:36 vaskivuorottelu | näkyy: kaksi valoa 765 s (trumpetit tulkittu käyrätorvien vastakohdaksi) |
-| 13:00 harva kuviointi | näkyy: 795, 805 s pilkut pimeässä |
-| 13:05 pohja katoaa | osin: maa sulaa (795 s), pieni ero |
-| 13:26 P | näkyy: 806,6-809 s |
-| 13:45 vasket häipyvät, 14:05 | näkyy: 828-845,6 s |
-
-## 5. Rajakuvat
-- Alku: 691,6 s on tasainen PIMEYS (`rajakuva(p,3)` sekoitettu painolla 1 hetkellä t0, mitattu stillistä: koko ruutu yhtenäinen). Jatkuva avautuminen 692,6-695,6 s: kummun aukko kasvaa kuvan täyttäväksi.
-- Loppu: 845,6 s sekoitus `rajakuva(p,0,t)` painolla 1 (t on tiedoston aika, jolla rajakuva on tässä kutsuttu). Edellä 828-840 s yhdeksäs kumpu kasvaa.
-- Huom: stillit 845,2 ja 845,6 s ovat lähes tasaisen tummat. Pikseliyhtäpitävyyttä ei ole mitattu erikseen.
-
-## 6. Omat lisäykset
-- Ovet kumpuina ja kaarevana aukkona: perustelu "vuorehen teräksisehen" (K49) ja siemenen sileät kummut.
-- Maan rengas askeleille: brief "valo joka välähtää pohjasta".
-- Vuorottelun trumpetti = käyrätorvien vastakohta: kanavakortti ei erota trumpettia.
-
-## 7. Mikä jäi heikoksi
-- P-iskussa kauimmaiset rungot valaistuvat vaaleina juovina ja maa on lähes valkoinen usvaa; siluettivaikutelma ei toteudu täysin, horisontin raja on kova.
-- Latvusto näkyy huonosti: yläosa on tumma kaista; "siivilöityvä valo oksien välistä" toteutuu vain heikosti.
-- Kapea vertikaalinen valopylväs on ruudussa muutaman sekunnin ja on viivamainen.
-- Yli 20 sekuntia saman näköistä metsää on kohdissa 712-730 s ja 745-780 s (ovet ja pilkut elävöittävät, mutta ilme on yhtenäinen).
-- Loppuosassa (838-845 s) kuva on lähes tasainen tumma.
-- Tuulen huojunnan liikesarjaa ei katsottu pitkältä väliltä; pomppua ei ole todennettu 0,2 s ruuduilla muualla kuin kohdissa O ja P.
-
-## 8. Kriitikkokierroksen korjaukset (10.11.2026)
-Korjattu ja katsottu stilleistä (693,6, 705, 730, 757, 790, 806,7, 808, 832, 836, 840, 845,6 s):
-- Horisontti: profiili interpoloidaan sileästi ja pienemmällä amplitudilla; kampamainen reuna oli kaukaisten runkojen päitä, joille on nyt latvusto. 832 ja 836 s: yhdeksäs kumpu on sileä, loiva muoto.
-- Loppu: viimeinen kajo pysyy 0,42:ssa kunnes musiikki häipyy, yhdeksäs kumpu on isompi (korkeus 11 m, leveys 34 m) ja fogattu vähän, joten se erottuu tummana ja kasvaa 828-840 s; täyttää kuvan ennen rajakuvaa.
-- Rajakuva: viimeinen ruutu on `rajakuva(p, 0, uTime)` painolla `uEnd`=1 hetkellä `hiljaisuus_2_alku`, uTime = tiedoston aika. Yhtäpitävyys on rakenteellinen (sama GLSL-funktio ja sama FS_LOPPU-putki); erillistä pikselivertailua ei tehty.
-- Latvusto: jokaisella rungolla ragged kartiomainen latvus 40 % korkeudesta ylöspäin, huojuu rungon mukana. Näkyy 705, 730, 806,7 s.
-- Maan kova viiva: pohjan katoaessa maa sulaa usvan väriin (ei erillistä tummaa väriä). Katsottu 790 s: viiva ei erotu.
-- Valoläiskät: kaksi valon paikkaa ovat pienempiä ja pehmeämpiä (757 s), pilkut ovat vähintään 28 m päässä ja pieniä. Aikaisempia läiskiä ei ole katsottu uudestaan 12:41-12:49 liikesarjalla.
-- P-isku: rungot pysyvät siluetteina ja maa on harmaa, ei valkoinen (806,7 ja 808 s); metsä on sama kuin ympärillä. Pystyvalo on yhä viivamainen.
-- Ovet: tumma metsäinen massa (ei teal), ohut kaariviiva lähes poistettu, aukosta näkyy seuraava metsä (705, 730 s).
-- Huojunta pienempi (amplitudi puolitettu, tuuli enintään 0,95): nuudelimaisuutta ei enää ruuduissa.
-- Alun avautuminen pidennetty: ensimmäinen ovi ylitetään 4,6 s alusta.
-Jäi: tremolon, nousun ja laskun vastinetta ei erota ruuduista; yli 20 s tummaa kohdassa 13:05-13:25; vauhdin tunne kohtalainen.
+## 3. Mikä jäi auki tai heikoksi
+- 6,4-6,8 s (11:38) askeleen rengas kirkastaa lähirungon leveäksi vaaleaksi pilariksi; ratkaisu olisi himmentää renkaan valoa alle 3-9 m:n päässä oleviin runkoihin.
+- Oven aukko 6-7 s näkyy suorakulmaisena lattialaikkuna (lähellä oleva ensimmäinen ovi).
+- Lopun oksat ovat tummia ja kulmikkaita kuusenhaaroja, eivät vielä valokuvamaisia; lumireuna on ohut.
+- Nousun ja laskun korkeuden muutos (8) ei lue erillisenä liikkeenä; tremolon väre ei erotu omana tapahtumanaan.
+- Askelten aukot (6,4->8,1, 12,1->14,8, 15,3->17,5 s) ovat äänessä, eivät kuvan puutteita.
+- Kriitikko ei ole katsonut tätä versiota; pikseliyhtäpitävyyttä rajakuvaan ei ole mitattu erikseen.
+- Ei erillistä mittausta tuulesta kymmenen sekunnin liikesarjana; taipuma on laskennallinen.

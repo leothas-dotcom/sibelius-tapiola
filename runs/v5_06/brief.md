@@ -114,3 +114,48 @@ pohjan häipyminen, kulku pimeään lopussa. Ohjaajan päätökset (videon aika,
 Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat ja mittaukset (kohdat 1, 2, 3, 4, 7 ja 8 lukuina), ja kirjoita
 `runs/maailma_06/tarkistus.md` uudelleen. Jos varjostin on liian raskas, kevennä heijastusta, älä elementtejä.
 
+## KIERROS 3 (10.11.2026): kriitikon raportti `runs/maailma_06/kriitikko_v5b.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Korjattu ja todennettu, ei saa rikkoa:** ranta on jäykkä (latvalinja sama pikselilleen), koko ruudun välähdykset ovat poissa,
+jää ja lumi liikkuvat 12–70 s, fortissimon katkeaminen ruudussa, 6:30:n muutos alkaa ankkurin ruudussa, H:n parvi nousee ja
+valuu alas ja pimenee, huilupari, kulku pimeään. **Tämä kierros korjaa täsmälleen alla olevat; mitään muuta ei rakenneta
+uudelleen.** Videon aika, nolla = moduulin alku.
+
+1. **Tapion kummut ovat pehmeitä (estävä).** Nyt 76–110 s jäällä on puolisuunnikkaita, rengas ja säteitä: geometrisia kuvioita.
+   Poista ne kaikki. Kumpu on **pelkkä pehmeä hehku jään alla**: kirkkaus = A · exp(−r² / R²) jään tason maailmankoordinaateissa
+   (perspektiivi tekee siitä itsestään litteän soikion), ei ääriviivaa, ei rengasta, ei säteitä. R kasvaa noin 15 metristä noin
+   60 metriin 2,5 sekunnissa ja A hiipuu samalla pehmeästi; väri kylmä hopea. Yksi kumpu jokaisesta bassojen raskaasta äänestä
+   (matalan kaistan alut) ankkurista `h_urkupiste_vyory` alkaen: ensimmäisen pitää osua ensimmäiseen mitattuun alkuun ankkurin
+   kohdalla (nyt 1,7 s myöhässä: tarkista kynnys).
+2. **Nymfi hyppii (estävä).** Nyt yksi kipinä liukuu suoraan noin 900 px/s. Hyppijän paikka kosketusten välillä on **kaari**:
+   korkeus jäästä = h · 4u(1−u), missä u kulkee 0→1 kosketuksesta seuraavaan ja h on noin 0,3–0,8 m hypyn pituuden mukaan;
+   jäässä näkyy sen heijastus, joka lähestyy ja etääntyy kaaren mukana. Hypyn pituus 1–2 m, suunta vaeltaa (ei suora viiva),
+   eteneminen kuvassa noin 150–300 px/s. Kosketuksessa pieni rengas ja kimallus. Ydin 5–8 pikseliä ja pehmeä kehä, ei
+   ristisäteitä. Kosketuksia mitatulla sykkeellä (noin 6–7 sekunnissa). Kaksi tai kolme hyppijää eri syvyyksillä vuorottelee
+   rekisterin mukaan; lähin on suurin. Katsojan pitää nähdä valon pomppivan.
+3. **6:30 on leikkivä joukko, ei kiitotie (estävä).** Poista tasavälinen valoparien rivi ja kahdeksan pystyjonoa. Ankkurin
+   ruudussa jäälle syttyy 25–40 hyppijää **epäsäännöllisiin paikkoihin koko jään syvyydelle ja leveydelle** (siemenestä, ei
+   rivissä, ei pareina, eri kokoisina etäisyyden mukaan); ne hyppivät yhteisessä mitatussa rytmissä mutta eri suuntiin,
+   pääosin kohti katsojaa, ja kulkevat katsojan ohi jakson aikana. Kuvan kirkkaus pysyy koholla kohtaan `H_puhaltimet` asti
+   (nyt palaa kolmessa sekunnissa).
+4. **Taite `I_ratsastus` (estävä).** Mitattu: jään vauhti on 78–98 s **lähes nolla** (ennen sitä noin 200 px/s) ja rannan koko
+   kasvaa vasta 89 s. Se on päinvastoin kuin pitää. Jään virtausnopeus katsojan ali kasvaa ankkurista tasaisesti:
+   kaksinkertainen kolmen sekunnin kuluttua, kolminkertainen kohdassa `h_urkupiste_vyory`, ja pysyy suurena fortissimon yli;
+   rannan korkeus kuvassa alkaa kasvaa ankkurista (mitattava ero viidessä sekunnissa). Ajolumi: matalat, pitkät, pehmeät
+   lumiviirut virtaavat jään pintaa pitkin katsojaa kohti ja ohi rytmikkäinä puuskina. Kiitävät valot alkavat ankkurin ruudussa
+   (nyt 0,8 s myöhässä). `vaskipulssit`issa vauhti hidastuu näkyvästi.
+5. **Lumi (estävä).** Hiutaleita on 100–170 ja ne peittävät jään ja sekoittuvat valoihin; puuskissa ne ovat litteitä
+   vaakasoikioita (leveys kolme kertaa korkeus). Tavallisesti enintään noin 40 näkyvää hiutaletta, pyöreitä ja pehmeitä, koko
+   ja terävyys etäisyyden mukaan. Puuskassa hiutale on **ohut pehmeä viiru liikkeen suuntaan** (pituus = matka ruudussa, paksuus
+   ennallaan), ei soikio.
+6. **Englannintorvi (`vaskipulssit`)** on näkymätön (kontrasti 3–8/255): valojuovan pitää erottua selvästi (vähintään noin
+   25/255 taustasta), kapeana vaakajuovana rannan runkojen raoissa, melodian tason mukaan elävänä.
+7. **Peilikuva jäällä** on hammaslaitainen 76–110 s (voi lukea käyttäjän "piikeiksi"): pehmennä heijastusta etäisyyden mukaan
+   niin, ettei siinä ole teräviä hampaita. Keskikerroksen läpikuultavat kolmiot 76 s kohdalla pois.
+8. **Lopun kaksi runkoa** tummiksi rungoiksi (kaarnan sävy, ei vaaleita pylväitä).
+
+Kopioi ensin nykyinen renderi talteen (`runs/v5_06/osa_kierros2.mp4`). Renderöi koko väli uudelleen samaan paikkaan, mittaa
+valmiista renderistä kohdat 1 (kummun muoto: ei reunaa), 2 (kaaren korkeus pikseleinä kolmesta hypystä), 4 (jään liike px/s
+kohdissa 70, 75, 80, 85, 90 s ja rannan korkeus) ja 5 (hiutaleiden määrä), tee liikesarjat ja kirjoita
+`runs/maailma_06/tarkistus.md` uudelleen.
+

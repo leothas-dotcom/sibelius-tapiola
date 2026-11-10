@@ -1,114 +1,61 @@
-# Maailma 10: Se näkyy ja tulee (tarkistus)
+# Maailma 10: Se näkyy ja tulee, vedos 5, kierros 2 (tarkistus)
 
-Moduuli: `visual/maailma_10.js` (sivu `visual/maailma.html?m=10`). Aikaväli: `hiljaisuus_2_alku` (845,6 s) → `huuto` (945,0 s),
-Rattle / LSO 2022 -kuuntelukopio. Kaikki ajat tulevat `d.aika`sta.
+Moduuli `visual/maailma_10.js`, 845,6 -> 945,0 s (Rattle / LSO 2022 -kuuntelukopio). Renderi `runs/maailma_10/osa.mp4` (99,4 s, aa=2, 2982 ruutua).
+Todisteet `runs/v5_10/tark/`: liikesarjat `s_*.png`, mittaukset `mittaus.json` ja `mittaa.py`, signaalilokit `signaalit.log`, `signaalit2.log`.
+Videon aika 0 = 845,6 s. Edelliset versiot: `osa_vedos4.mp4`; kriitikon raportti `kriitikko_v5.md`. Kriitikkoa ei ajettu tämän kierroksen jälkeen.
 
-## 1. Suunnitelma (kirjoitettu ennen koodia)
+## 1. Kriitikon estävät kohdat ja ohjaajan päätökset (kierros 2)
 
-**Maailma yhdellä kappaleella.** Metsä loppuu. Alku on viimeinen tumma kerros: kamera on lehvästön ja runkojen sisällä, ja
-tummuus aukeaa ulos avoimelle jäälle ja suolle. Tila on ensimmäistä kertaa katsojaa suurempi: kolme neljäsosaa kuvasta on
-raskas pilvitaivas, maa on tasainen lumen peittämä jää, jossa on tummia paljaan jään laikkuja (jään peilikuva) ja tuulen
-muotoilemia matalia kumpuja. Horisontissa kaukana on matala musta metsän reuna sileiden, loivien kumpujen päällä. Valoa ei ole
-juuri lainkaan: horisontin kalpea hallan valo on heikko ja elää vasta, kun jouset alkavat. Lumi on lähes paikallaan. Toinen
-hiljaisuus (845,6–865,2) on tyhjä: kamera kulkee hyvin hitaasti, äänen elementit ovat poissa, jäljellä ovat metsän reuna, jää ja
-lumi. Siinä jokin jo liikkuu: `myrsky_nakyy` horisontissa nousee hitaasti näkyviin matala lumiseinä, joka ei vielä liiku.
-Myrsky on kirjallisuuden ja käyttäjän tulkinta (tutkimus luku 2), ei esipuheen asia: lunta ja jäätä, joka tulee kaukaa
-(Pakkanen Puhurin poika: kylmä etenee pintoja pitkin). Seinä on kuusi syvyyskerrosta, ja ne lähestyvät kukin omaan tahtiinsa
-nopeammin kuin kamera kulkee. Kun `myrsky_iskee` tulee, kaikki kerrokset ovat päällä ja menettävät eronsa (sama valo, väri ja
-suunta; tyyliohjeen nimetty poikkeus säännölle 6): lumi on viiruja joka syvyydessä ja massa virtaa. Keskellä on pimeä pyörre,
-jota kohti kamera ajaa ja jonka läpi se menee. `Q_koko_metsa`, `myrsky_huippu` ja `R_vasket` ovat Ukon tulta: pystysuora valo
-kerrosten läpi, joka näyttää hetkeksi metsän reunan mustana viivana. `toinen_paisunta`: kamera nousee pyörteen läpi (ensimmäinen
-ja ainoa nousu, ei taakse), pimeä keskus sulkeutuu lumeen ja lumi tihenee vaaleaksi seinäksi, joka lopussa on täsmälleen
-`RAJA.LUMI`.
+| # | Kohta | Tila | Todiste |
+|---|---|---|---|
+| 1 | Lumi ei ole sauvoja | tehty, osin | `s_3ruutua.png` (50,00 / 50,03 / 50,07 s, 1280 px): hiutale on pehmeäreunainen viiru, jonka pituus on sen matka yhdessä ruudussa (liike-epäterävyys), pää kirkas ja häntä ohenee; lähellä harvat suuret epätarkat, keskellä tiheä parvi, kaukana pieniä himmeitä. Peräkkäiset ruudut jatkavat toisiaan (kierre ja vaakaparvi samassa paikassa joka ruudussa). Kaukainen lumisavu on verhojen hienorakenne, ei oma kerros. Heikkoa: jäljet lukevat paikoin lyhyinä pehmeinä viiruina, ja ruutujen välinen jatkuvuus on todettu silmällä kolmesta ruudusta, ei mittauksella |
+| 2 | Lumen määrä seuraa ääntä oikein päin | tehty | taulukko alla; korrelaatio lumen määrän ja tason välillä 0,75-0,91 (mittarista riippuen) |
+| 3 | Aksentti on askel, joka jää | tehty | taulukko 2, `s_aksentti.png`, `s_aksentti_pieni.png` |
+| 4 | Syvyys koko myrskyn ajan | osin | mittaus alla: syvyys näkyy 36 % ajasta, pisin yhtäjaksoinen jakso ilman 10 s |
+| 5 | Huipun seinä on kuva | tehty | `s_huippu.png` (61-69 s, 0,5 s välein): virtaavia kieliä, vaaleampia ja tummempia alueita, suuret epätarkat lähihiutaleet, pyörre laajana kaarena, pystyvalo 65,0 s; seinän tausta erottuu vain 65,5 s (raossa metsä) |
+| 6 | R:n jälkeen ei 18 s samaa kuvaa | osin | `s_R_jalkeen.png` (74-93 s): R-rengas 76,5-78 s, pyörteet 80-85 s, harveneva hiljainen jakso 86-90 s, nousu. Hiljaisessa jaksossa 86-90 s kuva on edelleen samankaltainen (musiikki on hiljainen) |
+| 7 | Pyörre on osa virtausta | tehty | `s_kontakti.png` 0:32, 0:52, 1:02: kaartuvia viiruja yli puolen kuvan leveyden, pyörre syntyy puuskasta ja hajoaa; `s_3ruutua.png` |
+| 8 | Loppu | tehty | `s_nousu.png`, mittaus alla: hiutaleet pehmenevät ja sulavat kuvaan 4,5 s aikana (melt), eivät katoa kerralla; virtaus ylös, ei oikealle |
 
-**Siemenen kuva.** Horisontti (matala, kalpea valo), tumma massa kaukana (metsän reuna), sileät kummut (reunan profiili) ja lumi
-palaavat lähes alun näköisinä, mutta ilman valoa ja valtavassa tilassa. Kasvu: tässä maailmassa kuvaan on tullut uutena ainoastaan
-tila ja sää; siemenen ele (jousten tumma aalto) on kasvanut koko tilaksi eli myrskyksi.
+### 1.1 Lumen määrä vs äänen taso (kohta 2)
+Mittaus (`mittaa.py`, 0,5 s välein koko videosta, taso `build/rattle_koko/korvat.json` `taso_dbfs`, 1,5 s tasoitettu):
+- Lumen määrä, mittari "teräväreunaisten kirkkaiden pisteiden osuus": myrsky 873-936 s r = +0,62; koko väli 856-945 s r = +0,75; hiljainen jakso 915-936 s r = +0,95; alle -35 dBFS r = +0,91 (34 pistettä).
+- Lumen määrä, mittari "kirkkaiden hiutalepisteiden lukumäärä" (kynnys 8 / 12 / 16): r = +0,91 / +0,88 / +0,82 (myrsky 873-936 s).
+- Kirkkaus vs taso: r = +0,86 (873-936 s). Vedoksessa 5 kriitikko mittasi lumelle r = -0,6 ja kirkkaudelle 0,79.
+- Taso dBFS / kirkkaus / lumi-% (2 s välein otteita): 877,9 -29 / 62 / 6,9; 891,9 -20 / 92 / 8,2; 901,9 -30 / 65 / 4,0; 909,9 -17 / 117 / 5,5; 919,9 -37 / 51 / 3,6; 923,9 -46 / 54 / 1,5; 925,9 -37 / 53 / 5,6; 933,9 -49 / 48 / 1,5; 939,9 -25 / 76 / 7,0.
+- Heikkous: myrskyn sisällä korrelaatio on vain 0,62, koska kirkas valkoinen seinä (907-913 s) piilottaa hienoa lunta (lumi-% 4,5-5,5 huipulla, ei suurinta).
 
-**Kameran reitti.** Alku `RAJA.PIMEA_MASSA`: kamera on lehvästökerrosten sisällä ja ajaa niiden läpi (viisi kerrosta, jokaisen
-aukko kasvaa maailmassa; mikä täytti kuvan, osoittautuu metsän reunan oksistoksi ja rungoiksi, jotka valuvat kuvan reunoille).
-Sitten tasainen hidas ajo suoraan eteen jään yli silmänkorkeudella (1,7 m), pieni viistous parallaksia varten. Vauhti kasvaa
-vain suuressa käänteessä (jousten voimistuminen kasvusta Q:hun) ja hidastuu R:n jälkeen; se ei reagoi iskuihin. Pyörteessä kamera
-ajaa pimeää keskusta kohti. `toinen_paisunta`: nousu (korkeus kasvaa, horisontti vajoaa hitaasti, alle 20 °/s), lumi kiihtyy
-alaspäin. Loppu: lumi tihenee seinäksi ja kuva on `RAJA.LUMI`.
+Toteutus: intensiteetti = 0,55 · taso (dBFS-kuvaaja -52...-16 dBFS) + 0,25 · jousten taso + 0,20 · uusien sävelten tiheys + fraasin nousu; ohjaa lumen tiheyttä, tuulen nopeutta, verhojen peittoa, rakoja ja hiutaleiden kontrastia. Koneen kuulemat aksentit (`d.aksentit`) antavat pieniä puuskia (ei leikkauksia).
 
-**Kuunteluoppaan rivi → kuvassa → signaali** (rivit: `annotations/kuunteluopas.md`, 14:05–15:45)
+### 1.2 Aksentit (kohta 3), `signaalit2.log` 0,1 s välein
+Lähestyvän seinän etäisyys z (lähin seinäkerros, alkuarvo 9000 -> 6), kertymä u on monotoninen ja hyppää aksentissa:
+| t (s) | u | lähimmän seinän z | valo | lumen tiheys |
+|---|---|---|---|---|
+| 870,1 | 0,279 | 1170 | 0,72 | 0,13 |
+| 870,2 (pieni aksentti) | 0,292 | 1064 | 0,72 | 0,14 |
+| 870,5 | 0,427 | 396 | 0,92 | 0,27 |
+| 871,95 | 0,649 | 78 | 0,96 | 0,41 |
+| 872,3 (iso aksentti `myrsky_aksentti_537`, 872,0) | 0,868 | 16 | 1,34 | 0,75 |
+| 873,0 | 1,0 | 6 | 1,21 | 0,72 |
+Pieni aksentti vie rintaman 63 % lähemmäs 0,3 s:ssa, iso aksentti 80 % lähemmäs 0,3 s:ssa; kumpikaan ei palaa (u ei laske, valo jää uudelle tasolle). Askel on jatkuva noin 0,3-0,4 s:ssa, jolloin se on ruudusta ruutuun kasvava (`s_aksentti.png`: 26,43 s alkaen kuva on tihentynyt, kirkastunut ja metsän reuna näkyy, ja pysyy sellaisena 27,2 s asti). Latvojen puuska: `uSway` nousee 0,67 -> 0,95 -> 1,25 (kumipuusäännön raja noin 4 %). Latvoja ei ole kuvassa lähellä; lumen pöllähdys latvoista on kaukaisimman verhon kaista horisontin kohdalla.
 
-| Rivi | Mitä kuvassa tapahtuu | Signaali |
-|---|---|---|
-| 14:05 Lähes hiljaisuus (`hiljaisuus_2_alku`) | metsän reuna, jää, lähes paikallaan oleva lumi; kamera ajaa tummuuden läpi ulos; äänen elementit poissa | ei signaalia (hiljaisuus); kameran vauhti tasainen |
-| 14:17 Myrsky näkyy (`myrsky_nakyy`) | horisontissa nousee hitaasti matala lumiseinä, ei vielä liiku; horisontin valo aavistuksen | jousten voima (`d.koko`, hidas) ja kuvaan nousun aikataulu ankkurista |
-| 14:25 Toinen hiljaisuus päättyy (`hiljaisuus_2_loppu`) | seinä alkaa kasvaa hitaasti | lähestymisen kertymä (jousten voiman integraali) |
-| 14:27 Nopea voimistuminen (`myrsky_kasvu`) | kuusi kerrosta lähestyy, lähin ensin; lumi tihenee ja alkaa viirua | sama kertymä; `d.koko` → lumen tiheys |
-| 14:33 Talvimyrsky iskee (`myrsky_iskee`) | kerrokset ovat päällä ja menettävät eronsa; lumi viiruja joka syvyydessä; pimeä pyörre alkaa pienenä | kertymä = 1 tässä ankkurissa; `d.koko` → tiheys ja massan liike |
-| 14:50 Q (`Q_koko_metsa`) | pystysuora valo kerrosten läpi iskun ruudussa, metsän reuna mustana viivana hetken; maan sysäys pyörteen pulssina | `d.iskut` ankkuri; `d.matala` → pyörteen hengitys |
-| 15:10 Myrskyn voimakkain (`myrsky_huippu`) | tihein lumi, toinen pystyvalo | `d.iskut`; `d.koko` |
-| 15:23 R (`R_vasket`) | kolmas pystyvalo; jälkiaalto | `d.iskut` |
-| 15:35 Huuto alkaa (`toinen_paisunta`) | nousu: lumi vajoaa kuvassa alaspäin yhä nopeammin, pimeä keskus sulkeutuu | nousun aikataulu ankkureista; `d.korkea` → nousun vauhti |
-| 15:45 Huuto (`huuto`) | kuva on täsmälleen `RAJA.LUMI` | ankkuri |
+### 1.3 Syvyys (kohta 4)
+Mittari: harjan tumma kaista horisontin kohdalla vs yläpuolinen alue (`mittaa.py`, `syvyys_nakyy`). Q-10 s ... R: syvyys näkyy 36 % näytteistä, pisin yhtäjaksoinen jakso ilman syvyyttä (huipun +-3 s pois) 10,0 s. Aiemmin (edellinen renderi) 19 % ja 20,5 s. Raot ovat pystysuuntaisia kaistoja, jotka kulkevat tuulen mukana ja avautuvat, kun jouset hiljenevät (`s_syvyys_Q.png`). **Ei täytä "muutaman sekunnin välein" -vaatimusta täysin: 10 s aukko on yhä.**
 
-## 2. Toteutus ja tarkistus (katsottu stilleistä `runs/maailma_10/tark/`, viimeisin arkki `tark/arkki.png`)
+## 2. Aiemmat kohdat (kierros 1) ja kunnossa pidetyt
+- Myrskyn nousu (`myrsky_nakyy` -> `myrsky_iskee`) koodissa ennallaan (aksentin 30 %:n askelosuus on lisäys vain välille myrsky_kasvu -> myrsky_iskee).
+- Q (44,9 s) ja R (77,4 s) pystyvalo iskun ruudussa; rengas; huipun pystyvalo 65,0 s (`s_huippu.png`).
+- Rajakuva: alku ennallaan, loppu = `rajakuva(LUMI)`, ristikuva 2,4 s.
+- Nousu: virtaus ylös, hiutaleiden seuranta (`suunta2.py`, 960 px): 93,5 s 7,6 px ylös (dx -4), 95,0 s 4,7 ylös (dx +3), 96,5 s 4,1 ylös (dx +5). Vaakaliike lähes poissa (edellisellä kierroksella +7...+16).
+- Kumipuut: latvojen siirtymä korkeintaan noin 4 % harjan korkeudesta (laskettu; liike on liian pieni nähtäväksi 0,5 s ruuduissa), maa ja kummut eivät liiku, harjan muoto ei riipu ajasta. Todettu koodista ja luvuista, ei mittauksesta.
 
-**Metsä elää (ohjaajan korjaus 10.11.2026).** Metsän reunan latvat huojuvat tuulessa (`uSway`: ääriviivan hienotekstuuri siirtyy sivulle
-hitaalla siniaallolla; kummut ja maa eivät liiku); alun lehvästö ja rungot taipuvat korkeuden suhteessa, tyvi pysyy. Signaali:
-`huojunta(t)` = 0,12 + 0,9 · jousten voima (`d.koko`, keskiarvo +-1,6 s) + osa lähestymisestä; hiljaisuudessakin heikko. Mikään ei
-kasva, kutistu tai pompi nuottien mukana. Huojunnan näkyvyys stilleistä on vähäinen (pieni amplitudi): liike on varmistettu vain
-koodista ja yksittäisistä ruuduista, ei liikesarjasta.
+## 3. Mikä jäi heikoksi
+- Syvyys ei näy yhtäjaksoisesti: pisin aukko 10 s (kohta 4 yllä).
+- Lumi-korrelaatio myrskyn sisällä 0,62 (huipulla hienoa lunta on vähän).
+- R:n jälkeinen hiljainen jakso (n. 86-90 s) on musiikin mukaisesti rauhallinen mutta samankaltainen (ero 5 s:n keskikuvien välillä 4-5 harmaasävyä, myrskyn sisällä 6-17).
+- Pyörteet ovat suuria ja kiertävät koko kuvaa; aksentin kohdalla ja Q:n jälkeen (0:52) kierre on paikoin hallitseva ja lumi näyttää kiertyvän liikaa.
+- Lähihiutaleet ovat epätarkkoja soikioita; "pehmeät" lähihiutaleet lukevat paikoin tahroina.
+- Kriitikkoa ei ajettu.
 
-**(a) Säännöt 0–21 ja 4d 1–19** (T = toteutuu, E = ei koske, H = heikko)
-| Sääntö | Tila | Ruutu |
-|---|---|---|
-| 0 ääni ohjaa | T | lumen tiheys, pyörteen kasvu, valo ja huojunta mitatuista signaaleista (`kuvaus`); tremolo-väre jäi tekemättä (H) |
-| 1 kamera eteen/sisään | T | 846–873 ajo, nousu T8:sta |
-| 2 pysähdys vain nimetyissä | T | ei pysähdystä |
-| 3 ei pyörimistä, <20 °/s | T | horisontti vajoaa 0,14 / 9 s (noin 7 °/s) |
-| 4 kamera ei reagoi iskuun | T | vauhti sstep-käänteissä, ei iskuissa |
-| 5 siirtymä ≥4 s, jatkuva | T | alku 846–854 (viisi lehväkerrosta, aukko kasvaa), loppu 936–945 |
-| 6 kolme kerrosta | T / nimetty poikkeus | avoin maailma: taivas, reuna, jää; myrskyssä kerrokset yhtenevät (873→) |
-| 7 puhuja lähemmäs | E | |
-| 8 ei pahvia | T | |
-| 9 metsä näkyy | osin | metsän reuna matalana massana horisontissa ja alun lehvästö; metsä on tässä maailmassa reuna |
-| 10–11 iskun elementti ympäristössä | T | 890,5; 910,6; 923: pystyvalo + metsän reuna ruudussa |
-| 12 enintään 3 liikkuvaa | T | |
-| 13 | E | |
-| 14 valolla lähde | T | horisontin hajavalo, pystyvalo |
-| 15–16 punainen / kajo | T | ei kumpaakaan |
-| 17 | T | |
-| 18 hiljaisuus | T | 846–865: ei horisontin hohtoa, lumi lähes paikallaan, reuna+jää+lumi |
-| 19–21 | T | koodilla, ei hahmoja, ei tekstiä |
-| 4d.1 metsä pysyvä/elää | T | ks. yllä |
-| 4d.5 / 17 horisontti, ei piikkejä | T | sileät kummut (`ridgeFar`) |
-| 4d.10 jouset näkyvät | T | tiheys, huojunta, valo |
-| 4d.13 kamera ei maan läpi | T | korkeus 1,7 m maasta |
-| 4d.16 parallaksi | T | viisto eteneminen (`camX`) |
-| 4d.18 ei teräviä vuoria | T | |
-| 4d.20 valo ja varjo | osin | vastavalo lehvästön reunassa alussa, pystyvalo |
-| muut (2, 3, 4, 6–9, 11–12, 14, 19, 21–22) | E / T | ei puita (4d.14, 19), revontulia ei |
-
-**(b) Kuunteluoppaan rivit.** 14:05 näkyy (tyhjä jää, reuna). 14:17 näkyy osin: seinä nousee 857→868 vaaleana nauhana
-horisontissa, mutta on heikko ja matala. 14:25 osin. 14:27 näkyy (seinä kerroksittain, 866–869). 14:33 näkyy (viirut, pyörre). Q, huippu,
-R näkyy (pystyvalo + reuna). 15:35 näkyy (nousu, pyörteen sulkeutuminen, tihenevä lumi). 15:45 näkyy (LUMI).
-
-**(c) Rajakuvat.** Alku 845,6 s: ruutu on `rajakuva(PIMEA_MASSA)`, keskiarvo (22, 31, 34), hajonta 1,5–2 (kohina). Loppu 945,0 s: `rajakuva(LUMI)`,
-keskiarvo (117, 124, 137); 944,9 ja 945,0 samannäköiset. Alusta maailma avautuu 846→854 (>3 s), loppuun ajetaan 936→945.
-
-**(d) Omat lisäykset.** Pimeän pyörteen kierto ja sen sulkeutuminen nousussa (tuotu briefistä: "pimeä pyörre"; kierto Turner-viite
-tutkimus luku 9). Paljaan jään laikut (peilikuva; tyyliohje 4b kuvatapa 5 / referenssit 3 ja 11). Hajavalo horisontissa (ilman sitä reuna ei erotu).
-
-**(e) Heikkoa, rehellisesti.**
-1. Kirkkaus: lumiseinän saapuessa (869–871) kuva on tasaisen vaalea harmaa ja 871,5 s tummuu äkisti sisustaan. Hyppy on kuvassa näkyvä (vakavin).
-2. Lumiseinä 857–866 on liian himmeä ja matala: "näkyy" vain osin.
-3. Lähellä olevat hiutaleet ovat kapselimaisia, ja viirut ovat siistejä: yleisvaikutelma hieman digitaalinen.
-4. Alun lehvästö on nopeasti tehty tupsukohinaa, ei uskottava kuusi; aukko avautuu ensin pienenä soikiona.
-5. Jään pinta on yksitoikkoinen etualalla. Huojunta ja tremolo-väre ovat hennot. Liikesarjoja (0,2 s) ei ehditty katsoa; vain yksittäisiä ruutuja.
-
-## 3. Kriitikon korjauskierros (10.11.2026)
-
-Korjattu ja katsottu stilleistä (`tark/arkki.png`, 846,8–942 s):
-1. **Kirkkaushyppy 869–871 poistettu:** seinän kerrokset saavat värinsä etäisyydestä (lähellä = myrskyn yhteinen sävy, sama kuin sisus), joten kuva tummuu ja
-   lumi tihenee asteittain seinän saapuessa; ei tasaista ruutua, ei pimenemistä. Lumi alkaa jo ennen saapumista (`ulko`-tiheys kasvaa lähestymisen mukana).
-2. **Metsä ja siemen hiljaisuudessa:** horisontissa on nyt matala tumma latvuston massa (kolme latvuskokoa) sileiden kumpujen päällä, latvat huojuvat,
-   horisontin hajavalo on voimakkaampi; jää on vaaleampaa lunta ja lammet harvinaisempia. Kameran etenemisen näkee jään kuvioista ja lumesta; **hiljaisuuden ajoa ei ole varmistettu liikesarjasta** (vauhti 0,7 m/s on hidas).
-3. **Myrsky:** tuulen suunta seuraa melodian kaarta (`d.melodia`, keskiarvo 3 s), maa ja metsän reuna vilahtavat lumen takaa puuskan hellittäessä (`lasna(t)` = 1 − jousten voima); tiheys ja huojunta jousten voimasta. Pystyvalo on suora pystysuora leikkaus (ei siksak). Etäisyyskerroksia on silti vain lumen syvyyskerrokset: myrskyn 66 s on yhä melko yhdenmukaista (**heikkoa**).
-4. **Nousu:** nousun alussa maa ja horisontti vilahtavat ja vajoavat, lumi tihenee kerroksittain (kaukaiset kerrokset ensin) LUMI-kuvaan; pyörre sulkeutuu. 937 s kuvassa vilahtava maa näkyy vielä kulmikkaana suorakulmiona (**heikkoa**).
-5. **Alun aukko:** kolmen limittyvän epäsäännöllisen aukon yhdiste, keskus ylempänä (ei horisontin jakamaa soikiota); 847,6 s näkyy vielä pyöreähkö vaalea läiskä vasemmalla (**heikkoa**). Lumiseinän yläreuna ei ole enää pystyraidoilla.
+## 4. Muutokset kierroksella 2
+`snowAt` kirjoitettu uusiksi (liike-epäterävyys, syvyysmittakaavat); jousten taso dBFS-signaalista; aksentin askel 30 % lähestymismatkasta ja pysyvä valo/tiheys; verhojen yhteinen rakokenttä; huipun seinän rakenne; pyörteet suurempia ja hiutaleita kiertäviä; pienet puuskat koneen kuulemista aksenteista; sulaminen LUMIksi 4,5 s; ylösvirtaus ilman sivuliikettä.
