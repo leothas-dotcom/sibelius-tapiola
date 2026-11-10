@@ -832,3 +832,18 @@ t. 538, fff t. 540). Mitattu: jyrkin tason hyppy on kohdassa 14:32,0 (+8 dB kymm
 Ohjaaja kysyi, siirretäänkö ankkuri tasan kohtaan 14:30. Käyttäjä:
 
 > Annan ajat aina suurin piirtein. SINUN TEHTÄVÄ ON KUULLA NE OIKEIN!!!!
+
+## 10.11.2026 ilta: vedos 5 ja mobiilipalaute
+
+Mobiilin kautta annettu palaute on kirjattu sanatarkasti palautelistaan (`docs/projekti.md` luku 2, rivit 60-79; kirjannut
+mobiili-istunto). Pääistunnossa käyttäjä:
+
+> Näyttää upealta. Kiitos!
+>
+> Katsoisitko palautteet, jotka laitoin mobiilin kautta. Ota huomioon tyyli, tutkimus ja kuvakäsikirjoitus. Pyri kuuntelemaan
+> erityisesti loppua tarkemmin. Olen antanut sinne muutamia asioita jotka eivät kuulu. Mutta koita löytää kuunteluoppaan mukaan
+> vielä enemmän.
+
+> Korjaa samalla muut puutteet, jotka on kerätty samaan dokumenttiin. Käytä kriitikkoa avuksesi tarkistamaan että kaikki
+> palautteet on korjattu
+

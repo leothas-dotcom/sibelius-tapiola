@@ -660,6 +660,65 @@
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
       "peruste": "spektri.u8: koko taso −17,6 → −12,9 dB kohdassa 871,9–872,0 s (jyrkin hyppy välillä 867–874 s); pienempi kohouma 870,2 s; käyttäjä kuuli aksentin kohdassa 14:30; partituuri t. 537 aksentit kaikilla jousilla"
+    },
+    "N_vasket_takovat": {
+      "t": 706.4,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "taso -19...-22 dBFS 698-710 s, huippu 710 s, putoaa 711 s; matalan kaistan alut 706,41 / 708,27 / 709,54; partituuri t. 413-416",
+      "t_loppu": 710.9
+    },
+    "jousten_kommentit": {
+      "t": 764.9,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tarkat alut: keski 764,89, korkea 765,43; tason huiput 12:44, 12:50, 12:55, 13:00-13:01 (-29 dBFS, välissä -34...-38)",
+      "t_loppu": 781.0
+    },
+    "jousten_nousu_473": {
+      "t": 781.2,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tarkat alut matalassa kaistassa 781,21 ... 785,31 (yksitoista alkua); pohja tulee 13:02, ylälinja a3 13:04; pohja katoaa 13:05",
+      "t_loppu": 785.3
+    },
+    "P_taite_494": {
+      "t": 813.6,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "koko taso -19 dBFS 13:29-13:33, putoaa 813,57 s (5 dB / 0,2 s) tasolle -28; keskikaistan alku 812,57 (jousten ff-kuvio)"
+    },
+    "puuska_499": {
+      "t": 821.0,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "ylärekisterin huippu 821,6 s (-13 dB), 89 uutta säveltä sekunnissa kohdassa 13:41; koko taso +4,4 dB kohdassa 821,57",
+      "t_loppu": 822.2
+    },
+    "vasket_myrsky_1": {
+      "t": 892.0,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tason huiput 14:52 (-18), 14:58 (-20), 15:04-15:10; tarkat alut matala 892,02 / 898,97 / 903,34 (voima yli 0,45)"
+    },
+    "vasket_myrsky_2": {
+      "t": 898.97,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tason huiput 14:52 (-18), 14:58 (-20), 15:04-15:10; tarkat alut matala 892,02 / 898,97 / 903,34 (voima yli 0,45)"
+    },
+    "vasket_myrsky_3": {
+      "t": 903.34,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tason huiput 14:52 (-18), 14:58 (-20), 15:04-15:10; tarkat alut matala 892,02 / 898,97 / 903,34 (voima yli 0,45)"
+    },
+    "vasket_takovat_viimeinen": {
+      "t": 910.04,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "tarkat alut keski 910,04 / 910,28 / 910,49 / 910,71 (neljä iskua 0,22-0,24 s välein, -15 dBFS): sama kuvio kuin 10:28,22 (viisi iskua)",
+      "t_loppu": 910.9
     }
   }
 }

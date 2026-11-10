@@ -386,13 +386,58 @@ def plot(d, EdB, tf, semis, longs, bass, A, B):
     print("kuva:", png)
 
 
+def alut(d):
+    """Tarkat äänten alut (noin 6 ms) kolmelta kaistalta: kuvan rytmiset elementit (nymfien valot, vaskien iskut, askeleet)
+    sidotaan näihin. Spektrivuon positiivinen muutos kaistoittain, huiput paikallisen kynnyksen yli.
+    Kirjoittaa <paketti>/alut.json: {"matala": [[t, voima], ...], "keski": [...], "korkea": [...]}; t on kuuntelukopion aikaa,
+    voima on huipun korkeus suhteessa kaistan mediaanihuippuun."""
+    t0 = float(json.loads((d / "prepare.json").read_text(encoding="utf-8")).get("start", 0.0))
+    y, sr = sf.read(d / "clean_mono.wav")
+    if y.ndim > 1:
+        y = y.mean(axis=1)
+    y = y.astype(np.float32)
+    hop, nfft = 256, 2048
+    out = {}
+    kaistat = {"matala": (55.0, 260.0), "keski": (260.0, 1050.0), "korkea": (1050.0, 5000.0)}
+    chunk = 120 * sr
+    acc = {k: [] for k in kaistat}
+    for s0 in range(0, len(y), chunk):
+        a0 = max(0, s0 - 2 * sr)
+        seg = y[a0:min(len(y), s0 + chunk + 2 * sr)]
+        S = np.abs(librosa.stft(seg, n_fft=nfft, hop_length=hop)) ** 2
+        fr = librosa.fft_frequencies(sr=sr, n_fft=nfft)
+        for k, (flo, fhi) in kaistat.items():
+            m = (fr >= flo) & (fr < fhi)
+            L = np.log1p(1e4 * S[m])                                  # puristettu teho: hiljaisetkin alut erottuvat
+            flux = np.maximum(L[:, 1:] - L[:, :-1], 0.0).sum(axis=0)
+            flux = np.concatenate([[0.0], flux])
+            lo = (s0 - a0) // hop
+            hi = lo + int(np.ceil(min(chunk, len(y) - s0) / hop))
+            acc[k].append(flux[lo:hi])
+    fs = sr / hop
+    for k in kaistat:
+        f = np.concatenate(acc[k])
+        f = ndi.gaussian_filter1d(f, 1.0)
+        base = ndi.median_filter(f, size=int(fs * 0.5) | 1)            # paikallinen pohja 0,5 s
+        dev = ndi.maximum_filter1d(f, size=int(fs * 2.0) | 1) + 1e-9   # paikallinen huippu 2 s: herkkyys seuraa dynamiikkaa
+        peaks, _ = sg.find_peaks(f, distance=max(2, int(fs * 0.07)))
+        keep = [(i, (f[i] - base[i]) / dev[i]) for i in peaks if f[i] - base[i] > 0.22 * dev[i] and f[i] > 0.02 * np.percentile(f, 99.5)]
+        out[k] = [[round(t0 + i / fs, 3), round(float(v), 2)] for i, v in keep]
+    (d / "alut.json").write_text(json.dumps({"tehty": "korvat.py --alut", "hop_ms": round(1000 * hop / sr, 2), **out}), encoding="utf-8")
+    print("alut:", {k: len(v) for k, v in out.items()}, "->", d / "alut.json")
+
+
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     ap = argparse.ArgumentParser(description="korvat: yksi kuuntelutyökalu")
     ap.add_argument("dir", type=Path)
     ap.add_argument("--levytys", required=True)
     ap.add_argument("--plot", type=float, nargs=2, metavar=("A", "B"))
+    ap.add_argument("--alut", action="store_true", help="laske vain tarkat äänten alut (alut.json), ei muuta")
     a = ap.parse_args()
+    if a.alut:
+        alut(a.dir)
+        return
     EdB, tf, fs, semis, longs, bass = analyse(a.dir, a.levytys)
     if a.plot:
         plot(a.dir, EdB, tf, semis, longs, bass, *a.plot)

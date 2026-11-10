@@ -201,6 +201,16 @@ def _ohjaus(rec):
     return out
 
 
+def _alut(rec):
+    """Tarkat äänten alut kaistoittain (analysis/korvat.py --alut): [[t, voima], ...]; kuvan rytmiset elementit sidotaan näihin."""
+    pak = rec.get("paketti")
+    f = ROOT / pak / "alut.json" if pak else None
+    if not f or not f.exists():
+        return {}
+    k = json.loads(f.read_text(encoding="utf-8"))
+    return {b: k.get(b, []) for b in ("matala", "keski", "korkea")}
+
+
 def _korvat_aanet(rec):
     """Korvien kuulemat pitkät äänet ja nuotit: kuva piirtää jokaisen niistä (alku, kesto, sävel, sointi)."""
     pak = rec.get("paketti")
@@ -283,6 +293,7 @@ def main():
         "ohjaus": _ohjaus(rec),
         "pitkat": _korvat_aanet(rec)[0],
         "nuotit": _korvat_aanet(rec)[1],
+        "alut": _alut(rec),
         "analyses": [{"levytys": levytys, "paketti": str(pak.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_lahde": str(aks_file.relative_to(ROOT)).replace("\\", "/"),
                       "iskut_kynnys_z": aks.get("zmin"), "ajat_lahde": f"annotations/ajat_{levytys}.json"}],
