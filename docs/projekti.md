@@ -534,11 +534,11 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   (6) Rakentaja voi poistaa hyvän asian, jos brief väittää sitä virheeksi (ikisalon lähirungot olivat vedoksen 5 kuvaa):
   väite "tämä on edellisen vedoksen lisäys" tarkistetaan gitistä ennen kuin se kirjoitetaan briefiin.
 
-**Seuraavaksi (ohjaajan tilannekuva 11.11.2026 klo 2.50; päivitä tämä, kun tila muuttuu):**
+**Seuraavaksi (ohjaajan tilannekuva 11.11.2026 klo 1.50; päivitä tämä, kun tila muuttuu):**
 1. **Vedos 7 on valmis käyttäjän katsottavaksi** (`runs/vedos_v7/run.json`, kriitikko `runs/vedos_v7/kriitikko.md`: 25 riviä
    korjattu, 9 osittain, 0 korjaamatta; kolmesta estävästä kaksi oli todellisia (myrskyn pyörteen hyppy 14:59 ja
    metsänreunan katoaminen 15:03) ja ne korjattiin, kolmas (jään valojen määrä 6:30) on vedoksen 6 mukainen eikä sitä
-   muutettu). Koottu uudelleen korjatulla myrskyllä 11.11. noin klo 2.50. **Avoimet, käyttäjän päätettävät:** `run.json`
+   muutettu). Koottu uudelleen korjatulla myrskyllä 11.11. klo 1.45. **Avoimet, käyttäjän päätettävät:** `run.json`
    kohta `tiedossa_auki` (mm. pimeän metsän alussa 1:02 rungon vaalea pilkka ja oksa näyttävät hetken hahmolta).
 2. **Vedos 8: taika ja uhka** (rivi 95, tyyliohje 4d.37, `runs/vedos_v8/brief.md`): seitsemän Sonnet-rakentajaa, jokaiselle
    oma moduuli; lisäykset kytkimen `taika=1` takana, `taika=0` todistetaan samaksi kuin vedos 7 (0 muuttunutta jaksoa);
