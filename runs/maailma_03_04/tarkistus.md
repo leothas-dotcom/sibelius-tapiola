@@ -133,3 +133,30 @@ Katsottu stilleistä 62,6 / 64,0 / 100,7 / 190 / 195,7 / 199 s (aa=1, `tark/arkk
 - **Alku:** usva on aluksi paksu (rungot tulevat esiin hitaasti 4,5 s aikana) ja oksaseinät avautuvat 2,2–5 s; 62,6 s on vielä tasaista pimeää, 64,0 s oksamassat aukeavat. Rungot eivät ole täydessä koossa heti, mutta avautuminen on yhä läikkämäistä.
 - **Maailma 4:** latvusto tiheämmäksi ylhäällä, lumiset latvat kirkkaammiksi, petäjän tupsut isommiksi ja valoisammiksi. 190 s ruutu lukee paremmin (tumma latvusto, tähdet); **195,7 s on yhä litteä**: taivas tasaisen harmaa, petäjän latva ja oksat litteitä tupsuja. Ei korjattu loppuun.
 - Huojunta tuulessa: ei tehty näkyvämmäksi (aika loppui).
+
+## Vedos 6 (10.11.2026, täsmäkorjaus; rivit 62, 63, 64)
+
+Renderi `runs/maailma_03_04/osa.mp4`: 4242 ruutua (ffprobe), vanha talteen `runs/v6_03_04/osa_vedos5.mp4`, vanha moduuli `runs/v6_03_04/maailma_03_04_vedos5.js`. Liikesarjat ja stillit: `runs/v6_03_04/sarjat/`, `runs/v6_03_04/tark/`, `tark2/`.
+
+| Kohta | Tila | Näyttö |
+|---|---|---|
+| 1 Alku (rivi 62) | tehty | `alku_v6.png`: 0,00 s täsmälleen rajakuva; 0,2 s ohut usva ja ensimmäiset rungot; 0,4–0,6 s kaukaiset rungot himmeinä ja lähimmät vahvistuvat; 0,8 s metsä on valmis. Ei tasaista ruutua 0,2 s jälkeen, ei lohkareita. 0,4 s ruudussa on pehmeitä usvaläikkiä (epätarkkoja oksakerroksia), jotka häviävät alle sekunnissa. |
+| 2 Alttojen lumi ja usva (rivi 63) | osin | Fraasin alku = keskikaistan alku, jota edeltää vähintään 1 s hiljaisuus (d.cues.alut.keski); lumipuuska putoaa oksilta valokeilan läpi ja usvan juovat liikahtavat ohimenevästi. `altto1_v6.png` (35,4–39 s): puuska näkyy vain muutamana hiutaleena valon vieressä, hyvin hienovarainen, ehkä liian vähän. Ei katsottu toista fraasia erikseen. |
+| 3 Katse ylös ja kulku kiteeseen (rivi 64) | osin | `nousu_v6.png`: kamera nousee vain 0,32 kertaa entisen (n. 6 m, ei latvojen tasolle); rungot kapenevat ja päättyvät latvuksiin; latvukset ovat tummia massoja, joiden pinnoilla ei enää ole läikkiä; suuri petäjä päättyy kärkeen; levyt korvattu ohuilla riippuvilla neulasilla; valo kohoaa 3 m → 15 m (hFront). Kulku oksaan ja kiteeseen sulava (2:12–2:21), HUURRE viimeisenä ruutuna. Jäi auki: lähimmät rungot ovat edelleen pitkiä viistoja palkkeja 2:06–2:09 ja 2:16–2:17 (kolmen pisteen perspektiivi), latvusten reunoissa on yhä rosoisia vaaleita rajoja (2:08–2:11), ja oksa on suora ja litteä "kalanruoto", ei runsas huurteinen kuusenoksa. |
+| Koskemattomuus | ✅ | 20 s, 60 s, 100 s: keskimääräinen kirkkauden ero vanhaan 0,55 / 0,73 / 0,26 (asteikko 0–255), keskikirkkaus sama (39,6 / 42,8 / 41,6); suurimmat erot ovat lumihiutaleissa (kohta 2). |
+
+Nojaus (rivi 79):
+- Alku: tyyliohje 2.4 (siirtymä on kulku, ei hyppyjä) ja 7b (paljastuminen: usva väistyy, mitään uutta ei tuoda); tutkimus: metsän syvyys usvalla (4d.2); käsikirjoitus maailma 3 ("kamera ajaa metsän reunan läpi").
+- Alttojen lumi: tyyliohje 7b (rytmi, vuorottelu; lumi liikkuu aina, 4.26) ja 4d.1 (tuuli = musiikki); käsikirjoitus maailma 3 ("jouset → tummuus ja hengitys"); tutkimus: kuunteluopas 1:01–2:56.
+- Kuvan nousu: tyyliohje 4d.20 (valo siivilöityy latvoissa), 7b (nousu: valo kohoaa rungoista latvoihin), 4b kuvatapa 3; käsikirjoitus maailma 4 (O'Keeffe, SKVR "päivänä petäjän latvat"); tutkimus: noin 40 tahdin jousicrescendo.
+- Liike sulavaa (rivi 61): kaikki uudet liikkeet jatkuvia (veilin hajoaminen, usvapotku exp-vaimenee, kamera kuten ennen); kamera <8 °/s ennallaan.
+
+### Vedos 6, toinen kierros (ohjaajan kohdat a, b, c; lumi kaksinkertaiseksi)
+
+Renderi uudelleen lukon kautta, 4242 ruutua (ffprobe). Liikesarja `runs/v6_03_04/sarjat/nousu_v6c.png` (120–141 s, 1 s välein), stillit `runs/v6_03_04/tark3/`.
+- **Lumi (kohta 2):** puuskan voima ja hiutaleiden tiheys noin kaksinkertaisiksi (0,50 → 1,00; 0,42 → 0,60), yhä pehmeä. Ei katsottu uudelleen erillisellä sarjalla.
+- **(a) Oksa poistettu:** petäjän runko, oksat ja neulaset on poistettu kokonaan. Latvuksen aukosta tuleva hallan valo kirkastuu nousu_huippu_D:n mukana (`uTop.x`), siinä on yksi kimallus (2:06–2:14), kamera lähestyy tasaisesti, sumea vaalea huurremassa täyttää kuvan (2:15–2:17) ja siitä avautuu kuusikulmainen kide kuten ennen (2:17–2:21). Ei viivoja eikä piikkejä massassa; kiteen omat kuusi sädettä ovat ennallaan.
+- **(b) Lähimmät rungot:** niiden alfa laskee katseen kallistuessa (`up`) etäisyydellä alle 24 m; 2:06–2:13 kuvassa ei ole yhtään palkkina kuvan poikki kulkevaa runkoa. Hinta: keski- ja kaukorungot näkyvät ohuina, hieman kaarevina juovina (2:03–2:08), ja latvusten tummat massat ovat suurelta osin hävinneet (2:08–2:13 on lähinnä tumma, pehmeä kuva). "Rungot kapenevat latvuksiin" ei siis todennu selvästi.
+- **(c) Latvusten reunat:** reunat pehmeiksi (alfa-reunan leveys 0,2 → 0,9), reunavalo vaimennettu 90 %, tilalle pehmeä hehku. Rosoiset vaaleat reunaviivat ovat poissa 2:08–2:11.
+- **Auki:** pystysuora kirkas valojuova rungon vierellä 2:06–2:10 (valopilari/lit runko) on yhä; latvukset eivät lukeudu erillisinä massoina; ei vertailtu 2:00–2:05 vanhaan pikselitarkasti.
+- **Koskemattomuus:** 20 / 60 / 100 s keskiero vanhaan 0,55 / 0,76 / 0,27, keskikirkkaus ennallaan.

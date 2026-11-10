@@ -133,18 +133,17 @@ vec3 fairyAt(vec2 p) {
   for (int i = 0; i < 32; i++) {
     if (i >= uNF) break;
     vec4 A = uFA[i], B = uFB[i], C = uFC[i];
-    float age = A.z;
-    float env = smoothstep(0.0, 0.05, age) * (1.0 - smoothstep(B.x, B.x + B.y, age));
+    float age = max(A.z, 0.0);
+    float env = 1.0 - smoothstep(B.x, B.x + B.y, age);     // täysi kirkkaus alun ruudussa
     if (env <= 0.001) continue;
-    float mv = smoothstep(0.0, 0.12, age);
+    float mv = 1.0;                                          // hyppy uuteen paikkaan samassa ruudussa
     vec2 cur = A.xy, prv = C.xy, hd = mix(prv, cur, mv);
     vec2 dd = p - hd; float r2 = dot(dd, dd);
     vec2 ba = cur - prv; float L2 = dot(ba, ba), tr = 0.0;
     if (L2 > 1e-7) { float h = clamp(dot(p - prv, ba) / L2, 0.0, mv); vec2 q = p - (prv + ba * h); tr = exp(-dot(q, q) / 0.000012) * 0.10 * (0.25 + 0.75 * h) * smoothstep(0.30, 0.0, age); }
     float core = exp(-r2 / 0.000016), halo = exp(-r2 / 0.00028), outer = exp(-r2 / 0.0040);
     float lit = exp(-dd.x * dd.x / 0.004) * exp(-pow((dd.y + 0.065) / 0.05, 2.0));   // harjanteen latva valon alla
-    float tw = 0.93 + 0.07 * sin(age * 22.0 + A.x * 37.0);
-    s += SILV * A.w * env * tw * (1.7 * core + 0.32 * halo + 0.07 * outer + 0.07 * lit + tr);
+    s += SILV * A.w * env * (1.7 * core + 0.32 * halo + 0.07 * outer + 0.07 * lit + tr);
   }
   return s;
 }
@@ -309,6 +308,8 @@ async function alusta() {
   const A = d.aika, FPS = d.FPS, NF = d.NF;
   const T0 = A.pohja_katoaa, TST = A.puhaltimet_staccato, TD = A.D_pikkolo, TE = A.e_pitka_ja_kuviot, TS = A.askeleet_fis, TN0 = A.nopea_liike_1_alku, TN1 = A.nopea_liike_1_loppu;
   const TJ = A.jannitesoinnut, T1 = A.pohja_vaihtuu_D, SPAN = T1 - TJ;
+  const sstep5 = (k) => { k = clamp(k, 0, 1); return k * k * k * (k * (k * 6 - 15) + 10); };   // smootherstep: nopeus ja kiihtyvyys nollassa päissä
+  const TFALL = 8.6;                                   // pisaran laskun kesto (s)
   const TVEIL = 8.0;                                   // kalvon aukeamisen kesto (s): vähintään kolme sekuntia
   const F = 1.07;
 
@@ -369,66 +370,87 @@ async function alusta() {
     w.x = bx; w.y = by; w.viime = n[0];
   }
 
-  // keijuvalot: yksi mitattu ääni = yksi valo; korkeus kuvassa = sävelkorkeus; polku kulkee paikasta toiseen
+  // keijuvalot (vedos 6): valo syttyy täsmälleen äänen alun ruudussa (d.cues.alut: noin 6 ms tarkkuus, kaistat korkea ja keski).
+  // Alun ruutu = Math.round(t * 30); valo on täydellä kirkkaudella jo alun ruudussa ja hyppää uuteen paikkaan samassa ruudussa.
+  // Sävelkorkeus (paikan korkeus kuvassa) tulee lähimmästä nuotista (+-60 ms), muuten jatketaan edellistä. Ei tasoitusta, ei omaa sykettä.
   const yOf = (m) => lerp(0.40, 0.92, clamp((m - 72) / 28, 0, 1));
-  const accent = (n) => { const f = Math.round(n[0] * FPS); const lo = Math.max(d.taso(n[2], f - 4), d.taso(n[2], f - 6)); return clamp((d.taso(n[2], f + 3) - lo) * 3.0, 0, 1); };
-  const aksT = d.aksentit.map((x) => x.t);
-  const painotettu = (n) => aksT.some((t) => Math.abs(t - n[0]) < 0.09);
+  const AL = d.cues.alut;
+  const onsets = (kaista, a, b) => AL[kaista].filter((x) => x[0] >= a && x[0] < b).map((x) => ({ t: x[0], v: x[1], kaista }));
+  const lahin = (t, lo, hi) => { let best = null, bd = 0.061; for (const n of nuotit) { if (n[2] < lo || n[2] > hi) continue; const dt = Math.abs(n[0] - t); if (dt < bd) { bd = dt; best = n; } } return best; };
   const FA = [];
-  const voima = (n, vlk) => clamp(0.62 + 0.55 * accent(n) + (painotettu(n) ? 0.45 : 0), 0.55, 1.5) * vlk;
-  const lisaa = (n, x, y, cut, polku, vlk, laji) => {
-    const jatkuu = polku && n[0] - polku.t < 0.9;
-    FA.push({ t: n[0], x, y, px: jatkuu ? polku.x : x, py: jatkuu ? polku.y : y, v: voima(n, vlk), life: clamp(n[1], 0.12, 0.45), fade: laji === 1 ? 0.5 : 0.38, cut, laji });
-    if (polku) { polku.x = x; polku.y = y; polku.t = n[0]; }
+  const voima = (v, lisa) => clamp(0.62 + 0.55 * v + lisa, 0.55, 1.5);
+  const lisaa = (t, dur, x, y, cut, polku, vlk, laji, vv, lisa) => {
+    const tt = Math.round(t * FPS) / FPS;                                // alun ruutu
+    const jatkuu = polku && tt - polku.t < 0.9;
+    FA.push({ t: tt, x, y, px: jatkuu ? polku.x : x, py: jatkuu ? polku.y : y, v: voima(vv, lisa || 0) * vlk, life: clamp(dur, 0.06, 0.15), fade: laji === 1 ? 0.38 : 0.34, cut, laji });
+    if (polku) { polku.x = x; polku.y = y; polku.t = tt; }
   };
   const uusiPolku = (xmin, xmax, h) => ({ x: lerp(xmin, xmax, h), xmin, xmax, dir: h > 0.5 ? -1 : 1, t: -99, y: 0 });
   const sijoita = (v, hsh) => {                                          // seuraava paikka polulla: hyppy hypyltä, edestakaisin
     v.x += v.dir * (0.060 + 0.060 * hsh);
     if (v.x > v.xmax) { v.x = v.xmax - 0.02; v.dir = -1; } else if (v.x < v.xmin) { v.x = v.xmin + 0.02; v.dir = 1; }
     return v.x; };
-  const HI = nuotit.filter((n) => n[2] >= 72 && n[1] < 0.7 && n[0] >= T0 && n[0] < TE);
   {
-    let vP = uusiPolku(0.25, ASP - 0.25, 0.3), vS = uusiPolku(0.30, ASP - 0.30, 0.6), viime = -99;
-    const pS = { x: 0, y: 0, t: -99 }, pS2 = { x: 0, y: 0, t: -99 };      // staccato: kaksi rinnakkaista polkua
-    const kaytetty = new Set();
-    for (let i = 0; i < HI.length; i++) {
-      const n = HI[i]; if (kaytetty.has(i)) continue;
-      const hsh = h1(n[0] * 7.13 + n[2]);
-      if (n[0] < TST) {                                                  // 1) pohja_katoaa: harvat ensimmäiset huilujen ja klarinettien valot
-        if (n[2] < 76 || n[0] - viime < 0.45) continue;
-        if (n[0] - vP.t > 1.4) vP = uusiPolku(0.25, ASP - 0.25, hsh);
-        const x = sijoita(vP, hsh); lisaa(n, x, yOf(n[2]), TST, vP, 0.85, 0); viime = n[0];
-      } else {                                                           // 2) puhaltimet_staccato: parit, kaksi valoa vierekkäin samaa polkua
+    // 1) pohja_katoaa: harvat valot, jokainen korkean kaistan alku
+    let vP = uusiPolku(0.25, ASP - 0.25, 0.3), midP = 80, viime = -99;
+    for (const o of onsets('korkea', T0, TST)) {
+      if (o.t - viime < 0.12) continue;
+      const nn = lahin(o.t, 72, 110); if (nn) midP = nn[2];
+      const hsh = h1(o.t * 7.13 + midP);
+      if (o.t - vP.t > 1.4) vP = uusiPolku(0.25, ASP - 0.25, hsh);
+      lisaa(o.t, nn ? nn[1] : 0.15, sijoita(vP, hsh), yOf(midP), TST, vP, 0.85, 0, o.v, 0); viime = o.t;
+    }
+    // 2) puhaltimet_staccato: korkean kaistan alut; jos keskikaistan alku osuu samaan hetkeen (+-0,05 s), syntyy pari (kaksi valoa vierekkäin)
+    {
+      const kaikki = [...onsets('korkea', TST, TE), ...onsets('keski', TST, TE)].sort((p, q) => p.t - q.t), kaytetty = new Set();
+      const pS = { x: 0, y: 0, t: -99 }, pS2 = { x: 0, y: 0, t: -99 };
+      let vS = uusiPolku(0.30, ASP - 0.30, 0.6), midH = 82, midM = 72;
+      const mid = (o, nn) => { if (nn) { if (o.kaista === 'korkea') midH = nn[2]; else midM = nn[2]; } return o.kaista === 'korkea' ? midH : midM; };
+      const haku = (o) => o.kaista === 'korkea' ? lahin(o.t, 72, 110) : lahin(o.t, 60, 83);
+      for (let i = 0; i < kaikki.length; i++) {
+        if (kaytetty.has(i)) continue;
+        const o = kaikki[i], hsh = h1(o.t * 7.13 + 3.0);
         let pari = -1;
-        for (let j = i + 1; j < HI.length && HI[j][0] - n[0] <= 0.07; j++) { const df = Math.abs(HI[j][2] - n[2]); if (df >= 2 && df <= 6 && !kaytetty.has(j)) { pari = j; break; } }
-        if (pari < 0 && n[0] - viime < 0.14) continue;
-        if (n[0] - pS.t > 1.2) vS = uusiPolku(0.30, ASP - 0.30, hsh);
-        const x = sijoita(vS, hsh);
-        if (pari >= 0) { kaytetty.add(pari);
-          lisaa(n, x - 0.026, yOf(n[2]), TE, pS, 0.95, 0);
-          lisaa(HI[pari], x + 0.026, yOf(HI[pari][2]), TE, pS2, 0.95, 0); }
-        else lisaa(n, x, yOf(n[2]), TE, pS, 0.9, 0);
-        pS.t = n[0]; viime = n[0];
+        for (let j = i + 1; j < kaikki.length && kaikki[j].t - o.t <= 0.05; j++) if (!kaytetty.has(j) && kaikki[j].kaista !== o.kaista) { pari = j; break; }
+        if (o.t - pS.t > 1.2) vS = uusiPolku(0.30, ASP - 0.30, hsh);
+        const x = sijoita(vS, hsh), nn = haku(o), m1 = mid(o, nn);
+        if (pari >= 0) {
+          kaytetty.add(pari); const q = kaikki[pari], n2 = haku(q), m2 = mid(q, n2);
+          lisaa(o.t, nn ? nn[1] : 0.15, x - 0.026, yOf(m1), TE, pS, 0.95, 0, o.v, 0);
+          lisaa(q.t, n2 ? n2[1] : 0.15, x + 0.026, yOf(m2 === m1 ? m2 + 3 : m2), TE, pS2, 0.95, 0, q.v, 0);
+        } else lisaa(o.t, nn ? nn[1] : 0.15, x, yOf(m1), TE, pS, 0.9, 0, o.v, 0);
+        pS.t = Math.round(o.t * FPS) / FPS;
       }
     }
-    // 3) D_pikkolo: juova kiitää ylös kuvan yläosaan ja takaisin (korkeus = sävel, x etenee tasaisesti)
-    const vJ = { x: 0, y: 0, t: -99 };
-    const pikk = nuotit.filter((n) => n[0] >= TD && n[0] < TD1 && n[1] < 0.7 && n[2] >= 72);
-    for (const n of pikk) {
-      const u = clamp((n[0] - TD) / (TD1 - TD), 0, 1);
-      lisaa(n, lerp(0.30, ASP - 0.30, u) + 0.03 * Math.sin(n[0] * 9.0), lerp(0.40, 0.97, clamp((n[2] - 72) / 26, 0, 1)), TD1 + 0.5, vJ, 0.9, 1);
+    // 3) D_pikkolo: juova, jonka jokainen askel on juoksun äänen alku (korkea + keski); x etenee ajassa, korkeus = sävel
+    {
+      const vJ = { x: 0, y: 0, t: -99 };
+      const kaikki = [...onsets('korkea', TD, TD1), ...onsets('keski', TD, TD1)].sort((p, q) => p.t - q.t);
+      let midJ = 84, viimeJ = -99;
+      for (const o of kaikki) {
+        if (o.t - viimeJ < 0.03) continue;
+        const nn = lahin(o.t, 60, 110); if (nn) midJ = nn[2];
+        const u = clamp((o.t - TD) / (TD1 - TD), 0, 1);
+        lisaa(o.t, nn ? nn[1] : 0.15, lerp(0.30, ASP - 0.30, u) + 0.03 * Math.sin(o.t * 9.0), lerp(0.40, 0.97, clamp((midJ - 72) / 26, 0, 1)), TD1 + 0.5, vJ, 0.9, 1, o.v, 0);
+        viimeJ = o.t;
+      }
     }
-    // 4) grazioso-tanssi: kolme paikkaa eri korkeuksilla ja eri puolilla kuvaa vuorottelee, sama paikka palaa
-    const RYHMAT = [{ x: 0.36, y: 0.40, sl: 0.20, lo: 66, hi: 76 }, { x: 1.46, y: 0.52, sl: -0.18, lo: 76, hi: 84 }, { x: 0.86, y: 0.72, sl: 0.16, lo: 84, hi: 98 }];
-    const viimeR = [-99, -99, -99], polut = RYHMAT.map(() => ({ x: 0, y: 0, t: -99 }));
-    for (const n of nuotit) {
-      if (n[0] < TN0 || n[0] >= TN1 || n[2] < 66 || n[1] >= 0.9) continue;
-      const g = n[2] < 76 ? 0 : n[2] < 84 ? 1 : 2, R = RYHMAT[g];
-      if (n[0] - viimeR[g] < 0.2) continue;
-      viimeR[g] = n[0];
-      const fr = clamp((n[2] - R.lo) / (R.hi - R.lo), 0.0, 1.0);
-      const px = R.x + (fr - 0.5) * 0.46;                                // sävelkorkeus kulkee polkua pitkin
-      lisaa(n, px, R.y + R.sl * (px - R.x) + 0.05 * fr, TN1, polut[g], 1.0, painotettu(n) ? 1 : 0);
+    // 4) grazioso-tanssi: kolme paikkaa vuorottelee, sama paikka palaa; painotettu ääni (voima > 0,45) on kirkkaampi
+    {
+      const RYHMAT = [{ x: 0.36, y: 0.40, sl: 0.20, lo: 66, hi: 76 }, { x: 1.46, y: 0.52, sl: -0.18, lo: 76, hi: 84 }, { x: 0.86, y: 0.72, sl: 0.16, lo: 84, hi: 98 }];
+      const polut = RYHMAT.map(() => ({ x: 0, y: 0, t: -99 }));
+      const kaikki = [...onsets('korkea', TN0, TN1), ...onsets('keski', TN0, TN1)].sort((p, q) => p.t - q.t);
+      let midG = 80, viimeG = -99;
+      for (const o of kaikki) {
+        if (o.t - viimeG < 0.03) continue;                               // saman alun kaksi kaistaa = yksi valo
+        const nn = lahin(o.t, 60, 110); if (nn) midG = nn[2];
+        const g = midG < 76 ? 0 : midG < 84 ? 1 : 2, R = RYHMAT[g];
+        viimeG = o.t;
+        const fr = clamp((midG - R.lo) / (R.hi - R.lo), 0.0, 1.0);
+        const px = R.x + (fr - 0.5) * 0.46;                              // sävelkorkeus kulkee polkua pitkin
+        const pain = o.v > 0.45;
+        lisaa(o.t, nn ? nn[1] : 0.15, px, R.y + R.sl * (px - R.x) + 0.05 * fr, TN1, polut[g], 1.0, pain ? 1 : 0, o.v, pain ? 0.35 : 0);
+      }
     }
   }
   FA.sort((x, y) => x.t - y.t);
@@ -469,8 +491,7 @@ async function alusta() {
     const hold = sstep(TJ + 0.10 * SPAN, TJ + 0.40 * SPAN, t);
     const tR = TJ + 0.50 * SPAN, tau = Math.max(0, t - tR);
     const zD = camZ(tR) + 17 * V0 / 2.6;                 // etäisyys skaalattu kameran vauhdin mukana (vedoksen 4 pisaran kulku säilyy)
-    const g = 0.745;
-    const yD = Math.max(ICEY + 0.9, 0.5 - 0.5 * g * tau * tau);
+    const yD = 0.5 - (0.5 - (ICEY + 0.9)) * sstep5(tau / TFALL);          // vedos 6: lasku pehmenee jäälle (nopeus ja kiihtyvyys jatkuvia, ei iskeytymisnykäystä)
     const vaipuu = 1 - sstep(T1 - 0.20 * SPAN, T1 - 0.02 * SPAN, t);
     const dropA = hold * vaipuu;
     const rD = 1.5 * (0.35 + 0.65 * hold);
@@ -483,6 +504,14 @@ async function alusta() {
       leg: legato(t), urk: urk(t) * bottom, mel, pitch: pitch(t), ikkunat: ikkunat(t), twk: 0.5 + 0.5 * kide };
   }
 
+  // mittaus: pisaran keskipisteen ja säteen projektio kuvaan (p.y ylös, yksikkö = kuvan korkeus), sama kamera kuin varjostimessa
+  const pisaraRuutu = (t, s) => {
+    const uYc = lerp(0.36, 0.5, sstep(TJ + 0.40 * SPAN, T1 - 0.5, t)), pt = pitch(t), sp = Math.sin(pt), cp = Math.cos(pt);
+    const vx = xcf(s.zD) - s.cx, vy = s.yD - s.cy, vz = s.zD - s.cz;
+    const fw = vy * sp + vz * cp, up = vy * cp - vz * sp;
+    if (fw <= 0.01) return null;
+    return [+(ASP * 0.5 + vx * F / fw).toFixed(5), +(uYc + up * F / fw).toFixed(5), +(s.rD * F / fw).toFixed(5)];
+  };
   const { gl, U, piirra } = luoGL(FS_KOKO);
   const set1 = (n, v) => gl.uniform1f(U(n), v);
   julkaise({
@@ -490,9 +519,9 @@ async function alusta() {
     kamera: (t) => ({ p: [camX(t), camY(t), camZ(t)], q: [0, 0, 0, 1], shot: 'kide', cut: 0, trans: false, pitchDeg: +(pitch(t) * 180 / Math.PI).toFixed(2) }),
     kuvaus: (t) => { const s = tila(t); return {
       jouset: +s.jouset.toFixed(2), kide: +s.kide.toFixed(2), glow: +s.glow.toFixed(2), pohja: +s.bottom.toFixed(2), legato: +s.leg.toFixed(2), urkupiste: +s.urk.toFixed(2),
-      melodia: +s.mel.toFixed(1), vauhti: +vauhti(t).toFixed(2), tiheys: +tiheys(t).toFixed(2), vaikettaKuvassa: s.sparks.length, keijuvaloja: s.fairies.length, pimeysNousee: +s.rise.toFixed(2), lumiSivu: +d.kohta(sSnX, t).toFixed(2), lumiAlas: +d.kohta(sSnY, t).toFixed(2),
+      melodia: +s.mel.toFixed(1), vauhti: +vauhti(t).toFixed(2), tiheys: +tiheys(t).toFixed(2), vaikettaKuvassa: s.sparks.length, keijuvaloja: s.fairies.length, syttyy: s.fairies.filter((x) => Math.abs(t - x.t) < 0.001).length, kirkkain: +Math.max(0, ...s.fairies.map((x) => x.v * (1 - sstep(x.life, x.life + x.fade, t - x.t)))).toFixed(2), pimeysNousee: +s.rise.toFixed(2), lumiSivu: +d.kohta(sSnX, t).toFixed(2), lumiAlas: +d.kohta(sSnY, t).toFixed(2),
       askelia: s.low.filter((x) => x[0] < 3).length, ikkunatSyttyneena: [0, 1, 2].map((c) => s.ikkunat.slice(c * 6, c * 6 + 6).filter((x) => x >= 0.12).length),
-      pitchAste: +(s.pitch * 180 / Math.PI).toFixed(1), sulaa: +s.sulaa.toFixed(2), pisara: +s.dropA.toFixed(2) }; },
+      pitchAste: +(s.pitch * 180 / Math.PI).toFixed(1), sulaa: +s.sulaa.toFixed(2), pisara: +s.dropA.toFixed(2), pisaraRuutu: pisaraRuutu(t, s) }; },
     seek: (t) => {
       t = clamp(t, T0, T1);
       const s = tila(t);

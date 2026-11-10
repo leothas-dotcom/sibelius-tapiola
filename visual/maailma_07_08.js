@@ -442,7 +442,7 @@ async function alusta() {
   const T_AS = A.auringonsade, T_M = A.M_ennakko, T_END = A.M_raskaat_askeleet;
   const T_TR = A.trumpetit_patarummut_356, T_TR_END = d.cues.cues.find((c) => c.id === 'trumpetit_patarummut_356').t_end;
   const FPS = d.FPS, NF = d.NF;
-  const PAIR_Z = 4.6, ZT = 255;
+  const PAIR_Z = 4.6, ZT = 255, SUN_DX0 = 0.09;
   const tc = (t) => clamp(t, 0, NF / FPS);
   const FIXT = q.get('fix') !== null ? Number(q.get('fix')) : null;   // vain mittausta varten: kamera jäädytetään hetkeen
   const LK = Number(q.get('lk') ?? 1);                                  // vain mittausta varten: fraasin valon kerroin (0 = pois)
@@ -519,7 +519,14 @@ async function alusta() {
   };
   const sV = d.sarja((f) => vauhti(f / FPS) / FPS);
   const camZ = (t) => d.kohta(sV, clamp(t, 0, NF / FPS - 0.05)) - d.kohta(sV, T0);
-  const camX = (t) => { const z = camZ(t); return 3.4 * Math.sin(z / 34) * sstep(0, 14, z); };
+  // vedos 6 (rivi 72): kameran sivusiirtymä. Aurinko (ruudulla SUN_DX) saa näkyä kokonaan pöydän keskirungon ja oikean rungon välisestä aukosta:
+  // kamera siirtyy jatkuvasti sivuun allegro_359:stä auringonsateeseen (smoother, ei nykäyksiä) ja pitää paikan siitä eteenpäin, jolloin aukko on auringon kohdalla.
+  // Siirtymä lasketaan geometriasta (aukon keskikohta = pöydän keskirunko + 14,5 m; etäisyys pöytään pysähdyksessä), ei käsin.
+  const camX0 = (t) => { const z = camZ(t); return 3.4 * Math.sin(z / 34) * sstep(0, 14, z); };
+  const smoother0 = (k) => { k = clamp(k, 0, 1); return k * k * k * (k * (k * 6 - 15) + 10); };
+  const GAPX = 14.5;                                                                             // pöydän rungot x = -29, 0, 29 (säde 5,2): aukon keskikohta x = 14,5
+  const OFS = GAPX - (SUN_DX0 / 1.07) * (ZT - camZ(T_AS)) - camX0(T_AS);
+  const camX = (t) => camX0(t) + OFS * smoother0((t - T_AL) / (T_AS - T_AL));
 
   // ---- usva ja lumi virtaavat (kertymät): kolme syvyyskerrosta eri suuntiin; voima: hitaat_soinnut, fraasit ja allegro ----
   const soin = (t) => sstep(T_SO - 1, T_SO + 3, t);
@@ -536,7 +543,7 @@ async function alusta() {
   const flick = (t) => sstep(0.34, 0.50, cdur(t)) * sstep(T_CV - 1.0, T_CV - 0.2, t) * (1 - sstep(T_AS - 3.0, T_AS - 0.5, t));   // kolme välähdystä: valo pääsee hetkeksi runkojen raoista (kirkkautta, ei liikettä)
   const flood = (t) => sstep(T_AS - 3.0, T_AS + 0.8, t) * (1 - 0.95 * sstep(T_M, T_M + 3.0, t));       // auringonsade: valo täyttää salin; M:ssä lähde peittyy
   const sunB = (t) => { const h = aurH(t); return clamp(Math.max(0.70 * h + 0.5 * flick(t) * (0.3 + 0.7 * Math.sqrt(h)), sstep(T_AS - 2.5, T_AS, t)), 0, 1); };
-  const SUN_DX = 0.09, SUN_DY0 = -0.04, SUN_DY1 = 0.21;
+  const SUN_DX = SUN_DX0, SUN_DY0 = -0.04, SUN_DY1 = 0.21;
   const sunDy = (t) => SUN_DY0 + (SUN_DY1 - SUN_DY0) * aurH(t);
 
   // ---- pöydän valo: urkupiste ja matala taso; sammuu hiljaisessa jaksossa; punainen aurinko vie sen ----

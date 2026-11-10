@@ -33,3 +33,32 @@ Rajakuvat HUURRE ja JAA, pisara ja sen kulku, linnat (kolme kumpua), basson aske
 - Etenemisen parallaksi näkyy alaosan lähiharjanteissa, ei isossa kuvassa; yli 10 s jaksoja, joissa vain lumi ja lähiharjanteet liikkuvat (esim. 12-25 s), on.
 - Ei tehty: kumipuutodiste voimakkaimmasta puuskasta liikesarjana; kuunteluoppaan taulukko (3:23-5:36 rivi riviltä) vain yllä olevilta osin.
 - Kriitikkoa ei ajettu.
+
+
+# Vedos 6 (10.11.2026): keijujen valot äänten aluissa, pisaran sulava lasku
+
+Moduuli `visual/maailma_05.js` = vedos 5 + vain alla nimetyt muutokset (vanha: `runs/v6_05/maailma_05_vedos5.js`, vanha renderi `runs/v6_05/osa_vedos5.mp4`).
+Renderi `runs/maailma_05/osa.mp4`, 4014 ruutua (ffprobe), 203,0-336,8 s, lukon kautta. Videon aika = teoksen aika - 203,0 s. Todisteet: `runs/v6_05/tark/`.
+
+| # | Kohta | Tila | Todiste, mittaluku |
+|---|---|---|---|
+| 1 | Keijujen valot syttyvät täsmälleen puhaltimien äänten aluissa (`d.cues.alut`, rivi 65) | **tehty** neljässä nimetyssä kohdassa; valo täydellä kirkkaudella alun ruudussa (`Math.round(t*30)`), paikka vaihtuu samassa ruudussa, ei nousua, ei viivettä, ei omaa sykettä (`tw`-väreily poistettu), valo on poissa 0,5 s sisällä (elinaika enintään 0,15 s + häivytys 0,34-0,38 s) | `alut_203_231_korkea.txt` (pohja_katoaa, korkea): 27 alkua, 27 syttyy alun ruudussa. `alut_231_240.txt` (staccato, korkea+keski): 17/17. `alut_244_250.txt` (D_pikkolo): 8/8. `alut_281_301.txt` (grazioso): 100/108; 8 puuttuvaa ovat saman äänen toinen kaista 12-30 ms ensimmäisen jälkeen (yhdistetty yhdeksi valoksi, sama valo syttyy 0-1 ruutua aikaisemmin). Syttymisruutuja ilman alkua: 0 kaikissa. 10 s tanssista (285-295 s): `alut_285_295.txt`, alkujen ajat ja ruudut rinnakkain (52/56, loput samat yhdistetyt). Kuvassa: `tanssi_v6_82.png` (82,0-82,5 s, ruutu ruudulta: valo ilmestyy ruudussa 1:22.33 = alku 285,327 s, ei ruutua aiemmin; vanha `tanssi_v5_82.png` häipyy hitaasti) |
+| 1a | `pohja_katoaa`: harvat valot | tehty: vain korkean kaistan alut, ei muuta | `alut_203_231_korkea.txt` |
+| 1b | `puhaltimet_staccato`: parit | tehty: korkean kaistan alku + keskikaistan alku samassa hetkessä (+-0,05 s) = pari vierekkäin; yksittäiset alut yksittäisinä | `alut_231_240.txt` |
+| 1c | `D_pikkolo`: juova, jokainen juoksun ääni on askel | **osin:** jokainen mitattu alku on askel (8/8), mutta kaistoilta (korkea+keski) alkuja tulee vain 8 kpl 244,6-250 s: juoksun 247-249 s kuvioissa ei ole erillisiä alkuja (legato), joten juova on harva. Alkuja ei keksitty | `alut_244_250.txt` |
+| 1d | grazioso: painotettu ääni (`voima` > 0,45) kirkkaampi | tehty: voima > 0,45 = laji 1 + 0,35 lisäkirkkaus; kolme paikkaa ja polut kuten ennen | `alut_281_301.txt`, `tanssi_v6_82.png` |
+| 1e | Kun alkuja ei tule yli 0,5 s, valoja ei ole | tehty: kuvassa 1:22.20-1:22.30 ei uusia valoja, vanhat sammuvat | `tanssi_v6_82.png` |
+| 2 | Pallo (pisara) liikkuu sulavasti (rivi 66) | **tehty (mitattu)**. Syy: pisaran putoaminen oli vapaata putoamista (nopeus 5,9 m/s), joka katkesi jäähän ruudussa 128,67 s (`max(ICEY+0.9, ...)`), nopeus meni nollaan yhdessä ruudussa. Korjaus: lasku smootherstep-käyrällä 8,6 s, nopeus ja kiihtyvyys nolla molemmissa päissä; kuvaan projisoitu keskipiste, sama kamera | `pisara_v5_paikka.csv` vs `pisara_v6_paikka.csv` (ruutu ruudulta x, y, säde, 1. ja 2. erotus): suurin 2. erotus (y) 0,0086 -> 0,00052 kuvan korkeutta/ruutu²; suurin kaikkien akselien 2. erotuksen summa 0,0102 (piikki 128,67 s) -> 0,00068 (loiva nousu 133 s, kameran asettuminen). Ei piikkejä. Liikesarja `pisara_v6_seq.png` (122-135 s, 6 ruudun välein) vs `pisara_v5_seq.png` |
+
+## Nojaa kohtiin (rivi 79: tyyli, tutkimus, käsikirjoitus)
+- Valojen alut: tyyliohje 7b (staccato = erilliset pisteet ja välähdykset; isku/alku näkyy alun ruudussa, 12 kohta 10) ja luku 4d kohta 24 (nymfit hienovaraisesti, oikeissa kohdissa, käyttäjän "valot kuin keijut" säilyy; valon ulkonäkö ennallaan); tutkimus luku 13 (mitä äänestä voi mitata: alut); käsikirjoitus "Maailma 5. Väike" (yksi lyhyt ääni = yksi pilkahdus).
+- Pisara: tyyliohje 4d kohta 28 (hidas, ei nykimistä) ja rivin 61 sääntö (kaikki liike sulavaa, äkillinen vain äänen iskussa; pisaran laskeutumisessa ei ole iskua), luku 5 (liike jatkuvaa); käsikirjoitus "Maailma 5": kide sulaa pisaraksi, pisara putoaa jäälle.
+
+## Koskemattomat kohdat (vedos 5 vs vedos 6, ffmpeg psnr 2 s jaksoilta)
+105-107 s, 112-114 s, 116-118 s (kide, pisaran odotus): identtiset (inf dB). 1-3 s, 50-52 s, 60-62 s, 100-102 s: 43-56 dB, eroa-kuva (50 s) tasainen, ei paikallista eroa (valon syttymisaika/häivytys vaikuttaa vain keijuvalojen ruutuihin; kooderin kohina). 133,5 s: 63 dB. Jään, lumen, kameran ja harjanteiden ulkonäkö ei muuttunut koodissa.
+
+## Auki
+- D_pikkolo-juova on harva, koska juoksun äänissä ei ole kaistoilla erillisiä alkuja (mitattu 8 alkua 5,4 s aikana).
+- Grazioso: 8/108 alkua yhdistetty edelliseen (12-30 ms) yhdeksi valoksi.
+- Alun 1 s (43 dB) eroa ei eritelty ruutu ruudulta; ei vaikuta tämän kierroksen kohtiin (valot alkavat vasta ensimmäisestä korkeasta alusta).
+- `kuvaus()`:iin lisättiin mittakentät `pisaraRuutu`, `syttyy`, `kirkkain` (ei vaikuta kuvaan). Mittaskriptit: `runs/v6_05/pisara_mittaus.mjs`, `alut_todiste.mjs`.

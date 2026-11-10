@@ -10,6 +10,8 @@
 // - Valot ovat mitattuja alkuja: HP (ylä- ja keskirekisteri) ja LP (matala kaista) lasketaan d.taso:sta (spektri); mikään ei ole keksittyä rytmiä.
 // - Lumi liikkuu aina: sijainti on tuulen nopeuden kertymä (jousten voima, paisutus, äänen alkujen puuskat).
 // - Kamera: nopeus kasvaa tasaisesti I_ratsastus -> h_urkupiste_vyory + 10 s ja hidastuu vaskipulssit-kohdassa; ei pyöri.
+// v6 (10.11.2026, rivit 67-69): hyppijän jokainen kosketus on yksi mitattu alku (d.cues.alut, ruudun tarkkuus), ei autokorrelaatiota; 6:30 on enintään kahdeksan hyppijää
+// jotka koskettavat jäätä yhtä aikaa tutin alulla ja pysähtyvät H_puhaltimissa; jäällä ei ole renkaita vaan halkeamia (kosketus jatkaa halkeamaa, patarummun isku on pitkä halkeama).
 // Kohtaus on puhdas aikafunktio seek(t): kaikki kertymät lasketaan alussa ruuduittain.
 import { lataa, luoGL, julkaise, FS_ALKU, GLSL_YHTEINEN, FS_LOPPU, clamp, smooth, sstep, lerp } from './yhteinen.js';
 
@@ -20,9 +22,12 @@ uniform float uSnX, uSnY, uStr, uIceD, uGustF, uGustK, uTop, uPuffK;
 uniform vec3 uCam;
 uniform float uProf[32];   // horisontin kumpujen muoto: melodian kaari, piirtyy vasemmalta oikealle
 uniform float uLive[6];    // jousten voima kerroksittain: tummuus ja terävyys (ei muodon muutosta)
-uniform vec4 uRg[12];      // jään alla olevat valot: x, z (m), ikä 0..1, voima
-uniform vec4 uRh[12];      // renkaan koko (m), leveys (m), kumpu (1) tai rengas (0), -
+uniform vec4 uRg[8];       // jään alla olevat pehmeät hehkut (kummut, sykäykset): x, z (m), ikä 0..1, voima
+uniform vec4 uRh[8];       // hehkun säde alussa (m), lopussa (m), -, liuku (m)
 uniform int uNRg;
+uniform vec4 uCrA[80];     // halkeaman jana jään koordinaateissa: ax, az, bx, bz (m)
+uniform vec4 uCrB[80];     // voima (0..1), leveys (m), huurteen kukan koko (m, 0 = ei kukkaa), siemen
+uniform int uNCr;
 uniform vec4 uL[40];       // valon pilkahdukset: ruutupaikka x, y, heijastuksen y, voima
 uniform vec4 uM[40];       // ytimen koko (p-yksikköä), tähti, heijastuksen voima, -
 uniform int uNL;
@@ -215,20 +220,28 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
   // huurteen kimmellys: pysyviä kiteen pisteitä, ei vilku
   float gl = step(0.992, hash(floor(xz * 55.0))) * frost * (1.0 - smoothstep(0.3, 1.0, fp / 0.03));
   col += SILVER * 0.22 * gl * (0.2 + uG) * uOpen;
-  // jään alla olevat valot (matalan kaistan alut): ohut rengas leviää; kumpu on pelkkä pehmeä hehku A * exp(-r^2 / R^2) (kierros 3: ei reunaa, ei rengasta, ei säteitä).
+  // jään alla olevat valot (matalan kaistan alut): pehmeä hehku A * exp(-r^2 / R^2) (ei reunaa, ei rengasta, ei säteitä); v6: renkaita ei ole lainkaan.
   vec3 hump = vec3(0.0);                                                       // loppukorjaus: kummun valo erikseen, jään perusvalo himmennetään sen alta
-  for (int i = 0; i < 12; i++) { if (i >= uNRg) break; vec4 rg = uRg[i], rh = uRh[i];
+  for (int i = 0; i < 8; i++) { if (i >= uNRg) break; vec4 rg = uRg[i], rh = uRh[i];
     float ag = rg.z, r = length(xz - vec2(rg.x, rg.y - rh.w * ag));
-    if (rh.z > 0.5) {                                                           // kumpu: R kasvaa rh.x -> rh.y, A hiipuu pehmeästi; keskipiste liukuu katsojaa kohti (rh.w m)
-      float R = rh.x + (rh.y - rh.x) * (1.0 - (1.0 - ag) * (1.0 - ag));
-      float A = rg.w * (0.25 + 0.75 * pow(4.0 * ag * (1.0 - ag), 0.8)) * pow(1.0 - ag, 0.6) * smoothstep(0.0, 0.05, ag);
-      hump += SILVER * 0.85 * A * exp(-r * r / (R * R)) * uOpen;
-    } else {                                                                    // rengas
-      float amp = rg.w * pow(1.0 - ag, 1.4) * smoothstep(0.0, 0.04, ag);
-      float R = rh.x * (1.0 - exp(-4.0 * ag)) / (1.0 - exp(-4.0));
-      float w = max(rh.y, 0.9 * fz), dr = r - R;
-      col += HALLA * amp * exp(-dr * dr / (w * w)) * (rh.y / w) * uOpen;
-    } }
+    float R = rh.x + (rh.y - rh.x) * (1.0 - (1.0 - ag) * (1.0 - ag));
+    float A = rg.w * (0.25 + 0.75 * pow(4.0 * ag * (1.0 - ag), 0.8)) * pow(1.0 - ag, 0.6) * smoothstep(0.0, 0.05, ag);
+    hump += SILVER * 0.85 * A * exp(-r * r / (R * R)) * uOpen; }
+  // v6: halkeamat. Jana (a -> b) piirtyy kokonaan syntyruudussaan; paksuus epäsäännöllinen, reunoilla huurretta, janan päässä pieni huurteen kukka.
+  // Halkeama pysyy jään koordinaatistossa (virtaa katsojan ali jään mukana); voima (B.x) tulee ajasta (pehmeä himmeneminen).
+  { float crk = 0.0, crh = 0.0, flw = 0.0;
+    for (int i = 0; i < 80; i++) { if (i >= uNCr) break; vec4 A = uCrA[i], B = uCrB[i];
+      vec2 a = A.xy, ab = A.zw - A.xy; float L2 = max(dot(ab, ab), 1e-4);
+      vec2 m = a + 0.5 * ab; float rl = 0.5 * sqrt(L2) + 0.5 + 4.0 * fz;
+      if (abs(xz.x - m.x) > rl || abs(xz.y - m.y) > rl) continue;
+      float s = clamp(dot(xz - a, ab) / L2, 0.0, 1.0); vec2 pq = xz - (a + ab * s); float dd = length(pq);
+      float w0 = B.y * (0.45 + 1.1 * vnoise(vec2(s * 5.0 + B.w, B.w * 1.7))), w = max(w0, 0.8 * fz);
+      crk += B.x * exp(-dd * dd / (w * w)) * (w0 / w);
+      crh += B.x * exp(-dd / 0.11) * (0.25 + 0.75 * vnoise(xz * 7.0 + B.w)) * (w0 / w);
+      if (B.z > 0.0) { vec2 pb = xz - A.zw; float rb = length(pb);
+        if (rb < 3.0 * B.z) { float an = atan(pb.y, pb.x), pet = 0.5 + 0.5 * cos(6.0 * an + B.w * 6.0);
+          flw += B.x * (exp(-rb * rb / (B.z * B.z * 0.35)) * (0.35 + 0.65 * pet * pet) + 0.6 * exp(-rb * rb / (B.z * B.z * 0.03)) * 0.5); } } }
+    col += HALLA * (0.14 + 0.55 * uG) * (1.5 * min(crk, 1.2) + 0.30 * min(crh, 1.0) + 0.9 * min(flw, 1.0)) * uOpen; }
   col += HALLA * uLow * exp(-length(xz - vec2(uCam.x, uCam.z + uZI + 14.0)) / 22.0) * uOpen;
   // ajolumi: pitkiä viiruja jään pintaa pitkin katsojaa kohti ja ohi, rytmikkäinä puuskina (uRideD = kertymä m)
   // kierros 3: ei yhtenäisiä säteitä eikä puolisuunnikkaita: erillisiä matalia, pehmeitä lumiviiruja (kaksi solukokoa), jotka virtaavat katsojaa kohti
@@ -331,13 +344,19 @@ export function signaalit(d) {
     return out; };
   const HP = peaks(60, 100, 0.55, 5, T0, T1);          // ylä- ja keskirekisterin alut
   const LP = peaks(30, 52, 0.25, 4, T0, T1);           // matalan kaistan alut: bassot, patarummut
-  // ---- kuvion syke: kahdeksasosa on 4 ruutua (0,133 s; autokorrelaatio 3 s lohkoissa, viive 4 tai 8 ruutua), vaihe lukittu löydettyihin alkuihin
-  const BEAT = 4, TOUCH = [];
-  { const fa = Math.round(tG0 * FPS), fb = Math.round(tH * FPS); let lastM = 70;
-    for (let b0 = fa; b0 < fb; b0 += 90) { const b1 = Math.min(b0 + 90, fb); let bp = 0, bs = -1;
-      for (let ph = 0; ph < BEAT; ph++) { let S = 0; for (let f = b0 + ph; f < b1; f += BEAT) S += flux(f, 60, 100) + 0.5 * (flux(f - 1, 60, 100) + flux(f + 1, 60, 100)); if (S > bs) { bs = S; bp = ph; } }
-      for (let f = b0 + bp; f < b1; f += BEAT) { const act = Math.max(flux(f - 1, 60, 100), flux(f, 60, 100), flux(f + 1, 60, 100)) > 0.15, [bm, bv] = bestBin(f, 60, 100);
-        if (bv > 0.03) lastM = bm; if (act) TOUCH.push({ t: f / FPS, f, v: flux(f, 60, 100), m: lastM }); } } }
+  // ---- v6: äänten alut (cues.alut, noin 6 ms tarkkuus). Jokainen rytminen kuvan tapahtuma alkaa alun ruudussa (Math.round(t * FPS)), täydellä voimalla; ei tasoitusta, ei omaa sykettä.
+  const FR = (t) => Math.round(t * FPS);
+  const onsets = (bands, lo, hi, vmin) => { const raw = [];
+    for (const b of bands) for (const [t, v] of d.cues.alut[b]) if (t >= lo && t < hi && v >= vmin) raw.push({ f: FR(t), v });
+    raw.sort((a, b) => a.f - b.f || b.v - a.v);
+    const out = []; for (const r of raw) { const l = out[out.length - 1]; if (l && r.f - l.f < 2) { l.v = Math.max(l.v, r.v); continue; } out.push({ f: r.f, t: r.f / FPS, v: r.v }); }
+    return out; };                                                                    // alut alle kahden ruudun päässä toisistaan ovat yksi alku
+  const midiAt = (t, prev) => { let best = null; for (const n of d.nuotit) { if (Math.abs(n[0] - t) <= 0.06) { if (best === null || n[2] > best) best = n[2]; } else if (n[0] > t + 0.07) break; } return best ?? prev; };   // korkein nuotti, jonka alku on +-60 ms:n sisällä; muuten edellinen
+  const MF = onsets(['matala', 'keski', 'korkea'], tG1 - 0.05, tH, 0.22);            // 6:30 tutin alut (kaikki kolme kaistaa)
+  const tMF = MF.length ? MF[0].t : tG1;
+  const PP = onsets(['keski', 'korkea'], tG0, tMF, 0).filter((o) => o.t < tMF - 1e-4);   // pp: kuvion alut (keski ja korkea kaista)
+  { let lm = 70; for (const o of PP) { o.m = midiAt(o.t, lm); lm = o.m; } }
+  const TOUCH = PP;                                                                    // (viedään mittausta varten)
 
   // ---- kameran vauhti: tasainen kiihdytys I_ratsastus -> h_urkupiste_vyory + 10 s (kolminkertainen), sitten hidastuminen (vaskipulssit)
   const sLiike = d.sarja((f) => (d.tapahtuu('liike', f / FPS) ? 1 : 0));
@@ -376,104 +395,128 @@ export function signaalit(d) {
   const sRide = d.sarja((f) => (3 + 15 * sstep(0.3, 0.9, d.keski(f / FPS, 0.12)) * (0.5 + 0.5 * sstep(tI, tV10, f / FPS))) / FPS);
 
   // ---- valot
-  const LI = [], RG = [];
+  const LI = [], RG = [], CR = [];
   const pxs = (px) => px / 1080;
   const ahead = (c, ys) => FOC * c.h / Math.max(0.5 - ys, 0.02);
   const halfW = (c, Z) => ASP * 0.5 * (Z - c.z) / FOC;
-  const grp = (m) => m >= 78 ? 0 : m >= 66 ? 1 : 2;                                                    // viulut (kaukana) / alttoviulut (keskellä) / sellot (lähellä)
-  // kierros 3: hyppijän sijainti on kameran suhteen (x sivulle, z eteen, m). Hyppy kosketuksesta toiseen: pituus 0,35-2 m (kuvassa noin 150-300 px/s),
-  // suunta vaeltaa (ei suoraa viivaa), kaaren korkeus h = 0,3-0,8 m hypyn pituuden mukaan. Kosketukset ovat mitatun sykkeen (TOUCH) kosketukset.
-  const BAND = [[18, 28], [10, 15], [5.5, 8.5]], HOPK = 1156;                   // syvyyskaistat (m); HOPK = 1080 * 1,07 (px kuvan korkeudella)
+  const grp = (m) => m >= 74 ? 0 : m >= 62 ? 1 : 2;                                                    // viulut (kaukana) / alttoviulut (keskellä) / sellot (lähellä), sävelkorkeus lähimmästä nuotista
+  // hyppijän sijainti on kameran suhteen (x sivulle, z eteen, m). Hyppy kosketuksesta toiseen: pituus 0,35-2 m, suunta vaeltaa, kaaren korkeus h = 0,3-0,8 m.
+  // v6: kosketus = yksi mitattu alku; hyppy kulkee vain, jos seuraava alku on enintään 0,5 s päässä; muuten hyppijä jää paikalleen ja himmenee.
+  const BAND = [[18, 28], [10, 15], [5.5, 8.5]];                                // syvyyskaistat (m)
   const hw = (z) => 0.83 * z * 0.85;
-  const hopSig = (z) => 1.6 + 3.2 * clamp(1 - (z - 4) / 36, 0, 1);               // ytimen sigma (px): lähin on suurin, ydin noin 4-11 px leveä
+  const hopSig = (z) => 1.6 + 3.2 * clamp(1 - (z - 4) / 36, 0, 1);               // ytimen sigma (px): lähin on suurin
   const stepH = (s, L, g, n, wob) => { s.th += (hh(n, 2) - 0.5) * wob; s.x += L * Math.sin(s.th); s.z += L * Math.cos(s.th);
-    if (g >= 0) { const [z0, z1] = BAND[g]; if (s.z < z0) { s.z = z0 + (z0 - s.z); s.th = Math.PI - s.th; } else if (s.z > z1) { s.z = z1 - (s.z - z1); s.th = Math.PI - s.th; } s.z = clamp(s.z, z0, z1); } else s.z = Math.max(s.z, 0.8);
+    if (g >= 0) { const [z0, z1] = BAND[g]; if (s.z < z0) { s.z = z0 + (z0 - s.z); s.th = Math.PI - s.th; } else if (s.z > z1) { s.z = z1 - (s.z - z1); s.th = Math.PI - s.th; } s.z = clamp(s.z, z0, z1); }
+    else if (g === -2) { if (s.z < 2.5) { s.z = 2.5 + (2.5 - s.z); s.th = Math.PI - s.th; } else if (s.z > 30) { s.z = 30 - (s.z - 30); s.th = Math.PI - s.th; } s.z = clamp(s.z, 2.5, 30); }
+    else s.z = Math.max(s.z, 0.8);
     const w = hw(s.z); if (s.x > w) { s.x = w - (s.x - w); s.th = -s.th; } else if (s.x < -w) { s.x = -w + (-w - s.x); s.th = -s.th; } s.x = clamp(s.x, -w, w); };
   const arcH = (L) => 0.3 + 0.5 * clamp((L - 0.35) / 1.65, 0, 1);
-  const HOP = [[], [], []], ROW = [];   // pp: hyppijät ryhmittäin; mf: rintaman kosketusajat
+  // halkeama (jään koordinaatisto): jokainen kosketus jatkaa ryhmän halkeamaa yhden askeleen hyppijän reittiä, välillä haarautuu; kosketuskohdassa pieni huurteen kukka.
+  const addSeg = (t, ax, az, bx, bz, w, s, T, fl, seed) => CR.push({ t0: t, ax, az, bx, bz, w, s, T, fl, seed });
+  const chain = [null, null, null];
+  const addCrack = (g, t, X, Z, v, n, T) => {
+    const prev = chain[g]; chain[g] = { t, X, Z }; const w = 0.013 + 0.012 * v, fl = 0.18 + 0.16 * v, sd = hh(n, 41) * 40, st = 0.65 + 0.35 * v;
+    const dx = prev ? X - prev.X : 0, dz = prev ? Z - prev.Z : 0, len = Math.hypot(dx, dz);
+    if (!prev || t - prev.t > 1.6 || len < 0.05) { const a = hh(n, 42) * 6.28; addSeg(t, X - 0.28 * Math.sin(a), Z - 0.28 * Math.cos(a), X, Z, w, st, T, fl, sd); return; }
+    if (len > 0.8) { const off = (hh(n, 43) - 0.5) * 0.36 * len, mx = prev.X + 0.5 * dx - dz / len * off, mz = prev.Z + 0.5 * dz + dx / len * off;
+      addSeg(t, prev.X, prev.Z, mx, mz, w, st, T, 0, sd); addSeg(t, mx, mz, X, Z, w, st, T, fl, sd + 3); }
+    else addSeg(t, prev.X, prev.Z, X, Z, w, st, T, fl, sd);
+    if (hh(n, 44) < 0.25) { const th = Math.atan2(dx, dz) + (hh(n, 45) > 0.5 ? 1 : -1) * (0.6 + 0.5 * hh(n, 46)), bl = Math.max(0.3, (0.35 + 0.5 * hh(n, 47)) * len), mx = prev.X + 0.5 * dx, mz = prev.Z + 0.5 * dz;
+      addSeg(t, mx, mz, mx + bl * Math.sin(th), mz + bl * Math.cos(th), w * 0.7, st * 0.85, T, 0, sd + 7); } };
+  const HOP = [[], [], []], hsEnd = [];   // pp: hyppijät ryhmittäin
   { const hs = [{ x: 3, z: 22, th: 0.4 }, { x: -3, z: 12, th: -0.5 }, { x: 1, z: 7, th: 1.0 }];
-    for (const p of TOUCH) { const t = p.t, c = ci(t);
-      if (t < tG1) {
-        const g = grp(p.m), s = hs[g], arr = HOP[g], prev = arr[arr.length - 1], n = arr.length + 100 * g; let L = 0;
-        if (prev && t - prev.t < 0.9) { const dt = t - prev.t; L = clamp(0.26 * s.z * dt * (0.6 + 0.4 * hh(n, 1)), 0.35, 2.0); stepH(s, L, g, n, 1.5); }
-        else if (prev) stepH(s, 0.8, g, n, 1.5);
-        arr.push({ t, x: s.x, z: s.z, I: 0.80 * clamp(p.v / 1.2, 0.55, 1), L, h: arcH(L) });
-        RG.push({ t0: t, T: 0.55, X: c.x + s.x, Z: c.z + s.z, amp: 0.8 * 0.6 * clamp(p.v / 1.2, 0.5, 1), R: 0.030 * s.z, w: 0.0038 * s.z, dome: 0 });
-      } else ROW.push({ t, v: p.v, m: p.m }); } }
-  // mf-joukko: 32 hyppijää siemenestä; paikat log-tasaisesti 5-70 m (koko jään syvyys), sivulle koko leveydelle; suunta pääosin kohti katsojaa (z pienenee), vaeltaa
-  const NC = 32, ROWP = [];
-  { if (ROW.length && ROW[0].t > tG1 + 0.02) ROW.unshift({ t: tG1, v: 1, m: 70 });
-    const cs = []; for (let j = 0; j < NC; j++) { const z = 5 * Math.pow(14, hh(j, 5)), w = hw(z); cs.push({ x: (hh(j, 6) * 2 - 1) * w * 0.92, z, th: Math.PI + (hh(j, 7) * 2 - 1) * 1.3 }); }
-    for (let n = 0; n < ROW.length; n++) { const row = [], dt = n ? ROW[n].t - ROW[n - 1].t : 0.13;
+    for (const p of PP) { const t = p.t, c = ci(t), g = grp(p.m), s = hs[g], arr = HOP[g], prev = arr[arr.length - 1], n = arr.length + 100 * g; let L = 0;
+      if (prev && t - prev.t <= 0.5) { const dt = t - prev.t; L = clamp(0.26 * s.z * dt * (0.6 + 0.4 * hh(n, 1)), 0.35, 2.0); stepH(s, L, g, n, 1.5); }
+      else if (prev) stepH(s, 0.45, g, n, 1.5);                                       // yli 0,5 s: ei hypätä tyhjää, vain pieni laskeutuminen uuteen kosketuskohtaan
+      arr.push({ t, x: s.x, z: s.z, I: 0.80 * clamp(0.5 + 0.8 * p.v, 0.6, 1), L, h: arcH(L) });
+      addCrack(g, t, c.x + s.x, c.z + s.z, p.v, n, 6.0); }
+    for (let g = 0; g < 3; g++) hsEnd.push({ ...hs[g] }); }
+  // 6:30 tutti: enintään kahdeksan hyppijää (kolme pp-hyppijää jatkaa, viisi muuta samasta joukosta), jotka koskettavat jäätä yhtä aikaa JOKAISELLA tutin alulla (kaikki samassa ruudussa)
+  const NC = 8, ROWP = [], ROW = MF;
+  { const cs = []; for (let j = 0; j < NC; j++) { if (j < 3) cs.push({ ...hsEnd[j] }); else { const z = 6 + 10 * hh(j, 5); cs.push({ x: (hh(j, 6) * 2 - 1) * hw(z) * 0.8, z, th: (hh(j, 7) > 0.5 ? 1 : -1) * (1.9 + 0.5 * hh(j, 8)) }); } }
+    for (let n = 0; n < MF.length; n++) { const row = [], dt = n ? MF[n].t - MF[n - 1].t : 0, c = ci(MF[n].t);
       for (let j = 0; j < NC; j++) { const s = cs[j]; let L = 0;
-        if (n) { L = Math.min((0.7 + 0.8 * hh(j * 13 + n, 1)), 0.8 * s.z * dt); if (s.z > 1.2) stepH(s, L, -1, j * 31 + n, 1.0); }
+        if (n) { L = Math.min(0.30 + 0.45 * hh(j * 13 + n, 1), 0.7 * s.z * dt); if (L > 0.01) stepH(s, L, -2, j * 31 + n, 1.0); }
         row.push({ x: s.x, z: s.z, h: arcH(L * 1.5) }); }
       ROWP.push(row);
-      const c = ci(ROW[n].t);
-      for (let k = 0; k < 6; k++) { const j = (n * 7 + k * 5) % NC, a = row[j]; if (a.z < 1.8) continue;
-        RG.push({ t0: ROW[n].t, T: 0.55, X: c.x + a.x, Z: c.z + a.z, amp: 0.7, R: 0.030 * a.z, w: 0.0038 * a.z, dome: 0 }); } } }
+      const j = n % 3, a = row[j]; addCrack(j, MF[n].t, c.x + a.x, c.z + a.z, MF[n].v, 500 + n, 4.5); } }
   // puhaltimien parvi (H) ja valuminen (purskeen loppu), kiitävät valot (I, Tapio)
   { const cr = (t) => cam(t);
     let n = 0;
-    for (const p of peaks(60, 100, 0.35, 2, tH, TU - 0.4)) { const t = p.t, c = cr(t), gr = sstep(tH, TU - 1, t), k = clamp((p.m - 60) / 34, 0, 1);
-      for (let j = 0; j < 3; j++) { n++; const Z = 100; LI.push({ t0: t, life: 0.18, fade: 0.32, kind: 'parvi', fr: 'r', X: c.x + (0.4 * Math.sin(0.55 * (t - tH)) + 0.55 * (hh(n, 3) * 2 - 1)) * halfW(c, Z) * 0.95, Y: 1.5 + 20 * k + 2.0 * (hh(n, 8) - 0.5), Z,
-        I: (0.28 + 0.72 * gr) * clamp(p.v / 3, 0.5, 1), sig: 1.5, star: 0.35 + 0.3 * gr, refl: 0.40 }); } }
+    { let lm = 70; for (const p of onsets(['keski', 'korkea'], tH, TU - 0.4, 0)) { const t = p.t, c = cr(t), gr = sstep(tH, TU - 1, t), m = midiAt(t, lm), k = clamp((m - 60) / 34, 0, 1); lm = m;
+        for (let j = 0; j < 3; j++) { n++; const Z = 100; LI.push({ t0: t, life: 0.18, fade: 0.32, hard: true, kind: 'parvi', fr: 'r', X: c.x + (0.4 * Math.sin(0.55 * (t - tH)) + 0.55 * (hh(n, 3) * 2 - 1)) * halfW(c, Z) * 0.95, Y: 1.5 + 20 * k + 2.0 * (hh(n, 8) - 0.5), Z,
+          I: (0.28 + 0.72 * gr) * clamp(0.35 + 1.0 * p.v, 0.5, 1), sig: 1.5, star: 0.35 + 0.3 * gr, refl: 0.40 }); } } }
     for (let j = 0; j < 34; j++) { const t = TU - 1.7 + 1.5 * hh(j, 11), c = cr(t); LI.push({ t0: t, life: 1.2, fade: 0.1, kind: 'putoaja', fr: 'r', X: c.x + (hh(j, 12) * 2 - 1) * halfW(c, 98) * 0.95, Y: 3 + 17 * hh(j, 13), Z: 98, I: 0.75, sig: 1.5, star: 0.35, refl: 0.4 }); }
     let last = -9, nr = 0;
     for (const p of [{ t: tI, v: 1 }, ...HP.filter((q) => q.t > tI + 0.2)]) { const t = p.t; if (t < tI || t >= tVP || p.v < 0.45 || t - last < 0.18) continue; last = t; nr++; const c = ci(t), Z0 = c.z + 3 + 9 * hh(nr, 4);
       LI.push({ t0: t, life: 1.3, fade: 0.4, kind: 'kiita', fr: 'i', X: c.x + (hh(nr, 6) * 2 - 1) * 0.95 * halfW(c, Z0), Y: 0.35, Z: Z0, I: (0.40 + 0.60 * lev(t)) * (t < tV ? 0.85 : 1.1), sig: 2.2, star: 0, refl: 0.5, vz: ICE_K * camV(t) + 10 }); } }
-  // matalan kaistan alut: renkaat ja kummut (jään koordinaatisto)
+  // matalan kaistan alut: pehmeät sykäykset ja kummut jään alla (v6: ei renkaita). Patarummun isku = pitkä halkeama (DRUM, alla).
   const TAPIO_A = 0.3;
+  const pulse = (t, X, Z, amp, R0, R1, T) => RG.push({ t0: t, T, X, Z, amp, R: R0, w: R1, dome: 1 });
   { let lastR = -9, lastH = -9, sg = 0;
     for (const p of LP) { const t = p.t, c = ci(t);
-      if (t < tG0) {                                                         // paisutus: ohut rengas jokaisesta basson alusta; koko ja voima kasvavat, kuva ei vilku
+      if (t < tG0) {                                                         // paisutus: himmeä sykäys jään alla jokaisesta basson alusta; koko ja voima kasvavat, kuva ei vilku
         if (t - lastR < 0.40) continue; lastR = t; const ps = sstep(T0, tG0, t), Zz = c.pitch < -0.12 ? c.z + Math.min(c.h / Math.tan(-c.pitch), 16) : c.z + 16, pk = clamp(p.v / 0.8, 0.6, 1);
-        RG.push({ t0: t, T: 2.0, X: c.x, Z: Zz, amp: (0.012 + 0.095 * sstep(T0 + 3, T0 + TIN + 4, t)) * (0.6 + 0.5 * ps) * pk, R: 2.5 + 4.5 * ps, w: 0.12 + 0.30 * sstep(T0 + 3, T0 + TIN + 4, t), dome: 0 });
-      } else if (t < tG1) {                                                  // patarummun naputus: pieni rengas jään alla
-        if (p.v < 0.3) continue; RG.push({ t0: t, T: 1.1, X: c.x + 0.4, Z: c.z + 6, amp: 0.35, R: 1.1, w: 0.07, dome: 0 });
-      } else if (t < tH) {                                                   // marcato: suuret selvät renkaat
-        RG.push({ t0: t, T: 1.4, X: c.x, Z: c.z + 9, amp: 0.40 * clamp(p.v / 0.8, 0.6, 1.3), R: 9, w: 0.34, dome: 0 });
-      } else if (t < tI) {                                                   // patarumpujen tasainen syke (H -> taite)
-        if (t < TU || t - lastR < 0.25) continue; lastR = t; RG.push({ t0: t, T: 1.0, X: c.x, Z: c.z + 8, amp: 0.30, R: 4.2, w: 0.16, dome: 0 });
+        const R0 = 2.5 + 4.5 * ps; pulse(t, c.x, Zz, 0.35 * (0.012 + 0.095 * sstep(T0 + 3, T0 + TIN + 4, t)) * (0.6 + 0.5 * ps) * pk, R0, R0 * 1.9, 2.0);
+      } else if (t < tI) {                                                   // pp, tutti, H -> taite: patarummut ovat halkeamia (DRUM), ei renkaita
+        continue;
       } else if (t < tV - 0.1) {                                            // taite: patarumpujen syke on pehmeä hehku (ei rengasta)
         if (p.v < 0.3 || t - lastR < 0.40) continue; lastR = t; RG.push({ t0: t, T: 0.9, X: c.x, Z: c.z + 9, amp: 0.012 * clamp(p.v / 0.8, 0.6, 1.3), R: 4, w: 10, dome: 1 });
       } else if (t < tVP) {                                                  // Tapio: bassojen raskas ääni = yksi pehmeä hehku jään alla: A * exp(-r^2 / R^2), R 15 -> 60 m 2,5 s
         if (p.v < 0.45 || t - lastH < 0.9) continue; lastH = t; sg++;
         RG.push({ t0: t, T: 2.5, X: c.x + (sg % 2 ? 4 : -4), Z: c.z + 26, amp: TAPIO_A * (0.7 + 0.5 * lev(t)) * clamp(p.v / 1.0, 0.8, 1.3), R: 5, w: 9, dome: 1, vx: 21 });
-      } else if (t < tHJ) {                                                  // bassojen näppäilyt: pieniä renkaita
-        if (p.v < 0.3 || t - lastR < 0.4) continue; lastR = t; RG.push({ t0: t, T: 1.0, X: c.x - 0.5, Z: c.z + 6, amp: 0.25, R: 1.6, w: 0.06, dome: 0 }); } } }
+      } else if (t < tHJ) {                                                  // bassojen näppäilyt: pieniä himmeitä sykäyksiä (ei renkaita)
+        if (p.v < 0.3 || t - lastR < 0.4) continue; lastR = t; pulse(t, c.x - 0.5, c.z + 6, 0.014, 1.6, 4, 1.0); } } }
+  // patarummun isku: pitkä halkeama, joka juoksee jään poikki iskun ruudussa (kaikki janat syntyvät samassa ruudussa), ja himmeä valon sykäys jään alla
+  { const DRUM = onsets(['matala'], tG0, tI, 0.4).filter((o) => o.t < tH || o.t >= TU); let last = -9, nd = 0;
+    for (const q of DRUM) { if (q.t - last < 0.8) continue; last = q.t; nd++; const t = q.t, c = ci(t), n = 900 + nd;
+      const z0 = 9 + 22 * hh(n, 21), W = hw(z0) * 0.95, dir = nd % 2 ? 1 : -1, xs = c.x - dir * W * (0.8 + 0.2 * hh(n, 22)), xe = c.x + dir * W * (0.8 + 0.2 * hh(n, 23)), ze = z0 + (hh(n, 24) - 0.5) * 9;
+      const sA = 0.75 + 0.25 * clamp((q.v - 0.4) / 0.4, 0, 1), pts = [];
+      for (let i = 0; i <= 7; i++) { const u = i / 7; pts.push([lerp(xs, xe, u) + (hh(n, 30 + i) - 0.5) * 1.0, c.z + lerp(z0, ze, u) + (hh(n, 40 + i) - 0.5) * 1.8]); }
+      for (let i = 0; i < 7; i++) { addSeg(t, pts[i][0], pts[i][1], pts[i + 1][0], pts[i + 1][1], 0.034 * (0.7 + 0.6 * hh(n, 50 + i)), sA, 7.0, 0, hh(n, 60 + i) * 40);
+        if (hh(n, 70 + i) < 0.30) { const th = Math.atan2(pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1]) + (hh(n, 80 + i) > 0.5 ? 1 : -1) * (0.55 + 0.5 * hh(n, 90 + i)), bl = 1.2 + 2.2 * hh(n, 100 + i);
+          addSeg(t, pts[i][0], pts[i][1], pts[i][0] + bl * Math.sin(th), pts[i][1] + bl * Math.cos(th), 0.020, sA * 0.8, 7.0, 0, hh(n, 110 + i) * 40); } }
+      pulse(t, c.x, c.z + z0, 0.05 * sA, 5, 14, 0.9); } }
   const HUMPS = RG.filter((r) => r.vx);
   const duck = (t) => { let m = 0; for (const h of HUMPS) { const a = (t - h.t0) / h.T; if (a > 0 && a < 1) m = Math.max(m, Math.sin(Math.PI * a)); } return m; };
   const iceDim = (t) => 1 - 0.6 * sstep(tV - 0.3, tV + 0.3, t) * (1 - sstep(tVP - 1, tVP + 4, t));
-  const envF = (e, a) => smooth(clamp(a / 0.04, 0, 1)) * (1 - smooth(clamp((a - e.life) / e.fade, 0, 1)));
-  const lastIdx = (arr, t) => { let lo = 0, hi = arr.length - 1, r = -1; while (lo <= hi) { const mid = (lo + hi) >> 1; if (arr[mid].t <= t) { r = mid; lo = mid + 1; } else hi = mid - 1; } return r; };
+  const envF = (e, a) => (e.hard ? (a >= -1e-4 ? 1 : 0) : smooth(clamp(a / 0.04, 0, 1))) * (1 - smooth(clamp((a - e.life) / e.fade, 0, 1)));
+  const lastIdx = (arr, t) => { let lo = 0, hi = arr.length - 1, r = -1; while (lo <= hi) { const mid = (lo + hi) >> 1; if (arr[mid].t <= t + 1e-4) { r = mid; lo = mid + 1; } else hi = mid - 1; } return r; };
   const lightsAt = (t, cI, cR) => {
     const out = [];
     const dk = 1 - 0.5 * duck(t);
     const add = (c, X, Y, Z, I0, sig, star, refl) => { const I = I0 * dk; const a = proj(c, X, Y, Z); if (!a || I < 0.004) return; const b = refl > 0 ? proj(c, X, -Y, Z) : null;
       out.push([a[0], a[1], b ? b[1] : 0, I, pxs(sig), star, refl > 0 ? refl : 0]); };
-    // pp (kierros 3): 2-3 hyppijää eri syvyyksillä (viulut kaukana, alttoviulut keskellä, sellot lähellä); valo hyppii kaarin kosketuksesta toiseen
-    // (korkeus jäästä h * 4u(1-u)), heijastus jäässä lähestyy ja etääntyy kaaren mukana. Sijainnit ovat kameran suhteen (x, z m), joten hyppijä pysyy kuvassa.
-    if (t >= tG0 && t < tG1) for (let g = 0; g < 3; g++) { const arr = HOP[g], i = lastIdx(arr, t); if (i < 0) continue; const a = arr[i], b = arr[i + 1];
-      if (b && b.t - a.t < 0.9 && b.t <= tG1) { const s = (t - a.t) / (b.t - a.t), e = Math.max(Math.exp(-(t - a.t) / 0.05), Math.exp(-(b.t - t) / 0.05)), hy = 0.06 + b.h * 4 * s * (1 - s), z = lerp(a.z, b.z, s);
-        add(cI, cI.x + lerp(a.x, b.x, s), hy, cI.z + z, a.I * (0.45 + 0.55 * e), hopSig(z), 0, 0.55); }
-      else { const age = t - a.t; if (age < 1.6) add(cI, cI.x + a.x, 0.06, cI.z + a.z, a.I * 0.45 * Math.exp(-age / 0.45), hopSig(a.z), 0, 0.5); } }
-    // mf (kierros 3): leikkivä joukko, 32 hyppijää epäsäännöllisissä paikoissa koko jään syvyydellä ja leveydellä; yhteinen mitattu rytmi (ROW), eri suunnat, pääosin kohti katsojaa
-    if (t >= tG1 && t < tH + 2.5) { const tt = Math.min(t, tH), i = lastIdx(ROW, tt); if (i >= 0) { const stl = t >= tH ? 1 - sstep(tH, tH + 2.3, t) : 1, ap = sstep(tG1 - 0.034, tG1 - 0.002, t);
-      for (let j = 0; j < NC; j++) { const a = ROWP[i][j]; let x = a.x, z = a.z, hy = 0.06, e = Math.exp(-(tt - ROW[i].t) / 0.05);
-        if (i + 1 < ROW.length && t < tH) { const b = ROWP[i + 1][j], s = (t - ROW[i].t) / (ROW[i + 1].t - ROW[i].t); x = lerp(a.x, b.x, s); z = lerp(a.z, b.z, s); hy = 0.06 + b.h * 4 * s * (1 - s); e = Math.max(e, Math.exp(-(ROW[i + 1].t - t) / 0.05)); }
+    // pp (v6): 2-3 hyppijää eri syvyyksillä. Kosketus on mitattu alku: hyppijä on kaarensa alimmassa kohdassa alun ruudussa täydellä kirkkaudella (nousu enintään yhden ruudun).
+    // Hyppy kulkee vain, jos seuraava alku on enintään 0,5 s päässä; muuten hyppijä jää paikalleen ja himmenee (ei hypi tyhjää). Heijastus jäässä kulkee kaaren mukana.
+    if (t >= tG0 && t < tMF - 1e-4) for (let g = 0; g < 3; g++) { const arr = HOP[g], i = lastIdx(arr, t); if (i < 0) continue; const a = arr[i], b = arr[i + 1];
+      if (b && b.t - a.t <= 0.5 + 1e-6 && b.t < tMF - 1e-4) { const s = (t - a.t) / (b.t - a.t), e = Math.max(Math.exp(-(t - a.t) / 0.05), Math.exp(-(b.t - t) / 0.04)), hy = 0.06 + b.h * 4 * s * (1 - s), z = lerp(a.z, b.z, s);
+        add(cI, cI.x + lerp(a.x, b.x, s), hy, cI.z + z, lerp(a.I, b.I, s) * (0.40 + 0.60 * e), hopSig(z), 0, 0.55); }
+      else { const age = t - a.t; if (age < 2.4) add(cI, cI.x + a.x, 0.06, cI.z + a.z, a.I * (0.45 * Math.exp(-age / 0.45) + 0.55 * Math.exp(-age / 0.05)), hopSig(a.z), 0, 0.5); } }
+    // mf (v6): sama joukko (enintään kahdeksan hyppijää) on ankkurin ruudusta alkaen kirkkaampi, suurempi ja lähempänä; kaikki koskettavat jäätä yhtä aikaa jokaisella tutin alulla.
+    // H_puhaltimissa hyppiminen loppuu: alkuja ei enää ole, valot jäävät paikalleen ja himmenevät.
+    if (MF.length && t >= tMF - 1e-4 && t < tH + 2.5) { const i = lastIdx(MF, t); if (i >= 0) { const stl = t >= tH ? 1 - sstep(tH, tH + 2.3, t) : 1, age = t - MF[i].t, nx = MF[i + 1];
+      for (let j = 0; j < NC; j++) { const a = ROWP[i][j]; let x = a.x, z = a.z, hy = 0.06, I;
+        if (nx && nx.t - MF[i].t <= 0.5 + 1e-6) { const b = ROWP[i + 1][j], s = age / (nx.t - MF[i].t), e = Math.max(Math.exp(-age / 0.05), Math.exp(-(nx.t - t) / 0.04));
+          x = lerp(a.x, b.x, s); z = lerp(a.z, b.z, s); hy = 0.06 + b.h * 4 * s * (1 - s); I = 0.40 + 0.60 * e; }
+        else I = 0.45 * Math.exp(-age / 0.9) + 0.55 * Math.exp(-age / 0.05);
         if (z < 1.6) continue;
-        add(cI, cI.x + x, hy, cI.z + z, (0.55 + 0.40 * clamp(1 - (z - 5) / 60, 0, 1)) * (0.40 + 0.60 * e) * stl * ap, hopSig(z), 0, 0.55); } } }
-    for (const e of LI) { const age = t - e.t0; if (age < -0.03 || age > e.life + e.fade + 0.05) continue; const c = e.fr === 'i' ? cI : cR; let I = e.I * envF(e, age);
+        add(cI, cI.x + x, hy, cI.z + z, (0.80 + 0.20 * clamp(1 - (z - 5) / 40, 0, 1)) * I * stl, hopSig(z) * 1.5, 0, 0.55); } } }
+    for (const e of LI) { const age = t - e.t0; if (age < (e.hard ? -1e-4 : -0.03) || age > e.life + e.fade + 0.05) continue; const c = e.fr === 'i' ? cI : cR; let I = e.I * envF(e, age);
       if (e.kind === 'kiita') add(c, e.X, e.Y, e.Z + e.vz * Math.max(age, 0), I, e.sig, e.star, e.refl);
       else if (e.kind === 'putoaja') { const s = clamp(age / e.life, 0, 1); add(c, e.X, 0.1 + (e.Y - 0.1) * Math.pow(1 - s, 1.7), e.Z, e.I * Math.pow(Math.sin(Math.PI * s), 0.6), e.sig, e.star, e.refl); }
       else add(c, e.X, e.Y, e.Z, I, e.sig, e.star, e.refl); }
     out.sort((p, q) => q[3] - p[3]);
     return out.slice(0, 40); };
+  const crackAt = (t, cI) => { const out = [];
+    for (const q of CR) { const age = t - q.t0; if (age < -1e-4 || age > q.T) continue;
+      const z0 = Math.min(q.az, q.bz) - cI.z, z1 = Math.max(q.az, q.bz) - cI.z; if (z1 < -2 || z0 > 140) continue; out.push({ q, age }); }
+    out.sort((a, b) => b.q.t0 - a.q.t0);
+    return out.slice(0, 80).map(({ q, age }) => [[q.ax, q.az, q.bx, q.bz], [q.s * (0.28 + 0.72 * Math.exp(-Math.max(age, 0) / 0.25)) * (1 - sstep(0.3 * q.T, q.T, age)), q.w, q.fl, q.seed]]); };
   const ringsAt = (t) => { const out = [];
     for (const r of RG) { const a = (t - r.t0) / r.T; if (a < 0 || a >= 1) continue; out.push({ r, a }); }
     out.sort((p, q) => q.r.t0 - p.r.t0);
-    return out.slice(0, 12).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, r.dome, r.vx || 0]]); };
+    return out.slice(0, 8).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, 0, r.vx || 0]]); };
   // ---- melodia: kumpujen muoto
   const kaari = (t) => clamp((d.melodia(t, 2.6) - 68) * 0.0050, -0.05, 0.075);
   const sNl = d.sarja((f) => (d.tapahtuu('nousu', f / FPS) ? 1 : 0) - (d.tapahtuu('lasku', f / FPS) ? 1 : 0));
@@ -507,7 +550,7 @@ export function signaalit(d) {
     const top = proj(c, c.x, 15, ZS_), topY = top ? clamp(top[1], 0.2, 0.95) : 0.7;
     const sh = proj(c, c.x, 0, ZS_), shY = sh ? sh[1] : 0.45;
     const mel = clamp((d.melodia(t, 1.0) - 62) / 20, 0, 1);
-    return { t, c, G: Gt, L, live, hills, nl, lights: lights.slice(0, 40), rings: ringsAt(t), frost: frost(t), ph: d.kohta(sPh, t),
+    return { t, c, G: Gt, L, live, hills, nl, lights: lights.slice(0, 40), rings: ringsAt(t), cracks: crackAt(t, cI), frost: frost(t), ph: d.kohta(sPh, t),
       trunk: trunkVis(t), gap: gap(t), xt: camX(T1), open: sstep(T0, T0 + 1.5, t), end: sstep(T1 - 6, T1, t), zi: cI.z - c.z, bright: 1 + 0.30 * mfPorras(t),
       low: (0.040 * (0.25 + 0.75 * d.matala(t, 0.8)) * (1 - 0.6 * tapio(t)) + 0.050 * sstep(TU - 0.5, TU + 1.5, t) * (1 - sstep(tI - 0.5, tI + 1.0, t)) + 0.030 * sstep(TK, TK + 2.5, t) * (1 - sstep(tG1, tG1 + 0.4, t))) * (1 - sstep(tJ, tJ + 8, t)),
       snX: d.kohta(sSnX, t), snY: d.kohta(sSnY, t), iceD: d.kohta(sIce, t), str: lumiStr(t), rideK: rideK(t), rideD: d.kohta(sRide, t),
@@ -517,7 +560,7 @@ export function signaalit(d) {
       trill: clamp(d.korkea(t, 0.2) * 1.8 - 0.1, 0, 0.9) * trillOn(t), vauhti: camV(t),
       vyor: tapio(t), sj: Sj(t), iceDim: iceDim(t), duck: duck(t) };
   }
-  return { T0, T1, tila, PUL, urku, Sj, G, trunkVis, gap, frost, camZ, camX, camV, pitch, camH, ZEND, tapio, lumiV, HP, LP, LI, RG, TOUCH, HOP, ROW, TU, lightsAt, ringsAt, cam, ci, proj, puffs, kat, paisu, upDim, mfPorras, ICE_K };
+  return { T0, T1, tila, PUL, urku, Sj, G, trunkVis, gap, frost, camZ, camX, camV, pitch, camH, ZEND, tapio, lumiV, HP, LP, LI, RG, CR, MF, PP, ROWP, TOUCH, HOP, ROW, TU, lightsAt, ringsAt, cam, ci, proj, puffs, kat, paisu, upDim, mfPorras, ICE_K };
 }
 
 async function alusta() {
@@ -529,7 +572,7 @@ async function alusta() {
     gl, aika: d.aika,
     kamera: (t) => { const s = S.tila(t); return { p: [s.c.x, s.c.h, s.c.z], q: [Math.sin(s.c.pitch / 2), 0, 0, Math.cos(s.c.pitch / 2)], shot: 'jaa', cut: 0, trans: t - T0 < 12 || T1 - t < 6 }; },
     kuvaus: (t) => { const s = S.tila(t); return { t: +(t - T0).toFixed(1), pitchDeg: +(s.c.pitch * 180 / Math.PI).toFixed(1), kork: +s.c.h.toFixed(2), z: +s.c.z.toFixed(1), vauhti: +s.vauhti.toFixed(2), valo: +s.G.toFixed(2),
-      jouset: +s.sj.toFixed(2), tapio: +s.vyor.toFixed(2), huurre: +s.frost.toFixed(2), vaihe: +s.ph.toFixed(1), valoja: s.lights.length, renkaita: s.rings.length, lumi: +s.str.toFixed(1), ajolumi: +s.rideK.toFixed(2), runko: +s.trunk.toFixed(2), pimea: +s.gap.toFixed(2), urkupiste: S.urku(t) }; },
+      jouset: +s.sj.toFixed(2), tapio: +s.vyor.toFixed(2), huurre: +s.frost.toFixed(2), vaihe: +s.ph.toFixed(1), valoja: s.lights.length, renkaita: s.rings.length, halkeamia: s.cracks.length, lumi: +s.str.toFixed(1), ajolumi: +s.rideK.toFixed(2), runko: +s.trunk.toFixed(2), pimea: +s.gap.toFixed(2), urkupiste: S.urku(t) }; },
     seek: (t) => {
       const s = S.tila(t);
       gl.uniform1f(U('uTime'), t); gl.uniform1f(U('uT0'), T0); gl.uniform1f(U('uOpen'), s.open);
@@ -543,8 +586,10 @@ async function alusta() {
       gl.uniform1f(U('uGustF'), s.gustF); gl.uniform1f(U('uGustK'), s.gustK); gl.uniform1f(U('uTop'), s.top); gl.uniform1f(U('uPuffK'), s.puffK);
       gl.uniform3f(U('uCam'), s.c.x, s.c.h, s.c.z);
       gl.uniform1fv(U('uProf'), new Float32Array(s.hills)); gl.uniform1fv(U('uLive'), new Float32Array(s.live));
-      const rg = new Float32Array(48), rh = new Float32Array(48); s.rings.forEach((x, i) => { rg.set(x[0], i * 4); rh.set(x[1], i * 4); });
+      const rg = new Float32Array(32), rh = new Float32Array(32); s.rings.forEach((x, i) => { rg.set(x[0], i * 4); rh.set(x[1], i * 4); });
       gl.uniform4fv(U('uRg'), rg); gl.uniform4fv(U('uRh'), rh); gl.uniform1i(U('uNRg'), s.rings.length);
+      const ca = new Float32Array(320), cb = new Float32Array(320); s.cracks.forEach((x, i) => { ca.set(x[0], i * 4); cb.set(x[1], i * 4); });
+      gl.uniform4fv(U('uCrA'), ca); gl.uniform4fv(U('uCrB'), cb); gl.uniform1i(U('uNCr'), s.cracks.length);
       const L = new Float32Array(160), M = new Float32Array(160);
       s.lights.forEach((x, i) => { L.set([x[0], x[1], x[2], x[3]], i * 4); M.set([x[4], x[5], x[6], 0], i * 4); });
       gl.uniform4fv(U('uL'), L); gl.uniform4fv(U('uM'), M); gl.uniform1i(U('uNL'), s.lights.length);

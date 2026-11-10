@@ -27,6 +27,8 @@ uniform vec4 uV0, uV1, uV2;   // pyörteet: x (dx), y (dy), säde, voima (etumer
 uniform vec3 uSp;             // pyörteiden kiertymä (rad)
 uniform vec4 uSh;             // iskuaalto: x (dx), y (dy), säde, voima
 uniform vec4 uCut;            // pystyvalo: x (dx), voima, metsän reunan paljastus, -
+uniform vec4 uK[4], uL[4];    // vedos 6: vaskien fraasin toistot: uK = x (dx), voima, leveys, laji (0 huuto, 1 seinämä); uL = aika alusta (s)
+uniform float uFlash;         // vedos 6: viimeisen takomisen neljännellä iskulla koko kuva valossa
 const float F = 1.07;
 const vec3 SKY_TOP = vec3(0.0035, 0.0062, 0.0120), SKY_LOW = vec3(0.019, 0.032, 0.056);
 const vec3 FLAKE = vec3(0.60, 0.69, 0.84);
@@ -324,6 +326,11 @@ vec3 scene(vec2 p) {
       }
       col = mix(colA, c, uWi);
     }
+    // vedos 6: vaskien huuto valaisee lumen leikkauksen ympäriltä (lumi on jo kuvassa; valo vain kirkastaa sen)
+    for (int i = 0; i < 4; i++) {
+      vec4 k = uK[i];
+      if (k.y > 0.002 && k.w < 0.5) col += FLAKE * (accF + accN) * (0.65 + 0.9 * uLight) * k.y * 3.2 * exp(-abs(dx - k.x) / (0.10 + 14.0 * k.z));
+    }
   } else {
     col = vec3(0.0);
   }
@@ -344,6 +351,33 @@ vec3 scene(vec2 p) {
     float rg = ridgeFar(p.x);
     float m = smoothstep(0.004, -0.001, dy - rg) * smoothstep(-0.040, -0.006, dy);
     col = mix(col, vec3(0.0016, 0.0024, 0.0034), m * clamp(uCut.z, 0.0, 1.0) * 0.92);
+  }
+  // --- vedos 6: vaskien fraasin toistot. Huuto: kapea kylmä pystyvalo (sama ele kuin Q ja R), maa tärähtää valona; viimeinen takominen:
+  //     neljä taivaan korkuista valon seinämää, jotka repeävät myrskyn seinän läpi, ja neljännellä koko kuva valossa ---
+  if (uFin < 1.0) {
+    for (int i = 0; i < 4; i++) {
+      vec4 k = uK[i], l = uL[i];
+      if (k.y < 0.002) continue;
+      float fi = float(i);
+      if (k.w < 0.5) {
+        float jag = (vnoise(vec2(p.y * 6.0 + fi * 3.1, 3.0)) - 0.5) * 0.004;
+        float d = abs(dx - k.x - jag), w = k.z;
+        float beam = exp(-d * d / (w * w)) * (0.9 + 0.2 * vnoise(vec2(p.y * 14.0 + fi, 1.0))) + 0.30 * exp(-d / (10.0 * w)) + 0.10 * exp(-d / (0.32 + 20.0 * w));
+        col += LEIKKAUS * k.y * beam * 1.7;
+        col += LEIKKAUS * 0.16 * k.y * exp(-d / (0.05 + 9.0 * w)) + HALLA * 0.060 * k.y * (0.25 + exp(-abs(dy) / 0.12)) * (0.6 + 40.0 * w);
+        if (dy < 0.0) {
+          float rr = 0.50 * l.x, ring = exp(-pow((length(vec2(dx - k.x, dy * 3.2)) - rr) / (0.04 + 0.08 * rr), 2.0));
+          col += HALLA * 0.10 * ring * k.y * exp(-l.x / 0.5) + LEIKKAUS * 0.10 * k.y * exp(-d / (0.12 + 10.0 * w)) * smoothstep(0.0, -0.12, dy);
+        }
+      } else {
+        float tear = (vnoise(vec2(p.y * 7.0 + fi * 5.0, 9.0)) - 0.5) * 0.06 + (vnoise(vec2(p.y * 31.0, fi + 2.0)) - 0.5) * 0.02;
+        float d = abs(dx - k.x - tear), W = k.z;
+        float wall = smoothstep(W, W * 0.50, d) * (0.78 + 0.34 * vnoise(vec2(dx * 38.0 + fi * 3.0, p.y * 2.5 + 7.0)));
+        float up = 0.80 + 0.45 * smoothstep(0.0, 1.0, p.y);
+        col += LEIKKAUS * k.y * (0.95 * wall * up + 0.30 * exp(-d / (3.0 * W)) * 0.55);
+      }
+    }
+    col += LEIKKAUS * 0.75 * uFlash * (0.90 + 0.20 * vnoise(vec2(dx * 6.0, dy * 6.0)));
   }
   // --- loppu: lumi tihenee vaaleaksi seinäksi, joka on täsmälleen rajakuva LUMI ---
   col = mix(col, rajakuva(p, 4, uTime), uFin);
@@ -421,18 +455,60 @@ async function alusta() {
   const korkeus = (t) => 1.7 + 70 * Math.pow(nousuK(t), 2);
   const horisontti = (t) => 0.31 - 0.14 * nousuK(t);
 
+  // --- vedos 6: vaskien fraasin toistot, tarkat alut (d.cues.alut): jokainen kuvan tapahtuma alkaa alun ruudussa täydellä voimalla ---
+  const fr = (t) => Math.round(t * FPS);
+  const aluissa = (lo, hi, vmin, kaistat) => {            // alut ikkunassa, kaistat yhdistettynä (alle 0,1 s eroavat yhdeksi)
+    const out = [];
+    for (const k of kaistat) for (const [ta, v] of d.cues.alut[k]) if (ta >= lo && ta <= hi && v >= vmin) out.push({ t: ta, v });
+    out.sort((a, b) => a.t - b.t);
+    const m = [];
+    for (const e of out) { const e0 = m[m.length - 1]; if (e0 && e.t - e0.t < 0.1) e0.v = Math.max(e0.v, e.v); else m.push({ ...e }); }
+    return m;
+  };
+  const HUUTO_X = [[-0.38, 0.30], [0.18, 0.18], [-0.12, -0.12]], HUUTO_A = [0.85, 1.0, 1.2], HUUTO_W = [0.0030, 0.0050, 0.0080];
+  const TAKO_X = [-0.72, 0.72, -0.24, 0.24], TAKO_W = [0.070, 0.080, 0.090, 0.100];   // reunoilta keskelle
+  const HUUDOT = [], TAKO = [];
+  for (let k = 1; k <= 3; k++) {
+    const ta = A['vasket_myrsky_' + k];
+    aluissa(ta - 0.3, ta + 1.5, 0.45, ['matala', 'keski']).forEach((e, i) =>
+      HUUDOT.push({ f: fr(e.t), x: HUUTO_X[k - 1][Math.min(i, 1)], a: HUUTO_A[k - 1] * clamp(e.v / 0.6, 0.6, 1), w: HUUTO_W[k - 1], k }));
+  }
+  {
+    const cv = d.cues.cues.find((c) => c.id === 'vasket_takovat_viimeinen');
+    let al = aluissa(cv.t - 0.1, cv.t_end + 0.3, 0.2, ['keski']);
+    if (al.length < 4) al = aluissa(cv.t - 0.1, cv.t_end + 0.3, 0.2, ['keski', 'matala', 'korkea']);
+    al.slice(0, 4).forEach((e, i) => TAKO.push({ f: fr(e.t), x: TAKO_X[i], w: TAKO_W[i], i }));
+  }
+  const F4 = TAKO.length === 4 ? TAKO[3].f : -1;
+  // lumi pysähtyy neljännen iskun ruudussa silmänräpäykseksi ja ryöpsähtää (pysähdyksen puute ja ryöppy ovat suunnilleen yhtä suuret, joten lumen vaihe palaa ennalleen): nopeuskerroin (jatkuva ramppi 2 ruutua pysähdyksen jälkeen)
+  const lumiPohja = (ti) => (ti < 0.20 ? 0.05 : 0.05 + (1 - 0.05) * sstep(0.20, 0.27, ti));   // pysähdys ja paluu normaaliin vauhtiin
+  const lumiRyoppy = (ti) => (ti < 0.20 ? 0 : Math.exp(-(ti - 0.20) / 0.25) * sstep(0.20, 0.27, ti));
+  const lumiB = (() => { let a = 0, b = 0; for (let k = 0; k < 90; k++) { const ti = k / FPS; a += lumiPohja(ti) - 1; b += lumiRyoppy(ti); } return b > 0 ? -a / b : 0; })();   // ryöpyn voimakkuus niin, että pysähdys ja ryöppy kumoavat toisensa: lumen vaihe palaa ennalleen
+  const lumiKerroin = (t) => { if (F4 < 0) return 1; const ti = (fr(t) - F4) / FPS; if (ti < 0) return 1; return lumiPohja(ti) + lumiB * lumiRyoppy(ti); };
+  // iskut hetkellä t: neljä paikkaa [x, voima, leveys, laji] ja [aika alusta]
+  const huudot = (t) => {
+    const f = fr(t), akt = [];
+    for (const h of HUUDOT) { const ti = (f - h.f) / FPS; if (ti >= 0 && ti < 3) akt.push({ x: h.x, a: h.a * Math.exp(-ti / 0.30), w: h.w, laji: 0, ti }); }
+    for (const h of TAKO) { const ti = (f - h.f) / FPS; if (ti >= 0 && ti < 2) akt.push({ x: h.x, a: Math.exp(-ti / 0.22), w: h.w * (1 + 0.8 * (1 - Math.exp(-ti / 0.08))), laji: 1, ti }); }
+    akt.sort((p, q) => q.a - p.a);
+    const K = new Float32Array(16), L = new Float32Array(16);
+    akt.slice(0, 4).forEach((e, i) => { K.set([e.x, e.a, e.w, e.laji], i * 4); L.set([e.ti, 0, 0, 0], i * 4); });
+    const sal = F4 >= 0 && f >= F4 ? Math.exp(-(f - F4) / FPS / 0.40) : 0;
+    return { K, L, sal };
+  };
+
   // --- tuuli ja putoaminen kertyminä; puuskat tulevat intensiteetistä, iskut antavat tuulenpuuskan (jatkuva nousu ja lasku) ---
   const huippuK = (t) => sstep(T6 - 4.0, T6 - 1.5, t) * (1 - sstep(T6 + 1.5, T6 + 4.0, t));
   const valkoinen = (t) => Math.max(huippuK(t), sstep(T8 + 2.8, T9 - 0.8, t));
   const kasku = (t, T) => { const x = t - T; return x < 0 ? 0 : (1 - Math.exp(-x / 0.25)) * Math.exp(-x / 2.2); };
   const tuulenNopeus = (t) => {
     const myrsky = sstep(T3 - 1, T4 + 2, t) * (4 + 14 * INT(t) + 12 * aks(t) + 7 * Math.min(aks2(t), 1.5) + 9 * kasku(t, T5) + 12 * kasku(t, T7) + 6 * huippuK(t));
-    return 0.02 + myrsky * (1 - ylos(t));
+    return 0.02 + myrsky * (1 - ylos(t)) * lumiKerroin(t);
   };
   const kW = d.sarja((f) => tuulenNopeus(f / FPS) / FPS);
   const putoamisNopeus = (t) => {
     const alas = 0.06 + sstep(T3, T4 + 2, t) * (0.35 + 0.9 * INT(t));
-    return alas * (1 - ylos(t)) - (9 + 4 * INT(t)) * ylos(t);
+    return (alas * (1 - ylos(t)) - (9 + 4 * INT(t)) * ylos(t)) * lumiKerroin(t);
   };
   const kF = d.sarja((f) => putoamisNopeus(f / FPS) / FPS);
 
@@ -492,8 +568,8 @@ async function alusta() {
     return out.slice(0, 3);
   };
 
-  // --- pystyvalot: vain nimetyt iskut (d.iskut: Q_koko_metsa, myrsky_huippu, R_vasket) ---
-  const ISKUT = [[T5, 0.38], [T6, -0.30], [T7, 0.14]];
+  // --- pystyvalot: vain nimetyt iskut (d.iskut: Q_koko_metsa, R_vasket; huippu korvattu takomisalun seinämillä) ---
+  const ISKUT = [[T5, 0.38], [T7, 0.14]];   // vedos 6: huipun (T6) yksittäinen leikkaus korvataan neljän takomisalun seinämillä (TAKO, alla)
   const valoLeikkaus = (t) => {
     let k = 0, x = 0, paljas = 0;
     for (const [ta, xs] of ISKUT) {
@@ -523,7 +599,7 @@ async function alusta() {
       camZ: kohta(kZ, tc) - kZ0, camX: kohta(kX, tc) - kX0, camH: korkeus(tc), hor: horisontti(tc),
       tuuli: kohta(kW, tc), putoaa: kohta(kF, tc),
       pyorteet: pyorteet(tc), int: INT(tc) * wi + 0.5 * (1 - wi), valk: valkoinen(tc), ylos: ylos(tc), pohja: pohja(tc), aalto: aalto(tc),
-      cut: [cx, ck, cr], fin: sstep(T9 - 2.4, T9, tc), rako: rako(tc), poly: poly(tc), sulaa: sulaa(tc), vW: tuulenNopeus(tc), vF: putoamisNopeus(tc), sway: huojunta(tc), wang: melKaari(tc),
+      cut: [cx, ck, cr], fin: sstep(T9 - 2.4, T9, tc), rako: rako(tc), poly: poly(tc), sulaa: sulaa(tc), vW: tuulenNopeus(tc), vF: putoamisNopeus(tc), sway: huojunta(tc), wang: melKaari(tc), hh: huudot(t),
     };
   };
 
@@ -555,12 +631,13 @@ async function alusta() {
       gl.uniform1f(U('uWindV'), s.vW); gl.uniform1f(U('uFallV'), s.vF); gl.uniform1f(U('uMelt'), s.sulaa); gl.uniform1f(U('uGap'), s.rako); gl.uniform1f(U('uPuff'), s.poly);
       gl.uniform4f(U('uSh'), s.aalto[0], s.aalto[1], s.aalto[2], s.aalto[3]); gl.uniform1f(U('uShF'), s.aalto[4]);
       gl.uniform4f(U('uCut'), s.cut[0], s.cut[1], s.cut[2], 0);
+      gl.uniform4fv(U('uK'), s.hh.K); gl.uniform4fv(U('uL'), s.hh.L); gl.uniform1f(U('uFlash'), s.hh.sal);
       piirra();
     },
   });
   if (new URLSearchParams(location.search).get('kuvaus')) {
     const dt = Number(new URLSearchParams(location.search).get('kuvaus')) || 2;
-    console.log(JSON.stringify({ aksentit, tapahtumat: tapahtumat.map((e) => ({ huippu: +e.huippu.toFixed(1), syntyy: +e.syntyy.toFixed(1), elin: +e.elin.toFixed(1) })) }));
+    console.log(JSON.stringify({ huudot: HUUDOT, tako: TAKO, aksentit, tapahtumat: tapahtumat.map((e) => ({ huippu: +e.huippu.toFixed(1), syntyy: +e.syntyy.toFixed(1), elin: +e.elin.toFixed(1) })) }));
     for (let t = T0; t <= T9 + 0.01; t += dt) console.log(JSON.stringify(kuvaus(t)));
   }
 }
