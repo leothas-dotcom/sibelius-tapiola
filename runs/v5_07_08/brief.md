@@ -69,3 +69,42 @@ ensimmäistä kertaa. Sitten 10:34 tempo alkaa nousta? Pitää näkyä kuvassa -
   liikkeelle ja kasvaa. Auringon nousu (kohta 2) alkaa samasta ankkurista ja on osa tätä.
 - Tarkista liikesarjoista: `trumpetit_patarummut_356` − 1 s … + 6 s 0,1 s välein (leikkaukset iskujen kohdilla, lähestyvät),
   ja `allegro_359` … + 24 s 2 s välein (kiihtyminen ja kirkastuminen näkyvät).
+
+## KIERROS 2 (10.11.2026): kriitikon raportti `runs/maailma_07_08/kriitikko_v5.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Renderi ei kelpaa** (kuusi estävää). Toimii ja säilytetään: auringon korkeus nousee nykimättä, valo täyttää tilan C-duurissa,
+vaskien iskut osuvat mitattuihin kohtiin ja lukevat uutena ja voimakkaana, alttojen fraasi tuo uutta, rungot eivät huoju.
+Korjaa kaikki kriitikon kohdat; ohjaajan päätökset niihin:
+
+1. **Vika: runkojen hyppy** videon kohdassa 4,87–5,03 s (kaksi lähirunkoa pompahtaa viideksi ruuduksi, kuva suurenee). Etsi syy
+   ja poista. Tarkista koko väli samanlaisten hyppyjen varalta (ruutuero ruutu ruudulta, poikkeamat lista).
+2. **Kamera kulkee salin läpi koko ajan** (kriitikko: kuva lähes staattinen 0–125 s). Hitaasti mutta näkyvästi: lähin runko ohittaa
+   katsojan noin 10–15 sekunnin välein, keskimmäiset liukuvat, kaukaiset tuskin liikkuvat (parallaksi). Kamera pysähtyy vain
+   C-duurissa (`auringonsade`).
+3. **Sellojen laulu on tapahtuma** (`jousijakso_urkupiste_E_alku` → `_loppu`). Kulku rajakuvasta saa viedä enintään 2 s; sen
+   jälkeen: **matala hopeinen valo virtaa maata pitkin runkojen tyvien välistä kohti katsojaa**, usva sen sisällä. Sen etureuna
+   etenee fraasin mukana, ja sen **korkeus nousee ja laskee melodian kaaren mukaan** (skaalaa fraasin oma sävelala koko
+   korkeusvaihteluun, noin neljännes kuvan korkeudesta, jotta kaari näkyy). Fraasin lopussa se laskeutuu ja himmenee.
+4. **Rekisteri näkyy korkeutena** (kriitikon kohta 5): sellot kuvan alakolmanneksessa ja lähellä, altot keskellä, viulut
+   yläkolmanneksessa latvuksessa ja kaukana. Mittaa jokaisesta fraasista valon painopisteen korkeus: erojen pitää olla vähintään
+   15 % kuvan korkeudesta, ja raportoi luvut.
+5. **Usva virtaa näkyvästi** (kohta 6): keskikerroksessa vähintään noin 20 pikseliä sekunnissa 1080p:ssä, eri kerrokset eri
+   suuntiin ja nopeuksilla, valokeilojen läpi. Pelkkä kirkkauden hengitys ei riitä.
+6. **Lavasteen reuna pois** (kohta 3): usva ja valo eivät saa rajautua suorakulmioon missään kohdassa 0–45 s. Valo tulee
+   runkojen välistä ja häipyy pehmeästi.
+7. **Vasket** (`trumpetit_patarummut_356`): jokainen leikkaus on koko kuvan korkuinen valo runkojen **takana** (ei tolppa pöydän
+   päällä), ja rungot jäävät sen eteen mustiksi. Peräkkäiset leikkaukset ovat eri syvyyksillä kaukaa lähelle (jokainen edellistä
+   lähempänä: leveämpi, kirkkaampi, useampi runko siluettina). Jokainen leikkaus hiipuu noin 0,4 sekunnissa, ei 1,5–2 s.
+8. **Allegro näkyy tempona** (`allegro_359`; kohta 6b): kameran vauhti vähintään kaksinkertaistuu kuudessa sekunnissa ja kasvaa
+   edelleen, rungot ohittavat katsojan tiheämmin, usva ja lumi virtaavat nopeammin; kamera hidastuu pysähdykseen vasta noin neljä
+   sekuntia ennen kohtaa `auringonsade`. Näkyvä kiihtyminen ei saa alkaa vasta puolen minuutin päästä.
+9. **Aurinko ei ole kiekko ja rengas** (kohdistaulu; tyyliohje luku 9: ei Kandinskyn ympyröitä). Taottu aurinko on pehmeä,
+   ääriviivaton punainen hehku usvassa runkojen takana, osin runkojen peittämä, ja siitä lähtevät valokeilat viuhkana runkojen
+   välistä. Ei rengasta, ei terävää reunaa.
+10. **Tapion pöytä jättiläisen mittakaavassa:** jalat ovat kolme täysikorkuista jättirunkoa ja lauta on korkealla niiden päällä:
+    valtava, lumen peittämä, karkeareunainen puu. Se näkyy usvassa suurena hahmona jo alkupuolella (ei ohut viiva), ja kamera
+    kulkee sitä kohti ja sen alle. Ei haamujalkoja (jalat ovat yhtä kiinteitä kuin salin muut rungot).
+
+Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat jokaisesta kohdasta ja mittaukset kohdista 1, 2, 4, 5 ja 8, ja kirjoita
+`runs/maailma_07_08/tarkistus.md` uudelleen.
+
