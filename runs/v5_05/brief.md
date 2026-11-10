@@ -84,3 +84,39 @@ keskellä kaksi minuuttia, loppu ei ole enää paluu. Tämä maailma on käsikir
 - Todisteet liikesarjoina kuten ennen, ja kontaktiarkki 6 s välein, josta eteneminen näkyy. Renderi samaan paikkaan, tarkistus.md
   uudelleen.
 
+## KIERROS 3 (10.11.2026): ohjaajan katse kierroksen 2 kontaktiarkkiin (`runs/maailma_05/tark_v5/kontakti_6s.png`)
+
+**Parempi suunta, mutta kuva ei kelpaa käyttäjälle näytettäväksi.** Toimii ja säilytetään: kamera etenee koko välin, vahva
+parallaksi, epätarkka tausta valoläiskineen, pilkahdusten kytkentä ääniin, kolmen paikan vuorottelu tanssissa, tanssin loppu
+oikeassa ruudussa, pisara ja rajakuvat, lumi liikkuu.
+
+**Estävä: "kiteet" ovat tasapaksuja viivoja kalanruotokuviona pyöreiden lumikumpujen päällä, ja ne lukevat piirretyiksi
+tikkukuusiksi lumimaisemassa.** Se on lastenkirjan talvikuva, ja juuri sitä käyttäjä on pilkannut ("tanssivia joulukuusia",
+"koomiset sarjakuva-kumihahmot"; tyyliohje luku 9: ei Disney-kerrontaa). Mittakaava ei myöskään lue: kuva näyttää pieneltä
+metsältä kaukaa, ei oksalta läheltä.
+
+**Päätös: ei erillisiä kidehahmoja eikä lumikumpuja. Kuva on huurteinen oksisto läheltä** (käsikirjoituksen lähde: Halonen,
+"oksien verkko ja huurre, ei syvyys"; tyyliohjeen kuvatapa 4):
+1. **Oksat:** kuusen oksia ja varpuja, jotka kulkevat kuvan poikki vinosti ja loivasti kaartuen eri syvyyksillä (vähintään viisi
+   syvyystasoa). Oksan ydin on tumma ja ohut; sen yläpinnalla on lunta pehmeänä, epätasaisena kerroksena (ei pyöreitä kumpuja).
+2. **Huurre on reunus, ei hahmo:** oksan ja lumen reunasta kasvaa tiheä, hieno huurreneulasten karva (tuhansia ohuita, lyhyitä,
+   lähes samansuuntaisia neulasia, pituus vaihtelee kohinan mukaan), vaalea ja läpikuultava. Ei kalanruotoja, ei symmetrisiä
+   haaroja, ei tasapaksuja viivoja. Yksikään muoto ei saa näyttää pieneltä puulta.
+3. **Makro:** vain yksi syvyystaso on terävä; lähin taso on suuri ja hyvin epätarkka (pehmeitä vaaleita massoja, jotka liukuvat
+   nopeasti kuvan poikki), kaukaiset tasot epätarkkoja ja sinisempiä; tausta kuten nyt (valoläiskät ja tummat pystymassat = oikea
+   metsä kaukana). Terävä taso vaihtuu hitaasti kameran edetessä: tarkennus kulkee oksistossa syvemmälle.
+4. **Siemenen kuva pienenä:** terävän tason huurrereunus on metsän massa, paksun oksan luminen selkä on sileä vaara, ja sen takaa
+   tuleva taustan valo on horisontin valo. Riittää, että tämä on yhdessä tai kahdessa kohdassa selvästi luettavissa (esimerkiksi
+   tanssin aikana), ei koko ajan.
+5. **Nymfit:** pilkahdus on huurteen kimallus: se syttyy huurreneulasten kärjissä terävällä tasolla ja hyppää oksaa pitkin
+   seuraavaan kohtaan (polku kulkee oksaa myöten), epätarkoilla tasoilla se on pehmeä valoläiskä. Parit kulkevat kahta
+   vierekkäistä oksaa. `D_pikkolo`: kimallus kiitää pystympää oksaa ylös kuvan yläreunaan ja takaisin. Tanssin kolme paikkaa ovat
+   kolme oksaa eri korkeuksilla.
+6. **Pohja katoaa:** oksiston alla on syvä epätarkka tyhjyys; viulujen keinunta ja vajoaminen on taustan valon ja usvan liikettä.
+   Alun usva saa peittää kuvan enintään noin 8 sekuntia (nyt 25 s).
+7. Ei pyöreitä pallomaisia lumihiutaleita tasaisena pisteverhona: hiutaleet ovat harvoja, eri kokoisia ja syvyyden mukaan
+   epätarkkoja.
+
+Tee ensin yksi still terävästä kohdasta ja katso se kriittisesti: jos jokin siinä näyttää piirretyltä puulta, tikulta tai
+lastenkirjan kuvalta, muuta ennen kuin renderöit. Sitten koko väli, todisteet ja tarkistus.md kuten ennen.
+
