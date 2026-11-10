@@ -828,3 +828,7 @@ taso putoaa kohtaan 10:34 (−45 dBFS) ja uusi nopeampi liike alkaa siitä; nous
 
 Ohjaajan tarkistus: partituurin s. 52, t. 537: kaikilla jousilla aksentti kohdassa, jossa kuvio hyppää ylemmäs (8va alkaa
 t. 538, fff t. 540). Mitattu: jyrkin tason hyppy on kohdassa 14:32,0 (+8 dB kymmenesosasekunnissa), pienempi 14:30,2.
+
+Ohjaaja kysyi, siirretäänkö ankkuri tasan kohtaan 14:30. Käyttäjä:
+
+> Annan ajat aina suurin piirtein. SINUN TEHTÄVÄ ON KUULLA NE OIKEIN!!!!
