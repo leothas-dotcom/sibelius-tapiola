@@ -856,3 +856,33 @@ näkyviin jo näkyvien kauempien eteen. Usva ei toimi niin: kun usva ohenee, lä
 Korjaus: vaarat paljastuvat aina lähimmästä kauimpaan, jokainen uusi edellisten takaa ja yläpuolelta; mikään ei tule minkään
 jo näkyvän eteen.
 
+## 10.11.2026 yö: vedos 6, käyttäjän palaute
+
+> Anteeksi, nyt mutta moni asia meni huonompaan suuntan. Kumiset puut tuli takaisin. Ne heiluvat kuin kumipuut. PUUT EIVÄT SAA
+> NÄYTTÄÄ KUMISILTA. KIRJOITA SE NYT OHJEESEEN.
+>
+> Kristalliin lentäessä jotkut puut olivat vieläkin liian pitkiä? VAI MITÄ NE OLIVAT?
+>
+> Et ol kuullut puupuhaltimien rytmejä oikein. Jos haluat että ne tanssii rytmissä, niiden rytmi pitää TÄSMÄLLEEN OSUA SOITETUILLE
+> ÄÄNILLE.
+>
+> Vieläkään ei tapahtunut muutosta 13:34!!! SIINÄ PITÄÄ OLLA TODELLA ISO MUUTOS!!! TUNNELMAAN!!!
+>
+> Yritin sanoa että 13:28 alkaen on ISOT VASKISOINNUT!! MITÄÄN EI TAPAHDU????
+>
+> Älä kuitenkaan liioittele - niiden pitää olla tyylikkäitä - tyylioppaan mukaisia
+>
+> Lumi ei voi lennellä töksähdellen sinne tänne. Siitä tulee paha olo, oksennus. Ikäänkuin tasapainoaisti heittelisi.
+>
+> Tuossa patarumpu + trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu.
+>
+> Alun metsässä näkyy muuten jotain bugeja nyt, ei näytä hyvältä.
+
+> Tuulenpuuska on nyt hävinnyt kohdasta 4:07? Se oli siellä aikaisemmin? Miten muutat asioita pois, mitä en pyytänyt muuttamaan?
+> Tekeekö kriitikko nyt oikeaa työtä meille, vai haittaa?
+
+> Lensimme puun rungon läpi, niin ei saa käydä, juuri ennen tuota c-duuri paikkaa
+
+> Ai niin ja jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin
+> puhaltajien edelliset, mutta sama ele jousilla.
+

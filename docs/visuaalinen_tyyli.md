@@ -335,6 +335,40 @@ pehmeinä, kuten musiikissa."
     renderöinti metsästä. Pitäisikö sitä käyttää alussa myös? Harkitse? (Ilman revontulia)"), jolloin loppu on alun paluu.
     Tämä muuttaa kohdan 21 loppuosan (suolta nähty alku): edellinen alku on tallessa (`visual/maailma_01_02_suo.js`).
 
+**Käyttäjä 10.11.2026 yöllä, vedoksen 6 jälkeen** (koko palaute: `docs/tutkimus/haastattelu.md`):
+
+31. **PUUT EIVÄT SAA NÄYTTÄÄ KUMISILTA.** Käyttäjä: "Kumiset puut tuli takaisin. Ne heiluvat kuin kumipuut. PUUT EIVÄT SAA NÄYTTÄÄ
+    KUMISILTA. KIRJOITA SE NYT OHJEESEEN." Tämä on sanottu jo kolmesti (vedos 3, vedos 4, vedos 6), ja kohdan 25 sallima "hidas
+    taipuma" on osoittautunut riittämättömäksi rajaksi. **Kohta 25 kumotaan tältä osin: puu ei taivu, huoju, keinu, veny,
+    kallistu eikä muuta muotoaan lainkaan, ei edes puuskassa eikä myrskyssä.** Puun siluetti ruudussa saa muuttua vain kameran
+    liikkeestä (parallaksi). Koskee jokaista puuta, runkoa, latvaa ja metsän ääriviivaa jokaisessa maailmassa. Tuuli, puuska,
+    isku ja myrsky näkyvät siinä, mikä oikeasti liikkuu: **lumi, usva, valo ja latvoista irtoava lumipöly**. Mittari: puun
+    piirtokoodissa ei ole yhtään ajasta tai äänestä riippuvaa siirtymää, ja kriitikko tarkistaa liikesarjasta, ettei yhdenkään
+    siluetin muoto muutu ruutujen välillä.
+32. **Lumi liikkuu rauhallisesti ja yhteen suuntaan.** Käyttäjä: "Lumi ei voi lennellä töksähdellen sinne tänne. Siitä tulee paha
+    olo, oksennus. Ikäänkuin tasapainoaisti heittelisi." Lumen paikka on aina nopeuden kertymä (integraali), ei hetkellisen
+    tuulen funktio: nopeus muuttuu, paikka ei hyppää. Suunta ei käänny edestakaisin; se saa kääntyä hitaasti (koko käännös
+    vähintään neljä sekuntia) ja pysyy samalla puolella pystyä koko maailman ajan. Nopeuden muutos on pehmeä (nousu vähintään
+    0,5 s, lasku vähintään 1,5 s). Koko ruudun täyttävä lumi ei koskaan vaihda suuntaa iskussa; isku näkyy valona tai
+    yhtenä rajattuna puuskana, joka kulkee kuvan läpi. Täsmentää kohtaa 26.
+33. **Rytmi osuu soitettuihin ääniin tai sitä ei näytetä.** Käyttäjä: "Et ol kuullut puupuhaltimien rytmejä oikein. Jos haluat
+    että ne tanssii rytmissä, niiden rytmi pitää TÄSMÄLLEEN OSUA SOITETUILLE ÄÄNILLE." Jokainen rytminen kuvan tapahtuma
+    (pilkahdus, hyppy, isku) alkaa samassa ruudussa kuin soitettu ääni, joka on tarkistettu partituurista ja kuuntelukopiosta.
+    Jos kohdan rytmiä ei ole kuultu varmasti, siinä ei tanssita: kuva seuraa silloin fraasin kaarta (valon määrä, korkeus),
+    ei yksittäisiä ääniä. Mittari: vähintään 90 % näytetyistä tapahtumista osuu soitettuun ääneen yhden ruudun tarkkuudella,
+    eikä yksikään tapahtuma ala kohdassa, jossa soitin ei soita.
+34. **Trumpettien ja patarumpujen teema on viisi iskua: neljä ja viides painotettu.** Käyttäjä: "Tuossa patarumpu +
+    trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu." Jokaisessa toistossa kuva lyö viisi kertaa soitettujen
+    iskujen ruuduissa; neljä ensimmäistä ovat yhtä suuria tai kasvavia, viides selvästi suurin ja jää soimaan.
+35. **Suuri taite on tunnelman vaihdos, ja suuret vaskisoinnut näkyvät: tyylikkäästi.** Käyttäjä: "Vieläkään ei tapahtunut
+    muutosta 13:34!!! SIINÄ PITÄÄ OLLA TODELLA ISO MUUTOS!!! TUNNELMAAN!!!" · "13:28 alkaen on ISOT VASKISOINNUT!! MITÄÄN EI
+    TAPAHDU????" · "Älä kuitenkaan liioittele - niiden pitää olla tyylikkäitä - tyylioppaan mukaisia". Taite ei ole kirkkauden
+    säätö: valon väri, suunta ja tilan avaruus vaihtuvat, niin että kuva on taitteen jälkeen toinen paikka samassa metsässä.
+    Keinot ovat tämän ohjeen omia (luvut 3, 6 ja 7): valo, usva, väri ja tila; ei uusia esineitä.
+36. **Vaarat paljastuvat lähimmästä kauimpaan.** Käyttäjä: "Miten tuo yksi mäki ilmestyy noiden muiden mäkien eteen yhtäkkiä?
+    Etkö ymmärrä että mäet ei toimi niin?" Usva on katsojan ja maiseman välissä: kun se ohenee, lähin näkyy ensin ja kauempi
+    tulee esiin sen takaa ja yläpuolelta. Mikään ei tule näkyviin jo näkyvän eteen. Täsmentää kohtaa 30.
+
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.
 

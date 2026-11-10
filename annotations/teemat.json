@@ -1333,12 +1333,12 @@
       ],
       "id": "P_vaskipaisunta",
       "nimi": "Kirjain P: vaskien suuri paisutus",
-      "esitysmerkinta": "P = t. 490: käyrätorvet, trumpetit, pasuunat fp cresc. molto > ff, patarummut f cresc. molto > ff, jouset ff; sitten puupuhaltimet yhtä aikaa f (s. 48).",
+      "esitysmerkinta": "P = t. 490-493: käyrätorvet, trumpetit, pasuunat fp cresc. molto > ff (neljä tahtia, soinnut vaihtuvat; t. 493 kaksi painotettua puolinuottia ff); patarummut tremolo f cresc. molto > ff; t. 492-493 jouset ff (s. 48)",
       "tahti_suhde": "kirjain P, t. 490",
-      "soi": "vasket ja patarummut paisuvat hiljaisesta täyteen voimaan, jouset mukana; yksi teoksen kovimmista kohdista",
+      "soi": "käyrätorvet, trumpetit ja pasuunat soittavat suuria, hitaasti vaihtuvia sointuja, jotka kasvavat hiljaisesta täyteen voimaan; patarummut pärisevät alla; lopussa jouset syöksyvät mukaan",
       "etuala": "vasket tulevat takaa eteen yhdellä paisutuksella",
       "tunnelma": "viimeinen varoitus",
-      "tarina": "Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Ohjaaja: se motiivi käy tässä vielä kerran yksin, ennen kuin metsä hiljenee.",
+      "tarina": "Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Ohjaaja: se motiivi käy tässä vielä kerran yksin, ennen kuin metsä hiljenee. Käyttäjä 10.11.2026 yöllä: \"13:28 alkaen on ISOT VASKISOINNUT!! MITÄÄN EI TAPAHDU???? ... Älä kuitenkaan liioittele - niiden pitää olla tyylikkäitä - tyylioppaan mukaisia\"",
       "lahde": "partituuri s. 48; analyysi: taso"
     },
     {
@@ -1654,7 +1654,7 @@
         "klarinetit",
         "fagotit"
       ],
-      "tarina": "Ohjaaja: leikki yltyy hetkeksi juoksuksi. Mitattu: 4:06–4:11 alkupuolen tihein ylärekisterin purske.",
+      "tarina": "Ohjaaja: leikki yltyy hetkeksi juoksuksi. Mitattu: 4:06–4:11 alkupuolen tihein ylärekisterin purske. Käyttäjä 10.11.2026 yöllä: \"Tuulenpuuska on nyt hävinnyt kohdasta 4:07? Se oli siellä aikaisemmin?\" Mitattu: juoksu nousee 4:06,5-4:07,4 (noin 600 > 3300 Hz) ja laskee 4:07,4-4:07,8.",
       "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
       "tarkista": true,
       "etuala": "nopea juoksu ylhäällä edessä, korkeimmillaan koko alkupuolella",
@@ -1815,7 +1815,7 @@
         "pasuunat",
         "patarummut"
       ],
-      "tarina": "Käyttäjä 10.11.2026: \"Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa.\" Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.",
+      "tarina": "Käyttäjä 10.11.2026: \"Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa.\" Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Käyttäjä 10.11.2026 yöllä: \"Tuossa patarumpu + trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu.\"",
       "lahde": "käyttäjä (korva), partituuri s. 35, mittaus",
       "tarkista": true,
       "etuala": "vasket ja patarummut iskevät edessä; kaikki muu jää niiden alle",
@@ -1905,11 +1905,11 @@
         "alttoviulut",
         "viulut"
       ],
-      "tarina": "Käyttäjä 10.11.2026: \"nousevat nopeasti usean oktaavin yli, mutta videossa ei tapahdu mitään? ... tuo jousisto oktaavit on 13:02 - 13:05 noin. Alkaa bassoista ja päättyy viuluihin.\"",
+      "tarina": "Käyttäjä 10.11.2026: \"nousevat nopeasti usean oktaavin yli, mutta videossa ei tapahdu mitään? ... tuo jousisto oktaavit on 13:02 - 13:05 noin. Alkaa bassoista ja päättyy viuluihin.\" Käyttäjä 10.11.2026 yöllä: \"jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin puhaltajien edelliset, mutta sama ele jousilla.\"",
       "lahde": "partituuri (ohjaaja luki 10.11.2026 illalla s. 47-56), tarkat alut (korvat.py --alut), käyttäjän mobiilipalaute vedoksesta 5",
       "tarkista": true,
       "etuala": "yksi nouseva ele maasta latvoihin",
-      "tunnelma": "äkillinen, nouseva, avaava",
+      "tunnelma": "hitaasti nouseva tuulenpuuska; sama ele kuin puupuhaltimien puuskat, pienempi",
       "esitysmerkinta": "t. 473-474: kontrabassot div., sellot div., alttoviulut div., viulut I ja II div.: nouseva murtosointu peräkkäin, mf <; sen jälkeen jouset pitkät sidotut parit p, puupuhaltimet p dolce (s. 47)"
     },
     {
@@ -1929,11 +1929,11 @@
         "fagotit",
         "jouset"
       ],
-      "tarina": "Käyttäjä 10.11.2026: \"13:31,32,33 ISO TAITE, SUURI MUUTOS mutta juuri mitään ei tapahdu.\" Ohjaaja: vaskien uhka ei purkaudu iskuun vaan lauluun; metsä avautuu hetkeksi ennen kuin se tyhjenee.",
+      "tarina": "Käyttäjä 10.11.2026: \"13:31,32,33 ISO TAITE, SUURI MUUTOS mutta juuri mitään ei tapahdu.\" Ohjaaja: vaskien uhka ei purkaudu iskuun vaan lauluun; metsä avautuu hetkeksi ennen kuin se tyhjenee. Käyttäjä 10.11.2026 yöllä: \"Vieläkään ei tapahtunut muutosta 13:34!!! SIINÄ PITÄÄ OLLA TODELLA ISO MUUTOS!!! TUNNELMAAN!!!\" Mitattu: taso putoaa 20 dB (13:33,5-13:34,0), ja puupuhaltimet ja jouset alkavat hiljaa 13:34,3 ja kasvavat.",
       "lahde": "partituuri (ohjaaja luki 10.11.2026 illalla s. 47-56), tarkat alut (korvat.py --alut), käyttäjän mobiilipalaute vedoksesta 5",
       "tarkista": true,
       "etuala": "puupuhaltimet ja jouset yhdessä edessä; vasket kaukana hiljaa",
-      "tunnelma": "avautuva, täyteläinen; aivan toinen maailma kuin hetkeä aiemmin",
+      "tunnelma": "äkillinen hiljaisuus ja pehmeys vaskien jälkeen; laulava, avara, lempeä: aivan toinen maailma kuin hetkeä aiemmin",
       "esitysmerkinta": "P = t. 490: vasket ja patarummut fp cresc. molto > ff; t. 492-493 jouset ff nopea kuvio; t. 494: huilut, oboet, klarinetit, fagotit f, käyrätorvet pp, pasuunat ppp, jouset f (s. 48)"
     },
     {
@@ -2035,14 +2035,14 @@
       "tahti_suhde": null,
       "luokka": "isku",
       "tyyppi": "hetki",
-      "soi": "myrskyn huipussa koko orkesteri takoo saman fraasin kuin trumpetit kohdassa 10:28: neljä painotettua iskua täydellä voimalla; sen jälkeen kaikki vaimenee nopeasti",
+      "soi": "myrskyn huipussa koko orkesteri takoo saman fraasin kuin trumpetit kohdassa 10:28: viisi iskua: neljä painotettua ja viides, pitkä ja painotetuin täydellä voimalla; sen jälkeen kaikki vaimenee nopeasti",
       "soittimet": [
         "koko orkesteri",
         "trumpetit",
         "pasuunat",
         "patarummut"
       ],
-      "tarina": "Käyttäjä 10.11.2026: \"Ehkä tässä kohtaa jollakin uudella tavalla, koska se tulee viimeistä kertaa. Mutta tunnistettavasti\". Ohjaaja: sama takominen, joka kuultiin ensin trumpeteissa hiljaisen salin jälkeen, on nyt koko orkesterin. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.",
+      "tarina": "Käyttäjä 10.11.2026: \"Ehkä tässä kohtaa jollakin uudella tavalla, koska se tulee viimeistä kertaa. Mutta tunnistettavasti\". Ohjaaja: sama takominen, joka kuultiin ensin trumpeteissa hiljaisen salin jälkeen, on nyt koko orkesterin. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Käyttäjä 10.11.2026 yöllä: \"Tuossa patarumpu + trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu.\"",
       "lahde": "partituuri (ohjaaja luki 10.11.2026 illalla s. 47-56), tarkat alut (korvat.py --alut), käyttäjän mobiilipalaute vedoksesta 5",
       "tarkista": true,
       "etuala": "kaikki yhtenä iskuna edessä",

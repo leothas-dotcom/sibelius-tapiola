@@ -423,8 +423,49 @@ def alut(d):
         peaks, _ = sg.find_peaks(f, distance=max(2, int(fs * 0.07)))
         keep = [(i, (f[i] - base[i]) / dev[i]) for i in peaks if f[i] - base[i] > 0.22 * dev[i] and f[i] > 0.02 * np.percentile(f, 99.5)]
         out[k] = [[round(t0 + i / fs, 3), round(float(v), 2)] for i, v in keep]
+    out["nuotit"] = tarkat_nuotit(d, y, sr, t0)
     (d / "alut.json").write_text(json.dumps({"tehty": "korvat.py --alut", "hop_ms": round(1000 * hop / sr, 2), **out}), encoding="utf-8")
     print("alut:", {k: len(v) for k, v in out.items()}, "->", d / "alut.json")
+
+
+def tarkat_nuotit(d, y, sr, t0):
+    """Jokaisen tunnistetun nuotin (korvat.json: nuotit) alku tarkennetaan nuotin omalta taajuudelta: se hetki, jolloin
+    perussävelen ja kahden ensimmäisen yläsävelen energia nousee jyrkimmin (askel noin 1,5 ms). Kaistojen alut (yllä) eivät
+    löydä sidottuja juoksuja, eikä nuottien tunnistus (CQT) anna ruudun tarkkuutta: tämä yhdistää ne. Kuvan rytmiset
+    elementit, jotka seuraavat melodiaa (puupuhaltimien väike, juoksut), sidotaan näihin.
+    Palauttaa [[t_tarkka, kesto, midi, nousu_dB], ...]; mukana vain nuotit, joiden alussa energia nousee vähintään 5 dB."""
+    nu = json.loads((d / "korvat.json").read_text(encoding="utf-8"))["nuotit"]
+    hop, nfft = 64, 2048
+    fr = librosa.fft_frequencies(sr=sr, n_fft=nfft)
+    out, chunk = [], 60
+    for c0 in range(0, int(len(y) / sr) + 1, chunk):
+        sel = [n for n in nu if c0 <= n[0] - t0 < c0 + chunk and n[2] >= 55]
+        if not sel:
+            continue
+        a0 = max(0, int((c0 - 1) * sr))
+        S = np.abs(librosa.stft(y[a0:int((c0 + chunk + 1) * sr)], n_fft=nfft, hop_length=hop)) ** 2
+        tt = a0 / sr + np.arange(S.shape[1]) * hop / sr
+        for t, du, m in sel:
+            f0 = 440.0 * 2 ** ((m - 69) / 12)
+            mask = np.zeros(len(fr), bool)
+            for h in (1, 2, 3):
+                lo, hi = f0 * h * 2 ** (-0.6 / 12), f0 * h * 2 ** (0.6 / 12)
+                mm = (fr >= lo) & (fr <= hi)
+                if not mm.any():
+                    mm[np.argmin(np.abs(fr - f0 * h))] = True
+                mask |= mm
+            i0, i1 = np.searchsorted(tt, t - t0 - 0.14), np.searchsorted(tt, t - t0 + 0.10)
+            if i0 < 40 or i1 + 40 >= len(tt):
+                continue
+            e = 10 * np.log10(S[mask, i0 - 40:i1 + 40].sum(axis=0) + 1e-12)
+            e = ndi.gaussian_filter1d(e, 3.0)
+            dv = e[8:] - e[:-8]                                         # nousu noin 12 ms:ssa
+            j = int(np.argmax(dv[40 - 4:len(dv) - 40 + 4])) + 40 - 4 + 4   # jyrkimmän nousun keskikohta
+            nousu = float(e[min(j + 20, len(e) - 1)] - e[max(j - 20, 0)])
+            if nousu >= 5.0:
+                out.append([round(t0 + float(tt[i0 - 40 + j]), 3), du, m, round(nousu, 1)])
+    out.sort()
+    return out
 
 
 def main():

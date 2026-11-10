@@ -181,7 +181,7 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
 - **4:04 Kirjain D: huilu ja pikkolo juoksevat ylös.** Puupuhaltimet voimistuvat; huilu ja pikkolo juoksevat nopeasti ylös korkeimpaan rekisteriin ja takaisin; fagotit tulevat alle.
   - *Edessä ja takana:* nopea juoksu ylhäällä edessä, korkeimmillaan koko alkupuolella. *Tunnelma:* välähdys, riemukas, nopea.
   - *Partituurissa:* D = t. 134: pikkolo, fagotit mf; t. 135 puupuhaltimet f; t. 137–138 huilu ja pikkolo nopea nouseva juoksu, f; fp (s. 11–12)
-  - Ohjaaja: leikki yltyy hetkeksi juoksuksi. Mitattu: 4:06–4:11 alkupuolen tihein ylärekisterin purske.
+  - Ohjaaja: leikki yltyy hetkeksi juoksuksi. Mitattu: 4:06–4:11 alkupuolen tihein ylärekisterin purske. Käyttäjä 10.11.2026 yöllä: "Tuulenpuuska on nyt hävinnyt kohdasta 4:07? Se oli siellä aikaisemmin?" Mitattu: juoksu nousee 4:06,5-4:07,4 (noin 600 > 3300 Hz) ja laskee 4:07,4-4:07,8.
 - **4:12 Askeleet palaavat fis:llä.** Basson askeleet palaavat, nyt fis:llä, noin 1,7 sekunnin välein, korkeiden kuvioiden alla.
   - *Edessä ja takana:* askeleet pohjalla kuvioiden alla. *Tunnelma:* jokin kulkee mukana.
   - Käyttäjä: askeleet "jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla". Ohjaaja: se, mikä kulkee, ei ole pysähtynyt; se on vain vaihtanut paikkaa.
@@ -321,7 +321,7 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
 - **10:26 Trumpetit ja patarummut takovat: ensimmäistä kertaa.** Trumpetit, pasuunat ja patarummut takovat samaa säveltä painotetuin iskuin täydellä voimalla (fff); puupuhaltimet, käyrätorvet, sellot ja bassot pitävät sointua; sitten kaikki vaimenee nopeasti.
   - *Edessä ja takana:* vasket ja patarummut iskevät edessä; kaikki muu jää niiden alle. *Tunnelma:* iskevä, pelottava, uusi.
   - *Partituurissa:* t. 356–358: trumpetit ja pasuunat fff, aksentoidut toistuvat äänet; patarummut fff aksentein; klarinetit, fagotit, kontrafagotti, käyrätorvet, sellot, kontrabassot fff; kaikilla dim. molto (s. 35) Tarkat alut 10.11. illalla: fff alkaa 626,2 s; itse takominen on viisi iskua 628,22 / 628,46 / 628,70 / 628,97 / 629,23 s.
-  - Käyttäjä 10.11.2026: "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa." Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.
+  - Käyttäjä 10.11.2026: "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa." Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Käyttäjä 10.11.2026 yöllä: "Tuossa patarumpu + trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu."
 - **10:34 Allegro: tempo nopeutuu ja intensiteetti alkaa nousta.** Vaskien takomisen vaimettua alkaa uusi, nopeampi tempo: alttoviulut, huilut ja fagotit aloittavat hiljaa liikkuvan kuvion, joka kasvaa; viulut tulevat ilman sordiinoa; trumpetit hyvin hiljaa takana; nousu jatkuu kaksikymmentä sekuntia.
   - *Edessä ja takana:* nopea kuviointi edessä; vasket taakse. *Tunnelma:* kiihtyvä, nouseva, levoton.
   - *Partituurissa:* noin t. 356–358: kaikilla fff dim. molto; noin t. 359 Allegro (puolinuotti): huilut ja fagotit mp poco cresc., alttoviulut ja viulut senza sord., trumpetit ppp (s. 35).
@@ -387,19 +387,19 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Partituurissa:* t. 471: huilu poco f, oboet ja englannintorvi mf, dim. > p; käyrätorvet mf dim. > pp; t. 481: huilut, oboet, klarinetit cresc. > f (s. 47).
   - Ohjaaja: tyven ennen viimeistä varoitusta (P).
 - **13:01 Jouset nousevat bassoista viuluihin.** Nopea nouseva kulku alkaa kontrabassoista ja kulkee sellojen ja alttoviulujen kautta viuluihin usean oktaavin yli muutamassa sekunnissa; sen jälkeen pohja katoaa ja viulut jäävät keinumaan.
-  - *Edessä ja takana:* yksi nouseva ele maasta latvoihin. *Tunnelma:* äkillinen, nouseva, avaava.
+  - *Edessä ja takana:* yksi nouseva ele maasta latvoihin. *Tunnelma:* hitaasti nouseva tuulenpuuska; sama ele kuin puupuhaltimien puuskat, pienempi.
   - *Partituurissa:* t. 473-474: kontrabassot div., sellot div., alttoviulut div., viulut I ja II div.: nouseva murtosointu peräkkäin, mf <; sen jälkeen jouset pitkät sidotut parit p, puupuhaltimet p dolce (s. 47)
-  - Käyttäjä 10.11.2026: "nousevat nopeasti usean oktaavin yli, mutta videossa ei tapahdu mitään? ... tuo jousisto oktaavit on 13:02 - 13:05 noin. Alkaa bassoista ja päättyy viuluihin."
+  - Käyttäjä 10.11.2026: "nousevat nopeasti usean oktaavin yli, mutta videossa ei tapahdu mitään? ... tuo jousisto oktaavit on 13:02 - 13:05 noin. Alkaa bassoista ja päättyy viuluihin." Käyttäjä 10.11.2026 yöllä: "jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin puhaltajien edelliset, mutta sama ele jousilla."
 - 13:10 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 - 13:20 Liike kiihtyy: ääniä tulee tiheään.
-- **13:26 Kirjain P: vaskien suuri paisutus.** Vasket ja patarummut paisuvat hiljaisesta täyteen voimaan, jouset mukana; yksi teoksen kovimmista kohdista.
+- **13:26 Kirjain P: vaskien suuri paisutus.** Käyrätorvet, trumpetit ja pasuunat soittavat suuria, hitaasti vaihtuvia sointuja, jotka kasvavat hiljaisesta täyteen voimaan; patarummut pärisevät alla; lopussa jouset syöksyvät mukaan.
   - *Edessä ja takana:* vasket tulevat takaa eteen yhdellä paisutuksella. *Tunnelma:* viimeinen varoitus.
-  - *Partituurissa:* P = t. 490: käyrätorvet, trumpetit, pasuunat fp cresc. molto > ff, patarummut f cresc. molto > ff, jouset ff; sitten puupuhaltimet yhtä aikaa f (s. 48).
-  - Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Ohjaaja: se motiivi käy tässä vielä kerran yksin, ennen kuin metsä hiljenee.
+  - *Partituurissa:* P = t. 490-493: käyrätorvet, trumpetit, pasuunat fp cresc. molto > ff (neljä tahtia, soinnut vaihtuvat; t. 493 kaksi painotettua puolinuottia ff); patarummut tremolo f cresc. molto > ff; t. 492-493 jouset ff (s. 48)
+  - Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Ohjaaja: se motiivi käy tässä vielä kerran yksin, ennen kuin metsä hiljenee. Käyttäjä 10.11.2026 yöllä: "13:28 alkaen on ISOT VASKISOINNUT!! MITÄÄN EI TAPAHDU???? ... Älä kuitenkaan liioittele - niiden pitää olla tyylikkäitä - tyylioppaan mukaisia"
 - **13:33 Suuri taite: vasket katkeavat, puupuhaltimet ja jouset laulavat.** Vaskien ja patarumpujen paisutus huipentuu, jouset syöksyvät alas, ja yhtäkkiä vasket ovat poissa: puupuhaltimet ja jouset soittavat yhdessä täyteläisen, laulavan jakson.
-  - *Edessä ja takana:* puupuhaltimet ja jouset yhdessä edessä; vasket kaukana hiljaa. *Tunnelma:* avautuva, täyteläinen; aivan toinen maailma kuin hetkeä aiemmin.
+  - *Edessä ja takana:* puupuhaltimet ja jouset yhdessä edessä; vasket kaukana hiljaa. *Tunnelma:* äkillinen hiljaisuus ja pehmeys vaskien jälkeen; laulava, avara, lempeä: aivan toinen maailma kuin hetkeä aiemmin.
   - *Partituurissa:* P = t. 490: vasket ja patarummut fp cresc. molto > ff; t. 492-493 jouset ff nopea kuvio; t. 494: huilut, oboet, klarinetit, fagotit f, käyrätorvet pp, pasuunat ppp, jouset f (s. 48)
-  - Käyttäjä 10.11.2026: "13:31,32,33 ISO TAITE, SUURI MUUTOS mutta juuri mitään ei tapahdu." Ohjaaja: vaskien uhka ei purkaudu iskuun vaan lauluun; metsä avautuu hetkeksi ennen kuin se tyhjenee.
+  - Käyttäjä 10.11.2026: "13:31,32,33 ISO TAITE, SUURI MUUTOS mutta juuri mitään ei tapahdu." Ohjaaja: vaskien uhka ei purkaudu iskuun vaan lauluun; metsä avautuu hetkeksi ennen kuin se tyhjenee. Käyttäjä 10.11.2026 yöllä: "Vieläkään ei tapahtunut muutosta 13:34!!! SIINÄ PITÄÄ OLLA TODELLA ISO MUUTOS!!! TUNNELMAAN!!!" Mitattu: taso putoaa 20 dB (13:33,5-13:34,0), ja puupuhaltimet ja jouset alkavat hiljaa 13:34,3 ja kasvavat.
 - **13:41 Tuulenpuuska: huilu ja pikkolo juoksevat ylös ja alas.** Huilu ja pikkolo juoksevat nopeasti ylös ja alas täydellä voimalla, muut puupuhaltimet mukana; sitten kaikki asettuu.
   - *Edessä ja takana:* yksi nopea pyyhkäisy ylhäällä. *Tunnelma:* puuska.
   - *Partituurissa:* t. 499: huilu ja pikkolo nopea nouseva ja laskeva juoksu ff; oboet, klarinetit, fagotit ff dim.; sitten poco f (s. 49)
@@ -455,10 +455,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* vasket lyövät myrskyn läpi. *Tunnelma:* ylivoimainen.
   - *Partituurissa:* t. 562-567: kaikki puupuhaltimet ja vasket poco ff cresc. possibile (s. 54)
   - Käyttäjä 10.11.2026: "Tuo trumpettien ja patojen fraasi toistuu muuten talvimyrskyn aikana myös monesti. Se pitää tuoda esiin."
-- **15:10 Vasket takovat viimeisen kerran: koko orkesteri.** Myrskyn huipussa koko orkesteri takoo saman fraasin kuin trumpetit kohdassa 10:28: neljä painotettua iskua täydellä voimalla; sen jälkeen kaikki vaimenee nopeasti.
+- **15:10 Vasket takovat viimeisen kerran: koko orkesteri.** Myrskyn huipussa koko orkesteri takoo saman fraasin kuin trumpetit kohdassa 10:28: viisi iskua: neljä painotettua ja viides, pitkä ja painotetuin täydellä voimalla; sen jälkeen kaikki vaimenee nopeasti.
   - *Edessä ja takana:* kaikki yhtenä iskuna edessä. *Tunnelma:* huippu; viimeinen kerta.
   - *Partituurissa:* t. 569 Allegro moderato: kaikki puupuhaltimet ja vasket fff toistuvat aksentoidut äänet, patarummut fff, jouset fffz, kontrabassot fff saltato; sitten dim. molto > p (s. 55)
-  - Käyttäjä 10.11.2026: "Ehkä tässä kohtaa jollakin uudella tavalla, koska se tulee viimeistä kertaa. Mutta tunnistettavasti". Ohjaaja: sama takominen, joka kuultiin ensin trumpeteissa hiljaisen salin jälkeen, on nyt koko orkesterin. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.
+  - Käyttäjä 10.11.2026: "Ehkä tässä kohtaa jollakin uudella tavalla, koska se tulee viimeistä kertaa. Mutta tunnistettavasti". Ohjaaja: sama takominen, joka kuultiin ensin trumpeteissa hiljaisen salin jälkeen, on nyt koko orkesterin. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu. Käyttäjä 10.11.2026 yöllä: "Tuossa patarumpu + trumpetti-teemassa pitää olla VIISI ISKUA: 1234+ viides aksentoitu."
 - **15:10 Myrskyn voimakkain kohta.** Koko äänitteen voimakkain jakso, tiheä tutti.
   - *Edessä ja takana:* kaikki edessä. *Tunnelma:* huippu, ylivoima.
   - *Partituurissa:* Q = t. 550: trumpetit, pasuunat, patarummut p cresc. molto → ff (s. 53); t. 559 ff, puolivälistä kaikki puupuhaltimet ja vasket poco ff cresc. possibile (s. 54); ~t. 569 Allegro moderato: koko orkesteri fff, jouset fffz, kontrabassot fff saltato, sitten dim. molto > p, klarinetti 2. Solo p (s. 55). R = t. 577: vasket < > ff, jouset ff (s. 56).

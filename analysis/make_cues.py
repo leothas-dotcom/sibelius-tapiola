@@ -155,6 +155,8 @@ def build_cues(anchors, times, iskut):
         c = {"id": a["id"], "ankkuri": a["id"], "t": e["t"]}
         if e.get("t_loppu") is not None:
             c["t_end"] = e["t_loppu"]
+        if e.get("iskut"):
+            c["iskut_t"] = e["iskut"]          # ankkurin sisäiset mitatut iskut (esim. vaskien teeman viisi iskua)
         c.update({"theme": a["luokka"], "luokka": a["luokka"], "tyyppi": a["tyyppi"]})
         if a.get("jakso"):
             c["jakso"], c["reuna"] = a["jakso"], a["reuna"]
@@ -208,7 +210,7 @@ def _alut(rec):
     if not f or not f.exists():
         return {}
     k = json.loads(f.read_text(encoding="utf-8"))
-    return {b: k.get(b, []) for b in ("matala", "keski", "korkea")}
+    return {b: k.get(b, []) for b in ("matala", "keski", "korkea", "nuotit")}
 
 
 def _korvat_aanet(rec):

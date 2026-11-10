@@ -484,11 +484,17 @@
       "peruste": "Paikka arvioitu: M t. 397 = 685,1 s ja Allegro moderato t. 462 = 756,5 s, väli 1,10 s/tahti, joten t. 442 noin 734,6 s. tarkka.py: korkeat Dis6/Cis6 vuorotellen 12:14.6–12:18.1; matalat alut 12:20.6–12:36.7 (18). Ei kuultu."
     },
     "P_vaskipaisunta": {
-      "t": 806.5,
-      "t_loppu": 817.0,
+      "t": 806.44,
+      "t_loppu": 813.55,
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
-      "peruste": "Taso −26 → −17 dBFS 806–813 s (huippu 813,1 s, äänitteen 3. kovin); tarkka.py: pitkät C5, Dis5, E5 13:26.5–13:32.6, matalat alut 13:29.1–13:34.2."
+      "peruste": "Taso −26 → −17 dBFS 806–813 s (huippu 813,1 s, äänitteen 3. kovin); tarkka.py: pitkät C5, Dis5, E5 13:26.5–13:32.6, matalat alut 13:29.1–13:34.2. | 10.11. yö: vasket tulevat 806,44 (fp), taso 150-1500 Hz nousee 25 > 44 dB; selvät soinnun iskut 809,94 / 810,70 / 812,57 (ff); katkeaa 813,5-813,7 (taso 42 > 26 dB 0,4 s:ssa); puupuhaltimet ja jouset alkavat hiljaa 814,25",
+      "iskut": [
+        806.44,
+        809.94,
+        810.7,
+        812.57
+      ]
     },
     "dim_possibile": {
       "t": 825.0,
@@ -653,7 +659,14 @@
       "t_loppu": 631.4,
       "varmuus": "analyysi",
       "luottamus": "hyvä",
-      "peruste": "spektri.u8: ylärekisteri +7,8 dB kohdassa 626,27 s; taso −18…−20 dBFS 10:27–10:29 (jakson huippu), lasku alkaa 631,37 s; käyttäjä kuuli kohdan 10:28; partituuri t. 356–358"
+      "peruste": "spektri.u8: ylärekisteri +7,8 dB kohdassa 626,27 s; taso −18…−20 dBFS 10:27–10:29 (jakson huippu), lasku alkaa 631,37 s; käyttäjä kuuli kohdan 10:28; partituuri t. 356–358 | 10.11. yö: viisi iskua hienolla vuolla (askel 1,5 ms, 150-4000 Hz): 628,24 / ,47 / ,72 / ,95 / 629,27; partituuri t. 356-357: trumpetit ja patarummut neljä painotettua neljäsosaa fff, viides on pitkä ääni (dim. molto)",
+      "iskut": [
+        628.24,
+        628.47,
+        628.72,
+        628.95,
+        629.27
+      ]
     },
     "myrsky_aksentti_537": {
       "t": 872.0,
@@ -717,8 +730,15 @@
       "t": 910.04,
       "varmuus": "analyysi",
       "luottamus": "hyvä",
-      "peruste": "tarkat alut keski 910,04 / 910,28 / 910,49 / 910,71 (neljä iskua 0,22-0,24 s välein, -15 dBFS): sama kuvio kuin 10:28,22 (viisi iskua)",
-      "t_loppu": 910.9
+      "peruste": "tarkat alut keski 910,04 / 910,28 / 910,49 / 910,71 (neljä iskua 0,22-0,24 s välein, -15 dBFS): sama kuvio kuin 10:28,22 (viisi iskua) | 10.11. yö: viisi iskua hienolla vuolla: 910,03 / ,27 / ,51 / ,73 / ,95; partituuri t. 569-570: neljä painotettua neljäsosaa fff, viides pitkä ääni (dim.)",
+      "t_loppu": 911.3,
+      "iskut": [
+        910.03,
+        910.27,
+        910.51,
+        910.73,
+        910.95
+      ]
     }
   }
 }
