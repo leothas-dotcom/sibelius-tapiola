@@ -108,3 +108,54 @@ Korjaa kaikki kriitikon kohdat; ohjaajan päätökset niihin:
 Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat jokaisesta kohdasta ja mittaukset kohdista 1, 2, 4, 5 ja 8, ja kirjoita
 `runs/maailma_07_08/tarkistus.md` uudelleen.
 
+## KIERROS 3 (10.11.2026): OHJAAJAN PÄÄTÖS: PALATAAN VEDOKSEN 4 SALIIN JA LISÄTÄÄN SIIHEN VAIN SE, MITÄ KÄYTTÄJÄ PYYSI
+
+**Tämä luku kumoaa aiemmat luvut siltä osin kuin ne käskevät muuttamaan salin, pöydän tai auringon ulkonäköä.**
+
+Kriitikon raportti kierroksesta 2: `runs/maailma_07_08/kriitikko_v5b.md` (lue kokonaan). Kaksi kierrosta muutti salin litteiksi
+paneeleiksi: "vedos 4 luki metsäksi paremmin". Käyttäjä ei moittinut salia. Hän sanoi tästä välistä täsmälleen viisi asiaa:
+1. "8:15, sellosoolo? Kaunis! Nyt ei tapahdu mitään"
+2. "Voisiko siinä kohtaa kun altot soittaa, joku sumu tai muu tuoda vähän eloa? 9:00 eteenpäin?"
+3. "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa."
+4. "Sitten 10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee? Miksi ei näy mitenkään?"
+5. "11:20 - mielestäni aurinko ei voi nykiä tuolla tavalla ylös alas. Ei se toimi niin oikeasti. Sen pitää hitaasti alkaa nousta ja
+   kohdassa 11:20 se täyttää valon ja valaisee tilan. **Se oli hieno muuten**"
+Tyyliohje 4d kohta 21: yksi palaute ei kaada sitä, mikä toimii.
+
+### Lähtökohta
+- **Vedoksen 4 moduuli: `runs/v5_07_08/maailma_07_08_vedos4.js`** (renderi `runs/v5_07_08/osa_vedos4.mp4`). **Kopioi se tiedostoksi
+  `visual/maailma_07_08.js` ja tee muutokset siihen.** Salin rungot, valokeilat, usvan ulkonäkö, pöytä ja auringon ulkonäkö
+  pysyvät sellaisina kuin vedoksessa 4.
+- Kierroksen 2 moduuli on tallessa (`runs/v5_07_08/maailma_07_08_kierros2.js`, renderi `osa_kierros2.mp4`). Siitä saa siirtää
+  **vain** nämä kriitikon todentamat osat: vaskien iskujen mittaus ja leikkaukset, auringon korkeuden monotoninen käyrä,
+  punaisen valon leviäminen saliin C-duurissa, allegron vauhtikäyrä, fraasien tunnistus mitatusta tasosta.
+
+### Muutokset, vain nämä viisi (ja kaksi vikaa)
+1. **Sellojen laulu (`jousijakso_urkupiste_E_alku` → `_loppu`) on tapahtuma.** Fraasin aikana **hopeinen valo ja usva nousevat
+   maasta runkojen tyvien välistä ja kulkevat salin poikki**: valon etureuna etenee fraasin alusta loppuun kuvan laidasta toiseen
+   (katsoja näkee jonkin kulkevan), ja sen yläreunan korkeus seuraa melodiaa (fraasin oma sävelala skaalattuna välille noin
+   10–45 % kuvan korkeudesta). Fraasin lopussa se laskeutuu ja himmenee kahdessa sekunnissa. Sama ele toistuu jokaisessa
+   fraasissa **eri korkeudella**: `K_viulut` ja `K_viulut_mezza` ylhäältä latvuksesta alaspäin (noin 55–90 %), `patarumpu_ppp`
+   (altot ja sellot) ja `altot_mezza` keskellä (noin 30–65 %). Fraasien välissä valo on poissa. Mittaa valon painopisteen
+   korkeus fraaseittain: sellot alle 0,35, altot noin 0,5, viulut yli 0,65 (osuus kuvan korkeudesta alareunasta).
+2. **Usva liikkuu `hitaat_soinnut`ista eteenpäin** (ja fraasien aikana): usvan kohina kulkee valokeilojen läpi näkyvästi,
+   vähintään noin 40 px/s 1080p:ssä keskikerroksessa, eri kerrokset eri suuntiin. Mittaa valmiista renderistä (kahden 0,2 s
+   välein otetun ruudun siirtymä usva-alueelta, josta rungot on rajattu pois).
+3. **Vasket `trumpetit_patarummut_356`:** jokaisesta mitatusta iskusta oma, koko kuvan korkuinen kylmä valon leikkaus runkojen
+   takana, **myös ensimmäisestä** (ankkurin ruudussa; kierroksella 2 se puuttui ja erillisiä näkyi kolme seitsemästä). Koska
+   iskut ovat 0,2–0,3 s välein, jokainen leikkaus on **eri kohdassa vaakasuunnassa ja eri syvyydellä** (kaukaa lähelle), niin
+   että ne erottuvat toisistaan; hiipuminen noin 0,4 s; maa tärähtää valona joka iskussa.
+4. **Allegro `allegro_359`:** kameran vauhti alkaa kasvaa ankkurista heti (kierroksella 2 vasta kuuden sekunnin päästä):
+   kaksinkertainen kuudessa sekunnissa, kasvaa edelleen, jarruttaa pysähdykseen noin neljä sekuntia ennen `auringonsade`a;
+   usva ja lumi nopeutuvat; kirkkaus nousee ilman notkahduksia.
+5. **Aurinko:** vedoksen 4 aurinko sellaisenaan, mutta sen korkeus on monotoninen pehmeä käyrä `allegro_359` → `auringonsade`
+   (ei koskaan alaspäin; `c_duuri_valahdykset` vain kirkkautta), ja kohdassa `auringonsade` punainen valo **täyttää salin**
+   (kierroksen 2 toteutus: rungot punaisessa reunavalossa, pitkät varjot kohti katsojaa, usva hehkuu). Aurinko näkyy koko nousun
+   ajan runkojen välistä (kierroksella 2 se katosi kokonaan). Kovareunainen punainen suorakulmio ei saa näkyä.
+6. **Viat:** jos vedoksen 4 moduulissa on runkojen hyppy videon kohdassa noin 4,9–5,0 s (alun runkopari ilmestyy ja katoaa),
+   poista se. Rungot eivät huoju (kumipuusääntö). Lumi liikkuu aina.
+
+Älä tee mitään muuta. Renderöi koko väli lukon kautta tiedostoon `runs/maailma_07_08/osa.mp4`, katso liikesarjat viidestä
+kohdasta, vertaa vedoksen 4 renderiin rinnakkain (salin pitää näyttää samalta tai paremmalta), tee mittaukset kohdista 1 ja 2
+ja auringon korkeus 2 s välein, ja kirjoita `runs/maailma_07_08/tarkistus.md`.
+

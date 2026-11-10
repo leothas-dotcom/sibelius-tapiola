@@ -1,92 +1,35 @@
-# Maailma 5 (Väike): tarkistus
+# Maailma 5 (Väike): tarkistus, vedos 5 kierros 4 (10.11.2026)
 
-Moduuli `visual/maailma_05.js`, sivu `visual/maailma.html?m=05`. Aikaväli ankkurista `pohja_katoaa` (3:23, 203,0 s) ankkuriin
-`pohja_vaihtuu_D` (5:36, 336,8 s), levytys Rattle / LSO 2022 (kuuntelukopio). Kaikki ajat tulevat `d.aika`sta.
+Moduuli `visual/maailma_05.js` = vedoksen 4 moduuli (`runs/v5_05/maailma_05_vedos4.js`) + vain kierroksen 4 muutokset. 203,0 s (3:23) -> 336,8 s (5:36),
+Rattle / LSO 2022 (kuuntelukopio). Renderi `runs/maailma_05/osa.mp4` (133,8 s, 4014 ruutua, aa=2). Todisteet: `runs/maailma_05/tark_k4/`.
+Videon aika = teoksen aika - 203,0 s. Vertailu vedokseen 4: `runs/v5_05/osa_vedos4.mp4`.
 
-## 1. Suunnitelma (kirjoitettu ennen koodia)
+## Kierroksen 4 kohdat
+| # | Kohta | Tila | Todiste |
+|---|---|---|---|
+| 1a | Nymfit: `pohja_katoaa` harvat ensimmäiset valot | tehty (harvat, 1-2 kerrallaan) | `k_kontakti.png` 0:06, 0:30 |
+| 1b | `puhaltimet_staccato`: parit samaa polkua | tehty: kaksi valoa vierekkäin (+-0,026 kuvan korkeudesta), polku hyppää edestakaisin; osa äänistä on yksittäisiä, kun paria ei mitatusta äänestä löydy | `k_staccato.png` (28,5-30,7 s) |
+| 1c | `D_pikkolo`: juova ylös ja takaisin | tehty: valot kiitävät pystysuoraan kuvan yläreunaan ja laskevat (44,2-45,3 s). **Heikkous:** juova on pystypalkki, x ei etene laaksoa pitkin (juoksu on lyhyt) | `k_D.png` |
+| 1d | Grazioso-tanssi: kolme paikkaa, sama paikka palaa, painotettu kirkkaampi | tehty: vasen matala / oikea keski / keskellä korkea vuorottelevat ja palaavat; 1-7 valoa kerrallaan; painotettu ääni on voimakkaampi ja häipyy hitaammin | `k_tanssi.png` (80-84,4 s), `k_kontakti.png` 1:24, 1:30 |
+| 1e | Valon muoto: pehmeä ydin noin 8 px, kehä, kylmä hopea, häivytys 0,38-0,5 s, ei tähtiä | tehty | kaikki sarjat |
+| 1f | Valaisee harjannetta | **osin:** pehmeä valoallas valon alla; kuvassa se näkyy vain valoilla, jotka ovat lähellä harjannetta (vasen paikka) | `k_tanssi.png` |
+| 1g | Vedoksen 4 väike säilyy `e_pitka_ja_kuviot`-kohdissa | tehty: vanhat pisteet vain 240-243,6 s ja 252-280 s; linnojen ikkunat kuten ennen, mutta päättyvät F:ään | `k_kontakti.png` 0:42-1:18 |
+| 2 | Lumi liikkuu aina | tehty: lumen kertymä (sivu + putoaminen, 0,6-1,4 m/s) seuraa jousten voimaa; ei vakiopisteitä | `kuvaus`: lumiAlas kasvaa joka kohdassa; `k_eteneminen.png` |
+| 3 | Kamera etenee näkyvästi | **osin:** vauhti 2,6 -> 5,0 m/s ja lähiharjanteet nostettu kuvaan (parallaksi alaosassa; harjanteet liukuvat ohi), reitti ennallaan. Kaukainen horisonttiharjanne pysyy lähes paikallaan (kaukana) | `k_eteneminen.png` (12-19 s), `k_kontakti.png` |
+| 4 | Kirjain F: valot pois samassa ruudussa, pimeys nousee alhaalta | tehty: tanssin viimeinen valo 301,4-301,6 s, ruudusta 98,6 s ei valoja (`k_F.png`); pimeys nousee 5 s aikana (`pimeysNousee` 0 -> 1) ja nousee pois ennen pisaraa | `k_F.png`, `k_kontakti.png` 1:42-1:48 |
+| 5 | Horisontin ellipsi pehmeäksi | tehty: hehku nousee horisontin takaa (terävä alareuna, pitkä häntä ylös, leveä). **Heikkous:** lukee nyt vaakasuorana vyöhykkeenä, ei soikiona | `k_kontakti.png` verrattuna vedokseen 4 |
+| 6 | Kumipuusääntö (`uSway`) | tehty: tuulen siirtymä pienennetty (0,3+1,3j+0,6l -> 0,15+0,5j+0,2l) ja vaimenee nollaan yli 110 m päässä; harjanteiden muoto ei muutu ajan mukana | koodi; ei liikesarjaa voimakkaimmasta puuskasta (ei otettu) |
 
-**Maailma.** Huurteen kiteen sisäpuoli. Kamera leijuu sinisessä hämärässä kiteen sisällä ja kulkee tasaisesti eteen
-laaksoa pitkin, jonka kummallakin puolella nousevat tykkylumen pyöristämät harjanteet (kerroksittain syvyyteen, usvaan).
-Harjanteet ovat metsä: tumma massa, jonka latvat ottavat kylmän valon reunaansa ja jonka alaosa on harva ja liukenee
-usvaan. Ei maata: harjanteet leijuvat (pohja on kadonnut), niiden alla on pimeä tyhjyys. Kaukana laakson päässä
-horisontissa on kiteen läpi tuleva valo (pitkä ääni): leveä vyö ja tiivis ydin. Ilmassa leijuu hitaasti huurteen hiutaleita
-(lumi), jotka kulkevat kameran ohi.
+## Muut muutokset (kierroksella löydetyt virheet)
+- Pisaran etäisyys skaalattu kameran vauhdin mukaan (17 m * 5/2,6), muuten kamera ohitti pisaran: pisara putoaa kuten vedoksessa 4 (`k_kontakti.png` 1:54-2:06).
+- Lähiharjanteiden kohotus aiheutti kerroksen poksahduksen kameran lähellä (kerrosikkuna alkaa nyt kameran takaa, lähin kerros vaimenee pois pehmeästi) ja basson askeleen välähdyksen alaosassa (vaimennettu lähiharjanteilla). Mittaus: suurin ruutujen välinen alaosan kirkkausero 13,2 -> 3,6 (harmaasävy 0-255; `pop.py`-mittaus).
 
-**Siemenen kuva tässä maailmassa.** Horisontin valo (kiteen valo) / sen alla tumma harjanteiden massa kerroksittain /
-sileät loivat kummut (pyöristetyt tykkylumen lohkareet) / lumi (huurteen hiutaleet). Sama kuva kuin maailmassa 1, mutta
-huurteen aineessa ja kiteen sisällä katsottuna. Kamera ajaa kohti valoa koko ajan.
+## Säilytetty vedoksesta 4 (verrattu `k_kontakti.png` vs. `v4`)
+Rajakuvat HUURRE ja JAA, pisara ja sen kulku, linnat (kolme kumpua), basson askeleet, harjanteiden ulkonäkö, kiteen valon pitkä ääni, lopun paisutus. Loppu (moduuli 11_12) ei koskettu.
 
-**Kameran reitti.** Alku: rajakuva HUURRE (vaalea huurrepinta aivan läheltä) hetkellä `pohja_katoaa`. Pinta on kiteen
-ulkokalvo: kamera ajaa sen läpi, kalvo ohenee ja aukeaa keskeltä (valon kohdalta) ulospäin ja sen kuvio suurenee
-(mittakaava muuttuu jatkuvasti), ja taakse paljastuu laakso ja harjanteet. Keskellä: sama tasainen vauhti
-(nopeus seuraa vain uusien äänten hidasta tiheyttä), harjanteet liukuvat ohi viistosti (parallaksi). Loppu:
-`jannitesoinnut`-hetkestä kide sulaa: harjanteet liukenevat usvaksi ja valo kerääntyy pisaraksi, joka sisältää
-alun kuvan ylösalaisin (taittuminen). Pisara putoaa, kamera katsoo hitaasti alas ja laskeutuu sen mukana, musta jään
-pinta nousee alhaalta, kasvaa ja täyttää kuvan: viimeinen ruutu on `RAJA.JAA`.
-
-**Taulukko: kuunteluoppaan rivi → kuva → signaali**
-
-| Kuunteluoppaan rivi | Mitä kuvassa tapahtuu | Signaali |
-|---|---|---|
-| 3:23 Kirjain C: pohja katoaa, viulut vajoavat, puhaltimet kuvioivat | Harjanteiden alaosa liukenee usvaan (leijuvat); viulujen hidas matto on kiteen valo ja harjanteiden tummuus; puhaltimien pienet kuviot ovat väikettä | `d.matala` (pohja), `d.keski` (jouset/valo), nuotit midi >= 72 lyhyet |
-| 3:23 Pohja katoaa | Pohja (alaosan massa) häviää: harjanteet ohenevat leijuviksi nauhoiksi | `d.matala(t,1.2)` |
-| 4:00 Pitkä e ja tiheät korkeat kuviot | Kiteen valon ydin kirkastuu (pitkä e); väike kulkee polkuja; kolme linnaa tulevat esiin pimeästä | `d.pitka`, nuotit |
-| 4:12 Askeleet palaavat fis:llä | Pohja palaa: harjanteiden alaosa saa massan takaisin (paljastuu), jokainen askel nostaa hetkeksi valoa alhaalta harjanteiden alapintaan | `d.matala`, `d.alut` |
-| 4:40 Nopean kuvioinnin jakso | Väike tihenee ja kulkee nopeammin (kolme kulkijaa), kameran vauhti kasvaa hitaasti tiheyden mukana | nuotit, tiheys (kertymä) |
-| 5:03 Jakso päättyy | Väike harvenee, polut jäävät hetkeksi | nuotit |
-| 5:10 Jännitteiset pitkät soinnut | Kide sulaa: usva tihenee, valo kerääntyy pisaraksi, pitkät soinnut pitävät pisaran valoa tasaisena | `d.koko`, `d.keski` |
-| 5:26 Yläkerros nousee | Pisara irtoaa ja alkaa pudota; kamera alkaa katsoa alas | `d.korkea` (nousu) |
-| 5:36 Pohja vaihtuu (raja) | Koko ruutu on jään pinta (RAJA.JAA) | ankkuri |
-
-Staccato on pisteitä (väikkeen kärki), legato on säie (harjanteen latvan reuna syttyy yhtenäisenä viivana). Linnat:
-kuusi ikkunaa kussakin, ikkunat syttyvät lyhyistä korkeista äänistä rekisterin mukaan, eivät koskaan kaikki kuusi yhtä aikaa.
-
----
-
-## 2. Tarkistus (rakentajan oma, stilleistä; aikaraja vuoksi lyhyt)
-
-Katsotut stillit (`runs/maailma_05/tark/`): 203, 204,5, 206, 207, 208, 210, 212, 214, 220, 225, 230, 240, 252, 260-262, 272, 285, 296, 305, 312, 316, 320, 324, 327, 330, 333, 335, 336,8. Koko väli renderöityy ilman virhettä. Liikesarjoja (0,2 s välein) ei ehditty ajaa: liike on tarkistettu vain harvoista stilleistä ja koodin perusteella.
-
-### (a) Tyyliohjeen säännöt (luku 12, 4d) ja miten maailma elää
-| Kohta | Tila | Perustelu |
-|---|---|---|
-| 0 ääni ohjaa | osin | valo (keski/pitka), tummuus (keski), pohja (matala), askeleet (alut), väike (nuotit), legato (pitkät nuotit); iskuja ei ole tässä välissä |
-| 1-4 kamera | toteutuu | tasainen eteneminen, ei pyöri; loppupitchi enintään noin 9 °/s; ei reagoi iskuun |
-| 5 siirtymä | toteutuu | alku: kalvo aukeaa 8 s, kuvio suurenee; loppu: pisara, jään pinta täyttää kuvan |
-| 6 kolme kerrosta | toteutuu | lähellä tumma, keskellä, kaukana sininen (stillit 214, 262) |
-| 9 metsä | osin | harjanteet ovat massaa, ei puita; ei rungoilta näyttävää yksityiskohtaa |
-| 10-12 | toteutuu | iskuja ei ole; väike on yksi elementti, kolme kulkijaa |
-| 14-17 värit | toteutuu | vain halla, salo, hopea; ei punaista, ei kajoa |
-| 18 hiljaisuus | ei koske | välillä ei hiljaisuutta |
-| 19-21 | toteutuu | ei hahmoja, tekstiä, jäljennöksiä |
-| 4d 1 (korjattu 10.11.) | osin | harjanteet huojuvat tuulessa (`uSway`, aalto kulkee yli; amplitudi = jousten voima ja legato), usva-aukot ajelehtivat, hiutaleet leijuvat; mikään ei kasva, kutistu eikä pompi. Huojunnan liikettä ei ole katsottu sarjana |
-| 4d 2, 3, 9, 18 | toteutuu | laaja syvä massa, kamera eteen, sileät pyöreät muodot |
-| 4d 11, 14 | ei koske | linnat ovat omat (ei Tapion talo); ei yksittäistä puuta |
-| 4d 17 | toteutuu | horisontin korkeus seuraa melodiaa 3 s keskiarvona |
-
-Miten maailma elää ja mistä: huojunta ja latvojen valo (jousten voima, `d.keski`), kiteen valo (`d.keski` ennen e:tä, `d.pitka` sen jälkeen), pohjan massa (`d.matala`), askelvalo alhaalta (`d.alut`), väike ja polut (nuotit >= 72, lyhyet), linnojen ikkunat (samat nuotit rekisterin mukaan, enintään viisi kuudesta syttyneenä), säie latvalla (pitkät nuotit), kameran vauhti (uusien äänten tiheys, 6 s keskiarvo).
-
-### (b) Kuunteluoppaan rivit
-3:23 pohja katoaa: näkyy (stilleistä 205-214 massa ohenee leijuvaksi, mitattu `pohja`). 4:00 pitkä e: osin (ydin kirkastuu, 240 s). 4:12 askeleet: osin (valo alhaalta, ei erotettavissa stilleistä). 4:40 nopea jakso: osin (väikettä enemmän, ei katsottu sarjana). 5:10 sointuinen: näkyy (sulaminen, pisara). 5:26 nousu / pisara putoaa: näkyy (stillit 324-335). 
-
-### (c) Rajakuvat
-Alku 203,0 s: koko ruutu on `rajakuva(HUURRE)` (tarkistettu stillistä, kalvon peitto 1 koko ruudulla). Loppu 336,8 s: koko ruutu on `rajakuva(JAA)` (tarkistettu stillistä, `uEnd` = 1). Alku aukeaa 8 s:ssa, loppu ajetaan 26 s:ssa.
-
-### (d) Omat lisäykset
-Hiutaleet (lumi kuuluu siemeneen), huojunta (tyyliohje 4d 1), kalvon aukeaminen keskeltä (kulku kiteen pinnan läpi, käsikirjoitus 4->5), pisaran sisäinen ylösalainen kuva (taittuminen; ennakoi maailmaa 6), jään pinta vasta lopussa. Kameran korkeus pidetään harjanteiden yläpuolella; sulamisen aikana lähimmät harjanteet muuttuvat usvaksi (nimetty kulku).
-
-### (e) Heikkoa, rehellisesti
-- Linnat ovat heikot: kolme kumpua näkyvät vain reunoina ja ikkunat harvoin; kapeana kaukana ne eivät lue "linnoiksi". Ikkunoiden syttymistä ei ole tarkistettu sarjana.
-- Etualan harmaa massa on litteä ja liian vaalea stilleissä 272-305; matala valaistus tekee siitä sameaa.
-- Laakso on U-muotoinen, sama joka kerroksessa; ei voimakasta vaihtelua 20 sekunnin aikana (kuva on samannäköinen 214-312 s).
-- Hiutaleet muistuttavat tähtiä pimeässä taivaassa.
-- Sulamisvaiheessa (327-335) usva on harmaan vaalea; viimeinen ruutu on tummempi, siirtymä 1,6 s.
-- Liikesarjoja, huojunnan nopeutta ja kameran 20 °/s -rajaa ei ole mitattu ruututarkasti; pitch on laskettu (enintään noin 9 °/s).
-
-## 3. Korjauskierros (kriitikon virhelista, 10.11.)
-Tehty: harjanteiden seinät loivemmiksi ja pyöreämmiksi; latvaston epäsäännöllinen pyöreä siluetti ja valoa siivilöivät aukot latvojen alaosassa; reunavalon aalto kulkee latvojen yli jousten voiman mukaan (huojunta ja kimmellys, `uSway`); väike on pisteitä, polku himmeä ja lyhyt (ei enää viivoja); linnat lähemmäs laaksoa ja himmenevät lähestyessä; kalvon kuvio pehmenee heti ja aukeaa nopeammin (ensimmäinen ruutu edelleen HUURRE, tarkistettu 203,0 s); horisontin vyö pehmeämpi, korkeus seuraa melodiaa voimakkaammin; kaukaiset hiutaleet lähes pois (eivät lue tähtinä).
-Katsottu: stillit 203, 205, 214, 231, 262, 296. Viimeisen pienen muutoksen (kimmellyksen ja pienten tupsujen vaimennus) jälkeen ei ole renderöity.
-Heikkoa edelleen: latvojen siluetti näyttää vielä osin lumisilta kärjiltä (3:34, 4:22), joten sileys on vain osittain saavutettu; linnat ovat edelleen heikosti tunnistettavia; harmaa etuala on litteä; huojunta ja väikkeen liike on katsomatta sarjana.
-
-## 4. Viimeinen korjaus: ei teräviä vuoria (10.11.)
-Harjanteiden profiilista poistettu kaikki korkeataajuinen rosoisuus ja terävät huiput: korkeus noin kolmannes entisestä, vain leveitä pyöreitä möykkyjä (solut 14 m ja 6,5 m), kaukaisimmatkin; kallioläikät ja lumihuippukimmellys vaimennettu, latvusten yläpinta ottaa kiteen valon pehmeästi. Katsottu stilleistä 233 s ja 288 s: kuva on matalaa pyöreää kumpumaata, ei alppivuoria. Heikkoa: kuva on nyt matala ja melko tasainen, latvusryhmät lukevat tykkylumimetsänä vain heikosti (möykyt ovat sileitä ilman erottuvia latvuksia), ja linnat ovat edelleen vaikeasti tunnistettavia.
+## Auki
+- `D_pikkolo`-juova on pystypalkki yläreunassa, ei kulje laaksoa pitkin.
+- Parit eivät kulje kahta eri harjannetta pitkin vaan kahta vierekkäistä valoa taivaalla; valo ei osu harjanteeseen lähellä horisonttia.
+- Etenemisen parallaksi näkyy alaosan lähiharjanteissa, ei isossa kuvassa; yli 10 s jaksoja, joissa vain lumi ja lähiharjanteet liikkuvat (esim. 12-25 s), on.
+- Ei tehty: kumipuutodiste voimakkaimmasta puuskasta liikesarjana; kuunteluoppaan taulukko (3:23-5:36 rivi riviltä) vain yllä olevilta osin.
+- Kriitikkoa ei ajettu.
