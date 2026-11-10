@@ -46,9 +46,14 @@ briefissä mainitut kellonajat ovat ohjaajan mittauksia tarkistusta varten, eiv�
 
 ## Todisteet, jotka jokainen rakentaja palauttaa (kirjoita `runs/maailma_<k>/tarkistus.md`:n loppuun luku "Vedos 7")
 
-**T1.** Renderöi koko moduuli lukon kautta (`node render/lukittu.mjs --data build/rattle_koko --page "visual/maailma.html?m=<k>&aa=2"
---start <A> --end <B> --workers 2 --chunk 40 --out runs/maailma_<k>/osa.mp4`; moduuli 01_02 paikkaan `runs/alku_v4/osa.mp4`;
-samat ruuturajat kuin ennen). Tee jokaisesta määrätystä kohdasta liikesarja valmiista renderistä
+**T1.** Renderöi koko moduuli lukon kautta: `node render/lukittu.mjs --data build/rattle_koko --page "visual/maailma.html?m=<k>&aa=2"
+--start 0 --workers 2 --chunk 40 --out runs/maailma_<k>/osa.mp4` (moduuli 01_02 paikkaan `runs/alku_v4/osa.mp4`).
+**KORJAUS 10.11. klo 23.35: `--start` ja `--end` ovat SEKUNTEJA moduulin omassa ajassa (0 = moduulin alku), eivät ruutuja.**
+Koko moduuli = `--start 0` ilman `--end`-valintaa (loppu on sivun `window.duration`). Otsikoiden "ruudut A–B" ovat vain
+tarkistusta varten: valmiin osan ruutumäärän pitää olla B − A (01_02: 1848, 03_04: 4242, 05: 4014, 06: 4785, 07_08: 5859,
+09: 4620, 10: 2982); tarkista se `ffprobe`lla. Myös `--stills` ja koerenderit ovat moduulin omaa aikaa sekunteina
+(teoksen aika miinus osan alku). Ohjaaja pysäytti klo 23.30 väärillä rajoilla käynnistetyt renderit (05, 06, 07_08, 09):
+käynnistä omasi uudelleen oikein. Koko moduulin renderi kirjoitetaan aina paikkaan `runs/maailma_<k>/osa.mp4`. Tee jokaisesta määrätystä kohdasta liikesarja valmiista renderistä
 (`.venv\Scripts\python.exe -I render/sarja.py <video> <alku_s> <askel_ruutuja> <n> <ulos.png> 480 6`) ja **katso se itse**.
 "Mitattu" tarkoittaa mitattua renderistä, ei mallista.
 **T2. Regressiomittari:** `.venv\Scripts\python.exe -I render/vertaa.py runs/vedos_v6u/osat/<k>.mp4 <uusi osa.mp4> <osan alku s>`.
