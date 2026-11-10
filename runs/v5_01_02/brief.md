@@ -125,3 +125,39 @@ ei hidas ja uljas tulo. Korjaa kaikki alla olevat; numerot viittaavat kriitikon 
 Renderöi koko väli uudelleen samaan paikkaan, tee todisteet (liikesarjat, mittaukset kohdista 1, 4, 5 ja 8, vertailu loppuun) ja
 kirjoita `runs/alku_v4/tarkistus.md` uudelleen.
 
+## KIERROS 3 (10.11.2026): kriitikon raportti `runs/alku_v4/kriitikko_v5b.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Kuva on nyt oikea** (ohjaaja ja kriitikko): kuuset ovat kuusia kuten lopussa, vaarat lukevat suomalaisina, loivina, sinertävinä
+vaaroina ja maana, maisema kertyy, jousten tulo ja lakkaaminen näkyvät metsän läsnäolona, hiljaisuus toimii, kumipuita ei ole.
+**Älä muuta näitä.** Tämä kierros on viimeistely: korjaa täsmälleen alla olevat, älä rakenna mitään uudelleen.
+
+1. **Kirkas vaakakaista metsän päällä 41,8–46 s pois (estävä).** Se lukee valonheittimeksi tai jäätyneeksi järveksi (terävä
+   yläreuna, kirkkaus +60 %, romahtaa 0,6 sekunnissa). `patarumpu_paisuu`n vastine on **pehmeä, epätasainen maan valo latvojen
+   väleissä** (lumi puiden alla hohtaa ja värisee), ilman reunaa: lähimetsän kirkkain prosentti enintään 1,3-kertainen tummaan
+   tilaan verrattuna, nousu paisutuksen mukana, hiipuminen iskun jälkeen vähintään 2 s.
+2. **Vaarat liikkuvat kameran mukana (estävä).** Mitattu siirtymä on nolla. Tuo lähin vaarataso lähemmäs ja kasvata kameran
+   sivuttaisliikettä niin, että 1080p:ssä lähin taso liukuu noin 15–25 px/s, keskimmäinen noin 8–12 px/s ja kaukaisin 2–5 px/s,
+   tasaisesti koko ajan, ja lähin taso myös kasvaa hieman. Ei nopeampaa: maiseman pitää olla uljas, ei vierivä. Tapion talo on
+   kaukaisimmalla tasolla. Mittaa valmiista renderistä reunan paikka 30 s ja 40 s kohdalla joka tasolta.
+3. **Vaskien isku (estävä): ei ohut kylläinen laser tyhjästä.** Leikkaus kasvaa horisonttiin kertyneestä hehkusta ylöspäin noin
+   0,15 sekunnissa niin, että huippu on iskun ruudussa; se on leveämpi ja pehmeäreunainen, ei kyllästy valkoiseksi, ja on metsän
+   ja vaarojen takana (lähimmät latvat jäävät sen eteen siluetiksi).
+4. **Avauksen patarumpu 7,6 s näkyy:** pehmeä valon rengas kulkee maassa latvojen välissä ulospäin 1,5–2 s; maan kaistan
+   kirkkaus nousee vähintään noin 15 %.
+5. **Fraasi 0:54 on selvä ele:** metsän tumma aalto läheltä kauas (tummuus vähintään noin 25 %), terävyys kasvaa, tuuli taivuttaa
+   latvoja säännön rajoissa ja lumi pöllähtää. Nyt −9 %.
+6. **Kulku metsän sisään loppuun asti:** viimeiset 1,6 s ovat rakenteetonta tummaa. Latvat ja oksat kulkevat kameran ohi ja
+   niiden välinen pimeä kasvaa; rakenne näkyy niin, että tasaista on enintään viimeiset noin 0,3 s (rajakuva). Jos kruunukentässä
+   ei ole runkoja, lisää lähelle tulevat oksat ja latvojen siluetit kulkua varten.
+7. **Paljastuksen ajoitus:** maamassa tulee näkyviin ennen harjan valoa (noin 0,3 s), ei valokaari ensin. Harjan valon nousu
+   10→90 % vähintään 1,2 s (mitattu 0,85 s) ja lasku puoleen vähintään 2,5 s (mitattu 1,4 s; vasemman vaaran lasku 29,0–29,4 s
+   on liian nopea).
+8. **0–24 s:** terävä horisonttireuna ja piirteetön kaistale metsän ja horisontin välissä: metsä jatkuu horisonttiin asti
+   pienenevinä latvoina ja usvana. Ainoa suora viiva on valon viiva.
+9. **Tapion talo yhtä leveä suhteessa kuvaan kuin lopussa** kohdassa 0:44 (nyt 55 % lopun leveydestä).
+10. **Puupuhaltimien tulo 0:26:** harjan valo etenee kulun sävelten mukaan askelittain (nyt vain pulssi).
+
+Renderöi koko väli uudelleen samaan paikkaan, mittaa kohdat 1, 2, 4, 5 ja 7 valmiista renderistä (luvut tarkistukseen), tee
+liikesarjat, ja kirjoita `runs/alku_v4/tarkistus.md` uudelleen. Kierroksen 2 renderi talteen nimellä
+`runs/v5_01_02/tark/osa_kierros2.mp4` ennen uutta ajoa.
+
