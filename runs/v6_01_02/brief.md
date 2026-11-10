@@ -32,3 +32,29 @@ tapahtuu ja miksi; sen ajoitusluvut vaarojen tulosta kumotaan alla).
 
 Liikesarjat: 23–45 s 0,5 s välein (vaarat tulevat huomaamatta esiin), 45–55 s (puuska kasvaa), 57,5–61,6 s 0,2 s välein
 (hiljaisuus ja laskeutuminen). Mittaa vaarojen kontrastin muutos ruutua kohti kolmesta vaarasta.
+
+## LISÄKORJAUS (10.11.2026 myöhäisilta): vaarojen järjestys. Käyttäjän palaute vedoksesta 6 (palautelistan rivi 80)
+
+Käyttäjä: "Siis ihan tuo alku. Miten tuo yksi mäki ilmestyy noiden muiden mäkien eteen yhtäkkiä? Etkö ymmärrä että mäet ei toimi niin?"
+
+**Vika:** vaarat paljastuvat paisutus kerrallaan satunnaisessa syvyysjärjestyksessä. Kun lähempi vaara tulee näkyviin myöhemmin
+kuin kauempi, se ilmestyy jo näkyvän maiseman **eteen** ja peittää sen. Niin ei tapahdu luonnossa: usva on katsojan ja maiseman
+välissä, ja kun se ohenee, **lähin näkyy ensin ja kauempi tulee esiin sen takaa**. Mikään ei voi tulla näkyviin jo näkyvän eteen.
+
+**Korjaus (vain tämä; kaikki muu ennallaan):**
+1. **Paljastusjärjestys on etäisyysjärjestys.** Järjestä vaarat etäisyyden mukaan ja anna ensimmäisen paisutuksen paljastaa
+   lähin vaara, toisen seuraavaksi lähin ja niin edelleen; viimeinen ja kaukaisin on Tapion talo. Yhdenkään vaaran näkyvyys ei saa
+   kasvaa, ennen kuin kaikki sitä lähempänä olevat ovat jo täysin esillä tai sitä pidemmällä.
+2. **Jokainen uusi vaara nousee esiin edellisten takaa ja yläpuolelta.** Kauempi vaara on kuvassa korkeammalla kuin sen edessä
+   olevien harjalinja ainakin osalla leveyttään (muuten se ei näy lainkaan): maisema kasvaa syvyyteen ja ylöspäin, horisontti
+   kohoaa vaara vaaralta. Piirtojärjestys on kaukaa lähelle, ja lähempi peittää aina kauemman.
+3. **Ilmaperspektiivi on johdonmukainen:** mitä kauempana, sitä vaaleampi, sinisempi ja pehmeämpi; lähin on tummin. Paljastumisen
+   aikana vaaran sävy lähestyy tätä lopullista sävyä taustan sävystä (ei tummasta), jotta se ei näytä varjolta, joka putoaa
+   maiseman päälle.
+4. Tulon hitaus (vähintään viisi sekuntia) ja hillitty harjan valo säilyvät. Vaaran korkeus saa yhä tulla soittajan kulusta,
+   kunhan ehto 2 täyttyy (skaalaa tarvittaessa tason mukaan).
+Perusteet: tyyliohje 7b "paljastuminen" ja 4d kohdat 5, 18 ja 30; tutkimus: Guo Xi (usva erottaa etäisyyden tasot: lähin selvin).
+
+Todiste: liikesarja 23–46 s 1 s välein ja lista: vaaran numero, etäisyys, paljastumisen alkuhetki (etäisyyden pitää kasvaa
+ajan mukana). Katso sarja kriittisesti: missään ruudussa ei saa tulla mitään jo näkyvän harjan eteen. Renderöi koko väli
+(1848 ruutua) lukon kautta samaan paikkaan ja lisää tarkistus.md:n lukuun "Vedos 6" kohta tästä.

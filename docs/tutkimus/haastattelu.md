@@ -847,3 +847,12 @@ mobiili-istunto). Pääistunnossa käyttäjä:
 > Korjaa samalla muut puutteet, jotka on kerätty samaan dokumenttiin. Käytä kriitikkoa avuksesi tarkistamaan että kaikki
 > palautteet on korjattu
 
+## 10.11.2026 myöhäisilta: vedos 6, alun mäet
+
+> Siis ihan tuo alku. Miten tuo yksi mäki ilmestyy noiden muiden mäkien eteen yhtäkkiä? Etkö ymmärrä että mäet ei toimi niin?
+
+Ohjaajan vastaus: virhe on järjestyksessä. Vaarat paljastuivat satunnaisessa syvyysjärjestyksessä, joten lähempi vaara tuli
+näkyviin jo näkyvien kauempien eteen. Usva ei toimi niin: kun usva ohenee, lähin näkyy ensin ja kauempi tulee esiin sen takaa.
+Korjaus: vaarat paljastuvat aina lähimmästä kauimpaan, jokainen uusi edellisten takaa ja yläpuolelta; mikään ei tule minkään
+jo näkyvän eteen.
+
