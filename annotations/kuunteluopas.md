@@ -318,12 +318,14 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* vasket ja patarummut edessä. *Tunnelma:* vyöryvä, levoton.
   - *Partituurissa:* noin t. 356–358: klarinetit, fagotit, kontrafagotti, käyrätorvet, trumpetit, pasuunat, patarummut, sellot, bassot fff, dim. molto (s. 35).
   - Ohjaaja: tutti-isku, jonka jälkeen seuraa levoton, voimakas minuutti, jossa C-duuri välähtää pari kertaa ja katoaa, kuin valo pilvien raosta.
-- 10:26 Ylhäällä välähtää nopea kuvio.
-- **10:32 Allegro: liike palaa.** Tutti-iskun jälkeen taso putoaa ja nopea kuviointi alkaa: huilut ja fagotit, jouset ilman sordiinoa.
-  - *Edessä ja takana:* nopea kuviointi edessä; vasket taakse. *Tunnelma:* levoton, kiihtyvä.
+- **10:26 Trumpetit ja patarummut takovat: ensimmäistä kertaa.** Trumpetit, pasuunat ja patarummut takovat samaa säveltä painotetuin iskuin täydellä voimalla (fff); puupuhaltimet, käyrätorvet, sellot ja bassot pitävät sointua; sitten kaikki vaimenee nopeasti.
+  - *Edessä ja takana:* vasket ja patarummut iskevät edessä; kaikki muu jää niiden alle. *Tunnelma:* iskevä, pelottava, uusi.
+  - *Partituurissa:* t. 356–358: trumpetit ja pasuunat fff, aksentoidut toistuvat äänet; patarummut fff aksentein; klarinetit, fagotit, kontrafagotti, käyrätorvet, sellot, kontrabassot fff; kaikilla dim. molto (s. 35)
+  - Käyttäjä 10.11.2026: "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa." Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.
+- **10:34 Allegro: tempo nopeutuu ja intensiteetti alkaa nousta.** Vaskien takomisen vaimettua alkaa uusi, nopeampi tempo: alttoviulut, huilut ja fagotit aloittavat hiljaa liikkuvan kuvion, joka kasvaa; viulut tulevat ilman sordiinoa; trumpetit hyvin hiljaa takana; nousu jatkuu kaksikymmentä sekuntia.
+  - *Edessä ja takana:* nopea kuviointi edessä; vasket taakse. *Tunnelma:* kiihtyvä, nouseva, levoton.
   - *Partituurissa:* noin t. 356–358: kaikilla fff dim. molto; noin t. 359 Allegro (puolinuotti): huilut ja fagotit mp poco cresc., alttoviulut ja viulut senza sord., trumpetit ppp (s. 35).
-  - Lähteet: Sibelius-klubi: vilkkaampi Allegro, sitten hitaampi Allegro moderato. Ohjaaja: isku ei pysäyttänyt mitään, se käynnisti.
-- 10:37 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 21 sekunnin ajan.
+  - Käyttäjä 10.11.2026: "10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee?" Mitattu: taso käy pohjassa 10:34 ja nousee siitä; ylälinja kohoaa 16 puolisävelaskelta 10:37–10:58. Lähteet: Sibelius-klubi: vilkkaampi Allegro, sitten hitaampi Allegro moderato. Ohjaaja: isku ei pysäyttänyt mitään, se käynnisti.
 - **10:41 C-duuri välähtää ennen pysähtymistään.** C-duuri näyttäytyy lyhyesti kolmesti ennen kuin se pysähtyy viideksi sekunniksi.
   - *Edessä ja takana:* valo vilahtaa kerrosten takana ja katoaa. *Tunnelma:* väärä valo lähestyy.
   - Ohjaaja: väärä valo ei tule yllättäen: se käy katsomassa kolme kertaa. Kolmannella kerralla se jää. Käyttäjä: "väärän toivon mielikuva ja vähän semmoista groteskia valoa".

@@ -812,3 +812,12 @@ nousee yksittäisiä soittajia puiden takaa"), Guo Xi (usva erottaa etäisyyden 
 horisonttiin), SKVR ("salo siintääpi sininen"). Unisono-gis on suora valon viiva; jokainen puhaltajan paisutus paljastaa
 yhden vaaran metsän takaa (usva laskee, gis-valo kulkee harjaa pitkin, harjan muoto on soittajan nouseva ja laskeva kulku);
 vaara vajoaa takaisin hitaasti ja jää siintämään, joten maisema kertyy.
+
+## 10.11.2026: trumpetit ja patarummut 10:28, tempo 10:34
+
+> Ooh, unohdin! Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee
+> ensimmäistä kertaa. Sitten 10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee? Miksi ei näy mitenkään?
+
+Ohjaajan tarkistus: partituurin s. 35, t. 356–358: trumpetit, pasuunat ja patarummut fff, toistuvat painotetut äänet
+(aksentit), sitten dim. molto; sen jälkeen Allegro (puolinuotti). Mitattu: 10:26–10:30 on jakson voimakkain kohta (−18 dBFS),
+taso putoaa kohtaan 10:34 (−45 dBFS) ja uusi nopeampi liike alkaa siitä; nousu jatkuu noin 10:58 asti.

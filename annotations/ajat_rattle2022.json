@@ -456,11 +456,11 @@
       "peruste": "tarkka.py: H3 9:40.2–9:58.3; matalat alut 9:40.0–9:51.9, 14 kpl; taso −44…−47 dBFS."
     },
     "allegro_359": {
-      "t": 632.0,
+      "t": 634.5,
       "t_loppu": 641.0,
       "varmuus": "analyysi",
       "luottamus": "heikko",
-      "peruste": "Taso −26 dBFS (10:20–10:30) → −35 (10:30–10:40); lyhyet nuotit 22 / 10 s; C4 pitkä 10:21.5–10:31.8. Paikka tahtien 342 (L, 10:13.6) ja 397 (M, 11:25.1) välissä suhteella; ei kuultu."
+      "peruste": "korvat: taso −45 dBFS kohdassa 10:34 (vaimenemisen pohja), uusi kuviointi 10:35; käyttäjä: tempo alkaa nousta 10:34 | aiempi: Taso −26 dBFS (10:20–10:30) → −35 (10:30–10:40); lyhyet nuotit 22 / 10 s; C4 pitkä 10:21.5–10:31.8. Paikka tahtien 342 (L, 10:13.6) ja 397 (M, 11:25.1) välissä suhteella; ei kuultu."
     },
     "c_duuri_valahdykset": {
       "t": 641.6,
@@ -647,6 +647,13 @@
       "varmuus": "analyysi",
       "luottamus": "hyvä",
       "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): keskirekisteri +7 dB kohdassa 590,27 s; partituuri t. 337 alttoviulut div. mezza"
+    },
+    "trumpetit_patarummut_356": {
+      "t": 626.3,
+      "t_loppu": 631.4,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: ylärekisteri +7,8 dB kohdassa 626,27 s; taso −18…−20 dBFS 10:27–10:29 (jakson huippu), lasku alkaa 631,37 s; käyttäjä kuuli kohdan 10:28; partituuri t. 356–358"
     }
   }
 }

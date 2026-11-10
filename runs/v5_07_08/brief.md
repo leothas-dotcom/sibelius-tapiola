@@ -48,3 +48,24 @@ maa värisee), `K_viulut_mezza` (viulut), `hitaat_soinnut` (jousikuoro dolce), `
 `jousijakso_urkupiste_E_alku` + 8 s (sellojen laulu näkyy tapahtumana), `K_viulut`, `hitaat_soinnut` + 20 s (usva liikkuu),
 `altot_mezza`, väli `allegro_359` → `auringonsade` 2 s välein (auringon korkeus kasvaa joka ruudussa tai pysyy, ei koskaan
 laske: mittaa myös koodista ja raportoi), `auringonsade` (tila on valossa), `M_ennakko`.
+
+## 4. LISÄYS 10.11.2026 (käyttäjän uusi palaute; teemakartta ja kuunteluopas päivitetty, lue rivit 10:13–10:58 uudelleen)
+Käyttäjä: "Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee
+ensimmäistä kertaa. Sitten 10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee? Miksi ei näy mitenkään?"
+
+- **Uusi ankkuri `trumpetit_patarummut_356`** (nimetty isku; kesto noin viisi sekuntia, loppu `d.cues`in kentässä `t_loppu` jos se
+  on, muuten mittaa tason lasku): trumpetit, pasuunat ja patarummut **takovat** samaa säveltä painotetuin iskuin, fff. Vaskien
+  rytmi kuullaan tässä ensimmäisen kerran koko teoksessa, joten sen pitää olla kuvassa selvästi uusi asia, ei yksi valon
+  välähdys muiden joukossa. Tyyliohje luku 7: trumpetit ja pasuunat ovat **läpi tuleva valo** (pystysuora leikkaus kerrosten
+  läpi, "jyrinä: useita leikkauksia"), patarummut **pohjan tärähdys**. Siis: **jokainen painotettu isku on oma pystysuora valon
+  leikkauksensa salin runkojen välistä ja oma tärähdyksensä maassa**, mitatuissa iskujen kohdissa (`d.aksentit` tai ylä- ja
+  matalan kaistan alut tältä väliltä; rytmiä ei keksitä). Leikkaukset tulevat takaa eteen: jokainen on edellistä lähempänä ja
+  kirkkaampi huippuun asti, ja rungot jäävät niiden eteen mustiksi siluetiksi. Väri on kylmä (halla), ei punainen. Dim. molto:
+  valo vetäytyy takaisin syvyyteen. Aiempi `vaski_tutti_620` on paisutuksen saapuminen: se johtaa tähän, ei kilpaile sen kanssa.
+- **`allegro_359` (aika muuttui, nyt taso­kuopan kohdalla 10:34): tempo nopeutuu ja intensiteetti nousee.** Tästä alkaa näkyvä
+  kiihtyminen, joka jatkuu `auringonsade`en asti: kameran vauhti kasvaa jatkuvasti (ei nykäystä), usvan ja lumen virtaus
+  nopeutuu, valon liike runkojen välissä tihenee liiketiheyden mukaan (uusia säveliä sekunnissa, kertymänä), ja kuva kirkastuu
+  ja nousee (ylälinja kohoaa: valo siirtyy tyvistä latvuksiin). Katsojan pitää huomata 10:34–10:58, että jokin on lähtenyt
+  liikkeelle ja kasvaa. Auringon nousu (kohta 2) alkaa samasta ankkurista ja on osa tätä.
+- Tarkista liikesarjoista: `trumpetit_patarummut_356` − 1 s … + 6 s 0,1 s välein (leikkaukset iskujen kohdilla, lähestyvät),
+  ja `allegro_359` … + 24 s 2 s välein (kiihtyminen ja kirkastuminen näkyvät).

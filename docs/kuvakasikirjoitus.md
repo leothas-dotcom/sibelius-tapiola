@@ -687,13 +687,13 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
   - **Näkyy:** Maa hohtaa ja väristyy; vaskien pitkät äänet nousevat takaa harjuina.
   - **Tunne → keino:** lähestyvä → hohto, läheisyys
 
-#### 41 Vaskien ja patarumpujen tutti-isku · `vaski_tutti_620` → `allegro_359` · <!--aika-->10:21–10:32<!--/aika-->
+#### 41 Vaskien ja patarumpujen tutti-isku · `vaski_tutti_620` → `allegro_359` · <!--aika-->10:21–10:34<!--/aika-->
 - **Kuuluu:** Vaskien ja patarumpujen tutti-isku *Soittaa:* vasket ja patarummut.
   - **Näkyy:** Pystysuora leikkaus kaikkien kerrosten läpi; maan sysäys; lähimmät kuusiryhmät jäävät sen eteen siluetteina.
   - **Tunne → keino:** vyöryvä, levoton → valo
 - Kone kuuli: Ylhäällä välähtää nopea kuvio **Näkyy:** Pilkahdus korkealla.
 
-#### 42 Allegro · `allegro_359` → `c_duuri_valahdykset` · <!--aika-->10:32–10:41<!--/aika-->
+#### 42 Allegro · `allegro_359` → `c_duuri_valahdykset` · <!--aika-->10:34–10:41<!--/aika-->
 - **Kuuluu:** Allegro: liike palaa *Soittaa:* puhaltimet (huilut, fagotit) ja jouset.
   - **Näkyy:** Pilkahduksia tiheään; jousten kuusiryhmät nopeasti; leikkaus sammuu, vaskien harjut vetäytyvät taakse.
   - **Tunne → keino:** levoton, kiihtyvä → tiheys

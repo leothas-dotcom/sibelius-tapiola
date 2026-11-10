@@ -1255,13 +1255,13 @@
       "luokka": "jakso",
       "soittimet": [],
       "id": "allegro_359",
-      "nimi": "Allegro: liike palaa",
+      "nimi": "Allegro: tempo nopeutuu ja intensiteetti alkaa nousta",
       "esitysmerkinta": "noin t. 356–358: kaikilla fff dim. molto; noin t. 359 Allegro (puolinuotti): huilut ja fagotit mp poco cresc., alttoviulut ja viulut senza sord., trumpetit ppp (s. 35).",
       "tahti_suhde": "noin t. 359, Allegro",
-      "soi": "tutti-iskun jälkeen taso putoaa ja nopea kuviointi alkaa: huilut ja fagotit, jouset ilman sordiinoa",
+      "soi": "vaskien takomisen vaimettua alkaa uusi, nopeampi tempo: alttoviulut, huilut ja fagotit aloittavat hiljaa liikkuvan kuvion, joka kasvaa; viulut tulevat ilman sordiinoa; trumpetit hyvin hiljaa takana; nousu jatkuu kaksikymmentä sekuntia",
       "etuala": "nopea kuviointi edessä; vasket taakse",
-      "tunnelma": "levoton, kiihtyvä",
-      "tarina": "Lähteet: Sibelius-klubi: vilkkaampi Allegro, sitten hitaampi Allegro moderato. Ohjaaja: isku ei pysäyttänyt mitään, se käynnisti.",
+      "tunnelma": "kiihtyvä, nouseva, levoton",
+      "tarina": "Käyttäjä 10.11.2026: \"10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee?\" Mitattu: taso käy pohjassa 10:34 ja nousee siitä; ylälinja kohoaa 16 puolisävelaskelta 10:37–10:58. Lähteet: Sibelius-klubi: vilkkaampi Allegro, sitten hitaampi Allegro moderato. Ohjaaja: isku ei pysäyttänyt mitään, se käynnisti.",
       "lahde": "partituuri s. 35; analyysi: taso"
     },
     {
@@ -1799,6 +1799,28 @@
       "etuala": "alttoviulujen laulu keskellä; lasimainen sointi alla",
       "tunnelma": "hiipuva, hellä",
       "esitysmerkinta": "t. 334–341: viulut I mezza; viulut II ppp sempre; alttoviulut div. mezza; sellot ja kontrabassot Flag. mf (s. 33)"
+    },
+    {
+      "id": "trumpetit_patarummut_356",
+      "nimi": "Trumpetit ja patarummut takovat: ensimmäistä kertaa",
+      "kirjain": null,
+      "tahti": 356,
+      "tahti_loppu": 358,
+      "tahti_suhde": null,
+      "luokka": "isku",
+      "tyyppi": "hetki",
+      "soi": "trumpetit, pasuunat ja patarummut takovat samaa säveltä painotetuin iskuin täydellä voimalla (fff); puupuhaltimet, käyrätorvet, sellot ja bassot pitävät sointua; sitten kaikki vaimenee nopeasti",
+      "soittimet": [
+        "trumpetit",
+        "pasuunat",
+        "patarummut"
+      ],
+      "tarina": "Käyttäjä 10.11.2026: \"Trumpetti ja patarumpu kommentti kohdassa 10:28 on sinulta jäänyt täysin huomiotta - se on tärkeä! Tuleee ensimmäistä kertaa.\" Ohjaaja: vaskien takova rytmi kuullaan tässä ensimmäisen kerran; sama voima palaa M:ssä ja myrskyssä. Hiljaisimman metsän jälkeen jokin lyö läpi: Ukon tuli, ensimmäinen kerta. Lähteet: Grimley: myrsky on koko teoksen alla kulkevan vaskimotiivin yhteenvetopaluu.",
+      "lahde": "käyttäjä (korva), partituuri s. 35, mittaus",
+      "tarkista": true,
+      "etuala": "vasket ja patarummut iskevät edessä; kaikki muu jää niiden alle",
+      "tunnelma": "iskevä, pelottava, uusi",
+      "esitysmerkinta": "t. 356–358: trumpetit ja pasuunat fff, aksentoidut toistuvat äänet; patarummut fff aksentein; klarinetit, fagotit, kontrafagotti, käyrätorvet, sellot, kontrabassot fff; kaikilla dim. molto (s. 35)"
     }
   ]
 }
