@@ -518,8 +518,38 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   kuuset): loppukriitikko kootusta videosta ja ohjaajan oma liikesarja saumoista ovat tarpeen; kontaktiarkki ei riitä.
   (7) Rakentajalle kaava ja luku (kaari h·4u(1-u), tulo 1,4 s, px/s) toimii; adjektiivi ("pehmeä", "leikkisä") ei.
 
-**Seuraavaksi:** käyttäjä katsoo vedoksen 5 (`runs/vedos_v5/tapiola_vedos5_720p.mp4`); avoimet kohdat `run.json` kohdassa
-`tiedossa_auki`.
+- 10.11. ilta ja 11.11. yö: **vedos 6** (mobiilipalaute, rivit 60-79) koottiin, ja käyttäjä hylkäsi siitä paljon (rivit 80-94):
+  kumipuut palasivat alkuun, puuska 4:07 katosi, kehutut varjot (11:40 eteenpäin) muuttuivat, lumi nyki, vaskiteemassa väärä
+  määrä iskuja, taite 13:34 ja vaskisoinnut 13:26 eivät näkyneet. **Vedos 7** korjaa nämä moduuli kerrallaan
+  (`runs/vedos_v7/brief.md`); kuuntelu: nuottikohtaiset tarkat alut (`korvat.py --alut` → `cues.alut.nuotit`), vaskiteeman
+  viisi iskua ja P:n soinnut (`iskut_t` ankkureissa).
+- **Opittua:** (1) **Uusi vedos verrataan edelliseen ruutu ruudulta** (`render/vertaa.py`, `render/kokoa.py vertaa`): vedos 6
+  muutti pyytämättä asioita, joista käyttäjä piti, eikä kukaan huomannut ennen käyttäjää. Brief kirjoitetaan muotoon "vain
+  nämä numeroidut kohdat; kaikki muu ruudulleen sama", ja jokainen muuttunut jakso selitetään palautteen rivillä.
+  (2) **Älä tulkitse palautetta ääripääksi:** "ei kumipuita" ei ole "puu ei liiku"; käyttäjä korjasi heti (rivi 94).
+  (3) Kaistojen alut eivät löydä sidottuja juoksuja; nuottien tunnistus on 20-40 ms myöhässä: nuottikohtainen tarkennus
+  yhdistää ne (spektrogrammista tarkistettu). (4) **Tarkista itse ennen kuin korjaat ohjetta:** renderin rajoista lähti
+  kaksi väärää ohjetta peräkkäin (ruudut; moduulin oma aika), koska ohjaaja ei lukenut koodia; oikea on sekunnit teoksen
+  ajassa (taulukko briefissä). (5) `lukittu.mjs` päästi yli 20 minuutin renderin päälle toisen: lukko pidetään nyt tuoreena.
+  (6) Rakentaja voi poistaa hyvän asian, jos brief väittää sitä virheeksi (ikisalon lähirungot olivat vedoksen 5 kuvaa):
+  väite "tämä on edellisen vedoksen lisäys" tarkistetaan gitistä ennen kuin se kirjoitetaan briefiin.
+
+**Seuraavaksi (ohjaajan tilannekuva 11.11.2026 klo 0.45; päivitä tämä, kun tila muuttuu):**
+1. **Vedos 7.** Hyväksytty ohjaajan omista liikesarjoista: 01_02, 05, 07_08, 10. Viimeisteltävänä (rakentajalla pyyntö
+   sisässä): 06 (askelten kirkas ydin pois, halkeama ohueksi), 09 (pölyhunnun ruudukkokuvio pois, holvikaaren reunat pois
+   avoimessa tilassa, sway enintään 1,5 %, kommenttisäie kaarevaksi). Raportoimatta: 03_04 (ylöskatse 3:03-3:23: rungot
+   päättyvät latvukseen; lumen reaktio alttoviuluihin). Kun kaikki on hyväksytty: `python -I render/kokoa.py kokoa vedos_v7`
+   (ääni 0 ms, saumat, lopun MD5), `python -I render/kokoa.py vertaa vedos_v7 vedos_v5` ja `... vedos_v6u`, tuore
+   Sonnet-kriitikko kootusta videosta (rivit 60-94 yksi kerrallaan, liikesarjoista mitaten; `runs/vedos_v7/kriitikko.md`),
+   palautelistan rivien 60-94 tilat ja todisteet, `runs/vedos_v7/run.json`, commit ja push. Käyttäjälle tiedostot
+   `runs/vedos_v7/tapiola_vedos7_720p.mp4` ja `..._whatsapp.mp4`.
+2. **Vedos 8: taika ja uhka** (rivi 95, tyyliohje 4d.37, `runs/vedos_v8/brief.md`): seitsemän Sonnet-rakentajaa, jokaiselle
+   oma moduuli; lisäykset kytkimen `taika=1` takana, `taika=0` todistetaan samaksi kuin vedos 7 (0 muuttunutta jaksoa);
+   osat `osa_v8.mp4`; kokoaminen `python -I render/kokoa.py kokoa vedos_v8 --osa osa_v8.mp4`; ohjaaja katsoo jokaisen
+   lisäyksen liikesarjasta vedoksen 7 rinnalla ja hylkää sen, mikä on liikaa tai tyylin vastaista ("vähän taikaa");
+   kriitikko; käyttäjälle molemmat vedokset (7 ilman, 8 taian kanssa). Käyttäjä toivoo videon valmiiksi 11.11.
+3. Auki siivous: vanhat hylätyt otot kuvakäsikirjoituksessa (`check_package.py` kaksi virhettä), vanhat moottorit
+   `visual/kohtaus.js` ym., master 2160p (`docs/youtube.md`) vasta käyttäjän omasta äänityksestä.
 
 ---
 
