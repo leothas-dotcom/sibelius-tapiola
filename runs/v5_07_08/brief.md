@@ -159,3 +159,27 @@ Tyyliohje 4d kohta 21: yksi palaute ei kaada sitä, mikä toimii.
 kohdasta, vertaa vedoksen 4 renderiin rinnakkain (salin pitää näyttää samalta tai paremmalta), tee mittaukset kohdista 1 ja 2
 ja auringon korkeus 2 s välein, ja kirjoita `runs/maailma_07_08/tarkistus.md`.
 
+## LOPPUKORJAUS (10.11.2026): Allegron nousu näkyväksi ja fraasinauhan reunat pehmeiksi
+Loppukriitikon raportti koko vedoksesta 5: `runs/vedos_v5/kriitikko.md` (lue oman moduulisi kohdat). Ohjaaja tarkisti alla
+olevan itse kootusta videosta `runs/vedos_v5/koko.mp4`. **Tämä on täsmäkorjaus: muuta vain nimetty asia. Kaikki muu moduulissa on
+hyväksytty eikä saa muuttua** (vertaa lopuksi kolmea muuta kohtaa vanhaan renderiin: niiden pitää olla ruudulleen ennallaan).
+Kopioi nykyinen renderi talteen ennen uutta ajoa, renderöi koko väli lukon kautta samaan paikkaan samalla ruutumäärällä ja
+kirjoita `tarkistus.md`:n loppuun lyhyt lisäys (mitä muutit, liikesarjan tiedosto, mitä jäi auki).
+
+**Vika 1:** käyttäjä: "10:34 tempo alkaa nousta? Pitää näkyä kuvassa - intensiteetti nousee? Miksi ei näy mitenkään?"
+Loppukriitikko ja ohjaaja: videon kohdassa 135–145 s (teoksen 10:31–10:41) kuva on käytännössä muuttumaton; näkyvä muutos alkaa
+vasta punaisen valon tullessa 10:43. Kameran vauhdin kaksinkertaistuminen ei näy, koska salissa ei ole lähellä mitään, mikä
+liikkuisi ohi.
+
+**Korjaus 1** (ankkurista `allegro_359` kohtaan `c_duuri_valahdykset` ja siitä eteenpäin): (a) lumi ja usva: tiheys ja nopeus
+kasvavat ankkurista alkaen selvästi ja jatkuvasti (kertymänä), niin että 6 sekunnin kuluttua lunta on vähintään kolminkertaisesti
+ja se virtaa kameraa vastaan viiruina; (b) valokeilat runkojen välissä alkavat sykkiä ja kulkea liiketiheyden mukaan (uusia
+säveliä sekunnissa, 0,5 s tasoitus) ja valo siirtyy tyvistä latvuksiin nousun mukana; (c) kuvan keskikirkkaus nousee tasaisesti
+vähintään noin 25 % välillä ankkuri … +8 s, ilman notkahduksia; (d) lähirunkoja kameran reitin varrelle niin, että ohitus näkyy
+(runko ohi noin 2–3 sekunnin välein kiihtyen). Mittaa keskikirkkaus ja ruutuero 1 s välein 630–645 s ennen ja jälkeen.
+
+**Vika 2:** fraasien usvanauha (sellojen laulu ym.) alkaa kovareunaisena suorakulmiona kuvan vasemmassa reunassa (esim. videon
+1,8–2,6 s) ja sen etureuna on pystysuora leikkaus.
+
+**Korjaus 2:** nauhan etu- ja takareuna sekä alareuna pehmeiksi (usvan kohinalla rikottu, häivytys vähintään noin 10 % kuvan
+leveydestä), ei suoraa pystyreunaa missään vaiheessa. Nauhan muoto, korkeus ja liike muuten ennallaan.

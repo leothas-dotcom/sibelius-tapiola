@@ -159,3 +159,21 @@ valmiista renderistä kohdat 1 (kummun muoto: ei reunaa), 2 (kaaren korkeus piks
 kohdissa 70, 75, 80, 85, 90 s ja rannan korkeus) ja 5 (hiutaleiden määrä), tee liikesarjat ja kirjoita
 `runs/maailma_06/tarkistus.md` uudelleen.
 
+## LOPPUKORJAUS (10.11.2026): Tapion kummut näkyviksi
+Loppukriitikon raportti koko vedoksesta 5: `runs/vedos_v5/kriitikko.md` (lue oman moduulisi kohdat). Ohjaaja tarkisti alla
+olevan itse kootusta videosta `runs/vedos_v5/koko.mp4`. **Tämä on täsmäkorjaus: muuta vain nimetty asia. Kaikki muu moduulissa on
+hyväksytty eikä saa muuttua** (vertaa lopuksi kolmea muuta kohtaa vanhaan renderiin: niiden pitää olla ruudulleen ennallaan).
+Kopioi nykyinen renderi talteen ennen uutta ajoa, renderöi koko väli lukon kautta samaan paikkaan samalla ruutumäärällä ja
+kirjoita `tarkistus.md`:n loppuun lyhyt lisäys (mitä muutit, liikesarjan tiedosto, mitä jäi auki).
+
+**Vika:** käyttäjä: "se vastakohta siihen kun bassot jyrisevät tapiota"; hän piti askelista "isoina, mutta pehmeinä".
+Loppukriitikko ja ohjaaja: videon kohdassa 84–98 s (teoksen 7:01–7:15) jään alla ei näy mitään suurta. Kummut ovat koodissa
+(hehku A·exp(−r²/R²)), mutta kuvassa ne hukkuvat jään yleiseen vaaleuteen: katsoja näkee vain kiitävät valot ja virtaavan jään.
+
+**Korjaus:** tee kummuista selvästi näkyviä muuttamatta niiden pehmeyttä: (1) jään perusvalo 84–98 s pienemmäksi (jää tummempi),
+jotta kumpu erottuu; (2) kummun huippu vähintään noin kaksinkertainen ympäröivään jäähän verrattuna ja keskikohta kuvan
+alapuoliskossa lähellä katsojaa (ei horisontissa); (3) kumpu **kulkee**: se syttyy kaukana rannan edessä ja liukuu jään alla
+katsojaa kohti ja ali noin kahdessa sekunnissa samalla laajeten (jokin suuri liikkuu jään alla), hiipuu pehmeästi; (4) yksi
+kumpu jokaisesta mitatusta bassojen raskaasta alusta, ensimmäinen ankkurin `h_urkupiste_vyory` ruudussa; (5) rannan metsä
+tummenee ja lähimmät valot himmenevät hetkeksi jokaisessa kummussa (kevyt väistää raskasta). Ei rengasta, ei reunaa, ei säteitä.
+Todiste: liikesarja 84–90 s 0,2 s välein ja kirkkausmittaus jään alapuoliskosta (kummun huippu / tausta).

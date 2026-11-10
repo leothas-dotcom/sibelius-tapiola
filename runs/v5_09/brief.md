@@ -70,3 +70,20 @@ vauhtia, 0–133 s lukee syvänä metsänä, vaskien vuorottelu ja harva kuvioin
 Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat jokaisesta kohdasta, askelten lista aikoineen, ja kirjoita
 `runs/maailma_09/tarkistus.md` uudelleen.
 
+## LOPPUKORJAUS (10.11.2026): lopun piirretyt oksat pois
+Loppukriitikon raportti koko vedoksesta 5: `runs/vedos_v5/kriitikko.md` (lue oman moduulisi kohdat). Ohjaaja tarkisti alla
+olevan itse kootusta videosta `runs/vedos_v5/koko.mp4`. **Tämä on täsmäkorjaus: muuta vain nimetty asia. Kaikki muu moduulissa on
+hyväksytty eikä saa muuttua** (vertaa lopuksi kolmea muuta kohtaa vanhaan renderiin: niiden pitää olla ruudulleen ennallaan).
+Kopioi nykyinen renderi talteen ennen uutta ajoa, renderöi koko väli lukon kautta samaan paikkaan samalla ruutumäärällä ja
+kirjoita `tarkistus.md`:n loppuun lyhyt lisäys (mitä muutit, liikesarjan tiedosto, mitä jäi auki).
+
+**Vika:** videon lopussa (noin 144–152 s, teoksen 13:55–14:03) polun reunoilta tulee kuvaan tummia, kulmikkaita, piirrettyjä
+lumisia kuusenoksia ja kuusen hahmoja. Loppukriitikko: "piirroskuusia". Tyyliohje 4d kohdat 9 ja 19 ja luku 9 (ei
+piirrosmaisuutta).
+
+**Korjaus:** poista piirretyt oksat ja kuusihahmot kokonaan. Kulku rajakuvaan tehdään metsän omilla aineksilla: rungot tihenevät
+ohuiden runkojen tiheiköksi kameran edessä (samat rungot kuin muualla, vain tiheämmässä ja lähempänä), usva tummuu niiden
+välissä ja valo sammuu takaa; viimeisen noin kahden sekunnin aikana kuva ristihäivytetään rajakuvaan
+`rajakuva(p, RAJA.PIMEA_MASSA, t)` niin, että runkojen rakenne näkyy vielä puoli sekuntia ennen loppua. Kolme syvyyskerrosta ja
+kameran liike säilyvät loppuun asti (ei suorakaideseinää, ei rakenteetonta massaa: ne korjattiin jo). Viimeinen ruutu on
+rajakuva kuten nyt. Todiste: liikesarja 142–154 s 0,5 s välein.

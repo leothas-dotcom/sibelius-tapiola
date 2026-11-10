@@ -161,3 +161,21 @@ Renderöi koko väli uudelleen samaan paikkaan, mittaa kohdat 1, 2, 4, 5 ja 7 va
 liikesarjat, ja kirjoita `runs/alku_v4/tarkistus.md` uudelleen. Kierroksen 2 renderi talteen nimellä
 `runs/v5_01_02/tark/osa_kierros2.mp4` ennen uutta ajoa.
 
+## LOPPUKORJAUS (10.11.2026): lopun piirroskuuset pois
+Loppukriitikon raportti koko vedoksesta 5: `runs/vedos_v5/kriitikko.md` (lue oman moduulisi kohdat). Ohjaaja tarkisti alla
+olevan itse kootusta videosta `runs/vedos_v5/koko.mp4`. **Tämä on täsmäkorjaus: muuta vain nimetty asia. Kaikki muu moduulissa on
+hyväksytty eikä saa muuttua** (vertaa lopuksi kolmea muuta kohtaa vanhaan renderiin: niiden pitää olla ruudulleen ennallaan).
+Kopioi nykyinen renderi talteen ennen uutta ajoa, renderöi koko väli lukon kautta samaan paikkaan samalla ruutumäärällä ja
+kirjoita `tarkistus.md`:n loppuun lyhyt lisäys (mitä muutit, liikesarjan tiedosto, mitä jäi auki).
+
+**Vika (regressio kierrokselta 3):** videon kohdassa noin 59,5–61,3 s kameran eteen nousee suuria, tasaisen mustia,
+porrasreunaisia kuusisiluetteja (paperista leikatun joulukuusen näköisiä). Juuri tätä käyttäjä on pilkannut ("tanssivia
+joulukuusia", "joulukuusesta etualalla"; tyyliohje 4d kohdat 9 ja 19: metsä on massa, ei etualan puuta). Sen jälkeen on noin
+0,3 s tasaista tummaa, ja seuraava moduuli jatkaa tasaisena kaksi sekuntia.
+
+**Korjaus:** poista lisätyt siluettikuuset kokonaan. Kulku metsän sisään tehdään samalla kruunukentällä kuin muu kuva: kamera
+laskeutuu latvojen tasolle ja niiden väliin (kuten kierroksella 2: `runs/v5_01_02/tark/osa_kierros2.mp4`, 58–60,5 s), lähimmät
+kruunut kasvavat ja tummuvat, usva ja pimeä nousevat niiden välistä. Viimeisen noin 1,5 sekunnin aikana kuva ristihäivytetään
+rajakuvaan `rajakuva(p, RAJA.PIMEA_MASSA, t)` niin, että rajakuvan oma liikkuva kohinarakenne on näkyvissä jo häivytyksen
+aikana (ei tasaista väriä ennen viimeistä ruutua). Viimeinen ruutu on rajakuva kuten nyt (sauma moduuliin 03_04 mitataan).
+Todiste: liikesarja 58,5–61,6 s 0,2 s välein; yhdessäkään ruudussa ei ole yksittäistä piirrettyä puuta kameran edessä.
