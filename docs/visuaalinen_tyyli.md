@@ -337,14 +337,23 @@ pehmeinä, kuten musiikissa."
 
 **Käyttäjä 10.11.2026 yöllä, vedoksen 6 jälkeen** (koko palaute: `docs/tutkimus/haastattelu.md`):
 
-31. **PUUT EIVÄT SAA NÄYTTÄÄ KUMISILTA.** Käyttäjä: "Kumiset puut tuli takaisin. Ne heiluvat kuin kumipuut. PUUT EIVÄT SAA NÄYTTÄÄ
-    KUMISILTA. KIRJOITA SE NYT OHJEESEEN." Tämä on sanottu jo kolmesti (vedos 3, vedos 4, vedos 6), ja kohdan 25 sallima "hidas
-    taipuma" on osoittautunut riittämättömäksi rajaksi. **Kohta 25 kumotaan tältä osin: puu ei taivu, huoju, keinu, veny,
-    kallistu eikä muuta muotoaan lainkaan, ei edes puuskassa eikä myrskyssä.** Puun siluetti ruudussa saa muuttua vain kameran
-    liikkeestä (parallaksi). Koskee jokaista puuta, runkoa, latvaa ja metsän ääriviivaa jokaisessa maailmassa. Tuuli, puuska,
-    isku ja myrsky näkyvät siinä, mikä oikeasti liikkuu: **lumi, usva, valo ja latvoista irtoava lumipöly**. Mittari: puun
-    piirtokoodissa ei ole yhtään ajasta tai äänestä riippuvaa siirtymää, ja kriitikko tarkistaa liikesarjasta, ettei yhdenkään
-    siluetin muoto muutu ruutujen välillä.
+31. **Puut elävät kuten oikea puu: aavistuksen ja hieman. Ei kumipuita.** Käyttäjä: "Kumiset puut tuli takaisin. Ne heiluvat
+    kuin kumipuut. PUUT EIVÄT SAA NÄYTTÄÄ KUMISILTA. KIRJOITA SE NYT OHJEESEEN." · "SIIS NE NIIDEN PUIDEN PITÄÄ ELÄÄ!!!! ... MUTTA
+    EI KUTEN KUMIPUUT. NIIDEN TULEE OLLA ELÄVIÄ, muttta hillitysti!!! KUTEN OIKEA PUU" · "TÄMÄN OLEN KORJANNUT JO MONTA KERTAA.
+    TÄMÄ SÄILYY: NE EIVÄT SAA HEILUA PALJON!!! MUTTA AAVISTUKSEN JA HIEMAN sopii tyyliin". (Ohjaaja kirjoitti tähän ensin "ei
+    taivu lainkaan": se oli väärä tulkinta ja on kumottu.) **Sääntö, joka säilyy joka vedoksessa:**
+    - **Puu elää aina hieman:** latva ja oksien kärjet liikkuvat aavistuksen, kuten oikea kuusi tyynessä tai kevyessä tuulessa.
+      Täysin jähmettynyt metsä on yhtä väärin kuin kumimetsä (4b: "Metsä elää").
+    - **Ei paljon:** latvan sivuttaisliike on tavallisesti enintään 1 % puun korkeudesta ja puuskassa tai myrskyssä enintään
+      1,5 %. Tyvi ja rungon alempi kaksi kolmasosaa eivät liiku. Puu ei veny, ei muuta korkeuttaan eikä siirry.
+    - **Ei kumia:** koko siluetti ei taivu yhtenä pehmeänä kaarena; liike on latvassa ja oksien kärjissä. Vierekkäiset puut
+      eivät liiku samassa tahdissa (vaihe paikan mukaan; puuska kulkee metsän yli aaltona). Liike on hidasta ja
+      epäsäännöllistä (ei tasaista heiluria, päätaajuus enintään 0,3 Hz) eikä koskaan seuraa nuotteja tai iskuja.
+    - **Musiikin voima ei kasvata puiden liikettä yli näiden rajojen.** Puuska, isku ja myrsky näkyvät lumessa, usvassa,
+      valossa ja latvoista irtoavassa lumipölyssä; puissa vain aavistuksen enemmän.
+    - Mitattu syy vedoksen 6 kumipuihin: alun puuskan (0:45–0:52) pidennys nosti latvojen taipuman lähes kaksinkertaiseksi
+      seitsemäksi sekunniksi (kerroin 1,95; noin 3,6 % korkeudesta). Vedoksen 5 liike muissa maailmoissa oli hyväksytty.
+    Kumoaa kohdan 25 lukurajat (2 % ja 4 %) näillä tiukemmilla.
 32. **Lumi liikkuu rauhallisesti ja yhteen suuntaan.** Käyttäjä: "Lumi ei voi lennellä töksähdellen sinne tänne. Siitä tulee paha
     olo, oksennus. Ikäänkuin tasapainoaisti heittelisi." Lumen paikka on aina nopeuden kertymä (integraali), ei hetkellisen
     tuulen funktio: nopeus muuttuu, paikka ei hyppää. Suunta ei käänny edestakaisin; se saa kääntyä hitaasti (koko käännös

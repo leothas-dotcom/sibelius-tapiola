@@ -889,3 +889,13 @@ jo näkyvän eteen.
 > Aah ja nyt ne mun kehumat varjot muuttui tunnistatmattomaksi 11:40 eteenpäin, mitä teit niille? Ne mielestäni toimi hyvin
 > ennen? nyt tuntuu että ne on liian nopeita
 
+> Vedoksessa 5 toimi muuten paremmin nuo jättiälisen askeleet. Ne pitää tulla paremmin esiin
+
+> SIIS NE NIIDEN PUIDEN PITÄÄ ELÄÄ!!!! YMMÄRRÄTKÖ!!!! MUTTA EI KUTEN KUMIPUUT. NIIDEN TULEE OLLA ELÄVIÄ, muttta hillitysti!!! KUTEN
+> OIKEA PUU
+
+> TÄMÄN OLEN KORJANNUT JO MONTA KERTAA. TÄMÄ SÄILYY: NE EIVÄT SAA HEILUA PALJON!!! MUTTA AAVISTUKSEN JA HIEMAN sopii tyyliin
+
+Ohjaajan virhe: kirjoitin edellisen palautteen jälkeen säännön "puu ei taivu lainkaan". Se oli väärä tulkinta. Oikea sääntö:
+puut elävät kuten oikea puu, aavistuksen ja hieman; ne eivät heilu paljon eivätkä kuin kumi.
+

@@ -9,11 +9,15 @@ samana, ja todistat sen mittarilla (kohta T2).
 
 ## Yhteiset säännöt (käyttäjän sanat ovat tyyliohjeessa 4d 31–36)
 
-**Y1. Puu ei taivu lainkaan (4d.31).** "PUUT EIVÄT SAA NÄYTTÄÄ KUMISILTA." Poista moduulistasi jokainen ajasta tai äänestä
-riippuva siirtymä puun, rungon, latvan, oksan ja metsän ääriviivan piirrosta: huojunta, taipuma, kallistus, venytys, aalto,
-"sway", "huojunta", `uSway` ja vastaavat. Ei pienennetä: poistetaan (kerroin nollaksi ja koodi pois). Puun siluetti saa muuttua
-vain kameran liikkeestä. Tuuli ja puuska näkyvät lumessa, usvassa, valossa ja latvoista irtoavassa lumipölyssä.
-Todiste: `grep`-tuloste, jossa ei ole yhtään puun piirtoon vaikuttavaa aikariippuvaa termiä, ja liikesarja (kohta T1).
+**Y1 (KORJATTU 11.11. klo 0.50; aiempi "puu ei taivu lainkaan" on PERUTTU). Puut elävät kuten oikea puu: aavistuksen ja
+hieman (4d.31).** Käyttäjä: "NE NIIDEN PUIDEN PITÄÄ ELÄÄ!!!! ... MUTTA EI KUTEN KUMIPUUT. NIIDEN TULEE OLLA ELÄVIÄ, muttta
+hillitysti!!! KUTEN OIKEA PUU" ja "NE EIVÄT SAA HEILUA PALJON!!! MUTTA AAVISTUKSEN JA HIEMAN sopii tyyliin".
+- **Älä poista puiden liikettä.** Jos poistit sen, palauta. Moduuleissa 03_04, 05, 06, 07_08, 09 ja 10 puiden liike jää
+  **täsmälleen vedoksen 5 mukaiseksi** (`git show 09eac76:visual/maailma_<k>.js`): älä koske siihen. Moduulikohtaiset
+  "Y1"-kohdat alempana (sway/uSway/huojunta pois) ovat peruttuja.
+- **Moduuli 01_02 on poikkeus** (siellä kumipuut palasivat; ks. sen luku): liike säilyy, mutta rajataan.
+- Yläraja kaikkialla: latvan sivuttaisliike enintään 1 % puun korkeudesta, puuskassa enintään 1,5 %. Jos moduulisi ylittää
+  tämän jossain kohdassa, raportoi se ohjaajalle (älä korjaa omin päin, ellei lukusi käske).
 
 **Y2. Lumi liikkuu rauhallisesti ja yhteen suuntaan (4d.32).** "Lumi ei voi lennellä töksähdellen sinne tänne. Siitä tulee
 paha olo." Tarkista moduulisi lumi (ja lumipöly, viirut, pyörre) ja korjaa, jos jokin näistä ei toteudu:
@@ -63,7 +67,14 @@ Vertailuruudut: `runs/vedos_v7/ref/` (nimessä VIKA = tällaista ei saa enää n
 ## Moduuli 01_02 (alku, 0:00–1:01,6; ruudut 0–1848; osan alku 0 s) · `visual/maailma_01_02.js`
 
 Käyttäjä: "Alun metsässä näkyy muuten jotain bugeja nyt, ei näytä hyvältä." ja "Kumiset puut tuli takaisin."
-1. **Y1:** poista `uSway`/`swayAmp` ja latvojen siirtymä `sw` kokonaan (rivit noin 67–80, 459, 504, 536).
+1. **Y1 (korjattu): latvojen liike säilyy, mutta hillittynä.** Palauta `uSway`, `swayAmp` ja `sw`, jos poistit ne.
+   Syy kumipuihin: vedos 6 pidensi puuskan (`puuska`, 0:45,4–0:52) ja `swayAmp` nousi sen mukana arvoon 1,95 seitsemäksi
+   sekunniksi (latvan taipuma noin 3,6 % korkeudesta). Korjaus: (a) `swayAmp` ei saa riippua puuskasta eikä fraasin
+   puuskasta suoraan: `swayAmp(t) = clamp(0.30 + 0.25 * jouSlow(t) + 0.20 * ka(sPuuska, t, 1.5), 0.25, 0.80) * (1 - 0.5 * hilj(t))`
+   (latva enintään noin 1,5 % korkeudesta, tavallisesti alle 1 %; tauollakin puu elää aavistuksen); (b) taipuman muoto:
+   eksponentti `pow(1.0 - u0, 1.5)` → `pow(1.0 - u0, 2.5)` (liike latvassa, ei koko siluetissa); (c) vierekkäiset puut eri
+   vaiheessa (vaihe `ph` riippuu puun paikasta ja hitaasta kohinasta, ei pelkästä sinistä: lisää toinen, yhteismitaton
+   taajuus). Puuska näkyy lumessa ja usvassa kuten nyt (`kTuuli`), ei puissa.
 2. **Lähimetsän piirto.** Ruudussa `ref/v6_0014_alun_metsa_VIKA.jpg` lähimmät kuuset ovat valtavia, vaaleita, venyneitä ja
    aaltoilevia läiskiä (kuin heijastus vedessä). Tavoite on lopun metsä (`ref/loppu_1630_metsa.jpg`, moduuli 11_12, jota et
    muuta): tummat, terävät, kuusen muotoiset latvat, joiden koko pienenee tasaisesti etäisyyden mukana. Vaatimus: lähimmän
@@ -126,6 +137,25 @@ Liikesarjat: 4:04–4:10 0,2 s välein; 4:42–4:52 0,33 s välein; 3:51–3:58 
 **Ei saa muuttua:** jään hyppijät 5:48–6:30 (jousten alut), enintään kahdeksan valoa kohdassa 6:30, halkeamat, Tapion hehku
 jään alla, kamera.
 Liikesarjat: 6:36–6:50 0,33 s välein.
+
+### Moduuli 06, LISÄYS (rivi 93): jättiläisen askeleet jäällä
+
+Käyttäjä 11.11.2026: "Vedoksessa 5 toimi muuten paremmin nuo jättiälisen askeleet. Ne pitää tulla paremmin esiin" (vedos 4:
+"Pidin noista jättiläisten askelista, jotka näkyivät isoina, mutta pehmeinä, kuten musiikissa.")
+Ohjaajan mittaus (`render/vertaa.py`): pimeän metsän askeleet (2:09) ja Tapio (7:01) ovat ruudulleen samat vedoksissa 5 ja 6;
+ainoa askelkohta, joka muuttui, on jään alku 5:36–5:48 (kontrabassot toistavat matalaa d:tä askelina, paisutus). Vedoksessa 5
+jokainen askel näkyi siinä suurena pehmeänä renkaana; vedos 6 poisti renkaat (rivi 69: "Jään pintaan ei voi tulla loogisesti
+vesirenkaita - voi tulla halkeamia. Halkeama voi edetä musiikin tahdissa"), eikä askelille jäänyt vastinetta.
+3. **Askel jäällä = suuri, pehmeä paino jään alla (ei rengasta, ei viivaa).** Jokaisella basson askeleella (matalan kaistan
+   mitatut alut `d.cues.alut.matala` ankkurista `pohja_vaihtuu_D` ankkuriin `peikot_G_alku`, voima vähintään 0,3; samat alut,
+   joita vedoksen 5 renkaat käyttivät) jään alla syttyy leveä, pehmeäreunainen hallan hohde (säde noin neljännes kuvan
+   leveydestä, ei ääriviivaa, ei samankeskisiä kehiä): se paisuu askeleen ruudusta 0,15 s:ssa ja hiipuu noin 1,4 s:ssa, ja
+   jään pinta sen kohdalla painuu hetkeksi tummemmaksi reunoiltaan (paino). Jokainen askel on edellistä lähempänä kameraa ja
+   hieman eri kohdassa (paino siirtyy omassa ajassaan, tyyliohje 7b "basson askeleet"), ja paisutuksen mukana hohde kasvaa
+   (viimeinen askel suurin). **Halkeama etenee askel kerrallaan** samassa ruudussa (rivi 69 säilyy). Sama vastine myös
+   muualla moduulissa, missä vedoksen 5 renkaat merkitsivät basson askelta; Tapion hehku 7:01 pysyy ennallaan.
+   Tavoite: askeleen kohdalla kuvan keskikirkkaus nousee vähintään 12 % ja palaa; katsoja laskee askeleet kuvasta.
+   Liikesarja: 5:36–5:49 0,25 s välein vedoksen 5 vastaavan rinnalla (`runs/vedos_v5/osat/06.mp4`).
 
 ## Moduuli 07_08 (ikisalo ja aurinko, 8:16,3–11:31,6; ruudut 14889–20748; osan alku 496,3 s) · `visual/maailma_07_08.js`
 
