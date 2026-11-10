@@ -362,9 +362,12 @@ vec3 scene(vec2 p) {
       if (k.w < 0.5) {
         float jag = (vnoise(vec2(p.y * 6.0 + fi * 3.1, 3.0)) - 0.5) * 0.004;
         float d = abs(dx - k.x - jag), w = k.z;
-        float beam = exp(-d * d / (w * w)) * (0.9 + 0.2 * vnoise(vec2(p.y * 14.0 + fi, 1.0))) + 0.30 * exp(-d / (10.0 * w)) + 0.10 * exp(-d / (0.32 + 20.0 * w));
+        // vedos 7: huudon laaja valo ei peitä metsän reunaa (kaista pysyy tummana); ohut ydin kulkee reunan yli
+        float rgm = smoothstep(0.004, -0.001, dy - ridgeFar(p.x)) * smoothstep(-0.040, -0.006, dy);
+        float peit = 1.0 - 0.85 * rgm;
+        float beam = exp(-d * d / (w * w)) * (0.9 + 0.2 * vnoise(vec2(p.y * 14.0 + fi, 1.0))) + peit * (0.30 * exp(-d / (10.0 * w)) + 0.10 * exp(-d / (0.32 + 20.0 * w)));
         col += LEIKKAUS * k.y * beam * 1.7;
-        col += LEIKKAUS * 0.16 * k.y * exp(-d / (0.05 + 9.0 * w)) + HALLA * 0.060 * k.y * (0.25 + exp(-abs(dy) / 0.12)) * (0.6 + 40.0 * w);
+        col += peit * LEIKKAUS * 0.16 * k.y * exp(-d / (0.05 + 9.0 * w)) + HALLA * 0.060 * k.y * (0.25 + 0.25 * exp(-abs(dy) / 0.12)) * (0.6 + 40.0 * w);   // vedos 7: huudon valo ei vaalenna horisontin kaistaa (metsänreuna ei katoa iskussa)
         if (dy < 0.0) {
           float rr = 0.50 * l.x, ring = exp(-pow((length(vec2(dx - k.x, dy * 3.2)) - rr) / (0.04 + 0.08 * rr), 2.0));
           col += HALLA * 0.10 * ring * k.y * exp(-l.x / 0.5) + LEIKKAUS * 0.10 * k.y * exp(-d / (0.12 + 10.0 * w)) * smoothstep(0.0, -0.12, dy);
@@ -523,7 +526,9 @@ async function alusta() {
   const huojunta = (t) => clamp(0.12 + 1.0 * jousi(t, 1.6) + 0.3 * sstep(T3, T4, t) + 0.4 * Math.min(aks(t), 1), 0, 1.4);   // aksentin puuska iskee latvoihin (taipuma pysyy kumipuusäännön rajoissa)
   const melKaari = (t) => lue(aMel, t) + 0.9 * ylos(t);   // tuulen suunta seuraa melodian kaarta; nousussa viirut pystyyn
   const valo = (t) => clamp(0.28 + 0.75 * INT(t) * sstep(T2 - 1, T3 + 1, t) + 0.5 * kalpea(t) + 0.30 * Math.min(aks(t), 1) + 0.25 * askelOsuus(t) * (1 - sstep(T4, T4 + 3, t)) + 0.15 * Math.min(aks2(t), 1), 0, 1.7);   // horisontin valo välähtää lumen läpi
-  const pohja = (t) => clamp(d.matala(t, 0.35) * sstep(T5 - 0.3, T5 + 0.3, t) * (1 - sstep(T8 - 2, T8, t)), 0, 1);   // basso ja patarummut: maan lumi pöllähtää
+  // vedos 7: basson lumi (horisontin peittyminen ja pöllähdys) on hidas liuku (alipäästö, nousu tau 1,0 s, lasku 1,2 s), joka ei ala eikä pääty iskun ruutuun
+  const aPohja = alipaasto((t) => clamp(d.matala(t, 0.35) * sstep(T5 - 0.3, T5 + 0.3, t) * (1 - sstep(T8 - 2, T8, t)), 0, 1), 1.0, 1.2);
+  const pohja = (t) => lue(aPohja, t);   // basso ja patarummut: maan lumi pöllähtää
   const rako = (t) => (1 - valkoinen(t)) * (0.75 + 0.25 * (1 - INT(t))) * sstep(T4 - 1, T4 + 2, t);      // puuskien raot: avautuvat, kun jouset hiljenevät; huipulla kiinni
   const poly = (t) => clamp(0.7 * aks(t) + 0.9 * aks2(t) + 0.5 * pohja(t), 0, 1.2);                        // lumi pöllähtää latvoista aksentissa
   const sulaa = (t) => sstep(T9 - 4.5, T9, t);
@@ -548,21 +553,22 @@ async function alusta() {
       if (ok) lisaa(t, t - 5, 14 + 3 * hash1(t), 0.8);
     }
     tapahtumat.sort((p, q) => p.syntyy - q.syntyy);
+    { const vapaa = [-1e9, -1e9, -1e9]; tapahtumat.forEach((e) => { let k0 = vapaa.findIndex((v) => v <= e.syntyy); if (k0 < 0) k0 = vapaa.indexOf(Math.min(...vapaa)); e.slotti = k0; vapaa[k0] = e.syntyy + e.elin; }); }   // vedos 7: pyörteen paikka (slotti) on kiinteä koko sen eliniän: ei vaihdu envelopen järjestyksen mukana
     tapahtumat.forEach((e, i) => { e.merkki = i % 2 ? -1 : 1; e.x0 = -0.15 + 1.0 * hash1(i * 3.1 + 1); e.y0 = 0.00 + 0.30 * hash1(i * 5.3 + 2); e.R0 = 0.26 + 0.16 * hash1(i * 7.7 + 3); e.h = hash1(i * 2.3 + 4); });
   }
   const pyorteet = (t) => {
-    const out = [];
+    const out = [0, 1, 2].map(() => ({ v: [0, 0, 0.1, 0], sp: 0, spF: 0, env: 0 }));
     for (const e of tapahtumat) {
       const k = (t - e.syntyy) / e.elin;
       if (k <= 0 || k >= 1) continue;
       const env = Math.pow(Math.sin(Math.PI * k), 2) * (1 - ylos(t));
       const vx = e.x0 - 0.0065 * (kohta(kW, t) - kohta(kW, e.syntyy));
       const vy = e.y0 + 0.035 * Math.sin(2 * Math.PI * (0.5 * k + e.h));
-      out.push({ v: [vx, vy, e.R0 * (0.65 + 0.9 * k), e.merkki * e.vahvuus * (0.6 + 0.4 * e.h) * env], sp: e.merkki * Math.min(0.08 * (t - e.syntyy), 0.8), spF: e.merkki * Math.min(0.16 * (t - e.syntyy), 1.6), env });
+      const hiipuu = sstep(0, 0.25, env);   // vedos 7 (Y2): kiertymä hiipuu pehmeästi nollaan pyörteen voiman mukana (ennen: kiertymä katkesi yhdessä ruudussa, kun voima alitti 1e-3)
+      const uusi = ({ v: [vx, vy, e.R0 * (0.65 + 0.9 * k), e.merkki * e.vahvuus * (0.6 + 0.4 * e.h) * env], sp: e.merkki * Math.min(0.08 * (t - e.syntyy), 0.8) * hiipuu, spF: e.merkki * Math.min(0.16 * (t - e.syntyy), 1.6) * hiipuu, env });
+      if (uusi.env >= out[e.slotti].env) out[e.slotti] = uusi;
     }
-    out.sort((p, q) => q.env - p.env);
-    while (out.length < 3) out.push({ v: [0, 0, 0.1, 0], sp: 0, spF: 0, env: 0 });
-    return out.slice(0, 3);
+    return out;
   };
 
   // --- pystyvalot: vain nimetyt iskut (d.iskut: Q_koko_metsa, R_vasket; huippu korvattu takomisalun seinämillä) ---
@@ -608,7 +614,8 @@ async function alusta() {
       voima: +voima(t).toFixed(2), matala: +matala(t).toFixed(2), valo: +s.valo.toFixed(2), nakyvyys: +s.nak.toFixed(2),
       vauhti: +nopeus(t).toFixed(2), matka: +s.camZ.toFixed(1), korkeus: +s.camH.toFixed(1), horisontti: +s.hor.toFixed(3),
       pyorteet: s.pyorteet.filter((p) => Math.abs(p.v[3]) > 0.02).map((p) => [+p.v[0].toFixed(2), +p.v[1].toFixed(2), +p.v[2].toFixed(2), +p.v[3].toFixed(2)]),
-      valkoinen: +s.valk.toFixed(2), ylos: +s.ylos.toFixed(2), leikkaus: +s.cut[1].toFixed(2), loppu: +s.fin.toFixed(2), huojunta: +s.sway.toFixed(2), vW: +s.vW.toFixed(3), vF: +s.vF.toFixed(3), kulma: +(Math.atan2(s.vF * 0.85, s.vW * 0.6) * 180 / Math.PI).toFixed(2), wang: +s.wang.toFixed(3) };
+      pyo_raw: s.pyorteet.map((p) => [+p.v[0].toFixed(3), +p.v[1].toFixed(3), +p.v[2].toFixed(3), +p.v[3].toFixed(3), +p.sp.toFixed(3), +p.spF.toFixed(3)]),
+      valkoinen: +s.valk.toFixed(2), ylos: +s.ylos.toFixed(2), leikkaus: +s.cut[1].toFixed(2), loppu: +s.fin.toFixed(2), poly: +s.poly.toFixed(3), rako: +s.rako.toFixed(3), uint: +s.int.toFixed(3), aks2: +aks2(t).toFixed(3), aks: +aks(t).toFixed(3), pohja: +s.pohja.toFixed(3), huojunta: +s.sway.toFixed(2), vW: +s.vW.toFixed(3), vF: +s.vF.toFixed(3), kulma: +(Math.atan2(s.vF * 0.85, s.vW * 0.6) * 180 / Math.PI).toFixed(2), wang: +s.wang.toFixed(3) };
   };
 
   julkaise({

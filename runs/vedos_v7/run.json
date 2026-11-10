@@ -27,12 +27,18 @@
     "runs/vedos_v7/tapiola_vedos7_whatsapp.mp4",
     "runs/vedos_v7/kontakti.jpg"
   ],
-  "kriitikko": "runs/vedos_v7/kriitikko.md (käynnissä 11.11. yöllä)",
+  "kriitikko": "runs/vedos_v7/kriitikko.md: rivit 60-94: 25 korjattu, 9 osittain, 0 korjaamatta; estäviä 3, joista 2 korjattu (myrsky 14:59 ja 15:03), 1 jätetty (jään valot 6:30, vedoksen 6 mukainen)",
   "tiedossa_auki": [
     "03_04: heikkoja vinoja viiruja latvuksissa 3:07-3:12; puiden liike vedoksen 4-5 mukainen (rakentajan laskelman mukaan yli 4d.31:n rajan), ei muutettu",
     "06: osa askelhalkeamista pitkiä ja suoria; askelhalkeaman syntykirkkaus sama kuin muilla (ei rajattu 1,5-kertaiseksi)",
     "09: vaskisointujen huipussa (13:31-13:33) kuva on hyvin vaalea (keskikirkkaus noin 108/255); yksi kaistan reuna hieman kova",
     "lumen nopeus ja kulma on mitattu rakentajien malleista, ei kuvasta",
-    "master 2160p tekemättä; lopullinen äänitys on käyttäjän oma (myöhemmin)"
+    "master 2160p tekemättä; lopullinen äänitys on käyttäjän oma (myöhemmin)",
+    "03_04: moduulin alussa 1:02,0-1:02,8 rungon vaalea pilkka ja tumma oksa näyttävät hetken hahmolta (kriitikko P3); ei muutettu, koska käyttäjä kehui kohtausta: käyttäjän päätös",
+    "03_04: 3:02-3:07 rungot menevät suorina kuvan yläreunaan ennen kuin katse nousee (kriitikko: OSITTAIN)",
+    "01_02: hiljaisuuden alussa 0:58,7-0:59,3 kirkkaus nousee 36 -> 49",
+    "06: kohdassa 6:30 valoja 8-12 heijastuksineen (vedoksen 6 mukainen); 6:44-6:49 puhaltimien nuoteilla ei valoja",
+    "07_08: ohi kulkevat lähirungot enimmillään 19 % kuvan leveydestä (vedoksen 5 geometria)",
+    "kriitikko ei mitannut: latvan liike alun metsässä ja moduuleissa 03_04 ja 05; lumen suunta muualla kuin myrskyssä; kameran 20 astetta/s"
   ]
 }
