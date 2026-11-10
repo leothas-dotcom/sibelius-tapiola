@@ -899,3 +899,10 @@ jo näkyvän eteen.
 Ohjaajan virhe: kirjoitin edellisen palautteen jälkeen säännön "puu ei taivu lainkaan". Se oli väärä tulkinta. Oikea sääntö:
 puut elävät kuten oikea puu, aavistuksen ja hieman; ne eivät heilu paljon eivätkä kuin kumi.
 
+## 11.11.2026 yö: vedos 7 työn alla, käyttäjän toive taiasta ja uhasta
+
+> Olet tehnyt hienoa työtä, ja tämä video tekee kunniaa Sibeliukselle, taiteelle ja musiikille. UPEAA!!! Renderöi tämä, ja kokeile
+> sen jälkeen laittaa jokaiseen kohtaukseen vähän taikaa. Suomalaisen ikimetsän taikuutta, ja samalla jotain uhkaavuutta. Niiden
+> kahden leikki. Totellen tietysti visuaalista tyyliä, niinkuin aina. Mieti mikä nostaisi tämän videon vielä uudelle tasolle?
+> Voitko ajasta uuden ajon aamulle, kun rajat on resetoituneet. Toivoisin että video on huomenna valmis.
+

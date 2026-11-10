@@ -140,7 +140,7 @@ periaate, ei kuvaa eikä tyyliä. Valinnat ovat **[ohjaajan ehdotus]**.
 | **10 Ylhäältä** | latvojen yläpuolella; vaarat ja metsä kerroksina horisonttiin, usva laaksoissa | kerroksen reunan latvat; kaukana pelkkä sävy | paljaus, sitten hellyys | yksittäinen ääni on valo yhdessä laaksossa, korkeus sen mukaan; H-duuri on usvan hehku | Järnefelt: latvoista vaaroihin ja horisonttiin |
 
 **Kolme yhteistä sääntöä:**
-1. **Metsä elää.** Mikään ei seiso paikallaan: usva ajelehtii, latvat huojuvat, lumi varisee, valo hengittää. Jokainen
+1. **Metsä elää.** Mikään ei seiso paikallaan: usva ajelehtii, latvat huojuvat aavistuksen (4d.31), lumi varisee, valo hengittää. Jokainen
    näistä liikkeistä tulee äänestä (luku 7b). Ajo paikallaan seisovien puiden välissä ei ole kuva.
 2. **Ääni näkyy kahdella akselilla joka kuvatavassa:** korkeus on korkeus kuvassa, ja voima on valon määrä ja läheisyys.
 3. **Kuvatapa vaihtuu kulussa tai hitaalla katseen muutoksella**, ei leikkauksella. Maailmoja maailmojen sisällä: kun
@@ -377,6 +377,22 @@ pehmeinä, kuten musiikissa."
 36. **Vaarat paljastuvat lähimmästä kauimpaan.** Käyttäjä: "Miten tuo yksi mäki ilmestyy noiden muiden mäkien eteen yhtäkkiä?
     Etkö ymmärrä että mäet ei toimi niin?" Usva on katsojan ja maiseman välissä: kun se ohenee, lähin näkyy ensin ja kauempi
     tulee esiin sen takaa ja yläpuolelta. Mikään ei tule näkyviin jo näkyvän eteen. Täsmentää kohtaa 30.
+
+**Käyttäjä 11.11.2026, vedoksen 7 valmistuessa:** "Olet tehnyt hienoa työtä, ja tämä video tekee kunniaa Sibeliukselle,
+taiteelle ja musiikille. UPEAA!!! ... kokeile sen jälkeen laittaa jokaiseen kohtaukseen vähän taikaa. Suomalaisen ikimetsän
+taikuutta, ja samalla jotain uhkaavuutta. Niiden kahden leikki. Totellen tietysti visuaalista tyyliä, niinkuin aina."
+
+37. **Taika ja uhka: niiden kahden leikki.** **[sanasto ja paikat ovat ohjaajan ehdotus; käyttäjä pyysi kokeilemaan]**
+    Sibeliuksen esipuhe antaa parin itse: metsät "brooding savage dreams" ja "wood-sprites in the gloom weave magic secrets".
+    Ainekset ovat tutkimuksen luvun 8 mytologiasta: taika on **hopea oksilla** ("kuuna paistoi kuusen oksat"), **Tapion talon
+    ikkunat** kaukana ("ukset kuumottivat"; kylmät, ei kultaiset: lämmin valo on varattu H-duurille) ja **hiidenväen kulku**
+    (liike ilman näkyvää tekijää: variseva lumi, pöllähtävä lumipöly); uhka on **metsänpeitto** (polku sulkeutuu, latvat
+    sidotaan yhteen, valot sammuvat), **pakkanen** (huurre etenee pintoja pitkin katsojaa kohti) ja **kulkeva varjo** (suuri
+    pehmeä varjo valon yllä basson liikkuessa; tekijää ei näy). Ne vastaavat toisilleen samassa kuvassa: varjon alla hopea
+    sammuu, pakkanen tekee hopean, ikkunat houkuttelevat ja metsä peittää ne. Säännöt: vähän (enintään kaksi lisäystä
+    kerralla, keskikirkkaus enintään +6 %); ääni ohjaa; ei hahmoja, silmiä, esineitä, lämpimiä värejä eikä vihreää; ei
+    mitään käyttäjän kehumien kohtien päälle; loppuun (maailmat 11–12) ei kosketa. Lisäykset ovat kytkimen takana
+    (`taika=1`), jolloin vedos ilman niitä säilyy ruudulleen (`runs/vedos_v8/brief.md`).
 
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.
