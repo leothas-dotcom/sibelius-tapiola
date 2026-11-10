@@ -17,10 +17,10 @@
       "nimi": "Pitkä urkupiste H:lla"
     },
     "nopea_liike_1": {
-      "nimi": "Nopea kuviointi"
+      "nimi": "Grazioso: puupuhaltimien tanssi"
     },
     "peikot_G": {
-      "nimi": "Puupuhallinkuviot (kirjain G)"
+      "nimi": "Nymfit: jousten hyppivä kuvio (kirjain G)"
     },
     "jousijakso_urkupiste_E": {
       "nimi": "Jousijakso urkupisteen päällä (E)"
@@ -274,39 +274,41 @@
     },
     {
       "id": "nopea_liike_1_alku",
-      "nimi": "Nopean kuvioinnin jakso alkaa",
+      "nimi": "Grazioso: puupuhaltimien tanssi alkaa",
       "kirjain": null,
-      "tahti": null,
+      "tahti": 161,
       "tahti_loppu": null,
       "tahti_suhde": null,
       "luokka": "jakso",
       "tyyppi": "jakso",
       "jakso": "nopea_liike_1",
       "reuna": "alku",
-      "soi": "nopea kuviointi, puupuhaltimia ja jousia",
+      "soi": "huilut, oboet ja englannintorvi soittavat sirosti (grazioso) lyhyitä, painotettuja tanssikuvioita vuorotellen ja yhdessä; kaikki jouset keinuvat alla pitkin kaarin",
       "soittimet": [
-        "puupuhaltimet",
+        "huilut",
+        "oboet",
+        "englannintorvi",
         "jouset"
       ],
-      "tarina": "Lähteet: Sibelius Jalakselle: puupuhallinjaksossa \"metsänpeikot ja -eläimet ilmestyvät\". Ohjaaja: pilkahduksia, joita ei saa kiinni; metsänpeiton eläin, \"vaikka kulkisit aivan eläimen ohitse, niin et sitä näe\" (SKVR). Ääniä, ei hahmoja.",
+      "tarina": "Korjaus 10.11.2026 (partituuri s. 15–17): tämä on puupuhaltimien grazioso-tanssi, ei yleinen 'nopea kuviointi'. Käyttäjä: \"puupuhaltajat liikkuvat staccato, ja leikittelevät\". Lähteet: Sibelius Jalakselle: puupuhallinjaksossa \"metsänpeikot ja -eläimet ilmestyvät\". Ohjaaja: pilkahduksia, joita ei saa kiinni; metsänpeiton eläin, \"vaikka kulkisit aivan eläimen ohitse, niin et sitä näe\" (SKVR). Ääniä, ei hahmoja.",
       "lahde": "analyysi: aikajana",
       "tarkista": true,
-      "etuala": "puupuhaltimet ja nopea kuviointi edessä; jouset ja vasket kaukana",
-      "tunnelma": "väike, levoton leikki",
-      "esitysmerkinta": ""
+      "etuala": "puupuhaltimien tanssi edessä ja ylhäällä; jousten hidas keinunta alla",
+      "tunnelma": "siro, leikkisä, väikkyvä",
+      "esitysmerkinta": "t. 161–181: huilu 1 ja 2, oboet 1 ja 2, englannintorvi grazioso, mf, aksentit; t. 167 poco cresc.; t. 171 dim. poco a poco; jouset pitkät sidotut parit; lopussa jouset pp (s. 15–17)"
     },
     {
       "id": "nopea_liike_1_loppu",
-      "nimi": "Nopean kuvioinnin jakso päättyy",
-      "kirjain": null,
-      "tahti": null,
+      "nimi": "Tanssi päättyy: kirjain F, tumma puhallinsointu",
+      "kirjain": "F",
+      "tahti": 182,
       "tahti_loppu": null,
       "tahti_suhde": null,
       "luokka": "jakso",
       "tyyppi": "jakso",
       "jakso": "nopea_liike_1",
       "reuna": "loppu",
-      "soi": "nopea kuviointi päättyy",
+      "soi": "tanssi lakkaa; klarinetit, bassoklarinetti, fagotit, kontrafagotti ja käyrätorvet jäävät soimaan hyvin hiljaa ja tummasti, patarummut värisevät; jouset vaikenevat",
       "soittimet": [
         "puupuhaltimet",
         "jouset"
@@ -314,57 +316,67 @@
       "tarina": "Ohjaaja: kuviot katoavat, kun katsoo.",
       "lahde": "analyysi: aikajana",
       "tarkista": true,
-      "etuala": "kuviot väistyvät",
-      "tunnelma": "tyhjenevä",
-      "esitysmerkinta": ""
+      "etuala": "tumma, matala puhallinsointu; ei mitään ylhäällä",
+      "tunnelma": "tummuva, tyhjenevä",
+      "esitysmerkinta": "F = t. 182: klarinetit, bassoklarinetti, fagotit, kontrafagotti p possibile; käyrätorvet pp possibile; patarummut ppp tremolo; jouset pp ja tauolle (s. 18)"
     },
     {
       "id": "peikot_G_alku",
-      "nimi": "Puupuhallinkuviot G:ssä alkavat",
+      "nimi": "Kirjain G: jouset kärjessä, kuvio hyppii ryhmästä toiseen",
       "kirjain": "G",
-      "tahti": null,
+      "tahti": 208,
       "tahti_loppu": null,
       "tahti_suhde": null,
       "luokka": "jakso",
       "tyyppi": "jakso",
       "jakso": "peikot_G",
       "reuna": "alku",
-      "soi": "puupuhallinkuviot, nopeat kahdeksasosat",
+      "soi": "fortissimo katkeaa; jouset soittavat jousen kärjellä kevyesti pomppien (coll' punto, quasi saltato), hyvin hiljaa; nopea kuvio hyppää ykkösviuluilta kakkosviuluille, alttoviuluille ja selloille ja takaisin; huilut ja oboet vastaavat lyhyin kuvioin; käyrätorvet pitävät pitkää ääntä takana; patarumpu naputtaa; fagotti ja klarinetti soittavat lyhyen soolon",
       "soittimet": [
-        "puupuhaltimet"
+        "viulut",
+        "alttoviulut",
+        "sellot",
+        "huilut",
+        "oboet",
+        "käyrätorvet",
+        "patarummut",
+        "fagotti",
+        "klarinetti"
       ],
-      "tarina": "Lähteet: Europadisc liittää kirjaimen G kahdeksasosakuviot esipuheen haltioihin (\"haltiat väikkyy, hämyn äänet soi\"). Ohjaaja: teoksen tihein liike; se ei muodosta melodiaa, vaan liikettä puiden välissä.",
+      "tarina": "Käyttäjä 10.11.2026: \"Siellä on ne jousten spiccatot, kärjessä ... Se on nopeaa, leikkisää.\" Lähteet: Damroschin alaotsikko, jonka Sibelius hyväksyi: metsän jumala ja hänen nymfinsä; Europadisc liittää kirjaimen G kuviot esipuheen haltioihin (\"haltiat väikkyy, hämyn äänet soi\"). Ohjaaja: nymfit ovat tässä. Ei melodiaa vaan kevyt askel, joka hyppää paikasta toiseen ja katoaa, kun katsoo. Korjaus 10.11.2026: kirjain G oli oppaassa väärässä kohdassa (6:23) ja väärillä soittimilla; partituurin t. 208 on se kohta, jossa fortissimo katkeaa (5:48), ja kuvio on jousissa.",
       "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
       "tarkista": true,
-      "etuala": "huilut ja klarinetit edessä",
-      "tunnelma": "väike, hämyn äänet",
-      "esitysmerkinta": ""
+      "etuala": "pieni hyppivä kuvio edessä, vaihtaa paikkaa ryhmästä toiseen ylhäältä alas; käyrätorvien pitkä ääni kaukana takana",
+      "tunnelma": "leikkisä, kevyt, nopea; hämyn väikettä",
+      "esitysmerkinta": "G = t. 208, 12/8: viulut I div. a 3 coll' punto, quasi saltato sempre, pp; viulut II div. a 3 ja alttoviulut div. samoin; t. 214 sellot div. samoin; huilut ja oboet ppp, sempre ppp; käyrätorvet ppp pitkät; fagotti 1. Solo ppp; klarinetti 1. Solo; patarummut pp; kontrabassot pp, flageoletti (s. 19–23)"
     },
     {
       "id": "peikot_G_loppu",
-      "nimi": "Puupuhallinkuviot G:ssä päättyvät",
+      "nimi": "Äkkiä kovempaa: kaikki jouset hyppivät yhdessä",
       "kirjain": "G",
-      "tahti": null,
+      "tahti": 231,
       "tahti_loppu": null,
       "tahti_suhde": null,
       "luokka": "jakso",
       "tyyppi": "jakso",
       "jakso": "peikot_G",
       "reuna": "loppu",
-      "soi": "puupuhallinkuviot päättyvät",
+      "soi": "sama hyppivä kuvio tulee äkkiä kaikilla jousilla yhtä aikaa ja selvästi kovempaa (mf, saltato); patarummut iskevät tasaista rytmiä painolla (marcato); puupuhaltimet vastaavat",
       "soittimet": [
+        "jouset",
+        "patarummut",
         "puupuhaltimet"
       ],
-      "tarina": "Ohjaaja: liike jatkuu hetken jousissa ja vaskissa ilman puupuhaltimia, sitten laantuu. Käyrätorvet ja puupuhaltimet alkavat pulssata noin neljän sekunnin välein: jokin hengittää hitaasti puiden takana.",
+      "tarina": "Käyttäjä 10.11.2026: \"6:30 on yllättäen paljon kovempi dynamiikka: Kuvassa ei tapahdu mitään.\" Mitattu: taso nousee 18 dB viidesosasekunnissa. Ohjaaja: se, mikä hyppi yksitellen ja piilossa, liikkuu nyt yhtenä joukkona näkyvissä.",
       "lahde": "käyttäjä, partituuri (kirjain G); kirjallisuus: Jalas, Europadisc",
       "tarkista": true,
-      "etuala": "käyrätorvipulssit takana, puupuhaltimet välissä",
-      "tunnelma": "hidas hengitys",
-      "esitysmerkinta": ""
+      "etuala": "kaikki jouset yhtenä joukkona edessä; patarummut alla",
+      "tunnelma": "äkillinen, rohkea; leikki muuttuu joukoksi",
+      "esitysmerkinta": "t. 231–234: kaikki jouset mf, saltato; patarummut p marcato; huilut, oboet mf / mp; klarinetit, fagotit mf; kontrabassot pizz. (s. 24)"
     },
     {
       "id": "jousijakso_urkupiste_E_alku",
-      "nimi": "Jousijakso urkupisteen päällä alkaa",
+      "nimi": "Kirjain K: sellot laulavat sordiinolla",
       "kirjain": "K",
       "tahti": 290,
       "tahti_loppu": null,
@@ -373,20 +385,21 @@
       "tyyppi": "jakso",
       "jakso": "jousijakso_urkupiste_E",
       "reuna": "alku",
-      "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+      "soi": "sellot, neljään jaettuina ja sordiinolla, laulavat puoliäänellä (mezza voce) melodian, joka kasvaa teoksen siemenestä; kontrabassot alla; muu orkesteri vaiti",
       "soittimet": [
-        "jouset"
+        "sellot",
+        "kontrabassot"
       ],
-      "tarina": "Lähteet: Whitman: monoliittiset taustasoinnut; Goodwin: pitkät pidetyt puhallinsävelet ovat tausta, jonka huomaa vasta kun se katkeaa. Ohjaaja: Tapiolan \"ikisalat\": se mikä on ollut ennen kuuntelijaa ja on hänen jälkeensä. Matalin spektri koko teoksessa.",
+      "tarina": "Käyttäjä 10.11.2026: \"8:15, sellosoolo? Kaunis! Nyt ei tapahdu mitään\". Partituuri s. 32: sellot div. a 4, con sord., mezza. Ohjaaja: K:sta L:ään musiikki on fraaseja ja hiljaisuuksia vuorotellen: jokainen jousiryhmä laulaa vuorollaan, ja väliin jää hiljaisuus, kuin hengitys. Lähteet: Whitman: monoliittiset taustasoinnut; Goodwin: pitkät pidetyt puhallinsävelet ovat tausta, jonka huomaa vasta kun se katkeaa. Ohjaaja: Tapiolan \"ikisalat\": se mikä on ollut ennen kuuntelijaa ja on hänen jälkeensä. Matalin spektri koko teoksessa.",
       "lahde": "analyysi: aikajana",
       "tarkista": true,
-      "etuala": "matalat jouset edessä urkupisteen päällä; muu orkesteri poissa",
-      "tunnelma": "syvä, tumma, kaukainen",
+      "etuala": "sellojen neliääninen laulu edessä, matala ja lämmin sointi; muu orkesteri poissa",
+      "tunnelma": "kaunis, syvä, hiljainen laulu",
       "esitysmerkinta": "K = t. 290: viulut I con sord. div., viulut II senza sord., sellot con sord. mezza; ppp sempre; flageoletit mf (s. 32)."
     },
     {
       "id": "jousijakso_urkupiste_E_loppu",
-      "nimi": "Jousijakso urkupisteen päällä päättyy",
+      "nimi": "Sellojen laulu päättyy hiljaisuuteen",
       "kirjain": null,
       "tahti": null,
       "tahti_loppu": null,
@@ -395,7 +408,7 @@
       "tyyppi": "jakso",
       "jakso": "jousijakso_urkupiste_E",
       "reuna": "loppu",
-      "soi": "jousivaltainen matalarekisterinen jakso, urkupiste E:llä",
+      "soi": "sellojen fraasi päättyy; lyhyt hiljaisuus",
       "soittimet": [
         "jouset"
       ],
@@ -1118,13 +1131,13 @@
       "luokka": "soitin",
       "soittimet": [],
       "id": "pohja_vaihtuu_D",
-      "nimi": "Pohja vaihtuu: matala d sykkii",
-      "esitysmerkinta": "",
+      "nimi": "Paisutus: bassot toistavat säveltä, kaikki kasvaa ja katkeaa",
+      "esitysmerkinta": "t. 195–207: un poco cresc., poco p cresc., cresc. molto, ff; alttoviulut, sellot ja kontrabassot mp cresc. molto (s. 18)",
       "tahti_suhde": "ennen kirjainta G",
-      "soi": "ensimmäinen kerta kun pohja ei ole h: matala d sykkii kaksikymmentä kertaa, ja sen päällä a, f, c ja e pitkinä",
-      "etuala": "pohja sykkii edessä; pitkät soinnut sen päällä",
-      "tunnelma": "vieras, tummuva",
-      "tarina": "Ohjaaja: maa liikahtaa sivuun. Sama metsä, toinen pohja: ensimmäinen merkki siitä, että metsä voi muuttua. Juuri ennen: c, g, ais ja dis pitkinä (5:30–5:36), vieras sointu.",
+      "soi": "kontrabassot toistavat matalaa d:tä askelina; klarinetit ja fagotit värisevät niiden päällä; alttoviulut ja sellot tulevat mukaan; kaikki paisuu nopeasti fortissimoon, joka katkeaa kuin veitsellä",
+      "etuala": "pohja sykkii edessä; tumma sointu kasvaa sen päällä",
+      "tunnelma": "tummuva, kasvava uhka",
+      "tarina": "Korjaus 10.11.2026 (partituuri s. 18): tämä on F-jakson paisutus fortissimoon ennen kirjainta G. Ohjaaja: maa liikahtaa sivuun. Sama metsä, toinen pohja: ensimmäinen merkki siitä, että metsä voi muuttua. Juuri ennen: c, g, ais ja dis pitkinä (5:30–5:36), vieras sointu.",
       "lahde": "analyysi: tarkka.py, aikajana (d-molli 5:36)"
     },
     {
@@ -1147,20 +1160,27 @@
     },
     {
       "kirjain": null,
-      "tahti": null,
+      "tahti": 248,
       "tahti_loppu": null,
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "huippu",
-      "soittimet": [],
+      "soittimet": [
+        "jouset",
+        "sellot",
+        "kontrabassot",
+        "patarummut",
+        "käyrätorvet",
+        "klarinetti"
+      ],
       "id": "h_urkupiste_vyory",
-      "nimi": "Ensimmäinen vyöry H-urkupisteellä",
-      "esitysmerkinta": "",
+      "nimi": "Bassot jyrisevät nopean kuvion alla: Tapio",
+      "esitysmerkinta": "t. 248: jouset mf, patarummut mf aksentein, sellot ja kontrabassot div. aksentein, p < mf; t. 250 käyrätorvet mf, klarinetti 1. Solo f, trumpetit ja pasuunat ppp; t. 252 f cresc.; t. 255 ff; t. 256 dim. poco a poco (s. 26–28)",
       "tahti_suhde": "kirjaimen G jälkeen",
-      "soi": "H-urkupiste 25 sekuntia, matala h sykkii alle sekunnin välein, ja kaikissa rekistereissä tiheä kuviointi; alkuosan voimakkain jakso",
-      "etuala": "kaikki kerrokset liikkeessä yhtä aikaa; pohja sykkii edessä",
-      "tunnelma": "vyöryvä, velloava",
-      "tarina": "Lähteet: Tovey: teos on valtava hidas crescendo; Inkpot: urkupisteet humisevat kuin maapallon pyöriminen. Kuulija (YouTube, Rattlen video): musiikki \"takes the dirt and debris with it in its surge through the forest\". Käyttäjä: \"vyöryviä kohtia, jotka velloo ja on tosi pelottaviakin\". Ohjaaja: ensimmäinen kerta, kun metsä liikkuu kokonaisena.",
+      "soi": "jousten nopea kuvio on nyt voimakas; sen alla sellot ja kontrabassot soittavat raskaita, painotettuja ääniä omassa hitaassa ajassaan ja patarummut iskevät painolla; käyrätorvet ja klarinetti liittyvät; kaikki kasvaa fortissimoon (7:11) ja alkaa sitten vähitellen hiljetä",
+      "etuala": "kaksi kerrosta yhtä aikaa: nopea, kevyt kuvio ylhäällä ja raskaat hitaat painot alhaalla",
+      "tunnelma": "voimakas, väistämätön; kevyt ja raskas vastakkain",
+      "tarina": "Käyttäjä 10.11.2026: \"VYÖRY H-urkupistellä??\" ja \"se vastakohta siihen kun bassot jyrisevät tapiota\". Korjaus: nimi 'vyöry' oli ohjaajan, ei partituurin. Tässä ei vyöry mikään: jousten nopea kuvio jatkuu rytmikkäänä, ja sen alle tulevat bassojen raskaat painotetut äänet. Ohjaaja: nymfien nopea liike ylhäällä, Tapion paino alhaalla: teoksen kaksi puolta samassa kuvassa. Lähteet: Tovey: teos on valtava hidas crescendo; Inkpot: urkupisteet humisevat kuin maapallon pyöriminen. Mitattu: matala h pysyy pohjana koko jakson.",
       "lahde": "analyysi: tarkka.py"
     },
     {
@@ -1171,16 +1191,18 @@
       "tyyppi": "hetki",
       "luokka": "soitin",
       "soittimet": [
+        "alttoviulut",
+        "sellot",
         "patarummut"
       ],
       "id": "patarumpu_ppp",
-      "nimi": "Maan värinä hiljaisuudessa",
+      "nimi": "Altot ja sellot laulavat, maa värisee",
       "esitysmerkinta": "K = t. 290: viulut I ja sellot con sord., ppp sempre, flageoletit; t. 302 patarummut ppp > pp (s. 32).",
       "tahti_suhde": "kirjaimen K jälkeen, t. 302",
-      "soi": "hiljaisuuden keskellä matala d värisee tiheästi kahdeksan sekuntia",
-      "etuala": "pohja värisee yksin; yllä pitkä fis",
+      "soi": "alttoviulut ja sellot laulavat puoliäänellä; alla patarumpujen tuskin kuuluva tremolo (matala d kahdeksan sekuntia)",
+      "etuala": "laulu keskellä; pohja värisee alla",
       "tunnelma": "syvä, pidätetty",
-      "tarina": "Ohjaaja: teoksen hiljaisimmassa metsässä maa ei ole hiljaa. Sama ääni, joka avasi teoksen, on nyt tuskin kuultava. Lähteet: Judd: äänet juuri hiljaisuuden yläpuolella.",
+      "tarina": "Partituuri s. 32 (t. 302): alttoviulut ja sellot mezza, patarummut ppp tremolo. Ohjaaja: teoksen hiljaisimmassa metsässä maa ei ole hiljaa. Sama ääni, joka avasi teoksen, on nyt tuskin kuultava. Lähteet: Judd: äänet juuri hiljaisuuden yläpuolella.",
       "lahde": "analyysi: tarkka.py; partituuri s. 32"
     },
     {
@@ -1190,15 +1212,20 @@
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "tunnelma",
-      "soittimet": [],
+      "soittimet": [
+        "viulut",
+        "alttoviulut",
+        "sellot",
+        "kontrabassot"
+      ],
       "id": "hitaat_soinnut",
       "nimi": "Hitaasti vaihtuvat soinnut",
-      "esitysmerkinta": "",
+      "esitysmerkinta": "t. 315–327: viulut I ja II sekä alttoviulut dolce; sellot ja kontrabassot pp (s. 33)",
       "tahti_suhde": "kirjainten K ja L välissä",
-      "soi": "pitkät sävelet vaihtuvat hitaasti toisikseen (gis, ais, d, f, g, dis): soinnut liukuvat ilman rytmiä",
+      "soi": "jousikuoro soittaa lempeästi (dolce): viulut ja alttoviulut liikkuvat hitaasti äänestä toiseen, soinnut liukuvat ilman rytmiä; sellot ja kontrabassot tulevat hiljaa alle (9:08)",
       "etuala": "ei etualaa: kaikki kaukana, hitaasti muuttuvia kerroksia",
       "tunnelma": "ikisalot, ajaton",
-      "tarina": "Lähteet: Hepokoski: hitaasti muuntuvat ääniarkit; Whitman: monoliittiset taustasoinnut; Nørgård piti tätä äärettömyyssarjansa edeltäjänä. Ohjaaja: Tapiolan \"ikisalat\": aika lakkaa.",
+      "tarina": "Käyttäjä 10.11.2026: \"Voisiko siinä kohtaa kun altot soittaa, joku sumu tai muu tuoda vähän eloa? 9:00 eteenpäin?\" Lähteet: Hepokoski: hitaasti muuntuvat ääniarkit; Whitman: monoliittiset taustasoinnut; Nørgård piti tätä äärettömyyssarjansa edeltäjänä. Ohjaaja: Tapiolan \"ikisalat\": aika lakkaa.",
       "lahde": "analyysi: tarkka.py"
     },
     {
@@ -1475,23 +1502,25 @@
     },
     {
       "kirjain": null,
-      "tahti": null,
+      "tahti": 258,
       "tahti_loppu": null,
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "soitin",
       "soittimet": [
-        "käyrätorvet",
-        "puupuhaltimet"
+        "englannintorvi",
+        "huilu",
+        "jouset",
+        "kontrabassot"
       ],
-      "esitysmerkinta": "",
+      "esitysmerkinta": "t. 258–273: englannintorvi mp espress., sempre piano e dolce; huilu 1. Solo p dolciss., trillit; jouset pp / p lyhyet kuviot, dim. poco a poco; kontrabassot pizz.; käyrätorvet ja pasuunat pitkät ppp (s. 29–30)",
       "id": "vaskipulssit",
-      "nimi": "Vasket ja puupuhaltimet sykkivät hitaasti",
+      "nimi": "Englannintorven laulu ja huilun trillit",
       "tahti_suhde": "kirjaimen G jälkeen",
-      "soi": "vyöryn jälkeen käyrätorvet ja puupuhaltimet soittavat pitkiä sykäyksiä noin neljän sekunnin välein",
-      "etuala": "kaukainen sykäys takana, jouset välissä hiljaa",
-      "tunnelma": "hidas hengitys",
-      "tarina": "Ohjaaja: jokin hengittää hitaasti puiden takana. Sama ele palaa suurempana kirjaimen O jälkeen.",
+      "soi": "englannintorvi laulaa hiljaisen, ilmeikkään melodian; huilu vastaa pitkillä trilleillä hyvin lempeästi; jousten nopea kuvio palaa vain lyhyinä, hiljaisina kaikuina; kontrabassot näppäilevät askelia",
+      "etuala": "yksi laulava ääni kaukana edessä; huilun värinä ylhäällä; kuvion kaiut välissä",
+      "tunnelma": "lempeä, haikea, rauhoittuva",
+      "tarina": "Korjaus 10.11.2026 (partituuri s. 29–30): aiemmin tässä luki 'vasket ja puupuhaltimet sykkivät'; partituurissa on englannintorven soolo ja huilun trillit. Ohjaaja: ratsastuksen jälkeen yksi ääni jää laulamaan, ja kuvio kaikuu vielä kauempaa.",
       "lahde": "analyysi: aikajana, tarkka.py"
     },
     {
@@ -1583,6 +1612,193 @@
       "tunnelma": "pohjaton",
       "tarina": "Ohjaaja: kahden minuutin ajan basso on kulkenut mukana. Nyt maa on poissa, ja se, mikä jää, leijuu.",
       "lahde": "analyysi: linjat.py"
+    },
+    {
+      "id": "puhaltimet_staccato",
+      "nimi": "Puupuhaltimet leikkivät: lyhyet kuviot rinnakkain",
+      "kirjain": null,
+      "tahti": 126,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "huilut, oboet ja klarinetit soittavat lyhyitä, irrallisia kuvioita rinnakkain (tersseinä); viulut keinuvat alla pitkin kaarin; alttoviulut tulevat mukaan sordiinolla",
+      "soittimet": [
+        "huilut",
+        "oboet",
+        "klarinetit",
+        "viulut",
+        "alttoviulut"
+      ],
+      "tarina": "Käyttäjä 10.11.2026: \"Sibeliuksen mainitsemat nymphit ei oikein nyt näy - se kappaleen leikkisä puoli. ... Kun jouset liikkuvat nopeasti, leikkisästi. Tai puupuhaltajat liikkuvat staccato, ja leikittelevät.\" Lähteet: Damroschin alaotsikko, jonka Sibelius hyväksyi: metsän jumala ja hänen nymfinsä. Ohjaaja: ensimmäinen kohta, jossa nymfit leikkivät: lyhyitä ääniä pareittain, kuin kaksi kulkisi rinnakkain.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "puhaltimien lyhyet äänet ylhäällä edessä pisteinä; viulujen keinunta keskellä",
+      "tunnelma": "leikkisä, kevyt, väikkyvä",
+      "esitysmerkinta": "t. 126–133: huilut, huilu III, oboet ja klarinetit staccato-kuviot rinnakkain; viulut I ja II div. pitkät sidotut parit; alttoviulut con sord. div. mf, poco a poco cresc. (s. 11)"
+    },
+    {
+      "id": "D_pikkolo",
+      "nimi": "Kirjain D: huilu ja pikkolo juoksevat ylös",
+      "kirjain": "D",
+      "tahti": 134,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "puupuhaltimet voimistuvat; huilu ja pikkolo juoksevat nopeasti ylös korkeimpaan rekisteriin ja takaisin; fagotit tulevat alle",
+      "soittimet": [
+        "huilut",
+        "pikkolo",
+        "oboet",
+        "klarinetit",
+        "fagotit"
+      ],
+      "tarina": "Ohjaaja: leikki yltyy hetkeksi juoksuksi. Mitattu: 4:06–4:11 alkupuolen tihein ylärekisterin purske.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "nopea juoksu ylhäällä edessä, korkeimmillaan koko alkupuolella",
+      "tunnelma": "välähdys, riemukas, nopea",
+      "esitysmerkinta": "D = t. 134: pikkolo, fagotit mf; t. 135 puupuhaltimet f; t. 137–138 huilu ja pikkolo nopea nouseva juoksu, f; fp (s. 11–12)"
+    },
+    {
+      "id": "H_puhaltimet",
+      "nimi": "Kirjain H: puupuhaltimet juoksevat, jouset pysähtyvät",
+      "kirjain": "H",
+      "tahti": 235,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "jouset pysähtyvät pitkään hiljaiseen sointuun; huilut, oboet, klarinetit ja fagotit juoksevat nopein lyhyin kuvioin ja kasvavat; lopuksi kuvio syöksyy alas lähes kaksi oktaavia ja ylärekisteri sammuu: jäljelle jää matala h",
+      "soittimet": [
+        "huilut",
+        "oboet",
+        "klarinetit",
+        "fagotit",
+        "jouset"
+      ],
+      "tarina": "Ohjaaja: leikki siirtyy jousilta puhaltimille ja nousee ilmaan; sen päätteeksi kaikki valuu alas ja jäljelle jää tumma, matala sointi neljäksi sekunniksi. Hiljaisuus ennen taitetta.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "puupuhaltimet edessä ja ylhäällä; jousten sointu paikallaan takana",
+      "tunnelma": "leikkisä, kiihtyvä, sitten äkkiä tumma",
+      "esitysmerkinta": "H = t. 235: jouset pitkä sointu p; huilu, oboe, klarinetti, fagotti mf; t. 238 cresc.; t. 239 f; t. 240 dim.; kontrabassot arco mf (s. 24–25)"
+    },
+    {
+      "id": "I_ratsastus",
+      "nimi": "Kirjain I: taite, jousten ratsastava kuvio alkaa",
+      "kirjain": "I",
+      "tahti": 241,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "jakso",
+      "tyyppi": "hetki",
+      "soi": "uusi tahtilaji ja uusi asia: viulut ja alttoviulut aloittavat hiljaa nopean, toistuvan, eteenpäin vievän kuvion; patarummut lyövät tasaista sykettä; sellot toistavat säveltä; kaikki kasvaa vähitellen",
+      "soittimet": [
+        "viulut",
+        "alttoviulut",
+        "sellot",
+        "patarummut",
+        "fagotit"
+      ],
+      "tarina": "Käyttäjä 10.11.2026: \"6:50 kuunteluopas: liike kiihtyy, ääniä tulee tiheään ei näy mitenkään. Olet kuullut että siitä alkaa uusi asia. Tähän taite?\" Partituuri vahvistaa: kirjain I, uusi tahtilaji, uusi kuvio. Ohjaaja: taite. Leikki on ohi; metsän väki lähtee liikkeelle, ja liike kasvaa kohti Tapiota.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "jousten kuvio edessä ja liikkeessä; patarumpujen syke alla",
+      "tunnelma": "eteenpäin vievä, kiihtyvä; ratsastus",
+      "esitysmerkinta": "I = t. 241, 12/8: viulut I ja II p, segue, poco a poco cresc.; alttoviulut div. pitkät; sellot p; patarummut poco p marcato; bassoklarinetti, fagotit poco a poco cresc. (s. 25)"
+    },
+    {
+      "id": "J_huilut",
+      "nimi": "Kirjain J: kaksi huilua, pohja häipyy",
+      "kirjain": "J",
+      "tahti": 274,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "kaksi huilua soittaa rinnakkain hitaan melodian; bassoklarinetti häipyy; sellot ja kontrabassot pitävät hiljaista pitkää ääntä ja vaikenevat; lopulta huilut ja fagotit jäävät kahden",
+      "soittimet": [
+        "huilut",
+        "bassoklarinetti",
+        "fagotit",
+        "sellot",
+        "kontrabassot"
+      ],
+      "tarina": "Ohjaaja: metsä harvenee kahteen ääneen, ennen kuin sellot alkavat laulaa (K).",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "huilupari ylhäällä edessä; pohja häipyy alta",
+      "tunnelma": "ohut, valoisa, tyhjenevä",
+      "esitysmerkinta": "J = t. 274: huilu ja huilu III mf; bassoklarinetti pp sempre, morendo; sellot ja kontrabassot pp sempre; käyrätorvet ppp; t. 281 poco dim.; fagotit dimin.; kontrabassot pp (s. 31)"
+    },
+    {
+      "id": "K_viulut",
+      "nimi": "Viulut vastaavat, alla lasimaiset huiluäänet",
+      "kirjain": null,
+      "tahti": 296,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "viulut vastaavat sellojen laululle sordiinolla; alla alttoviulut, sellot ja kontrabassot soittavat lasimaisia huiluääniä (flageoletit); fraasi päättyy hiljaisuuteen",
+      "soittimet": [
+        "viulut",
+        "alttoviulut",
+        "sellot",
+        "kontrabassot"
+      ],
+      "tarina": "Ohjaaja: sama laulu ylempää ja kylmemmässä valossa.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "viulujen laulu ylhäällä; lasimainen, kylmä sointi alla",
+      "tunnelma": "kuulas, kylmä valo",
+      "esitysmerkinta": "t. 296–301: viulut I con sord. div. mf; viulut II senza sord. ppp sempre; alttoviulut, sellot ja kontrabassot Flag. mf (s. 32)"
+    },
+    {
+      "id": "K_viulut_mezza",
+      "nimi": "Viulut laulavat puoliäänellä",
+      "kirjain": null,
+      "tahti": 308,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "viulut ottavat laulun puoliäänellä; huiluäänet alla; pohja poissa",
+      "soittimet": [
+        "viulut",
+        "alttoviulut",
+        "sellot"
+      ],
+      "tarina": "Ohjaaja: neljäs fraasi; jokainen on edellistä hieman korkeammalla.",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "viulujen laulu keskellä ja ylhäällä; ei pohjaa",
+      "tunnelma": "kevyt, pohjaton",
+      "esitysmerkinta": "t. 308–314: viulut I mezza; viulut II ppp, sempre ppp; alttoviulut, sellot, kontrabassot Flag. mf; viulut f (s. 32)"
+    },
+    {
+      "id": "altot_mezza",
+      "nimi": "Alttoviulut laulavat viimeisen fraasin",
+      "kirjain": null,
+      "tahti": 337,
+      "tahti_loppu": null,
+      "tahti_suhde": null,
+      "luokka": "soitin",
+      "tyyppi": "hetki",
+      "soi": "alttoviulut, jaettuina, laulavat puoliäänellä viimeisen fraasin; sellojen ja kontrabassojen huiluäänet alla; sitten kaikki vaimenee",
+      "soittimet": [
+        "alttoviulut",
+        "sellot",
+        "kontrabassot"
+      ],
+      "tarina": "Ohjaaja: viimeinen laulu ennen hiljaisuutta, josta vasket nousevat (L).",
+      "lahde": "partituuri (luettu 10.11.2026), mittaus; käyttäjän palaute 10.11.2026",
+      "tarkista": true,
+      "etuala": "alttoviulujen laulu keskellä; lasimainen sointi alla",
+      "tunnelma": "hiipuva, hellä",
+      "esitysmerkinta": "t. 334–341: viulut I mezza; viulut II ppp sempre; alttoviulut div. mezza; sellot ja kontrabassot Flag. mf (s. 33)"
     }
   ]
 }

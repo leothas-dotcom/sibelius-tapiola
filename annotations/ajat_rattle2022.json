@@ -111,16 +111,16 @@
       "t_loppu": 303.7
     },
     "nopea_liike_1_loppu": {
-      "t": 303.7,
+      "t": 301.6,
       "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "liiketiheys (0,5 s tasoitus) putoaa alle 2,5 alkua/s kohdassa 303,7 s (0,8 alkua/s 304 s, 0,0 alkua/s 308 s); puupuhaltimet-kanava 0,12 → 0,03; taso −42 → −48 dBFS 303–304 s; jännite 0,76–0,85."
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri −8,3 dB kohdassa 301,57 s | aiempi: liiketiheys (0,5 s tasoitus) putoaa alle 2,5 alkua/s kohdassa 303,7 s (0,8 alkua/s 304 s, 0,0 alkua/s 308 s); puupuhaltimet-kanava 0,12 → 0,03; taso −42 → −48 dBFS 303–304 s; jännite 0,76–0,85."
     },
     "peikot_G_alku": {
-      "t": 383.04,
+      "t": 348.2,
       "varmuus": "analyysi",
-      "luottamus": "heikko",
-      "peruste": "V5-sääntö (puupuhaltimet-kanava × liiketiheys, 8 s ikkuna, haku V4:n ja V6:n välillä): paras ikkuna 382,2–390,2 s: puupuhaltimet 0,72, liiketiheys 5,29 alkua/s (teoksen suurin), PANNs huilu 0,37 (0,33 kohdassa 383 s), taso −40,4 dBFS; jakson alku = segments.py-raja 383,04 s (uutuus 9,3); interpret.py: puupuhaltimet tulevat sisään 382,3 s. Heikoin varmoista kohdista: kirjain G:n paikkaa ei voi päätellä sekunneista; muut ehdokkaat samalla säännöllä 282,2–290,2 s (puu 0,59, liike 4,54/s) ja 349,2–357,2 s (puu 0,62, liike 2,70/s).",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): koko taso −12 dB kohdassa 348,20 s (fortissimo katkeaa); partituuri: G = t. 208 heti ff:n jälkeen | aiempi: V5-sääntö (puupuhaltimet-kanava × liiketiheys, 8 s ikkuna, haku V4:n ja V6:n välillä): paras ikkuna 382,2–390,2 s: puupuhaltimet 0,72, liiketiheys 5,29 alkua/s (teoksen suurin), PANNs huilu 0,37 (0,33 kohdassa 383 s), taso −40,4 dBFS; jakson alku = segments.py-raja 383,04 s (uutuus 9,3); interpret.p",
       "vaihtoehdot": [
         {
           "t": 282.2,
@@ -134,10 +134,10 @@
       "t_loppu": 390.3
     },
     "peikot_G_loppu": {
-      "t": 390.3,
+      "t": 390.8,
       "varmuus": "analyysi",
-      "luottamus": "heikko",
-      "peruste": "segments.py-raja 390,3 s (uutuus 16,6): puupuhaltimet-kanava 0,72 (389 s) → 0,13 (390,3–392,3 s), taso −41,3 → −32,8 dBFS; interpret.py: voimistuu äkkiä 390,8 s; aksentti 390,51 s (z 5,7). V5-ikkunan loppu 390,2 s. Sama epävarmuus kuin alussa."
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): koko taso +18 dB kohdassa 390,77 s; partituuri t. 231 mf saltato | aiempi: segments.py-raja 390,3 s (uutuus 16,6): puupuhaltimet-kanava 0,72 (389 s) → 0,13 (390,3–392,3 s), taso −41,3 → −32,8 dBFS; interpret.py: voimistuu äkkiä 390,8 s; aksentti 390,51 s (z 5,7). V5-ikkunan loppu 390,2 s. Sama epävarmuus kuin alussa."
     },
     "jousijakso_urkupiste_E_alku": {
       "t": 496.3,
@@ -147,10 +147,10 @@
       "t_loppu": 502.4
     },
     "jousijakso_urkupiste_E_loppu": {
-      "t": 502.4,
+      "t": 505.3,
       "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "jouset-kanava putoaa alle 0,6 kohdassa 502,4 s (0,36 → 0,19 kohdissa 502–504 s); interpret.py: jouset vaikenevat 502,0 s; taso −37 → −51 dBFS 502–504 s."
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): keskirekisteri −20 dB kohdassa 505,33 s | aiempi: jouset-kanava putoaa alle 0,6 kohdassa 502,4 s (0,36 → 0,19 kohdissa 502–504 s); interpret.py: jouset vaikenevat 502,0 s; taso −37 → −51 dBFS 502–504 s."
     },
     "hiljainen_jakso_alku": {
       "t": 597.2,
@@ -428,11 +428,11 @@
       "peruste": "tarkka.py: Gis4 6:06.8–6:14.2 (7,4 s), taso −42 dBFS."
     },
     "h_urkupiste_vyory": {
-      "t": 420.0,
+      "t": 421.1,
       "t_loppu": 445.8,
       "varmuus": "analyysi",
       "luottamus": "hyvä",
-      "peruste": "tarkka.py: H3 7:00.0–7:25.8; matalat alut H1 x21, 24 kpl 7:00.0–7:15.3, väli 0,77 s; lyhyet korkeat nuotit 66 ja 62 / 10 s; taso −28 dBFS (7:00–7:10)."
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): matala rekisteri +12 dB kohdassa 421,07 s; koko tason huippu 7:10–7:12; partituuri t. 248 mf, t. 255 ff | aiempi: tarkka.py: H3 7:00.0–7:25.8; matalat alut H1 x21, 24 kpl 7:00.0–7:15.3, väli 0,77 s; lyhyet korkeat nuotit 66 ja 62 / 10 s; taso −28 dBFS (7:00–7:10)."
     },
     "patarumpu_ppp": {
       "t": 518.5,
@@ -547,11 +547,11 @@
       "peruste": "tarkka.py: matalat alut 4:12.7–4:57.4, 28 kpl (Fis2 x19, E2 x5, F2 x4), väli 1,71 s."
     },
     "vaskipulssit": {
-      "t": 436.0,
+      "t": 435.9,
       "t_loppu": 461.5,
       "varmuus": "analyysi",
-      "luottamus": "kohtalainen",
-      "peruste": "aikajana: vaski- ja puupuhallinkanavat 0,5–0,6 kohdissa 436–460 s, pulssi noin 4 s; tarkka.py: pitkät C5 ja Ais3 7:16.0–7:19.5, C5 ja Gis4 7:23.0–7:26.3."
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): koko taso laskee kohdasta 435,90 s; partituuri t. 258 englannintorvi mp espress. | aiempi: aikajana: vaski- ja puupuhallinkanavat 0,5–0,6 kohdissa 436–460 s, pulssi noin 4 s; tarkka.py: pitkät C5 ja Ais3 7:16.0–7:19.5, C5 ja Gis4 7:23.0–7:26.3."
     },
     "hajoaa_hiljaisuuteen": {
       "t": 462.0,
@@ -599,6 +599,54 @@
           "huom": "interpret.py: vaskipuhaltimet tulevat sisään"
         }
       ]
+    },
+    "puhaltimet_staccato": {
+      "t": 231.1,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +9,9 dB kohdassa 231,07 s; korvat: artikulaatio staccato 3:50"
+    },
+    "D_pikkolo": {
+      "t": 244.6,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +9,7 dB kohdassa 244,57 s; korvat: purske 4:06 (yli 60 uutta säveltä sekunnissa)"
+    },
+    "H_puhaltimet": {
+      "t": 397.6,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +10 dB kohdassa 397,57 s; korvat: purske 6:42–6:45, ylärekisteri katoaa 6:45 (405,07 s)"
+    },
+    "I_ratsastus": {
+      "t": 409.3,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): keskirekisteri +8 dB kohdassa 409,33 s; korvat: liike kiihtyy 6:50; partituuri I = t. 241, tahtilaji 12/8"
+    },
+    "J_huilut": {
+      "t": 471.6,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +10,6 dB kohdassa 471,57 s; korvat: basso jää h:lle 7:49, vaikenee 8:01; partituuri J = t. 274"
+    },
+    "K_viulut": {
+      "t": 508.9,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +7 dB kohdassa 508,87 s; korvat: kerros tulee 8:28"
+    },
+    "K_viulut_mezza": {
+      "t": 530.9,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): keskirekisteri +14 dB kohdassa 530,93 s; korvat: kerros tulee 8:52"
+    },
+    "altot_mezza": {
+      "t": 590.3,
+      "varmuus": "analyysi",
+      "luottamus": "hyvä",
+      "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): keskirekisteri +7 dB kohdassa 590,27 s; partituuri t. 337 alttoviulut div. mezza"
     }
   }
 }

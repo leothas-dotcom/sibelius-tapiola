@@ -159,3 +159,30 @@ Tiedostot s05–s29, s34–s41 (ei luettu luotettavasti), sekä s30, s51, s52, s
 - [epäselvä, s. 5: lihavoitu "2" rivin ylä- ja alareunassa, tarkoitus tuntematon]
 - [epäselvä, s. 50: Cor-rivin alempi "dim. possibilele" painettuna näin]
 - [epäselvä, s. 42: Cl.b'o:n alla oleva nimetön bassoavainrivi; sivua ei kuitenkaan merkitty luetuksi tässä tiedostossa]
+
+## Täydennys 10.11.2026: ohjaaja luki sivut 7–9, 11–13, 15–31, 33, 36, 38 ja 41 (käyttäjän palautteen 44–56 jälkeen)
+
+Miksi: käyttäjä kuuli jousten spiccatot (5:30–6:30), äkillisen forten (6:30), taitteen (6:50), sellojen laulun (8:15) ja
+alttoviulut (9:00), joita opas ei tuntenut. Vain kuvaan vaikuttava kirjattu; ajat ovat `ajat_rattle2022.json`:ssa.
+
+| Kohta | Tahti | Sivu | Mitä partituurissa lukee |
+|---|---|---|---|
+| Altot | 47–78 | 7–9 | alttoviulut div. in 4, poco f; B = t. 69: kontrabassot toistuvat neljäsosat, alttoviulut mf, fz, dolce |
+| Leikki | 126–133 | 11 | huilut, oboet, klarinetit staccato-kuviot rinnakkain; viulut pitkät sidotut parit; alttoviulut con sord. |
+| **D** | 134 | 11–12 | pikkolo, fagotit mf; t. 137–138 huilun ja pikkolon nopea juoksu ylös, f |
+| Vasket | 143 | 13 | käyrätorvet, trumpetit, pasuunat ppp sempre; patarummut tremolo; alttoviulut f marc. |
+| Grazioso | 161–181 | 15–17 | huilut 1 ja 2, oboet, englannintorvi **grazioso**, aksentit; jouset pitkät sidotut parit; dim. poco a poco |
+| **F** | 182 | 18 | klarinetit, bassoklarinetti, fagotit, kontrafagotti p possibile; käyrätorvet pp possibile; patarummut ppp; jouset tauolle; t. 195–207 cresc. molto > ff |
+| **G** | 208 | 19–23 | 12/8; viulut I div. a 3 **coll' punto, quasi saltato sempre**, pp; kuvio siirtyy viulut II > alttoviulut > sellot (t. 214); huilut ja oboet ppp; käyrätorvet ppp pitkät; fagotti ja klarinetti 1. Solo |
+| Äkkiä mf | 231 | 24 | kaikki jouset **mf, saltato** yhdessä; patarummut p marcato |
+| **H** | 235 | 24–25 | jouset pitkä sointu p; huilu, oboe, klarinetti, fagotti juoksevat mf, cresc., f; t. 240 dim. |
+| **I** | 241 | 25–28 | 12/8; viulut ja alttoviulut nopea toistuva kuvio p, poco a poco cresc.; patarummut poco p marcato; t. 248 mf, sellot ja kontrabassot raskaat aksentit; t. 255 ff; t. 256 dim. poco a poco |
+| Englannintorvi | 258–273 | 29–30 | englannintorvi mp espress., sempre piano e dolce; huilu 1. Solo p dolciss., trillit; jousten kuvio pp kaikuina; kontrabassot pizz. |
+| **J** | 274 | 31 | huilut mf rinnakkain; bassoklarinetti pp sempre, morendo; sellot ja kontrabassot pp sempre |
+| **K** | 290–341 | 32–33 | sellot div. a 4 con sord., **mezza**; t. 296 viulut I con sord. mf, flageoletit alla; t. 302 alttoviulut ja sellot mezza, patarummut ppp; t. 308 viulut mezza; t. 315 dolce; t. 337 alttoviulut div. mezza |
+| Allegro | 368– | 36 | oboet juoksevat kuviot poco p > mf; alttoviulut melodia; huilut, klarinetit, fagotit pitkät |
+| C-duuri | 385–396 | 38 | huilut f, jouset div. f pitkät; käyrätorvet aksentein; englannintorvi mezza |
+| **N** | 417 | 41 | t. 411 puupuhaltimien nopea laskeva kuvio; jouset arco ff pyyhkäisyt, sitten pizz.; trumpetit cresc. possibile > fff; N: mf |
+
+**Kirjaimet nyt:** A ≈ 36, B = 69, C = 106, D = 134, F = 182, G = 208, H = 235, I = 241, J = 274, K = 290, L = 342, M = 397, N = 417,
+O = 442, P = 490, Q = 550, R = 577, S = 605. E:tä ei löytynyt luetuilta sivuilta (s. 14 lukematta).

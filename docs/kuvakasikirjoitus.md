@@ -551,13 +551,13 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
   - **Tunne → keino:** jokin kulkee mukana → maan sysäys
 - Kone kuuli: Liike tasaantuu **Näkyy:** Metsän huojunta ja kuusiryhmien vaihtuminen tasaantuvat.
 
-#### 24 Nopean kuvioinnin jakso alkaa · `nopea_liike_1_alku` → `nopea_liike_1_loppu` · <!--aika-->4:40–5:03<!--/aika-->
+#### 24 Nopean kuvioinnin jakso alkaa · `nopea_liike_1_alku` → `nopea_liike_1_loppu` · <!--aika-->4:40–5:01<!--/aika-->
 - **Kuuluu:** Nopean kuvioinnin jakso alkaa *Soittaa:* puhaltimet (puupuhaltimet ja jouset).
   - **Näkyy:** Pilkahduksia tiheään puhaltimien korkeuksilla; jousten kuusiryhmät kaukana usvassa. Puhaltimet johtavat.
   - **Tunne → keino:** väike, levoton leikki → tiheys ja liike
 - Kone kuuli: Basso vaikenee **Näkyy:** Maa sammuu.
 
-#### 25 Nopean kuvioinnin jakso päättyy · `nopea_liike_1_loppu` → `jannitesoinnut` · <!--aika-->5:03–5:10<!--/aika-->
+#### 25 Nopean kuvioinnin jakso päättyy · `nopea_liike_1_loppu` → `jannitesoinnut` · <!--aika-->5:01–5:10<!--/aika-->
 - **Kuuluu:** Nopean kuvioinnin jakso päättyy *Soittaa:* puhaltimet.
   - **Näkyy:** Pilkahdukset sammuvat; kuva tyhjenee.
   - **Tunne → keino:** tyhjenevä → tiheyden lasku
@@ -581,18 +581,18 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 - Kone kuuli: Liike hidastuu **Näkyy:** Metsän huojunta laantuu, ja kuusiryhmiä kasvaa ja väistyy harvemmin.
 - Kone kuuli: Musiikki laskeutuu: keskikerros ja yläkerros noin 9 s (jouset) **Näkyy:** Kuusiryhmien latvat painuvat alemmas noin yhdeksässä sekunnissa.
 
-#### 28 Gis palaa hetkeksi · `gis_palaa` → `peikot_G_alku` · <!--aika-->6:06–6:23<!--/aika-->
+#### 28 Gis palaa hetkeksi · `gis_palaa` → `peikot_G_alku` · <!--aika-->6:06–5:48<!--/aika-->
 - **Kuuluu:** Gis palaa hetkeksi (7 s, hiljaa) *Soittaa:* ei tietoa.
   - **Näkyy:** Viiva syttyy uudelleen gis:n korkeudelle hiljaa ja yksin seitsemäksi sekunniksi: sama viiva kuin alussa.
   - **Tunne → keino:** muisto alusta → sama korkeus, sama paikka
 - Kone kuuli: Yläkerros soittaa lyhyitä irrallisia ääniä (staccato) **Näkyy:** Erillisiä pilkahduksia korkealla.
 
-#### 29 Puupuhallinkuviot G · `peikot_G_alku` → `peikot_G_loppu` · <!--aika-->6:23–6:30<!--/aika-->
+#### 29 Puupuhallinkuviot G · `peikot_G_alku` → `peikot_G_loppu` · <!--aika-->5:48–6:30<!--/aika-->
 - **Kuuluu:** Puupuhallinkuviot G:ssä alkavat *Soittaa:* puhaltimet (huilut, klarinetit).
   - **Näkyy:** Pilkahduksia teoksen tiheimmällä tahdilla puhaltimien korkeuksilla; ei melodiaa.
   - **Tunne → keino:** väike, hämyn äänet → tiheys
 
-#### 30 Puupuhallinkuviot G · `peikot_G_loppu` → `h_urkupiste_vyory` · <!--aika-->6:30–7:00<!--/aika-->
+#### 30 Puupuhallinkuviot G · `peikot_G_loppu` → `h_urkupiste_vyory` · <!--aika-->6:30–7:01<!--/aika-->
 - **Kuuluu:** Puupuhallinkuviot G:ssä päättyvät; käyrätorvipulssit *Soittaa:* puhaltimet ja käyrätorvet.
   - **Näkyy:** Pilkahdukset sammuvat; takana harjut paisuvat ja laskevat noin neljän sekunnin välein pehmeässä valossa; jouset hiljaa edessä. Käyrätorvien harjut johtavat.
   - **Tunne → keino:** hidas hengitys → pehmeä valo harjun alla
@@ -605,12 +605,12 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 - Kone kuuli: Musiikki nousee: basso ja yläkerros noin 10 s **Näkyy:** Maan hohto, latvat ja viiva nousevat noin kymmenen sekuntia.
 - Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
 
-#### 31 Ensimmäinen vyöry H-urkupisteellä · `h_urkupiste_vyory` → `vaskipulssit` · <!--aika-->7:00–7:16<!--/aika-->
+#### 31 Ensimmäinen vyöry H-urkupisteellä · `h_urkupiste_vyory` → `vaskipulssit` · <!--aika-->7:01–7:15<!--/aika-->
 - **Kuuluu:** Ensimmäinen vyöry H-urkupisteellä (25 s) *Soittaa:* koko orkesteri.
   - **Näkyy:** Maa pysyy h:ssa ja sysää alle sekunnin välein; kuusiryhmiä, pilkahduksia ja lunta syntyy tiheään kaikissa kerroksissa yhtä aikaa. Kuvaa johtaa maa ja tihein kuusiryhmien kuviointi.
   - **Tunne → keino:** vyöryvä, velloava → tiheys ja liike
 
-#### 32 Vasket ja puupuhaltimet sykkivät hitaasti · `vaskipulssit` → `hajoaa_hiljaisuuteen` · <!--aika-->7:16–7:42<!--/aika-->
+#### 32 Vasket ja puupuhaltimet sykkivät hitaasti · `vaskipulssit` → `hajoaa_hiljaisuuteen` · <!--aika-->7:15–7:42<!--/aika-->
 - **Kuuluu:** Vasket ja puupuhaltimet sykkivät hitaasti *Soittaa:* käyrätorvet ja puhaltimet.
   - **Näkyy:** Takana harjut paisuvat ja laskevat noin neljän sekunnin välein; jouset hiljaa välissä.
   - **Tunne → keino:** hidas hengitys → etäisyys, harjun valo
@@ -631,12 +631,12 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 
 ### Kuvatapa 6 Ikisalo
 
-#### 34 Jousijakso urkupisteen päällä alkaa · `jousijakso_urkupiste_E_alku` → `jousijakso_urkupiste_E_loppu` · <!--aika-->8:16–8:22<!--/aika-->
+#### 34 Jousijakso urkupisteen päällä alkaa · `jousijakso_urkupiste_E_alku` → `jousijakso_urkupiste_E_loppu` · <!--aika-->8:16–8:25<!--/aika-->
 - **Kuuluu:** Jousijakso urkupisteen päällä alkaa (E) *Soittaa:* jouset (matalat).
   - **Näkyy:** Maa pysyy E:llä paikallaan; matalat kuusiryhmät edessä; muu poissa. Matalin spektri koko teoksessa.
   - **Tunne → keino:** syvä, tumma, kaukainen → etäisyys, tummuus
 
-#### 35 Jousijakso urkupisteen päällä päättyy · `jousijakso_urkupiste_E_loppu` → `patarumpu_ppp` · <!--aika-->8:22–8:38<!--/aika-->
+#### 35 Jousijakso urkupisteen päällä päättyy · `jousijakso_urkupiste_E_loppu` → `patarumpu_ppp` · <!--aika-->8:25–8:38<!--/aika-->
 - **Kuuluu:** Jousijakso urkupisteen päällä päättyy *Soittaa:* jouset.
   - **Näkyy:** Kuusiryhmät väistyvät.
   - **Tunne → keino:** pimenevä → väistyminen

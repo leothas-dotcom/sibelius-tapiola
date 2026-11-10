@@ -737,3 +737,78 @@ Ohjaaja palautti edellisen version (suolta kaukaiseen metsään).
 > ollut idea. Niiden tulee vain käyttäytyä kuten..puut. Ei koomiset sarjakuva-kumihahmot. Tietysti niiden pitää liikkua
 > tuulen mukana! Eli reagoida musiikkiin
 
+## 10.11.2026: palaute vedoksesta 4 (koko teos kahtenatoista maailmana)
+
+> Wau! Minlla meni kylmät väreet. Loppu oli aivan älyttömän hieno. Siinä oli tuo valo, ja miten lumet valuu hienosti alas.
+> Metsä oli myös vihdoin sen näköinen kun odotin.
+>
+> Pidin valoista, jotka olivat kuin keijut.
+>
+> Pidin siirtymistä, ne osuivat pääosin hyviin paikkoihin.
+>
+> Pidin noista jättiläisten askelista, ne toimi hienosti isoina, mutta pehmeinä, kuten musiikissa.
+>
+> Sitten mikä ei toimi:
+> 5:30 - 6:30 ei riittävästi tuo esiin musiikin tapahtumia. Siellä on ne jousten spiccatot, kärjessä, mitekä eivät liiku
+> mitenkään. Se on nopeaa, leikkisää. Kuva on lähinnä staattinen. Lumi on stattinen. Ei staattista lunta. Siinä on jotain
+> välkettä, mutta ei välity. Ei toimi tuo jääkohtaus
+>
+> 6:30 on yllättäen paljon kovempi dynamiikka: Kuvassa ei tapahdu mitään.
+>
+> 6:50 kuunteluopas: liike kiihtyy, ääniä tulee tiheään ei näy mitenkään. Olet kuullut että siitä alkaa uusi asia. Tähän
+> taite?
+>
+> 7:00 kumiset puut tulee takaisin. Tässä kohtaa erityisesti ne näyttää koomiselta. Ja ei yhtään vastaa äänikuvaa. VYÖRY
+> H-urkupistellä??
+>
+> 11:20 - mielestäni aurinko ei voi nykiä tuolla tavalla ylös alas. Ei se toimi niin oikeasti.
+>
+> Sen pitää hitaasti alkaa nousta ja kohdassa 11:20 se täyttää valon ja valaisee tilan. Se oli hieno muuten
+>
+> Nyt ne kumiset puut tulivat vaan takaisin jossain määrin. On näköjään erittäin hienovaraista, milloin puiden heilunta
+> näyttää kumiselta, milloin ei.
+>
+> Joo tuo myrsky oli vähän boring, minuutti vaan ihan samaa. Se miten se nousi oli hieno.
+>
+> Ja itseasiassa sen intensiteetti pitää seurata jousia. Nyt se on staattinen. Ja se pyörre pitäisi ehkä liikkua. Sen
+> pitäisi olla pintakerros, ja jotain syvempää näkyä taustalla?
+>
+> Revontulet lopussa olivat hienot. Kiitos.
+>
+> Mielestäni siinä oli paras renderöinti metsästä. Pitäisikö sitä käyttää alussa myös? Harkitse? (Ilman revontulia)
+>
+> Mutta siis kriitikon pitäisi tarkemmin vahtia sitä, onko tyyliopas toteutunut. Ja onko nuo kuunteluoppaassa mainitut
+> asiat näkyvissä.
+>
+> Mielestäni Sibeliuksen mainitsemat nymphit ei oikein nyt näy - se kappaleen leikkisä puoli. Tämä on tietysti
+> hienovaraista - älä laita liikaa. Vain oikeisiin kohtiin. Kun jouset liikkuvat nopeasti, leikkisästi. Tai puupuhaltajat
+> liikkuvat staccato, ja leikittelevät. Ja sitten se vastakohta siihen kun bassot jyrisevät tapiota.
+>
+> Jossain kohtaa, en muista missä, puun rungot bugitti - ne välkkyivät ja niissä näkyi jotain ihme värinöitä ja piikkejä.
+>
+> 8:15, sellosoolo? Kaunis! Nyt ei tapahdu mitään
+>
+> Voisiko siinä kohtaa kun altot soittaa, joku sumu tai muu tuoda vähän eloa? 9:00 eteenpäin?
+>
+> Eli kuuntele vielä kappale, yritä tunnistaa ne nymphit, taitekohdat vielä paremmin. Lue mun palaute, ja löydä vielä ne
+> taitteet itsekin paremmin, milloin tapahtuu jotain uutta ja yllättävää. Ne ei vielä täysin välity.
+>
+> Sen jälkeen päivitä kuunteluopas, ja katso minun kritiikki läpi.
+>
+> Sen jälkeen uutta renderiä, ja työskentele sen kanssa kunnes teos on valmis. Käytä kriitikkoa tarkistamaan että olet
+> jokaisen kritiikin korjannut, ja löytänyt musiikista kaikki taitteet ja sisällöt.
+
+## 10.11.2026: alku ja gis-idea (kesken korjauskierroksen)
+
+> Meidän pitäisi työskennellä vielä tuon alun kanssa myös. Se gis idea ei nyt oikein välity sieltä. Mielestäni kuulit ja
+> ymmärsit sen jo tuossa aikaisemmin. Eli miten me tulkitsemme tämän nerokkaan idean: Jousien (eli metsän) takaa pitäsi
+> jotenkin tulla ESIIN ne mäet (nousevat ja laskevat kulut). Eli dynaaminen. Mutta miten se tehdää niin että ne mäet ei ole
+> koomisia, vaan hitaita ja uljaita. Nythän ne on vaan tuossa kuvassa paikallaan. Mieti tätä jooko tarkkaan. Mitä tyyliopas
+> sanoo? Tai taustatutkimus?
+
+Ohjaajan vastaus (tulkinta, ei käyttäjän hyväksymä): vaarat eivät nouse, ne paljastuvat. Maa ei liiku; usva ja valo
+liikkuvat. Perusteet: tyyliohje 7b (paljastuminen: "mitään uutta ei tuoda"), käyttäjä 9.11. ("lähes unisono - josta sitten
+nousee yksittäisiä soittajia puiden takaa"), Guo Xi (usva erottaa etäisyyden tasot), Järnefelt (latvoista vaaroihin ja
+horisonttiin), SKVR ("salo siintääpi sininen"). Unisono-gis on suora valon viiva; jokainen puhaltajan paisutus paljastaa
+yhden vaaran metsän takaa (usva laskee, gis-valo kulkee harjaa pitkin, harjan muoto on soittajan nouseva ja laskeva kulku);
+vaara vajoaa takaisin hitaasti ja jää siintämään, joten maisema kertyy.
