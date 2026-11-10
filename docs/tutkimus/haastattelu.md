@@ -886,3 +886,6 @@ jo näkyvän eteen.
 > Ai niin ja jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin
 > puhaltajien edelliset, mutta sama ele jousilla.
 
+> Aah ja nyt ne mun kehumat varjot muuttui tunnistatmattomaksi 11:40 eteenpäin, mitä teit niille? Ne mielestäni toimi hyvin
+> ennen? nyt tuntuu että ne on liian nopeita
+

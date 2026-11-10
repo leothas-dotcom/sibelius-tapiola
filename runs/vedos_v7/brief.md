@@ -194,6 +194,36 @@ varjot 11:32 eteenpäin, vaskien takominen ennen N:ää (11:46–11:51), jousten
 Liikesarjat: 13:00–13:07 0,33 s välein; 13:24–13:48 1 s välein; 13:32–13:38 0,2 s välein; 13:40–13:45 0,2 s välein.
 Taulukko: keskikirkkaus, B/R ja kontrasti kohdista 13:24, 13:30, 13:33, 13:34, 13:37, 13:44 (mitattu renderistä).
 
+### Moduuli 09, LISÄYS (rivi 92; tämä voittaa yllä olevan "Ei saa muuttua" -kappaleen sanamuodon)
+
+Käyttäjä 10.11.2026 yöllä: "Aah ja nyt ne mun kehumat varjot muuttui tunnistatmattomaksi 11:40 eteenpäin, mitä teit niille? Ne
+mielestäni toimi hyvin ennen? nyt tuntuu että ne on liian nopeita"
+Ohjaajan mittaus (`render/vertaa.py`, vedos 5 vastaan vedos 6): moduuli on sama kohtaan 11:45,6 asti; erot ovat 11:45,6–11:59,6
+(vedoksen 6 vaskileikkaukset) ja 12:43,6 eteenpäin (jousten kommenttien koko tilan välähdykset, tumma aalto, varjokentän
+pyyhkäisy `uSweep`, lumen työntö). Ne valaisevat koko metsän ja liikuttavat varjokenttää nopeasti: pimeä, hitaasti elävä
+varjojen metsä, josta käyttäjä piti, katoaa, ja valaistut rungot näyttävät kiitävän ohi.
+7. **Ennen ankkuria `P_vaskipaisunta` kuvan pitää olla vedoksen 5 kuva** (`git show 09eac76:visual/maailma_09.js`; vertailu
+   `runs/vedos_v5/osat/09.mp4`), lukuun ottamatta kohtia a–c ja kohtaa 1 (Y1) ja 4 (jousten nousu):
+   a. **Poista** vedoksen 6 lisäykset jousten kommenteista: koko tilan välähdys (`uGes.x`-termit valossa), tumma aalto
+      (`col *= 1.0 - 0.62 * uGes.x ...`), varjokentän pyyhkäisy (`uSweep`) ja `drift`-kentän voimistus, lumen työntö ja
+      suunnanvaihto (`gestAt`-termit `sFall`/`sDrift`:ssä ja lumen kirkkaudessa), hiutaleiden venytys (`fo.x /= ...`,
+      `h > 0.30 + 0.22 * uGes.z`). Poista myös vanha `0.20 * nerveAt * Math.sin(1.7 * t)` -termi `sDrift`:stä ("puuskissa
+      suunta vaihtuu": Y2 kieltää).
+   b. **Jousten kommentit (12:44–13:01) tilalle hillitysti:** tyyliohje 7: jouset ovat "metsän massa ja säikeet ... niiden
+      välissä kulkevat valosäikeet". Jokaisella mitatulla kommentilla yksi ohut, pehmeä hallan valosäie kulkee runkojen
+      välissä (kahden lähimmän runkokerroksen takana, runkojen keskikorkeudella) noin 40 % kuvan leveydestä 1,6 s:ssa
+      (syttyy 0,15 s, sammuu 1,2 s), vuorotellen vasemmalta ja oikealta. Säikeen kirkkaus on sama kuin vaskien
+      vuorottelevien valopylväiden. Kuvan keskikirkkaus saa nousta enintään 15 % vedoksen 5 samaan ruutuun verrattuna.
+   c. **Vaskien takominen ennen N:ää (11:46,4–11:51):** leikkaukset jäävät, mutta eivät valaise metsää: ohuet (ydin
+      enintään 1,5 % kuvan leveydestä), runkojen takana, enintään neljä kirkkainta mitattua iskua, ei maan sykettä
+      (`PULSSIT.concat(HITS...)` pois), ei koko kuvan hohtoa. Kuvan keskikirkkaus enintään 1,35-kertainen vedoksen 5 samaan
+      ruutuun verrattuna.
+   d. Kameran vauhti ja rata ovat vedoksen 5 mukaiset ankkuriin `P_taite_494` asti (taitteen jälkeen kohta 3).
+   Todiste: `vertaa.py runs/vedos_v5/osat/09.mp4 <uusi> 691.6 2 1.0`: ennen kohtaa 13:01 jokaisen jakson suurin mse enintään
+   15 (N:n kohdalla enintään 40); liikesarjat 11:44–11:52 ja 12:44–12:52 0,33 s välein vedoksen 5 vastaavien rinnalla.
+   Kohtien 2 ja 3 valo (vaskisoinnut ja taite) on tarkoituksella suuri, mutta sielläkin pätee: valo on runkojen takana ja
+   usvassa, ei koko ruudun valkaisua; rungot eivät saa näyttää kiitävän ohi (kameran vauhti ei ylitä vedoksen 5 vauhtia).
+
 ## Moduuli 10 (myrsky, 14:05,6–15:45; ruudut 25368–28350; osan alku 845,6 s) · `visual/maailma_10.js`
 
 1. **Y1:** `uSway`/`huojunta` pois kokonaan (latvat eivät huoju myrskyssäkään; myrsky on lunta ja valoa).

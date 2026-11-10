@@ -346,6 +346,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 89 | 10.11. | vedos 6, 4:07 (pikkolon juoksu, kirjain D) | "Tuulenpuuska on nyt hävinnyt kohdasta 4:07? Se oli siellä aikaisemmin? Miten muutat asioita pois, mitä en pyytänyt muuttamaan? Tekeekö kriitikko nyt oikeaa työtä meille, vai haittaa?" | ❌ auki | vedoksen 6 regressio moduulissa 05; vedos 5 ja 6 verrataan ruutu ruudulta, ja kaikki pyytämättä muuttunut palautetaan |
 | 90 | 10.11. | vedos 6, 10:53–10:58 (ennen C-duuria 11:20) | "Lensimme puun rungon läpi, niin ei saa käydä, juuri ennen tuota c-duuri paikkaa" | ❌ auki | vedoksen 6 uusi virhe (lähirungot ja kameran sivusiirto); loppukriitikon este 1 |
 | 91 | 10.11. | vedos 6, 13:03 eteenpäin (jousten oktaavinousu, t. 473) | "Ai niin ja jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin puhaltajien edelliset, mutta sama ele jousilla." | ❌ auki | sama ele kuin puhaltimien puuska (4:07, 13:41), pienempi ja hitaammin nouseva; ankkuri `jousten_nousu_473` 13:01,2–13:05,3 |
+| 92 | 10.11. | vedos 6, 11:40 eteenpäin (tummat liikkuvat varjot, rivi 73) | "Aah ja nyt ne mun kehumat varjot muuttui tunnistatmattomaksi 11:40 eteenpäin, mitä teit niille? Ne mielestäni toimi hyvin ennen? nyt tuntuu että ne on liian nopeita" | ❌ auki | vedoksen 6 regressio moduulissa 09; verrataan vedokseen 5 ruutu ruudulta ja palautetaan |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
