@@ -58,3 +58,59 @@ kaikki, mikä muuttaa rannan metsän siluettia; kumipuusääntö), huurteen piir
 Ankkurit: `peikot_G_alku` (katkeaminen), sen jälkeiset 10 s (hyppivä polku näkyy ja siirtyy), `peikot_G_loppu` (muutos samassa
 ruudussa), `H_puhaltimet` + 6 s (valuminen ja pimeneminen), `I_ratsastus` (vauhti kasvaa), `h_urkupiste_vyory` + 8 s
 (kumipuutodiste: rannan siluetti ei muuta muotoaan; pehmeät kummut jään alla), `vaskipulssit` + 5 s.
+
+## KIERROS 2 (10.11.2026): kriitikon raportti `runs/maailma_06/kriitikko_v5.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Renderi ei kelpaa** (viisi estävää). Tämä on väli, josta käyttäjä antoi eniten palautetta, ja kuva on yhä "lähinnä staattinen".
+Toimii ja säilytetään: fortissimon katkeaminen samassa ruudussa, valot ja renkaat mitatuista äänistä, huilupari (`J_huilut`),
+pohjan häipyminen, kulku pimeään lopussa. Ohjaajan päätökset (videon aika, nolla = moduulin alku):
+
+1. **Rannan metsä ei muuta muotoaan lainkaan (estävä; käyttäjän "kumiset puut").** Mitattu: keskikerros pulssaa 3–4 s jaksolla,
+   muuttuu läpikuultavaksi ja pystyraitaiseksi, latvat siirtyvät 5–25 px 0,4 sekunnissa (61–68 s, 84–107 s). Päätös: **ranta on
+   yli sadan metrin päässä, joten sen siluetti on täysin jäykkä**: poista rannan metsästä kaikki taipuma, pulssi ja
+   läpikuultavuus. Jokainen metsäkerros on aina peittävä. Jousten voima saa muuttaa vain usvan määrää ja valoa kerrosten välissä
+   (tasoitus vähintään 1,6 s) sekä lunta, joka pöllyää latvoista. Latvat ovat kuusen latvoja (kapeita, eri korkuisia, kuten
+   `visual/maailma_01_02_suo.js`:n `canopy`), ei pyöreitä kupoleja. Todiste: kaksi ruutua 0,4 s välein päällekkäin 7:01–7:15:
+   latvalinja sama pikselilleen, kun kameran liike on huomioitu.
+2. **Koko ruudun välähdykset pois (estävä).** 8,0–10 s keskikirkkaus hyppii 52 → 90 viidesti kahdessa sekunnissa. Paisutus on
+   kasvua, ei vilkkumista: koko kuvan kirkkaus ei saa muuttua yli noin 10 % nopeammin kuin kerran sekunnissa. Renkaat jään alla
+   saavat sykkiä, kuva ei.
+3. **Kamera kulkee aina (estävä).** 12–50 s kamera, ranta ja säröt seisovat. Jään säröjen ja lumen pitää virrata katsojan ali
+   koko ajan; perusvauhti niin suuri, että lähimmät säröt liikkuvat selvästi joka sekunti.
+4. **Nymfit ovat nopeaa, leikkisää hyppelyä (estävä).** Mitattu: 0–2 valoa kerrallaan, 1,5 uutta sekunnissa, aukkoja lähes kaksi
+   sekuntia; partituurissa noin kuusi ääntä sekunnissa. Päätös:
+   - **Hyppijä:** valo ei syty ja sammu paikallaan, vaan **yksi valo hyppii jään yli matalin kaarin** (kuin heitetty kivi tai
+     hyppivä jousi) ja koskettaa jäätä jokaisella äänellä: kosketuksessa pieni rengas ja heijastus. Valo on kuvassa koko kuvion
+     ajan ja liikkuu nopeasti; se on polku.
+   - **Tiheys äänestä:** laske ylä- ja keskirekisterin alut herkemmin (taso ja sen derivaatta, paikallinen kynnys). Jos alkuja
+     löytyy yhä alle kolme sekunnissa silloin, kun kuvio soi (ylärekisterin aktiivisuus koholla), mittaa kuvion syke ikkunasta
+     autokorrelaatiolla ja anna hyppijän koskettaa jäätä sillä mitatulla sykkeellä, vaihe lukittuna löydettyihin alkuihin.
+     Tämä on mittaus, ei keksitty rytmi; raportoi mitattu syke.
+   - **Ryhmästä toiseen:** 2–4 hyppijää eri syvyyksillä (viulut kaukana ja korkeammalla, alttoviulut keskellä, sellot lähellä):
+     kun kuvio siirtyy rekisteristä toiseen, edellinen hyppijä laantuu ja seuraava jatkaa toisessa paikassa.
+5. **`peikot_G_loppu` (6:30) on iso muutos (estävä osa kohtaa 6).** Nyt seitsemän pientä valoa horisontin rivissä. Vaadittu samassa
+   ruudussa: hyppijöitä on yhtäkkiä kymmeniä koko jään leveydeltä, ne hyppivät yhdessä rytmissä rintamana kohti katsojaa ja
+   ohi; lumipuuska pyyhkäisee jään yli (lumen vauhti moninkertaistuu); patarumpujen iskut ovat suuria renkaita; kuvan
+   kirkkaus nousee portaana ja jää ylös jakson ajan.
+6. **`H_puhaltimet`:** parvi (kymmeniä pilkahduksia) nousee jäältä rannan latvojen korkeudelle ja kulkee juoksujen
+   sävelkorkeuden mukaan; purskeen lopussa se **valuu alas** jäälle ja sammuu; sitten neljä sekuntia tummaa (vain matala valo
+   jään alla) ennen taitetta. Ajoita mitattuun purskeeseen (ylärekisteri katoaa noin 68,3 s), ei aiemmin.
+7. **Taite `I_ratsastus` näkyy taitteena (estävä).** Mitattu: rannan koko ei kasva 62–86 s; ajolumi ei virtaa; valot leijuvat.
+   Vaadittu: kameran vauhti alkaa kasvaa ankkurista ja on kolminkertainen kohdassa `h_urkupiste_vyory` (rannan korkeus kuvassa
+   kasvaa mitattavasti jo ensimmäisten viiden sekunnin aikana); ajolumi virtaa jään pintaa pitkin katsojaa kohti ja ohi pitkinä
+   viiruina rytmikkäinä puuskina (lähellä vähintään noin 150 px/s 960 px:n kuvassa); valot kiitävät matalalla jään yllä
+   eteenpäin kameran mukana ja ohittavat toisiaan. `vaskipulssit`issa vauhti hidastuu näkyvästi.
+8. **Tapio (estävä): suuret pehmeät valon kummut jään alla** jokaisella bassojen raskaalla äänellä 7:01–7:15 (matalan kaistan
+   alut): kumpu on vähintään kolmanneksen kuvan leveydestä, kirkastaa jäätä paikallisesti selvästi (vähintään noin 30 %),
+   leviää hitaasti ja hiipuu pehmeästi. Nopea kevyt liike (kohta 7) jatkuu sen päällä: kaksi kerrosta yhtä aikaa.
+9. **Lumi on lunta:** ei litteitä soikioita. Pehmeät pyöreät hiutaleet, viirun pituus = matka ruudussa, lähellä suuria ja
+   epätarkkoja; jään pinnalla matala ajolumi.
+10. **Englannintorvi (`vaskipulssit`):** ei staattinen pysty tikku. Kapea, vaakasuuntainen valojuova rannan runkojen raoissa
+    matalalla, kaukana; sen kirkkaus seuraa melodian tasoa ja korkeus sävelkorkeutta hienovaraisesti; rungot katkovat sitä.
+    Huilun trillit: väike, joka värisee paikallaan latvojen korkeudella.
+11. **Lopun kaksi runkoa ovat tummia runkoja**, eivät sameita valkoisia pylväitä.
+12. Kuunteluoppaan rivit ilman vastinetta: 6:15 (yläkerros staccato), 6:22 (pohja tulee), 7:11 (fortissimo), 7:20–7:30.
+
+Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat ja mittaukset (kohdat 1, 2, 3, 4, 7 ja 8 lukuina), ja kirjoita
+`runs/maailma_06/tarkistus.md` uudelleen. Jos varjostin on liian raskas, kevennä heijastusta, älä elementtejä.
+
