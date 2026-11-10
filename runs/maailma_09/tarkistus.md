@@ -35,3 +35,10 @@ Kriitikon raportti: `runs/maailma_09/kriitikko_v5.md`; päätökset: `runs/v5_09
 - Askelten aukot (6,4->8,1, 12,1->14,8, 15,3->17,5 s) ovat äänessä, eivät kuvan puutteita.
 - Kriitikko ei ole katsonut tätä versiota; pikseliyhtäpitävyyttä rajakuvaan ei ole mitattu erikseen.
 - Ei erillistä mittausta tuulesta kymmenen sekunnin liikesarjana; taipuma on laskennallinen.
+
+## Loppukorjaus 10.11.2026: lopun piirretyt oksat pois
+- **Poistettu:** `branchAt` (lumiset kuusenoksat) ja sen kutsu kokonaan; uniformit `uBranch`/`uFill` korvattu yhdellä `uDense`.
+- **Lisätty (metsän omilla aineksilla):** `uDense` = sstep(t1-11, t1-2.5): samat rungot tihenevät (dens 0,60 -> 0,97) ja usva tummuu runkojen välissä (-50 %). Rajakuvan ristihäivytys ennallaan (viimeiset 1,5 s, `RAJA.PIMEA_MASSA`), viimeinen ruutu rajakuva kuten ennen.
+- **Renderi:** 4620 ruutua (ffprobe). Talteen: `osa_v5_kierros2.mp4` (identtinen edellisen renderin kanssa).
+- **Todiste:** `liikesarja_142_154_loppukorjaus.png` (142-154 s, 0,5 s välein): ei oksia eikä kuusihahmoja, ei suorakaideseinää; rungot, kolme syvyyskerrosta ja kameran liike näkyvät 153 s asti. Ruudut 8 s, 60 s, 116 s: PSNR inf (ruudulleen ennallaan); 140 s: 56,9 dB (vanhat oksat alkoivat jo ~138 s).
+- **Auki:** 153,5 s ruudussa rakenne on jo hyvin himmeä (häivytys 1,5 s, ei muutettu); jos halutaan selvemmin, häivytystä voi lyhentää. Tihentyneen metsän maavarjot (`trunkProbe`) eivät seuraa tihentymistä.

@@ -15,6 +15,7 @@ import { lataa, luoGL, julkaise, FS_ALKU, GLSL_YHTEINEN, FS_LOPPU, clamp, smooth
 
 const FS = FS_ALKU + `
 uniform float uTime, uT0, uOpen, uCP, uSP, uG, uLevel, uNl, uFrost, uPh, uZI, uRideK, uRideD, uEnd, uTrunk, uGap, uXT, uLow, uMist, uFogL;
+uniform float uIceDim, uDuck;
 uniform float uSnX, uSnY, uStr, uIceD, uGustF, uGustK, uTop, uPuffK;
 uniform vec3 uCam;
 uniform float uProf[32];   // horisontin kumpujen muoto: melodian kaari, piirtyy vasemmalta oikealle
@@ -215,12 +216,13 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
   float gl = step(0.992, hash(floor(xz * 55.0))) * frost * (1.0 - smoothstep(0.3, 1.0, fp / 0.03));
   col += SILVER * 0.22 * gl * (0.2 + uG) * uOpen;
   // jään alla olevat valot (matalan kaistan alut): ohut rengas leviää; kumpu on pelkkä pehmeä hehku A * exp(-r^2 / R^2) (kierros 3: ei reunaa, ei rengasta, ei säteitä).
+  vec3 hump = vec3(0.0);                                                       // loppukorjaus: kummun valo erikseen, jään perusvalo himmennetään sen alta
   for (int i = 0; i < 12; i++) { if (i >= uNRg) break; vec4 rg = uRg[i], rh = uRh[i];
-    float r = length(xz - rg.xy), ag = rg.z;
-    if (rh.z > 0.5) {                                                           // kumpu: R kasvaa rh.x -> rh.y, A hiipuu pehmeästi
+    float ag = rg.z, r = length(xz - vec2(rg.x, rg.y - rh.w * ag));
+    if (rh.z > 0.5) {                                                           // kumpu: R kasvaa rh.x -> rh.y, A hiipuu pehmeästi; keskipiste liukuu katsojaa kohti (rh.w m)
       float R = rh.x + (rh.y - rh.x) * (1.0 - (1.0 - ag) * (1.0 - ag));
-      float A = rg.w * pow(1.0 - ag, 1.5) * smoothstep(0.0, 0.05, ag);
-      col += SILVER * 0.85 * A * exp(-r * r / (R * R)) * uOpen;
+      float A = rg.w * (0.25 + 0.75 * pow(4.0 * ag * (1.0 - ag), 0.8)) * pow(1.0 - ag, 0.6) * smoothstep(0.0, 0.05, ag);
+      hump += SILVER * 0.85 * A * exp(-r * r / (R * R)) * uOpen;
     } else {                                                                    // rengas
       float amp = rg.w * pow(1.0 - ag, 1.4) * smoothstep(0.0, 0.04, ag);
       float R = rh.x * (1.0 - exp(-4.0 * ag)) / (1.0 - exp(-4.0));
@@ -238,7 +240,7 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
         float hl = cs.y * (0.07 + 0.09 * hash(ic + 1.1)), wd = max(0.035 * sc, 0.8 * fp);                        // puolipituus ja leveys (m)
         rs += exp(-dm.x * dm.x / (2.0 * wd * wd) - dm.y * dm.y / (2.0 * hl * hl)) * (0.035 * sc / wd) * (0.6 + 0.4 * hash(ic + 5.5)); } }
     col += HALLA * 0.13 * uRideK * min(rs, 1.0) * uOpen; }
-  return col * (1.0 - 0.75 * uGap);
+  return (col * uIceDim + hump) * (1.0 - 0.75 * uGap);
 }
 
 vec3 scene(vec2 p) {
@@ -251,7 +253,7 @@ vec3 scene(vec2 p) {
   float tIce = d.y < -1e-4 ? -o.y / d.y : 1e9;
   vec3 hit = o + d * tIce;
   if (d.y < -1e-4 && hit.z < ZS) { col = iceShade(o, d, tIce, hit, fogc); col = mix(col, fogc * 0.75 + col * 0.25, 0.85 * smoothstep(60.0, 8.0, ZS - hit.z)); }
-  else col = world(o, d, 0.0, 0.0, fogc) * uOpen;
+  else col = world(o, d, 0.0, 0.0, fogc) * uOpen * (1.0 - 0.30 * uDuck);
   col = pillars(col, o, d);
   // pilkahdukset (nymfit, väike): pieni kylmä ydin, pehmeä kehä, ristikkäiset hennot säteet ja heijastus mustassa jäässä
   for (int i = 0; i < 40; i++) { if (i >= uNL) break; vec4 L = uL[i], M = uM[i];
@@ -421,7 +423,7 @@ export function signaalit(d) {
     for (const p of [{ t: tI, v: 1 }, ...HP.filter((q) => q.t > tI + 0.2)]) { const t = p.t; if (t < tI || t >= tVP || p.v < 0.45 || t - last < 0.18) continue; last = t; nr++; const c = ci(t), Z0 = c.z + 3 + 9 * hh(nr, 4);
       LI.push({ t0: t, life: 1.3, fade: 0.4, kind: 'kiita', fr: 'i', X: c.x + (hh(nr, 6) * 2 - 1) * 0.95 * halfW(c, Z0), Y: 0.35, Z: Z0, I: (0.40 + 0.60 * lev(t)) * (t < tV ? 0.85 : 1.1), sig: 2.2, star: 0, refl: 0.5, vz: ICE_K * camV(t) + 10 }); } }
   // matalan kaistan alut: renkaat ja kummut (jään koordinaatisto)
-  const TAPIO_A = 0.035;
+  const TAPIO_A = 0.3;
   { let lastR = -9, lastH = -9, sg = 0;
     for (const p of LP) { const t = p.t, c = ci(t);
       if (t < tG0) {                                                         // paisutus: ohut rengas jokaisesta basson alusta; koko ja voima kasvavat, kuva ei vilku
@@ -437,14 +439,18 @@ export function signaalit(d) {
         if (p.v < 0.3 || t - lastR < 0.40) continue; lastR = t; RG.push({ t0: t, T: 0.9, X: c.x, Z: c.z + 9, amp: 0.012 * clamp(p.v / 0.8, 0.6, 1.3), R: 4, w: 10, dome: 1 });
       } else if (t < tVP) {                                                  // Tapio: bassojen raskas ääni = yksi pehmeä hehku jään alla: A * exp(-r^2 / R^2), R 15 -> 60 m 2,5 s
         if (p.v < 0.45 || t - lastH < 0.9) continue; lastH = t; sg++;
-        RG.push({ t0: t, T: 2.5, X: c.x + (sg % 2 ? 5 : -5), Z: c.z + 14, amp: TAPIO_A * (0.6 + 0.7 * lev(t)) * clamp(p.v / 1.0, 0.7, 1.3), R: 15, w: 60, dome: 1 });
+        RG.push({ t0: t, T: 2.5, X: c.x + (sg % 2 ? 4 : -4), Z: c.z + 26, amp: TAPIO_A * (0.7 + 0.5 * lev(t)) * clamp(p.v / 1.0, 0.8, 1.3), R: 5, w: 9, dome: 1, vx: 21 });
       } else if (t < tHJ) {                                                  // bassojen näppäilyt: pieniä renkaita
         if (p.v < 0.3 || t - lastR < 0.4) continue; lastR = t; RG.push({ t0: t, T: 1.0, X: c.x - 0.5, Z: c.z + 6, amp: 0.25, R: 1.6, w: 0.06, dome: 0 }); } } }
+  const HUMPS = RG.filter((r) => r.vx);
+  const duck = (t) => { let m = 0; for (const h of HUMPS) { const a = (t - h.t0) / h.T; if (a > 0 && a < 1) m = Math.max(m, Math.sin(Math.PI * a)); } return m; };
+  const iceDim = (t) => 1 - 0.6 * sstep(tV - 0.3, tV + 0.3, t) * (1 - sstep(tVP - 1, tVP + 4, t));
   const envF = (e, a) => smooth(clamp(a / 0.04, 0, 1)) * (1 - smooth(clamp((a - e.life) / e.fade, 0, 1)));
   const lastIdx = (arr, t) => { let lo = 0, hi = arr.length - 1, r = -1; while (lo <= hi) { const mid = (lo + hi) >> 1; if (arr[mid].t <= t) { r = mid; lo = mid + 1; } else hi = mid - 1; } return r; };
   const lightsAt = (t, cI, cR) => {
     const out = [];
-    const add = (c, X, Y, Z, I, sig, star, refl) => { const a = proj(c, X, Y, Z); if (!a || I < 0.004) return; const b = refl > 0 ? proj(c, X, -Y, Z) : null;
+    const dk = 1 - 0.5 * duck(t);
+    const add = (c, X, Y, Z, I0, sig, star, refl) => { const I = I0 * dk; const a = proj(c, X, Y, Z); if (!a || I < 0.004) return; const b = refl > 0 ? proj(c, X, -Y, Z) : null;
       out.push([a[0], a[1], b ? b[1] : 0, I, pxs(sig), star, refl > 0 ? refl : 0]); };
     // pp (kierros 3): 2-3 hyppijää eri syvyyksillä (viulut kaukana, alttoviulut keskellä, sellot lähellä); valo hyppii kaarin kosketuksesta toiseen
     // (korkeus jäästä h * 4u(1-u)), heijastus jäässä lähestyy ja etääntyy kaaren mukana. Sijainnit ovat kameran suhteen (x, z m), joten hyppijä pysyy kuvassa.
@@ -467,7 +473,7 @@ export function signaalit(d) {
   const ringsAt = (t) => { const out = [];
     for (const r of RG) { const a = (t - r.t0) / r.T; if (a < 0 || a >= 1) continue; out.push({ r, a }); }
     out.sort((p, q) => q.r.t0 - p.r.t0);
-    return out.slice(0, 12).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, r.dome, 0]]); };
+    return out.slice(0, 12).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, r.dome, r.vx || 0]]); };
   // ---- melodia: kumpujen muoto
   const kaari = (t) => clamp((d.melodia(t, 2.6) - 68) * 0.0050, -0.05, 0.075);
   const sNl = d.sarja((f) => (d.tapahtuu('nousu', f / FPS) ? 1 : 0) - (d.tapahtuu('lasku', f / FPS) ? 1 : 0));
@@ -509,7 +515,7 @@ export function signaalit(d) {
       top: topY, puffK: 0.9 * tapio(t) * (1 - sstep(tV10, tV10 + 12, t) * 0.8),
       stripe: [ASP * 0.58, shY + 0.035 + 0.05 * mel, 0.30, 0.30 * stripeOn(t) * (0.55 + 0.9 * d.keski(t, 0.4))],
       trill: clamp(d.korkea(t, 0.2) * 1.8 - 0.1, 0, 0.9) * trillOn(t), vauhti: camV(t),
-      vyor: tapio(t), sj: Sj(t) };
+      vyor: tapio(t), sj: Sj(t), iceDim: iceDim(t), duck: duck(t) };
   }
   return { T0, T1, tila, PUL, urku, Sj, G, trunkVis, gap, frost, camZ, camX, camV, pitch, camH, ZEND, tapio, lumiV, HP, LP, LI, RG, TOUCH, HOP, ROW, TU, lightsAt, ringsAt, cam, ci, proj, puffs, kat, paisu, upDim, mfPorras, ICE_K };
 }
@@ -533,7 +539,7 @@ async function alusta() {
       gl.uniform1f(U('uEnd'), s.end); gl.uniform1f(U('uTrunk'), s.trunk); gl.uniform1f(U('uGap'), s.gap); gl.uniform1f(U('uXT'), s.xt);
       gl.uniform1f(U('uLow'), s.low); gl.uniform1f(U('uMist'), 0.30); gl.uniform1f(U('uFogL'), 520);
       gl.uniform1f(U('uSnX'), s.snX); gl.uniform1f(U('uSnY'), s.snY); gl.uniform1f(U('uStr'), s.str); gl.uniform1f(U('uIceD'), s.iceD);
-      gl.uniform1f(U('uRideK'), s.rideK); gl.uniform1f(U('uRideD'), s.rideD);
+      gl.uniform1f(U('uIceDim'), s.iceDim); gl.uniform1f(U('uDuck'), s.duck); gl.uniform1f(U('uRideK'), s.rideK); gl.uniform1f(U('uRideD'), s.rideD);
       gl.uniform1f(U('uGustF'), s.gustF); gl.uniform1f(U('uGustK'), s.gustK); gl.uniform1f(U('uTop'), s.top); gl.uniform1f(U('uPuffK'), s.puffK);
       gl.uniform3f(U('uCam'), s.c.x, s.c.h, s.c.z);
       gl.uniform1fv(U('uProf'), new Float32Array(s.hills)); gl.uniform1fv(U('uLive'), new Float32Array(s.live));

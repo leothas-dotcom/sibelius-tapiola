@@ -48,3 +48,21 @@ Rungot ja pylväät eivät liiku (latvahuojunta poistettu); vain naava, usva ja 
 - Avautuminen rajakuvasta 6,5 → 3,0 s (ei kierroksen 3 listalla; syy: fraasin pitää alkaa näkyä heti). Alun rajakuva ja lopun rajakuva ennallaan.
 - `?lk=0`, `?fix=`, `?nf=1`, `?mono=1`, `?fraasit=1` ovat vain mittausta varten.
 - Auki: usvan virtausnopeuden render-mittaus (40 px/s) ei onnistunut; kirkkauden nousu notkahtelee ±7; nauha hallitsee kuvaa selvästi (sali on tummempi kuin nauha, nauha on pehmeä mutta suuri), käyttäjän/kriitikon arvioitava; usva on kirkkaampaa kuin vedoksessa 4 (laikkujen lisäys); pöydän palkki on vedoksen 4 mukainen (ei muutettu); sellojen fraasin kärki (8:25) ja oikean puolen etureuna ovat runkojen sanelemia.
+
+## LOPPUKORJAUS (10.11.2026): allegron nousu näkyväksi ja fraasinauhan reunat pehmeiksi
+
+Edellinen renderi talteen: `runs/v5_07_08/osa_kierros3.mp4` (moduuli `runs/v5_07_08/maailma_07_08_kierros3.js`). Uusi `runs/maailma_07_08/osa.mp4`: 5859 ruutua (ffprobe). Liikesarjat: `r3/l_allegro_630_650.png` (630–650 s, 1 s välein), `r3/l_sello_0_4.png` (0–4 s, 0,2 s välein), vertailu uusi (vasen) / vanha (oikea) kohdista 60, 130,3 ja 184 s: `r3/l_vertailu_uusi_vasen_vanha_oikea.png`.
+
+**Vika 1, allegro (`allegro_359` → `auringonsade`).** Muutettu vain tässä välissä:
+- Lumi: tiheys ×(1+3,2·al), al = 1−exp(−(t−T_AL)/2,5) eli ×3,9 kuudessa sekunnissa; hiutaleet näkyvät myös keilojen ulkopuolella ja venyvät pystyviiruiksi; putoamis- ja ajelehtimisnopeus kertymänä ×(1+2,6·al).
+- Valokeilat: kirkkaus sykkii liiketiheyden mukaan (uusien nuottien määrä sekunnissa, 0,5 s tasoitus), ja keilojen paikka kulkee liiketiheyden kertymän mukana.
+- Kirkkaus: kuva-ala ×(1+0,32·smoothstep 8 s), pidetään kunnes auringonsade ottaa vallan; äänestä mitattu keskirekisterin ja matalan voima pidetään lähellä aiempaa huippuaan.
+- Lähirungot: kameran reitin varrelle vuorotellen vasemmalle ja oikealle 4,5 m välein (säde 0,7–1,1 m, 4,3 m reitistä), alue `allegro_359`+10 m … `auringonsade`−2 m. Rungot tulevat usvasta etäisyyden mukaan (alfa 40 → 22 m), eivät ilmesty.
+- Mittaus 134–150 s, 1 s välein (ennen = `osa_kierros3.mp4`): ruutuero mediaani ennen 0,13 0,13 0,15 0,17 0,16 0,17 0,16 0,19 0,18 0,21 0,19 0,21 0,24 0,26 0,24 0,25; nyt 0,19 0,19 0,18 0,21 0,22 **0,36 0,57 0,70 0,76 0,85 0,94 1,02 1,07 1,18 1,26 1,26** (nousu alkaa videon 139 s, ankkuri 138,2 s; ×6 kuudessa sekunnissa). Keskikirkkaus (koko kuva) ennen 58,1 58,8 57,7 55,3 51,3 49,0 47,2 48,9 49,1 48,0 49,2 50,1 51,4 52,7 56,9 57,3 58,6; nyt 51,8 52,2 51,3 49,1 45,4 43,3 41,1 42,1 47,0 46,9 49,3 48,9 50,2 55,0 60,6 57,1 62,8. Nousu 140 s:stä (41,1) 148 s:iin (60,6) on +47 %, mutta **ei täysin ilman notkahduksia**: 145 s ja 149 s notkahtavat 1–3,5 yksikköä (ohittavat rungot), ja ennen ankkuria vaskien jälkihohdon vaimeneminen laskee kirkkautta 134 → 140 s (51,8 → 41,1; tämä on vanhassakin).
+- Sivuvaikutus: lähirunkojen ensimmäiset tulevat näkyviin jo noin 130 s:n kohdalla kaukana usvassa (ruutuero vanhaan 3,2 kohdassa 130,3 s).
+
+**Vika 2, fraasinauha.** Etureuna rikotaan usvan kohinalla ja häivytetään 27 % kuvan leveydeltä (smoothstep −0,07…0,20 fraasin etenemisestä), takareunalle ja oikealle laidalle oma pehmeä häivytys (10 %), yläreunan hajonta 0,05 → 0,075 ja korkeuteen kohinaa ±0,04. Muoto, korkeus ja liike ennallaan. Todiste: `r3/l_sello_0_4.png`: nauha alkaa pehmeänä sumuna vasemmasta laidasta 1,6 s:sta, eikä pystyreunaa ole (kuvan vasemman ja oikean laidan tummat pystyreunat ovat runkoparin siluetteja, ei nauhaa).
+
+**Kolme muuta kohtaa vanhaan renderiin (keskimääräinen ruutuero 0–255 / kirkkaus uusi vs. vanha):** 60 s 0,23 (57,5 / 57,5); 100 s 0,88 (60,2 / 59,8); 20 s 0,73 (nauha); 130,3 s (vaskileikkaus) 3,5 (55,2 / 58,5; vaskileikkaus näkyy edelleen, mutta uusia lähirunkoja on kaukana usvassa); 184 s 6,2 (77,0 / 77,0; kuvat samat silmällä, ero lumihiutaleiden paikoissa). Ruutuero 0–125 s mediaani 0,154 vs 0,156; hyppy 4,5–5,5 s enintään 0,66.
+
+**Auki:** kirkkauden nousun pienet notkahdukset; lähirunkojen ohitus alkaa vasta ~2–3 s ankkurin jälkeen (ensimmäinen runko tulee 10 m päästä); salin ilme allegrossa on tummempi ja tiheämpi (rungot + lumi), kriitikon arvioitava.

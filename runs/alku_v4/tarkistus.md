@@ -28,3 +28,13 @@ Kaikki alla olevat luvut on laskettu valmiista renderistä, ellei toisin sanota.
 - Vaarat 7 ja 9 vasemmassa reunassa liukuvat ulos kuvasta loppua kohti (x tiivistetty, ei poistettu kokonaan).
 - Sauman vertailu moduuliin 03_04 tekemättä; rajakuva PIMEA_MASSA viimeisessä ruudussa (keskiarvo 26,6).
 - Muita moduuleja ja yhteisiä tiedostoja ei muutettu. Diagnostiikkaparametrit `?vain=i` ja `?kiintea` ovat moduulissa (eivät vaikuta normaaliin renderiin).
+
+## Loppukorjaus (10.11.2026): lopun piirroskuuset pois
+- **Muutos** (`visual/maailma_01_02.js`): poistettu `spruceCut`-funktio ja 24 kuusen silhuettisilmukka kohtauksen `uEnd`-lohkosta. Jäljelle jäi vain kruunukentän
+  tummuminen (`uEnd`, 58,2 s alkaen). Rajakuvan ristihäivytys pidennetty 0,3 s:sta 1,5 s:iin (`entry`: 60,1 -> 61,56 s), joten rajakuvan oma rakenne on näkyvissä häivytyksen ajan.
+- **Renderi:** `runs/alku_v4/osa.mp4`, 1848 ruutua (ffprobe). Edellinen renderi talteen: `runs/v5_01_02/tark/osa_kierros3.mp4`.
+- **Liikesarja 58,5-61,6 s, 0,2 s välein:** `runs/v5_01_02/tark/loppu_k4.png` (vika ennen korjausta: `loppu_vika_k3.png`). Yhdessäkään ruudussa ei ole yksittäistä
+  piirrettyä puuta kameran edessä; kruunukenttä tummuu ja usva nousee, ja kuva häipyy rajakuvaan.
+- **Ennallaan-tarkistus talteen otettuun renderiin (PSNR, yksi ruutu):** 13 s ja 30 s identtiset (inf); 5 s 48,2 dB, 46 s 45,2 dB, 58,0 s 49,3 dB (suurin pikselierotus
+  16-26/255, ei näkyvää eroa). Kohdat 5 s ja 46 s ovat ennen muutosta, joten ero on renderin/enkoodauksen hajontaa, ei muutoksen aiheuttamaa [ei erikseen todennettu].
+- **Auki:** rajakuva on itsessään lähes tasainen tumma vihertävä; viimeiset ~0,3 s (1:01.3-1:01.5) näyttävät sen vuoksi lähes tasaisilta liikesarjassa. Saumaa moduuliin 03_04 ei mitattu.

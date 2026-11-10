@@ -1,0 +1,55 @@
+{
+  "nimi": "vedos_v5",
+  "pvm": "2026-11-10",
+  "mika": "Viides vedos: koko teos kahtenatoista maailmana käyttäjän vedoksen 4 palautteen (palautelistan rivit 44-59) jälkeen. Kuusi moduulia korjattu, kaksi ennallaan.",
+  "pyynto": "Käyttäjä 10.11.2026: 'kuuntele vielä kappale, yritä tunnistaa ne nymphit, taitekohdat vielä paremmin ... päivitä kuunteluopas ... uutta renderiä, ja työskentele sen kanssa kunnes teos on valmis. Käytä kriitikkoa tarkistamaan että olet jokaisen kritiikin korjannut'",
+  "peruste": "docs/visuaalinen_tyyli.md v2.1 (4d kohdat 23-30), annotations/kuunteluopas.md (uusi lanka Nymfit ja Tapio; 10 uutta ankkuria, 12 korjattua), runs/vedos_v5/brief.md ja runs/v5_<moduuli>/brief.md",
+  "tekija": "ohjaaja (pääistunto): kuuntelu partituurista ja mittauksista, teemakartta, briefit, päätökset, kokoaminen; Sonnet-rakentajat ja -kriitikot moduuleittain (1-4 kierrosta); loppukriitikko koko vedoksesta",
+  "levytys": "rattle_lso_2022 (työäänitys: ei videoon, ei gittiin; tiedostot vain käyttäjän omaan katseluun)",
+  "moduulit": {
+    "01_02": "uusi: metsä lopun piirrolla latvojen yläpuolelta; unisono-gis suora valon viiva; vaarat paljastuvat usvasta paisutus kerrallaan ja jäävät siintämään; 3 kierrosta ja lopun täsmäkorjaus; edellinen alku tallessa visual/maailma_01_02_suo.js",
+    "03_04": "ennallaan (bitilleen sama kuin vedoksessa 4)",
+    "05": "vedoksen 4 maailma + nymfien valot (parit, juoksu, grazioso-tanssi), liikkuva lumi; kolme uudelleenrakennusta hylättiin ennen tätä",
+    "06": "elementit uusiksi: hyppijät jäällä, 6:30 joukko, H:n parvi, taite I (vauhti), Tapion valo jään alla, ranta jäykkä; 3 kierrosta ja täsmäkorjaus",
+    "07_08": "vedoksen 4 sali + sellojen laulu ja fraasit eri korkeuksilla, liikkuva usva, vaskien seitsemän leikkausta, Allegron nousu, auringon monotoninen nousu ja valon täyttämä sali; kaksi uudelleenrakennusta hylättiin ennen tätä",
+    "09": "runkojen välkkyminen korjattu (kameran vauhti 3-10 m/s -> 1,3-2,4 m/s, rungon muoto vakaa), P paisutuksena, loppu metsänä",
+    "10": "intensiteetti seuraa jousia, lumiverhot ja syvyys, liikkuvat pyörteet, aksentit askelina, huipun seinä",
+    "11_12": "ennallaan (bitilleen sama kuin vedoksessa 4)"
+  },
+  "tulos": {
+    "tiedosto": "runs/vedos_v5/koko.mp4",
+    "kesto_s": 1078.0,
+    "ruutuja": 32340,
+    "katselukopio": "runs/vedos_v5/tapiola_vedos5_720p.mp4",
+    "kontaktiarkki": "runs/vedos_v5/kontakti.jpg"
+  },
+  "mitattu": {
+    "aani_totuutta_vasten": "0,00 ms kaikissa mittauspisteissä, ajautuminen 0,0 ppm (analysis/kellot.py, lopullinen kokoonpano)",
+    "saumat": "kaikissa seitsemässä saumassa viimeisen ja ensimmäisen ruudun keskivärin ero 0 yksikköä 255:stä (lopullinen kokoonpano)",
+    "ruutumaarat": "kaikki kahdeksan moduulia täsmäävät ankkureista laskettuun (yhteensä 32340)"
+  },
+  "kriitikko": {
+    "moduulit": "raportit runs/maailma_<k>/kriitikko_v5.md ja kriitikko_v5b.md (01_02: runs/alku_v4/); jokainen ensimmäinen kierros hylättiin mitattuna liikkeestä",
+    "loppukriitikko": "runs/vedos_v5/kriitikko.md (koko vedos ennen neljää täsmäkorjausta): korjattu 6:30, 6:50, kumipuut 7:00, usva 9:00, vasket 10:26, aurinko 11:20, myrskyn vaihtelu, pyörre ja syvyys, alun metsä; osin spiccatot 5:48, sellot 8:16, aksentti 14:32, alun vaarat, nymfit; ei 10:34 ja Tapio 7:01",
+    "tasmakorjaukset_loppukriitikon_jalkeen": "alun lopun piirroskuuset pois; pimeän metsän lopun piirretyt oksat pois; Allegro 10:34 (lähirungot, lumi, kirkkaus); Tapion valo jään alla 7:01; sellonauhan reunat pehmeiksi. Näitä ei ole katsonut kriitikko, vain ohjaaja liikesarjoista.",
+    "bugilista_tyhja": false
+  },
+  "tiedossa_auki": [
+    "neljää täsmäkorjausta ei ole käynyt läpi kriitikko",
+    "sauma 1:01,6: alun loppu on häivytys pimeään, ei kulku metsän sisään; moduulin 03_04 alku on noin 2 s tasaista ja avautuu läikkinä (kuten vedoksessa 4)",
+    "alku: kaukaisimman vaaratason liike ja paljastuksen ajoitus todettu mallista, ei mitattu renderistä; matalakontrastinen usvakaistale 0-24 s; kriitikko: vaarat 'matalia ja hentoja'",
+    "05: pikkolon juova on pystypalkki; parit taivaalla; nymfit hienovaraisia (loppukriitikko ei erottanut niitä kohdissa 3:51 ja 4:40, ohjaaja erottaa 4:42-4:47)",
+    "06: Tapion valo lukee kulkevana aaltona, joka jättää jään tasaisen vaaleaksi; rannan lähestyminen taitteessa mitattu vain mallista; ryhmäjako sävelkorkeudesta, ei partituurista",
+    "07_08: Tapion pöytä on vedoksen 4 palkki, joka kasvaa auringon eteen; sellonauhan aaltoileva yläreuna voi lukea piirrettynä käyränä; usvan nopeutta ei saatu mitattua renderistä; 10:00-10:16 tasaista",
+    "09: kuva kauttaaltaan hyvin tumma; nousut, laskut ja tremolo eivät erotu omina tapahtuminaan; yksi askel kirkastaa lähirungon vaaleaksi",
+    "10: pisin jakso ilman taustan näkymistä 10 s; aksentin 14:32 jälkeinen muutos voi muistuttaa leikkausta",
+    "kuunteluoppaan rivit, joilla loppukriitikon mukaan ei ole riittävää vastinetta: 6:06 gis, 7:15-7:51, 8:38 maan värinä, 9:40 sykkivä h, 10:41 kolme C-duuri-välähdystä, 13:26 P, 15:23 R",
+    "mystisiä olentoja ei ole; nymfit ovat valoa"
+  ],
+  "ei_tehty": [
+    "käyttäjä ei ole nähnyt",
+    "master 2160p",
+    "WhatsApp-versio",
+    "vanhat piirrot (visual/kohtaus.js, kerrokset.glsl.js, metsa.glsl.js) poistamatta"
+  ]
+}

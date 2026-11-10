@@ -302,25 +302,6 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
   return col;
 }
 
-// kulku metsän sisään (viimeiset sekunnit): kuuset ja niiden oksat kulkevat kameran ohi. Jokainen kuusi on maailmassa (sivuttaisetäisyys X,
-// etäisyys Z kamerasta, korkeus H); kamera etenee 9 m/s, joten lähin kuusi kasvaa ja liukuu ulos kuvasta ja niiden välinen pimeä täyttyy.
-float spruceCut(float xw, float yw, float H, float Rb, float sd, float pw, out float hi) {
-  hi = 0.0;
-  if (yw < -0.5 || yw > H) return 0.0;
-  float h = clamp(yw / H, 0.0, 1.0);
-  float R = Rb * pow(1.0 - h, 0.95);
-  float yj = yw + 0.40 * (vnoise(vec2(xw * 1.6 + sd * 13.0, 3.0)) - 0.5);      // oksakerrosten alareuna aaltoilee
-  float u = yj / 1.8 + sd, ti = floor(u), tier = fract(u);
-  float rnd = 0.85 + 0.30 * hash(vec2(ti, sd * 5.0));
-  float skirt = 0.50 + 0.50 * pow(1.0 - tier, 1.7);                            // oksa laskeutuu kaarevasti alaspäin
-  float fr = 0.16 * (vnoise(vec2(yw * 7.0, sd * 3.0)) - 0.5) * (0.4 + 0.6 * (1.0 - tier));   // havun hapsut
-  float r = max(R * rnd * (skirt + fr), 0.20 * step(yw, H * 0.85));
-  float bl = pw * 2.5 + 0.0012;
-  float a = smoothstep(-bl, bl, r - abs(xw)) * smoothstep(-2.0 * pw, 0.0, H - yw);
-  hi = smoothstep(0.70, 1.0, tier) * a * (0.5 + 0.5 * vnoise(vec2(xw * 9.0, yw * 5.0)));   // lumi oksakerroksen päällä
-  return a;
-}
-
 vec3 scene(vec2 p) {
   float asp = uRes.x / uRes.y;
   float dx = p.x - asp * 0.5, dy = p.y - uHor;
@@ -337,27 +318,10 @@ vec3 scene(vec2 p) {
     float m = smoothstep(0.0, 0.03, dy) * env * (1.0 - 0.92 * cov);   // vaarat ja kaukametsä peittävät leikkauksen
     col += LEIKKAUS * (uCut.x * (0.55 * exp(-d * d / (w * w)) + 0.28 * exp(-d / 0.07)) + uCut.y * (0.22 * exp(-d / 0.20) + 0.12 * exp(-d / 0.55))) * m;
   }
-  // kulku metsän sisään
+  // kulku metsän sisään: kruunukenttä tummuu ja usva nousee (ei piirrettyjä puita); viimeiset 1,5 s ristihäivytys rajakuvaan
   if (uEnd > 0.0) {
     float tau = uEnd, wt = smoothstep(0.0, 1.6, tau);
-    float zb = 1e9, ab = 0.0, hb = 0.0;
-    for (int i = 0; i < 24; i++) {
-      float fi = float(i);
-      float h1 = hash(vec2(fi, 1.3)), h2 = hash(vec2(fi, 7.1)), h3 = hash(vec2(fi, 13.7)), h4 = hash(vec2(fi, 29.3));
-      float H = 20.0 + 14.0 * h4, Rb = 0.17 * H;
-      float Z = 5.0 + 80.0 * h1 * h1 - 9.0 * tau;
-      if (Z < 0.9) continue;
-      float X = (h2 > 0.5 ? 1.0 : -1.0) * (Rb + 0.9 + (0.25 * Z + 3.0) * h3);
-      float hi, a = spruceCut(dx * Z / F - X, uCamH + dy * Z / F, H, Rb, h3 * 7.0, Z / (F * uRes.y), hi);
-      if (a > 0.003 && Z < zb) { zb = Z; ab = a; hb = hi; }
-    }
-    vec3 bg = col * (1.0 - 0.38 * smoothstep(1.4, 3.1, tau));
-    if (ab > 0.0) {
-      vec3 tc = (HAMY * 0.75 + SALO * 0.006) * (0.80 + 0.45 * vnoise(vec2(dx * 40.0, dy * 70.0))) + HALLA * 0.028 * hb;
-      tc = mix(tc, SALO * 0.30 * (0.7 + 0.3 * exp(-abs(dy) / 0.15)), 1.0 - exp(-zb / 70.0));
-      bg = mix(bg, tc, ab);
-    }
-    col = mix(col, bg, wt);
+    col = mix(col, col * (1.0 - 0.38 * smoothstep(1.4, 3.1, tau)), wt);
   }
   return mix(col, rajakuva(p, 0, uTime), uEnter);
 }
@@ -520,7 +484,7 @@ async function alusta() {
   }
 
   const { gl, U, piirra } = luoGL(FS);
-  const entry = (t) => sstep(TE - 0.32, TE - 0.04, t);                      // rakenteeton rajakuva vasta viimeisen 0,3 s aikana
+  const entry = (t) => sstep(TE - 1.5, TE - 0.04, t);                       // ristihäivytys rajakuvaan viimeisen 1,5 s aikana (rajakuvan oma kohinarakenne näkyy jo häivytyksessä)
   julkaise({
     gl, aika: A,
     kamera: (t) => ({ p: [camX(t), camH(t), camZ(t)], q: [0, 0, 0, 1], shot: 'matka', cut: 0, trans: false }),

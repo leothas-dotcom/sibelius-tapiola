@@ -13,7 +13,7 @@ const NDOOR = 9;
 
 const FS = FS_ALKU + `
 uniform float uWind, uTime, uCamS, uCamX, uGlow, uShake, uEnd, uStart, uThin0, uThin1, uFogL, uGround, uLift, uSurge;
-uniform float uNerve, uPh, uReach, uZl, uBranch, uFill;
+uniform float uNerve, uPh, uReach, uZl, uDense;
 uniform vec2 uObo[4];     // oboet: ohut valojuova (sivuasema, voima)
 uniform vec3 uKla[3];     // klarinetit: puoliksi näkyvä liike (sivuasema, korkeus, voima)
 uniform vec3 uSnow;       // lumi: pudotus (kertymä), ajautuma (kertymä), määrä
@@ -193,7 +193,7 @@ vec4 trunkLayer(float n, float S, float z, float dx, float dy, vec3 fog, float r
   float yw = CAMH + dy * z / F;
   if (yw < 0.0) return vec4(0.0);
   const float CW = 3.7;
-  float dens = 0.60 * (1.0 - 0.86 * smoothstep(uThin0, uThin1, S));
+  float dens = mix(0.60 * (1.0 - 0.86 * smoothstep(uThin0, uThin1, S)), 0.97, uDense);   // lopun tihentyminen: samat rungot tiheämmin
   float f = 1.0 - exp(-z / uFogL);
   float fade = smoothstep(ZMAX, ZMAX * 0.72, z);
   float cover = 0.0, uu = 0.0, idd = 0.0, xcs = 0.0, crownCv = 0.0;
@@ -251,36 +251,6 @@ vec4 trunkLayer(float n, float S, float z, float dx, float dy, vec3 fog, float r
   return vec4(tone, al);
 }
 
-// lumiset kuusenoksat (lopun kulku tiheään kuusikkoon): maailmassa kiinteät oksat polun molemmin puolin, kamera kulkee niiden ohi;
-// viimeisinä sekunteina (uFill) oksisto täyttää kuvan ja kuva sulaa rajakuvaan
-vec4 branchAt(float n, float S, float z, float dx, float dy, vec3 fog) {
-  if (uBranch <= 0.0) return vec4(0.0);
-  float rel = dx * z / F - (xPath(S) - uCamX);
-  float yw = CAMH + dy * z / F;
-  float f = 1.0 - exp(-z / uFogL);
-  vec4 res = vec4(0.0);
-  for (int sd = 0; sd < 2; sd++) {
-    float side = sd == 0 ? -1.0 : 1.0;
-    float hg = hash(vec2(n * 1.7 + side * 3.1, 5.3));
-    if (hg > 0.62 * uBranch) continue;
-    float xo = side * (1.2 + 1.9 * hash(vec2(n * 0.9, side + 11.0)));
-    float ho = 1.3 + 2.8 * hash(vec2(n * 2.3 + side, 6.1));
-    float L = (2.2 + 2.4 * hash(vec2(n * 3.7, side + 2.0))) * (1.0 + 2.5 * uFill);
-    float u = (xo - rel) * -side;
-    if (u < -0.2 || u > L) continue;
-    float yc = ho - 0.17 * u + 0.35 * sin(u * 2.1 + n);
-    float tk = (0.85 * (1.0 - u / L) + 0.07) * (0.70 + 0.65 * vnoise(vec2(u * 4.5 + n * 3.0, side * 5.0 + n))) * (1.0 + 4.0 * uFill) * smoothstep(-0.2, 0.9, u);   // pyöristetty tyvi (ei pystyleikkausta), rosoinen reuna
-    float d = abs(yw - yc) / tk;
-    float e = max(0.10, 0.9 * z / (F * uRes.y) / tk);
-    float a = 1.0 - smoothstep(1.0 - e, 1.0 + e, d);
-    if (a <= 0.0) continue;
-    float cap = smoothstep(0.55, 0.95, (yw - yc) / tk);
-    vec3 col = mix(HAMY * 1.6, fog, f * 0.7) + HALLA * (0.018 + 0.030 * uGlow) * cap * (1.0 - f);   // tumma kuusenoksa, ohut lumireuna päällä
-    res = vec4(mix(res.rgb, col, a), max(res.a, a * 0.97));
-  }
-  return res;
-}
-
 vec3 dotsBetween(vec3 col, float zn, float zf, float dx, float dy) {
   for (int i = 0; i < 24; i++) {
     if (i >= uNDot) break;
@@ -296,7 +266,7 @@ vec3 dotsBetween(vec3 col, float zn, float zf, float dx, float dy) {
 vec3 scene(vec2 p) {
   float asp = uRes.x / uRes.y;
   float dx = p.x - asp * 0.5, dy = p.y - HOR;
-  vec3 fog = fogAt(dx, dy, asp);
+  vec3 fog = fogAt(dx, dy, asp) * (1.0 - 0.50 * uDense);   // usva tummuu runkojen välissä
   float n0 = floor(uCamS / DZ);
   vec3 col;
   if (dy >= 0.0) {
@@ -327,7 +297,6 @@ vec3 scene(vec2 p) {
     vec4 cr; vec4 tr = trunkLayer(n, S, z, dx, dy, fog, ringAt(z), cr);
     col = mix(col, cr.rgb, cr.a);
     col = mix(col, tr.rgb, tr.a);
-    if (z < 34.0) { vec4 br = branchAt(n, S, z, dx, dy, fog); col = mix(col, br.rgb, br.a); }
     zPrev = z;
   }
   for (int i = NDOOR_M1; i >= 0; i--) {
@@ -495,8 +464,8 @@ async function alusta() {
     const s = clamp((tt - (t1 - 1.5)) / 1.5, 0, 1);
     const surge = surgeAt(tt) * (1 - sstep(t1 - 3.0, t1 - 0.3, tt));
     const snow = [d.kohta(sFall, tt), d.kohta(sDrift, tt), (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surge) * (1 + 1.0 * nerve * gustAt(tt))];
-    const branch = sstep(A.dim_possibile + 4, t1 - 3, tt), fill = sstep(t1 - 2.8, t1 - 0.4, tt);
-    return { surge, snow, nerve, ph: d.kohta(sPh, tt), pk, branch, fill, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
+    const dense = sstep(t1 - 11, t1 - 2.5, tt);
+    return { surge, snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
       end: smooth(s), start: 1 - sstep(0, 0.9, tt - t0), rate: rate(tt) };
   }
 
@@ -508,7 +477,7 @@ async function alusta() {
     kuvaus: (t) => { const s = tila(t);
       const dz = doorS.map((x) => +(x - s.camS).toFixed(1)).filter((x) => x > 0);
       return { vauhti_m_s: +s.v.toFixed(2), liike_per_s: +s.rate.toFixed(1), matka_m: +s.camS.toFixed(1), kajo: +s.glow.toFixed(2), pystyvalo: s.cut.map((x) => +x.toFixed(2)),
-        vare: +s.shake.toFixed(2), tuuli: +s.wind.toFixed(2), kaksi: s.two.map((x) => +x.toFixed(2)), maa: +s.pohja.toFixed(2), renkaita: s.pu.length, pilkkuja: s.dots.length, nostoa: +s.lift.toFixed(3), puuska: +s.surge.toFixed(2), lumi_pudotus: +s.snow[0].toFixed(2), lumi_maara: +s.snow[2].toFixed(2), puuskia_yht: SURGE.length, hermo: +s.nerve.toFixed(2), paisutus: +s.pk.toFixed(2), oboeita: s.obo.length, klar: s.kla.length, oksat: +s.branch.toFixed(2), askelia: ASKELEET.length, askel_ajat: ASKELEET.map((x) => +(x.t - t0).toFixed(2)), puuskat_s: SURGE.map((f) => +(f / FPS).toFixed(2)),
+        vare: +s.shake.toFixed(2), tuuli: +s.wind.toFixed(2), kaksi: s.two.map((x) => +x.toFixed(2)), maa: +s.pohja.toFixed(2), renkaita: s.pu.length, pilkkuja: s.dots.length, nostoa: +s.lift.toFixed(3), puuska: +s.surge.toFixed(2), lumi_pudotus: +s.snow[0].toFixed(2), lumi_maara: +s.snow[2].toFixed(2), puuskia_yht: SURGE.length, hermo: +s.nerve.toFixed(2), paisutus: +s.pk.toFixed(2), oboeita: s.obo.length, klar: s.kla.length, tiheys: +s.dense.toFixed(2), askelia: ASKELEET.length, askel_ajat: ASKELEET.map((x) => +(x.t - t0).toFixed(2)), puuskat_s: SURGE.map((f) => +(f / FPS).toFixed(2)),
         seuraava_ovi_m: dz[0] ?? null, ovia_edessa: dz.length, kipinoita_yht: KIPINOITA }; },
     seek: (t) => {
       const s = tila(t);
@@ -517,7 +486,7 @@ async function alusta() {
       gl.uniform1f(U('uThin0'), thin0); gl.uniform1f(U('uThin1'), thin1); gl.uniform1f(U('uFogL'), 85);
       gl.uniform1f(U('uGround'), s.pohja); gl.uniform1f(U('uLift'), s.lift);
       gl.uniform1f(U('uNerve'), s.nerve); gl.uniform1f(U('uPh'), s.ph); gl.uniform1f(U('uReach'), s.pk); gl.uniform1f(U('uZl'), lerp(170, 6, s.pk));
-      gl.uniform1f(U('uBranch'), s.branch); gl.uniform1f(U('uFill'), s.fill);
+      gl.uniform1f(U('uDense'), s.dense);
       const ob = new Float32Array(8); s.obo.forEach((x, i) => ob.set(x, i * 2)); gl.uniform2fv(U('uObo'), ob);
       const kl = new Float32Array(9); s.kla.forEach((x, i) => kl.set(x, i * 3)); gl.uniform3fv(U('uKla'), kl);
       gl.uniform1f(U('uSurge'), s.surge); gl.uniform3f(U('uSnow'), s.snow[0], s.snow[1], s.snow[2]);
