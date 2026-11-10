@@ -19,6 +19,7 @@ const FS = FS_ALKU + `
 uniform float uDim, uWind, uTime, uCamX, uCamZ, uHor, uOpen, uDark, uMass, uKes, uMel, uTable, uTrem, uVeil, uSunRise, uPairZ, uFogK, uSway, uFlood, uRise, uAl, uShP, uGain, uSnowK;
 uniform vec2 uAv;          // allegron lähirunkojen z-alue (alku, loppu)
 uniform vec4 uHit[8];      // trumpettien ja patarumpujen iskut (x, z, välähdys, jälkihohto): jokainen on oma pystyleikkaus ja maan tärähdys
+uniform float uHH[8];      // iskun hohteen (halo) kerroin
 uniform float uHW[8];      // iskun leikkauksen kulmaleveys (kuvan yksikköä, puolileveys)
 uniform vec4 uSong;        // fraasin valo: (voima, eteneminen 0..1+, suunta +1/-1, rekisteri 0 matala..1 korkea)
 uniform float uTrail[32];  // fraasin melodian korkeus kuvassa (0..1 alareunasta), fraasin edistymisen mukaan
@@ -36,6 +37,8 @@ const float XT = 0.0, ZT = 255.0, RT = 5.2, YP = 12.0, PLH = 31.0, ZPL = 250.2;
 const float BH[6] = float[6](4.0, 10.0, 19.0, 31.0, 46.0, 64.0);
 const vec3 PUNA = vec3(1.55, 0.17, 0.08);
 const float PAIRX = 11.0;
+// vedos 7 (rivi 72): pöydän keskirunko siirretty x = 0 -> -6, jotta runko ei ole auringon edessä (aurinko ruudulla dx 0,09: suora kamerasta aurinkoon on pysähdyksessä x = +3,6 pöydän tasolla). Rungon paikka ratkaisee, ei kamera.
+const float TX[3] = float[3](-29.0, -6.0, 29.0);
 
 float gh(float x, float z) {
   return 5.0 * (vnoise(vec2(x * 0.010 + 7.0, z * 0.0075 + 3.0)) - 0.5) + 1.2 * (vnoise(vec2(x * 0.030 + 1.0, z * 0.025)) - 0.5);
@@ -79,7 +82,7 @@ float postShadow(float x, float z) {
   float lenF = smoothstep(250.0, 60.0, ZT - z);
   float sh = 0.0;
   for (int k = -1; k <= 1; k++) {
-    float d = abs(x + SDX * (ZT - z) - (XT + 29.0 * float(k)));
+    float d = abs(x + SDX * (ZT - z) - TX[k + 1]);
     sh = max(sh, smoothstep(RT + 1.5, RT - 1.0, d));
   }
   return sh * lenF;
@@ -211,7 +214,7 @@ vec3 drawPlank(vec3 col, float dxF, float dy, float camY, float ypl) {
 }
 
 // pystysuora valon leikkaus: wb = leveys metreinä, ang = lisäksi kulmaleveys (kuvan yksikköä, näkyvä leveys pysyy suurena kaukanakin); ylim = korkeusraja
-vec3 drawRod(vec3 col, vec4 rod, float dxF, float dy, float camY, float wb, float ang, float ylim) {
+vec3 drawRod(vec3 col, vec4 rod, float dxF, float dy, float camY, float wb, float ang, float ylim, float hs) {
   float s = rod.y - uCamZ;
   if (s < 1.0 || rod.w + rod.z <= 0.001) return col;
   float x = uCamX + dxF * s, y = camY + dy * s / F;
@@ -220,7 +223,7 @@ vec3 drawRod(vec3 col, vec4 rod, float dxF, float dy, float camY, float wb, floa
   float w0 = wb + ang * s / F;
   float core = smoothstep(w0 + pm, 0.26 * w0, lat);
   float halo = exp(-lat / (1.5 + 2.0 * w0));
-  return col + LEIKKAUS * (rod.z * (1.9 * core + 0.5 * halo) + rod.w * (0.35 * core + 0.30 * halo));
+  return col + LEIKKAUS * (rod.z * (1.9 * core + 0.5 * hs * halo) + rod.w * (0.35 * core + 0.30 * hs * halo));
 }
 
 // fraasin valo: hopeinen/kylmä nauha, jonka etureuna etenee kuvan poikki fraasin mukana ja jonka korkeus on melodian korkeus (uTrail)
@@ -268,7 +271,7 @@ vec3 fogS(vec3 w, float zz, vec2 sp, float bs, float nm) {
   }
   vec2 ra = w.xz - uRodA.xy, rb = w.xz - uRodB.xy;
   s += LEIKKAUS * (uRodA.z * 0.9 + uRodA.w * 0.10) * exp(-dot(ra, ra) / 30.0) + LEIKKAUS * (uRodB.z * 0.9 + uRodB.w * 0.10) * exp(-dot(rb, rb) / 30.0);
-  for (int h = 0; h < 8; h++) if (uHit[h].z + uHit[h].w > 0.001) { vec2 rh = w.xz - uHit[h].xy; s += LEIKKAUS * (uHit[h].z * 0.55 + uHit[h].w * 0.10) * exp(-dot(rh, rh) / 90.0); }
+  for (int h = 0; h < 8; h++) if (uHit[h].z + uHit[h].w > 0.001) { vec2 rh = w.xz - uHit[h].xy; s += LEIKKAUS * uHH[h] * (uHit[h].z * 0.55 + uHit[h].w * 0.10) * exp(-dot(rh, rh) / 90.0); }
   s += LEIKKAUS * (0.020 * (uRodA.z + uRodB.z) + 0.004 * (uRodA.w + uRodB.w));
   return s;
 }
@@ -348,8 +351,8 @@ vec3 scene(vec2 p) {
       g0 += HALLA * uTable * 0.16 * pool * (0.5 + 0.8 * sn) * (0.6 + 0.8 * lam);                          // pöydän valo maassa
       for (int h = 0; h < 8; h++) if (uHit[h].z + uHit[h].w > 0.001) {                                      // isku: tärähdys maassa leikkauksen kohdalla ja koko lattialla
         float dzh = (wz - uHit[h].y) / 38.0, dxh = (x - uHit[h].x) / 55.0;
-        g0 += HALLA * (uHit[h].z * 0.16 + uHit[h].w * 0.05) * exp(-dzh * dzh - dxh * dxh) * (0.5 + 0.9 * sn);
-        g0 += HALLA * (uHit[h].z * 0.030 + uHit[h].w * 0.010) * (0.5 + 0.9 * sn) * smoothstep(250.0, 20.0, z);
+        g0 += HALLA * uHH[h] * (uHit[h].z * 0.16 + uHit[h].w * 0.05) * exp(-dzh * dzh - dxh * dxh) * (0.5 + 0.9 * sn);
+        g0 += HALLA * uHH[h] * (uHit[h].z * 0.030 + uHit[h].w * 0.010) * (0.5 + 0.9 * sn) * smoothstep(250.0, 20.0, z);
       }
       if (uFlood > 0.0) {                                                                                  // auringonsade: punainen valo lattialla, rungot heittävät pitkät varjot kohti katsojaa
         float shd = max(postShadow(x, wz), 0.92 * pillarShadows(x, wz));
@@ -398,12 +401,12 @@ vec3 scene(vec2 p) {
     }
     for (int j = 0; j < 2; j++) { vec4 PA = avenueDef(n, float(j)); if (PA.w > 0.5) col = mix(col, drawPillar(col, PA.xy, PA.z, n * 7.0 + 333.0 + float(j), dxF, dy, camY, zS, 0.0), smoothstep(40.0, 22.0, PA.y - uCamZ)); }   // rungot tulevat usvasta etäisyyden mukaan, eivät ilmesty
     if (n == nT) {
-      for (int k = -1; k <= 1; k++) col = drawPillar(col, vec2(XT + 29.0 * float(k), ZT), RT, 500.0 + float(k), dxF, dy, camY, zS, 1.0);
+      for (int k = -1; k <= 1; k++) col = drawPillar(col, vec2(TX[k + 1], ZT), RT, 500.0 + float(k), dxF, dy, camY, zS, 1.0);
       col = drawPlank(col, dxF, dy, camY, ypl);
     }
-    if (n == nRA) col = drawRod(col, uRodA, dxF, dy, camY, 0.38, 0.0, YCAN);
-    if (n == nRB) col = drawRod(col, uRodB, dxF, dy, camY, 0.38, 0.0, YCAN);
-    for (int h = 0; h < 8; h++) if (uHit[h].z + uHit[h].w > 0.001 && n == floor(uHit[h].y / DZ)) col = drawRod(col, uHit[h], dxF, dy, camY, 0.25, uHW[h], 800.0);
+    if (n == nRA) col = drawRod(col, uRodA, dxF, dy, camY, 0.38, 0.0, YCAN, 1.0);
+    if (n == nRB) col = drawRod(col, uRodB, dxF, dy, camY, 0.38, 0.0, YCAN, 1.0);
+    for (int h = 0; h < 8; h++) if (uHit[h].z + uHit[h].w > 0.001 && n == floor(uHit[h].y / DZ)) col = drawRod(col, uHit[h], dxF, dy, camY, 0.25, uHW[h], 800.0, uHH[h]);
   }
   if (skySun && !sunDone) { sunDone = true; col += skyK * sunTerm(sp); }
   // alun kaksi runkoa: kamera kulkee niiden välistä; ne ovat lähimmät
@@ -519,14 +522,7 @@ async function alusta() {
   };
   const sV = d.sarja((f) => vauhti(f / FPS) / FPS);
   const camZ = (t) => d.kohta(sV, clamp(t, 0, NF / FPS - 0.05)) - d.kohta(sV, T0);
-  // vedos 6 (rivi 72): kameran sivusiirtymä. Aurinko (ruudulla SUN_DX) saa näkyä kokonaan pöydän keskirungon ja oikean rungon välisestä aukosta:
-  // kamera siirtyy jatkuvasti sivuun allegro_359:stä auringonsateeseen (smoother, ei nykäyksiä) ja pitää paikan siitä eteenpäin, jolloin aukko on auringon kohdalla.
-  // Siirtymä lasketaan geometriasta (aukon keskikohta = pöydän keskirunko + 14,5 m; etäisyys pöytään pysähdyksessä), ei käsin.
-  const camX0 = (t) => { const z = camZ(t); return 3.4 * Math.sin(z / 34) * sstep(0, 14, z); };
-  const smoother0 = (k) => { k = clamp(k, 0, 1); return k * k * k * (k * (k * 6 - 15) + 10); };
-  const GAPX = 14.5;                                                                             // pöydän rungot x = -29, 0, 29 (säde 5,2): aukon keskikohta x = 14,5
-  const OFS = GAPX - (SUN_DX0 / 1.07) * (ZT - camZ(T_AS)) - camX0(T_AS);
-  const camX = (t) => camX0(t) + OFS * smoother0((t - T_AL) / (T_AS - T_AL));
+  const camX = (t) => { const z = camZ(t); return 3.4 * Math.sin(z / 34) * sstep(0, 14, z); };   // vedos 7: kameran rata kuten vedoksessa 5, ei sivusiirtoa (rungon paikka ratkaisee, ei kamera)
 
   // ---- usva ja lumi virtaavat (kertymät): kolme syvyyskerrosta eri suuntiin; voima: hitaat_soinnut, fraasit ja allegro ----
   const soin = (t) => sstep(T_SO - 1, T_SO + 3, t);
@@ -534,8 +530,12 @@ async function alusta() {
   const FVX = [-2.0, 4.8, -7.5], FVZ = [0.30, -0.50, 0.40];
   const FLOW = FVX.map((vx, k) => ({ x: d.sarja((f) => vx * virtaK(f / FPS) / FPS), z: d.sarja((f) => FVZ[k] * virtaK(f / FPS) / FPS) }));
   const virtaus = (t) => FLOW.map((F2) => (NF0 ? [0, 0] : [d.kohta(F2.x, tc(t)), d.kohta(F2.z, tc(t))]));
-  const sSY = d.sarja((f) => (0.50 + 0.30 * lev(f / FPS)) * (1 + 1.2 * acc(f / FPS) + 2.6 * al(f / FPS)) / FPS);
-  const sSX = d.sarja((f) => (0.18 + 0.30 * lev(f / FPS) + 0.5 * soin(f / FPS)) * (1 + 1.5 * acc(f / FPS) + 2.6 * al(f / FPS)) / FPS);
+  // lumi (Y2, 4d.32): hiutaleen paikka on nopeuden kertymä; nopeus kulkee 3 s:n (±1,5 s) liukuvan keskiarvon läpi: nousu ja lasku pehmeitä (vähintään 3 s), suunta (vx/vy) ei käänny nopeasti
+  const SNOW_W = Math.round(1.5 * FPS);
+  const rawY = d.sarja((f) => (0.50 + 0.30 * lev(f / FPS)) * (1 + 1.2 * acc(f / FPS) + 2.6 * al(f / FPS)) / FPS);
+  const rawX = d.sarja((f) => (0.18 + 0.30 * lev(f / FPS) + 0.5 * soin(f / FPS)) * (1 + 1.5 * acc(f / FPS) + 2.6 * al(f / FPS)) / FPS);
+  const sSY = d.sarja((f) => d.ka(rawY, f, SNOW_W));
+  const sSX = d.sarja((f) => d.ka(rawX, f, SNOW_W));
 
   // ---- taottu aurinko: korkeus on yksi monotoninen pehmeä käyrä allegro_359 -> auringonsade (ei koskaan alas), kirkkaus vaihtelee ----
   const smoother = (k) => { k = clamp(k, 0, 1); return k * k * k * (k * (k * 6 - 15) + 10); };
@@ -578,20 +578,18 @@ async function alusta() {
   const rodB = { x: camX(T_M) + SUN_DX * 60 / 1.07, z: camZ(T_M) + 60 };
   const tumma = (t) => (t <= T_M ? 0 : 2.45 * Math.pow(clamp((t - T_M) / (T_END - T_M), 0, 1), 1.7));
 
-  // ---- trumpetit ja patarummut takovat (trumpetit_patarummut_356): jokainen mitattu isku on oma pystyleikkaus ja maan tärähdys ----
-  // iskut = laajakaistaisen tason äkilliset nousut ankkurin ikkunassa (ei keksittyä rytmiä); jokainen leikkaus on koko kuvan korkuinen valo runkojen takana, eri kohdassa vaakasuunnassa ja eri syvyydellä, kaukaa lähelle
-  const brd = (f) => { let a = 0; for (let m = 30; m <= 90; m++) a += d.taso(m, f); return a / 61; };
-  const HITT = [];
-  { let viime = -99; for (let f = Math.round((T_TR - 0.4) * FPS); f <= Math.round(T_TR_END * FPS); f++) {
-      const n = brd(f) - Math.min(brd(f - 1), brd(f - 2), brd(f - 3), brd(f - 4));
-      if (n >= 0.04 && f - viime >= 6 && HITT.length < 8) { HITT.push((f - 0.5) / FPS); viime = f; } } }
-  if (q.get('iskuarvot')) { const o = []; for (let f = Math.round((T_TR - 1.0) * FPS); f <= Math.round((T_TR_END + 0.5) * FPS); f++) o.push([+(f / FPS).toFixed(2), +(brd(f) - Math.min(brd(f - 1), brd(f - 2), brd(f - 3), brd(f - 4))).toFixed(3), +brd(f).toFixed(3)]); console.log(JSON.stringify(o)); }
-  const LAT = [0.05, 0.60, -0.55, 0.30, -0.30, 0.70, -0.70, 0.15];
+  // vedos 7 (4d.34): viisi iskua. Iskujen ajat ovat mitattu lista cues.json:sta (iskut_t), ei omaa tunnistinta; jokainen on oma pystyleikkaus ja maan tärähdys
+  // runkojen takana iskun ruudussa. Iskut 1-4 kasvavat (voima 0,70 / 0,78 / 0,86 / 0,94, vaimeneminen noin 0,13 s), viides on suurin (1,5), leveämpi ja jää soimaan (noin 1,5 s).
+  const ISKU_T = d.cues.cues.find((c) => c.id === 'trumpetit_patarummut_356').iskut_t;
+  const HITT = ISKU_T.map((t) => (Math.round(t * FPS) - 0.5) / FPS);                  // puoli ruutua ennen iskuruutua, kuten ennenkin
+  const ISKU_V = [0.70, 0.78, 0.86, 0.94, 1.5], ISKU_TAU = [0.13, 0.13, 0.13, 0.13, 1.5];
+  const LAT = [0.05, 0.60, -0.55, 0.30, -0.30];
   const HP = HITT.map((T, i) => { const N = HITT.length, k = N > 1 ? i / (N - 1) : 1; const d0 = Math.min(200, ZT - 14 - camZ(HITT[0])); const dist = d0 - (d0 - 35) * k; const cz = camZ(T) + dist;   // kaukaisin leikkaus pöydän rungoissa kiinni olevaa lauta-aluetta lähempänä, jottei se jää rungon taakse
     const Wopen = 7.5 + 38 * clamp(cz / ZT, 0, 1) - 3.0;
-    return { T, amp: (0.80 + 0.20 * k) * (1 + 0.9 * (1 - k)), ang: 0.014 + 0.016 * k, x: camX(T) + LAT[i % 8] * Wopen, z: cz }; });
-  const hitL = (t) => HP.map((h) => { const ti = t - h.T; const pr = ti < 0 ? 0 : (1 - Math.exp(-ti / 0.03)) * Math.exp(-ti / 0.13) / 0.58;
-    const dimm = 1 - 0.6 * sstep(T_TR_END - 0.5, T_TR_END + 1.0, t); return [h.x, h.z, 2.1 * h.amp * pr * dimm, ti < 0 ? 0 : 0.35 * h.amp * Math.exp(-ti / 0.25) * dimm]; });
+    return { T, amp: ISKU_V[i], tau: ISKU_TAU[i], ang: i === 4 ? 0.030 : 0.014 + 0.004 * i, halo: i === 4 ? 0.25 : 1, x: camX(T) + LAT[i] * Wopen, z: cz }; });
+  const hitPk = (tau) => { let m = 0; for (let x = 0; x < 1.0; x += 0.002) m = Math.max(m, (1 - Math.exp(-x / 0.03)) * Math.exp(-x / tau)); return m; };
+  const hitL = (t) => HP.map((h) => { const ti = t - h.T; const pr = ti < 0 ? 0 : (1 - Math.exp(-ti / 0.03)) * Math.exp(-ti / h.tau) / hitPk(h.tau);
+    const dimm = 1 - 0.6 * sstep(T_TR_END - 0.5, T_TR_END + 1.0, t); return [h.x, h.z, 2.1 * h.amp * pr * dimm, ti < 0 ? 0 : 0.35 * h.amp * Math.exp(-ti / Math.max(0.25, h.tau)) * dimm]; });
   // tuuli on musiikki: koko orkesterin hidas voima + vaskien iskujen puuska (nousee nopeasti, laskee hitaasti)
   const puuska = (T, t) => (t < T ? 0 : sstep(0, 0.25, t - T) * Math.exp(-(t - T) / 2.5));
   const tuuli = (t) => clamp(0.25 + 0.9 * d.koko(t, 1.2) + 0.9 * puuska(T_TUTTI, t) + 0.9 * puuska(T_M, t), 0, 1.3);
@@ -612,7 +610,7 @@ async function alusta() {
     kamera: (t) => ({ p: [camX(t), 1.55, camZ(t)], q: [0, 0, 0, 1], shot: 'matka', cut: 0, trans: false }),
     kuvaus: (t) => { const s = tila(t); return { t: +t.toFixed(2), vauhti: +s.v.toFixed(2), camZ: +s.camZ.toFixed(1), camX: +s.camX.toFixed(2), massa: +s.mass.toFixed(2), keski: +s.kes.toFixed(2),
       melodia: +s.mel.toFixed(2), poyta: +s.table.toFixed(2), usvaVeil: +s.veil.toFixed(2), kerrokset: s.bands.map((x) => +x.toFixed(2)), sykkeita: s.pulssit.length, cdur: +s.cdur.toFixed(2),
-      laulu: [s.song.i, +s.song.e.toFixed(2), +s.song.uf.toFixed(2), s.song.reg], virtaus: s.flow.map((x) => x.map((y) => +y.toFixed(1))), lumi: s.snow.map((x) => +x.toFixed(1)),
+      laulu: [s.song.i, +s.song.e.toFixed(2), +s.song.uf.toFixed(2), s.song.reg], virtaus: s.flow.map((x) => x.map((y) => +y.toFixed(1))), lumi: s.snow.map((x) => +x.toFixed(4)),
       aurinkoH: +s.sunH.toFixed(3), aurinkoDy: +s.sunDy.toFixed(4), aurinkoB: +s.sun.toFixed(2), tulva: +s.flood.toFixed(2), nousu: +s.rise.toFixed(2), iskut356: HITT.map((x) => +x.toFixed(3)), iskuvoima: s.hits.map((h) => +h[2].toFixed(2)),
       tuuli: +s.wind.toFixed(2), isku: [+s.cutA[0].toFixed(2), +s.cutB[0].toFixed(2)], tumma: +s.dark.toFixed(2), auki: +s.open.toFixed(2) }; },
     seek: (t) => {
@@ -620,13 +618,13 @@ async function alusta() {
       const s = tila(t);
       set1('uTime', t); set1('uCamX', s.camX); set1('uCamZ', s.camZ); set1('uHor', 0.27); set1('uOpen', s.open); set1('uDark', s.dark);
       set1('uMass', s.mass); set1('uKes', s.kes); set1('uMel', s.mel); set1('uTable', s.table); set1('uTrem', s.trem); set1('uVeil', s.veil);
-      set1('uWind', s.wind); set1('uDim', 0.55 * sstep(T_HL, T_HL + 6, t)); set1('uSunRise', s.sun); set1('uPairZ', PAIR_Z); set1('uSway', t * 0.35);
-      set1('uFogK', (0.80 + 0.22 * s.mass) * (1 + 2.6 * s.veil)); set1('uFlood', s.flood); set1('uRise', s.rise); set1('uAl', s.al); set1('uShP', s.shp); set1('uGain', s.gain); set1('uSnowK', 1 + 3.2 * s.al); gl.uniform2f(U('uAv'), camZ(T_AL) + 10, camZ(T_AS) - 2);
+      set1('uWind', s.wind); set1('uDim', 0.55 * sstep(T_HL, T_HL + 6, t)); set1('uSunRise', s.sun); set1('uPairZ', PAIR_Z); gl.uniform2f(U('uAv'), camZ(T_AL) + 10, camZ(T_AS) - 2); set1('uSway', t * 0.35);
+      set1('uFogK', (0.80 + 0.22 * s.mass) * (1 + 2.6 * s.veil)); set1('uFlood', s.flood); set1('uRise', s.rise); set1('uAl', s.al); set1('uShP', s.shp); set1('uGain', s.gain); set1('uSnowK', 1 + 3.2 * s.al);
       gl.uniform2f(U('uSun'), SUN_DX, s.sunDy); gl.uniform2f(U('uCut'), s.cutA[0] + s.cutB[0], s.cutA[1] + s.cutB[1]);
       gl.uniform4f(U('uRodA'), rodA.x, rodA.z, s.cutA[0], s.cutA[1]); gl.uniform4f(U('uRodB'), rodB.x, rodB.z, s.cutB[0], s.cutB[1]);
       const pu = new Float32Array(16); s.pulssit.forEach((x, i) => pu.set([x[0], x[1], 0, 0], i * 4)); gl.uniform4fv(U('uPulse'), pu);
       gl.uniform1fv(U('uBand'), new Float32Array(s.bands));
-      { const hu = new Float32Array(32); s.hits.forEach((h, i) => hu.set(h, i * 4)); gl.uniform4fv(U('uHit'), hu); gl.uniform1fv(U('uHW'), new Float32Array(8).map((_, i) => (HP[i] ? HP[i].ang : 0.02))); }
+      { const hu = new Float32Array(32); s.hits.forEach((h, i) => hu.set(h, i * 4)); gl.uniform4fv(U('uHit'), hu); gl.uniform1fv(U('uHW'), new Float32Array(8).map((_, i) => (HP[i] ? HP[i].ang : 0.02))); gl.uniform1fv(U('uHH'), new Float32Array(8).map((_, i) => (HP[i] ? HP[i].halo : 1))); }
       gl.uniform4f(U('uSong'), s.song.e, s.song.uf, s.song.dir, s.song.reg); gl.uniform1fv(U('uTrail'), new Float32Array(s.song.trail || new Array(32).fill(0)));
       gl.uniform2f(U('uSnow'), s.snow[0], s.snow[1]);
       { const fl = new Float32Array(6); s.flow.forEach((v, i) => fl.set(v, i * 2)); gl.uniform2fv(U('uFlow'), fl); }

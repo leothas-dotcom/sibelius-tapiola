@@ -160,3 +160,50 @@ Renderi uudelleen lukon kautta, 4242 ruutua (ffprobe). Liikesarja `runs/v6_03_04
 - **(c) Latvusten reunat:** reunat pehmeiksi (alfa-reunan leveys 0,2 → 0,9), reunavalo vaimennettu 90 %, tilalle pehmeä hehku. Rosoiset vaaleat reunaviivat ovat poissa 2:08–2:11.
 - **Auki:** pystysuora kirkas valojuova rungon vierellä 2:06–2:10 (valopilari/lit runko) on yhä; latvukset eivät lukeudu erillisinä massoina; ei vertailtu 2:00–2:05 vanhaan pikselitarkasti.
 - **Koskemattomuus:** 20 / 60 / 100 s keskiero vanhaan 0,55 / 0,76 / 0,27, keskikirkkaus ennallaan.
+
+## Vedos 7 (11.11.2026, täsmäkorjaus; brief `runs/vedos_v7/brief.md`, moduulin 03_04 kohdat 1–3)
+
+Renderi: `runs/maailma_03_04/osa.mp4`, 4242 ruutua (ffprobe), `--start 61.6 --end 203.0 --workers 2 --chunk 40`, aa=2, lukon kautta. Tiedosto: `visual/maailma_03_04.js`. Liikesarjat ja stillit: `runs/maailma_03_04/v7/` (`sarja_ylos.png` 3:02–3:23 0,5 s välein, `sarja_altto1.png` ja `sarja_altto2.png` 0,27 s välein, `a5/` ja `a1`–`a4` kehitysvaiheiden stillit, `vanha/` vedoksen 6 ylöskatse, `frmukana/` ja `frilman/` fraasin vertailustillit, `vertaa.txt`).
+
+### Mitä muutin (`visual/maailma_03_04.js`)
+**Kohta 1, ylöskatse.** Syy löytyi renderistä: ikihongat (jättiläisrungot polun vieressä) olivat piirrossa **äärettömän korkeita**, eikä niillä ollut latvusta; ne olivat ne pitkät suorat viivat kuvan yläreunaan asti. Lisäksi tavallisten kuusten ohut yläosa jäi yksin viivaksi latvuksen läpi.
+- Ikihongalle äärellinen korkeus `Hp` = 27–31 m ja latvus (alhaalta leveä, ylöspäin kapeneva tumma massa, `skp`, `Bp`, `aCp`), runko häipyy latvuksen sisään (`aT * (1 - up * smoothstep(0.55, 0.80, hnp))`). Kaikki `up`-painotettuja, joten ennen ylöskatsetta kuva ei muutu (rivit noin 229–262).
+- Tavalliset kuuset: rungon yläosa häipyy latvuksen sisään (`smoothstep(0.40, 0.65, hn)`, rivi 178) ja latvuksen ydin on umpinainen (`aF = max(aF, 0.94 * up * ...)`, rivi 187).
+- Viirut ja hunnut pois ylöskatseessa: `shaftT`-viirut `fol`-termissä ja usvan `Lf`-termissä sekä `shaftH`-valoviirut usvassa korvataan tasaisella arvolla `up`:n mukaan (`mix(..., up)`). Näkyviin jää yötaivas tähtineen. Kide, kamera ja valo säilyvät. `farF` (lähirunkojen häipyminen ylöskatseessa) on ennallaan.
+**Kohta 2, lumi ja alttoviulut.**
+- Vanha lumi: sivuttainen `0.25 * sin(uTime * 0.6 + k)` oli edestakaista heilahtelua (Y2-rikkomus). Nyt hiutaleen paikka on vakionopeuden kertymä: `wx + 0.10 * ts`, `yw + 0.5 * ts` (alas 0,5 m/s, sivulle 0,10 m/s samaan suuntaan).
+- Vanha fraasireaktio (erillinen, nopeammin putoava ja sivuun ajelehtiva hiutaleparvi + `usvaPotku`, joka siirsi valojuovia ±1,6 m 0,3 s:ssa ja takaisin) **poistettu kokonaan**. Uusi reaktio on pelkkä lumen määrän ja kirkkauden kasvu samoille, samaa tuulta liikkuville hiutaleille: `thr = 0.04 + 0.40 * ex`, kirkkaus `1 + 2.5 * ex * shA`, nousu 0,5 s (`smoothstep(0, 0.5, ikä)`), lasku 1,2–3,2 s. Ei paikan eikä suunnan muutosta.
+**Kohta 3, Y1.** Puiden liikettä ei ole koskettu: `lean`-lauseke on tavun tarkkaan vedoksen 5:n (ohjaajan peruutuksen mukaan palautettu; väliaikaisesti poistettu ja palautettu ennen yhtään tässä käytettyä renderiä).
+
+### T1 liikesarjat (katsottu itse)
+- `sarja_ylos.png` (3:02–3:23): 3:02–3:06 metsä normaalisti, 3:06–3:10 rungot päättyvät tummiin latvuksiin, ikihongat (keskellä) päättyvät omiin latvustuppeihinsa, yötaivas ja tähdet näkyvät latvusten yläpuolella; 3:10–3:14 usva ja yötaivas, kide hehkuu; 3:14 eteenpäin kide täyttää kuvan kuten ennen. Yksikään suora viiva ei jatku kuvan yläreunaan.
+- `sarja_altto1.png` (0:35–0:38) ja `sarja_altto2.png` (0:48–0:51): lunta tulee lisää pehmeästi noin 0,3 s:ssa ja vähenee noin sekunnissa; hiutaleet liikkuvat samaan suuntaan kuin muu lumi.
+
+### Mitatut luvut
+**T1 / Y2 lumen nopeus ja kulma (koodista, koska liike on vakio):** nopeus |v| = sqrt(0,5² + 0,10²) = 0,51 m/s, suunta 11,3° pystystä, vaakanopeuden etumerkki sama koko moduulin ajan; nopeuden ja kulman suurin ruutujen välinen muutos = 0 (vakio, ei riipu äänestä). Fraasin vaikutus on vain määrässä ja kirkkaudessa (nousu 0,5 s, lasku yli 1,2 s). Näin ollen taulukkoa 0,5 s välein ei ole: arvot eivät muutu.
+**Fraasireaktion kirkkaus renderistä:** samat ruudut ilman reaktiota (väliaikainen `nofr`-kytkin, poistettu; `frilman/`) ja reaktion kanssa (`frmukana/`), alue = muuttuneiden pikselien ympäristö: hiutalekirkkauden summa mukana/ilman = 2,29 (0:36,4 eli abs 98,0), 1,76 (abs 101,4), 1,71 (abs 110,4). Vaatimus ≥ 1,5 täyttyy. Hiutalepikseleitä aluella 21108→24289, 15227→16798, 13814→15160.
+**T2 regressiomittari** (`vertaa.py` vedos_v6u → uusi, `v7/vertaa.txt`):
+```
+  1:05.6 - 1:07.6   suurin mse 5.9   (osan aika 4-6 s)
+  1:11.6 - 1:13.6   suurin mse 2.4   (osan aika 10-12 s)
+  1:15.6 - 1:21.6   suurin mse 6.1   (osan aika 14-20 s)
+  1:25.6 - 1:33.6   suurin mse 11.0  (osan aika 24-32 s)
+  1:35.6 - 1:45.6   suurin mse 6.6   (osan aika 34-44 s)
+  1:47.6 - 2:05.6   suurin mse 7.5   (osan aika 46-64 s)
+  2:11.6 - 2:19.6   suurin mse 8.9   (osan aika 70-78 s)
+  2:23.6 - 2:27.6   suurin mse 4.4   (osan aika 82-86 s)
+  2:29.6 - 2:31.6   suurin mse 2.9
+  2:35.6 - 2:37.6   suurin mse 2.6
+  2:41.6 - 2:43.6   suurin mse 3.7
+  2:51.6 - 2:57.6   suurin mse 4.1
+  3:01.6 - 3:17.6   suurin mse 16.4   (ylöskatse)
+```
+Selitys: 1:05–2:57 kaikki jaksot ovat lumen vaihetta (kohta 2: hiutaleiden paikka on nyt vakionopeuden kertymä vanhan sinikäyrän tilalla, joten jokainen hiutale on eri paikassa) ja fraasijaksoilla (1:35–1:45 ym.) reaktion vaihtumista sekä `usvaPotku`n poistoa. Mittaus: keskikirkkaus ennallaan (osan 45 s: 43,04 → 43,04; 100 s: 40,23 → 40,23; 112 s: 39,70 → 39,69), pikseleitä joiden ero > 25 vain 0,06–0,13 % (hiutaleet), paitsi 26 s (2,1 %, alttoviulufraasi + valojuovien paluu paikalleen). Valo, sykkeet ja kamera ovat siis kuvassa samat. 3:01,6–3:17,6 = kohta 1 (ylöskatse), keskikirkkaus 124 s: 32,6 → 34,1, 130 s: 37,0 → 38,2, koska viirut ja hunnut on poistettu ja latvusmassa lisätty.
+**T3 sauma:** ensimmäinen ruutu: keskiero vedokseen 6 = 0,0 (max 1); viimeinen ruutu: keskiero 0,10 (max 8).
+
+### Mikä jäi vajaaksi tai epävarmaksi
+- **Ruskehtavat viirut:** 3:06–3:13 latvusmassoissa näkyy yhä heikkoja ruskehtavia vinoviiruja (latvusten tummuuden vaihtelu, `HAMY * noise`). Ne ovat paljon himmeämpiä kuin vedoksessa 6, mutta eivät kokonaan poissa; en tiedä syytä varmasti (ei `shaftT`-lähde).
+- **Latvusten muoto:** latvukset ovat pehmeitä tummia massoja, eivät yksityiskohtaisia kuusia; 3:10 jälkeen ruutu on lähes pelkkää usvaa ja taivasta. Kuusten latvusten kärkiä ei näy joka rungolla erikseen, koska lähimmät rungot häipyvät `farF`:llä (ennallaan).
+- **Y1-raja (ohjaajalle):** puiden liike on vedoksen 5 mukainen (`(0.05 + 1.1 * tuuli) * hn² * Hh * 0.05 * (sin + 0.4 sin)`); suurimmillaan (tuuli = 1, hn = 1, Hh = 25) latva siirtyy laskennallisesti noin 2 m eli noin 8 % puun korkeudesta, mikä ylittää ohjeen 1 % / 1,5 % rajan. En korjannut (kielletty). Tavallisella tuulen tasolla (0,3) noin 0,6 m eli 2,5 %. Ikihongilla ei ole liikettä. Liikettä ei mitattu renderistä.
+- **Fraasireaktion mittaus** tehtiin kolmelle fraasille vertailustillillä, ei kaikille; koko renderin whole-frame-mittarit olivat liian meluisia (kamera ja reunat).
+- Moduulin 3:03–3:23 aikana kuvan keskikirkkaus nousi hieman (ks. yllä), mikä on seurausta viirujen poistosta.

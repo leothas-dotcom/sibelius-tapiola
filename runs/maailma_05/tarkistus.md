@@ -62,3 +62,52 @@ Renderi `runs/maailma_05/osa.mp4`, 4014 ruutua (ffprobe), 203,0-336,8 s, lukon k
 - Grazioso: 8/108 alkua yhdistetty edelliseen (12-30 ms) yhdeksi valoksi.
 - Alun 1 s (43 dB) eroa ei eritelty ruutu ruudulta; ei vaikuta tämän kierroksen kohtiin (valot alkavat vasta ensimmäisestä korkeasta alusta).
 - `kuvaus()`:iin lisättiin mittakentät `pisaraRuutu`, `syttyy`, `kirkkain` (ei vaikuta kuvaan). Mittaskriptit: `runs/v6_05/pisara_mittaus.mjs`, `alut_todiste.mjs`.
+
+
+# Vedos 7 (10.11.2026): keijuvalot vedoksen 5 logiikalla tarkoista nuoteista
+
+Moduuli `visual/maailma_05.js` = vedos 6 + vain nämä muutokset (rivit 373-439, `// keijuvalot: vedoksen 5 valologiikka`):
+1. Valojen valinta, paikat, korkeuden laskenta ja kynnykset palautettu täsmälleen vedoksen 5 mukaisiksi (`git show 09eac76`): pohja_katoaa (harvat), staccato (parit), D_pikkolon juova, grazioso-tanssi. `accent`, `painotettu`, `voima` kuten v5.
+2. Nuottien lähde: `d.cues.alut.nuotit` (`tn`) vanhan `d.nuotit`-listan sijaan; valon alku ruudussa `Math.round(t*30)` (`lisaa`: `tt`). Kaistapohjaiset `onsets`/`lahin` poistettu. Valon elinaika ja häivytys säilytettiin vedoksen 6 arvoissa (elinaika 0,06-0,15 s, häivytys 0,34/0,38 s) ja varjostin ennallaan, koska alku-ruudun täysi kirkkaus on vedoksen 6 ratkaisu. Kamera, lumi, linnat, legato jne. käyttävät edelleen `d.nuotit`-listaa (ennallaan).
+3. Puuska D_pikkolo (4:06-4:08): palautui kohdan 1 mukana.
+4. Y1 (latvojen huojunta pois) PERUTTU ohjaajan viestillä: `uSway` ja latvojen liike ovat täsmälleen ennallaan (tiedoston osat ennen riviä 373 ja `FA.sort`-rivin jälkeen ovat tavu tavulta samat kuin vedoksessa 6; tarkistettu `diff`). Poistin huojunnan hetkeksi ja palautin sen; ensimmäinen renderi hylättiin ja koko osa renderöitiin uudelleen palautetulla koodilla.
+5. Pisaran liike (5:25-5:33) ennallaan.
+
+Renderi: `runs/maailma_05/osa.mp4`, `--start 203.0 --end 336.8`, lukon kautta, ffprobe: 4014 ruutua. Todisteet: `runs/maailma_05/v7/`.
+
+## T1 liikesarjat (katsottu itse)
+- `sarja_puuska_4_04.png` (4:04-4:10, 0,2 s välein): puuska näkyy. 4:06,4 (video 43,4) alkaen valojen parvi nousee kuvan yläosaan ja laskee takaisin (44,2-46,8 s, pystysuora juova ja hajaantuvia valoja), 41,8 ja 42,0 s yksittäisiä valoja ennen. Ei tyhjää kohtaa puuskan aikana.
+- `sarja_tanssi_4_42.png` (4:42-4:52, 0,33 s välein): valoja ilmestyy ja häipyy kolmessa paikassa (vasen matala, oikea keski, keskellä korkea), sama paikka palaa; tyhjiä ruutuja on vain nuottien välissä.
+- `sarja_staccato_3_51.png` (3:51-3:58, 0,33 s välein): parit ja yksittäiset valot (kaksi vierekkäin 30,0-31,0 s ja 32,3 s).
+Huomio: kuvissa ei näy puiden muodon muutosta; latvat (harjanteet) liikkuvat vain kuten vedoksessa 6.
+
+## T1 taulukko 4:42-4:52 (282-292 s)
+`valot_282_292_v7.txt` (jokaisen valon alkuruutu, lähin tarkka nuotti, ero ruutuina; skripti `valot_taulukko.mjs`, lukee sivun `kuvaus()`:n `syttyy`-kentän):
+- v7: 35 syttymisruutua, 40 valoa, **osuu tarkan nuotin ruutuun 35/35 = 100 %**.
+- v5 (sama moduuli vanhalla listalla, mitattu samalla skriptillä): 19 syttymisruutua, 20 valoa; vain 3/19 osuu tarkan nuotin ruutuun (vanhan listan ajat 20-40 ms myöhässä).
+- Valojen lukumäärä v7 / v5 = 40 / 20 (2,0-kertainen; vaatimus "ei putoa yli 20 %" täyttyy, mutta valoja on selvästi enemmän kuin v5:ssä: tarkka lista sisältää enemmän nuotteja ja grazioso-ryhmän 0,2 s tihennys per paikka antaa enemmän valoja. Ohjaajan harkittavaksi, ei muutettu, koska brief sanoo "samat kynnykset").
+- Puuska 246-248,5 s (`D_pikkolo`): 13 syttymisruutua, 16 valoa, 13/13 osuu nuotin ruutuun; ylin nuotti 247,374 s midi 104 (4:07,4) kuten ohjaajan mittaus.
+
+## T2 regressiomittari
+Vs. vedos 6 (`vertaa_v6.txt`, `runs/vedos_v6u/osat/05.mp4`, osan alku 203,0 s):
+```
+669 ruutua, 6 muuttunutta jaksoa (raja mse 2.0)
+  3:25.0 - 3:29.0   2.5   -> kohta 1/2: pohja_katoaa-valot (vanha lähde, uudet paikat)
+  3:43.0 - 3:47.0   4.3   -> kohta 1/2: pohja_katoaa-valot
+  3:49.0 - 3:51.0   4.2   -> kohta 1/2: pohja_katoaa/staccato-valot
+  3:53.0 - 3:59.0  10.4   -> kohta 1/2: staccato-parit
+  4:07.0 - 4:11.0  22.3   -> kohta 3: puuska D_pikkolo palautui
+  4:41.0 - 5:01.0  19.6   -> kohta 1/2: grazioso-tanssi
+```
+Kaikki erot ovat valojen alueilla (keijuvalot); ei jaksoja kierroksen ulkopuolelta. Pisara 5:25-5:33 ei näy erona.
+Vs. vedos 5 (`vertaa_v5.txt`): jaksot 3:25-3:35, 3:45-3:47, 3:49-3:59, 4:07-4:11, 4:41-5:03 ovat valoja (ajoitus ja v6:n valojen muoto); **5:25-5:33 (mse 225,6) on pisara** (vedoksen 6 tasainen liike, kohta 5). Latvoissa ei eroa vedokseen 5 (Y1 peruttu, huojunta ennallaan), joten latvaeroja ei listalla ole.
+
+## T3 sauma
+Moduulin alku (huurre-rajakuva) ja loppu (JAA-rajakuva, pisara) ovat koodissa ennallaan; vertaa.py vs. v6 ei näytä eroa jaksoilla 3:23-3:25 eikä 5:33-5:36,8. Erillistä rajakuva-ruutuvertailua ei tehty.
+
+## Auki
+- Valoja on 2x v5:een verrattuna kohdassa 4:42-4:52 (ks. yllä).
+- Latvojen huojunnan 1 % / 1,5 % ylärajaa (brief Y1) ei mitattu renderistä: `uSway` (0,15 + 0,5 jouset + 0,2 legato) on ennallaan, ja se siirtää harjanteen näytteenottoa enintään noin 0,85 m, mikä on pieni harjanteen koon (kymmeniä metrejä) rinnalla; todellista latvan siirtymäprosenttia ei mitattu.
+- Lumi (Y2) ei kuulu moduulin 05 kohtiin; ei tarkistettu eikä muutettu.
+- `holes`-kohinan ajasta riippuva ajelehtiminen (`uTime*0.12`, harjanteen alaosan läpikuultavuus) jätettiin ennalleen, koska se ei ole latvan ääriviivassa.
+- Kriitikkoa ei ajettu.

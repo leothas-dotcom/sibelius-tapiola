@@ -221,11 +221,17 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
   float gl = step(0.992, hash(floor(xz * 55.0))) * frost * (1.0 - smoothstep(0.3, 1.0, fp / 0.03));
   col += SILVER * 0.22 * gl * (0.2 + uG) * uOpen;
   // jään alla olevat valot (matalan kaistan alut): pehmeä hehku A * exp(-r^2 / R^2) (ei reunaa, ei rengasta, ei säteitä); v6: renkaita ei ole lainkaan.
+  float dimk = 0.0;                                                            // v7: askeleen paino: jään pinta hetkeksi tummemmaksi hohteen reunoilla
   vec3 hump = vec3(0.0);                                                       // loppukorjaus: kummun valo erikseen, jään perusvalo himmennetään sen alta
   for (int i = 0; i < 8; i++) { if (i >= uNRg) break; vec4 rg = uRg[i], rh = uRh[i];
     float ag = rg.z, r = length(xz - vec2(rg.x, rg.y - rh.w * ag));
     float R = rh.x + (rh.y - rh.x) * (1.0 - (1.0 - ag) * (1.0 - ag));
     float A = rg.w * (0.25 + 0.75 * pow(4.0 * ag * (1.0 - ag), 0.8)) * pow(1.0 - ag, 0.6) * smoothstep(0.0, 0.05, ag);
+    if (rh.z > 0.5) {                                                            // v7: basson askel (kierros 'askel'): leveä pehmeä hohde, nousu 0,15 s, lasku noin 1,4 s; ei reunaa, ei rengasta
+      float e = smoothstep(0.0, 0.10, ag) * pow(1.0 - ag, 2.0);
+      hump += SILVER * 0.85 * rg.w * e * exp(-r * r / (R * R)) * uOpen;
+      dimk = max(dimk, 0.45 * e * exp(-pow((r - 1.25 * R) / (0.55 * R), 2.0)) * clamp(rg.w * 8.0, 0.0, 1.0));
+    } else
     hump += SILVER * 0.85 * A * exp(-r * r / (R * R)) * uOpen; }
   // v6: halkeamat. Jana (a -> b) piirtyy kokonaan syntyruudussaan; paksuus epäsäännöllinen, reunoilla huurretta, janan päässä pieni huurteen kukka.
   // Halkeama pysyy jään koordinaatistossa (virtaa katsojan ali jään mukana); voima (B.x) tulee ajasta (pehmeä himmeneminen).
@@ -253,7 +259,7 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
         float hl = cs.y * (0.07 + 0.09 * hash(ic + 1.1)), wd = max(0.035 * sc, 0.8 * fp);                        // puolipituus ja leveys (m)
         rs += exp(-dm.x * dm.x / (2.0 * wd * wd) - dm.y * dm.y / (2.0 * hl * hl)) * (0.035 * sc / wd) * (0.6 + 0.4 * hash(ic + 5.5)); } }
     col += HALLA * 0.13 * uRideK * min(rs, 1.0) * uOpen; }
-  return (col * uIceDim + hump) * (1.0 - 0.75 * uGap);
+  return (col * uIceDim * (1.0 - dimk) + hump) * (1.0 - 0.75 * uGap);
 }
 
 vec3 scene(vec2 p) {
@@ -381,18 +387,34 @@ export function signaalit(d) {
 
   // ---- tuulen vaihe (vain usvan ja latvojen valon hidas kulku), lumi ja ajolumi: nopeuden kertymät
   const sPh = d.sarja((f) => (0.50 + 0.80 * Sj(f / FPS) + 0.50 * tapio(f / FPS)) / FPS);
-  const PUFF = [{ t: tG1, a: 2.6, tau: 1.4 }];                                 // 6:30: lumipuuska pyyhkäisee jään yli, vauhti moninkertaistuu
-  for (const p of HP) { if (p.t >= tI && p.t < tVP && p.v > 0.8) PUFF.push({ t: p.t, a: 0.16 + 0.16 * tapio(p.t), tau: 0.30 });
-    if (p.t >= tVP && p.t < tHJ && p.v > 0.8) PUFF.push({ t: p.t, a: 0.08, tau: 0.35 }); }
+  // v7 (Y2, tyyliohje 4d.32): lumen paikka on nopeuden kertymä, ja nopeus on pehmeä: vaakanopeus ja putoamisnopeus kulkevat epäsymmetrisen alipäästön läpi (nousu tau 0,5 s, lasku tau 1,5 s),
+  // suunnan kulma on rajattu enintään 9 °/s (ylä- ja alarajan verhokäyrä: kulma ehtii muuttua ennen puuskaa, ei sen aikana), ja vaakanopeuden etumerkki on aina sama (lumi kulkee oikealle ja alas).
+  // Isku ei kiihdytä koko ruudun lunta (äänen alkujen puuskat poistettu): isku näkyy valona. 6:30:n tutin puuska on yksi rajattu, pehmeästi nouseva ja laskeva vauhdin kasvu.
+  const PUFF = [{ t: tG1, a: 2.6, tau: 1.4 }];                                 // 6:30: lumipuuska pyyhkäisee jään yli, vauhti kasvaa
   const puffs = (t) => { let s = 0; for (const q of PUFF) { const a = t - q.t; if (a >= 0 && a < 5 * q.tau) s += q.a * Math.exp(-a / q.tau); } return s; };
-  const lumiV = (t) => 0.055 + 0.26 * lev(t) ** 2 + 0.40 * paisu(t) + puffs(t) + 0.14 * sstep(tI, tV10, t) * (1 - sstep(tV10, tV10 + 12, t));
-  const sSnX = d.sarja((f) => lumiV(f / FPS) / FPS);
-  const sSnY = d.sarja((f) => (0.030 + 0.06 * lev(f / FPS)) / FPS);
-  const sIce = d.sarja((f) => 7.0 * lumiV(f / FPS) / FPS);
+  const vxT = (t) => 0.055 + 0.26 * lev(t) ** 2 + 0.40 * paisu(t) + puffs(t) + 0.14 * sstep(tI, tV10, t) * (1 - sstep(tV10, tV10 + 12, t));
+  const vyT = (t) => 0.030 + 0.06 * lev(t);
+  const LUMI_F0 = Math.max(0, Math.round((T0 - 12) * FPS)), LUMI_F1 = Math.min(d.NF - 1, Math.round((T1 + 2) * FPS));
+  const pehmea = (fn, tauUp, tauDown) => { const o = new Float32Array(d.NF); let y = fn(LUMI_F0 / FPS);
+    for (let f = LUMI_F0; f <= LUMI_F1; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? tauUp : tauDown)))); o[f] = y; }
+    o.fill(o[LUMI_F0], 0, LUMI_F0); o.fill(o[LUMI_F1], LUMI_F1 + 1); return o; };
+  const vxS = pehmea(vxT, 0.5, 1.5), vyS = pehmea(vyT, 0.5, 1.5);
+  const KULMA_MAX = 9 * Math.PI / 180 / FPS;                                   // kulman muutos ruudussa (9 °/s)
+  const thT = new Float32Array(d.NF); for (let f = 0; f < d.NF; f++) thT[f] = Math.atan2(vyS[f], vxS[f]);
+  for (let f = 1; f < d.NF; f++) thT[f] = Math.min(thT[f], thT[f - 1] + KULMA_MAX);   // verhokäyrä: eteen- ja taaksepäin
+  for (let f = d.NF - 2; f >= 0; f--) thT[f] = Math.min(thT[f], thT[f + 1] + KULMA_MAX);
+  const vxF = new Float32Array(d.NF), vyF = new Float32Array(d.NF);
+  for (let f = 0; f < d.NF; f++) { const M = Math.hypot(vxS[f], vyS[f]); vxF[f] = M * Math.cos(thT[f]); vyF[f] = M * Math.sin(thT[f]); }
+  const lumiV = (t) => vxF[clamp(Math.round(t * FPS), 0, d.NF - 1)];
+  const sSnX = d.sarja((f) => vxF[f] / FPS);
+  const sSnY = d.sarja((f) => vyF[f] / FPS);
+  const sIce = d.sarja((f) => 7.0 * vxF[f] / FPS);
   const lumiStr = (t) => clamp((lumiV(t) - 0.45) * 3.2, 0, 2.6);
+  const snowVel = (t) => { const f = clamp(Math.round(t * FPS), 0, d.NF - 1); return { vx: vxF[f], vy: vyF[f], v: Math.hypot(vxF[f], vyF[f]), kulma: Math.atan2(vyF[f], vxF[f]) * 180 / Math.PI }; };
   const rideEnv = (t) => sstep(tI, tI + 0.4, t) * (1 - sstep(tVP, tVP + 8, t));                       // ajolumi: taitteesta vaskipulsseihin
   const rideK = (t) => rideEnv(t) * (0.45 + 0.55 * sstep(0.3, 0.9, d.keski(t, 0.12)));
-  const sRide = d.sarja((f) => (3 + 15 * sstep(0.3, 0.9, d.keski(f / FPS, 0.12)) * (0.5 + 0.5 * sstep(tI, tV10, f / FPS))) / FPS);
+  const rideV = pehmea((t) => 3 + 15 * sstep(0.3, 0.9, d.keski(t, 0.12)) * (0.5 + 0.5 * sstep(tI, tV10, t)), 0.5, 1.5);   // v7 (Y2): ajolumin vauhti pehmeä (nousu 0,5 s, lasku 1,5 s), suunta aina katsojaa kohti
+  const sRide = d.sarja((f) => rideV[f] / FPS);
 
   // ---- valot
   const LI = [], RG = [], CR = [];
@@ -443,9 +465,10 @@ export function signaalit(d) {
   // puhaltimien parvi (H) ja valuminen (purskeen loppu), kiitävät valot (I, Tapio)
   { const cr = (t) => cam(t);
     let n = 0;
-    { let lm = 70; for (const p of onsets(['keski', 'korkea'], tH, TU - 0.4, 0)) { const t = p.t, c = cr(t), gr = sstep(tH, TU - 1, t), m = midiAt(t, lm), k = clamp((m - 60) / 34, 0, 1); lm = m;
+    // v7 (Y3): puhaltimien juoksut ovat tarkan nuottilistan (d.cues.alut.nuotit = [t, kesto, midi, nousu_dB]) nuotteja: valo alkaa nuotin ruudussa Math.round(t * FPS), korkeus = midi. Ei valoa ilman nuottia.
+    { for (const nn of d.cues.alut.nuotit) { if (nn[0] < tH || nn[0] >= TU - 0.4) continue; const f = FR(nn[0]), t = f / FPS, c = cr(t), gr = sstep(tH, TU - 1, t), m = nn[2], k = clamp((m - 60) / 34, 0, 1), pv = clamp(nn[3] / 20, 0, 1.4);
         for (let j = 0; j < 3; j++) { n++; const Z = 100; LI.push({ t0: t, life: 0.18, fade: 0.32, hard: true, kind: 'parvi', fr: 'r', X: c.x + (0.4 * Math.sin(0.55 * (t - tH)) + 0.55 * (hh(n, 3) * 2 - 1)) * halfW(c, Z) * 0.95, Y: 1.5 + 20 * k + 2.0 * (hh(n, 8) - 0.5), Z,
-          I: (0.28 + 0.72 * gr) * clamp(0.35 + 1.0 * p.v, 0.5, 1), sig: 1.5, star: 0.35 + 0.3 * gr, refl: 0.40 }); } } }
+          I: (0.28 + 0.72 * gr) * clamp(0.35 + 1.0 * pv, 0.5, 1), sig: 1.5, star: 0.35 + 0.3 * gr, refl: 0.40 }); } } }
     for (let j = 0; j < 34; j++) { const t = TU - 1.7 + 1.5 * hh(j, 11), c = cr(t); LI.push({ t0: t, life: 1.2, fade: 0.1, kind: 'putoaja', fr: 'r', X: c.x + (hh(j, 12) * 2 - 1) * halfW(c, 98) * 0.95, Y: 3 + 17 * hh(j, 13), Z: 98, I: 0.75, sig: 1.5, star: 0.35, refl: 0.4 }); }
     let last = -9, nr = 0;
     for (const p of [{ t: tI, v: 1 }, ...HP.filter((q) => q.t > tI + 0.2)]) { const t = p.t; if (t < tI || t >= tVP || p.v < 0.45 || t - last < 0.18) continue; last = t; nr++; const c = ci(t), Z0 = c.z + 3 + 9 * hh(nr, 4);
@@ -455,9 +478,8 @@ export function signaalit(d) {
   const pulse = (t, X, Z, amp, R0, R1, T) => RG.push({ t0: t, T, X, Z, amp, R: R0, w: R1, dome: 1 });
   { let lastR = -9, lastH = -9, sg = 0;
     for (const p of LP) { const t = p.t, c = ci(t);
-      if (t < tG0) {                                                         // paisutus: himmeä sykäys jään alla jokaisesta basson alusta; koko ja voima kasvavat, kuva ei vilku
-        if (t - lastR < 0.40) continue; lastR = t; const ps = sstep(T0, tG0, t), Zz = c.pitch < -0.12 ? c.z + Math.min(c.h / Math.tan(-c.pitch), 16) : c.z + 16, pk = clamp(p.v / 0.8, 0.6, 1);
-        const R0 = 2.5 + 4.5 * ps; pulse(t, c.x, Zz, 0.35 * (0.012 + 0.095 * sstep(T0 + 3, T0 + TIN + 4, t)) * (0.6 + 0.5 * ps) * pk, R0, R0 * 1.9, 2.0);
+      if (t < tG0) {                                                         // paisutus: basson askeleet käsitellään omassa lohkossaan (ASKEL, alla)
+        continue;
       } else if (t < tI) {                                                   // pp, tutti, H -> taite: patarummut ovat halkeamia (DRUM), ei renkaita
         continue;
       } else if (t < tV - 0.1) {                                            // taite: patarumpujen syke on pehmeä hehku (ei rengasta)
@@ -467,6 +489,17 @@ export function signaalit(d) {
         RG.push({ t0: t, T: 2.5, X: c.x + (sg % 2 ? 4 : -4), Z: c.z + 26, amp: TAPIO_A * (0.7 + 0.5 * lev(t)) * clamp(p.v / 1.0, 0.8, 1.3), R: 5, w: 9, dome: 1, vx: 21 });
       } else if (t < tHJ) {                                                  // bassojen näppäilyt: pieniä himmeitä sykäyksiä (ei renkaita)
         if (p.v < 0.3 || t - lastR < 0.4) continue; lastR = t; pulse(t, c.x - 0.5, c.z + 6, 0.014, 1.6, 4, 1.0); } } }
+  // v7 (rivi 93): jättiläisen askeleet jäällä. Jokainen basson askel (cues.alut.matala, v >= 0,3, ankkurista pohja_vaihtuu_D ankkuriin peikot_G_alku) on suuri pehmeä hohde jään alla
+  // (säde noin neljännes kuvan leveydestä, nousu 0,15 s, lasku noin 1,4 s). Jokainen askel on edellistä lähempänä ja hieman eri kohdassa; paisutuksen mukana hohde kasvaa. Halkeama etenee askel kerrallaan.
+  const ASKEL_A = 0.22;
+  { const ST = d.cues.alut.matala.filter(([t, v]) => t >= T0 && t < tG0 && v >= 0.3); let pv = null;
+    ST.forEach(([t0, v], i) => { const f = Math.round(t0 * FPS), t = f / FPS, c = ci(t), u = ST.length > 1 ? i / (ST.length - 1) : 1, ps = sstep(T0, tG0, t);
+      const L0 = c.pitch < -0.12 ? Math.min(c.h / Math.sin(-c.pitch), 16) : 16, L = L0 * (1 - 0.45 * u), X = c.x + (hh(i, 61) - 0.5) * 0.40 * L, Z = c.z + L * Math.cos(c.pitch), R = 0.50 * L * (0.8 + 0.3 * ps);
+      RG.push({ t0: t, T: 1.55, X, Z, amp: ASKEL_A * (0.7 + 0.5 * ps) * clamp(v / 0.4, 0.8, 1.3), R, w: R, askel: 1, dome: 1 });
+      const kc = Math.max(1, 12 / Math.max(Z - c.z, 0.5)), Xc = c.x + (X - c.x) * kc, Zc = c.z + (Z - c.z) * kc;   // halkeama vähintään 12 m päässä (lähellä halkeaman leveys on kuvapisteen levyinen ja se näyttää paksulta juovalta)
+      if (pv) { const dx = Xc - pv.X, dz = Zc - pv.Z, len = Math.hypot(dx, dz), off = (hh(i, 63) - 0.5) * 0.30 * len, mx = pv.X + 0.5 * dx - dz / len * off, mz = pv.Z + 0.5 * dz + dx / len * off;   // ohut, taitettu halkeama (kuten muut halkeamat: leveys 0,013-0,025 m, voima 0,65)
+        addSeg(t, pv.X, pv.Z, mx, mz, 0.015, 0.65, 7.0, 0, hh(i, 62) * 40); addSeg(t, mx, mz, Xc, Zc, 0.015, 0.65, 7.0, 0, hh(i, 62) * 40 + 3); }
+      pv = { X: Xc, Z: Zc }; }); }
   // patarummun isku: pitkä halkeama, joka juoksee jään poikki iskun ruudussa (kaikki janat syntyvät samassa ruudussa), ja himmeä valon sykäys jään alla
   { const DRUM = onsets(['matala'], tG0, tI, 0.4).filter((o) => o.t < tH || o.t >= TU); let last = -9, nd = 0;
     for (const q of DRUM) { if (q.t - last < 0.8) continue; last = q.t; nd++; const t = q.t, c = ci(t), n = 900 + nd;
@@ -516,7 +549,7 @@ export function signaalit(d) {
   const ringsAt = (t) => { const out = [];
     for (const r of RG) { const a = (t - r.t0) / r.T; if (a < 0 || a >= 1) continue; out.push({ r, a }); }
     out.sort((p, q) => q.r.t0 - p.r.t0);
-    return out.slice(0, 8).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, 0, r.vx || 0]]); };
+    return out.slice(0, 8).map(({ r, a }) => [[r.X, r.Z, a, r.amp], [r.R, r.w, r.askel || 0, r.vx || 0]]); };
   // ---- melodia: kumpujen muoto
   const kaari = (t) => clamp((d.melodia(t, 2.6) - 68) * 0.0050, -0.05, 0.075);
   const sNl = d.sarja((f) => (d.tapahtuu('nousu', f / FPS) ? 1 : 0) - (d.tapahtuu('lasku', f / FPS) ? 1 : 0));
@@ -553,14 +586,14 @@ export function signaalit(d) {
     return { t, c, G: Gt, L, live, hills, nl, lights: lights.slice(0, 40), rings: ringsAt(t), cracks: crackAt(t, cI), frost: frost(t), ph: d.kohta(sPh, t),
       trunk: trunkVis(t), gap: gap(t), xt: camX(T1), open: sstep(T0, T0 + 1.5, t), end: sstep(T1 - 6, T1, t), zi: cI.z - c.z, bright: 1 + 0.30 * mfPorras(t),
       low: (0.040 * (0.25 + 0.75 * d.matala(t, 0.8)) * (1 - 0.6 * tapio(t)) + 0.050 * sstep(TU - 0.5, TU + 1.5, t) * (1 - sstep(tI - 0.5, tI + 1.0, t)) + 0.030 * sstep(TK, TK + 2.5, t) * (1 - sstep(tG1, tG1 + 0.4, t))) * (1 - sstep(tJ, tJ + 8, t)),
-      snX: d.kohta(sSnX, t), snY: d.kohta(sSnY, t), iceD: d.kohta(sIce, t), str: lumiStr(t), rideK: rideK(t), rideD: d.kohta(sRide, t),
-      gustF: -0.4 + (t - tG1) * 0.62, gustK: sstep(tG1 - 0.03, tG1 + 0.03, t) * (1 - sstep(tG1 + 2.0, tG1 + 2.6, t)),
+      snX: d.kohta(sSnX, t), snY: d.kohta(sSnY, t), iceD: d.kohta(sIce, t), str: lumiStr(t), rideK: rideK(t), rideD: d.kohta(sRide, t), lumivauhti: snowVel(t),
+      gustF: -0.4 + (t - tG1) * 0.62, gustK: sstep(tG1 - 0.03, tG1 + 0.5, t) * (1 - sstep(tG1 + 2.0, tG1 + 2.6, t)),
       top: topY, puffK: 0.9 * tapio(t) * (1 - sstep(tV10, tV10 + 12, t) * 0.8),
       stripe: [ASP * 0.58, shY + 0.035 + 0.05 * mel, 0.30, 0.30 * stripeOn(t) * (0.55 + 0.9 * d.keski(t, 0.4))],
       trill: clamp(d.korkea(t, 0.2) * 1.8 - 0.1, 0, 0.9) * trillOn(t), vauhti: camV(t),
       vyor: tapio(t), sj: Sj(t), iceDim: iceDim(t), duck: duck(t) };
   }
-  return { T0, T1, tila, PUL, urku, Sj, G, trunkVis, gap, frost, camZ, camX, camV, pitch, camH, ZEND, tapio, lumiV, HP, LP, LI, RG, CR, MF, PP, ROWP, TOUCH, HOP, ROW, TU, lightsAt, ringsAt, cam, ci, proj, puffs, kat, paisu, upDim, mfPorras, ICE_K };
+  return { T0, T1, tila, PUL, urku, Sj, G, trunkVis, gap, frost, camZ, camX, camV, pitch, camH, ZEND, tapio, lumiV, HP, LP, LI, RG, CR, MF, PP, ROWP, TOUCH, HOP, ROW, TU, lightsAt, ringsAt, snowVel, cam, ci, proj, puffs, kat, paisu, upDim, mfPorras, ICE_K };
 }
 
 async function alusta() {

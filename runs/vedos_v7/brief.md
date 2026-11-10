@@ -285,3 +285,35 @@ varjojen metsä, josta käyttäjä piti, katoaa, ja valaistut rungot näyttävä
 **Ei saa muuttua:** myrskyn nousu ja tulo, intensiteetin seuraaminen jousista (pehmeänä), pyörre pintakerroksena ja syvempi
 tausta, vaskien huutojen valot, moduulin loppu ja sauma moduuliin 11_12 (**11_12:een ei kosketa**).
 Liikesarjat: 15:09,5–15:12,5 joka toinen ruutu (45 ruutua); 14:30–14:34 0,2 s välein; 14:50–15:06 0,5 s välein.
+
+---
+
+# Kriitikolle (vedos 7, koottu video `runs/vedos_v7/koko.mp4`)
+
+Olet tuore kriitikko. Lue ensin kokonaan `docs/visuaalinen_tyyli.md` (erityisesti 4d kohdat 23–36 ja luku 12), sitten
+`docs/projekti.md`:n palautelistan rivit 60–94 (käyttäjän sanat) ja tämän briefin alku. Et korjaa mitään etkä ehdota makuasioita.
+Tehtäväsi on kaksi asiaa, molemmat **mitaten valmiista videosta**, ei koodista eikä rakentajien raporteista:
+
+**A. Onko jokainen käyttäjän palaute riveillä 60–94 korjattu?** Käy rivit yksi kerrallaan. Jokaisesta: tee liikesarja
+kohdasta (`.venv\Scripts\python.exe -I render/sarja.py runs/vedos_v7/koko.mp4 <alku_s> <askel_ruutuja> <n> <ulos.png> 480 6`,
+katso kuva Read-työkalulla; käyttäjän ajat ovat likimääräisiä: etsi oikea kohta kuunteluoppaasta `annotations/kuunteluopas.md`
+ja `annotations/cues.json`:sta), ja mittaa se, mitä rivi väittää (esim. iskujen määrä ja ruudut, valojen osuminen
+`cues.alut.nuotit`-aikoihin, kirkkaus ennen ja jälkeen, runkojen peitto, lumen suunnan pysyvyys peräkkäisistä ruuduista).
+Tulos riville: KORJATTU / OSITTAIN / EI, ja todiste (luku tai liikesarjan tiedosto). Rivit, jotka käyttäjä käski säilyttää
+(63, 70, 71, 73, 76): vertaa vedokseen 5 (`runs/vedos_v5/koko.mp4`) samoista kohdista ja sano, onko kuva sama.
+Erityisesti: rivi 81/94 (puut elävät aavistuksen, eivät kuin kumi eivätkä jähmettyneinä: mittaa latvan liike pikseleinä
+suhteessa puun korkeuteen alun metsästä 0:10–0:55 ja pimeästä metsästä), rivi 86 (lumi ei nyi: etsi koko videosta kohdat,
+joissa lumen suunta tai nopeus muuttuu alle 0,5 sekunnissa), rivi 87 (viisi iskua kohdissa 10:28 ja 15:10: laske kuvasta),
+rivit 84–85 (vaskisoinnut 13:26–13:33 ja taite 13:33,6), rivi 89 (puuska 4:07), rivi 90 (ei rungon läpi lentoa 10:35–11:25),
+rivi 92 (varjojen metsä 11:32–13:00 sama kuin vedoksessa 5), rivi 93 (askeleet jäällä 5:36–5:48).
+
+**B. Bugilista.** Katso koko video 15 sekunnin välein otetusta kontaktiarkista (`runs/vedos_v7/kontakti.jpg`) ja jokainen sauma
+ja jokainen kuunteluoppaan lihavoitu kohta liikesarjasta. Listaa vain selvät virheet: yhden ruudun hypyt ilman iskua, kovat
+suorakulmiot tai rajat, valkoiseksi leikkautuvat alueet, piirretyn näköiset esineet, tyhjä tai jähmettynyt kuva,
+tyyliohjeen kieltämät asiat (luku 9 ja 12). Jokaisesta: aika, mitä näkyy, miksi se on virhe (tyyliohjeen kohta tai
+palautteen rivi), ja liikesarjan tiedosto. Erota ESTÄVÄ (käyttäjä huomaa heti) ja PIENI.
+
+Kirjoita raportti tiedostoon `runs/vedos_v7/kriitikko.md` (rivitaulukko A, bugilista B, lopussa yksi rivi: BUGILISTA TYHJÄ tai
+ESTÄVIÄ n kpl). Liikesarjat kansioon `runs/vedos_v7/krit/`. Älä koske mihinkään muuhun tiedostoon. Älä renderöi mitään
+(ei `render.mjs`, ei `lukittu.mjs`): vain valmiin videon ruutuja.
+

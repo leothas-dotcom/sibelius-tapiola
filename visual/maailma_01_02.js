@@ -5,8 +5,8 @@
 // Suunnitelma: runs/v5_01_02/brief.md; säännöt: docs/visuaalinen_tyyli.md luvut 4d, 7b ja 12.
 // - Katsoja on latvojen yläpuolella matalalla ja kulkee eteenpäin metsän yli kohti horisonttia, hieman viistoon (parallaksi).
 //   Metsä on sama korkeuskenttä (kuusten kruunut) kuin lopussa (maailma 11_12): käyttäjä piti siitä. Ei revontulia, ei lämpöä.
-// - Maa ja rungot eivät liiku. Puu on jäykkä: tuuli taivuttaa latvaa sivulle (tyvi paikallaan, enintään 2 % korkeudesta
-//   tavallisessa tuulessa, 4 % puuskassa, päätaajuus 0,15 Hz, aalto kulkee massan yli). Kaukana (yli 150 m) latvat eivät taivu.
+// - Maa ja rungot eivät liiku. Puu on jäykkä: tuuli taivuttaa latvaa sivulle (tyvi paikallaan, vedos 7: enintään noin 1,5 % korkeudesta,
+//   tavallisesti alle 1 %, päätaajuus 0,15 Hz, naapuripuut eri vaiheessa). Kaukana (yli 150 m) latvat eivät taivu.
 // - Gis on horisontin valo: suora valon viiva (unisono). Vaarat eivät nouse: jokainen puhaltajan paisutus paljastaa yhden
 //   vaaran usvasta, ja valo kulkee sen harjaa pitkin. Vaara ei muuta muotoaan; se vajoaa hitaasti usvaan ja jää siintämään.
 // - Jouset ovat metsä: niiden tullessa tummuus ja terävyys kulkevat lähimmistä latvoista kauemmas; kun ne lakkaavat, metsä väistyy
@@ -77,7 +77,8 @@ float canopyH(vec2 xz, float det, float lod, out float cid, out float crel) {
     { // tuuli: jäykkä puu taipuu sivulle, tyvi paikallaan, latva eniten (enintään 2 % / 4 % korkeudesta); aalto kulkee maton yli
       float ph = dot(ctr, vec2(0.021, 0.034)) - uTime * 0.95 + 1.7 * vnoise(ctr * 0.012);
       float u0 = clamp(length(dv) / rad, 0.0, 1.0);
-      vec2 sw = vec2(sin(ph), 0.4 * sin(ph * 0.8 + 1.0)) * uSway * 0.0185 * ht * pow(1.0 - u0, 1.5) * swayK;
+      float ph2 = dot(ctr, vec2(0.047, -0.031)) - uTime * 0.61 + 2.3 * vnoise(ctr * 0.021 + 5.0);   // vedos 7: toinen, yhteismitaton vaihe: naapuripuut eivät keinu yhdessä
+      vec2 sw = vec2(0.7 * sin(ph) + 0.3 * sin(ph2), 0.4 * sin(ph * 0.8 + 1.0)) * uSway * 0.0185 * ht * pow(1.0 - u0, 2.5) * swayK;
       dv -= sw; }
     float an = atan(dv.y, dv.x);
     float u = sqrt(dot(dv, dv) + 0.10) / (rad * (1.0 + 0.10 * sin(an * 3.0 + r1 * 6.0 + 1.0) + 0.06 * sin(an * 7.0 + r2 * 9.0)));
@@ -258,7 +259,8 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
       float farK = smoothstep(420.0, 900.0, t);
       float densF = smoothstep(0.16, 0.48, vnoise(q.xz * 0.0085 + 3.0));
       snowAmt = mix(snowAmt, mix(1.0, 0.30 + 0.25 * vnoise(q.xz * 0.05), densF), farK);
-      vec3 alb = mix(NEEDLE, SNOWA, clamp(snowAmt * (1.0 - 0.30 * dk), 0.0, 1.0)) * (1.0 - 0.15 * dk);
+      float nearK = 1.0 - smoothstep(120.0, 700.0, t);                       // vedos 7 (2): ilmaperspektiivi: lähin kuusirivi tumma (vähemmän lunta pinnoilla), kaukainen vaalea
+      vec3 alb = mix(NEEDLE, SNOWA, clamp(snowAmt * (1.0 - 0.30 * dk) * (1.0 - 0.60 * nearK), 0.0, 1.0)) * (1.0 - 0.15 * dk) * (1.0 - 0.35 * nearK);
       float dif = max(dot(n, L), 0.0) * sh;
       float rim = pow(1.0 - max(dot(n, -rd), 0.0), 3.0) * max(dot(normalize(rd.xz), normalize(L.xz)), 0.0);
       float pool = 0.55 + 0.95 * smoothstep(0.30, 0.75, vnoise(q.xz * 0.011 + 5.0));
@@ -294,16 +296,16 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
       c *= 1.0 + farC * (1.7 * (ao - 0.55) + 0.70 * (vnoise(q.xz * 0.06) - 0.5));
       c += HALLA * uGis * 0.030 * farC * smoothstep(0.35, 1.0, ao) * (0.5 + 0.5 * n.y);       // horisontin valo nostaa kaukaisten latvojen kärjet usvasta
       c = mix(c, c * (0.45 + 1.1 * ao), clamp(0.55 * dk, 0.0, 0.95));        // jouset: kontrasti kasvaa (terävyys)
-      c = mix(c, c * (0.25 + 0.85 * ao), 0.70 * fk);                         // fraasi: terävämpi ja selvästi tummempi
-      c *= 1.0 - 0.50 * fk;
+      c = mix(c, c * (0.25 + 0.85 * ao), 0.70 * fk * smoothstep(0.0, -0.10, dy));   // fraasi: terävämpi; vedos 7 (3): vaikutus häipyy horisontilla, ei vaakarajaa
       vec3 fogT = fogBase * mix(1.0, 0.80 * distTex(p.x, dy), smoothstep(500.0, 2600.0, t));
       col = mix(c, fogT, fg);
-      col *= 1.0 - 0.44 * fk;                                                // fraasin tumma aalto koko kerroksessa (myös usvassa)
       if (!upr) col = mix(col, fogBase * 0.80 * distTex(p.x, dy), smoothstep(-0.006, 0.0, dy));
     } else {
       col = upr ? col0 : fogBase * 0.80 * distTex(p.x, dy);
     }
   }
+  // vedos 7 (3): fraasin tummuminen on koko kuvan yhteinen, pehmeä (uFr on kaikilla etäisyyksillä sama), ei vaakarajaa horisontilla
+  col *= 1.0 - 0.50 * uFr[0];
   // lumi ilmassa
   for (int s = 0; s < 8; s++) { float zz = 1.5 + mod(float(s) * 5.5 - uSnow.w, 44.0); col += SNOWC * snowAt(s, zz, dx, dy) * (0.55 + 0.9 * (uGis + uLint * 0.3) * 0.5); }
   return col;
@@ -344,11 +346,12 @@ async function alusta() {
 
   // ----- kamera: tasainen ajo eteen ja viistoon; laskeutuminen latvojen väliin vasta hiljaisuuden aikana -----
   const V = 9.0, VXK = 0.25;                                              // vauhti eteen (m/s) ja viistoon (osuus)
-  const H0 = 50, HLOW = 7;                                                 // kameran korkeus maasta (m)
+  const H0 = 50, HLOW = 7;                                                 // kameran korkeus maasta (m), lasku latvojen väliin: kuten vedoksessa 6
+  const HYLA = 100;                                                // vedos 7 (2): ajo latvaston yläpuolella kuten lopussa (11_12: 58-82 m); lähin kuusirivi kauas kamerasta
   const TDESC = A.hiljaisuus_1_alku, TDEND = TE - 0.15;                    // vedos 6: laskeutuminen koko tauon ajan (hiljaisuus_1_alku -> rajakuva), tasaisesti
   const kZ = d.sarja(() => V / FPS);
   const camZ = (t) => d.kohta(kZ, t), camX = (t) => VXK * camZ(t);
-  const camH = (t) => { const k = clamp((t - TDESC) / (TDEND - TDESC), 0, 1); return lerp(H0, HLOW, 0.6 * k + 0.4 * smooth(k)); };   // lähes tasainen, pehmeä alku ja loppu
+  const camH = (t) => { const k = clamp((t - TDESC) / (TDEND - TDESC), 0, 1); return lerp(H0, HLOW, 0.6 * k + 0.4 * smooth(k)) + (HYLA - H0) * (1 - sstep(0.0, 0.5, k)); };   // vedoksen 6 laskeutuminen; ylimääräinen korkeus (HYLA - H0) tasoittuu pois laskeutumisen alkupuoliskolla
 
   // ----- jouset: ankkureista (käyttäjän kuulemat); voima mitataan äänestä -----
   const sJou = d.sarja((f) => { const pv = f / FPS < A.fis_pitka_aani ? 68 : 66; let mx = 0; for (let mi = 48; mi <= 79; mi++) if (Math.abs(mi - pv) > 1) mx = Math.max(mx, d.taso(mi, f)); return mx; });
@@ -357,7 +360,7 @@ async function alusta() {
   // jousten voima lähimmässä latvustossa; kaukaisempi (s 0..1) saa tulon viiveellä ja lopun etuajassa: tummuus kulkee lähimmistä kauemmas,
   // usvaan väistyminen alkaa kaukaa
   const VY = 1.6;
-  const fraasi = (t) => 0.30 + 0.70 * sstep(A.fraasi_ennen_taukoa - 0.1, A.fraasi_ennen_taukoa + 0.4, t);   // puuskan jälkeen jouset vaimeammin, fraasissa taas täysin
+  const fraasi = (t) => 0.30 + 0.70 * sstep(A.fraasi_ennen_taukoa - 0.6, A.fraasi_ennen_taukoa + 2.6, t);   // puuskan jälkeen jouset vaimeammin, fraasissa taas täysin
   const jouInt = (t) => (t < 0 ? 0 : 0.25 + 0.75 * sstep(0.40, 0.85, ka(sJou, t, 0.35)));
   const jouD = (t, dOn, dOff) => { let m = 0;
     JOUSET.forEach(([a, b], k) => { const on = sstep(a - 0.05, a + 0.3, t - dOn), off = 1 - sstep(b - 0.1 + dOff, b + 0.9 + dOff, t);
@@ -412,15 +415,25 @@ async function alusta() {
       const pos = (clamp((n[2] - 69) / 18, 0, 1) * 2.6 - 1.3) * w; const l = L[L.length - 1];
       if (l && n[0] - l.a < 0.08) { if (pos > l.pos) l.pos = pos; } else L.push({ a: n[0], pos }); }
     return L; };
-  const VAARAT = TP.slice(0, TP.length - 1).map((tp, i) => {
-    let x = asp * (0.10 + 0.80 * fract(0.618034 * (i + 1) + 0.21 + 0.1 * hs(i, 1))); const x0 = x;
-    const lv = LVL[i], m = ylin(tp);
-    x = asp / 2 + (x - asp / 2) * XK[lv];
-    const w = asp * (0.15 + 0.17 * hs(i, 2)) * (1 + 0.12 * lv);
-    const kauas = Math.abs(x0 - xd);
-    const Ah = 1.6 * (0.028 + 0.040 * clamp((m - 69) / 15, 0, 1)) * (0.85 + 0.30 * hs(i, 3)) * (0.5 + 0.5 * sstep(0.2, 0.7, kauas));   // talon ikkunoiden kohdalla matalampi
-    return { tp, x, w, A: Ah, lv, m, D: DL[lv], st: askeleet(tp, w) };
-  }).sort((a, b) => b.lv - a.lv);                                                     // piirtojärjestys: kaukaisin ensin
+  // vedos 6 lisäkorjaus: paljastus on etäisyysjärjestys. i. paisutus paljastaa i. lähimmän vaaran; kukin uusi on edellisten takana ja korkeammalla
+  // (harjan korkeus kuvassa kasvaa etäisyyden mukana, ilmaperspektiivi: kauempi vaaleampi ja sinisempi, shaderin `lv`); Tapion talo kaukaisin ja viimeinen
+  const NVV = TP.length - 1, DNEAR = 1100, DFAR = 4200, TREF = TP[TP.length - 1];
+  const VAARAT = (() => {
+    const out = []; let edTop = 0;
+    TP.slice(0, NVV).forEach((tp, i) => {
+      const r = i / Math.max(NVV - 1, 1), lv = r < 0.34 ? 0 : r < 0.67 ? 1 : 2;
+      let x = asp * (0.10 + 0.80 * fract(0.618034 * (i + 1) + 0.21 + 0.1 * hs(i, 1))); const x0 = x;
+      const m = ylin(tp), D = DNEAR + (DFAR - DNEAR) * Math.pow(r, 0.85);
+      x = asp / 2 + (x - asp / 2) * XK[lv];
+      const w = asp * (0.15 + 0.17 * hs(i, 2)) * (1 + 0.12 * lv);
+      const kauas = Math.abs(x0 - xd), sc = D / Math.max(D - camZ(TREF), 60);
+      // korkeus kuvassa: kasvaa etäisyyden mukana; soittajan kulku antaa +-10 % (ylin sävel)
+      const base = (0.050 + 0.062 * r) * (0.90 + 0.20 * clamp((m - 69) / 15, 0, 1)) * (0.85 + 0.15 * hs(i, 3)) * (0.75 + 0.25 * sstep(0.2, 0.7, kauas));
+      const top = Math.max(base, edTop + 0.011); edTop = top;
+      out.push({ tp, x, w, A: top / sc, lv, m, D, st: askeleet(tp, w) });
+    });
+    return out.sort((a, b) => b.D - a.D);                                              // piirtojärjestys: kaukaisin ensin
+  })();
   const TH = TP[TP.length - 1];                                                                  // Tapion talo: viimeinen paisutus
   const stH = askeleet(TH, 0.30);
   // vaaran näkyvyys: pehmeä tulo 1,4 s (10 -> 90 %), sitten vajoaminen aikavakiolla 8 s lattiaan 0,35; harjan valo: nousu paisutuksen mukaan, hiipuu noin 3 s
@@ -428,7 +441,8 @@ async function alusta() {
   // maamassa tulee näkyviin ensin (10 -> 90 % 1,4 s), harjan valo noin 0,3 s myöhemmin ja hitaammin (10 -> 90 % 1,2 s), laskee puoleen 2,8 s:ssa
   // vedos 6: tulo 6 s (tp-2,2 -> tp+3,8), ei ruutujen muutosta yli 1,5 %; vajoaminen hitaasti lattiaan
   const VIS0 = 2.2, VIS1 = 3.8;
-  const vis = (tp, t) => sstep(tp - VIS0, tp + VIS1, t) * (FLOOR + (1 - FLOOR) * Math.exp(-Math.max(t - (tp + VIS1), 0) / 10));
+  // vedos 7 (4): ensimmäisen (lähimmän) vaaran tulo 10 s, jotta näkyvyys nollasta täyteen kestää vähintään 5 s (varjostin pakkaa alphan 1,6-kertaiseksi); muut ennallaan
+  const vis = (tp, t) => { const e = tp === TP[0], v0 = e ? 3.5 : VIS0, v1 = e ? 6.5 : VIS1; return sstep(tp - v0, tp + v1, t) * (FLOOR + (1 - FLOOR) * Math.exp(-Math.max(t - (tp + v1), 0) / 10)); };
   const BUMPK = 0.40;                                                  // vedos 6: harjan valo enintään 40 % entisestä huipusta, nousu 3 s, ei välähdystä
   const bump = (tp, t) => BUMPK * sstep(tp - 2.4, tp + 0.6, t) * Math.exp(-Math.max(t - (tp + 0.6), 0) / 4.0);
   // harjan valo etenee kulun sävelten mukaan askelittain: jokainen sävel sytyttää pisteen harjalle ja jättää hiipuvan jäljen (neljä viimeistä)
@@ -445,8 +459,8 @@ async function alusta() {
   // fraasin puuska (0:54): jousten tumma aalto ja sen mukana tuuli: taipuma säännön rajoissa (enintään 4 %), lumi pöllähtää latvoista
   const FR0 = A.fraasi_ennen_taukoa;
   const frGust = (t) => sstep(FR0 - 0.2, FR0 + 0.6, t) * Math.exp(-Math.max(t - FR0 - 0.6, 0) / 2.2) * (1 - sstep(A.hiljaisuus_1_alku - 0.2, A.hiljaisuus_1_alku + 0.3, t));
-  const frS = (t, s) => sstep(FR0 - 0.05 + 0.5 * s, FR0 + 0.30 + 0.5 * s, t) * (1 - sstep(A.hiljaisuus_1_alku - 0.2, A.hiljaisuus_1_alku + 0.9, t));
-  const swayAmp = (t) => clamp(0.55 + 0.45 * jouSlow(t) + 0.95 * ka(sPuuska, t, 0.6) + 0.80 * ka(sFrG, t, 0.6), 0, 1.95) * (1 - 0.85 * hilj(t));
+  const frS = (t, s) => sstep(FR0 - 0.6, FR0 + 3.4, t) * (1 - sstep(A.hiljaisuus_1_alku - 0.2, A.hiljaisuus_1_alku + 0.9, t));
+  const swayAmp = (t) => clamp(0.30 + 0.25 * jouSlow(t) + 0.20 * ka(sPuuska, t, 1.5), 0.25, 0.80) * (1 - 0.5 * hilj(t));   // vedos 7: ei suoraan puuskasta eikä fraasin puuskasta; latva enintään noin 1,5 % korkeudesta
   const sFrG = d.sarja((f) => frGust(f / FPS));
   const sPuuska = d.sarja((f) => puuska(f / FPS));
 

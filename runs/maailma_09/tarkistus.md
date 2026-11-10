@@ -57,3 +57,81 @@ Renderi `runs/maailma_09/osa.mp4`, 4620 ruutua (ffprobe). Vedoksen 5 renderi tal
 **Koskemattomuus** (vedoksen 5 renderiä vasten, PSNR): 8 s inf (ruudulleen sama), 30 s 51,5 dB, 60 s 54,3 dB, 100 s 30,4 dB, 150 s 41,6 dB. 8 s on bitilleen sama; muissa lumen kertymä (pudotus/ajautuma) on siirtynyt hieman, koska uudet eleet lisäävät lumen kertymää, ja 100 s:n ero on kommenttieleistä (73–89 s). Rakenne, rungot, kamera ja varjot (60 s, 150 s) ovat ennallaan.
 
 **Auki:** usvan ohennus taitteessa ei toteudu; puuskan jälkeen (2:11–2:12) kaksi tummaa latvuston kolmiomuotoa kuvan vasemmassa yläkulmassa on näkyvissä (olemassa oleva latvusto kirkkaassa usvassa, ei uusi); kriitikko ei ole katsonut tätä versiota.
+
+## Vedos 7 (11.11.2026): täsmäkorjaukset (brief `runs/vedos_v7/brief.md`, luku Moduuli 09 + LISÄYS rivi 92)
+Muutettu vain `visual/maailma_09.js` (vanha: `runs/maailma_09/v7/maailma_09_vedos6.js.bak`; vedoksen 6 renderi `runs/maailma_09/v7/osa_vedos6_ennen_v7.mp4`). Renderi `runs/maailma_09/osa.mp4`, 4620 ruutua (ffprobe), `--start 691.6 --end 845.6 --workers 2 --chunk 40`, aa=2.
+Liikesarjat (valmiista renderistä, `render/sarja.py`), kansio `runs/maailma_09/v7/`: `s_1300_1307.png` (13:00-13:07, 0,33 s), `s_1324_1348.png` (1 s), `s_1332_1338.png` (0,2 s), `s_1340_1345.png` (0,2 s; huom. tämä on edellisen kierroksen renderistä, ks. auki), `s_1244_1252.png` ja `_v5` (jousten kommentit, vedoksen 5 rinnalla), `s_1144_1152.png` ja `_v5` (N), `raja_*.png`.
+
+**Y1 PERUTTU:** funktio `sway` ja puiden liike ovat ennallaan. Raportoitava: sway-taipuma on koodissa 3,0 % * yw²/H (latva noin 3,7 % korkeudesta), eli yli uuden 1 % / 1,5 % rajan; ohjeen mukaan ei korjattu omin päin. Tuuli (`wind`) lasketaan vedoksen 5 iskuista (`ISKUTW` = `d.iskut` ilman vedoksen 6 uusia ankkureita), jotta puiden liike on v5:n mukainen.
+
+### Muutokset
+| Kohta | Mitä |
+|---|---|
+| Lisäys a | poistettu `uGes`/`uSweep`/`uRise` ja kaikki niiden termit (koko tilan välähdys, tumma aalto, `drift`-voimistus, `fo.x`-venytys, `h > 0.30+0.22*uGes.z`), `gestAt`/`gustAtF`/`sSweep`/`riseAt`; `0.20*nerveAt*sin(1.7 t)` pois `sDrift`:stä; kajon `lift`-lisäys jousten nousun jälkeen pois (kuului vanhaan nousuun) |
+| Lisäys b | jousten kommentit: yksi ohut hallan valosäie (`uThr[2]`) runkojen keskikorkeudella, kulkee 40 % leveydestä 1,6 s:ssa (syttyy 0,15 s, sammuu 1,2 s), vuorotellen vasemmalta ja oikealta; alut `cues.alut` keski+korkea, voima >= 0,3, väh. 1,5 s välein (6 kpl); amplitudi 0,30 = sama kuin uTwo-pylväissä |
+| Lisäys c | N: enintään 4 kirkkainta mitattua iskua (`HITS`), ydin 1,1 % kuvan leveydestä, halo 0,03, maan syke pois. **Juurisyy:** `N_vasket_takovat` ja `puuska_499` ovat `luokka: isku`, joten `d.iskut` antoi niistä pystyleikkauksen ja rungon valoreunat (`uCut`); `UUDET6`-lista suodattaa vedoksen 6 uudet ankkurit pois iskuista ja tuulesta |
+| Lisäys d | kameran vauhti ja rata ennen taitetta ennallaan; vain `openAt` tuotu aikaisemmaksi |
+| 2 (P) | 4 kaistaa: `P_vaskipaisunta.iskut_t` (806,44 / 809,94 / 810,70 / 812,57). Maailmassa kiinni (etäisyydet 140/105/78/56 m, leveydet 4,5/7/10/14 m, sivuasema lasketaan kameran radasta joka ruudulla), jokainen edellistä lähemmäs ja leveämpi; ensimmäinen välähtää ja vetäytyy ~40 %:iin 0,4 s:ssa; voima = `bandCm` (150-1500 Hz paisutuksen kertymä, vain kasvava) x kaistan paino x `BAMP` 3,4; sammuvat taitteessa 0,25 s. P:n keskipylväs (ISKUT P-ruuduissa) pois, jotta kaistoja on neljä. Varjot lumelle: olemassa oleva `uCut.y`-maavalo |
+| 3 (taite) | `openAt` 3 s (ennen 1 s); sininen `TAITE`-valo usvaan ylhäältä ja kaikkialle, rungot siniharmaiksi (`mix(tone, fog*0.62, 0.55*uOpen)`), latvukset ja kaukaiset rungot usvaan (`uFogL` 85 -> 42,5), maan lumi hohtaa tasaisesti, varjot pois; kameran vauhti x(1-0,40*open) (60 %:iin 3 s:ssa); lumen nopeus 40 %:iin ja kulma -> 1,6 astetta; väikkeet: `cues.alut.nuotit` midi >= 72, enintään kolme kerrallaan, taitteesta `dim_possibile`een |
+| 4 (nousu) | `jousten_nousu_473`: pölyhuntu (`uDustA`, tiheys 0,6, hiukkaset noin 2-4 px) nousee tasaisesti alhaalta ylös ankkurin alusta loppuun, ajelehtii lumen suuntaan; nouseva usvavyö poistettu; maa jää kirkkaammaksi (`uGrB`) |
+| 5 (puuska) | `puuska_499`: lumipölyn huntu (`uDustB`, tiheys 1,0), sisään 0,4 s ennen, tihein ankkurin keskellä, poissa 1,5 s ankkurin lopun jälkeen, kulkee kuvan läpi +x (lumen suuntaan); koko ruudun soikiot, valon värähtely ja pystyleikkaus pois |
+| 6 (Y2) | lumen kertymät `vFall`/`vDrift`-taulukoista: nopeusrajoitin (nousu 0,30/s = koko väli 0,6 s, lasku 0,10/s = 1,7 s), kulma vakio 15,6 astetta (drift = 0,28 x fall), isku/kommentti/puuska ei vaikuta nopeuteen, lumen määrän `surge`-osa pehmennetty (nousu 0,5 s) |
+
+### T1: mittaukset renderistä (ffmpeg-ruutu 480 px, keskikirkkaus = (R+G+B)/3, kontrasti = std/keskiarvo)
+| Kohta (osan s) | keskikirkkaus | B/R | kontrasti | huomio |
+|---|---|---|---|---|
+| 13:24 (112,4), vertailu | 37,27 | 1,305 | 0,348 | |
+| 13:30 (118,4) | 59,04 | 1,188 | 0,349 | kaistat 1-3 |
+| iskut_t[3] = 120,97 | 94,94 | 1,110 | 0,354 | **2,55 x** 13:24 (vaatimus >= 2,5) |
+| huippu 121,9 | 100,66 | 1,091 | 0,405 | 2,70 x, moduulin kirkkain |
+| 13:34 (122,8), taite | 39,03 | 1,408 | 0,239 | hämärä hetki |
+| **13:37 (125,4)** | 71,14 | 1,455 | 0,156 | **1,91 x** (>= 1,8); B/R **+11,5 %** (>= +10 %); kontrasti **0,45 x** (<= 0,6) |
+| 13:40 (128,4) | 70,26 | 1,461 | 0,196 | |
+| 13:44 (132,4) | 81,71 | 1,473 | 0,081 | |
+| 135,4 / 140,4 | 74,11 / 35,53 | 1,471 / 1,399 | 0,094 / 0,303 | tunnelma sulkeutuu pimeään |
+N (11:46-11:51), uusi / vedos 5: 14,9 s 37,86 / 37,40; 15,4 s 43,35 / 43,33; 16,8 s 37,00 / 36,52; 18,0 s 44,54 / 43,77 = **1,01-1,02 x** (vaatimus <= 1,35). Jousten kommentit (74,2-86,0 s) uusi / v5: 26,92 / 26,66; 28,61 / 28,61; 32,61 / 32,45; 28,79 / 28,60; 32,57 / 32,59 = **<= 1,01 x** (vaatimus <= 1,15).
+Y2, koko moduuli (`kuvaus()` joka ruudulta): suurin kulman muutos **7,2 astetta/s** (<= 10); vaakanopeus > 0 koko ajan (pienin 0,001, etumerkki sama); kulma 1,6-15,6 astetta; nousu enintään 0,30/s (vaihteluväli 0,177 -> 0,59 s), lasku enintään 0,10/s (1,7 s). Taulukko (aika: nopeus / vaakanopeus / kulma): 806,2: 0,068 / 0,0190 / 15,6; 807,2: 0,084 / 0,0235 / 15,6; 812,6: 0,136 / 0,0380 / 15,6; 813,6 (taite): 0,122 / 0,0341 / 15,6; 814,6: 0,089 / 0,0194 / 12,3; 815,6: 0,051 / 0,0047 / 5,3; 820-823 (puuska): 0,035-0,041 / 0,0010 / 1,6; 825: 0,042 / 0,0012 / 1,6; 789,3: 0,048 / 0,0133 / 15,6 (ei hyppyä). (Luvut mitattu ennen viimeistä `BAMP`-säätöä; lumeen se ei vaikuta.)
+
+### T2: regressiomittari
+`vertaa.py runs/vedos_v5/osat/09.mp4 runs/maailma_09/osa.mp4 691.6 2 5` (raja 5; v5 on lisäyksen vertailu):
+```
+11:45.6 - 11:51.6  8,1   lisäys c (N: ohuet leikkaukset; vaatimus <= 40)
+11:53.6 - 11:55.6  6,6   lisäys c
+12:01.6 - 12:05.6  5,7   Y2 (lumen vaihe)
+12:07.6 - 12:09.6  5,4   Y2
+12:11.6 - 12:13.6  6,2   Y2
+12:15.6 - 12:17.6  5,2   Y2
+12:19.6 - 12:21.6  5,3   Y2
+12:23.6 - 12:27.6  5,7   Y2
+12:29.6 - 12:31.6  6,1   Y2
+12:33.6 - 12:35.6  6,1   Y2
+13:01.6 - 13:05.6  15,2  kohta 4 (pölyhuntu)
+13:23.6 - 14:05.6  1798  kohdat 2, 3, 5, 6 (kaistat, taite, vauhti 60 %, puuska)
+```
+Raja 15: vain 13:03,6-13:05,6 (15,2, kohta 4) ja 13:25,6-14:03,6 (kohdat 2-3, 5-6). **Ennen 13:01 jokaisen jakson suurin mse <= 8,1** (vaatimus <= 15, N <= 40). Jousten kommenttien jaksossa 12:44-13:01 ei mse-jaksoja yli 5 (säie hillitty). Selittämätöntä jaksoa ei ole. Vedos 6:ta vastaan (raja 5): 11:45,6-11:59,6 (228, N-muutos), 12:43,6-13:17,6 (122, kommenttien välähdykset poistuneet), 13:23,6- (P/taite): kaikki määrättyjä.
+
+### T3: sauma
+Ruutu 0: mse vs vedos 5 **0,0018**; viimeinen ruutu (4619): mse **0,034** (rajakuva). Sauma ennallaan.
+
+### Auki / epävarmaa
+- `s_1340_1345.png` (puuskan liikesarja) ja `s_1300_1307.png` on otettu renderistä ennen viimeistä `BAMP`- ja lumirajoitinsäätöä; ne eivät eroa muuten (P:n kaistat ja lumen nopeusrajoitin eivät vaikuta 13:00- ja 13:40-jaksoihin paitsi lumen vaihe). `s_1324_1348.png` ja `s_1332_1338.png` ovat lopullisesta.
+- Taitteen jälkeen kameran vauhti on pienempi, joten rungot ja ovet ovat eri paikoissa kuin vedoksessa 6 (osa jakson 13:23,6-14:05,6 erosta). Rajakuva ei muutu.
+- Pölyhunnuissa kierretty ruudukko jättää heikkoja vinoja viivamaisia kuvioita (puuskan sarjassa 2:10,0-2:10,6); ei korjattu enempää.
+- P:n huipulla (121,4 s) vanha paisutuksen valo (`pk`) ja kaistat yhdessä tekevät kuvasta vaalean usvan; kaistat erottuvat selvimmin 1:55-2:00 (115-120 s). Keskikirkkaus 100/255, ei koko ruudun valkaisu, mutta lähellä rajaa.
+- Sway-taipuma 3,7 % > uusi raja 1 %: ohjaajan päätettävä.
+- Lumen kirkkauden reaktio iskuun/kommenttiin/puuskaan on poistettu (Y2).
+- Kriitikko ei ole katsonut tätä versiota.
+
+### Vedos 7, viimeistely (ohjaajan neljä kohtaa A-D, lopullinen renderi `runs/maailma_09/osa.mp4`, 4620 ruutua)
+- **A pölyhunnut:** hiukkasten paikka ja koko satunnaistettu solun sisällä (sin-hash, kolme kerrosta eri kierrolla ja solukoolla), hunnun runko on fbm-kohinaa, hiukkaset pintaa. Liikesarjat `s_1300_1307.png` ja `s_1340_1345.png`: ei vinoja pisteviivoja, näyttää leijuvalta pölyltä.
+- **B taitteen kerrosreunat:** `doorLayer`-alfa x (1 - 0,85 x opn). Holvikaari ja porras poissa avoimessa tilassa (`s_1340_1345.png`, 128-133 s ja `s_1324_1348.png`).
+- **C sway:** kerroin 0,030 -> 0,0122, latva enintään ~1,5 % korkeudesta (muoto ja vaiheet ennallaan).
+- **D kommenttisäie:** yksi yhtenäinen, kaareva (0,30 lx²), kalteva (0,123 = noin 7 astetta) pehmeäpäinen säie, piirretään runkojen päälle (ei katkoja); kirkkaus ja kesto ennallaan (`s_1244_1252.png`).
+- Mittaus uudelleen (osan s: kirkkaus / B/R / kontrasti): 112,4: 37,22 / 1,305 / 0,349; 118,4: 59,04 / 1,188 / 0,349; 120,97: 94,94 / 1,110 / 0,354 (2,55 x); 121,9: 100,67 / 1,091 / 0,405; 122,8: 39,54 / 1,409 / 0,231; **125,4 (13:37): 79,87 / 1,461 / 0,116** (2,15 x, B/R +12,0 %, kontrasti 0,33 x); 128,4: 79,82 / 1,471 / 0,098; 132,4: 81,67 / 1,473 / 0,081; 135,4: 74,10 / 1,471 / 0,094; 140,4: 35,52 / 1,399 / 0,303. Kommenttien kirkkaus 74,2/80,1/86,0 s: 27,65 / 33,24 / 32,82 (vedos 5: 26,66 / 32,45 / 32,59, <= 1,04 x).
+- `vertaa.py` vedos 5 vastaan (raja 5), ennen 13:01: N 8,3 / 6,7; 12:01-12:35 5,3-6,3 (Y2 ja sway-skaalaus); **12:45,6-12:47,6 15,8 ja 12:49,6-12:59,6 17,2** (kommenttisäie, nyt runkojen päällä, ja sway-skaalaus, hieman yli rajan 15); 13:01,6-13:05,6 21,6 (kohta 4, pölyhuntu; kohdan 4 jakso); 13:23,6- 1798,5. Epävarma: 12:45-13:00 ylittää rajan 15 hieman (kommenttisäie piirretty runkojen päälle D:n mukaan).
+
+### Vedos 7, kaksi viimeistä korjausta (ohjaajan viesti, lopullinen renderi `runs/maailma_09/osa.mp4`, 4620 ruutua)
+- **Kommenttisäie takaisin runkojen taakse** (`fogAt`): lievä kaari ja kallistus ennallaan, pystysuunnan leveys 2 x (ly²/0,0008), huippukirkkaus 0,18 (60 % edellisestä 0,30), reunat hiipuvat. Liikesarja `s_1244_1252.png`: usvan juova, rungot peittävät sen. Kirkkaus 74,2/80,1/86,0 s: 27,10 / 32,78 / 32,69 (vedos 5: 26,66 / 32,45 / 32,59). vertaa.py: 12:44-13:01 ei jaksoja yli 5 (12:57,6-12:59,6: 5,1), eli aiempi ylitys 15,8-17,2 on poistunut.
+- **Huipun kerrosreunat (P, 118-122 s) pois** `uBandK` (kaistojen yhteisvoima, = min(1, 1,3 x kertymä) x sammutus) : ovikerrosten peitto x(1 - 0,85 uBandK), latvusten peitto x(1 - 0,85 uBandK) ja sävy kohti usvaa, rungot tummina siluetteina (usvasävy x(1 - 0,72 uBandK)) ja haihtuvat latvaa kohti usvaan (rungon peitto x(1 - 0,95 uBandK smoothstep(0,38 H, 0,92 H, yw)), jotta latvat eivät ole leikattuja). Kokeilu, jossa latvukset värjättiin täysin usvaksi alfa säilyttäen, tuotti leikattuja pilareita ja hylättiin. Liikesarja `s_1330_1336.png` (13:30-13:38, 0,33 s välein): ei portaita eikä holvikaaren ääriviivaa.
+- Mittaus: 13:24 (112,4): 37,22; 13:30 (118,4): 65,04; **iskut_t[3] (120,97): 101,07 = 2,71 x (>= 2,5)**; huippu 121,9: 107,81 (2,90 x); **13:37 (125,4): 79,91 / B/R 1,461 / kontrasti 0,116** (2,15 x, +12,0 %, 0,33 x). Sauma: ruutu 0 mse 0,0027, viimeinen 0,036.
+- Auki: huipun kontrasti nousi 0,35 -> 0,53; kaistojen reunat ovat rungoissa hieman kovia (kaksi vaaleaa rungon reunaa 1:59-2:01 sarjassa).

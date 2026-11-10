@@ -80,3 +80,95 @@ Edellinen renderi talteen: `runs/v6_07_08/osa_vedos5.mp4` (moduuli `runs/v6_07_0
 **Koskemattomuus (keskimääräinen ruutuero 0–255 / keskikirkkaus uusi vs. vanha):** 10 s 0,34 (46,6 / 46,6); 100 s 0,87 (61,5 / 61,3); 130 s 0,46 (67,5 / 67,5); lopun rajakuva 195,2 s 0,01 (14,7 / 14,7). Eli 0–138 s ja loppu ovat ennallaan (ero on enkoodauskohinaa). Ero alkaa vasta allegrosta, kuten kamera-siirtymä alkaa: 150 s 23,4; 165 s 20,1; 185 s 27,3 (kamera on eri paikassa). Ruutumäärä sama 5859.
 
 **Nojaa (rivi 79: tarkistus kolmea dokumenttia vasten):** tyyliohje luku 2 kohta 5 ja luku 5 ("Staattiset hetket": C-duuri, taottu aurinko nousee kerrosten taakse, kamera pysähtyy; aurinko on tapahtuma, jonka katsoja näkee) ja luku 4d kohta 28 (aurinko nousee hitaasti ja täyttää valon C-duurissa); luku 12 kohdat 2 ja 16 (pysähdys ja taottu aurinko C-duurissa), kohta 3 (jatkuva liike, ei kallistusta; sivusiirtymä ei käännä kameraa); kohta 14 (valolla on lähde kerroksessa: lähde on runkojen välissä). Tutkimus (`docs/tapiola_tutkimus.md`): Tapion pöytä ja sen kolme runkoa pitävät sommittelun; aukko on pöydän omasta rakenteesta. Käsikirjoitus (`docs/kuvakasikirjoitus.md`, "Uusi runko", maailma 8): aurinko nousee kumpujen takaa pöydän takana ja kamera pysähtyy auringonsateessa; sommittelu säilyttää sen ja vain vaihtaa kameran sivupaikkaa. Kaikki muu (ankkurit `allegro_359`, `auringonsade`, `M_ennakko`) on sama kuin ennen.
+
+
+## Vedos 7 (10.11.2026): runko pois auringon tieltä, viisi iskua, lumi (brief `runs/vedos_v7/brief.md`, moduuli 07_08)
+
+Uusi `runs/maailma_07_08/osa.mp4`: 5859 ruutua (ffprobe), renderöity lukon kautta komennolla `node render/lukittu.mjs --data build/rattle_koko --page "visual/maailma.html?m=07_08&aa=2" --start 496.3 --end 691.6 --workers 2 --chunk 40 --out runs/maailma_07_08/osa.mp4` (loki `runs/maailma_07_08/v7/render.log`). Huom: `render.mjs` antaa sivun `seek()`:lle ruudun ajan suoraan (`i/FPS`) ja ankkurit ovat teoksen aikaa, joten `--start`/`--end` ovat TEOKSEN sekunteja (496,3 ja 691,6), ei moduulin omaa aikaa; `--start 0` ilman `--end`:iä renderöisi koko teoksen alusta. Ajat alla ovat videon aikaa (0 = 496,3 s). Y1 (puiden liike) jäi täsmälleen vedoksen 5 mukaiseksi (ohjaajan peruutus): `uSway`/`uWind` ja naavan liike ovat ennallaan.
+
+### Muutokset (`visual/maailma_07_08.js`)
+1. **Kameran rata kuten vedoksessa 5**: `camX` = `camX0` (sivusiirtymä `OFS`, `GAPX`, `smoother0` poistettu).
+2. **Lähirungot pois**: `avenueDef`, `pathX`, `uAv` ja piirtosilmukka poistettu kokonaan.
+3. **Rungon paikka** (rivi 72): pöydän keskirunko x = 0 -> -6 (`const float TX[3] = (-29, -6, 29)`, käytössä sekä rungon piirrossa että `postShadow`issa). Syy: auringon suora kamerasta on pöydän tasolla x = +3,6 pysähdyksessä (+12,4 allegron alussa), joten x = 0 -runko (säde 5,2) peitti kiekon; nyt keskirungon ja oikean rungon (29) välinen aukko sisältää koko suoran koko välillä (pienin akselietäisyys suoraan 9,6 m). Satunnaiset pylväät mitattu erikseen (JS-portti `pillarDef`:stä, kamerarata ja suora ruuduittain `allegro_359` -> `M_ennakko`): lähin pylvään akseli suoraan 35 m ja kameran ratalinjaan yli 39 m, eli niitä ei tarvinnut siirtää.
+4. **Viisi iskua**: `HITT` = `d.cues.cues.find('trumpetit_patarummut_356').iskut_t` (628,24 / 628,47 / 628,72 / 628,95 / 629,27 s), oma tunnistin (`brd`, `iskuarvot`) poistettu. Voimat 0,70 / 0,78 / 0,86 / 0,94 / 1,5, vaimeneminen 0,13 s (iskut 1-4) ja 1,5 s (isku 5, myös jälkihohto), isku 5 leveämpi (kulmaleveys 0,048 vs 0,014-0,026). Paikat: sama laskenta kuin ennen (kaukaa lähelle).
+5. **Lumi (Y2)**: lumen nopeus kulkee 3 s:n (+-1,5 s) liukuvan keskiarvon läpi (`rawY/rawX` -> `sSY/sSX`); paikka on edelleen kertymä.
+6. `kuvaus().lumi` tarkkuus 1 -> 4 desimaalia (vain mittausta varten).
+
+### T1: liikesarjat (valmiista renderistä, katsottu)
+- `runs/maailma_07_08/v7/s_iskut.png`: 131,7 s alkaen joka ruutu, 48 ruutua. Viisi erillistä pystyleikkausta: 1) 131,93 s (keskellä), 2) 132,17 (oikealla), 3) 132,43 (vasemmalla), 4) 132,67 (oikealla), 5) 132,97 (leveä, kirkkain, jää soimaan ja on vielä näkyvissä sarjan lopussa 133,27). Ei kuudetta eikä seitsemättä. Ruutuero-piikit (`osa.mp4.diffs.npy`): 132,47 = 11,2 ja 132,67 = 25,7 (mediaani 0,43).
+- Iskujen voimat renderiä ohjaavasta mallista (`kuvaus().iskuvoima`, huippu ruudussa): 1,47 / 1,64 / 1,81 / 1,97 / 3,15 (= 2,1 x voima).
+- `runs/maailma_07_08/v7/s_matka.png` (138,7 s alkaen 1 s välein, 50 ruutua, eli 10:35-11:25) ja `s_aurinko.png` (153,7 s alkaen 0,2 s välein, 50 ruutua): yhtään lähirunkoa ei ole kameran radalla; kuva on usvaa, runkoja kaukana ja kasvava punainen hehku. Aurinko nousee pöydän laudan takaa ja kiekko näkyy joka katsotussa ruudussa (osin laudan palkin takana, kuten ennenkin; lauta on vanhaa). Ruudussa 161,2 s (`t_161.2.png`) keskimmäinen runko on kiekon vasemmalla puolella (noin 7 % kuvan leveydestä) eikä peitä. Pysähdyksessä (180-187 s) pöydän rungot ovat kiekon molemmin puolin ja kiekko näkyy vapaana. (Automaattinen punaisen pikselin mittarini oli viallinen kiekon korkeuden arviossa, joten väite perustuu liikesarjoihin silmin katsottuna, ei lukuun.)
+- Runkojen leveys: suurin ruudussa näkyvä runko (pöydän keskirunko pysähdyksessä, 35 m päässä) noin 16-17 % kuvan leveydestä (laskettu 2*5,2*1,07/(35*1,78) = 17,8 %). **Ylittää briefin 15 %:n rajan hieman**; muut rungot alle 10 %. Ei korjattu, koska se vaatisi pöydän runkojen säteen tai kameran pysähdysetäisyyden muuttamista (ei määrätty).
+- Hyppyjä: ruutuero-piikit koko videolla vain 125,3 (tutti-isku, vanha), 132,47-132,97 (iskut) ja 188,83 (M, vanha); auringon korkeudessa ei hyppyjä.
+
+### T2: regressiomittari
+`.venv\Scripts\python.exe -I render/vertaa.py runs/vedos_v6u/osat/07_08.mp4 runs/maailma_07_08/osa.mp4 496.3`
+```
+runs/maailma_07_08/osa.mp4 vastaan runs/vedos_v6u/osat/07_08.mp4: 977 ruutua, 1 muuttunutta jaksoa (raja mse 2.0)
+  10:16.3 - 11:30.3   suurin mse 3245.4   (osan aika 120-194 s)
+```
+4 s:n ikkunat (mse): 0-116 s enintään 0,8 (vain lumen vaihe, Y2-tasaus), 116 s 0,74; 120 s 3,4; 124 s 22; 128 s 172; 132 s 2644; 136 s 238; 140 s 312; 144 s 504; 148 s 685; 152 s 689; 156 s 899; 160 s 667; 164 s 475; 168 s 424; 172 s 419; 176 s 385; 180 s 396; 184 s 408; 188 s 266; 192 s 14,8.
+Selitys jaksoille:
+- 120-128 s: vedoksen 6 lähirungot tulivat jo kaukaa näkyviin (`c_vertailu_128.5.png`: vasen vedos 6, oikea nyt; vedoksessa 6 tumma runko ruudussa, nyt ei) <- kohta 2.
+- 128-140 s: iskut (vanhan tunnistimen seitsemän iskua -> listan viisi, uudet paikat, voimat ja kesto) <- kohta 4; lisäksi lähirungot poissa.
+- 140-192 s: kameran sivusiirtymä pois (kohta 1), lähirungot pois (kohta 2), pöydän keskirunko paikassa -6 (kohta 3), lumen vaihe ja nopeus (kohta 5). Kuvan ero on iso, koska kamera, runkojen paikat ja auringon aukko ovat eri kohdassa kuin vedoksessa 6; se on kohtien 1-3 suora seuraus.
+- 192 s -> loppu: ero pienenee (14,8 -> 0).
+- Selittämätöntä jaksoa ei ole; 0-116 s enintään 0,8 (alle rajan 2,0), eli salin valot, usva, sellot ja kaikki ennen kohtaa 10:25 ovat ennallaan. Lumen vaihe on kuitenkin muuttunut koko ajan (kohta 5).
+
+### T3: sauma
+Ensimmäinen ruutu (0,0 s): mse 0,003 vs vedos 6 (keskikirkkaus 14,71 / 14,71); viimeinen ruutu (195,1 s): mse 0,007 (14,71 / 14,71). Sauma ennallaan. Kesto 195,3 s.
+
+### Lumi (Y2): nopeus ja kulma (mallista, `kuvaus().lumi` ruudulta ruudulle ja sen erotus)
+Vaakanopeuden etumerkki sama koko moduulin ajan (vx 0,25...4,98 m/s, aina positiivinen), kulma (vx/vy) 23,5...54,3 astetta. Suurin kulman muutos 9,3 astetta/s (21,2 s kohdalla, jousifraasin vaihto; raja 10); suurin ruutujen välinen nopeuden muutos 0,0375 m/s ruudussa (183 s), suhteellisesti enintään 1,1 % ruudussa; 0,5 s:n ikkunassa suurin nousu +17 % (138,7 s) ja lasku -13,5 % (190,6 s).
+
+| aika (s) | nopeus (m/s) | kulma | aika (s) | nopeus | kulma |
+|---|---|---|---|---|---|
+| 12,6 (viulut) | 0,93 | 30,9 | 140,5 | 3,16 | 50,8 |
+| 20,0 | 0,71 | 26,5 | 141,0 | 3,42 | 50,8 |
+| 22,2 (altot) | 0,72 | 26,7 | 144,0 | 4,29 | 50,9 |
+| 34,6 | 0,80 | 28,6 | 150,0 | 4,84 | 51,2 |
+| 43,7 (hitaat soinnut) | 0,98 | 36,3 | 170,0 | 5,99 | 52,2 |
+| 94,0 | 1,26 | 50,8 | 180,0 | 6,25 | 52,5 |
+| 125,3 (tutti-isku) | 1,27 | 50,8 | 183,7 (auringonsade) | 3,36 | 54,0 |
+| 130,0-131,0 (iskut) | 1,26-1,27 | 50,8 | 185,1 | 3,02 | 54,3 |
+| 138,2 (allegro) | 1,65 | 50,8 | 188,8 (M) | 2,87 | 54,2 |
+| 139,5 | 2,46 | 50,8 | 190,0 / 191,0 | 2,35 / 1,78 | 53,6 / 52,5 |
+
+Lumi ei reagoi iskuihin (nopeus 125,3 ja 130-131 s ennallaan).
+
+### Auki / epävarmaa
+- Pöydän keskirunko on siirretty (kohta 3) koko moduulin ajaksi, koska siirto ei saa tapahtua kuvassa; pöydän kolmen rungon symmetria muuttui (-29 / -6 / 29) myös alun kaukokuvassa. Brief sanoi "kaikki ennen 10:25 ennallaan"; mse enintään 0,8, mutta kaukainen pöytä on hieman eri paikassa. Vaihtoehto olisi ollut siirtää aurinkoa ruudulla (ei määrätty).
+- Rungon leveys pysähdyksessä 16-17 % (raja 15 %), ks. yllä.
+- Lumen tasaus alkaa 1,5 s ennen allegro-ankkuria (liukuva keskiarvo), joten lumi alkaa kiihtyä jo ennen 138,2 s:ää (nopeus 138,2 s: 1,65 vs 1,27).
+- Kulman muutos 9,3 astetta/s on lähellä rajaa 10.
+- Lumipölyn huntua/puuskaa tässä moduulissa ei ole (ei ollut), joten sitä ei lisätty.
+- Y1: pylväät ja pöydän rungot jäykkiä; ainoa liikkuva rungon yhteydessä on naava (uSway/uWind), ennallaan kuten vedoksessa 5. Latvan liikettä ei ole, joten 1 %:n rajaa ei ylity.
+
+
+### Vedos 7, lisäkorjaus (ohjaajan korjaus: lähirungot takaisin, viides isku rajatuksi)
+
+Uusi `runs/maailma_07_08/osa.mp4` (5859 ruutua, ffprobe; kesto 195,3 s; sama komento kuin yllä, loki `runs/maailma_07_08/v7/render2.log`). Edellinen render ilman lähirunkoja: `runs/maailma_07_08/v7/osa_v7a_ilman_lahirunkoja.mp4`. Tämä kappale korvaa edellä olevat kohdat "2. Lähirungot pois" ja "T2" sekä viidennen iskun leveyden.
+
+**Muutokset**
+- **Lähirungot palautettu** vedoksen 5 mukaisiksi (`pathX`, `avenueDef`, `uAv`, piirtosilmukka ja `uAv`-asetus kopioitu sellaisenaan vedoksen 6 tiedostosta, joka oli samoilta osin vedoksen 5 kanssa identtinen: `git diff 09eac76` ei näytä niissä eroa). Kameran rata on vedoksen 5. Rungoista ei siirretty yhtäkään.
+- **Ehto (a)**: lähirungon akselin pienin sivuttaisetäisyys kameran radasta on 4,79 m (laskettu kaikille 22 lähirungolle, `avenueDef` portattuna JS:ään ja kameran rata renderin mallista) > 2,5 m. Siirrettäviä ei ole.
+- **Ehto (b)**: ikkunassa `auringonsade` - 8 s -> `M_ennakko` (videon 175,7-188,8 s) yksikään lähirunko ei ole kameran ja auringon välisellä suoralla alle 3 m:n akselietäisyydellä (kaikki 22 trunkia ruuduittain tarkistettu, osumia 0; viimeiset rungot z = 204,8 / 209,3 / 213,8, kamera pysähtyy z = 219,7). Siirrettyjen runkojen lista: tyhjä. Ennen ikkunaa rungot kulkevat auringon editse kuten vedoksessa 5.
+- **Viides isku rajattu**: uusi uniformi `uHH[8]` (hohteen kerroin). Iskulle 5: kulmaleveys 0,048 -> 0,030, hohteen kerroin 0,25 (pystyleikkauksen hohde, usvan hohde ja lattian tärähdys; ydin ja voima 1,5 ennallaan). Iskut 1-4 ennallaan (kerroin 1).
+
+**Viides isku, kuvan keskikirkkaus renderistä** (480x270, keskiarvo 0-255): edeltävä ruutu 132,933 s 61,8 -> iskuruutu 132,967 s 75,7 (+22 %), 133,000 s 81,7 ja 133,033 s 82,9 (suurin, +34 % edeltävään ruutuun verrattuna). Aiempi versio: 70,4 -> 113,6 (+61 %), huippu 133,1 (+89 %). Täysin valkoista (>= 250) on 2,2 % kuvan alasta eli vain pystyleikkauksen ydin (ennen 4,2 %); hohteessa ei ole valkaistua aluetta. Liikesarja iskuista (`v7/s_iskut.png`) on edelliseltä renderiltä; uuden renderin lukuarvot ovat tässä.
+
+**T2: `vertaa.py` vedosta 5 vastaan** (`runs/vedos_v5/osat/07_08.mp4`, raja 2,0):
+```
+runs/maailma_07_08/osa.mp4 vastaan runs/vedos_v5/osat/07_08.mp4: 977 ruutua, 1 muuttunutta jaksoa (raja mse 2.0)
+  10:26.3 - 11:30.3   suurin mse 1060.8   (osan aika 130-194 s)
+```
+4 s:n ikkunat (mse), uusi vs vedos 5 / (edellinen vedos 6): 0-124 s 0,1-0,7; 128 s 99 (99); 132 s 756 (756); 136 s 23 (23); 140 s 4,4 (20); 144 s 7,7 (201); 148 s 11,6 (574); 152 s 19,8 (707); 156 s 34,9 (777); 160 s 37,6 (807); 164 s 52 (436); 168 s 96 (566); 172 s 108 (715); 176 s 190 (529); 180 s 429 (396); 184 s 375 (408); 188 s 390 (266); 192 s 17 (15). Välillä 10:36-11:00 (140-164 s) ero vedokseen 5 on 4-52 (aiemmin 20-807 eli murto-osa).
+Selitys: 128-136 s = viisi iskua listasta (vanhan tunnistimen seitsemän tilalle; kohta 4); 136-176 s pieni ero = lumi (tasaus, Y2) ja pöydän keskirunko x = -6 (kaukana, kohta 3); 176-192 s = pysähdys, jossa keskirunko ja sen varjot ovat eri paikassa kuin vedoksessa 5 ja kiekko näkyy (kohta 3). Ei muita eroja.
+
+**Liikesarja** `runs/maailma_07_08/v7/s_uusi_140.png` (140 s alkaen 2,5 s välein, 24 ruutua) vedoksen 5 vastaavan `s_v5_140.png` rinnalla: rungot samoissa paikoissa ja samassa liikkeessä kuin vedoksessa 5 (lähirungot kulkevat ohi, aurinko välähtää niiden raoista); eroa on lumessa, kiekon näkyvyydessä pysähdyksessä (3:00-3:10, uusi: kiekko vapaana keskirungon ja oikean rungon välissä; vedos 5: keskirunko puolittaa/peittää kiekkoa) ja pöydän keskirungon paikassa.
+
+**Auringon näkyvyys ruuduittain 11:00-11:25** (videon 163,7-188,7 s, 750 ruutua, renderistä): kiekon alueella (säde 0,8 x Rs) punaisten pikselien osuus (R > 1,3 B ja R > 60) pienin 0,45 (173,8 s), keskimäärin 0,77; ruutuja, joissa osuus < 0,15: 0. 163,7-178,7 s osuus on 0,45-0,65, koska pöydän lauta (vaakapalkki) kulkee kiekon yli, kuten vedoksessa 5; 178,7-188,7 s osuus 0,99-1,00 (pysähdys, kiekko kokonaan vapaana). Mikään runko ei peitä kiekkoa missään ruudussa.
+
+**T3**: ensimmäinen ruutu mse 0,003 ja viimeinen 0,007 vedokseen 6 verrattuna; sauma ennallaan.
+
+**Avoin**: lähirungot ovat vedoksen 5 geometriaa, ja ohi kulkiessaan yksittäinen runko voi peittää yli 15 % kuvan leveydestä (esim. 2:35 ja 2:37,5 ruuduissa oikean/vasemman reunan runko, arvio 15-25 %, sama kuin vedoksessa 5); brief ei määrännyt niiden kokoa muutettavaksi, joten ei muutettu. Pöydän keskirunko pysähdyksessä 16-17 % (ks. yllä).
