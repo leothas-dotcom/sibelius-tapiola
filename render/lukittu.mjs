@@ -2,7 +2,7 @@
 // Käyttö: node render/lukittu.mjs <samat valinnat kuin render.mjs>
 // Lukko on kansio build/render.lock. Jos se on varattu, odotetaan. Yli 20 minuuttia vanha lukko katsotaan jääneeksi ja poistetaan.
 import { spawn } from 'node:child_process';
-import { mkdirSync, rmdirSync, statSync, existsSync } from 'node:fs';
+import { mkdirSync, rmdirSync, statSync, existsSync, utimesSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,6 +23,8 @@ async function varaa() {
 const vapauta = () => { try { if (existsSync(lukko)) rmdirSync(lukko); } catch { /* ei haittaa */ } };
 
 await varaa();
+// lukko pidetään tuoreena niin kauan kuin renderi käy: muuten yli 20 minuutin renderin lukko katsottaisiin jääneeksi ja toinen renderi alkaisi päälle
+const syke = setInterval(() => { try { const nyt = new Date(); utimesSync(lukko, nyt, nyt); } catch { /* ei haittaa */ } }, 60 * 1000);
 process.on('SIGINT', () => { vapauta(); process.exit(130); });
 const lapsi = spawn(process.execPath, [join(juuri, 'render', 'render.mjs'), ...process.argv.slice(2)], { stdio: 'inherit', cwd: juuri });
-lapsi.on('exit', (koodi) => { vapauta(); process.exit(koodi ?? 1); });
+lapsi.on('exit', (koodi) => { clearInterval(syke); vapauta(); process.exit(koodi ?? 1); });
