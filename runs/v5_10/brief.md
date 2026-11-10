@@ -43,3 +43,39 @@ Käyttäjä: "Aksentti 14:30 ei näy".
   0,2 sekunnissa välillä `myrsky_kasvu` → `myrsky_iskee`, ja anna jokaiselle pienempi vastaava puuska. Käyttäjä kuuli aksentin
   kohdassa 14:30; mittaus löytää pienemmän kohouman 14:30,2 ja suurimman 14:32,0. Molempien pitää näkyä, suurimman selvimmin.
 - Tarkista liikesarjasta: `myrsky_aksentti_537` − 0,5 s … + 1,5 s, 1 ruudun välein (muutos näkyy ankkurin ruudussa).
+
+## KIERROS 2 (10.11.2026): kriitikon raportti `runs/maailma_10/kriitikko_v5.md` ja ohjaajan päätökset. Lue raportti kokonaan.
+
+**Parempi kuin vedos 4, mutta ei kelpaa** (viisi estävää). Toimii ja säilytetään: myrskyn nousu (`myrsky_nakyy` → `myrsky_iskee`)
+ennallaan, kuvan kirkkaus seuraa äänen tasoa (korrelaatio 0,79), pyörre liikkuu, tausta näkyy kahdessa jaksossa metsänä, Q:n ja
+R:n leikkaukset osuvat iskuun, loppukirkkaus täsmää rajakuvaan.
+
+1. **Lumi ei ole sauvoja (estävä).** Nyt: teräväreunaiset tasapaksut viivat, jotka hyppäävät ruutujen välillä yli oman
+   pituutensa (katkoviiva). Vaadittu: hiutaleen viirun pituus on täsmälleen sen matka yhden ruudun aikana (liike-epäterävyys),
+   joten peräkkäiset ruudut jatkavat toisiaan; reunat pehmeät, pää ohenee, kirkkaus ja koko vaihtelevat syvyyden mukaan.
+   Kolme lumen mittakaavaa: lähellä harvat suuret ja epätarkat, keskellä tiheä viiruparvi, kaukana hieno lumisavu, joka virtaa
+   verhoina (kohinakenttä, jota tuuli kuljettaa). Todiste: kolme peräkkäistä ruutua täydessä koossa.
+2. **Lumen määrä seuraa ääntä oikein päin (estävä).** Nyt lumen määrä on käänteinen äänen tasoon (r −0,6) eikä kuva seuraa
+   ääntä alle −35 dBFS. Lumen tiheys, nopeus ja kirkkaus kasvavat tason ja liiketiheyden mukana koko dynamiikka-alueella
+   (hiljaisissakin kohdissa suhteellinen muutos näkyy). Raportoi korrelaatio lumen määrän ja tason välillä.
+3. **Aksentti on askel, ei välähdys (estävä).** Molemmat (mitattu pieni noin 870,2 s ja `myrsky_aksentti_537`): rintaman etäisyys
+   on monotoninen käyrä, joka hyppää aksentissa lähemmäs **ja jää sinne**; samalla lähimmät latvat taipuvat puuskassa ja lumi
+   pöllähtää niistä, ja kirkkaus jää uudelle tasolle. Katsojan pitää säpsähtää: suurempi aksentti vähintään kolmanneksen
+   lähempänä yhdessä ruudussa.
+4. **Syvyys koko myrskyn ajan (estävä).** Välillä `Q_koko_metsa` − 10 s … `R_vasket` tausta (metsän rosoinen siluetti, vaara,
+   horisontin valo) näkyy puuskien raoista toistuvasti, vähintään muutaman sekunnin välein, lukuun ottamatta huipun noin kuutta
+   sekuntia. Raot avautuvat ja sulkeutuvat äänen mukana.
+5. **Huipun valkoinen seinä on kuva, ei tyhjä harmaa (estävä).** Seinässä näkyy rakenne ja suunta: tiheät lumiverhot virtaavat
+   kovaa samaan suuntaan, niiden tiheys aaltoilee (vaaleampia ja tummempia kieliä), lähihiutaleet ovat suuria, ja vaskien iskut
+   leikkaavat valona seinän läpi. Kerrokset ovat yhtä, mutta kuva elää.
+6. **Jakso `R_vasket` − 4 s … `toinen_paisunta` ei saa olla 18 sekuntia samaa kuvaa:** R on nimetty isku ja jälkiaalto, sen jälkeen
+   myrsky harvenee aaltoina (ei tasaisesti), lumi pöllyää latvoista, pyörteet hajoavat; jokaisella 5 sekunnin jaksolla on oma
+   tapahtumansa äänestä. Sama koskee jaksoa noin 14:42–14:58.
+7. **Pyörre on osa virtausta:** viirut kaartuvat sen ympäri laajalla alueella (vähintään kolmannes kuvan leveydestä), ei pieni
+   leimasin. Se syntyy puuskasta ja hajoaa.
+8. **Loppu:** hiutaleet eivät katoa kerralla: tiheys kasvaa, kunnes ne sulavat rajakuvan LUMI pintaan; virtauksen kääntyminen ylös
+   näkyy silmällä (viirut pystyyn ja ylöspäin, ei oikealle).
+
+Renderöi koko väli uudelleen samaan paikkaan, tee liikesarjat jokaisesta kohdasta ja mittaukset kohdista 1–4, ja kirjoita
+`runs/maailma_10/tarkistus.md` uudelleen.
+
