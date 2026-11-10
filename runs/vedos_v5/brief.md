@@ -1,4 +1,4 @@
-**Lue ensin `docs/visuaalinen_tyyli.md` kokonaan (kuvasäännöt luvussa 12, käyttäjän sanat luvussa 4d) ja `runs/maailmat/brief.md` kokonaan sekä kaikki, mitä se käskee lukea. Vasta sitten tämä ja oman moduulisi korjausbrief `runs/vedos_v5/korjaus_<moduuli>.md`.**
+**Lue ensin `docs/visuaalinen_tyyli.md` kokonaan (kuvasäännöt luvussa 12, käyttäjän sanat luvussa 4d) ja `runs/maailmat/brief.md` kokonaan sekä kaikki, mitä se käskee lukea. Vasta sitten tämä ja oman moduulisi korjausbrief `runs/v5_<moduuli>/brief.md`.**
 
 # Vedos 5: korjauskierros käyttäjän palautteen jälkeen (10.11.2026)
 
