@@ -120,3 +120,45 @@ metsältä kaukaa, ei oksalta läheltä.
 Tee ensin yksi still terävästä kohdasta ja katso se kriittisesti: jos jokin siinä näyttää piirretyltä puulta, tikulta tai
 lastenkirjan kuvalta, muuta ennen kuin renderöit. Sitten koko väli, todisteet ja tarkistus.md kuten ennen.
 
+## KIERROS 4 (10.11.2026): OHJAAJAN PÄÄTÖS: PALATAAN VEDOKSEN 4 MAAILMAAN JA LISÄTÄÄN SIIHEN VAIN SE, MITÄ KÄYTTÄJÄ PYYSI
+
+**Tämä luku kumoaa kierrokset 1–3 ja tämän briefin alkuosan siltä osin kuin ne käskevät rakentamaan maailman uudelleen.**
+
+Kolme kierrosta uutta maailmaa on hylätty (kuusimatto ylhäältä = lopun kuva; tikkukuuset; nauhamainen oksisto: kriitikon
+raportit `runs/maailma_05/kriitikko_v5.md` ja `kriitikko_v5b.md`). Ohjaajan virhe: **käyttäjä ei pyytänyt tälle maailmalle
+uutta paikkaa.** Hän katsoi vedoksen 4 tämän välin eikä moittinut sitä; hän sanoi vain: "Sibeliuksen mainitsemat nymphit ei
+oikein nyt näy - se kappaleen leikkisä puoli. ... älä laita liikaa. Vain oikeisiin kohtiin. ... puupuhaltajat liikkuvat
+staccato, ja leikittelevät", "Ei staattista lunta" ja "Pidin valoista, jotka olivat kuin keijut". Tyyliohje 4d kohta 21: yksi
+palaute ei kaada sitä, mikä toimii.
+
+### Lähtökohta
+- **Vedoksen 4 moduuli on tiedostossa `runs/v5_05/maailma_05_vedos4.js`** (huurteen kiteen sisäpuoli: laakso, tykkylumen
+  pyöristämät harjanteet kerroksittain usvaan, kiteen valo horisontissa, linnat, pisara lopussa; renderi
+  `runs/v5_05/osa_vedos4.mp4`). **Kopioi se tiedostoksi `visual/maailma_05.js` ja tee muutokset siihen.** Maisemaa, kameraa,
+  rajakuvia, pisaraa ja askeleita ei rakenneta uudelleen.
+- Kierroksen 3 oksistoversio on tallessa (`runs/v5_05/maailma_05_kierros3_oksisto.js`); siitä ja kierroksen 1 koodista saa ottaa
+  **vain pilkahdusten laskennan**: yksi mitattu ääni = yksi pilkahdus, parit, juoksu, tanssin kolme paikkaa, loppu ruudussa.
+
+### Muutokset, vain nämä
+1. **Nymfit (päätehtävä).** Vedoksen 4 väike korvataan tai täydennetään niin, että leikki näkyy kuunteluoppaan kohdissa:
+   - `puhaltimet_staccato`: pilkahdukset kulkevat **pareina** samaa polkua harjanteiden latvojen yllä.
+   - `D_pikkolo`: valojen juova kiitää laaksoa pitkin ylös kuvan yläosaan ja takaisin.
+   - `nopea_liike_1_alku` → `nopea_liike_1_loppu` (grazioso-tanssi): **kolme paikkaa** (kolme harjannetta tai linnaa eri
+     korkeuksilla ja eri puolilla kuvaa) vuorottelee ja sama paikka palaa; jokaisessa vuorossa 3–6 valoa kulkee kuvion
+     muotoisena polkuna; painotettu ääni on kirkkaampi. Tanssi lakkaa ankkurin ruudussa.
+   - **Valot ovat "kuin keijut":** pehmeä hohtava ydin (noin 6–10 pikseliä 1080p:ssä) ja laajempi kehä, kylmä hopea, hidas
+     häivytys (0,3–0,5 s), ja valo valaisee hieman harjanteen latvaa, jonka yllä se on. Ei nelisakaraisia tähtiä, ei ristejä.
+     Niiden pitää erottua lumesta selvästi: kirkkaampia, suurempia ja liikkeessä polkua pitkin. Ei muualla kuin näissä
+     kohdissa ja siellä, missä vedos 4 jo näytti väikettä `e_pitka_ja_kuviot`issa.
+2. **Lumi liikkuu aina** (sataa ja ajelehtii kertymänä); ei pisteverhoa, ei paikallaan seisovia pisteitä.
+3. **Kamera etenee näkyvästi koko välin** (jos vedoksessa 4 on jaksoja, joissa kuva seisoo yli 10 s, lisää etenemistä ja
+   parallaksia harjanteisiin; älä muuta reittiä).
+4. **Kirjain F (`nopea_liike_1_loppu`):** valot pois samassa ruudussa, pimeys nousee alhaalta (jos vedos 4 ei tee tätä).
+5. Horisontin suuri vaalea ellipsi: pehmennä niin, että valo lukee harjanteiden takaa tulevaksi hehkuksi, ei soikioksi. Ei muuta.
+6. Kumipuusääntö: harjanteiden muoto ei muutu ajan mukana (tarkista `uSway`: jos se muuttaa siluetin muotoa näkyvästi, rajaa
+   yhteisen briefin lukuihin).
+
+Älä tee mitään muuta. Renderöi koko väli lukon kautta tiedostoon `runs/maailma_05/osa.mp4`, katso liikesarjat nymfikohdista
+(staccato + 6 s, D_pikkolo, tanssi 10 s, tanssin loppu ±2 s) ja kontaktiarkki 6 s välein, vertaa vedoksen 4 renderiin (mikään
+siinä toiminut ei saa olla kadonnut), ja kirjoita `runs/maailma_05/tarkistus.md`.
+
