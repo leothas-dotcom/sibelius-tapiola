@@ -38,21 +38,21 @@ float bumps(float x, float cell, float sd) {
     float ci = c + float(j), h = hash(vec2(ci, sd));
     float xi = (ci + 0.2 + 0.6 * hash(vec2(ci, sd + 3.1))) * cell, w = cell * (0.55 + 0.7 * hash(vec2(ci, sd + 7.3)));
     float q = clamp(1.0 - pow(abs(x - xi) / w, 2.0), 0.0, 1.0);
-    m = max(m, (0.35 + 0.65 * h) * pow(q, 0.8));
+    m = max(m, (0.35 + 0.65 * h) * sqrt(q) * q);
   }
   return m;
 }
 float crestAt(float wx, float n, float zl, out float lm) {
   float sx = wx - xcf(zl) - 3.0 * (hash(vec2(n, 8.8)) - 0.5), u = abs(sx);
-  float tall = hash(vec2(n, 2.2)) > 0.78 ? 1.9 : 1.0;                         // joka viides kerros on korkeampi vaara
-  float wall = (sx < 0.0 ? 3.0 + 9.0 * vnoise(vec2(n * 0.37, 1.3)) : 3.0 + 9.0 * vnoise(vec2(n * 0.41, 7.7))) * tall;
-  wall *= 0.45 + 0.9 * vnoise(vec2(wx * 0.04 + n * 1.7, n));
-  float k = smoothstep(6.0, 40.0, u + 7.0 * (vnoise(vec2(n * 2.3, 4.0)) - 0.5));
-  lm = 0.55 * bumps(wx, 11.0, n) + 0.35 * bumps(wx + 3.1, 4.4, n + 9.0) + 0.10 * bumps(wx + 1.7, 1.5, n + 17.0);
-  return -2.2 + wall * pow(k, 1.1) + (2.9 + 6.0 * k) * lm + 0.10 * (vnoise(vec2(wx * 3.1, n)) - 0.5);
+  float wall = (sx < 0.0 ? 1.5 + 2.6 * vnoise(vec2(n * 0.37, 1.3)) : 1.5 + 2.6 * vnoise(vec2(n * 0.41, 7.7)));
+  wall *= 0.6 + 0.8 * vnoise(vec2(wx * 0.02 + n * 1.7, n));
+  float k = smoothstep(6.0, 60.0, u + 7.0 * (vnoise(vec2(n * 2.3, 4.0)) - 0.5));
+  // pyöreät tykkylumilatvukset: leveitä pehmeitä möykkyjä erikokoisina ryhminä, ei korkeataajuista rosoa
+  lm = 0.62 * bumps(wx, 14.0, n) + 0.38 * bumps(wx + 4.1, 6.5, n + 9.0);
+  return -2.2 + wall * pow(k, 1.1) + (1.2 + 1.8 * k) * lm;
 }
 vec3 glowAt(float gx, float gy) {      // kiteen valo horisontissa: leveä vyö ja tiivis ydin (tan-avaruus)
-  float band = exp(-pow((gy - uHorE) / 0.045, 2.0)) * exp(-pow(gx / 1.1, 2.0));
+  float band = exp(-pow((gy - uHorE) / 0.075, 2.0)) * exp(-pow(gx / 1.1, 2.0));
   float wide = exp(-max(gy - uHorE, 0.0) / 0.22) * 0.10 * exp(-pow(gx / 1.3, 2.0));
   float core = exp(-(pow(gx / 0.16, 2.0) + pow((gy - uHorE - 0.012) / 0.07, 2.0)));
   return HALLA * (uGlow * (0.55 * band + wide) + uCore * 1.6 * core);
@@ -85,7 +85,7 @@ vec4 castleAt(int ci, vec3 rd, float fogA) {
     base = HAMY * (0.9 + 0.8 * tex) + SALO * 0.07 * tex;
   }
   float rim = exp(-max(dd, 0.0) / 0.9);
-  vec3 tone = base * (1.0 - 0.45 * uDark) + HALLA * (0.020 + 0.080 * uGlow) * rim * (1.0 - 0.4 * uDark);
+  vec3 tone = base * (1.0 - 0.45 * uDark) + HALLA * (0.05 + 0.16 * uGlow) * rim * (1.0 - 0.4 * uDark);
   // kuusi ikkunaa: kaksi riviä, kolme saraketta; syttyvät rekisterin mukaan, eivät koskaan kaikki yhtä aikaa
   for (int i = 0; i < 6; i++) {
     float r = float(i / 3), c = float(i % 3);
@@ -95,7 +95,7 @@ vec4 castleAt(int ci, vec3 rd, float fogA) {
     tone += SILV * ww * (0.02 + 1.7 * exp(-pow(dot(q, q), 2.0)) + 0.20 * exp(-dot(q, q) * 0.25));
   }
   tone = mix(tone, SALO * (0.5 + 0.9 * uGlow), fogA);
-  return vec4(tone, a * (1.0 - smoothstep(170.0, 215.0, z)));
+  return vec4(tone, a * (1.0 - smoothstep(170.0, 215.0, z)) * smoothstep(30.0, 75.0, z));
 }
 
 // väike: kiihtyvä piste, joka siirtyy paikasta A paikkaan B ja jättää polun, joka himmenee
@@ -112,7 +112,7 @@ vec3 sparkAt(int i, vec3 rd, float fogA) {
   float wd = 0.07 + 0.9 * pix;
   float trail = exp(-B.y / 0.85) * smoothstep(0.0, 0.05, B.y) * (0.20 + 0.80 * h);     // polku: vanhin pää himmeämpi
   float head = exp(-B.y / 0.28) * smoothstep(0.0, 0.03, B.y);
-  float line = exp(-pow(dist / wd, 2.0)) * trail * 0.55;
+  float line = exp(-pow(dist / wd, 2.0)) * trail * 0.10;
   float dh = length(pq - b);
   float pt = exp(-pow(dh / (wd * 2.2), 2.0)) * head * 1.6 + 0.10 * exp(-pow(dh / (wd * 9.0), 2.0)) * head;
   return SILV * B.z * (line + pt) * (1.0 - 0.6 * fogA);
@@ -185,7 +185,7 @@ vec3 scene(vec2 p) {
     for (int q = 0; q < 10; q++) if (zs[q] <= zPrev && zs[q] > z) {
       vec2 w2 = (vec2(wx, wy) * 0.0 + vec2(uCamX + rd.x * zs[q] / rd.z, uCamY + rd.y * zs[q] / rd.z) + vec2(0.20, 0.07) * uTime) / 2.4 + float(q) * 17.3 + floor((float(q) * 9.1 - uCamZ) / 91.0) * 3.7;
       vec2 ic = floor(w2), fr = fract(w2); float hh = hash(ic);
-      if (hh < 0.34 * (1.0 - 0.85 * smoothstep(25.0, 80.0, zs[q]))) { vec2 cc = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.1)); float dd2 = length(fr - cc) * 2.4, rr = 0.07 + 0.00045 * zs[q];
+      if (hh < 0.34 * (1.0 - 0.97 * smoothstep(20.0, 60.0, zs[q]))) { vec2 cc = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.1)); float dd2 = length(fr - cc) * 2.4, rr = 0.07 + 0.00045 * zs[q];
         float tw = 0.65 + 0.35 * sin(uTime * (0.7 + 2.0 * hash(ic + 9.0)) + hash(ic) * 40.0);
         col += HALLA * 0.34 * (0.25 + 0.75 * uGlow) * smoothstep(rr, rr * 0.2, dd2) * smoothstep(2.5, 7.0, zs[q]) * smoothstep(94.0, 70.0, zs[q]) * exp(-zs[q] / uFogL * 0.6) * mix(1.0, tw, uTwk); }
     }
@@ -202,18 +202,20 @@ vec3 scene(vec2 p) {
     a *= 1.0 - smoothstep(170.0, 215.0, z);
     a *= mix(1.0, smoothstep(5.0, 38.0, z), uMelt);                       // sulaessa lähimmät harjanteet muuttuvat usvaksi: kamera menee usvan läpi
     if (a <= 0.002) continue;
+    float gapT = smoothstep(0.64, 0.82, vnoise(vec2(wx * 0.9, wy * 1.5 + n * 2.0))) * smoothstep(0.15, 0.8, dd) * (1.0 - smoothstep(2.5, 5.0, dd));   // valo siivilöityy latvojen välistä
+    a *= 1.0 - 0.75 * gapT;
     float holes = smoothstep(0.55, 0.80, vnoise(vec2(wx * 0.22 + n * 3.0, wy * 0.35 + n * 5.1 + uTime * 0.12))) * smoothstep(0.8, 7.0, dd);   // alta harva
     a *= 1.0 - 0.75 * holes;
-    float lv = (0.35 + 0.65 * smoothstep(0.25, 0.70, vnoise(vec2(wx * 0.05 + n * 2.9, n)))) * (0.6 + 0.6 * lm);
-    float rimW = 0.6 + 1.3 * lm;
+    float lv = (0.35 + 0.65 * smoothstep(0.25, 0.70, vnoise(vec2(wx * 0.05 + n * 2.9, n)))) * (0.6 + 0.6 * lm) * (0.75 + 0.25 * uSway * sin(wx * 0.11 - uTime * 1.6 + n));
+    float rimW = 0.9 + 1.6 * lm;
     float rim = exp(-max(dd, 0.0) / rimW);
-    vec3 dark = mix(HAMY, SALO * 0.20, 0.30) * (0.65 + 0.7 * vnoise(vec2(wx * 0.8, wy * 0.8 + n)));
+    vec3 dark = mix(HAMY, SALO * 0.20, 0.30) * (0.85 + 0.3 * vnoise(vec2(wx * 0.15, wy * 0.15 + n)));
     // huurteen kimallus latvan reunalla: kiteet, jotka ottavat valon
     vec2 sg = vec2(wx, wy) * 1.6 + n * 3.3; vec2 sc = floor(sg); float sh = hash(sc);
     float spk = step(0.94, sh) * smoothstep(0.20, 0.03, length(fract(sg) - 0.2 - 0.6 * vec2(hash(sc + 1.1), hash(sc + 2.7)))) * exp(-max(dd, 0.0) / 1.1);
     float side = 0.55 + 0.45 * exp(-pow((wx - xcf(zl)) / 36.0, 2.0));
     vec3 rimc = HALLA * (0.010 + 0.085 * uGlow * (1.0 - 0.45 * uDark)) * side * exp(-z / 110.0);
-    vec3 tone = (dark * (1.0 - 0.40 * uDark)) + rimc * rim * lv + HALLA * 0.12 * spk * (0.35 + 0.65 * uGlow) * exp(-z / 130.0) * mix(1.0, 0.55 + 0.45 * sin(uTime * 0.9 + sh * 30.0), uTwk);
+    vec3 tone = (dark * (1.0 - 0.40 * uDark)) + rimc * rim * lv + HALLA * 0.012 * spk * (0.35 + 0.65 * uGlow) * exp(-z / 130.0) * mix(1.0, 0.55 + 0.45 * sin(uTime * 0.9 + sh * 30.0), uTwk);
     vec3 mist = fogc * (0.30 + 0.45 * uGlow) * exp(-dd / (2.4 * Lb));
     tone = mix(tone, mist, smoothstep(0.5 * Lb, 1.6 * Lb, dd));          // alaosa: usva, joka pimenee syvyyteen
     // legato: latvan reuna syttyy yhtenäiseksi säikeeksi
@@ -231,7 +233,7 @@ vec3 scene(vec2 p) {
   for (int q = 0; q < 10; q++) if (zs[q] <= zPrev && rd.z > 0.02) {
     vec2 w2 = (vec2(uCamX + rd.x * zs[q] / rd.z, uCamY + rd.y * zs[q] / rd.z) + vec2(0.20, 0.07) * uTime) / 2.4 + float(q) * 17.3 + floor((float(q) * 9.1 - uCamZ) / 91.0) * 3.7;
     vec2 ic = floor(w2), fr = fract(w2); float hh = hash(ic);
-    if (hh < 0.34 * (1.0 - 0.85 * smoothstep(25.0, 80.0, zs[q]))) { vec2 cc = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.1)); float dd2 = length(fr - cc) * 2.4, rr = 0.07 + 0.00045 * zs[q];
+    if (hh < 0.34 * (1.0 - 0.97 * smoothstep(20.0, 60.0, zs[q]))) { vec2 cc = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.1)); float dd2 = length(fr - cc) * 2.4, rr = 0.07 + 0.00045 * zs[q];
       float tw = 0.65 + 0.35 * sin(uTime * (0.7 + 2.0 * hash(ic + 9.0)) + hash(ic) * 40.0);
       col += HALLA * 0.34 * (0.25 + 0.75 * uGlow) * smoothstep(rr, rr * 0.2, dd2) * smoothstep(2.5, 7.0, zs[q]) * smoothstep(94.0, 70.0, zs[q]) * exp(-zs[q] / uFogL * 0.6) * mix(1.0, tw, uTwk); }
   }
@@ -250,7 +252,7 @@ vec3 scene(vec2 p) {
     float rad = length((p - c0) * vec2(1.0, 1.15)) + 0.34 * (fbm(p * 2.6 + 3.0) - 0.45) + 0.08 * (fbm(p * 9.0 + 7.0) - 0.5);
     float R = mix(-0.55, 1.85, e);
     float va = smoothstep(R - 0.30, R, rad);
-    vec3 vc = rajakuva(pv, RAJA_HUURRE, uTime);
+    vec3 vc = mix(rajakuva(pv, RAJA_HUURRE, uTime), vec3(0.30, 0.37, 0.50) * (0.72 + 0.55 * fbm(pv * 3.5 + uTime * 0.04)), smoothstep(0.0, 0.18, e));
     vc *= 1.0 + 0.45 * exp(-pow((rad - R) / 0.14, 2.0)) * smoothstep(0.0, 0.06, e);
     col = mix(col, vc, va);
   }
@@ -316,15 +318,15 @@ async function alusta() {
       w.z = cz + 32 + 120 * h1; w.x = xcf(w.z) + (h2 - 0.5) * 30; w.y = cy + 1.5; w.alku = true;
     }
     const frac = clamp((n[2] - 72) / 28, 0, 1), zr = w.z - cz;
-    const hedef = cy + (-0.03 + 0.34 * frac) * zr / F, lim = 0.07 * zr;
+    const hedef = cy + (-0.03 + 0.34 * frac) * zr / F, lim = 0.03 * zr;
     const by = w.y + clamp(hedef - w.y, -lim, lim);
-    const bx = w.x + (h3 - 0.5) * (3 + 0.045 * zr);
+    const bx = w.x + (h3 - 0.5) * (2 + 0.025 * zr);
     SP.push({ t: n[0], ax: w.x, ay: w.y, bx, by, z: w.z, v: 0.65 + 0.35 * h2 });
     w.x = bx; w.y = by; w.viime = n[0];
   }
   // ---- linnat: puinen, luinen, kivinen; paikat tulevat ankkureista ----
   const PASS = [TS + 0.62 * (TN0 - TS), TN0 + 0.05 * (TN1 - TN0), TN0 + 0.70 * (TN1 - TN0)];
-  const LATERAL = [-26, 28, -31];
+  const LATERAL = [-15, 17, -19];
   const KORK = [10.0, 11.5, 12.0];
   const CAS = PASS.map((tp, i) => { const z = camZ(tp) - 2 + 8 * i; return [z, xcf(z) + LATERAL[i], KORK[i], 3.0 + 5.7 * i]; });
   const REG = [[72, 79], [80, 87], [88, 120]];
@@ -352,7 +354,7 @@ async function alusta() {
     const glow = (0.42 + 0.85 * kide) * (1 - 0.35 * jouset) * (1 - 0.35 * sulaa);
     const core = (0.20 + 1.00 * kide) * (1 - 0.30 * jouset) * (1 + 0.8 * sulaa * d.koko(t, 1.5));
     const bottom = sstep(0.06, 0.42, d.matala(t, 1.2));
-    const horE = 0.020 + 0.060 * clamp((mel - 70) / 14, -1, 1);
+    const horE = 0.020 + 0.100 * clamp((mel - 70) / 14, -1, 1);
     const u = (t - TJ) / SPAN;
     // pisara
     const hold = sstep(TJ + 0.10 * SPAN, TJ + 0.40 * SPAN, t);
@@ -387,9 +389,9 @@ async function alusta() {
       set1('uTime', t); set1('uCamX', s.cx); set1('uCamY', s.cy); set1('uCamZ', s.cz); set1('uPitch', s.pitch);
       set1('uYc', lerp(0.36, 0.5, sstep(TJ + 0.40 * SPAN, T1 - 0.5, t)));
       set1('uGlow', s.glow); set1('uCore', s.core); set1('uHorE', s.horE); set1('uDark', s.jouset); set1('uBottom', s.bottom);
-      set1('uLeg', s.leg); set1('uVeil', t - T0 >= TVEIL ? 1.0 : smooth(e)); set1('uMelt', s.sulaa);
+      set1('uLeg', s.leg); set1('uVeil', t - T0 >= TVEIL ? 1.0 : smooth(Math.sqrt(e))); set1('uMelt', s.sulaa);
       set1('uFogL', lerp(135, 38, s.sulaa)); set1('uIceW', sstep(TJ + 0.58 * SPAN, TJ + 0.70 * SPAN, t)); set1('uIceY', ICEY);
-      set1('uEnd', sstep(T1 - 1.6, T1, t)); set1('uDropA', s.dropA); set1('uUrk', s.urk); set1('uTwk', s.twk); set1('uSway', 0.18 + 0.9 * s.jouset + 0.5 * s.leg);
+      set1('uEnd', sstep(T1 - 1.6, T1, t)); set1('uDropA', s.dropA); set1('uUrk', s.urk); set1('uTwk', s.twk); set1('uSway', 0.30 + 1.3 * s.jouset + 0.6 * s.leg);
       gl.uniform4f(U('uDrop'), xcf(s.zD) + 0.0, s.yD, s.zD, s.rD);
       const low = new Float32Array(24); s.low.forEach((x, i) => low.set(x, i * 4)); gl.uniform4fv(U('uLow'), low);
       gl.uniform4fv(U('uCas'), new Float32Array(CAS.flat()));

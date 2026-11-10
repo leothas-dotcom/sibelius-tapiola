@@ -96,8 +96,8 @@ vec3 groundCol(vec3 gp, float zr, vec3 rd, vec3 Lw, float ang) {
   // askel: valo kulkee lumen pinnassa edellä
   for (int i = 0; i < 4; i++) { vec4 pu = uPulse[i]; if (pu.y <= 0.0) continue;
     float zc = pu.z + 3.0 + 9.0 * pu.x, xc = laneX(gp.z);
-    float w = exp(-pu.x * 0.85) * pu.y;
-    lit += GLOWC * w * 0.16 * exp(-pow((gp.z - zc) / (3.0 + 2.5 * pu.x), 2.0)) * exp(-pow((gp.x - xc) / 4.5, 2.0)); }
+    float w = smoothstep(0.0, 0.22, pu.x) * exp(-pu.x * 1.6) * pu.y;
+    lit += GLOWC * w * 0.22 * exp(-pow((gp.z - zc) / (2.5 + 2.0 * pu.x), 2.0)) * exp(-pow((gp.x - xc) / 3.0, 2.0)); }
   // kummun selänne hohtaa valoa vasten
   lit += gcol * I * 0.06 * exp(-ang * 12.0) * smoothstep(0.0, -0.5, ndl - 0.2) * stripe;
   return snow + lit;
@@ -181,7 +181,7 @@ vec3 scene(vec2 p) {
       float rag = (vnoise(vec2(wx * 3.0 + k * 1.3, yw * 0.75)) - 0.5) * 1.1 + (vnoise(vec2(wx * 9.0, yw * 2.4 + k)) - 0.5) * 0.35;
       float aF = smoothstep(0.20, -0.20, edgeF + rag) * sk * farF;
       float holes = smoothstep(0.62, 0.82, vnoise(vec2(wx * 2.4 + k * 2.0, yw * 1.5 + 4.0)));
-      aF *= (1.0 - (0.50 - 0.30 * uFx.x) * holes) * clearL;
+      aF *= (1.0 - (0.50 - 0.30 * uFx.x) * holes * (1.0 - 0.8 * smoothstep(0.05, 0.3, uCam.w) * smoothstep(7.0, 13.0, ya))) * clearL;
       if (zr < 9.0) aF *= mix(1.0, smoothstep(0.9, 3.0, length(vec2(wx - ro.x, yw - ro.y))), 1.0 - smoothstep(4.0, 9.0, zr));
       // alarungon kuivat oksantynkät
       float aS = 0.0;
@@ -201,7 +201,7 @@ vec3 scene(vec2 p) {
       float edgeM = clamp(4.0 * aF * (1.0 - aF), 0.0, 1.0);
       vec3 fol = HAMY * (0.5 + 0.9 * vnoise(vec2(wx * 1.1 + k, yw * 0.8)));
       fol += gcol * I * 0.09 * edgeM * side * shl * exp(-zr / 55.0);
-      fol += DLC * tl * (0.04 + 0.16 * edgeM) * smoothstep(0.55, 1.0, vt) * (0.4 + 0.6 * shaftT(wx, yw, zk));
+      fol += DLC * tl * (0.08 + 0.45 * edgeM) * smoothstep(0.45, 1.0, vt) * (0.5 + 0.5 * shaftT(wx, yw, zk));
       col = mix(col, fol, aF);
       float u = clamp(dxn / rw, -1.0, 1.0);
       float strk = vnoise(vec2(u * 4.0 + h2 * 20.0, hy * 0.30 + k)) * 0.6 + vnoise(vec2(u * 11.0 + h3 * 9.0, hy * 0.9)) * 0.4;
@@ -237,10 +237,11 @@ vec3 scene(vec2 p) {
         bark += gcol * I * rim * shl * 0.60 * exp(-zr / 70.0);
         float tl = uTop.x * sstep(uTop.y - 7.0, uTop.y, ya);
         bark += DLC * tl * 0.06 * smoothstep(0.55, 1.0, fur) * (1.0 - abs(u));
-        float bl = 0.02;
-        for (int q = 0; q < 6; q++) if (abs(uBl[q].x - float(js)) < 0.5) bl += uBl[q].z * exp(-uBl[q].y * 2.2);
-        float bm = smoothstep(0.17, 0.11, abs(dxn + sd * rw * 0.42)) * smoothstep(1.4, 1.55, hy) * smoothstep(2.75, 2.6, hy) * step(abs(u), 0.97);
-        bark = mix(bark, HOPEA * bl * (0.75 + 0.5 * vnoise(vec2(dxn * 14.0, hy * 6.0))), bm);
+        float bl = 0.07;
+        for (int q = 0; q < 6; q++) if (abs(uBl[q].x - float(js)) < 0.5) bl += uBl[q].z * 0.9 * smoothstep(0.0, 0.35, uBl[q].y) * exp(-uBl[q].y * 1.5);
+        float bn = vnoise(vec2(hy * 3.1 + float(js), dxn * 5.0)) - 0.5, bn2 = vnoise(vec2(hy * 9.0, dxn * 11.0 + 3.0)) - 0.5;
+        float bm = smoothstep(0.05, -0.04, abs(dxn + sd * rw * 0.42 + 0.05 * bn) - (0.12 + 0.07 * smoothstep(1.6, 2.2, hy) * (1.0 - 0.8 * smoothstep(2.2, 2.7, hy)) + 0.05 * bn2)) * smoothstep(1.35 + 0.1 * bn, 1.65, hy) * smoothstep(2.85 + 0.12 * bn2, 2.55, hy) * step(abs(u), 0.97);
+        bark = mix(bark, HOPEA * bl * (0.45 + 0.9 * vnoise(vec2(dxn * 14.0, hy * 6.0))), bm * 0.85);
         bark += HOPEA * bl * 0.10 * exp(-pow((hy - 2.1) / 1.0, 2.0)) * exp(-pow((dxn + sd * rw * 0.42) / 0.45, 2.0)) * (1.0 - bm);
         col = mix(col, bark, aT);
       }
@@ -277,13 +278,13 @@ vec3 scene(vec2 p) {
       // tupsut oksien päissä ja E-oksan varrella
       vec2 tc[9] = vec2[9](Ep + vec2(-0.15, 0.04), vec2(Px + 1.2, ey - 1.15), vec2(Px + 2.4, ey - 0.55), vec2(Px - 3.4, ey - 1.95), vec2(Px - 2.2, ey + 0.95),
                            vec2(Px + 3.6, ey - 3.65), vec2(Px + 2.8, ey - 5.95), vec2(Px - 2.9, ey - 7.65), vec2(Px + 0.2, gP + Hp - 0.5));
-      vec2 tr[9] = vec2[9](vec2(0.36, 0.14), vec2(0.34, 0.12), vec2(0.40, 0.14), vec2(1.10, 0.38), vec2(0.90, 0.32), vec2(1.10, 0.36), vec2(0.95, 0.32), vec2(1.00, 0.34), vec2(1.2, 0.55));
+      vec2 tr[9] = vec2[9](vec2(0.50, 0.20), vec2(0.55, 0.20), vec2(0.62, 0.22), vec2(1.80, 0.62), vec2(1.50, 0.52), vec2(1.80, 0.60), vec2(1.55, 0.52), vec2(1.65, 0.56), vec2(2.0, 0.9));
       for (int j = 0; j < 9; j++) { float l2; float dj = tuft(q, tc[j], tr[j], float(j) * 3.1, l2); if (dj < needle) { needle = dj; nly = l2; } }
       float aL = smoothstep(pw, -pw, limbD);
       float aN = smoothstep(pw * 1.5, -pw * 1.5, needle);
       float ya2 = yw - gc;
       float lit = clamp(uTop.x * (0.40 + 0.60 * sstep(uTop.y - 9.0, uTop.y, ya2 + 5.0)) * (0.5 + 0.5 * shaftT(wx, yw, zk)), 0.0, 1.0);
-      vec3 needleC = HAMY * 1.1 + HALLA * 0.20 * lit * smoothstep(-0.2, 0.7, nly) + DLC * 0.05 * lit;
+      vec3 needleC = HAMY * 1.1 + HALLA * 0.55 * lit * smoothstep(-0.2, 0.7, nly) + DLC * 0.10 * lit;
       vec3 limbC = HAMY * 1.4 + HALLA * 0.12 * lit * smoothstep(0.0, 0.1, -limbD - 0.02);
       col = mix(col, limbC, aL);
       col = mix(col, needleC, aN);
@@ -323,15 +324,15 @@ vec3 scene(vec2 p) {
     float part = 0.0;
     for (int i2 = 0; i2 < 4; i2++) { vec4 pu = uPulse[i2]; if (pu.y <= 0.0) continue;
       float zc = pu.z + 14.0 + 16.0 * pu.x;
-      part += pu.y * exp(-pu.x * 0.7) * exp(-pow((zk - zc) / 9.0, 2.0)) * exp(-pow((wx - lane) / 14.0, 2.0)); }
+      part += pu.y * smoothstep(0.0, 0.25, pu.x) * exp(-pu.x * 1.3) * exp(-pow((zk - zc) / 6.0, 2.0)) * exp(-pow((wx - lane) / 8.0, 2.0)); }
     part = min(part, 1.0);
-    dens *= 1.0 - 0.45 * part;
+    dens *= (1.0 - 0.45 * part) * (1.0 + 7.0 * (1.0 - sstep(0.0, 4.5, uTime - uT0)));
     float T = exp(-dens * seglen);
     float ph = 1.1 * exp(-ang * 190.0) + 0.28 * exp(-ang * 24.0) + 0.05 * exp(-ang * 3.0);
     float sh = shaftH(wx, yw, zk);
     float topV = 0.25 + 0.75 * smoothstep(0.0, 14.0, ya);
     vec3 Lf = AMB * (0.85 - 0.30 * uFx.x + 0.15 * uFx.y)
-            + gcol * I * (0.85 + 0.30 * uFx.y) * (1.0 + 0.9 * part) * ph * sh * (0.55 + 0.45 * exp(-max(ya, 0.0) / 6.0)) * (1.0 - 0.30 * uFx.x)
+            + gcol * I * (0.85 + 0.30 * uFx.y) * (1.0 + 0.35 * part) * ph * sh * (0.55 + 0.45 * exp(-max(ya, 0.0) / 6.0)) * (1.0 - 0.30 * uFx.x)
             + DLC * (uTop.x + 0.45 * uFx.z) * 0.07 * shaftT(wx, yw, zk) * topV;
     col = col * T + Lf * (1.0 - T);
   }
@@ -341,13 +342,13 @@ vec3 scene(vec2 p) {
   float cov = 0.0, covE = 0.0;
   for (int c = 0; c < 4; c++) {
     float fc = float(c);
-    float zrc = uZ0 + 1.8 + 2.6 * fc + 0.5 * fc * fc - ro.z;
+    float zrc = uZ0 + 1.2 + 2.2 * fc + 0.5 * fc * fc - ro.z;
     if (zrc < 0.15) continue;
     float s = zrc / r.z;
     vec2 w = vec2(ro.x + r.x * s, ro.y + r.y * s - gc);
     float n = vnoise(vec2(w.x * 0.95 + fc * 7.0, w.y * 0.30 + fc * 2.0)) * 0.50 + vnoise(vec2(w.x * 3.1 + fc * 3.0, w.y * 0.85)) * 0.32 + vnoise(vec2(w.x * 9.0 + fc, w.y * 2.6)) * 0.18;
     n += 0.10 * smoothstep(0.0, 3.0, w.y) - 0.06 * fc;
-    float open = 1.0 - sstep(0.0, 1.6 + 1.0 * fc, ts);
+    float open = 1.0 - sstep(0.0, 2.2 + 0.9 * fc, ts);
     float cc = smoothstep(0.575, 0.605, n + 1.05 * open - 0.30);
     cov = max(cov, cc);
     covE = max(covE, cc * (1.0 - cc) * 4.0);

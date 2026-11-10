@@ -125,3 +125,17 @@ Kaikki tarkistettu stilleistä 691,6-845,6 s (arkit `tark/`, `ruudut/`). Ei koko
 - Yli 20 sekuntia saman näköistä metsää on kohdissa 712-730 s ja 745-780 s (ovet ja pilkut elävöittävät, mutta ilme on yhtenäinen).
 - Loppuosassa (838-845 s) kuva on lähes tasainen tumma.
 - Tuulen huojunnan liikesarjaa ei katsottu pitkältä väliltä; pomppua ei ole todennettu 0,2 s ruuduilla muualla kuin kohdissa O ja P.
+
+## 8. Kriitikkokierroksen korjaukset (10.11.2026)
+Korjattu ja katsottu stilleistä (693,6, 705, 730, 757, 790, 806,7, 808, 832, 836, 840, 845,6 s):
+- Horisontti: profiili interpoloidaan sileästi ja pienemmällä amplitudilla; kampamainen reuna oli kaukaisten runkojen päitä, joille on nyt latvusto. 832 ja 836 s: yhdeksäs kumpu on sileä, loiva muoto.
+- Loppu: viimeinen kajo pysyy 0,42:ssa kunnes musiikki häipyy, yhdeksäs kumpu on isompi (korkeus 11 m, leveys 34 m) ja fogattu vähän, joten se erottuu tummana ja kasvaa 828-840 s; täyttää kuvan ennen rajakuvaa.
+- Rajakuva: viimeinen ruutu on `rajakuva(p, 0, uTime)` painolla `uEnd`=1 hetkellä `hiljaisuus_2_alku`, uTime = tiedoston aika. Yhtäpitävyys on rakenteellinen (sama GLSL-funktio ja sama FS_LOPPU-putki); erillistä pikselivertailua ei tehty.
+- Latvusto: jokaisella rungolla ragged kartiomainen latvus 40 % korkeudesta ylöspäin, huojuu rungon mukana. Näkyy 705, 730, 806,7 s.
+- Maan kova viiva: pohjan katoaessa maa sulaa usvan väriin (ei erillistä tummaa väriä). Katsottu 790 s: viiva ei erotu.
+- Valoläiskät: kaksi valon paikkaa ovat pienempiä ja pehmeämpiä (757 s), pilkut ovat vähintään 28 m päässä ja pieniä. Aikaisempia läiskiä ei ole katsottu uudestaan 12:41-12:49 liikesarjalla.
+- P-isku: rungot pysyvät siluetteina ja maa on harmaa, ei valkoinen (806,7 ja 808 s); metsä on sama kuin ympärillä. Pystyvalo on yhä viivamainen.
+- Ovet: tumma metsäinen massa (ei teal), ohut kaariviiva lähes poistettu, aukosta näkyy seuraava metsä (705, 730 s).
+- Huojunta pienempi (amplitudi puolitettu, tuuli enintään 0,95): nuudelimaisuutta ei enää ruuduissa.
+- Alun avautuminen pidennetty: ensimmäinen ovi ylitetään 4,6 s alusta.
+Jäi: tremolon, nousun ja laskun vastinetta ei erota ruuduista; yli 20 s tummaa kohdassa 13:05-13:25; vauhdin tunne kohtalainen.

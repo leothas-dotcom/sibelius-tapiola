@@ -16,7 +16,7 @@
 import { lataa, luoGL, julkaise, FS_ALKU, GLSL_YHTEINEN, FS_LOPPU, RAJA, clamp, smooth, sstep } from './yhteinen.js';
 
 const FS = FS_ALKU + `
-uniform float uWind, uTime, uCamX, uCamZ, uHor, uOpen, uDark, uMass, uKes, uMel, uTable, uTrem, uVeil, uSunRise, uPairZ, uFogK, uSway;
+uniform float uDim, uWind, uTime, uCamX, uCamZ, uHor, uOpen, uDark, uMass, uKes, uMel, uTable, uTrem, uVeil, uSunRise, uPairZ, uFogK, uSway;
 uniform vec2 uSun;         // auringon paikka ruudulla suhteessa horisonttiin (dx, dy)
 uniform vec2 uCut;         // vaskien pystyvalo: välähdys, jälkihohto
 uniform vec4 uRodA, uRodB; // pystysuoran valon paikka maailmassa (x, z) ja voimakkuudet (välähdys, jälkihohto)
@@ -168,7 +168,7 @@ vec3 drawRod(vec3 col, vec4 rod, float dxF, float dy, float camY) {
 }
 
 vec3 fogS(vec3 w, float zz, vec2 sp) {
-  float dim = 1.0 - 0.70 * uSunRise;                                   // väärä valo ei valaise: sali tummuu, vain usva punertuu
+  float dim = (1.0 - 0.70 * uSunRise) * (1.0 - uDim);                                   // väärä valo ei valaise: sali tummuu, vain usva punertuu
   vec3 s = SALO * 0.34 * (1.0 - 0.70 * smoothstep(8.0, 75.0, w.y));
   float sh = shaftAt(w);
   s += HALLA * 0.60 * sh * (0.25 + 0.55 * uKes);
@@ -231,7 +231,7 @@ vec3 scene(vec2 p) {
   vec3 col;
   vec3 FAR = SALO * 0.45;
   vec3 RIDGE = SALO * 0.30;
-  float ridge = 0.016 + 0.030 * vnoise(vec2(p.x * 1.9, 2.0)) + 0.014 * vnoise(vec2(p.x * 5.0, 7.0));
+  float ridge = 0.022 + 0.075 * vnoise(vec2(p.x * 1.1 + 3.0, 2.0)) + 0.020 * vnoise(vec2(p.x * 3.0, 7.0));    // sileät kummut
   bool ground = false, skySun = false, sunDone = false;
   if (dy < 0.0) {
     float z = camY * F / (-dy);
@@ -410,7 +410,7 @@ async function alusta() {
       const s = tila(t);
       set1('uTime', t); set1('uCamX', s.camX); set1('uCamZ', s.camZ); set1('uHor', 0.27); set1('uOpen', s.open); set1('uDark', s.dark);
       set1('uMass', s.mass); set1('uKes', s.kes); set1('uMel', s.mel); set1('uTable', s.table); set1('uTrem', s.trem); set1('uVeil', s.veil);
-      set1('uWind', s.wind); set1('uSunRise', s.sun); set1('uPairZ', PAIR_Z); set1('uSway', t * 0.35);
+      set1('uWind', s.wind); set1('uDim', 0.55 * sstep(T_HL, T_HL + 6, t)); set1('uSunRise', s.sun); set1('uPairZ', PAIR_Z); set1('uSway', t * 0.35);
       set1('uFogK', (0.80 + 0.22 * s.mass) * (1 + 2.6 * s.veil));
       gl.uniform2f(U('uSun'), SUN_DX, s.sunDy); gl.uniform2f(U('uCut'), s.cutA[0] + s.cutB[0], s.cutA[1] + s.cutB[1]);
       gl.uniform4f(U('uRodA'), rodA.x, rodA.z, s.cutA[0], s.cutA[1]); gl.uniform4f(U('uRodB'), rodB.x, rodB.z, s.cutB[0], s.cutB[1]);

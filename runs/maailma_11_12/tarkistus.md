@@ -43,3 +43,10 @@ Pilvikerros ja tähdet (taivas "auki" huudon jälkeen, tyyliohje 4: taivas ensi 
 - Seinän harveneminen alussa on pehmeitä möykkyjä, ei hienoa.
 - Revontulet verhomaiset ja melko voimakkaat; yli 20 s samannäköistä 11:n keskivälillä.
 - Ei liikesarjatarkistusta, ei kriitikkoa; tuulen liike ja kehien nopeus tarkistamatta.
+
+## Korjauskierros (kriitikon raportin jälkeen, 10.11. yöllä)
+- Kajo: oma lämmin sävy (WARM 1,0/0,76/0,52) kaikessa kajon valossa, valo lähempänä horisonttia (varjot latvojen väliin), valovoima ja vyöhykkeittäinen syttyminen vahvistettu. Stilli 1070 s: lämmin taivas ja haalean lämmin metsä; vielä melko vaimea ja metsän lämmin sävy hailea.
+- Alku: seinän harveneminen 12,5 s (ennen 8,5 s); 947 s vielä lähes seinä, 949 s osittain; hyppyä ei enää näy stilleistä 947/949/953. Liikesarjaa en katsonut.
+- Eteneminen: vauhti 15 m/s (ennen 6,5), hidastuu S:stä pysähdykseen; tuuli ×2,2 amplitudi. Liikkeenä todentamatta.
+- Ruudukko: ruudukko kierretty, sijainti- ja kokovaihtelu suurempi, aukkoja ja tiheämpiä ryhmiä (stilli 960 s: ei enää riviviljapeltoa, mutta puusto edelleen melko tasaisen tiheä).
+- Ei ehditty: vaaran alla oleva vaalea vaakaraita, horisontin reunaviivan pehmennys, revontulten muuttuminen sarjana (laskeutuu `uAurLow` mukaan 959–1017 s, ei tarkistettu).

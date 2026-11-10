@@ -1,0 +1,53 @@
+{
+  "nimi": "vedos_v4",
+  "pvm": "2026-11-10",
+  "mika": "Neljäs vedos: koko teos kahtenatoista maailmana, jotka ovat toistensa sisällä. Kahdeksan moduulia (visual/maailma_XX.js) liitetty rajakuvien kohdalta; ensimmäinen koottu versio.",
+  "pyynto": "Käyttäjä 10.11.2026: 'mihin ne 12 maailmaa jäi? ... laita tausta-agentit puuhaamaan niitä, ja valvo'; 'Haluaisin että tämä on aamulla valmis ... viimeiset muutokset sisään viimeistään kello 6:00 am. Ei loputonta busy workia.'",
+  "peruste": "docs/visuaalinen_tyyli.md (luvut 1, 2, 5, 12 ja 4d kohdat 1-22), docs/kuvakasikirjoitus.md 'Uusi runko' (kaksitoista maailmaa), docs/tapiola_tutkimus.md, runs/maailmat/brief.md ja runs/maailma_XX/brief.md",
+  "tekija": "ohjaaja (pääistunto): moduuli 01_02, yhteinen pohja, briefit, kokoaminen; seitsemän Sonnet-rakentaja-agenttia: moduulit 03_04, 05, 06, 07_08, 09, 10, 11_12; kuusi Sonnet-kriitikkoa (yksi kierros, ei moduulille 07_08)",
+  "levytys": "rattle_lso_2022 (työäänitys: ei videoon, ei gittiin; tiedostot vain käyttäjän omaan katseluun)",
+  "moduulit": {
+    "01_02": "tiedoston_alku -> fis_pitka_aani: Horisontti ja siemen, Repeämä (suolta kaukaiseen metsään)",
+    "03_04": "fis_pitka_aani -> pohja_katoaa: Jokin kulkee edellä, Metsä kohoaa (metsän sisus, kiteeseen)",
+    "05": "pohja_katoaa -> pohja_vaihtuu_D: Väike (huurteen kide)",
+    "06": "pohja_vaihtuu_D -> jousijakso_urkupiste_E_alku: Metsä liikkuu kokonaisena (musta jää)",
+    "07_08": "jousijakso_urkupiste_E_alku -> M_raskaat_askeleet: Ikisalo, Väärä valo (Tapion talo, taottu aurinko)",
+    "09": "M_raskaat_askeleet -> hiljaisuus_2_alku: Petos ja hermo (pimeä metsä)",
+    "10": "hiljaisuus_2_alku -> huuto: Se näkyy ja tulee (ulkona, myrsky)",
+    "11_12": "huuto -> tiedoston_loppu: Huuto ja jälki, Oikea valo (ylhäältä, revontulet, kajo)"
+  },
+  "komento": "moduuli kerrallaan: node render/lukittu.mjs --data build/rattle_koko --page \"visual/maailma.html?m=XX&aa=2\" --start A --end B --workers 2 --chunk 40 --out runs/maailma_XX/osa.mp4; liitos ffmpeg concat + ääni build/kuuntelu/rattle_kuuntelu.wav",
+  "tulos": {
+    "tiedosto": "runs/vedos_v4/koko.mp4",
+    "kesto_s": 1078.0,
+    "katselukopio": "runs/vedos_v4/tapiola_vedos4_720p.mp4",
+    "kontaktiarkki": "runs/vedos_v4/kontakti.jpg"
+  },
+  "mitattu": {
+    "aani_totuutta_vasten": "0,00 ms kaikissa mittauspisteissä (analysis/kellot.py)",
+    "saumat": "jokaisen moduulin viimeinen ruutu ja seuraavan ensimmäinen: keskivärin suurin ero 0-1 yksikköä 255:stä kaikissa seitsemässä saumassa"
+  },
+  "kriitikko": {
+    "kierros_1": "kuusi moduulia (03_04, 05, 06, 09, 10, 11_12): jokaisessa estäviä virheitä; raportit runs/maailma_XX/kriitikko.md; estävät lähetetty rakentajille, korjattu osittain (rakentajien omat raportit runs/maailma_XX/tarkistus.md)",
+    "korjausten_jalkeen": "ei uutta kriitikkokierrosta; 07_08 ilman kriitikkoa",
+    "bugilista_tyhja": false
+  },
+  "tiedossa_auki": [
+    "liikettä ei ole katsottu yhdestäkään agentin moduulista sarjoina korjausten jälkeen: metsän huojunta ja valon reaktio musiikkiin on todettu pääosin stilleistä ja koodista",
+    "03_04: maailma 4 (noin 3:10-3:16) on litteä, hallan valo ei siivilöidy oksien välistä; alku avautuu läikkinä",
+    "05: horisontin valo on suuri vaalea ellipsi; kolme linnaa eivät lue linnoiksi; yli 30 s samannäköistä",
+    "06: loppu lukee pimenemisenä, ei kulkuna runkojen väliin; peilikuvaa ei ole todettu koko väliltä",
+    "07_08: ei kriitikkoa; pöytä on pieni palkki, punainen usva rajautuu kovareunaiseen suorakulmioon, auringon nousu napsahtaa",
+    "09: yli 20 s tummaa 13:05-13:25; tremolon, nousun ja laskun vastine ei erotu",
+    "10: myrsky on 66 s melko yhdenmukaista hiukkasviirua; nousu lopussa heikko",
+    "11_12: etumetsä lukee yhä osin tasaisena mattona; kajon lämpö vaimea; revontulet pitkään samannäköiset",
+    "mystisiä olentoja ei ole missään maailmassa; Tapio on vain talon ikkunat ja mittakaava"
+  ],
+  "ei_tehty": [
+    "käyttäjä ei ole nähnyt",
+    "toinen kriitikkokierros",
+    "master 2160p",
+    "WhatsApp-versio",
+    "vanhat piirrot (visual/kohtaus.js, kerrokset.glsl.js, metsa.glsl.js) poistamatta"
+  ]
+}

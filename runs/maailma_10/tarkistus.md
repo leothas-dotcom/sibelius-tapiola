@@ -101,3 +101,14 @@ tutkimus luku 9). Paljaan jään laikut (peilikuva; tyyliohje 4b kuvatapa 5 / re
 3. Lähellä olevat hiutaleet ovat kapselimaisia, ja viirut ovat siistejä: yleisvaikutelma hieman digitaalinen.
 4. Alun lehvästö on nopeasti tehty tupsukohinaa, ei uskottava kuusi; aukko avautuu ensin pienenä soikiona.
 5. Jään pinta on yksitoikkoinen etualalla. Huojunta ja tremolo-väre ovat hennot. Liikesarjoja (0,2 s) ei ehditty katsoa; vain yksittäisiä ruutuja.
+
+## 3. Kriitikon korjauskierros (10.11.2026)
+
+Korjattu ja katsottu stilleistä (`tark/arkki.png`, 846,8–942 s):
+1. **Kirkkaushyppy 869–871 poistettu:** seinän kerrokset saavat värinsä etäisyydestä (lähellä = myrskyn yhteinen sävy, sama kuin sisus), joten kuva tummuu ja
+   lumi tihenee asteittain seinän saapuessa; ei tasaista ruutua, ei pimenemistä. Lumi alkaa jo ennen saapumista (`ulko`-tiheys kasvaa lähestymisen mukana).
+2. **Metsä ja siemen hiljaisuudessa:** horisontissa on nyt matala tumma latvuston massa (kolme latvuskokoa) sileiden kumpujen päällä, latvat huojuvat,
+   horisontin hajavalo on voimakkaampi; jää on vaaleampaa lunta ja lammet harvinaisempia. Kameran etenemisen näkee jään kuvioista ja lumesta; **hiljaisuuden ajoa ei ole varmistettu liikesarjasta** (vauhti 0,7 m/s on hidas).
+3. **Myrsky:** tuulen suunta seuraa melodian kaarta (`d.melodia`, keskiarvo 3 s), maa ja metsän reuna vilahtavat lumen takaa puuskan hellittäessä (`lasna(t)` = 1 − jousten voima); tiheys ja huojunta jousten voimasta. Pystyvalo on suora pystysuora leikkaus (ei siksak). Etäisyyskerroksia on silti vain lumen syvyyskerrokset: myrskyn 66 s on yhä melko yhdenmukaista (**heikkoa**).
+4. **Nousu:** nousun alussa maa ja horisontti vilahtavat ja vajoavat, lumi tihenee kerroksittain (kaukaiset kerrokset ensin) LUMI-kuvaan; pyörre sulkeutuu. 937 s kuvassa vilahtava maa näkyy vielä kulmikkaana suorakulmiona (**heikkoa**).
+5. **Alun aukko:** kolmen limittyvän epäsäännöllisen aukon yhdiste, keskus ylempänä (ei horisontin jakamaa soikiota); 847,6 s näkyy vielä pyöreähkö vaalea läiskä vasemmalla (**heikkoa**). Lumiseinän yläreuna ei ole enää pystyraidoilla.

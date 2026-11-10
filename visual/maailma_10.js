@@ -16,7 +16,7 @@
 import { lataa, luoGL, julkaise, FS_ALKU, GLSL_YHTEINEN, FS_LOPPU, clamp, smooth, sstep, lerp } from './yhteinen.js';
 
 const FS = FS_ALKU + `
-uniform float uTime, uTL, uHor, uCamH, uCamZ, uCamX, uLight, uVis, uU, uWi, uDens, uWindX, uFall, uStreak, uMass, uSwirl, uFin, uHush, uSway;
+uniform float uTime, uTL, uHor, uCamH, uCamZ, uCamX, uLight, uVis, uU, uWi, uDens, uWindX, uFall, uStreak, uMass, uSwirl, uFin, uHush, uSway, uGl, uWAng;
 uniform vec4 uVor;     // pyörre: x (dx), y (dy), säde, tummuus
 uniform vec4 uCut;     // pystyvalo: x (dx), voima, metsän reunan paljastus, -
 const float F = 1.07;
@@ -32,11 +32,12 @@ float sstep(float a, float b, float x) { return smoothstep(a, b, x); }
 // metsän reunan ääriviiva: sileät loivat kummut, päällä hento latvusten tekstuuri; korkeus horisontin yläpuolella (kuvan yksikköä)
 float ridgeFar(float px0) {
   float xs = px0 / asp();
-  float px = px0 + uSway * 0.006 * sin(px0 * 11.0 + uTime * 0.7) + uSway * 0.003 * sin(px0 * 29.0 - uTime * 1.3);   // latvat huojuvat tuulessa; kummut ja maa pysyvät
-  float m = 0.030 * exp(-pow((xs - 0.17) / 0.16, 2.0)) + 0.052 * exp(-pow((xs - 0.60) / 0.20, 2.0))
-          + 0.024 * exp(-pow((xs - 0.93) / 0.12, 2.0)) + 0.012 * exp(-pow((xs - 0.38) / 0.10, 2.0));
-  float tex = 0.0032 * vnoise(vec2(px * 38.0, 3.0)) + 0.0018 * vnoise(vec2(px * 130.0, 7.0)) + 0.0011 * pow(vnoise(vec2(px * 260.0, 1.0)), 2.0);
-  return 0.006 + m + tex;
+  float px = px0 + uSway * 0.007 * sin(px0 * 11.0 + uTime * 0.7) + uSway * 0.004 * sin(px0 * 29.0 - uTime * 1.3);   // latvat huojuvat tuulessa; kummut ja maa pysyvät
+  float m = 0.042 * exp(-pow((xs - 0.17) / 0.16, 2.0)) + 0.070 * exp(-pow((xs - 0.60) / 0.20, 2.0))
+          + 0.034 * exp(-pow((xs - 0.93) / 0.12, 2.0)) + 0.018 * exp(-pow((xs - 0.38) / 0.10, 2.0));
+  // latvusto: suuret ryhmät, latvat ja hienojako (kuten maailman 1 canopy)
+  float cr = 0.016 * vnoise(vec2(px * 14.0, 2.0)) + 0.010 * vnoise(vec2(px * 46.0, 7.0)) + 0.008 * pow(vnoise(vec2(px * 120.0, 1.0)), 1.5) + 0.005 * pow(vnoise(vec2(px * 300.0, 4.0)), 2.0);
+  return 0.012 + m + cr;
 }
 float ridgeNear(float px0) {
   float xs = px0 / asp();
@@ -57,7 +58,7 @@ vec3 skyAt(float dx, float dy) {
   float band = smoothstep(0.30, 0.72, cl);
   col *= 0.50 + 1.15 * band * (0.45 + 0.8 * exp(-h / 0.30)) + 0.25 * smoothstep(0.0, 0.05, h) * 0.0;
   col += SALO * 0.30 * smoothstep(0.42, 0.80, cl) * smoothstep(0.0, 0.20, h) * exp(-h / 0.45);
-  col += HALLA * uLight * (0.050 * exp(-h / 0.040) + 0.010 * exp(-h / 0.22));
+  col += HALLA * uLight * (0.075 * exp(-h / 0.050) + 0.014 * exp(-h / 0.25));
   return col;
 }
 
@@ -70,18 +71,18 @@ vec3 groundAt(float dx, float dy) {
   float big = fbm(vec2(wx * 0.026, wz * 0.0075));
   float drift = fbm(vec2(wx * 0.09, wz * 0.55) + 3.0);
   float drift2 = fbm(vec2((wx + 2.5) * 0.09, (wz + 0.9) * 0.55) + 3.0);
-  float rip = vnoise(vec2(wx * 0.8, wz * 3.0)) * lod, rip2 = vnoise(vec2((wx + 0.5) * 0.8, (wz + 0.15) * 3.0)) * lod;
+  float rip = vnoise(vec2(wx * 0.8, wz * 3.0)) * exp(-z / 120.0), rip2 = vnoise(vec2((wx + 0.5) * 0.8, (wz + 0.15) * 3.0)) * exp(-z / 120.0);
   float hh = 0.45 * big + 0.40 * drift * (0.35 + 0.65 * lod) + 0.15 * rip;
   float hh2 = 0.45 * big + 0.40 * drift2 * (0.35 + 0.65 * lod) + 0.15 * rip2;
   float lit = clamp(0.5 + 5.0 * (hh - hh2) * (0.4 + 0.6 * lod), 0.0, 1.0);
   vec3 horiz = HZC + HALLA * uLight * 0.040;
   float near = exp(-z / 240.0);
-  vec3 snow = vec3(0.0105, 0.0165, 0.0285) * (0.55 + 0.9 * big)
-            + (HALLA * 0.060 + horiz * 0.6) * (0.03 + 0.34 * lit) * (0.30 + 0.70 * (1.0 - near))
+  vec3 snow = vec3(0.019, 0.029, 0.049) * (0.55 + 0.9 * big)
+            + (HALLA * 0.060 + horiz * 0.6) * (0.05 + 0.50 * lit) * (0.45 + 0.55 * (1.0 - near))
             + horiz * 0.30 * (1.0 - near);
   // lammet ja paljaan jään laikut: tummia, peilaavat pilvet ja metsän reunan
   float pm = fbm(vec2(wx * 0.014, wz * 0.0075) + 7.0);
-  float pond = smoothstep(0.545, 0.575, pm + 0.05 * (vnoise(vec2(wx * 0.4, wz * 0.9)) - 0.5));
+  float pond = 0.55 * smoothstep(0.585, 0.605, pm + 0.05 * (vnoise(vec2(wx * 0.4, wz * 0.9)) - 0.5));
   float rf = ridgeFar(dx + asp() * 0.5);
   vec3 refl = skyAt(dx * 1.0, -dy * 0.9) * 0.9;
   refl = mix(refl, vec3(0.0035, 0.0058, 0.0095), smoothstep(0.0010, -0.0010, -dy - rf * 0.8));
@@ -106,8 +107,11 @@ vec4 veilLayer(vec2 p, int k, float dx, float dy, vec3 rk) {
   float wx = wxr + uCamX + (0.05 + 0.10 * uSway) * yw * sin(uTime * 0.8 + 0.5 * yw + fk * 1.7 + wxr * 0.4);   // oksat ja rungot taipuvat tuulessa, tyvi pysyy
   float open = sstep(0.15, 3.2 + 1.3 * fk, uTL);
   // aukko: kaareva, rosoinen; keskellä kameran reitti
-  float rag = 0.45 * (fbm(vec2(wx * 0.9 + fk * 5.0, yw * 0.9)) - 0.5);
-  float e = length(vec2(wxr / (VW[k] * open + 0.02), (yw - 1.8) / (0.5 * VH[k] * open + 0.02))) + rag;
+  float rag = 0.65 * (fbm(vec2(wx * 0.9 + fk * 5.0, yw * 0.9)) - 0.5);
+  float e1 = length(vec2(wxr / (VW[k] * open + 0.02), (yw - 3.2) / (0.5 * VH[k] * open + 0.02)));
+  float e2 = length(vec2((wxr - 0.45 * VW[k]) / (0.55 * VW[k] * open + 0.02), (yw - 2.9) / (0.45 * VH[k] * open + 0.02)));
+  float e3 = length(vec2((wxr + 0.35 * VW[k]) / (0.60 * VW[k] * open + 0.02), (yw - 0.9) / (0.40 * VH[k] * open + 0.02)));
+  float e = min(e1, min(e2, e3)) + rag + 0.30 * (vnoise(vec2(wxr * 3.0 + fk, yw * 2.5)) - 0.5);
   float hole = smoothstep(1.0, 0.72, e) * sstep(0.0, 0.05, open);
   // massa: runkoja, ylhäällä tiheä latvusto, alhaalla ja keskellä harvaa oksistoa
   float cw = 1.5 + 0.3 * fk;
@@ -148,7 +152,7 @@ float snowAt(int s, float zz, float dx, float dy, float thr) {
   vec2 v = vec2(dx - uVor.x, dy - uVor.y);
   float rv = length(v) + 1e-3;
   vec2 tang = vec2(-v.y, v.x) / rv;
-  vec2 wind = normalize(vec2(1.0, 0.42 + 0.9 * uFall * 0.0));
+  vec2 wind = normalize(vec2(cos(0.40 + uWAng), sin(0.40 + uWAng)));
   float sw = uSwirl * exp(-rv / (1.6 * uVor.z + 0.20));
   float an = (hash(ic + 3.3) - 0.5) * 0.30;
   dirc = normalize(mix(wind, tang, clamp(sw, 0.0, 0.85)));
@@ -158,7 +162,7 @@ float snowAt(int s, float zz, float dx, float dy, float thr) {
   float tp = clamp(dot(q, dirc), -lenc * 0.5, lenc * 0.5);
   float dd = length(q - dirc * tp) * 0.9;
   float nearK = smoothstep(11.0, 2.5, zz);                          // lähellä: leveä, sumea, himmeä (epätarkka)
-  float r = (0.014 + 0.012 * fract(h * 53.0)) * (0.8 + 0.2 * cs / 0.9) * mix(1.4, 1.0, uWi) * (1.0 + 0.6 * nearK);
+  float r = (0.014 + 0.012 * fract(h * 53.0)) * (0.8 + 0.2 * cs / 0.9) * mix(1.4, 1.0, uWi) * (1.0 + 0.0 * nearK);
   float b = 0.85 * smoothstep(r, r * (0.20 + 0.6 * nearK), dd) / (1.0 + 1.6 * lenc) / (1.0 + 2.5 * nearK);
   return b * smoothstep(1.5, 4.0, zz) * smoothstep(45.5, 38.0, zz) * exp(-zz / 70.0);
 }
@@ -175,7 +179,7 @@ vec3 scene(vec2 p) {
       float rf = ridgeFar(p.x), rn = ridgeNear(p.x);
       vec3 hz = HZC + HALLA * uLight * 0.030;
       float aF = smoothstep(0.0012, -0.0012, dy - rf), aN = smoothstep(0.0010, -0.0010, dy - rn);
-      vec3 farc = mix(vec3(0.0090, 0.0150, 0.0270), hz, 0.12) * (0.75 + 0.5 * vnoise(vec2(p.x * 21.0, dy * 90.0)));
+      vec3 farc = vec3(0.0040, 0.0068, 0.0120) * (0.7 + 0.6 * vnoise(vec2(p.x * 31.0, dy * 70.0))) + hz * 0.05 * smoothstep(0.0, ridgeFar(p.x), dy);
       vec3 nearc = vec3(0.0034, 0.0056, 0.0090) + HALLA * uLight * 0.0010;
       col = mix(col, farc, aF);
       col = mix(col, nearc, aN);
@@ -186,6 +190,7 @@ vec3 scene(vec2 p) {
       float rn = ridgeNear(p.x);
       col = mix(col, vec3(0.0034, 0.0056, 0.0090), smoothstep(-0.0005, 0.0012, rn * 0.0 + 0.0012 + dy) * 0.0);
     }
+    vec3 base0 = col;
     // --- myrskyn lumiseinä: kuusi kerrosta, kaukaa lähelle ---
     if (uVis > 0.0) {
       const float WZ[6] = float[6](2600.0, 3400.0, 4400.0, 5600.0, 7000.0, 9000.0);
@@ -201,8 +206,8 @@ vec3 scene(vec2 p) {
         float top = H * (0.55 + 0.45 * fbm(vec2(wx / (H * 2.4) + fj * 3.7, fj)));
         float prof = smoothstep(top, top * 0.28, yw);
         float cs = H * 0.07;
-        float st1 = vnoise(vec2((wx + 0.25 * yw) / cs + fj * 5.0, yw / (H * 1.1)));
-        float st2 = vnoise(vec2(wx / (cs * 0.31) + fj * 9.0, yw / (H * 0.5)));
+        float st1 = vnoise(vec2((wx + 0.25 * yw) / (cs * 6.0) + fj * 5.0, yw / (H * 0.45)));
+        float st2 = vnoise(vec2(wx / (cs * 3.0) + fj * 9.0, yw / (H * 0.3)));
         float dens = prof * (0.28 + 0.72 * st1 * (0.55 + 0.45 * st2));
         float lat = smoothstep(WW[j], WW[j] * 0.55, abs(wx - WX[j]));
         float gnd = mix(1.0, smoothstep(0.0, 0.004 * z / F, yw), smoothstep(40.0, 400.0, z));
@@ -210,8 +215,8 @@ vec3 scene(vec2 p) {
         float fogk = 1.0 - exp(-z / 4200.0);
         vec3 wc = mix(vec3(0.090, 0.118, 0.160), HZC * 2.0, fogk) * (0.70 + 0.55 * uLight);
         wc *= 0.72 + 0.55 * smoothstep(0.2, 1.0, yw / max(top, 1.0));
-        wc = mix(wc, stormBase(uDens) * (0.55 + 0.9 * st1) * (0.60 + 0.8 * exp(-abs(dy) / 0.28)), sstep(0.25, 0.65, uU));
-        wc *= mix(1.0, 0.45, sstep(0.45, 0.8, uU));
+        wc = mix(wc, stormBase(max(uDens, 0.45)) * (0.55 + 0.9 * st1) * (0.60 + 0.8 * exp(-abs(dy) / 0.28)), 1.0 - smoothstep(30.0, 900.0, z));
+        al *= 1.0 - 0.85 * sstep(0.70, 0.95, uU);
         col = mix(col, wc, al);
       }
     }
@@ -230,6 +235,9 @@ vec3 scene(vec2 p) {
       hz *= 1.0 - 0.93 * core;
       hz += stormBase(uDens) * 0.30 * exp(-pow((r - 1.55 * R) / (0.55 * R + 0.02), 2.0)) * (1.0 - 0.9 * core);
       col = mix(col, hz, uWi);
+      // maa ja metsän reuna vilahtavat lumen takaa, kun puuska hellittää
+      float gm = uGl * smoothstep(0.48, 0.78, fbm(vec2(dx * 1.3 + uMass * 0.20, dy * 2.4 + 3.0)));
+      col = mix(col, base0 * (1.1 + 1.0 * uLight) + hz * 0.5, gm * uWi);
     }
   } else {
     col = vec3(0.0);
@@ -241,7 +249,7 @@ vec3 scene(vec2 p) {
     float core = exp(-pow((length(vec2(dx - uVor.x, dy - uVor.y))) / max(uVor.z, 0.01), 2.0)) * uVor.w;
     for (int s = 0; s < 12; s++) {
       float zz = 1.5 + mod(float(s) * 3.7 - uCamZ, 44.4);
-      acc += snowAt(s, zz, dx, dy, thr);
+      acc += snowAt(s, zz, dx, dy, thr + 0.55 * uFin * (1.0 - 0.7 * float(s) / 11.0));
     }
     col += FLAKE * acc * (1.0 - 0.8 * core) * (0.65 + 0.9 * uLight) * mix(0.28, 1.0, uWi);
   }
@@ -254,9 +262,9 @@ vec3 scene(vec2 p) {
   }
   // --- Ukon tuli: pystysuora valo kerrosten läpi, metsän reuna hetkeksi näkyviin ---
   if (uCut.y > 0.001 && uFin < 1.0) {
-    float jag = (vnoise(vec2(p.y * 8.0, 3.0)) - 0.5) * 0.06 + (vnoise(vec2(p.y * 29.0, 8.0)) - 0.5) * 0.014;
+    float jag = (vnoise(vec2(p.y * 6.0, 3.0)) - 0.5) * 0.004;
     float d = abs(dx - uCut.x - jag);
-    float beam = exp(-d * d / (0.0030 * 0.0030)) * (0.8 + 0.4 * vnoise(vec2(p.y * 14.0, 1.0))) + 0.30 * exp(-d / 0.030) + 0.10 * exp(-d / 0.32);
+    float beam = exp(-d * d / (0.0030 * 0.0030)) * (0.9 + 0.2 * vnoise(vec2(p.y * 14.0, 1.0))) + 0.30 * exp(-d / 0.030) + 0.10 * exp(-d / 0.32);
     col += LEIKKAUS * uCut.y * beam * 0.55;
     col += HALLA * 0.060 * uCut.y * (0.25 + exp(-abs(dy) / 0.12));
     float rg = ridgeFar(p.x);
@@ -311,7 +319,7 @@ async function alusta() {
   const uuOut = (t) => uOf(t);
   const wiOf = (t) => sstep(0.55, 1.0, uOf(t));
   const tiheys = (t) => {
-    const ulko = 0.035 + 0.30 * Math.pow(uuOut(t), 2);
+    const ulko = 0.035 + 0.50 * Math.pow(uuOut(t), 1.3);
     const sisa = 0.38 + 0.50 * Math.sqrt(clamp(voimaH(t) * 1.05, 0, 1));
     const wi = wiOf(t);
     const nousu = sstep(T8, T9, t);
@@ -331,8 +339,10 @@ async function alusta() {
 
   // --- valo: horisontin kalpea hohto elää jousten voiman ja pitkän äänen mukana; hiljaisuudessa pois ---
   const hilj = (t) => sstep(T0 - 0.1, T0 + 2.0, t) * (1 - sstep(T2, T2 + 3, t)) * (t < T2 ? 1 : 0) + 0;
+  const melKaari = (t) => clamp((d.melodia(t, 3.0) - 68) * 0.03, -0.35, 0.45);   // tuulen suunta seuraa melodian kaarta hitaasti
+  const lasna = (t) => { const k = Math.pow(1 - clamp(voimaH(t) * 1.1, 0, 1), 1.3) * 0.9; return clamp(k + 0.55 * Math.exp(-Math.pow((t - (T8 + 1.5)) / 1.8, 2)) * (1 - sstep(T8 + 3, T9 - 1.5, t)), 0, 0.9) * sstep(T4 - 0.5, T4 + 1.5, t) * (1 - sstep(T9 - 3, T9 - 0.3, t)); };
   const huojunta = (t) => clamp(0.12 + 0.9 * voimaH(t) + 0.5 * sstep(T3, T4, t), 0, 1.4);   // tuuli = jousten voima (hidas keskiarvo); hiljaisuudessakin heikko huojunta
-  const valo = (t) => clamp(0.06 + 0.9 * voimaH(t) * sstep(T2 - 1, T3 + 1, t) + 0.5 * kalpea(t), 0, 1.3);
+  const valo = (t) => clamp(0.28 + 0.9 * voimaH(t) * sstep(T2 - 1, T3 + 1, t) + 0.5 * kalpea(t), 0, 1.3);
 
   // --- seinän näkyvyys: nousee hitaasti ankkurin myrsky_nakyy ympärillä (ei ilmesty) ---
   const nakyvyys = (t) => sstep(T1 - 2.5, T1 + 3.5, t);
@@ -362,7 +372,7 @@ async function alusta() {
       camZ: kohta(kZ, tc) - kZ0, camX: kohta(kX, tc) - kX0, camH: korkeus(tc), hor: horisontti(tc),
       tuuli: kohta(kW, tc), putoaa: kohta(kF, tc), massa: massa(tc), kierto: kierto(tc),
       vor: [0.0, 0.07 + 0.03 * (1 - sstep(T4, T6, tc)), vSade(tc), vTumma(tc) * (1 - sstep(T8, T9 - 0.7, tc))],
-      cut: [cx, ck, cr], fin: sstep(T8 + 1.0, T9, tc), ps, sway: huojunta(tc),
+      cut: [cx, ck, cr], fin: sstep(T8 + 1.0, T9, tc), ps, sway: huojunta(tc), gl: lasna(tc), wang: melKaari(tc),
     };
   };
 
@@ -385,7 +395,7 @@ async function alusta() {
       gl.uniform1f(U('uLight'), s.valo); gl.uniform1f(U('uVis'), s.nak); gl.uniform1f(U('uU'), s.u); gl.uniform1f(U('uWi'), s.wi);
       gl.uniform1f(U('uDens'), s.tiheys); gl.uniform1f(U('uWindX'), s.tuuli); gl.uniform1f(U('uFall'), s.putoaa);
       gl.uniform1f(U('uStreak'), s.viiru); gl.uniform1f(U('uMass'), s.massa); gl.uniform1f(U('uSwirl'), s.kierto);
-      gl.uniform1f(U('uFin'), s.fin); gl.uniform1f(U('uHush'), 0); gl.uniform1f(U('uSway'), s.sway);
+      gl.uniform1f(U('uFin'), s.fin); gl.uniform1f(U('uHush'), 0); gl.uniform1f(U('uSway'), s.sway); gl.uniform1f(U('uGl'), s.gl); gl.uniform1f(U('uWAng'), s.wang);
       gl.uniform4f(U('uVor'), s.vor[0], s.vor[1], s.vor[2], s.vor[3]);
       gl.uniform4f(U('uCut'), s.cut[0], s.cut[1], s.cut[2], 0);
       piirra();

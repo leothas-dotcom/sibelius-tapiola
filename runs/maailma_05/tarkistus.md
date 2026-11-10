@@ -82,3 +82,11 @@ Hiutaleet (lumi kuuluu siemeneen), huojunta (tyyliohje 4d 1), kalvon aukeaminen 
 - Hiutaleet muistuttavat tähtiä pimeässä taivaassa.
 - Sulamisvaiheessa (327-335) usva on harmaan vaalea; viimeinen ruutu on tummempi, siirtymä 1,6 s.
 - Liikesarjoja, huojunnan nopeutta ja kameran 20 °/s -rajaa ei ole mitattu ruututarkasti; pitch on laskettu (enintään noin 9 °/s).
+
+## 3. Korjauskierros (kriitikon virhelista, 10.11.)
+Tehty: harjanteiden seinät loivemmiksi ja pyöreämmiksi; latvaston epäsäännöllinen pyöreä siluetti ja valoa siivilöivät aukot latvojen alaosassa; reunavalon aalto kulkee latvojen yli jousten voiman mukaan (huojunta ja kimmellys, `uSway`); väike on pisteitä, polku himmeä ja lyhyt (ei enää viivoja); linnat lähemmäs laaksoa ja himmenevät lähestyessä; kalvon kuvio pehmenee heti ja aukeaa nopeammin (ensimmäinen ruutu edelleen HUURRE, tarkistettu 203,0 s); horisontin vyö pehmeämpi, korkeus seuraa melodiaa voimakkaammin; kaukaiset hiutaleet lähes pois (eivät lue tähtinä).
+Katsottu: stillit 203, 205, 214, 231, 262, 296. Viimeisen pienen muutoksen (kimmellyksen ja pienten tupsujen vaimennus) jälkeen ei ole renderöity.
+Heikkoa edelleen: latvojen siluetti näyttää vielä osin lumisilta kärjiltä (3:34, 4:22), joten sileys on vain osittain saavutettu; linnat ovat edelleen heikosti tunnistettavia; harmaa etuala on litteä; huojunta ja väikkeen liike on katsomatta sarjana.
+
+## 4. Viimeinen korjaus: ei teräviä vuoria (10.11.)
+Harjanteiden profiilista poistettu kaikki korkeataajuinen rosoisuus ja terävät huiput: korkeus noin kolmannes entisestä, vain leveitä pyöreitä möykkyjä (solut 14 m ja 6,5 m), kaukaisimmatkin; kallioläikät ja lumihuippukimmellys vaimennettu, latvusten yläpinta ottaa kiteen valon pehmeästi. Katsottu stilleistä 233 s ja 288 s: kuva on matalaa pyöreää kumpumaata, ei alppivuoria. Heikkoa: kuva on nyt matala ja melko tasainen, latvusryhmät lukevat tykkylumimetsänä vain heikosti (möykyt ovat sileitä ilman erottuvia latvuksia), ja linnat ovat edelleen vaikeasti tunnistettavia.

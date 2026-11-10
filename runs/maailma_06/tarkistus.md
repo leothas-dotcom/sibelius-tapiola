@@ -83,3 +83,12 @@ Näkyy: pohja vaihtuu (renkaat), gis palaa, peikot G (pilkahdukset), käyrätorv
 - Huurre voi näyttää epäluonnolliselta (läiskäinen), särötiilet ovat paikoin Voronoi-näköisiä.
 - Rengasta ei ole tarkistettu jatkuvuuden mittarilla; renderöinnit olivat aa=1.
 - Näytönohjainajoja ei tehty videomuodossa.
+
+## Korjauskierros (kriitikon kohdat a1–a3, ohjaajan määräaika)
+Katsottu stilleistä 376, 420, 436, 455, 470, 478, 484, 496,3 s (aa=1); liikesarjaa ei katsottu.
+- **a2 latvat:** huojunta siirtää siluettia nyt vain sivusuunnassa (ei korkeudesta riippuvaa vääntöä), joten kärkien muoto ei vaihdu ruudusta toiseen. Latvat ovat pyöreämpiä ja kärjet pienempiä; 420–455 s siluetti on epäsäännöllisempi (stilleistä). Kolmiosahalaita on vähentynyt, ei varmasti poistunut.
+- **a3 peilikuva:** huurre ja lumi peittävät enintään 55 % heijastuksesta, heijastus on voimakkaampi ja pehmennetty kolmella säteellä. Peilikuva näkyy 376–436 s (ruudut 420 ja 436), 455 s alkaen metsä on liian lähellä, jotta sen peilikuva mahtuisi ruutuun. Pystyraidat vähäisempiä, eivät kadonneet.
+- **a1 loppu:** tumma suorakulmio ja sen terävät reunat poistettu: aukko kasvaa keskeltä (leveys 1,5 → 12,5 m, pehmeät epäsäännölliset reunat), ja metsä hälvenee runkojen näkyessä (usva). Rungot näkyvät kuitenkin vaaleina usvapylväinä eikä selvinä tummina runkoina, ja aukon päättyminen kuvan täyttymiseen on stilleissä pimentymisen näköinen (484 s). Tämä on edelleen heikko.
+- **Sauma jään ja metsän rajalla:** kaukainen jää sulatetaan usvaan ja usvakaista on leveämpi; ohut vaakasuora raja on silti näkyvissä 455–484 s.
+- **Loppuun lisätty tapahtumaa:** putoava lumi (3 kerrosta, aikafunktio) ja horisontin valon lattia (0,22) kunnes viimeiset 12 s sammuttavat sen.
+- **Ei ehditty:** (b) horisontin valon pehmennys kokonaan (rim pienennetty aiemmin), vyörön ja huurteen luettavuus, jään laattojen kaavamaisuus. Raja-ajat: PIMEYS-ruutu 496,3 s on edelleen tasainen (0,0016; 0,0022; 0,0030).

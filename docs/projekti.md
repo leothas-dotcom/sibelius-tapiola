@@ -296,7 +296,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 39 | 9.11. | alkupätkä alku_v4 | "MIKSI Musiikki ei nyt reagoi ... jousien intensiteetti kasvaa? EIKÄ KAMERA VOI AJAA MAAN LÄPI." ... "Aloitetaan alusta." ... "METSÄN VOI TEHDÄ MUUTENKIN KUIN PIIRTÄMÄLLÄ JOKAISEN PUUN ERIKSEEN" ... "SEN PITÄÄ ELÄÄ, SE ON LAAJA, TUMMA, JA SIBELIAANIINEN ... TAPIO JUMALAN ASUINPAIKKA" ... "haluan myös revontulia" | ❌ auki | tyyliohje 4d kohdat 9–13; uusi piirto tekeillä |
 | 40 | 9.11. | alkupätkä alku_v4 | "Sinun piti tehdä 12 maailmaa. Miksi olet tehnyt vain yhden?" ... "Tämä ei ole valmis, ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN" ... "JOSKUS VOI OLLA YKSITTÄISIÄ PUITAKIN. MUTTA NIIDEN PITÄÄ OLLA HARKITTUJA. MITÄ TARINAA NE KERTOO????" | 🔶 suunnitelma kirjoitettu, ei hyväksytty | `docs/kuvakasikirjoitus.md` luku "Kaksitoista maailmaa": jokaisessa lähde, kuva, ääni ohjaa, kamera, puu ja siemen |
 | 41 | 9.11. | maailmat 1–2, välivedos | "nyt se metsä alkaa näyttää siltä mitä pitää" ... "kummut siellä hienosti" ... parallaksi: "Lähellä olevat kappaleet liikkuvat nopeamin, kaukana hitaasti" ... "En ole varma pidänkö tuosta joulukuusesta etualalla" ... "gis-horisontti, joka elää 'hienovaraisesti' sen melodian mukana" ... ei spektrin värinää, "seurata sen melodian kaarta" ... "Ei teräviä vuoria" | 🔶 korjattu, ei todennettu | tyyliohje 4d kohdat 16–19; `visual/matka.js`: parallaksi, horisontti melodian kaaresta, sileä vaara, puu poistettu |
-| 42 | 10.11. | maailmat 1–2 ja referenssit | 13 referenssikuvaa; "valo osuu puun latvoihin, siivilöityy ... oksien välistä" ... "VALON PITÄÄ reagoida musiikkiin" ... "Lopeta. Ei näin. Et voi ottaa yhtä kuvaa, ja muuttaa kaikkea. LUE AINA ENSIN VISUALINEN TYYLI" ... "Vanha toimi paremmin, kun ne ovat kaukana" ... "mihin ne 12 maailmaa jäi? ... laita tausta-agentit puuhaamaan niitä, ja valvo" ... kriitikko tarkistaa JOKAISEN tyyliohjeen säännön; maailmat uskottavia ja heijastavat alkuideaa | ❌ auki | edellinen maailma 1 palautettu; tyyliohje 4d kohdat 20–22; yhteinen pohja `visual/yhteinen.js`, briefit `runs/maailmat/brief.md` ja `runs/maailma_XX/brief.md`; kuusi tausta-agenttia käynnistetty |
+| 42 | 10.11. | maailmat 1–2 ja referenssit | 13 referenssikuvaa; "valo osuu puun latvoihin, siivilöityy ... oksien välistä" ... "VALON PITÄÄ reagoida musiikkiin" ... "Lopeta. Ei näin. Et voi ottaa yhtä kuvaa, ja muuttaa kaikkea. LUE AINA ENSIN VISUALINEN TYYLI" ... "Vanha toimi paremmin, kun ne ovat kaukana" ... "mihin ne 12 maailmaa jäi? ... laita tausta-agentit puuhaamaan niitä, ja valvo" ... kriitikko tarkistaa JOKAISEN tyyliohjeen säännön; maailmat uskottavia ja heijastavat alkuideaa | 🔶 tehty, ei todennettu | edellinen maailma 1 palautettu; tyyliohje 4d kohdat 20–22; yhteinen pohja `visual/yhteinen.js`, briefit `runs/maailmat/brief.md` ja `runs/maailma_XX/brief.md`; kuusi tausta-agenttia käynnistetty |
 | 43 | 10.11. | brief ja tyyliohje | "miksi olet kirjoittanut 'mikään metsän osa ... ei heilahda iskusta' . . enhän sitä tarkoittanut. Totta kai metsä elää. ... Niiden tulee vain käyttäytyä kuten..puut. ... Tietysti niiden pitää liikkua tuulen mukana! Eli reagoida musiikkiin" | 🔶 korjattu, ei todennettu | tyyliohje 4d kohta 1 ja `runs/maailmat/brief.md` kohta 1 kirjoitettu uudestaan; korjaus lähetetty seitsemälle agentille |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
@@ -441,8 +441,19 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   `render/lukittu.mjs`: yksi renderi kerrallaan; `render/arkki.py`: still-arkki). Moduulit: 01_02 (ohjaaja), 03_04, 05, 06,
   07_08, 09, 10, 11_12 (Sonnet-tausta-agentit, briefit `runs/maailma_XX/brief.md`, yhteinen `runs/maailmat/brief.md`).
 
-**Seuraavaksi:** agenttien moduulit valmiiksi; jokaisesta kriitikko, joka tarkistaa tyyliohjeen jokaisen säännön,
-maailman uskottavuuden, siemenen ja kameran; korjaukset; rajakuvien saumat; koko teoksen kokoaminen ja mittaus.
+- 10.11. yö: seitsemän rakentaja-agenttia teki moduulit 03_04 ... 11_12, kuusi kriitikkoa kävi ne läpi sääntö säännöltä
+  (07_08 jäi ilman), estävät virheet palautettiin rakentajille määräajalla. **Vedos 4 koottu** (`runs/vedos_v4/run.json`):
+  17:58, ääni 0,00 ms, kaikki seitsemän saumaa täsmäävät (rajakuvat toimivat: ei leikkauksia). Käyttöraja katkaisi työn
+  kahdesti; kaksi agenttia jouduttiin herättämään.
+- **Opittua:** (1) Rajakuvat (`visual/yhteinen.js`) tekevät rinnakkaisesta työstä liitettävää: jokainen moduuli alkaa ja
+  päättyy sovittuun koko ruudun kuvaan, ja saumat mitataan. (2) Rakentaja-agentit lopettavat heti, kun kuulevat määräajan:
+  määräaika pitää antaa kellonaikana ja sanoa, paljonko aikaa on jäljellä. (3) Agentit katsovat stillejä, eivät liikettä:
+  huojunta ja valon reaktio jäävät todentamatta, ellei brief vaadi liikesarjaa todisteeksi. (4) Sama virhe toistuu
+  agentilta toiselle (terävät vuoret, rivimetsä, kova reunaviiva), vaikka se on briefissä kielletty: kriitikko ja ohjaajan
+  oma katse täysikokoisiin ruutuihin ovat tarpeen. (5) Lukko (`render/lukittu.mjs`) riitti jakamaan näytönohjaimen.
+
+**Seuraavaksi:** käyttäjä katsoo vedoksen 4 (`runs/vedos_v4/tapiola_vedos4_720p.mp4`) ja sanoo, mitkä maailmat ovat oikealla
+tiellä; sen mukaan korjauskierros maailma kerrallaan (tiedossa olevat puutteet: `run.json` kohta `tiedossa_auki`).
 Aiempi suunnitelma: käyttäjä katsoo vedoksen 3 ja antaa palautteen
 
 ---

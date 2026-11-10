@@ -44,16 +44,16 @@ float tips(float wx, float k, float cell) {
     float ci = c + float(j), h = hash(vec2(ci, k * 5.0 + cell)), sh = hash(vec2(ci, k + 4.0 + cell));
     float xi = (ci + 0.15 + 0.7 * hash(vec2(ci, k + 9.0 + cell))) * cell;
     float w = cell * (0.5 + 1.0 * hash(vec2(ci, k + 2.0)));
-    float e = sh > 0.55 ? 1.6 : 0.95;
+    float e = sh > 0.30 ? 2.0 : 1.3;
     tip = max(tip, (0.18 + 0.82 * h * h) * (sh > 0.72 ? 0.7 : 1.0) * max(0.0, 1.0 - pow(abs(wx - xi) / w, e)));
   }
   return tip;
 }
 float canopy(float wx, float k, float sc) {
   float big = vnoise(vec2(wx * 0.010 + k * 7.1, k * 3.3));
-  float mid = vnoise(vec2(wx * 0.045 + k * 1.7, k * 9.1));
+  float mid = vnoise(vec2(wx * 0.045 + k * 1.7, k * 9.1)) + 0.6 * vnoise(vec2(wx * 0.15 + k * 3.1, k * 2.3));
   float tp = max(tips(wx, k, 4.3 * sc), 0.6 * tips(wx + 11.0, k + 0.5, 2.3 * sc));
-  return 0.34 + 0.40 * big + 0.10 * mid + 0.13 * tp + 0.012 * (vnoise(vec2(wx * 2.6, k)) - 0.5);
+  return 0.34 + 0.34 * big + 0.12 * mid + 0.12 * tp + 0.012 * (vnoise(vec2(wx * 2.6, k)) - 0.5);
 }
 
 // kaukainen tausta suunnan mukaan: taivas, horisontin valo ja sileät kummut (äärettömän kaukana, ei parallaksia)
@@ -95,7 +95,7 @@ vec3 forest(vec3 col, vec3 o, vec3 d, float base, float mir, vec3 fogc) {
     float ph = wx * 0.040 - uPh * 0.8 + fk * 1.3;
     float swl = 0.6 * sin(wx * 0.026 - uPh + fk * 0.8) + 0.4 * sin(wx * 0.009 - uPh * 0.55 + 2.1);   // koko massan hidas vellonta
     float sa = uSwell * (1.0 + 0.8 * mir);
-    float xs = wx - hn * hn * amp * sin(ph) - hn * 0.3 * amp * sin(wx * 0.31 + uPh * 1.4 + fk) - sa * swl * (1.5 + 5.0 * hn);
+    float xs = wx - 0.7 * amp * sin(ph) - sa * swl * 3.2;
     float top = canopy(xs, fk, LZ[k] / 260.0) * (1.0 + sa * 0.10 * swl);
     float a = smoothstep(0.012, -0.012, hn - top);
     if (a <= 0.0) continue;
@@ -106,7 +106,7 @@ vec3 forest(vec3 col, vec3 o, vec3 d, float base, float mir, vec3 fogc) {
     vec3 tone = mix(dark, fogc, clamp(fg + veil * (1.0 - 0.6 * min(live, 1.0)), 0.0, 1.0));
     float crest = smoothstep(top - 0.20, top, hn) * (0.5 + 0.5 * sin(ph + 1.2));
     tone += GLOW * (uG * 0.045) * (0.25 + 1.0 * min(live, 1.2)) * crest * crest * (1.0 - 0.7 * fg);
-    a *= (1.0 - 0.35 * gap) * (1.0 - 0.55 * fg * fg);
+    a *= (1.0 - 0.35 * gap) * (1.0 - 0.55 * fg * fg) * (1.0 - 0.65 * uTrunk);
     col = mix(col, tone, a);
   }
   return col;
@@ -129,17 +129,23 @@ vec3 pillars(vec3 col, vec3 o, vec3 d) {
   float t = zt / d.z;
   float wx = o.x + d.x * t, yw = o.y + d.y * t;
   if (yw <= 0.0) return col;
-  float fw = t * 8.65e-4 * 1.4 + 1.2;
+  float fw = t * 8.65e-4 * 1.4 + 0.4;
   float xl = uXT - 12.5, xr = uXT + 12.5, rad = 4.5;
-  float inner = smoothstep(xl + rad - 0.5 - fw, xl + rad + 0.5, wx) * smoothstep(xr - rad + 0.5 + fw, xr - rad - 0.5, wx);
-  float gapA = uGap * inner * smoothstep(0.0, 1.5, yw) * smoothstep(135.0, 100.0, yw);
-  col = mix(col, PIMEYS, gapA);
-  float ta = (smoothstep(rad + fw, rad - fw, abs(wx - xl)) + smoothstep(rad + fw, rad - fw, abs(wx - xr))) * smoothstep(0.0, 0.6, yw) * smoothstep(130.0, 95.0, yw);
-  float bark = 0.6 + 0.9 * vnoise(vec2(wx * 1.3, yw * 0.08)) + 0.4 * (vnoise(vec2(wx * 6.0, yw * 0.05)) - 0.5);
-  vec3 tcol = mix(HAMY, NOKI, 0.5) * bark;
-  tcol = mix(tcol, FOG * 0.8, 0.55 * exp(-yw / 7.0));
-  tcol = mix(tcol, FOG * 0.7, 1.0 - exp(-t / uFogL));
-  return mix(col, tcol, clamp(ta * uTrunk, 0.0, 1.0));
+  float edgeN = 1.2 * (vnoise(vec2(yw * 0.35, 3.0)) - 0.5);
+  // runko: reunavalo horisontin valosta ja usvan tummuus tyvessä
+  float dl = abs(wx - xl) + edgeN, dr = abs(wx - xr) + edgeN;
+  float ta = (smoothstep(rad + fw, rad - fw, dl) + smoothstep(rad + fw, rad - fw, dr)) * smoothstep(0.0, 0.6, yw) * smoothstep(130.0, 95.0, yw);
+  float inl = clamp((rad - dl) / rad, 0.0, 1.0), inr = clamp((rad - dr) / rad, 0.0, 1.0);
+  float side = (wx < uXT) ? inl : inr;
+  float bark = 0.7 + 0.8 * vnoise(vec2(wx * 1.3, yw * 0.08)) + 0.4 * (vnoise(vec2(wx * 6.0, yw * 0.05)) - 0.5);
+  vec3 tcol = HAMY * 2.0 * bark + GLOW * (0.012 + 0.06 * uG) * pow(1.0 - side, 3.0) * (wx < uXT ? 1.0 : 1.0);   // reuna, joka on kohti aukkoa, saa valoa
+  tcol = mix(tcol, FOG * 0.5, 0.5 * exp(-yw / 9.0));
+  tcol = mix(tcol, FOG * 0.5, 0.3 * (1.0 - exp(-t / uFogL)));
+  col = mix(col, tcol, clamp(ta * uTrunk, 0.0, 1.0));
+  // pimeä väli: aukko kasvaa keskeltä, pehmeät epäsäännölliset reunat
+  float wA = 1.5 + 11.0 * pow(uGap, 1.1);
+  float ap = smoothstep(wA + 2.0 + fw, wA - 2.0, abs(wx - uXT) + 2.0 * (vnoise(vec2(yw * 0.18, 9.0)) - 0.5)) * smoothstep(0.0, 4.0, yw) * smoothstep(135.0, 100.0, yw);
+  return mix(col, PIMEYS, clamp(ap * min(uGap * 3.0, 1.0), 0.0, 1.0));
 }
 
 // jään pinta: pohjasävy (rajakuva), säröt, huurre, lumi, valon rengas, väike jään alla ja metsän peilikuva
@@ -185,7 +191,7 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
   }
   // lumi jään pinnalla: tuulen ajamia viiruja
   float sn = smoothstep(0.66, 0.86, fbm(vec2(xz.x * 0.09, xz.y * 0.33) + 3.0)) * (0.7 + 0.3 * vnoise(xz * 7.0));
-  float cover = clamp(sn + 0.75 * frost, 0.0, 1.0);
+  float cover = clamp(0.6 * sn + 0.35 * frost, 0.0, 0.55);
   // peilikuva: heijastus jään pinnasta; kaltevuus = pieni epätasaisuus + vellova aalto koko kuvassa
   vec3 rd = vec3(d.x, -d.y, d.z);
   float psi = (rd.x / max(rd.z, 1e-3)) * 5.0 - uPhI;
@@ -194,10 +200,10 @@ vec3 iceShade(vec3 o, vec3 d, float t, vec3 hit, vec3 fogc) {
   rd.y += 0.0012 * (vnoise(xz * vec2(0.9, 0.5)) - 0.5) * (1.0 - smoothstep(0.3, 1.0, fz / 1.0));
   rd = normalize(rd);
   vec3 refl = vec3(0.0);
-  for (int i = 0; i < 3; i++) { vec3 r2 = rd; r2.y += (float(i) - 1.0) * 0.011; r2 = normalize(r2);
+  for (int i = 0; i < 3; i++) { vec3 r2 = rd; float fi = float(i) - 1.0; r2.y += fi * 0.011; r2.x += fi * fi * 0.006; r2 = normalize(r2);
     refl += (i == 1 ? 0.5 : 0.25) * pillars(world(hit, r2, t, 1.0, fogc), hit, r2); }
   float fr = 0.02 + 0.98 * pow(1.0 - cosT, 5.0);
-  vec3 col = base + refl * fr * 0.80 * (1.0 - cover) * uOpen;
+  vec3 col = base + refl * fr * 1.0 * (1.0 - cover) * uOpen;
   // särön ja huurteen valo: horisontin valo valaisee
   vec3 lit = HALLA * (0.05 + 0.65 * uG) * uOpen;
   col += lit * (0.55 * cr + crHalo * 0.25);
@@ -229,11 +235,17 @@ vec3 scene(vec2 p) {
   vec3 col;
   float tIce = d.y < -1e-4 ? -o.y / d.y : 1e9;
   vec3 hit = o + d * tIce;
-  if (d.y < -1e-4 && hit.z < ZS) col = iceShade(o, d, tIce, hit, fogc);
+  if (d.y < -1e-4 && hit.z < ZS) { col = iceShade(o, d, tIce, hit, fogc); col = mix(col, fogc * 0.75 + col * 0.25, 0.85 * smoothstep(60.0, 8.0, ZS - hit.z)); }
   else col = world(o, d, 0.0, 0.0, fogc) * uOpen;
   col = pillars(col, o, d);
+  // lumi: kolme kerrosta, pudotus ja sivutuuli ovat ajan funktioita
+  for (int i = 0; i < 3; i++) { float fi = float(i); float sc = 14.0 + 20.0 * fi, sp = 0.05 + 0.04 * fi;
+    vec2 q = vec2(p.x * sc + uCam.x * (0.6 + fi) * 0.4 + uTime * 0.05 * (1.0 + fi) + fi * 13.0, p.y * sc + uTime * sp * sc * 0.12 + fi * 7.0);
+    vec2 ic = floor(q), fr = fract(q); float h = hash(ic);
+    if (h < 0.10) { vec2 c = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.1)); float r = 0.10 / (1.0 + 0.0 * fi);
+      col += vec3(0.55, 0.62, 0.75) * 0.5 * smoothstep(r, r * 0.3, length(fr - c)) * (0.15 + 0.5 * uG) * uOpen * (1.0 - uEnd) / (1.0 + fi * 0.6); } }
   float elg = abs(d.y) / max(length(d.xz), 1e-4);
-  col += fogc * 1.1 * uMist * exp(-elg / 0.018) * uOpen;                      // matala usva rannan ja jään rajalla
+  col += fogc * 1.2 * uMist * (exp(-elg / 0.012) + 0.5 * exp(-elg / 0.05)) * uOpen;                      // matala usva rannan ja jään rajalla
   col = mix(col, PIMEYS, uEnd);
   return col;
 }
@@ -254,7 +266,7 @@ export function signaalit(d) {
   const Sj = (t) => sstep(0.28, 0.85, d.keski(t, 0.8));
   // horisontin valo: teoksen pitkä ääni; gis palaa (gis_palaa) vahvempana kuin sitä edeltävä pitkä e
   const wG = (t) => 0.55 + 0.45 * sstep(A.gis_palaa - 1, A.gis_palaa + 1, t);
-  const G = (t) => clamp(0.10 + 0.95 * wG(t) * sstep(0.04, 0.70, d.pitka(t, 1.2)), 0, 1.1);
+  const G = (t) => clamp(0.10 + 0.95 * wG(t) * sstep(0.04, 0.70, d.pitka(t, 1.2)), 0.22 * (1 - sstep(T1 - 12, T1 - 3, t)), 1.1);
   // kameran vauhti: hidas keskiarvo koneen kuulemasta liikkeestä; alussa nousee nollasta
   const sLiike = d.sarja((f) => (d.tapahtuu('liike', f / FPS) ? 1 : 0));
   const vauhti = (t) => sstep(T0 + 2, T0 + TIN + 6, t) * (0.8 + 0.4 * d.ka(sLiike, t * FPS, 5 * FPS));
@@ -300,7 +312,7 @@ export function signaalit(d) {
     return out.slice(-24);
   };
   const trunkVis = (t) => sstep(A.hajoaa_hiljaisuuteen - 4, A.hajoaa_hiljaisuuteen + 18, t);
-  const gap = (t) => sstep(A.hajoaa_hiljaisuuteen + 2, T1 - 9, t);
+  const gap = (t) => sstep(A.hajoaa_hiljaisuuteen + 2, T1 - 5, t);
   function tila(t) {
     const f = t * FPS, L = d.koko(t, 1.5);
     const live = []; for (let k = 0; k < 6; k++) live.push(Sj(t - 1.6 * (k / 5)) * (1 - 0.4 * (urku(t) ? 0 : 0)));

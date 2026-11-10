@@ -125,3 +125,11 @@ ikihongat ovat polun vieressä, eivät etualalla keskellä; 20 valo ja varjo: va
 - Mystisiä olentoja ei ole (ohjaajan ehdotus 4d.6, ei vahvistettu).
 - Huojuntaa, hengitystä ja askeleita ei ole katsottu liikesarjoina eikä still-ajoina aikapisteittäin tällä lopullisella versiolla;
   kaikki still-ajot ovat aa=1.
+
+## 7. Korjauskierros kriitikon jälkeen (ohjaajan lista 1–3)
+
+Katsottu stilleistä 62,6 / 64,0 / 100,7 / 190 / 195,7 / 199 s (aa=1, `tark/arkki.png`):
+- **Askeleet:** pulssi nousee pehmeästi (0,22 s), häipyy alle sekunnissa, on paikallinen (kapea kaista maassa edellä); usvan väistyminen kavennettu ja himmennetty. Pilkka on jo rungossa himmeänä (`bl` 0,07), syttyy pehmeästi ja on epäsäännöllinen veistetty lovi (100,7 s ruutu). Liikesarjaa ei katsottu.
+- **Alku:** usva on aluksi paksu (rungot tulevat esiin hitaasti 4,5 s aikana) ja oksaseinät avautuvat 2,2–5 s; 62,6 s on vielä tasaista pimeää, 64,0 s oksamassat aukeavat. Rungot eivät ole täydessä koossa heti, mutta avautuminen on yhä läikkämäistä.
+- **Maailma 4:** latvusto tiheämmäksi ylhäällä, lumiset latvat kirkkaammiksi, petäjän tupsut isommiksi ja valoisammiksi. 190 s ruutu lukee paremmin (tumma latvusto, tähdet); **195,7 s on yhä litteä**: taivas tasaisen harmaa, petäjän latva ja oksat litteitä tupsuja. Ei korjattu loppuun.
+- Huojunta tuulessa: ei tehty näkyvämmäksi (aika loppui).
