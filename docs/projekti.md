@@ -534,15 +534,13 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
   (6) Rakentaja voi poistaa hyvän asian, jos brief väittää sitä virheeksi (ikisalon lähirungot olivat vedoksen 5 kuvaa):
   väite "tämä on edellisen vedoksen lisäys" tarkistetaan gitistä ennen kuin se kirjoitetaan briefiin.
 
-**Seuraavaksi (ohjaajan tilannekuva 11.11.2026 klo 0.45; päivitä tämä, kun tila muuttuu):**
-1. **Vedos 7.** Hyväksytty ohjaajan omista liikesarjoista: 01_02, 05, 07_08, 10. Viimeisteltävänä (rakentajalla pyyntö
-   sisässä): 06 (askelten kirkas ydin pois, halkeama ohueksi), 09 (pölyhunnun ruudukkokuvio pois, holvikaaren reunat pois
-   avoimessa tilassa, sway enintään 1,5 %, kommenttisäie kaarevaksi). Raportoimatta: 03_04 (ylöskatse 3:03-3:23: rungot
-   päättyvät latvukseen; lumen reaktio alttoviuluihin). Kun kaikki on hyväksytty: `python -I render/kokoa.py kokoa vedos_v7`
-   (ääni 0 ms, saumat, lopun MD5), `python -I render/kokoa.py vertaa vedos_v7 vedos_v5` ja `... vedos_v6u`, tuore
-   Sonnet-kriitikko kootusta videosta (rivit 60-94 yksi kerrallaan, liikesarjoista mitaten; `runs/vedos_v7/kriitikko.md`),
-   palautelistan rivien 60-94 tilat ja todisteet, `runs/vedos_v7/run.json`, commit ja push. Käyttäjälle tiedostot
-   `runs/vedos_v7/tapiola_vedos7_720p.mp4` ja `..._whatsapp.mp4`.
+**Seuraavaksi (ohjaajan tilannekuva 11.11.2026 klo 2.10; päivitä tämä, kun tila muuttuu):**
+1. **Vedos 7 on koottu** (`runs/vedos_v7/run.json`): kaikki seitsemän moduulia hyväksytty ohjaajan omista liikesarjoista,
+   ääni 0,00 ms, saumat 0, lopun MD5 sama, vertailu vedoksiin 5 ja 6 ajettu, commit ja push tehty. **Kesken: kriitikko**
+   (`runs/vedos_v7/kriitikko.md`; tehtävä briefin lopussa). Kun raportti on tullut: tarkista jokainen ESTÄVÄ itse
+   liikesarjasta; korjauta todelliset viat Sonnet-rakentajalla (vain nimetty kohta), kokoa uudelleen ja päivitä
+   palautelistan rivit 60–94 (nyt "kriitikko kesken") ja `run.json`. Jos kriitikon raporttia ei ole, käynnistä tuore
+   kriitikko. Tiedossa auki: `run.json` kohta `tiedossa_auki`.
 2. **Vedos 8: taika ja uhka** (rivi 95, tyyliohje 4d.37, `runs/vedos_v8/brief.md`): seitsemän Sonnet-rakentajaa, jokaiselle
    oma moduuli; lisäykset kytkimen `taika=1` takana, `taika=0` todistetaan samaksi kuin vedos 7 (0 muuttunutta jaksoa);
    osat `osa_v8.mp4`; kokoaminen `python -I render/kokoa.py kokoa vedos_v8 --osa osa_v8.mp4`; ohjaaja katsoo jokaisen
