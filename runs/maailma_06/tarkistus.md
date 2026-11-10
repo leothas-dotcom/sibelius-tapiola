@@ -1,94 +1,28 @@
-# Maailma 6 tarkistus (visual/maailma_06.js), rakentajan raportti
+# Maailma 6 tarkistus, vedos 5 kierros 3 (visual/maailma_06.js), Rattle 2022, 5:36,8 – 8:16,3
 
-Aikaväli `pohja_vaihtuu_D` (336,8 s) → `jousijakso_urkupiste_E_alku` (496,3 s), Rattle 2022. Ankkureista, ei käsin kirjoitettuja sekunteja.
+Renderi: `runs/maailma_06/osa.mp4` (aa=2, 4785 ruutua, 159,5 s, lukon kautta, ääni kuuntelukopiosta). Edellinen renderi talteen: `runs/v5_06/osa_kierros2.mp4`. Videon aika = teoksen aika − 336,8 s.
+Liikesarjat: `runs/v5_06/sarjat_k3/` (a_hyppy_sello, a_hyppy_viulu, b_tapio, c_mf_ankkuri, c_mf_ohi, d_taite, f_vask, g_loppu, h_H). Mittaukset ja skriptit: `runs/v5_06/k3/` (`mittaus_k3.json`, `mittaa_k3.py`, `mittaa_jaa2.py`, `mittaa_kummut2.py`, `mittaa_kaaret.py`, `mittaa_lumi2.py`, `mittaa_jaykkyys2.py`, `paallekkain_uusi.png`, `kummut_ero2.png`).
+Muutokset vain `visual/maailma_06.js`; ranta, jää, kameran reitti ja loppu eivät uusiutuneet.
 
-## Suunnitelma
-**Paikka:** musta talvijää, jonka toisella rannalla on siemenen kuva: horisontin valo (pitkä ääni) kumpujen takana, tumma metsän massa kuudessa kerroksessa, sileät kummut. Kamera 0,45–1 m jään yllä, kulkee jäätä pitkin kohti rantaa (101 m, hitaasti, hieman viistoon). Kuva on säteenseurantaa: jää on taso, metsä tasoina, peilikuva on heijastus. Peilikuva on siis metsän ylösalaisin jäässä.
-**Kamera:** alussa katse alas (kuva = rajakuva JAA), 12 s aikana nousu ja käännös vaakaan (enintään noin 12 °/s), sitten tasainen eteneminen. Lopussa kohti kahta runkoa ja niiden väliä, pimeä täyttää kuvan.
+## Kierroksen 3 kahdeksan kohtaa
 
-| Kuunteluoppaan rivi | Kuvassa | Signaali |
-|---|---|---|
-| pohja vaihtuu, matala d sykkii | valon rengas kulkee jään pinnassa | `d.alut` (matalan kaistan alut) |
-| gis palaa, pitkä ääni | horisontin valo kirkastuu kumpujen takana | `d.pitka` (painotus gis_palaasta) |
-| peikot G | pilkahduksia jään alla, korkeus = etäisyys | `d.nuotit` (lyhyet, midi 72+) |
-| käyrätorvipulssit | horisontin valo hengittää | `d.pitka` |
-| vyöry H-urkupisteellä | aalto koko metsän ja peilikuvan läpi, hidas, raskas | `d.keski` + vyöry-verho (ankkurit) |
-| vaskipulssit | huurre leviää säröistä sykäyksittäin ja jää | pitkän äänen alut (`d.taso`/`d.pitka`), 8 sykettä |
-| metsä harvenee, hajoaa | glow ja pilkahdukset hiipuvat, runkojen näkyvyys nousee | pitka, nuotit, ankkurit |
-| nousu / lasku | kumpujen ja valon korkeus | `tapahtuu('nousu'/'lasku')` hidas keskiarvo |
-| urkupiste | jää ja horisontti pysyvät (ei värinää), metsä ja peilikuva liikkuvat | `tapahtuu('urkupiste')` |
-| liike | kameran vauhti ±20 % hitaana keskiarvona | `tapahtuu('liike')` |
+| # | Kohta | Tila | Mittaus / todiste |
+|---|---|---|---|
+| 1 | Tapion kummut pehmeiksi | tehty, muoto mitattu vain osin | Kumpu on pelkkä hehku A·exp(−r²/R²) jään tason koordinaateissa (R 15 → 60 m 2,5 s, A hiipuu (1−a)^1,5, väri hopea); suorakulmaiset ajolumisäteet, rengas ja ristisäteet poistettu 76–110 s:ltä. Ensimmäinen kumpu 84,267 s (ankkuri 84,30; aiemmin 86,0): jään lohkokirkkaus +31 % jo 0,05 s sen jälkeen (`mittaa_kummut2.py`). Paikallinen huippu +40…+90 % (sumennettu σ 20 px), keskimäärin jäällä +13…20 %. **Ei todennettu mittaamalla:** "ei reunaa" -profiilin jyrkkyys ei erotu, koska ruutuero sisältää jään liikkuvat säröt ja hyppijät (`kummut_ero2.png`); koodissa muoto on puhdas Gaussin hehku. Katso `b_tapio.png`. |
+| 2 | Nymfi hyppii | tehty | Hyppijän paikka on kaari korkeus = h·4u(1−u), h 0,3–0,8 m (hypyn pituus 0,35–2 m), suunta vaeltaa, heijastus jäässä kulkee kaaren mukana. 3 hyppijää (viulut 18–28 m, alttoviulut 10–15 m, sellot 5,5–8,5 m), kosketukset mitatulla sykkeellä (TOUCH, noin 7/s kaikilla yhteensä). Kuvanopeus (malli): mediaani 186 / 181 / 219 px/s, p90 275–421. Kaaren korkeus videosta kolmessa ryhmässä kolme hyppyä (kirkkaimman pisteen seuranta): viulu 20–23 px (malli 29–38), alttoviulu 40–71 px (62–77), sello 41–87 px (60–98); `mittaa_kaaret.py`. Ydin 4–11 px, ei ristisäteitä. `a_hyppy_sello.png`, `a_hyppy_viulu.png`. |
+| 3 | 6:30 leikkivä joukko | tehty | Rivi ja pystyjonot poistettu. Ankkurin ruudussa (54,00 s) 32 hyppijää siemenestä, log-tasaisesti 5–70 m syvyydellä ja koko leveydellä, eri kokoja; yhteinen mitattu rytmi, eri suunnat (pääosin kohti katsojaa, vaeltaa), osa kulkee ohi. Kuvan keskikirkkaus (`mittaus_k3.json`): 50–53,9 s 55,7; ruutu 54,00: 56,4 → 63,0; 54,5–56 s 68,2; 56–58 s 63,5; 58–60,5 s 63,0 (+13 %, pysyy koholla H:hon asti, 61–63 s 54,7). `c_mf_ankkuri.png`, `c_mf_ohi.png`. |
+| 4 | Taite I_ratsastus | osin | Kameran vauhti kasvaa ankkurista jatkuvasti: malli jään vauhti 1,91 m/s (ankkuri) → 4,11 (+3 s, 2,1×) → 5,70 (84,3 s, 3,0×), pysyy 5,8:ssa fortissimon yli ja hidastuu vaskipulsseissa (3,56 m/s 100 s, 1,68 m/s 110 s). **Videosta mitattu jään virtaus** (palakorrelaatio, alin jää, px/s 1080-korkeudella; `mittaa_jaa2.py`): 70 s 120, 72 s 120, 75 s 630, 80 s 960, 84,3 s 1140, 85 s 1080, 90,5 s 780, 94 s 1080, 96 s 900, 100 s 570, 105 s 240 (vanha renderi: 70 s 120, 80 s 540, 85 s 720). 75,5 s -mittaus epäonnistui (60, hajonta suuri). Ajolumi: ohuet lyhyet pehmeät viirut (kaksi solukokoa) virtaavat katsojaa kohti, alkavat ankkurin ruudussa; kiitävä valo alkaa ankkurissa (72,5 s). **Rannan korkeus kuvassa:** malli +7,4 % ensimmäisessä 5 s:ssa ja +12,2 % seuraavassa; videosta mitattu (`rannan_korkeus_px_270`, 270 px) 72,5 s 87, 75 s 90, 77,5 s 90, 80 s 88, 82,5 s 83, 85 s 82, 90 s 93, 99 s 103: **ei näytä kasvua ennen 85 s**, mittari on epäluotettava (tummennut metsä), joten rannan kasvu on osin todentamatta. Ankkurin kohdalla näkyy myös suuri patarumpurengas 72,3–73 s (H→I-haara, ei muutettu). `d_taite.png`. |
+| 5 | Lumi | tehty | Tiheys tiputettu (3 kerrosta, 0,060 / 0,015 / 0,0045), puuskassa hiutale on ohut pehmeä viiru liikkeen suuntaan (paksuus kolmannes, ei soikio). Näkyviä hiutaleita metsä- ja taivaskaistalla (`mittaa_lumi2.py`, sama mittari): uusi 13–37 kappaletta tavallisesti (70 kohdassa 85 s, 53–65 kohdissa 88–115 s, jossa mukana ajolumi- ja metsäpikseleitä), vanha 165–266. Leveys/korkeus: tavallisesti 1,0–1,2; viirut vain puuskassa (54,2–55 s mediaani 1,4–5,3; 88–96 s p90 2,9–5,4 ohuita viiruja). |
+| 6 | Englannintorvi | tehty | Vaakajuova rannan runkojen raoissa, kontrasti rivikeskiarvossa 27,5–30,3 / 255 (104–124 s), 100 s 19 (tulee sisään); huippupikseli 88–140 yli taustan. Korkeus ja kirkkaus seuraavat melodiaa (koodi, ei erillistä liikesarjamittausta). `f_vask.png`. |
+| 7 | Peilikuva ja keskikerros | tehty | Latvojen reuna peilikuvassa sumennettu etäisyyden mukaan, aaltoilu pienennetty, heijastus 0,8×; keskikerroksen runko tasainen ja latvojen reunavalo lähes pois (ei läpikuultavia kolmioita). Still 93 s: peilikuvassa pehmeitä tummia vanoja, ei teräviä hampaita. Ei erillistä lukumittausta hammaslaitaisuudelle. Rannan jäykkyys säilyi: 0,4 s ruutuero metsäkaistalla Tapio 84–98 s 2,6 (vanha 5,0), taite 2,3 (3,2), vask 1,8 (3,4), rauhallinen 0,8 (1,6); päällekkäiskuva `paallekkain_uusi.png`. |
+| 8 | Lopun kaksi runkoa | tehty | Rungot kaarnan sävyllä (harmaanruskea), pystyuurteinen kaarna, ei usvamixiä; still 138 s ja 141 s: tummat rungot kuvan reunoilla. Kaaret kuvan yläkulmissa ovat metsän jäänne pimeän välin ympärillä. |
 
-## Miten metsä elää (ohjaajan korjaus 10.11.)
-Metsä huojuu koko ajan tuulessa: latvat taipuvat yhdessä, tyvi ei liiku (`amp`, `ph`), ja koko latvuston massa velloo yhtenä aaltona (`uSwell`: sivuttaissiirtymä ja hidas korkeuden vaihtelu aallossa, jonka vaihe on kertymä). Peilikuva velloo samasta aallosta ja lisäksi jään pinnan vääntyvänä aaltona (`uSwI`). Tuuli on musiikki: amplitudi = jousten voima (`d.keski`), vyöryssä (420–436 s) vahvempi, ja vaihe etenee nopeammin. Tummuus vyöryy rannasta kauas jousten tullessa (`uLive`, viive kerroksittain). Mikään ei kasva tai pompi nuoteista; ei iskuja tällä välillä (`d.iskut` tyhjä).
+## Kuunteluoppaan rivit (muuttuneet)
+5:48–6:30 hyppiminen: kohta 2. 6:30 mf: kohta 3. 6:49 taite: kohta 4. 7:01 Tapio: kohta 1. 7:15 englannintorvi: kohta 6. Muut rivit (paisutus, katkeaminen, gis, H, J, loppu) eivät muuttuneet; H:n parvi ja valuminen näkyvät sarjassa `h_H.png`.
 
-## Rajakuvat
-- **Alku:** still 336,8 s: keskiarvo RGB (24, 35, 46), hajonta 1–2, vastaa RAJA.JAA:n laskettua arvoa. Kaikki lisäykset kerrotaan `uOpen`:lla (0 → 1 yhdessä ja puolessa sekunnissa). Avautuminen: säröt tulevat näkyviin kameran noustessa (337–344 s), horisontti laskeutuu ruudun ylälaidasta paikalleen 344–349 s. Katsottu stilleistä sekunnin välein.
-- **Loppu:** still 496,3 s: lineaarinen keskiarvo (0,00160; 0,00220; 0,00298) = PIMEYS, hajonta alle 0,5 (dither). Lopussa viimeiset 6 s sekoitetaan PIMEYS:iin; pimeä väli täyttää kuvan jo ennen sitä (rungot lähtevät kuvasta noin 480 s).
-
-## Tyyliohjeen luku 12 (0–21) ja 4d (1–19)
-Toteutuu / ei koske / ei toteudu. Ruudut: `runs/maailma_06/tark/arkki.png` (ajettu 20 hetkeä 352–496 s) ja yksittäiset stillit.
-
-| Kohta | Tila |
-|---|---|
-| 0 ääni ohjaa | toteutuu osin (valo, renkaat, pilkahdukset, huurre, vellonta: kyllä; tremolo: ei tapahtumaa välillä) |
-| 1 kamera sisään ja eteen | toteutuu; katseen korkeus muuttuu vain alussa |
-| 2 pysähdys | ei koske, ei pysähdystä |
-| 3 ei pyöritystä, ≤ 20 °/s | toteutuu (huippu noin 12 °/s, laskettu: 1,5 × 94° / 12 s) |
-| 4 kamera ei reagoi iskuun | toteutuu |
-| 5 siirtymä kulku, ≥ 4 s | toteutuu (alku 12 s, loppu 20 s), mittakaava jatkuva |
-| 6 kolme syvyyskerrosta | toteutuu (jää, kuusi metsäkerrosta, kummut) |
-| 7 puhuja tulee lähemmäs | osin: pilkahdukset etenevät korkeuden mukaan etäisyydelle |
-| 8 reunat eivät vuoda | toteutuu |
-| 9 metsä näkyy massana | toteutuu (ei puuriviä); latvat ovat osin liian piikikkäitä, ks. heikkoudet |
-| 10–11 isku ympäristössä, ei ilmesty | ei koske (ei iskuja välillä); rengas on jo jäässä |
-| 12 enintään kolme liikkuu | osin: vellonta, huurre, pilkahdukset samaan aikaan |
-| 13 väike kaukana | ei toteudu täysin: pilkahdukset jään alla, ei kaukaa |
-| 14 valolla lähde | toteutuu (horisontin valo, rengas, jään alla) |
-| 15–16 ei lämpöä, ei punaista, ei kajoa | toteutuu |
-| 17 värit vaihtuvat ei iskussa | toteutuu |
-| 18 hiljaisuus | osin: lopussa elementit hiipuvat, jää ja metsä jäävät |
-| 19–21 ei paperia, kliseitä, tekoälykuvia | toteutuu; ei revontulia, ei hahmoja; neonviiva poistettu |
-| 4d.1 metsä pysyvä mutta huojuu | toteutuu: ei pomppua, ei kasvua nuoteista |
-| 4d.2 laaja ja syvä | osin (kuusi kerrosta, mutta usvaa on vähän) |
-| 4d.3 kamera eteen | toteutuu |
-| 4d.4 maailmat sisäkkäin | toteutuu (jää → ranta → runkojen väli) |
-| 4d.5 gis horisonttina, mäet | toteutuu (hidas, 2,6 s keskiarvo) |
-| 4d.6 olennot | ei koske tässä maailmassa |
-| 4d.9–10 massa, jousten intensiteetti | toteutuu (tummuus ja vellonta) |
-| 4d.11 Tapion talo | ei koske |
-| 4d.12 revontulet | ei koske, ei revontulia |
-| 4d.13 kamera ei maan läpi | toteutuu (korkeus aina ≥ 0,45 m) |
-| 4d.14 yksittäinen puu | kaksi runkoa lopussa, nimetty briefissä (Ikisalon ensimmäiset pylväät) |
-| 4d.16 parallaksi | toteutuu (jään raot liukuvat nopeasti, ranta hitaasti, viisto ajo) |
-| 4d.17 mikään ei väri spektrin tahdissa | toteutuu (keskiarvot 0,3–2,6 s) |
-| 4d.18 ei teräviä vuoria | toteutuu (kummut sileitä) |
-| 4d.19 etualan puu | toteutuu (ei puuta) |
-| 4d.20 valo ja varjo | osin |
-| 4d.22 uskottava, siemen | toteutuu osin: ks. alla |
-
-## Kuunteluoppaan rivit
-Näkyy: pohja vaihtuu (renkaat), gis palaa, peikot G (pilkahdukset), käyrätorvipulssit (horisontin valo), vyöry, vaskipulssit (huurre), nousu/lasku (kummut), urkupiste, loppu. Osin: staccato-pilkahdukset muualla (voima 0,35), liike hidastuu/kiihtyy (vain kameran vauhti), ylärekisteri sammuu (kumpujen valo vain epäsuorasti). Ei: tremolo (ei tapahtumaa välillä), `basso vaikenee` erikseen (vain maan hohto hiipuu).
-
-## Omat lisäykset
-- Rajan runkojen näkyvyys nousee 458–480 s (usva väistyy): ilman sitä rungot olisivat näkyneet alusta asti; perustelu: brief "jään takaa nousee".
-- Matala usvakaista horisontissa (uMist): rannan ja jään raja pehmeäksi, tyyliohje 1 (usva).
-- Lumi jään pinnalla viiruina: brief "lunta pinnalla". Putoavaa lunta ei ole toteutettu.
-
-## Heikkoudet (rehellisesti)
-- **Loppu on heikko:** rungot erottuvat huonosti tummasta metsästä (tummat tummaa vasten), pimeä väli näkyy aluksi tasaisena suorakulmiona (480–490 s) ja jää pysyy vaaleana huurteisena lähes loppuun; katsottu vain harvoilla stilleillä. 25 viimeistä sekuntia ovat pääosin tasaisen tumma, ja yli 20 s samannäköistä.
-- Latvat ovat osin liian piikikkäitä, kun kamera lähestyy (joulukuusivaikutelma); vähennetty mutta ei poistettu.
-- Peilikuva peittyy huurteella 450 s jälkeen lähes kokonaan (huurre jää, brief); siemenen peilikuva on selvin 368–445 s.
-- Metsän vellontaa ja huojuntaa ei ole katsottu liikesarjana (vain stillit); sen suuruus (±10 % korkeudessa, muutama metri sivusuunnassa) voi olla liian hienovarainen.
-- Huurre voi näyttää epäluonnolliselta (läiskäinen), särötiilet ovat paikoin Voronoi-näköisiä.
-- Rengasta ei ole tarkistettu jatkuvuuden mittarilla; renderöinnit olivat aa=1.
-- Näytönohjainajoja ei tehty videomuodossa.
-
-## Korjauskierros (kriitikon kohdat a1–a3, ohjaajan määräaika)
-Katsottu stilleistä 376, 420, 436, 455, 470, 478, 484, 496,3 s (aa=1); liikesarjaa ei katsottu.
-- **a2 latvat:** huojunta siirtää siluettia nyt vain sivusuunnassa (ei korkeudesta riippuvaa vääntöä), joten kärkien muoto ei vaihdu ruudusta toiseen. Latvat ovat pyöreämpiä ja kärjet pienempiä; 420–455 s siluetti on epäsäännöllisempi (stilleistä). Kolmiosahalaita on vähentynyt, ei varmasti poistunut.
-- **a3 peilikuva:** huurre ja lumi peittävät enintään 55 % heijastuksesta, heijastus on voimakkaampi ja pehmennetty kolmella säteellä. Peilikuva näkyy 376–436 s (ruudut 420 ja 436), 455 s alkaen metsä on liian lähellä, jotta sen peilikuva mahtuisi ruutuun. Pystyraidat vähäisempiä, eivät kadonneet.
-- **a1 loppu:** tumma suorakulmio ja sen terävät reunat poistettu: aukko kasvaa keskeltä (leveys 1,5 → 12,5 m, pehmeät epäsäännölliset reunat), ja metsä hälvenee runkojen näkyessä (usva). Rungot näkyvät kuitenkin vaaleina usvapylväinä eikä selvinä tummina runkoina, ja aukon päättyminen kuvan täyttymiseen on stilleissä pimentymisen näköinen (484 s). Tämä on edelleen heikko.
-- **Sauma jään ja metsän rajalla:** kaukainen jää sulatetaan usvaan ja usvakaista on leveämpi; ohut vaakasuora raja on silti näkyvissä 455–484 s.
-- **Loppuun lisätty tapahtumaa:** putoava lumi (3 kerrosta, aikafunktio) ja horisontin valon lattia (0,22) kunnes viimeiset 12 s sammuttavat sen.
-- **Ei ehditty:** (b) horisontin valon pehmennys kokonaan (rim pienennetty aiemmin), vyörön ja huurteen luettavuus, jään laattojen kaavamaisuus. Raja-ajat: PIMEYS-ruutu 496,3 s on edelleen tasainen (0,0016; 0,0022; 0,0030).
+## Mitä jäi auki
+- Rannan korkeuden kasvua ei saatu todennettua videosta (malli +7 %/5 s).
+- Kumpujen "ei reunaa" ei todettu numeerisesti, vain koodista ja stilleistä.
+- Videon keskikirkkaus muuttuu 0,2 s:ssa 6,3 % (8,7 s) ja 10,6 % (57,3 s, marcato-rengas); 6:30:n porras (+13 % ruudussa 54,0) on nimetty muutos.
+- Ajolumiviirut lähellä jäävät perspektiivissä säteittäisiksi viivoiksi; ne ovat ohuita, mutta voivat edelleen lukea säteinä.
+- Kumipuu-/piikkihavainto: peilikuvan hampaat poistettu, mutta käyttäjä ei ole nähnyt tätä versiota.

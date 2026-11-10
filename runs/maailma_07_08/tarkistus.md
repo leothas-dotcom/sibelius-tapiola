@@ -1,137 +1,50 @@
-# Tarkistus: maailmat 7 (Ikisalo) ja 8 (Väärä valo), `visual/maailma_07_08.js`
+# Tarkistus (vedos 5, kierros 3): maailmat 7 ja 8, `visual/maailma_07_08.js`
 
-Aikaväli: `jousijakso_urkupiste_E_alku` (496,3 s) → `M_raskaat_askeleet` (691,6 s), Rattle/LSO 2022. Kaikki ajat tulevat `d.aika`sta.
-Tarkistuskuvat: `runs/maailma_07_08/tark/` (viimeisin arkki `arkki.png`; stillit `stills/`). Mittaus: sivun `?mittaa=t1,t2,...` tulostaa `window.kuvaus(t)`.
+Lähtökohta: vedoksen 4 moduuli (`runs/v5_07_08/maailma_07_08_vedos4.js`), johon on tehty vain brief-luvun KIERROS 3 muutokset. Salin rungot, valokeilat, usvan perusilme, pöytä ja auringon kiekko+kehä ovat vedoksen 4. Video `runs/maailma_07_08/osa.mp4`: 5859 ruutua (todettu ffprobella), 1920x1080, 30 fps, aa=2, ääni `rattle_kuuntelu.wav`; videon 0 = 496,3 s (Rattle/LSO 2022). Ajat tulevat `d.aika`sta ja `cues.json`:n `t_end`-kentästä (`allegro_359` 634,5 s; `trumpetit_patarummut_356` 626,3–631,4 s). Liikesarjat ja mittaukset: `runs/maailma_07_08/r3/`.
 
-## (0) Suunnitelma (kirjoitettu ennen koodia)
+## Mitä vedoksen 4 moduuliin muutettiin
 
-**Maailma yhdellä kappaleella.** Tapion talo sisältä: valtava, matalan kameran näkemä sali, jonka pylväät ovat jättiläisen metsän rungot
-(säde 2–5 m, katto 90 m korkeudella). Kaikki on sinistä; usva kerroksina; hitainta koko teoksessa. Rungoista riippuu harmaata naavaa.
-Valo tulee katon aukoista viistoina, kylminä keiloina. Salin päässä, kolmen ikihongan edessä, on vaakasuora valon lauta: Tapion pöytä.
-Sen takana on loivien kumpujen reuna. Lattia on lumen peittämä ja kumpuileva. Maailma 8: sama sali väärässä valossa: punainen taottu
-aurinko nousee kumpujen takaa, pylväät pysyvät mustina ja vain usva punertuu. M:ssä pimeys kasvaa katosta kuin jättitammi.
+1. **Sellojen laulu ja muut fraasit**: uusi `ribbon()`-valo (hopea/kylmä nauha). Fraasit löytyvät mitatusta tasosta, ei käsin kirjoitetuista ajoista. Etureuna etenee kuvan poikki fraasin alusta loppuun (suunta vuorottelee), nauhan korkeus on fraasin oma melodian painopiste skaalattuna: sellot 7–42 %, altot (`patarumpu_ppp`, `altot_mezza`) 42–77 %, viulut (`K_viulut`, `K_viulut_mezza`) 55–90 %. Fraasin lopussa laskeutuu ja himmenee 2 s:ssa; fraasien välissä pois. Nauha on usvassa (syvyys: sellot lähellä, viulut kaukana), joten lähirungot peittävät sen.
+2. **Usva**: kolme syvyyskerrosta (lähellä, keskellä, kaukana), jokainen oman virtauskertymänsä mukaan eri suuntaan (x-nopeudet −2,0 / +4,8 / −7,5 m/s kerrottuna voimalla: hitaat_soinnut, fraasit, allegro). Usvan laikut (nm) kirkastavat valokeiloja ja usvaa. Lumi putoaa ja ajelehtii kertymänä.
+3. **Vasket**: seitsemän mitattua iskua (626,217; 627,517; 627,717; 628,183; 628,483; 628,750; 628,950 s; ruudun puolikasta ennen iskuruutua) → jokaisesta oma koko kuvan korkuinen kylmä leikkaus runkojen takana, eri vaakapaikassa ja syvyydessä (kaukaa lähelle), kulmaleveys 0,014→0,030, nousu 0,03 s, hiipuminen ~0,4 s, maan tärähdys valona. Kaukaisin leikkaus pidetty pöydän runkojen edessä (ensimmäinen jäi ensin rungon taakse).
+4. **Allegro**: kameran vauhtikerroin G alkaa nousta ankkurista heti (eksponentiaalinen alku), kaksinkertainen 6 s:ssa, jatkuu, jarru nollaan `auringonsade`a edeltävien 4 s:n aikana. Usvan ja lumen virtaus ×G. Kuva kirkastuu (`uRise`: valo nousee tyvistä latvuksiin).
+5. **Aurinko**: korkeus `smoother`-käyrä `allegro_359` → `auringonsade` (SUN_DY −0,04 → 0,21), `c_duuri_valahdykset` vain kirkkautta. Kohdassa `auringonsade` punainen valo täyttää salin (reunavalo runkoihin, pitkät varjot kohti katsojaa, usva hehkuu); kovareunainen punainen suorakaide poistui, koska katon ja taivaan raja on nyt pehmeä.
+6. **Viat**: runkojen hyppy (alun runkopari piirrettiin vain kun sen keskipiste oli yli 1 m edessä) korjattu: pari piirretään kunnes se on takana, ja se siirrettiin x=±11 (reuna ±3 m), ettei kamera ohita sitä liian läheltä. Pylväiden latvahuojunta poistettu (rungot eivät liiku; tuuli näkyy naavassa, usvassa, lumessa). Lumi liikkuu aina. Kameran vauhtia, reittiä, M-osaa ja rajakuvia ei muutettu (avautuminen rajakuvasta 6,5 → 3 s, että fraasi näkyy heti).
 
-**Siemenen kuva.** Horisontin valo = pöydän lauta; sen alla tumma massa = rungot ja lattia; sileät kummut = lattian korkeuserot ja takana
-oleva kumpureuna (siluetti auringon edessä); lumi = lattia ja valokeilassa putoavat hiutaleet. Sama kuva jättiläisen koossa.
+## Kierroksen 3 kohdat (tehty / osin / ei)
 
-**Kamera.** Rajakuvasta PIMEYS: kamera ajaa kahden jättirungon välistä (rungot liukuvat ruudun reunoille, ja sali avautuu 6,5 s aikana
-`uOpen`: rajakuva → kohtaus). Sitten tasainen hidas ajo (0,72 m/s) salin keskikäytävää kohti pöytää, sali aukeaa pöytää kohti. Maailmassa 8
-vauhti kasvaa liikkeen (`liike`-tapahtumat) hitaasta keskiarvosta ja hidastuu 5 s ennen `auringonsade`-ankkuria: **pysähdys** ankkurissa
-ja seisoo M_ennakkoon asti (nimetty pysähdys). M_ennakosta kamera lähtee uudestaan kiihtyen (0 → 4,8 m/s), ja pimeys leviää kuvan yli:
-loppu on rajakuva PIMEYS. Kamera ei pyöri; korkeus = lattia + 1,55 m kameran omalla kohdalla (lattian korkeus lasketaan varjostimessa).
-
-| Kuunteluoppaan rivi | Kuvassa | Signaali |
-|---|---|---|
-| 8:16 jousijakso urkupisteen päällä (matalat jouset) | pylväät, tummuus ja usvan paksuus | `d.matala` (1 s) → `uMass`, `uFogK` |
-| urkupiste (E, D2, H2) | pöydän valo | `urkupiste`-tapahtumat + `d.matala` → `uTable` |
-| 8:28, 8:52 ylärekisteri/keskirekisteri | valokeilojen voima | `d.keski` (0,7 s) → `uKes` |
-| melodian kaari | keilojen hidas sivuttaissiirtymä (±5 m) | `d.melodia` (2,5 s) → `uMel` |
-| 8:38 patarumpu_ppp (matala d värisee 8 s) | pöydän valo lattialla värähtää hiljaa | ikkuna `patarumpu_ppp`+8 s, 4,3 Hz, amplitudi 0,30 → `uTrem` |
-| 9:00 hitaat_soinnut | usvakerrokset vaihtuvat: pitkän sävelen korkeus = usvakerroksen korkeus, tiheys ja kirkkaus | pitkät nuotit (≥1,4 s) → `uBand[6]` |
-| 9:25 pohja katoaa, 9:33 nousu | pöydän valo laskee/nousee matalan tason mukana | `d.matala` |
-| 9:40 h_palaa (14 sykettä) | syke kulkee valona pöydän lautaa pitkin vasemmalta oikealle | `d.alut` ikkunassa → `uPulse` |
-| 9:57 hiljainen jakso alkaa | pöytä sammuu (2,7 s), usva sakenee ja peittää kaukaiset pylväät; kamera jatkaa | `hilj(t)` → `uTable`, `uVeil` |
-| 10:13 hiljainen jakso päättyy (vasket nousevat) | pöydän valo nousee takaa, usva ohenee | `d.matala` ankkurista |
-| 10:21 vaski_tutti_620 | pystysuora valo repeää pylväiden läpi; usvan välähdys ja jälkihohto | nimetty isku `iskuK` → `uRodA`, `uCut` |
-| 10:41 c_duuri_valahdykset (3 välähdystä) | punainen aurinko nousee kumpujen takaa kolmesti | C-duurin sointuväriosuus (do-mi-sol) `cdur` |
-| 11:20 auringonsade | aurinko jää; kehä; kamera seisoo | ankkuri; nousu ei enää laske |
-| 11:25 M_ennakko | vaskien pystyvalo auringon kohdalla; pimeys alkaa kasvaa | nimetty isku → `uRodB`, `uDark` |
-| 11:31 M_raskaat_askeleet | ruutu = rajakuva PIMEYS | `uDark` |
-
-## (a) Taulukot
-
-
-### (a) Tyyliohjeen luku 12 (säännöt 0-21)
-
-Perusteena stillit `tark/stills/` ja arkit. "Koodissa" = on toteutettu ja mitattu `kuvaus(t)`:llä, mutta ei todennettu liikesarjasta.
-
-| # | Sääntö | Tila | Mistä näkee |
+| # | Kohta | Tila | Todiste |
 |---|---|---|---|
-| 0 | ääni ohjaa (korkeus = korkeus, voima = valo) | osin | usvakerrokset: pitkän sävelen korkeus = kerroksen korkeus (`kerrokset` mitattu t=581-595); voima = keilat ja pöydän valo (`keski`, `poyta`) |
-| 1 | kamera hitaasti sisään ja eteen | toteutuu | `camZ` kasvaa: 0 -> 153,2 m (t=680) -> 174,6 m (t=691,6) |
-| 2 | pysähdys vain nimetyissä kohdissa | toteutuu | `vauhti` 0 välillä auringonsade -> M_ennakko (t=680 ja 685,0); muualla > 0,5 m/s |
-| 3 | ei pyörimistä, 20 °/s | toteutuu | kamera vain siirtyy +z-suuntaan; sivuttaissiirtymä enintään 3,4 m (34 m:n aallolla) |
-| 4 | kamera ei reagoi iskuun | toteutuu | vauhti ei muutu t=621,6; M:ssä lähtö on 4 s:n ramppi (vauhti 0,06 t=685,4) |
-| 5 | siirtymä kulku, vähintään 4 s, mittakaava jatkuva | toteutuu | alku: kahden rungon (r=8 m) välistä, `auki` 0 -> 1 kuudessa ja puolessa sekunnissa (stillit t496.3, t500.0); loppu: 6,5 s (stillit t683, t689, t691.6) |
-| 6 | vähintään kolme syvyyskerrosta | toteutuu | lähirungot, keskipylväät, sumuinen sali ja pöytä (t504, t540) |
-| 7 | puhuja lähemmäs | ei koske | |
-| 8 | kerros etäisyys ja valo, ei pahvi | osin | pylväät ovat sylintereitä usvassa, mutta pinta on litteä (ks. heikkoudet) |
-| 9 | metsä näkyy, ei runkorivi | osin | pylväät satunnaisilla syvyyksillä ja leveyksillä; keskikäytävä tyhjä, joten voi lukea kahtena seinänä |
-| 10-11 | iskun elementti ympäristössä, ei ilmesty iskussa | toteutuu | t=621,5 ei valoa, t=621,63 pystyvalo; sali on jo kuvassa |
-| 12 | enintään kolme liikkuvaa | toteutuu | liikkeessä vain tuuli (naava, huojunta), usvakerrokset ja hiutaleet |
-| 13 | väike/kajo kaukana | ei koske | |
-| 14 | valolla lähde | toteutuu | katon aukot, pöydän lauta, aurinko, pystyvalo |
-| 15-16 | punainen vain taotussa auringossa, vain C-duuri | toteutuu | `PUNA` vain auringossa ja sen usvassa; still t640 (ei punaista), t641.5, t680.5 (punainen); nousu vain `cdur`-mittauksesta ja pidosta auringonsade-ankkurista |
-| 17 | värit eivät vaihdu iskussa | toteutuu | iskun väri valkoinen |
-| 18 | hiljaisuus: elementit lakkaavat, metsä jää | toteutuu | still t600: pöytä pois, usva peittää (`usvaVeil` 0,85), pylväät, lattia, lumi jäävät, kamera jatkaa |
-| 19-21 | ei edellisen projektin tyyliä, kliseitä, tekoälykuvia, hahmoja | toteutuu | kaikki koodilla, ei hahmoja |
+| 1 | Sellojen laulu tapahtumana | **Tehty** | `r3/q_sello.png` (0–15 s, 1 s välein): valo etenee vasemmalta oikealle ja korkeus seuraa melodiaa, laskeutuu fraasin lopussa (~9,2 s). Painopiste (valon erotus lk=1 − lk=0, korkeus alareunasta): sellot 0,326 / 0,299 / 0,273 (tavoite < 0,35) |
+| 1b | Fraasit eri korkeuksilla | **Tehty** | `r3/q_viulut.png`, `r3/q_altot.png`; `r3/painopisteet.txt`: viulut 8:28 0,785, 0,722; 8:50 0,758, 0,773 (tavoite > 0,65); altot+sellot 8:38 0,549, 0,541; altot 9:50 0,500, 0,512 (tavoite ~0,5). Ero sellot–altot 0,23–0,27, altot–viulut 0,2–0,27 |
+| 2 | Usva liikkuu hitaat_soinnutista eteenpäin | **Osin** | Kuvassa laikut ja valokeilat liikkuvat (`r3/q_usva.png` 3 s välein, `r3/f1_sarja.png` 0,4 s välein; ruutuero 43–100 s on silti pieni, mediaani 0,15). **Mittaus ei onnistunut luotettavasti**: vaihekorrelaatio, Lucas-Kanade ja lohkohaku kahden 0,2–0,4 s välein otetun ruudun välillä antoivat 0–10 px/s (vaihtelevaa, jäännös 0,8 eli ei yhtenevää siirtymää): usvan kirkkaus muuttuu, mutta kuvio ei siirry yhtenäisenä, ja staattiset rungot ja valokeilat hallitsevat. Mallista laskettu näennäinen nopeus keskikerroksessa (4,8 m/s × voima ~1,1, syvyys 50 m): ~120 px/s; 40 px/s ei ole siis todennettu renderistä |
+| 3 | Vasket, seitsemän erottuvaa leikkausta | **Tehty** | `r3/s3_arkki.png` (still jokaisen iskun jälkeen, 7 eri vaakapaikkaa, leveys kasvaa); `r3/q_vaski.png` (0,1 s välein 129,4–131,0 s: ensimmäinen leikkaus ankkurin ruudussa 130,0 s ja hiipuu ~0,4 s). Ruutuero-piikit 129,93 / 131,23 s (13–14 × mediaani) |
+| 4 | Allegro heti | **Tehty (kamera)** | Vauhti m/s (`window.kuvaus`): 634,5 s 1,11; 636 s 1,61; 638 s 2,00; 640,5 s 2,27 (×2,04 6 s:ssa); 646 s 2,53; 666 s 2,86; 676 s 3,02; 680 s 0 (pysähtynyt). Ruutuero 138–180 s mediaani 0,255 vs 0,137 (100–138 s). **Kirkkaus ei ole yksiselitteisesti monotoninen**: ylä­puolen keskiarvo 138 s 56 → 186 s 83 nousee, mutta notkahdukset 152 s (55,2) ja 158 s (58,3), 170 s (69,4) ±7 ohittavien runkojen takia; `r3/q_allegro.png` |
+| 5 | Aurinko hidas monotoninen nousu, valo täyttää salin | **Tehty** | `?mono=1`: 1520 ruutua `allegro_359` → `M_ennakko`, pienin muutos ruudussa 0, **laskee: false**; dy −0,04 → 0,21. `r3/q_aurinko.png` (160–: aurinko runkojen välissä, kasvava punainen hehku, sitten täysi punainen sali, pitkät varjot). Kirkkaus vaihtelee flickissä, korkeus ei |
+| 6 | Hyppy 4,9–5,0 s | **Korjattu** | Ruutuero 4,5–5,5 s: suurin 0,69 (mediaani 0,18); koko videon poikkeamat vain 125,33 (tutti), 129,93 ja 131,23 (vaskit), 188,87 (M), pienet 180,0 / 181,8 / 192,1 (~1,0) (`r3/diffs4.npy`) |
 
-### Luvun 4d kohdat 1-19
+## Kuunteluopas (lihavoidut rivit)
 
-| # | Kohta | Tila | Perustelu |
+| Aika | Mitä kuuluu | Mitä kuvassa | Näkyykö |
 |---|---|---|---|
-| 1 | puut kuin puut: huojuvat tuulessa, eivät pompi | koodissa, liikettä ei katsottu sarjana | pylvään akseli taipuu korkeuden neliössä (`uWind`, enintään 0,9 m latvassa, jakso ~18 s), naava heiluu tuulen mukana; tuuli = `d.koko` (1,2 s) + puuska vaskin iskuista t=621,6 ja 685,1 (`tuuli` 0,68-1,30). Ei kasvua, ei paikan vaihtoa, maa ei pompi. |
-| 2 | laaja ja syvä | osin | ks. 12/9 |
-| 3 | kamera eteenpäin | toteutuu | paitsi nimetty pysähdys 680-685,1 |
-| 4 | maailmoja sisäkkäin | toteutuu | alku kahden rungon välistä, loppu pimeyteen |
-| 5 | gis horisontti | ei koske | horisontti on pöytä ja sileä kumpureuna |
-| 6 | kalevalainen | toteutuu | Tapion pöytä, naava, taottu aurinko |
-| 7 | hämäryys taidehistoriasta | osin | usva, kapea valokiila (Davis), Friedrichin mittakaava |
-| 8, 12 | loppu hyväksyvä; revontulet | ei koske / ei revontulia | |
-| 9 | massa, ei puita | osin | pylväät massana; yksittäiset: vain pöydän kolme runkoa |
-| 10 | jousten intensiteetti näkyy | toteutuu | `massa` -> tummuus ja usvan paksuus; `keski` -> keilat |
-| 11, 14, 19 | Tapion talo ilman kasvoja; harkitut puut; ei etualan puuta | toteutuu | |
-| 13 | kamera ei aja maan läpi | toteutuu | kameran korkeus = lattia + 1,55 m kameran omalla kohdalla; pylväät vähintään ~4 m kameran reitistä |
-| 16 | parallaksi | toteutuu | viisto sivuttaisliike |
-| 17 | horisontti seuraa melodian kaarta | osin | valokeilojen siirtymä `melodia` (2,5 s) |
-| 18 | ei teräviä vuoria | toteutuu | sileä kumpureuna |
-| 20-22 | valo ja varjo; uskottava; siemen | osin | katon aukkojen keilat; siemen = pöydän valo horisonttina, tumma massa, kummut, lumi |
+| 8:16 / 0 s | sellot | matala hopeinen valo etenee kuvan poikki, korkeus seuraa melodiaa (`q_sello.png`) | kyllä |
+| 8:25 | sellot päättyvät | valo laskeutuu ja himmenee ~9,2–11 s | kyllä |
+| 8:28 / 12,6 | viulut | korkea kylmä valo oikealta vasemmalle (`q_viulut.png`) | kyllä (osin runkojen peitossa) |
+| 8:38 / 22,2 | altot+sellot, maa värisee | keskikorkea valo vasemmalta; maan tärinä kuten vedoksessa 4 (`?trem`, ei mitattu erikseen) | valo kyllä, tärinä heikosti |
+| 8:50 / 34,6 | viulut | ylävalo | kyllä |
+| 9:00 / 43,7 | hitaat soinnut | usvan laikut ja keilat liikkuvat | osin (mittaus ei onnistunut) |
+| 9:50 / 94 | altot | keskikorkea valo (painopiste 0,50) | kyllä |
+| 10:21 / 125,3 | tutti-isku | vedoksen 4 leikkaus (×0,65), ruutuero 7,4 | kyllä |
+| 10:26 / 130,0 | trumpetit+patarummut | 7 leikkausta | kyllä |
+| 10:34 / 138,2 | allegro | vauhti ×2 6 s:ssa, kuva kirkastuu | kyllä (kirkkaus ±7 notkahduksin) |
+| 10:41 | C-duuri välähtää | sun kirkkauden välähdys, korkeus ei laske | kyllä |
+| 11:20 / 183,7 | C-duuri | punainen sali | kyllä |
+| 11:25 / 188,8 | M | vedoksen 4 isku, ruutuero 3,3 | kyllä |
 
-### (b) Kuunteluoppaan rivit
+## Kumipuut
+Rungot ja pylväät eivät liiku (latvahuojunta poistettu); vain naava, usva ja lumi liikkuvat. Vaskiliikesarja 0,1 s välein (`q_vaski.png`): siluettien tyvet ja yläreunat samoissa paikoissa joka ruudussa.
 
-| Rivi | Näkyy? | Huomio |
-|---|---|---|
-| 8:16 jousijakso urkupisteen päällä | näkyy | sali avautuu, tummat pylväät |
-| 8:22 päättyy | osin | `matala` laskee, ei erillistä korostusta |
-| 8:38 maan värinä | osin | 4,3 Hz värinä lattian valossa, hento; ei katsottu erikseen |
-| 9:00 hitaat soinnut | näkyy mittauksena | `kerrokset` vaihtelevat; vaikutus kuvassa hento |
-| 9:25-9:33 pohja katoaa / nousu | osin | pöydän valo seuraa matalaa tasoa |
-| 9:40 H, 14 sykettä | osin | pieni kirkas piste laudalla (stillit t583-584,5), heikko |
-| 9:57 hiljainen jakso | näkyy | still t600 |
-| 10:13 hiljainen jakso päättyy | osin | pöytä palaa, usva ohenee |
-| 10:21 tutti-isku | näkyy | pystyvalo ruudussa 621,63; jälkihohto 3 s |
-| 10:32 Allegro | osin | kameran vauhti 1,0-1,3 m/s liikkeen hitaasta keskiarvosta |
-| 10:41 C-duuri kolmesti | osin | aurinko nousee sointuväristä (osuus 0,73 / 0,54 / 0,61 t~642 / 655 / 677); ensimmäinen selvä, kaksi muuta heikkoja |
-| 11:20 auringonsade | näkyy | aurinko, kehä, kamera seisoo (t680.5, t683) |
-| 11:25 M | näkyy | pystyvalo auringon kohdalla t=685,2; pimeys alkaa |
-| 11:31 raskaat askeleet | ei koske | rajakuva |
-
-### (c) Rajakuvat
-
-- Alku t=496,3: koko ruutu on PIMEYS. Mitattu still: RGB-keskiarvo (13,66; 15,79; 18,13), hajonta 0,4 (vain dither).
-- Loppu t=691,6: täsmälleen sama keskiarvo (13,66; 15,79; 18,13), hajonta 0,47. Täsmäävät.
-- Avautuminen kuudessa ja puolessa sekunnissa; loppuun ajo 6,5 s.
-
-### (d) Omat lisäykset
-
-- Katon aukot ja viistot kylmät keilat: referenssi 4 ja käyttäjän "siivilöityy oksien välistä".
-- Naava ja pylväiden raskas huojunta: Tapion "naavaturkki" (tutkimus luku 8); huojunta ohjaajan korjauksen 10.11. mukaan.
-- Avoin tila pöydän ympärillä (pöytä näkyy kokonaan): luettavuus.
-- Lumihiutaleet valokeilassa: käyttäjä piti lumisateesta.
-- Kumpureuna auringon edessä: siemenen sileät kummut ja nousun peittäminen.
-- Sauva: yksi ohut pystyvalo kahdessa nimetyssä iskussa.
-
-### (e) Mikä jäi heikoksi
-
-1. **Pöydän kolme ikihonkaa eivät lue kaukaa**: 250 m:n päässä ne sulavat usvaan ja lauta on pieni palkki; rungot erottuvat vasta lopussa. Pöytä ei ole se kuvan keskus, jonka tarkoitin.
-2. **Pylväiden pinta on litteä**: kaarevuus ja kuori lukevat heikosti, lähirungot ovat lähes tasaisia paneeleja. Metsä lukee seinämäisenä salina.
-3. **Maailma 8: punainen usva on laatikkomaista**: aurinko ja kehä lukevat, mutta punertava alue rajautuu kovareunaiseen suorakulmioon kumpureunan kohdalla (t641.5, t683). Näyttää halvalta.
-4. **Auringon nousu on napsahtava**: ensimmäinen nousu tapahtuu puolessa sekunnissa (t641,0 -> 641,5); kaksi muuta välähdystä ovat heikkoja.
-5. **H-sykkeet pöydällä** ovat pieni piste, eivät lue hyvin.
-6. **Tuulen liikettä ei tarkistettu sarjana** (aika loppui): huojunta ja naava ovat koodissa ja mitattu signaalina (`tuuli`), mutta 0,2 s:n liikesarjoja ei katsottu. Pomppimista ei pitäisi olla, koska liike on hidas siniliike.
-7. **Liikesarjoja ei ajettu**; todennus harvoilla stilleillä (t583-584,5, t621,5-622,2, t685-686).
-8. Pimeyden kasvu lopussa on pehmeä pilvimäinen massa, ei oksainen jättitammi.
-9. Tutti-iskun hetkellä lähirunkojen naava välähtää kohinaisena (~0,3 s).
-10. Hiljaisen jakson aikana (16 s) kuva on sakea ja tasainen; liikettä vain kamerassa, naavassa ja hiutaleissa.
-11. Kuvan yleisvalo on paikoin harmaan usvainen (esim. t660, t676) eikä "sininen ja tumma" kuten alussa; maailma 8:n alku on tummempi.
-12. Renderiaika: still ~25-60 s aa=1 (jaettu GPU); koko 195 s ei ole ajettu ketjuna, eikä aa=2 ole kokeiltu.
+## Omat lisäykset ja avoimet
+- Avautuminen rajakuvasta 6,5 → 3,0 s (ei kierroksen 3 listalla; syy: fraasin pitää alkaa näkyä heti). Alun rajakuva ja lopun rajakuva ennallaan.
+- `?lk=0`, `?fix=`, `?nf=1`, `?mono=1`, `?fraasit=1` ovat vain mittausta varten.
+- Auki: usvan virtausnopeuden render-mittaus (40 px/s) ei onnistunut; kirkkauden nousu notkahtelee ±7; nauha hallitsee kuvaa selvästi (sali on tummempi kuin nauha, nauha on pehmeä mutta suuri), käyttäjän/kriitikon arvioitava; usva on kirkkaampaa kuin vedoksessa 4 (laikkujen lisäys); pöydän palkki on vedoksen 4 mukainen (ei muutettu); sellojen fraasin kärki (8:25) ja oikean puolen etureuna ovat runkojen sanelemia.
