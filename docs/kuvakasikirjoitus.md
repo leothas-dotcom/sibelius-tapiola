@@ -116,6 +116,10 @@ Ainekset? Onko ne tässä uudessa suunnitelmassa?" Jokaisella aineksella on paik
   H-duurin kajo nousee: kylmä valo väistyy oikean, lämpimän tieltä. Muualla teoksessa revontulia ei ole.
 
 **Maailma 1. Horisontti ja siemen** · `tiedoston_alku` → `patarumpu_paisuu`
+- **Korjaus 10.11.2026 (käyttäjän palaute 57; ohjaajan tulkinta, ei vahvistettu):** vaarat eivät ole kuvassa paikallaan alusta asti.
+  Unisono-gis on suora valon viiva metsän takana; jokainen puhaltajan paisutus (noin kaksitoista) paljastaa yhden vaaran usvasta,
+  ja gis-valo kulkee sen harjaa pitkin; vaara jää siintämään, ja maisema kertyy Tapion taloon asti ennen vaskien iskua. Metsä
+  piirretään lopun (maailma 12) tavalla latvojen yläpuolelta matalalta, jolloin loppu on tämän kuvan paluu. Tyyliohje 4d kohta 30.
 - **Lähde:** esipuhe "sankat, tummat ikisalat"; K14 Tapion talot kaukana, perille ei pääse; Judd: patarummut ovat kutsu;
   Goodwin ja oma kuuntelu: käyrätorvien gis on tausta, joka paljastuu, kun jouset lakkaavat; SKVR III1 1231 "alta harva,
   päältä tiheä, keskeltä läpinäkyvä"; Jalas: puupuhaltimissa "metsänpeikot ja -eläimet ilmestyvät".
@@ -180,14 +184,19 @@ Ainekset? Onko ne tässä uudessa suunnitelmassa?" Jokaisella aineksella on paik
   ja legato (7b) → pisteet tai säie.
 - **Kamera:** kiteen sisälle, sama vauhti. **Puu:** ei; oksisto on kide. **Siemen:** aalto on pieni ja nopea, väikkeenä.
 
-**Maailma 6. Metsä liikkuu kokonaisena** · `peikot_G_loppu` → `hajoaa_hiljaisuuteen`
-- **Lähde:** Goodwin: jäiset puuskat kahisuttavat; Grimley: kahiseva, rapiseva; SKVR II 625a "Pakkanen Puhurin poika,
-  kylmä soita, kylmä maita": kylmä etenee pintoja pitkin; Inkpot: urkupisteet humisevat.
-- **Kuva:** kamera ajaa jään pintaan ja sen alle: metsä näkyy ylösalaisin mustassa jäässä ja liikkuu kokonaisena, yhtenä
-  massana (ensimmäinen pelko). Vyöry on aalto, joka kulkee koko peilikuvan läpi. Pakkanen piirtää huurretta pintaan
-  sykkeiden tahdissa.
-- **Ääni ohjaa:** jousten voima → massan liike; vaskipulssit → huurteen leviäminen; `tremolo` → pinnan väre.
-- **Kamera:** jään alla, katse eteen ja ylös. **Puu:** ei. **Siemen:** aalto liikuttaa koko metsää kerralla.
+**Maailma 6. Nymfit jäällä, ratsastus ja Tapio** (korjattu 10.11.2026 partituurista; aiempi nimi "Metsä liikkuu kokonaisena" hylätty) · `pohja_vaihtuu_D` → `jousijakso_urkupiste_E_alku`
+- **Lähde:** partituuri G (coll' punto, quasi saltato), H, I (12/8), J; Damroschin alaotsikko: metsän jumala ja hänen nymfinsä;
+  Europadisc: G:n kuviot ovat esipuheen haltiat; käyttäjä 10.11.2026: "jousten spiccatot, kärjessä ... nopeaa, leikkisää" ja
+  "vastakohta siihen kun bassot jyrisevät tapiota". SKVR II 625a Pakkanen: kylmä etenee pintoja pitkin.
+- **Kuva:** musta talvijää, vastarannalla siemenen kuva (horisontin valo, tumma metsä, kummut) ja se jäässä ylösalaisin.
+  Nymfit ovat valo, joka hyppii jään yli kuin heitetty kivi: jokainen ääni on kosketus, heijastus ja huurretähti. Äkillinen
+  mezzoforte: valot yhtenä joukkona koko jäällä. Puhaltimien juoksut nousevat parveksi ilmaan ja valuvat alas. **Taite (I):**
+  kameran vauhti kasvaa, ajolumi virtaa jään yli, valot kiitävät mukana. **Tapio:** bassojen raskaat äänet ovat suuria pehmeitä
+  valon kumpuja jään alla nopean liikkeen alla. Sitten yksi laulava ääni: ohut valojuova rannan runkojen välissä.
+- **Ääni ohjaa:** lyhyet äänet → pilkahdukset polkuna; ryhmän vaihto → polun paikka; matalan kaistan alut → renkaat ja kummut
+  jään alla; jousten voima → rannan tummuus, tuuli ja ajolumi (ei metsän muodon muutosta).
+- **Kamera:** jään tasalla, eteen kohti rantaa; I:stä kiihtyy, englannintorven laulussa hidastuu. **Puu:** kaksi runkoa lopussa.
+  **Siemen:** sama ranta kuin alussa, nyt peilinä; leikki ja paino samassa kuvassa.
 
 **Maailma 7. Ikisalo** · `jousijakso_urkupiste_E_alku` → `hiljainen_jakso_loppu`
 - **Lähde:** esipuhe "ikisalat"; Hepokoski: hitaasti muuttuva pinta hitaan syväliikkeen päällä; Tovey: sama tausta

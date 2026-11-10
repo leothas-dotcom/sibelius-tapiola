@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 2.0, 9.11.2026 (v2.0: käyttäjä hylkäsi vedoksen 3; **luku 4c on hylätty**, luku 4d kirjaa käyttäjän sanat, ja luvut 1, 2 ja 5 ovat taas peruste; v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 2.1, 10.11.2026 (v2.1: käyttäjän palaute vedoksesta 4 luvun 4d kohdiksi 23–30; v2.0: käyttäjä hylkäsi vedoksen 3; **luku 4c on hylätty**, luku 4d kirjaa käyttäjän sanat, ja luvut 1, 2 ja 5 ovat taas peruste; v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -293,6 +293,47 @@ TAPIOLA. SIIS TAPIO JUMALAN ASUINPAIKKA. MYTOLOGINEN HAHMO." ... "haluan myös r
 15. **Kaikki kaksitoista maailmaa suunnitellaan taustatutkimuksesta ennen piirtämistä.** Käyttäjä: "Tämä ei ole valmis,
     ennen kuin olet oikeasti suunnitellut ne visualisaatiot. TAUSTATUTKIMUKSEN MUKAAN." Suunnitelma on käsikirjoituksen
     luvussa "Kaksitoista maailmaa".
+
+**Käyttäjä 10.11.2026, vedoksen 4 (koko teos kahtenatoista maailmana) jälkeen** (koko palaute: `docs/tutkimus/haastattelu.md`):
+"Loppu oli aivan älyttömän hieno. Siinä oli tuo valo, ja miten lumet valuu hienosti alas. Metsä oli myös vihdoin sen näköinen
+kun odotin." · "Pidin valoista, jotka olivat kuin keijut." · "Pidin siirtymistä" · "jättiläisten askelista ... isoina, mutta
+pehmeinä, kuten musiikissa."
+
+23. **Säilytetään se, mistä käyttäjä piti:** loppu (valo, lumen valuminen, revontulet, metsän piirto), keijumaiset valot,
+    siirtymien paikat, jättiläisen askeleet isoina ja pehmeinä, myrskyn nousu. Korjaus ei saa hävittää näitä.
+24. **Nymfit näkyvät, hienovaraisesti ja vain oikeissa kohdissa.** Käyttäjä: "Sibeliuksen mainitsemat nymphit ei oikein nyt näy -
+    se kappaleen leikkisä puoli. Tämä on tietysti hienovaraista - älä laita liikaa. Vain oikeisiin kohtiin. Kun jouset liikkuvat
+    nopeasti, leikkisästi. Tai puupuhaltajat liikkuvat staccato, ja leikittelevät. Ja sitten se vastakohta siihen kun bassot
+    jyrisevät tapiota." Nymfit ovat väikettä (luvut 6 ja 7): pieniä kylmiä valon pilkahduksia, jotka hyppäävät polkua pitkin
+    ja katoavat; yksi lyhyt ääni on yksi pilkahdus. Paikat nimeää kuunteluopas (lanka 4: Nymfit ja Tapio). Tapio on niiden
+    vastakohta: paino maassa, suuri ja pehmeä. **[muoto on ohjaajan ehdotus; "valot kuin keijut" on käyttäjän]**
+25. **Kumipuut ovat hienovarainen virhe.** Käyttäjä: "kumiset puut tulivat vaan takaisin jossain määrin. On näköjään erittäin
+    hienovaraista, milloin puiden heilunta näyttää kumiselta, milloin ei." **[ohjaajan täsmennys kohtaan 1]** Puu on jäykkä
+    kappale, jonka tyvi on maassa: mikään siluetti ei muuta muotoaan eikä korkeuttaan ajan mukana; sallittu on vain hidas
+    taipuma sivulle, joka kasvaa tyvestä latvaan (latva enintään 2 % puun korkeudesta, puuskassa 4 %; päätaajuus enintään
+    0,3 Hz; puuskan aalto kulkee massan yli). Kaukainen metsä ei taivu näkyvästi: siellä tuuli näkyy lumena, usvana ja valona.
+    Rungot ja maa eivät liiku koskaan.
+26. **Ei staattista lunta, ei staattista kuvaa.** Käyttäjä: "Kuva on lähinnä staattinen. Lumi on stattinen. Ei staattista lunta."
+    Lumi liikkuu aina; sen nopeus ja suunta tulevat äänestä kertymänä.
+27. **Dynamiikan muutos ja taite näkyvät.** Käyttäjä: "6:30 on yllättäen paljon kovempi dynamiikka: Kuvassa ei tapahdu mitään." ja
+    "siitä alkaa uusi asia. Tähän taite?" ja "löydä vielä ne taitteet itsekin paremmin, milloin tapahtuu jotain uutta ja
+    yllättävää." Jokaisella kuunteluoppaan nimeämällä kohdalla on kuvassa vastine samassa ruudussa (7b). Taite on kameran
+    tai tilan muutos (jatkuva), äkillinen dynamiikan muutos on ympäristön muutos (valo, puuska, lumi).
+28. **Aurinko nousee hitaasti eikä nyi.** Käyttäjä: "aurinko ei voi nykiä tuolla tavalla ylös alas. Ei se toimi niin oikeasti. Sen
+    pitää hitaasti alkaa nousta ja kohdassa 11:20 se täyttää valon ja valaisee tilan." Taotun auringon korkeus kasvaa
+    monotonisesti; välähdykset ennen sitä ovat kirkkautta runkojen raoissa. C-duurissa valo täyttää tilan.
+29. **Myrsky on pintakerros, jonka intensiteetti seuraa jousia.** Käyttäjä: "minuutti vaan ihan samaa. Se miten se nousi oli hieno."
+    ja "sen intensiteetti pitää seurata jousia. Nyt se on staattinen. Ja se pyörre pitäisi ehkä liikkua. Sen pitäisi olla
+    pintakerros, ja jotain syvempää näkyä taustalla?" Luvun 2 kohdan 1 poikkeus (kerrokset menettävät eronsa) koskee vain huippua.
+30. **Alun vaarat tulevat esiin metsän takaa: hitaasti ja uljaasti.** Käyttäjä: "Se gis idea ei nyt oikein välity ... Jousien (eli
+    metsän) takaa pitäsi jotenkin tulla ESIIN ne mäet (nousevat ja laskevat kulut). Eli dynaaminen. Mutta ... ei ole koomisia,
+    vaan hitaita ja uljaita. Nythän ne on vaan tuossa kuvassa paikallaan." **[ohjaajan tulkinta, käyttäjä ei ole vahvistanut]**
+    Vaarat eivät nouse, ne paljastuvat: maa ei liiku, usva ja valo liikkuvat (7b paljastuminen; Guo Xi: usva erottaa tasot;
+    Järnefelt: latvoista vaaroihin; "salo siintääpi sininen"). Unisono-gis on suora valon viiva; jokainen puhaltajan paisutus
+    paljastaa yhden vaaran (usva laskee, gis-valo kulkee harjaa pitkin, harjan muoto on soittajan kulku); vaara vajoaa takaisin
+    hitaasti ja jää siintämään, joten maisema kertyy. Alun metsä piirretään lopun metsän tavalla (käyttäjä: "siinä oli paras
+    renderöinti metsästä. Pitäisikö sitä käyttää alussa myös? Harkitse? (Ilman revontulia)"), jolloin loppu on alun paluu.
+    Tämä muuttaa kohdan 21 loppuosan (suolta nähty alku): edellinen alku on tallessa (`visual/maailma_01_02_suo.js`).
 
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.

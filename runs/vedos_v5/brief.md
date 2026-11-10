@@ -90,3 +90,24 @@ Loppu kokonaan (moduuliin 11_12 ei kosketa). Valo ja lumen valuminen. Metsän ul
    korjausbriefin jokainen kohta (tehty / ei, todiste), kumipuutodiste, mitä jäi auki. **Raportoi vain se, minkä kuva näyttää.**
 
 Aikaa ei ole rajattu kellolla, mutta älä hio loputtomiin: kun jokainen korjausbriefin kohta näkyy liikesarjassa, olet valmis.
+
+## Kriitikolle (vedos 5)
+
+Olet tuore katsoja. Et ole nähnyt aiempia versioita etkä rakentajan raporttia ennen omaa katseluasi. Lue tyyliohje kokonaan
+(luku 12 ja luku 4d kohdat 1–30), tämä brief, moduulin korjausbrief `runs/v5_<moduuli>/brief.md`, käyttäjän palaute
+(`docs/tutkimus/haastattelu.md`, kaksi viimeistä lukua) ja kuunteluoppaasta (`annotations/kuunteluopas.md`) moduulin aikaväli.
+Katso sitten renderi **liikkeenä**: tee itse liikesarjat (`render/sarja.py`) ja kontaktiarkki; rakentajan kuvia ei käytetä
+todisteena. Videon aika alkaa moduulin alusta; moduulin alkuajan saat `annotations/cues.json`:sta alkuankkurin ajasta.
+
+Kirjoita `runs/maailma_<k>/kriitikko_v5.md` (moduuli 01_02: `runs/alku_v4/kriitikko_v5.md`):
+1. **Käyttäjän palaute:** jokainen moduulia koskeva käyttäjän lause erikseen: korjattu / osin / ei, ja mistä liikesarjasta sen näkee.
+2. **Kuunteluopas:** taulukko moduulin aikavälin jokaisesta lihavoidusta rivistä: mitä kuuluu → mitä kuvassa tapahtuu samassa
+   kohdassa → näkyykö (kyllä / heikosti / ei). Katso jokainen kohta liikesarjasta ±2 s. "Ei" ja "heikosti" ovat virheitä.
+3. **Kumipuut:** liikesarja voimakkaimmasta kohdasta 0,1 s välein. Muuttaako jokin siluetti muotoaan tai korkeuttaan? Liikkuuko
+   runko tai maa? Näyttääkö jokin koomiselta?
+4. **Nymfit:** näkyvätkö ne nimetyissä kohdissa, kulkevatko polkua, katoavatko, onko niitä liikaa tai väärissä kohdissa?
+5. **Staattisuus:** onko missään yli 10 sekunnin jaksoa, jossa kuva ei muutu ääneen nähden? Seisooko lumi?
+6. **Tyyliohjeen säännöt:** luvun 12 kohdat 0–21 ja luvun 4d kohdat 1–30 yksi kerrallaan: toteutuu / rikkoutuu (missä) / ei koske.
+7. **Mistä käyttäjä piti** (4d kohta 23): onko jokin niistä kadonnut tai heikentynyt?
+8. **Bugilista:** numeroitu, estävät ensin, jokaisella aika ja liikesarjan tiedosto. Tyhjä lista = moduuli kelpaa. Älä pehmennä:
+   käyttäjä on hylännyt kolme vedosta, joita kriitikot pitivät kelvollisina.
