@@ -386,12 +386,16 @@
       "peruste": "tarkka.py: pitkät sävelet D4, D5, H3, H4 1:15.2–1:21.4 ja uudestaan 1:29.1–1:36.3; aikajana: käyrätorvet, trumpetit ja pasuunat, puupuhaltimet 1:15.2–1:40, sävellajivihje D-duuri (0,83)."
     },
     "askeleet_alkavat": {
-      "t": 99.04,
+      "t": 86.72,
       "t_loppu": 176.0,
       "varmuus": "vahvistettu",
       "luottamus": "hyvä",
-      "peruste": "Käyttäjä 9.11.2026 (korva): 1:40 bassojen eritahtiset iskut alkavat. linjat.py: bassolinja D2 → H1 kohdassa 1:40.1 (H1 0…−5 dB, välin vahvin sävel); matalan kerroksen uusia säveliä/s 1:55–2:11: 4, 2, 5, 0, 3, 2, 2, 0, 0, 5, 1, 6, 0, 2, 0, 7 (epäsäännöllinen). Sitä ennen pitkä D2 pohjana 1:24.8 alkaen. | 11.11.: käyttäjä: ensimmäiset askeleet puuttuvat kuvasta. Kontrabassojen kaista 45-115 Hz, hieno vuo (askel 1,5 ms) ja spektrogrammi: basson äänet alkavat 1:39,04 / 1:40,5 / 1:42,3 / 1:51,89 / 1:55,03 / 1:56,71 / 1:58,55 / 2:00,35 / 2:02,42 / 2:05,8 / 2:07,74 / 2:09,53 / 2:11,36 / 2:13,24 / 2:15,24 (iskut-kentässä)",
+      "peruste": "Käyttäjä 9.11.2026 (korva): 1:40 bassojen eritahtiset iskut alkavat. linjat.py: bassolinja D2 → H1 kohdassa 1:40.1 (H1 0…−5 dB, välin vahvin sävel); matalan kerroksen uusia säveliä/s 1:55–2:11: 4, 2, 5, 0, 3, 2, 2, 0, 0, 5, 1, 6, 0, 2, 0, 7 (epäsäännöllinen). Sitä ennen pitkä D2 pohjana 1:24.8 alkaen. | 11.11.: käyttäjä: ensimmäiset askeleet puuttuvat kuvasta. Kontrabassojen kaista 45-115 Hz, hieno vuo (askel 1,5 ms) ja spektrogrammi: basson äänet alkavat 1:39,04 / 1:40,5 / 1:42,3 / 1:51,89 / 1:55,03 / 1:56,71 / 1:58,55 / 2:00,35 / 2:02,42 / 2:05,8 / 2:07,74 / 2:09,53 / 2:11,36 / 2:13,24 / 2:15,24 (iskut-kentässä) | 11.11. ilta: käyttäjä: ensimmäiset askeleet alkavat noin 1:27 ja sekoittuvat sellojen kommenttiin. Kaista 38-80 Hz ja spektrogrammi: basson äänet alkavat 1:26,72 / 1:28,3 / 1:31,05 / 1:34,0 ennen aiemmin mitattua 1:39,04",
       "iskut": [
+        86.72,
+        88.3,
+        91.05,
+        94.0,
         99.04,
         100.5,
         102.3,
@@ -560,7 +564,22 @@
       "t_loppu": 176.0,
       "varmuus": "analyysi",
       "luottamus": "kohtalainen",
-      "peruste": "linjat.py 1:36–2:12: sellojen rekisterin soinnut vuorottelevat noin 2 s välein: (D3, Fis3, D4, Fis4) ja (E3, Gis3, E4, Gis4, H4), useimmat muodolla paisuu ja hiipuu < >; yläkerroksen uusia säveliä/s hyppää 4:stä 40–66:een kohdissa 1:37, 1:44–1:46, 1:51–1:52, 1:58–2:00, 2:05–2:07, eli puhaltimien purskeet noin 7 s välein; välissä keskikerros johtaa."
+      "peruste": "linjat.py 1:36–2:12: sellojen rekisterin soinnut vuorottelevat noin 2 s välein: (D3, Fis3, D4, Fis4) ja (E3, Gis3, E4, Gis4, H4), useimmat muodolla paisuu ja hiipuu < >; yläkerroksen uusia säveliä/s hyppää 4:stä 40–66:een kohdissa 1:37, 1:44–1:46, 1:51–1:52, 1:58–2:00, 2:05–2:07, eli puhaltimien purskeet noin 7 s välein; välissä keskikerros johtaa. | 11.11.: alttoviulujen kommenttien alut (iskut-kentässä): kaistan 190-700 Hz taso nousee vähintään 4 dB puolessa sekunnissa ja on vähintään 10 dB yli puhaltimien kaistan 1-4 kHz; mitattu koneella, ei vahvistettu korvalla",
+      "iskut": [
+        89.14,
+        103.56,
+        116.19,
+        125.39,
+        131.38,
+        138.23,
+        139.99,
+        146.1,
+        153.44,
+        155.13,
+        160.77,
+        162.31,
+        169.99
+      ]
     },
     "askeleet_fis": {
       "t": 252.7,

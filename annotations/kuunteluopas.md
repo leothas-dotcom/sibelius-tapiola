@@ -129,8 +129,7 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* vasket ja puupuhaltimet tulevat etualalle pitkinä sointuina; jouset väistyvät. *Tunnelma:* hetkellinen valo.
   - Käyttäjä: "synkkä suomalainen metsä, jossa on hetkellisiä valon välähdyksiä". Ohjaaja: ensimmäinen välähdys on rinnakkaisduuri D: valo, joka kuuluu tähän metsään, toisin kuin myöhempi C-duuri. Synestesia [tarkista]: Sibeliuksen kerrotaan kuulleen D-duurin keltaisena.
 - 1:20 Liike tasaantuu.
-- 1:30 Liike kiihtyy: ääniä tulee tiheään.
-- **1:39 Basson eritahtiset iskut alkavat.** *(kuultu)* Basso putoaa matalalle h:lle ja alkaa iskeä eri tahtiin kuin muut; iskut jatkuvat alttoviulujen alla.
+- **1:26 Basson eritahtiset iskut alkavat.** *(kuultu)* Basso putoaa matalalle h:lle ja alkaa iskeä eri tahtiin kuin muut; iskut jatkuvat alttoviulujen alla.
   - *Edessä ja takana:* basson iskut pohjalla omassa ajassaan; sellojen sointumatto niiden päällä; alttoviulut ja puhaltimet vuorottelevat ylempänä. *Tunnelma:* jokin suuri on tulossa.
   - Käyttäjä 9.11.2026 (korva, 1:40): "bassojen eritahtiset iskut alkavat, jatkuvat alttoviulujen alla. Altot vuorottelevat puhaltimien kanssa, sellot tekevät sointumattoa (metsä)." Ja: "Basson huokaavat askeleet ... jo sillä luodaan tunnelmaa jostain suuresta, tulevasta." Ohjaaja: askeleet alkavat valon alla, eivät pimeässä.
 - **1:40 Sointumatto hengittää: kaksi sointua vuorotellen.** Sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein.

@@ -148,7 +148,7 @@ vec3 scene(vec2 p) {
     bool special = abs(k - uEnd.w) < 0.5;
     if (zr < ZN && !special) break;
     if (zr < 0.004) break;
-    if (zr < 22.0 && zr >= 22.0 - DZ && up < 0.99) {   // korjaus B2: käytävän pään valon pylväs (valaistu usva) kaukaisen havuston päällä, lähempien puiden takana; seuraa käytävän akselia
+    if (zr < 46.0 && zr >= 46.0 - DZ && up < 0.99) {   // korjaus B2: käytävän pään valon pylväs (valaistu usva) kaukaisen havuston päällä, lähempien puiden takana; seuraa käytävän akselia
       float zref = 70.0;
       float wxr = ro.x + r.x * zref / r.z, yar = ro.y + r.y * zref / r.z - gc;
       float mx = exp(-pow((wxr - laneX(ro.z + zref)) / 1.15, 2.0));
@@ -168,7 +168,7 @@ vec3 scene(vec2 p) {
     float sgn = sign(uGl.x - dx);
     float farF = smoothstep(ZF, ZF - 20.0, zr) * (1.0 - up * (1.0 - smoothstep(10.0, 24.0, zr)));   // katse ylös: lähimmät rungot häipyvät usvaan
     float clearL = smoothstep(0.6, 1.9, abs(wx - lane));       // polku: oksat eivät kasva sen yli
-    float clearFar = mix(clearL, 1.0, smoothstep(12.0, 20.0, zr));   // korjaus B: raivaus vain lähietäisyydellä; 32 m:stä kauemmas käytävän puut saavat havuston (kapea rako jätti teräviä viipaleita)
+    float clearFar = mix(clearL, 1.0, smoothstep(14.0, 32.0, zr));   // korjaus B: raivaus vain lähietäisyydellä; 32 m:stä kauemmas käytävän puut saavat havuston (kapea rako jätti teräviä viipaleita)
 
     // tavalliset rungot: kuusia, joiden ympärillä on tumma oksamassa
     float cs = 5.4;
@@ -187,13 +187,14 @@ vec3 scene(vec2 p) {
       if (hy < -0.05) continue;
       float hn = hy / Hh;
       float lean = 0.45 * sin(hy * 0.065 + h2 * 6.28) * smoothstep(0.0, 10.0, hy)
-        + 0.6 * (0.05 + 1.1 * uTop.z) * hn * hn * Hh * 0.05 * (sin(wx * 0.03 - uTime * 0.55 + k * 0.35 + h2 * 3.0) + 0.4 * sin(uTime * 1.3 + h3 * 20.0 + hy * 0.2));   // tuuli: latvat taipuvat, tyvi pysyy
+        + 0.18 * (0.05 + 1.1 * uTop.z) * hn * hn * Hh * 0.05 * (sin(wx * 0.03 - uTime * 0.55 + k * 0.35 + h2 * 3.0) + 0.4 * sin(uTime * 1.3 + h3 * 20.0 + hy * 0.2));   // tuuli: latvat taipuvat, tyvi pysyy
       float dxn = wx - tx - lean;
       float rw = rr * (1.0 - mix(0.45, 0.88, up) * clamp(hn, 0.0, 1.0)) * (1.0 + 0.6 * exp(-hy * 1.4)) * (0.93 + 0.14 * vnoise(vec2(hy * 0.25, h3 * 40.0)));
-      float far12 = smoothstep(12.0, 17.0, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
+      float far12 = smoothstep(7.0, 9.5, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
       rw *= mix(1.0, clamp((1.0 - hn) / 0.22, 0.0, 1.0), far12);   // korjaus B: kaukainen runko suipenee piikiksi latvassa, ei tasaista katkaistua päätä
       float h0f = 3.0 + 2.0 * h4;                                    // havusto alkaa 3-5 m:n korkeudelta
-      float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
+      float kin = 0.10 + 0.28 * vnoise(vec2(dxn * 1.4 + h2 * 30.0, k * 2.3 + ci));   // rivi 111: kinos tyvellä: runko uppoaa lumeen pehmeää, aaltoilevaa rajaa pitkin (10-38 cm), ei suoraa viivaa
+      float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * smoothstep(kin - 0.06 - pw, kin + 0.10 + pw, hy) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
       // oksamassa: alta harva, päältä tiheä; hulmuavat riippuvat oksat, repaleinen reuna, raot
       float sk = smoothstep(0.20, 0.42, hn) * (1.0 - smoothstep(0.92, 1.02, hn));
       float tier = 0.50 + 0.95 * vnoise(vec2(hy * 0.50 + k * 3.1, k * 1.7 + ci));
@@ -277,7 +278,8 @@ vec3 scene(vec2 p) {
         float rw = rP * (1.0 - 0.30 * clamp(hy / 30.0, 0.0, 1.0)) * (1.0 + 0.5 * exp(-hy * 1.1));
         float Hp = 27.0 + 2.0 * float(js % 3);                                   // ikihongan korkeus: äärellinen, runko päättyy omaan latvukseensa (katse ylös)
         float hnp = hy / Hp;
-        float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(-0.05, hy) * farF * (1.0 - smoothstep(0.55, 0.80, hnp));
+        float kinP = 0.12 + 0.34 * vnoise(vec2(dxn * 0.9 + float(js) * 7.0, k * 2.3));   // rivi 111: kinos ikihongan tyvellä
+        float aT = smoothstep(pw, -pw, abs(dxn) - rw) * smoothstep(kinP - 0.08 - pw, kinP + 0.12 + pw, hy) * farF * (1.0 - smoothstep(0.55, 0.80, hnp));
         float u = clamp(dxn / rw, -1.0, 1.0);
         float fur = 0.55 * vnoise(vec2(u * 9.0 + float(js) * 3.0, hy * 0.20)) + 0.45 * vnoise(vec2(u * 3.0 + 2.0, hy * 0.9 + float(js)));
         vec3 bark = HAMY * (0.35 + 1.5 * fur);
@@ -331,23 +333,25 @@ vec3 scene(vec2 p) {
 
     // hiutaleet: tummassa usvassa kohtuullinen lumisade. Paikka on vakionopeuden kertymä (alas 0,5 m/s, sivulle 0,10 m/s yhteen suuntaan; Y2).
     // Alttoviulujen fraasi (kommentti) kasvattaa lumen määrää ja kirkkautta pehmeästi (nousu 0,5 s, lasku 1 s): ei siirrä eikä käännä lunta.
-    if (zr < 46.0) {
-      float ex = 0.0;
+    float ex = 0.0;
+    {
       if (uAl[0].y + uAl[1].y + uAl[2].y + uAl[3].y > 0.0) {
         for (int i3 = 0; i3 < 4; i3++) { vec4 pa = uAl[i3]; if (pa.y <= 0.0) continue;
           float zc = pa.z + 9.0 + 7.0 * pa.w, xc = laneX(zc) + (pa.w - 0.5) * 5.0;
-          float env = smoothstep(0.0, 0.5, pa.x) * (1.0 - smoothstep(1.2, 3.2, pa.x));
+          float env = smoothstep(0.0, 0.8, pa.x) * (1.0 - smoothstep(1.4, 3.4, pa.x));
           ex = max(ex, pa.y * env * exp(-pow((zk - zc) / 11.0, 2.0)) * exp(-pow((wx - xc) / 8.0, 2.0)) * exp(-pow((ya - 6.0) / 8.0, 2.0))); }
       }
+    }
+    if (zr < 46.0) {
       vec2 fq = vec2(wx + 0.10 * ts, yw + 0.5 * ts + 3.7 * k) * 1.1;
       vec2 ic = floor(fq), fr = fract(fq);
       float hh = hash(ic + k * 1.37);
-      float thr = 0.040 + 0.40 * ex;
+      float thr = 0.040;                 // rivi 110: kommentti ei lisää hiutaleita (uudet hiutaleet välkkyivät), vain valaisee olemassa olevia
       if (hh < thr) {
         vec2 c0 = 0.2 + 0.6 * vec2(hash(ic + 1.7), hash(ic + 5.3));
-        float rf = max(0.0020 * zr / F, 0.002) * (1.0 + 0.7 * ex);
+        float rf = max(0.0020 * zr / F, 0.002);
         float shA = 0.55 + 0.8 * shaftH(wx, yw, zk);
-        col += SNOWC * 0.40 * (1.0 + 2.5 * ex * shA) * smoothstep(0.0, 0.015, thr - hh) * smoothstep(rf, rf * 0.3, length(fr - c0) / 1.1) * smoothstep(48.0, 28.0, zr) * smoothstep(0.8, 2.5, zr);
+        col += SNOWC * 0.40 * (1.0 + 1.2 * ex * shA) * smoothstep(0.0, 0.015, thr - hh) * smoothstep(rf, rf * 0.3, length(fr - c0) / 1.1) * smoothstep(48.0, 28.0, zr) * smoothstep(0.8, 2.5, zr);
       }
     }
 
@@ -368,6 +372,7 @@ vec3 scene(vec2 p) {
     vec3 Lf = AMB * (0.85 - 0.30 * uFx.x + 0.15 * uFx.y)
             + gcol * I * (0.85 + 0.30 * uFx.y) * (1.0 + 0.35 * part) * ph * sh * (0.55 + 0.45 * exp(-max(ya, 0.0) / 6.0)) * (1.0 - 0.30 * uFx.x)
             + DLC * (uTop.x + 0.45 * uFx.z) * 0.07 * mix(shaftT(wx, yw, zk), 0.35, up) * topV;   // katse ylös: ei viirumaisia hunnutuksia
+    Lf += HALLA * 0.16 * ex * (0.5 + 0.5 * sh);     // rivi 110: alttojen kommentti = usva hohtaa hetken pehmeästi kommentin kohdalla
     col = col * T + Lf * (1.0 - T);
   }
 
@@ -422,8 +427,8 @@ async function alusta() {
   const tuuli = (t) => norm(d.koko(t, 1.2), 0.35, 0.95);
   // hallan valo kohoaa rungoista latvoihin nousun mukana: valaistun alueen alareuna nousee 3 metristä 15 metriin (`uTop.y` = alareuna + 7)
   const hFront = (t) => 10 + 12 * sstep(TT - 0.3, TH, t);
-  // alttoviulujen fraasien alut: keskikaistan alut (d.cues.alut.keski), joita ei edellä alle sekunnin hiljaisuus; vain maailman 3 aikana
-  const fraasit = []; { let prev = -9; for (const [t, v] of d.cues.alut.keski) { if (t > T0 + 0.8 && t < T4 - 1.0 && t - prev >= 1.0 && v >= 0.25) fraasit.push({ t, v: clamp((v - 0.2) / 0.2, 0.35, 1), s: fract(t * 7.13) }); prev = t; } }
+  // alttoviulujen kommenttien alut: ohjaajan mittaamat (`fis_hengittaa.iskut_t`): keskirekisterin paisutukset, kun puhaltimet ovat hiljaa
+  const fraasit = (d.cues.cues.find((c) => c.id === 'fis_hengittaa').iskut_t || []).filter((t) => t > T0 + 0.8 && t < T4 - 1.0).map((t) => ({ t, v: 1, s: fract(t * 7.13) }));
   // usvan ajautuma: koneen kuulema liike nopeuttaa sitä (kertymä, ei nopeus kertaa aika)
   const lik = new Float32Array(d.NF);
   for (let f = 0; f < d.NF; f++) lik[f] = d.tapahtuu('liike', f / FPS) ? 1 : 0;

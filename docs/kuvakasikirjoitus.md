@@ -488,14 +488,14 @@ Punainen on vain taotussa auringossa (käyttäjä hyväksyi 9.11.2026). D-duurin
 - Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy ja väistyy tiheämmin.
 - Kone kuuli: Ylhäällä välähtää nopea kuvio (jouset) **Näkyy:** Pilkahdus korkealla: syttyy kuvion alkaessa ja sammuu sen loppuessa.
 
-#### 14 Ensimmäinen valon välähdys · `valo_D_duuri` → `askeleet_alkavat` · <!--aika-->1:15–1:39<!--/aika-->
+#### 14 Ensimmäinen valon välähdys · `valo_D_duuri` → `askeleet_alkavat` · <!--aika-->1:15–1:26<!--/aika-->
 - **Kuuluu:** Ensimmäinen valon välähdys: D ja H pitkinä, kahdesti *Soittaa:* vasket ja puhaltimet.
   - **Näkyy:** Kaksi harjua nousee jousten kuusiryhmien takaa kahdelle korkeudelle (d ja h kahdessa oktaavissa); hetken kelmeä, kylmä valo; jouset väistyvät.
   - **Tunne → keino:** hetkellinen valo → valo ja korkeus
 - Kone kuuli: Liike tasaantuu **Näkyy:** Kuusiryhmien ja pilkahdusten syntytahti hidastuu.
 - Kone kuuli: Liike kiihtyy: ääniä tulee tiheään **Näkyy:** Kuusiryhmiä ja pilkahduksia syntyy tiheämmin.
 
-#### 15 Basson eritahtiset iskut alkavat · `askeleet_alkavat` → `askeleet_B` · <!--aika-->1:39–2:09<!--/aika-->
+#### 15 Basson eritahtiset iskut alkavat · `askeleet_alkavat` → `askeleet_B` · <!--aika-->1:26–2:09<!--/aika-->
 - **Kuuluu:** Basson eritahtiset iskut alkavat (kuultu) *Soittaa:* bassot (alttoviulut ja puhaltimet vuorottelevat ylempänä).
   - **Näkyy:** Maa sysää omassa tahdissaan matalan h:n korkeudella ja hohtaa; kuusiryhmät ja kukkulat vuorottelevat sen yllä. Maa johtaa kuvaa.
   - **Tunne → keino:** jokin suuri on tulossa → paino (maan hohto)

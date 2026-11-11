@@ -958,3 +958,30 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 >
 > Tämä oli siis palautetta vain työskentelytavoista, ei pyyntö muuttaa jotain videossa.
 
+## 11.11.2026: vedos 7b (neljäs koonti), pimeä metsä
+
+> Lumet vieläkin bugitavat. Puut katkeilevat ja välkkyvät kuvaan edes takaisin.
+>
+> Mielestäni meillä oli homma paremmin hanskassa aikaisemmin. Edellinen versio lumesta näytti paremmalta.
+>
+> Ensimmäinen skreeni metsässä: valo alkaa keskellä puuta, näyttää valonheittimeltä, koska puu katkeaa.
+>
+> Lumi välkkyy häiritsevästi esim 01:05, 01:06 alueella. Tee jatkuvuus-check.
+>
+> Sinun piti tarkistaa jokaisesta freimistä ettei puut katkeile.
+>
+> Nyt nuo jättihongat näyttää hyviltä takana. Ei häiritse enää. Heiluvat kuten puiden pitää. Hienoa!
+>
+> Voisiko lumi tai usva hienovaraisesti reagoida noihin alttoviulun kommentteihin? Ne ei nyt ole otettu huomioon tässä
+> metsäkohtauksessa.
+>
+> Ensimmäiset basson askeleet (1:27 alkaa) ei näy. Ne sekottuvat varmaan sinulla sellon kommenttiin, koska tulevat osittain
+> niiden päälle. Vaikea kuulla.
+>
+> Mutta askeleet muuten näyttää hyvältä.
+>
+> Tämä metsäkohtaus menee siis vähän vielä remonttiin.
+>
+> Voisiko puun rungon tyvet ola jotenkin pehmeämmin lumessa, nyt ne on suorat viivat? Voisiko lumi tehdä kinoksia, pehmeitä
+> asioita?
+
