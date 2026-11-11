@@ -439,7 +439,7 @@ async function alusta() {
     }
     for (const e of loydetyt) if (Math.abs(e.t - A.myrsky_aksentti_537) > 0.8) aksentit.push({ t: e.t, w: 0.6 });
   }
-  const askel = (t) => aksentit.reduce((s, e) => s + e.w * sstep(e.t - 0.05, e.t + 0.60, t), 0);       // kertynyt askel (osuus)
+  const askel = (t) => aksentit.reduce((s, e) => s + e.w * sstep(e.t - 0.05, e.t + 0.35, t), 0);       // kertynyt askel (osuus)
   const AW = aksentit.reduce((s, e) => s + e.w, 0);
   const askelOsuus = (t) => clamp(askel(t) / AW, 0, 1);   // aksenttien kertynyt askel (0..1): jää voimaan
   const aks = (t) => aksentit.reduce((s, e) => { const x = t - e.t; return s + (x < 0 ? 0 : e.w * (1 - Math.exp(-x / 0.06)) * Math.exp(-x / 0.9)); }, 0);   // puuska ja välähdys, joka laskee hitaasti
@@ -500,13 +500,14 @@ async function alusta() {
   const huippuK = (t) => sstep(T6 - 4.0, T6 - 1.5, t) * (1 - sstep(T6 + 1.5, T6 + 4.0, t));
   const valkoinen = (t) => Math.max(huippuK(t), sstep(T8 + 2.8, T9 - 0.8, t));
   // vedos 7 (Y2): nopeus on tavoitteen epäsymmetrinen alipäästö (nousu tau 0,30 s = 10-90 % noin 0,66 s; lasku tau 0,80 s = noin 1,76 s);
-  // iskut (aks, aks2, Q ja R) eivät muuta lumen nopeutta: ne näkyvät valona ja lumipölynä. Paikka on nopeuden kertymä (d.sarja).
+  // iskut (Q ja R) eivät muuta lumen nopeutta (aks ja aks2 muuttavat, vedos 7b): ne näkyvät valona ja lumipölynä. Paikka on nopeuden kertymä (d.sarja).
   const alipaasto = (fn, tauYl, tauAl) => { const a = new Float32Array(d.NF + 2); let v = fn(0); for (let f = 0; f < d.NF + 2; f++) { const tg = fn(f / FPS); v += (tg - v) * (1 - Math.exp(-1 / FPS / (tg > v ? tauYl : tauAl))); a[f] = v; } return a; };
   const lue = (a, t) => { const x = clamp(t * FPS, 0, d.NF - 1e-3), i = Math.floor(x); return lerp(a[i], a[i + 1], x - i); };
   const tuuliTavoite = (t) => 0.02 + sstep(T3 - 1, T4 + 2, t) * (4 + 14 * INT(t) + 6 * huippuK(t)) * (1 - ylos(t));
   const putoamisTavoite = (t) => (0.06 + sstep(T3, T4 + 2, t) * (0.35 + 0.9 * INT(t))) * (1 - ylos(t)) - (9 + 4 * INT(t)) * ylos(t);
   const aTuuli = alipaasto(tuuliTavoite, 0.30, 0.80), aPutoaa = alipaasto(putoamisTavoite, 0.30, 0.80);
-  const tuulenNopeus = (t) => lue(aTuuli, t);
+  // vedos 7b (rivi 104): myrskyn alun aksentti (aks, aks2) palautettu vedoksen 6 mukaiseksi: nopea nousu alipäästön ohi (vain nämä; Q ja R eivät)
+  const tuulenNopeus = (t) => lue(aTuuli, t) + sstep(T3 - 1, T4 + 2, t) * (12 * aks(t) + 7 * Math.min(aks2(t), 1.5)) * (1 - ylos(t));
   const kW = d.sarja((f) => tuulenNopeus(f / FPS) / FPS);
   const putoamisNopeus = (t) => lue(aPutoaa, t);
   const kF = d.sarja((f) => putoamisNopeus(f / FPS) / FPS);
