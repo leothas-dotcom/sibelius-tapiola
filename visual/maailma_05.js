@@ -343,7 +343,7 @@ async function alusta() {
   // rivi 116: jousten oktaavieleet (partituuri s. 11-17: pitkä sidottu ääni, hyppy oktaavin ylös ja takaisin) liikuttavat lunta hellästi:
   // ele ylös = lumi kevenee (putoaa hitaammin, vähintään 0,15 m/s) ja ajautuu sivulle; ele alas = laskeutuu. Suunta ei käänny.
   const okt = (t) => clamp((d.melodia(t, 0.45) - d.melodia(t, 3.5)) / 7.0, -1, 1) * sstep(T0 + 2.0, T0 + 5.0, t) * (1 - sstep(TN1 - 1.0, TN1 + 2.0, t));
-  const sSnX = d.sarja((f) => (0.30 + 0.5 * jou01(f / FPS) + 0.32 * okt(f / FPS)) / FPS), sSnY = d.sarja((f) => { const o = okt(f / FPS); return (0.60 + 0.8 * jou01(f / FPS) - 0.72 * Math.max(o, 0) + 0.25 * Math.max(-o, 0)) / FPS; });   // lumen kertymä: nopeus seuraa jousia
+  const sSnX = d.sarja((f) => (0.30 + 0.5 * jou01(f / FPS) + 0.32 * okt(f / FPS)) / FPS), sSnY = d.sarja((f) => { const o = okt(f / FPS); return (0.60 + 0.8 * jou01(f / FPS) - 0.55 * Math.max(o, 0) + 0.25 * Math.max(-o, 0)) / FPS; });   // lumen kertymä: nopeus seuraa jousia
   const ALUT = d.alut.filter((a) => a.t >= T0 && a.t <= T1);
 
   // ---- väike ----

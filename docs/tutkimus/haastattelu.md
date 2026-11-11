@@ -1030,3 +1030,22 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 
 > Tämä kohta juuri, mistä keksit sen että valojen pitää lähestyä? Se oli nerokas? voisiko ne valot vähän selvemmin vielä
 > lähestyä, melodian kaaren mukaan?
+
+### 11.11.2026, vedos 7b (7. koonti): valojen kesto, tyvien lumi, lumen välke
+
+> Joo, mutta valot pitää syttyä kun huilut alkavat soittaa, ja sammua vasta kun huilut lopettavat. Nyt ne alkoivat liian
+> myöhään, ja loppuivat liian aikaisin. Askeleet oli hyvät. Samoin alttojen kommentit.
+>
+> Nyt jos tehdään vielä yksi vedos, tee vielä jotain noille puiden runkojen alaosille. Lumi pitäisi olla pehmeämmin siinä,
+> ja saumattomasti integroitua muuhun lumeen. Nyt näkyy taas se viivasuora raja lumirajan ja maan välillä. Saako ne pois,
+> ilman että näyttää siltä että puut leijuvat?
+>
+> Lumien bugitus palasi hivenen. Huomaan etä onko se valo, vai joku, mutta ne nyt bugittavat niin että välkkyvät.
+
+> Huilu alkaa soittaa arviolta 7:44 ja lopettaa 8:13
+
+> Haluaisin muuten myös yhden vedoksen, vaikka whatsappiin lähetettävän, missä koko video olisi puristettu nopeutetusti
+> vaikka minuuttiin? Musiikki voi olla vapaavalintainen kohta jostain päin teosta - Mistä näkee nopeasti koko videon, miten
+> se kamera edistyy ja nuo ideat sieltä? Herättää mielenkiinon, vähän niinkuin youtube short
+
+> Tuossa spektrogrammissahan on tarkasti juuri tuo miten valojen pitää mennä? Se näkyy siinä hienosti, eikö niin?

@@ -592,14 +592,18 @@ export function signaalit(d) {
   const trillOn = (t) => sstep(tVP + 1, tVP + 4, t) * (1 - sstep(tHJ - 2, tHJ + 3, t));
   // rivi 122: huiluparin valot lähestyvät toisiaan melodian kaaren mukaan. Mitattu (nuotit) ja partituuri s. 31: ylempi huilu laskeutuu kromaattisesti
   // f3:sta h2:een (midi 89 -> 83) kirjaimesta J alkaen; jokainen askel alas tuo valot askeleen lähemmäs. Väli kapenee 0,195:stä 0,070:een (oli 0,107:ään tasaisesti 14 s:ssa).
-  const HUIP = d.nuotit.filter((n) => n[0] > tJ - 0.5 && n[0] < T1 && n[2] >= 82 && n[1] >= 0.3).map((n) => ({ t: n[0], m: n[2] }));
+  // rivi 123: valot syttyvät, kun huilut alkavat, ja sammuvat, kun ne lopettavat (`J_huilut.iskut_t` = [alku, loppu], mitattu spektrogrammista; käyttäjä: noin 7:44 ja 8:13)
+  const HUI = d.cues.cues.find((c) => c.id === 'J_huilut').iskut_t || [tJ, T1 - 6], tF0 = HUI[0], tF1 = HUI[1];
+  const HUIP = d.nuotit.filter((n) => n[0] > tF0 - 0.3 && n[0] < T1 && n[2] >= 82 && n[1] >= 0.3).map((n) => ({ t: n[0], m: n[2] }))
+    .filter((n, i, A) => !A.some((o) => Math.abs(o.t - n.t) <= 0.2 && o.m > n.m));   // yhtä aikaa alkavista vain ylempi (alempi huilu pois)
   // ylin ääni = korkein viimeisen 1,6 s aikana alkanut pitkä sävel (alempi huilu ei sekoita); linja on laskeva: ei palaa ylös. Laskettu 0,1 s ruudukkoon.
-  const YLA = (() => { const out = []; let prev = 0, alin = 999; for (let t = tJ - 0.5; t < T1; t += 0.1) { let mx = 0; for (const n of HUIP) if (n.t <= t && n.t > t - 1.6) mx = Math.max(mx, n.m);
+  const YLA = (() => { const out = []; let prev = 0, alin = 999; for (let t = tF0 - 0.3; t < T1; t += 0.1) { let mx = 0; for (const n of HUIP) if (n.t <= t + 0.6 && n.t > t - 1.6) mx = Math.max(mx, n.m);   // +0,6 s: parin ylempi ääni alkaa hieman alemman jälkeen
       if (mx === 0) mx = prev; prev = mx; if (mx > 0) alin = Math.min(alin, mx); out.push(alin === 999 ? 0 : alin); } return out; })();
   const HUIP0 = YLA.find((m) => m > 0) || 89;
-  const ylaAani = (t) => YLA[clamp(Math.round((t - (tJ - 0.5)) / 0.1), 0, YLA.length - 1)] || HUIP0;
-  const lahesty = (t) => { let a = 0; for (let k = -4; k <= 4; k++) a += clamp((HUIP0 - ylaAani(t + k * 0.3)) / 6, 0, 1); return a / 9; };                // pehmennys +-1,2 s
-  const pairOn = (t) => sstep(tJ, tJ + 3, t) * (1 - sstep(T1 - 12, T1 - 6, t));
+  const HUIPV = Math.max(HUIP0 - Math.min(...YLA.filter((m) => m > 0), HUIP0), 4);   // linjan koko lasku (puolisävelaskelia)
+  const ylaAani = (t) => YLA[clamp(Math.round((t - (tF0 - 0.3)) / 0.1), 0, YLA.length - 1)] || HUIP0;
+  const lahesty = (t) => { let a = 0; for (let k = -4; k <= 4; k++) a += clamp((HUIP0 - ylaAani(t + k * 0.3)) / HUIPV, 0, 1); return a / 9; };                // pehmennys +-1,2 s
+  const pairOn = (t) => sstep(tF0 - 0.2, tF0 + 1.3, t) * (1 - sstep(tF1 - 0.6, tF1 + 1.2, t));
   function tila(t) {
     const f = t * FPS, c = cam(t), cI = ci(t), L = d.koko(t, 1.5), Gt = G(t);
     const live = []; for (let k = 0; k < 6; k++) live.push(Sj(t - 1.6 * (k / 5)));
