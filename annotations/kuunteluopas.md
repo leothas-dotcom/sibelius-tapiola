@@ -386,7 +386,7 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* pienet kuviot keskellä, paljon tyhjää. *Tunnelma:* tyven.
   - *Partituurissa:* t. 471: huilu poco f, oboet ja englannintorvi mf, dim. > p; käyrätorvet mf dim. > pp; t. 481: huilut, oboet, klarinetit cresc. > f (s. 47).
   - Ohjaaja: tyven ennen viimeistä varoitusta (P).
-- **13:01 Jouset nousevat bassoista viuluihin.** Nopea nouseva kulku alkaa kontrabassoista ja kulkee sellojen ja alttoviulujen kautta viuluihin usean oktaavin yli muutamassa sekunnissa; sen jälkeen pohja katoaa ja viulut jäävät keinumaan.
+- **13:03 Jouset nousevat bassoista viuluihin.** Nopea nouseva kulku alkaa kontrabassoista ja kulkee sellojen ja alttoviulujen kautta viuluihin usean oktaavin yli muutamassa sekunnissa; sen jälkeen pohja katoaa ja viulut jäävät keinumaan.
   - *Edessä ja takana:* yksi nouseva ele maasta latvoihin. *Tunnelma:* hitaasti nouseva tuulenpuuska; sama ele kuin puupuhaltimien puuskat, pienempi.
   - *Partituurissa:* t. 473-474: kontrabassot div., sellot div., alttoviulut div., viulut I ja II div.: nouseva murtosointu peräkkäin, mf <; sen jälkeen jouset pitkät sidotut parit p, puupuhaltimet p dolce (s. 47)
   - Käyttäjä 10.11.2026: "nousevat nopeasti usean oktaavin yli, mutta videossa ei tapahdu mitään? ... tuo jousisto oktaavit on 13:02 - 13:05 noin. Alkaa bassoista ja päättyy viuluihin." Käyttäjä 10.11.2026 yöllä: "jousten oktaavinousu ei näkynyt 13:03 eteenpäin. Se on niinkuin hitaasti nouseva tuulenpuuska minusta, vähemmän kuin puhaltajien edelliset, mutta sama ele jousilla."
@@ -400,7 +400,7 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* puupuhaltimet ja jouset yhdessä edessä; vasket kaukana hiljaa. *Tunnelma:* äkillinen hiljaisuus ja pehmeys vaskien jälkeen; laulava, avara, lempeä: aivan toinen maailma kuin hetkeä aiemmin.
   - *Partituurissa:* P = t. 490: vasket ja patarummut fp cresc. molto > ff; t. 492-493 jouset ff nopea kuvio; t. 494: huilut, oboet, klarinetit, fagotit f, käyrätorvet pp, pasuunat ppp, jouset f (s. 48)
   - Käyttäjä 10.11.2026: "13:31,32,33 ISO TAITE, SUURI MUUTOS mutta juuri mitään ei tapahdu." Ohjaaja: vaskien uhka ei purkaudu iskuun vaan lauluun; metsä avautuu hetkeksi ennen kuin se tyhjenee. Käyttäjä 10.11.2026 yöllä: "Vieläkään ei tapahtunut muutosta 13:34!!! SIINÄ PITÄÄ OLLA TODELLA ISO MUUTOS!!! TUNNELMAAN!!!" Mitattu: taso putoaa 20 dB (13:33,5-13:34,0), ja puupuhaltimet ja jouset alkavat hiljaa 13:34,3 ja kasvavat.
-- **13:41 Tuulenpuuska: huilu ja pikkolo juoksevat ylös ja alas.** Huilu ja pikkolo juoksevat nopeasti ylös ja alas täydellä voimalla, muut puupuhaltimet mukana; sitten kaikki asettuu.
+- **13:40 Tuulenpuuska: huilu ja pikkolo juoksevat ylös ja alas.** Huilu ja pikkolo juoksevat nopeasti ylös ja alas täydellä voimalla, muut puupuhaltimet mukana; sitten kaikki asettuu.
   - *Edessä ja takana:* yksi nopea pyyhkäisy ylhäällä. *Tunnelma:* puuska.
   - *Partituurissa:* t. 499: huilu ja pikkolo nopea nouseva ja laskeva juoksu ff; oboet, klarinetit, fagotit ff dim.; sitten poco f (s. 49)
   - Käyttäjä 10.11.2026: "13:40 tuulenpuuska ei näy."

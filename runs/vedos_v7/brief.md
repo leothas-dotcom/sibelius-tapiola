@@ -317,3 +317,59 @@ Kirjoita raportti tiedostoon `runs/vedos_v7/kriitikko.md` (rivitaulukko A, bugil
 ESTÄVIÄ n kpl). Liikesarjat kansioon `runs/vedos_v7/krit/`. Älä koske mihinkään muuhun tiedostoon. Älä renderöi mitään
 (ei `render.mjs`, ei `lukittu.mjs`): vain valmiin videon ruutuja.
 
+---
+
+# Vedos 7b: kolme täsmäkorjausta käyttäjän palautteesta vedokseen 7 (rivit 96–98)
+
+Lue ensin kokonaan `docs/visuaalinen_tyyli.md`, sitten tämän briefin alun yhteiset säännöt (Y1–Y5, T1–T3; renderin rajat
+taulukosta) ja oma lukusi alla. **Teet vain numeroidut kohdat; kaikki muu pysyy ruudulleen vedoksen 7 kuvana**
+(`render/vertaa.py runs/vedos_v7/osat/<k>.mp4 <uusi> <osan alku s>`: jokainen muuttunut jakso selitetään).
+Käyttäjä vedoksesta 7: "Wau, miten hienoa työtä. Nyt se näyttää todella hienolta. ... Itse muuttaisin ihan pari pientä asiaa vielä."
+
+## 03_04 (rivi 96): kaukaiset puut ovat pelkkiä runkoja
+
+Käyttäjä: "puiden liike ei niin häiritse enää (ehkä latvat aavistuksen liikaa heiluvat), mutta enemmän se häiritsee että ne
+näyttävät vain rungoilta? Pitäisikö niissä olla joku kasvusto kuten muissa puissa? Ne jotenkin vielä bugittaa (2:30 eteenpäin
+kaukana olevat puut). Ne mitä vasten noustaan taivaalle. Se nousu minusta toimii nyt jo hyvin."
+Ohjaajan havainto (`runs/vedos_v7/koko.mp4` 2:30–3:08, 2 s välein): lähirungot ovat kunnossa, mutta niiden takana metsä on
+tiheä rivi ohuita, vaaleareunaisia pystyviivoja ilman oksia; 3:00–3:07 ne täyttävät kuvan viivoina yläreunaan asti.
+1. **Kaukaiset ja keskietäisyyden puut ovat kuusia, eivät tolppia.** Jokaisella puulla noin 12 m:stä kauemmas on oksisto:
+   tumma, alaspäin riippuva kuusen havusto, joka alkaa noin 3–5 m:n korkeudelta ja levenee alaspäin kerroksittain (sama
+   piirtotapa ja sävy kuin moduulin latvuksilla ja muiden maailmojen kuusilla; lunta oksilla saa olla hillitysti). Rungosta
+   näkyy vain tyvi ja välähdyksiä oksien välistä. Kaukaisin kerros sulaa tummaksi havuseinäksi, jonka yläreuna on
+   sahalaitainen. Vaaleat reunaviivat (rim) poistetaan kaukaisilta rungoilta. Puut eivät ilmesty eivätkä muutu kesken:
+   oksisto on puissa koko moduulin ajan (myös ennen 2:30), mutta **polku, valo, sykkeet, lähimmät rungot, pilkat, askeleet
+   ja kamera eivät muutu**.
+2. **Ylöskatse (3:02–3:10):** samat puut nähdään alta: oksisto jatkuu latvukseen yhtenäisenä, ei viivoja kuvan yläreunaan.
+   Nousu taivaalle ja kide säilyvät täsmälleen ("Se nousu minusta toimii nyt jo hyvin").
+3. **Latvojen liike aavistuksen pienemmäksi:** kerro nykyinen latvan ja oksiston liike 0,6:lla (muoto ja vaiheet ennallaan).
+Todiste: täysikokoiset ruudut 2:30, 2:44, 2:58, 3:04 ja 3:08 vedoksen 7 samojen rinnalla; liikesarja 2:28–3:12 2 s välein;
+`vertaa.py`: ero vedokseen 7 saa näkyä koko moduulissa (kaukaiset puut), mutta keskikirkkaus ja valon paikka eivät muutu
+(taulukko 10 s välein: keskikirkkaus ennen ja jälkeen, ero enintään 4 %).
+
+## 09 (rivit 97 ja 98): tuulenpuuska nostaa jo kuvassa olevaa lunta
+
+Käyttäjä: "Se jousten oktaavinousu tekee nyt vähän liian oudon luminousun? Se alkaa myös pikkaisen liian aikaisin. ... Mitä
+jos se oktaavinousu olisi ikäänkuin tuulen puuska, joka nostattaa jo ruudulla olevaa lunta hitaasti ylöspäin, ryöpsähtäen?"
+ja "Samoin ne puhaltajien tuulenpuuskat (noin 13:40) voisi toteuttaa samoin, mutta vähän voimakkaammin?"
+Ohjaaja mittasi äänestä uudelleen (spektrogrammi): nouseva kulku alkaa **13:02,95** ja päättyy 13:05,2 (ankkuri
+`jousten_nousu_473` on korjattu: aiempi 13:01,2 oli 1,75 s liian aikaisin); puhaltimien juoksu nousee **13:40,75**, on
+huipussaan 13:41,6 (`puuska_499.iskut_t[0]`) ja laskee 13:42,1 (ankkuri korjattu). Lue ajat ankkureista.
+1. **Poista molemmat erilliset lumipölyn hunnut** (vedoksen 7 kohdat 4 ja 5) ja niiden jälkeinen maan kirkastuminen.
+2. **Puuska vaikuttaa siihen lumeen, joka on jo kuvassa.** Samat hiutaleet, jotka satavat, saavat pystynopeuteensa nostavan
+   termin (nopeuden kertymänä, kuten Y2 vaatii: paikka ei hyppää). Jousten nousussa: ankkurin alusta nostava voima kasvaa
+   kulun mukana (hitaasti ensin, sitten ryöpsähtäen: esim. verhokäyrä u²·(3−2u) ankkurin kestolle ja sen päälle yksi pehmeä
+   sykäys kulun viimeisellä kolmanneksella), niin että putoaminen hidastuu, pysähtyy ja kääntyy nousuksi (huipussa noin
+   1,5 kertaa tavallisen putoamisnopeuden verran ylöspäin), ja ankkurin lopun jälkeen lumi leijuu ja palaa satamaan
+   noin 2,5 s:ssa. Nosto kulkee kuvan läpi puuskana lumen ajelehtimisen suuntaan (rintama ylittää kuvan noin 1 s:ssa;
+   ei koko ruutu samassa ruudussa) ja on voimakkain lähellä maata olevassa lumessa. Lisäksi maan pinnasta irtoaa samalla
+   rintamalla vähän hienoa pintalunta (pienet hiukkaset, enintään neljännes hiutaleiden määrästä), joka nousee samalla
+   nopeuskentällä: ei erillistä huntua, ei ruudukkoa. Hiutaleiden määrä ja kirkkaus saavat kasvaa enintään 1,3-kertaisiksi.
+3. **Puhaltimien puuska (`puuska_499`) samalla tavalla, voimakkaampana ja nopeampana:** nosto alkaa ankkurin alusta, on
+   huipussaan `iskut_t[0]`:ssa (noin 2,5 kertaa putoamisnopeus ylöspäin; rintama ylittää kuvan noin 0,6 s:ssa), ja lumi
+   palaa satamaan noin 2 s:ssa ankkurin lopun jälkeen. Taitteen sininen tila ja sen hidas lumi säilyvät muuten.
+4. Rungot ja latvat eivät reagoi puuskaan (4d.31); valo ei välähdä.
+Todiste: ruutusarjat joka toisesta ruudusta 13:02,5–13:08 ja 13:40,3–13:45; hiutaleiden pystynopeuden taulukko 0,2 s
+välein molemmista (mallista) ja saman suunnan toteaminen renderistä (hiutaleet nousevat ruudusta toiseen); suurin
+ruutujen välinen nopeuden muutos; `vertaa.py` vedosta 7 vastaan (erot vain 13:01–13:09 ja 13:40–13:46).
+

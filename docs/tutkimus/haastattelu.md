@@ -906,3 +906,20 @@ puut elävät kuten oikea puu, aavistuksen ja hieman; ne eivät heilu paljon eiv
 > kahden leikki. Totellen tietysti visuaalista tyyliä, niinkuin aina. Mieti mikä nostaisi tämän videon vielä uudelle tasolle?
 > Voitko ajasta uuden ajon aamulle, kun rajat on resetoituneet. Toivoisin että video on huomenna valmis.
 
+## Vedoksen 7 jälkeen
+
+> Wau, miten hienoa työtä. Nyt se näyttää todella hienolta. Tietokoneeseeni tuli joku ongelma, niin emme saaneet vedosta 8
+> käyntiin. Itse muuttaisin ihan pari pientä asiaa vielä.
+>
+> puiden liike ei niin häiritse enää (ehkä latvat aavistuksen liikaa heiluvat), mutta enemmän se häiritsee että ne näyttävät vain
+> rungoilta? Pitäisikö niissä olla joku kasvusto kuten muissa puissa? Ne jotenkin vielä bugittaa (2:30 eteenpäin kaukana olevat
+> puut). Ne mitä vasten noustaan taivaalle. Se nousu minusta toimii nyt jo hyvin.
+>
+> Se jousten oktaavinousu tekee nyt vähän liian oudon luminousun? Se alkaa myös pikkaisen liian aikaisin. Tarkista äänestä milloin
+> se oikeasti alkaa. Muista että minun antamat aikaleimat on aina arvioita, ja oikeasti sinun pitää tarkistaa tapahtumat äänestä.
+>
+> Mitä jos se oktaavinousu olisi ikäänkuin tuulen puuska, joka nostattaa jo ruudulla olevaa lunta hitaasti ylöspäin,
+> ryöpsähtäen? Mieti tuota kiitos.
+>
+> Samoin ne puhaltajien tuulenpuuskat (noin 13:40) voisi toteuttaa samoin, mutta vähän voimakkaammin?
+

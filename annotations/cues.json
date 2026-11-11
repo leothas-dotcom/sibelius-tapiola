@@ -2182,8 +2182,8 @@
   {
    "id": "jousten_nousu_473",
    "ankkuri": "jousten_nousu_473",
-   "t": 781.2,
-   "t_end": 785.3,
+   "t": 782.95,
+   "t_end": 785.2,
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
@@ -2204,7 +2204,7 @@
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "hyvä",
-   "peruste": "tarkat alut matalassa kaistassa 781,21 ... 785,31 (yksitoista alkua); pohja tulee 13:02, ylälinja a3 13:04; pohja katoaa 13:05",
+   "peruste": "tarkat alut matalassa kaistassa 781,21 ... 785,31 (yksitoista alkua); pohja tulee 13:02, ylälinja a3 13:04; pohja katoaa 13:05 | 11.11.: käyttäjä: alkaa liian aikaisin; spektrogrammi (hop 3 ms): matala urkupiste tulee jo 781,7, mutta itse nouseva kulku alkaa 782,95 (A2-A3), on a1:n tasolla 783,5 ja a2:n tasolla 784,3, hiipuu 785,2",
    "vahvistettu": false,
    "tarkista": true
   },
@@ -2275,8 +2275,11 @@
   {
    "id": "puuska_499",
    "ankkuri": "puuska_499",
-   "t": 821.0,
-   "t_end": 822.2,
+   "t": 820.75,
+   "t_end": 822.1,
+   "iskut_t": [
+    821.6
+   ],
    "theme": "isku",
    "luokka": "isku",
    "tyyppi": "hetki",
@@ -2298,7 +2301,7 @@
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "hyvä",
-   "peruste": "ylärekisterin huippu 821,6 s (-13 dB), 89 uutta säveltä sekunnissa kohdassa 13:41; koko taso +4,4 dB kohdassa 821,57",
+   "peruste": "ylärekisterin huippu 821,6 s (-13 dB), 89 uutta säveltä sekunnissa kohdassa 13:41; koko taso +4,4 dB kohdassa 821,57 | 11.11.: spektrogrammi: juoksu nousee 820,75 (noin 900 Hz) > huippu 821,5-821,7 (noin 2,2 kHz) > laskee 822,1",
    "vahvistettu": false,
    "tarkista": true
   },

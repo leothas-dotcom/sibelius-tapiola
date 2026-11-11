@@ -689,11 +689,11 @@
       "t_loppu": 781.0
     },
     "jousten_nousu_473": {
-      "t": 781.2,
+      "t": 782.95,
       "varmuus": "analyysi",
       "luottamus": "hyvä",
-      "peruste": "tarkat alut matalassa kaistassa 781,21 ... 785,31 (yksitoista alkua); pohja tulee 13:02, ylälinja a3 13:04; pohja katoaa 13:05",
-      "t_loppu": 785.3
+      "peruste": "tarkat alut matalassa kaistassa 781,21 ... 785,31 (yksitoista alkua); pohja tulee 13:02, ylälinja a3 13:04; pohja katoaa 13:05 | 11.11.: käyttäjä: alkaa liian aikaisin; spektrogrammi (hop 3 ms): matala urkupiste tulee jo 781,7, mutta itse nouseva kulku alkaa 782,95 (A2-A3), on a1:n tasolla 783,5 ja a2:n tasolla 784,3, hiipuu 785,2",
+      "t_loppu": 785.2
     },
     "P_taite_494": {
       "t": 813.6,
@@ -702,11 +702,14 @@
       "peruste": "koko taso -19 dBFS 13:29-13:33, putoaa 813,57 s (5 dB / 0,2 s) tasolle -28; keskikaistan alku 812,57 (jousten ff-kuvio)"
     },
     "puuska_499": {
-      "t": 821.0,
+      "t": 820.75,
       "varmuus": "analyysi",
       "luottamus": "hyvä",
-      "peruste": "ylärekisterin huippu 821,6 s (-13 dB), 89 uutta säveltä sekunnissa kohdassa 13:41; koko taso +4,4 dB kohdassa 821,57",
-      "t_loppu": 822.2
+      "peruste": "ylärekisterin huippu 821,6 s (-13 dB), 89 uutta säveltä sekunnissa kohdassa 13:41; koko taso +4,4 dB kohdassa 821,57 | 11.11.: spektrogrammi: juoksu nousee 820,75 (noin 900 Hz) > huippu 821,5-821,7 (noin 2,2 kHz) > laskee 822,1",
+      "t_loppu": 822.1,
+      "iskut": [
+        821.6
+      ]
     },
     "vasket_myrsky_1": {
       "t": 892.0,
