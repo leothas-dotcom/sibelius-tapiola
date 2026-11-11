@@ -985,3 +985,20 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Voisiko puun rungon tyvet ola jotenkin pehmeämmin lumessa, nyt ne on suorat viivat? Voisiko lumi tehdä kinoksia, pehmeitä
 > asioita?
 
+### 11.11.2026, vedos 7b (5. koonti): tuiverrus alkuun, leijuvat rungot, lumi alttojen ja oktaavieleiden mukaan
+
+> Ihan alkuun, kun jousten intensiteetti nousee, se pitäisi näkyä vähän selvemmin lumisateessa mielestäni. Se ennustaa,
+> tulevaa myrskyä. Voisiko lumeen tulla vähän tuiverrusta, jousten noustessa?
+>
+> Hei nyt näyttää lumi nätiltä metsässä, ei bugita! Hienoa!!! Nousu ylös näyttää hyvältä myös.
+>
+> Mutta tätä pelkäsin. Nyt ne puut leijuvat ilmassa. Useat lumiset rungot näyttää jo hyvältä, mutta tee tarkistus ettei ne
+> ole ilmassa.
+>
+> Tee noihin lumihiutaleisiin pientä liikettä, kun altot soittavat. Ihan pientä aaltoilua, joka matkii alttoviulujen
+> melodian kaarta. Lumen pitää liikkua silti hitaasti vielä tässä kohtaa, mutta se voisi vähän elää, ikäänkuin pieni
+> ilmavirta liikuttaisi niitä alttoviulujen tahtiin. Ja kun alttoviulut ei soita, ne voisi laskeutua alas hitaasti,
+> kevyenä.
+>
+> Seuraavassa kohtauksessa, kun nymphit tanssivat, jouset tekevät välillä oktaavi ylös alas eleet, voisiko se myös hieman
+> liikuttaa lunta? Hellävaroen, mutta että ne näkyvät?
