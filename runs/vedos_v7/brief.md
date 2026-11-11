@@ -436,3 +436,21 @@ näkyvät puut jäävät ilman oksia; lisäksi rungon yläpää katkeaa tasan (`
 Renderi `--start 61.6 --end 203.0` → `runs/maailma_03_04/osa.mp4` (4242 ruutua). **Hyväksymisehto: keskirajauksessa
 kohdista 2:30, 2:52 ja 3:02 ei ole yhtään paljasta tolppaa eikä katkaistua päätä.** Katso rajaukset itse.
 
+### 10, KORJAUS (rivi 104): myrskyn alun aksentti takaisin
+
+Käyttäjä: "Olet myös missannut jousiston aksentin lumimyrskyn alusta (noin 14:31), se oli aikaisemmin ok, miksi olet
+poistanut sen?" Ohjaaja vertasi ruudut (14:31,6–14:32,8, joka toinen ruutu) vedoksista 6 (`runs/vedos_v6u/koko.mp4`) ja 7b:
+vedoksessa 6 kuva muuttuu aksentin ruudussa (`myrsky_aksentti_537`, 14:32,0) noin 0,2 sekunnissa (lumi tihenee viiruiksi,
+kirkastuu, rintama lähemmäs); vedoksessa 7 sama on levitetty noin 0,65 sekuntiin ja heikennetty, koska ohjaajan Y2-määräys
+poisti aksenttitermit (`aks`, `aks2`) tuulesta ja pidensi rintaman askeleen (`askel` 0,40 → 0,65 s). Se oli ohjaajan virhe:
+käyttäjä oli hyväksynyt tämän aksentin, ja äkillinen isku saa näkyä äkillisenä (rivi 61: "Ei yllättäviä (paitsi silloin
+kun on yllättävä isku)").
+1. Palauta aksentin `myrsky_aksentti_537` vastine täsmälleen vedoksen 6 mukaiseksi (`git show e254fcc:visual/maailma_10.js`):
+   `aks`/`aks2`-termit siellä, mistä vedos 7 ne poisti, ja `askel` 0,40 s. Vain tämä aksentti.
+2. Älä palauta muuta: pyörteiden kiinteä järjestys, metsänreunan korjaus huudossa 3, viisi valokaistaa (15:10), lumen
+   pysähdyksen ja ryöpyn poisto sekä huutojen (vasket_myrsky_1..3) käsittely pysyvät vedoksen 7 mukaisina.
+Todiste: ruutusarja 14:31,6–14:32,8 joka toisesta ruudusta uudesta renderistä vedoksen 6 saman rinnalla (aksentin ruudun
+muutos yhtä nopea ja yhtä suuri: mittaa keskikirkkaus ruuduittain molemmista); `render/vertaa.py runs/vedos_v7b/osat/10.mp4
+<uusi> 845.6`: ero vain aksentin jälkeisessä jaksossa (ja lumen vaiheessa sen jälkeen). Renderi `--start 845.6 --end 945.0`
+→ `runs/maailma_10/osa.mp4` (2982 ruutua).
+

@@ -358,6 +358,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 101 | 11.11. | vedos 7b (toinen koonti), pimeän metsän havuston lumi | "lumi pitää hioa niin että se ei välky, ja toimii" | ❌ auki | |
 | 102 | 11.11. | pimeä metsä, basson askeleiden alku | "Olet myös missannut muutamat basson askeleet, silloin kun se alkaa. Kuuntele tarkasti kontrabassokanava, ja koita löytää ne ensimmäiset askeleetkin sinne." | ❌ auki | |
 | 103 | 11.11. | vedos 7b, kaukaiset paljaat rungot (rivi 96 korjaamatta) | "Mielestäni et korjannut laisinkaan sitä varsinaista ongelmaa, jotka olivat siellä kaukana näkyvät rungot. Korjaatko nyt oikeaa koodia? Huomasitko että olet nyt hionut pari tuntia tätä, korjaamatta varsinaista ongelmaa. Ne paljaat rungot edelleen ovat näkyvissä." | ❌ auki | |
+| 104 | 11.11. | vedos 7/7b, myrskyn alun aksentti (noin 14:31) | "Olet myös missannut jousiston aksentin lumimyrskyn alusta (noin 14:31), se oli aikaisemmin ok, miksi olet poistanut sen?" | ❌ auki | |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 

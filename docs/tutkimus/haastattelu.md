@@ -940,3 +940,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > koodia? Huomasitko että olet nyt hionut pari tuntia tätä, korjaamatta varsinaista ongelmaa. Ne paljaat rungot edelleen ovat
 > näkyvissä.
 
+> Olet myös missannut jousiston aksentin lumimyrskyn alusta (noin 14:31), se oli aikaisemmin ok, miksi olet poistanut sen?
+
