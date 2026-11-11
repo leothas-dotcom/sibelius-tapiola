@@ -392,3 +392,23 @@ asioita mitä en pyydä, jooko". Lumi oksakerroksilla oli ohjaajan lisäys, jota
 Hyväksymisehto: täysikokoisissa ruuduissa 2:30, 2:44 ja 2:58 ei ole yhtään suoraa vaaka- tai viistoviivaa havustossa, ei
 vaaleita pintoja, ei kantoja; puut tunnistaa kuusiksi siluetista.
 
+### 03_04, KORJAUS 2 (rivi 100; **tämä korvaa edellisen korjauksen kohdat 2 ja 3**): usva ja pehmennys
+
+Käyttäjä: "Sen lisäksi puun rungot katkeilee nyt ja ovat läpinäkyviä? mitä oikein kokkailet? Voisiko tuota miettiä että sen
+korjaisi jollain usvalla tai pehmennyksellä?" Tehdään käyttäjän ehdotuksen mukaan (tyyliohje 4b, kuvatapa 1: "rungot ...
+tulevat usvasta ja häipyvät siihen"). Yksinkertaisin ratkaisu on oikea:
+1. **Rungot ovat aina umpinaisia.** Poista kaikki rungon osittainen läpinäkyvyys, peittokertoimet ja katkaisut, jotka
+   vedos 7b lisäsi. Yksikään runko ei katkea, ohene läpinäkyväksi eikä pääty kantoon. Rungon piirto on vedoksen 7 piirto.
+2. **Poista vedoksen 7b havustogeometria kokonaan** (kartiot, kerrokset, lumi). Ei piirrettyjä oksia.
+3. **Kaukaisten ja keskietäisyyden puiden yläosa pehmenee usvaan ja havuhämyyn:** runkojen edessä ja välissä on pehmeä,
+   tumma, hitaasti ajelehtiva usvan ja havuston hämy (kohinasta, ei reunoja, ei muotoja, joita voisi lukea esineiksi),
+   joka tihenee ylöspäin noin 3–6 m:n korkeudelta alkaen ja etäisyyden mukana. Sen läpi runko näkyy alhaalla selvänä ja
+   sulaa ylempänä tasaisesti hämyyn (pitkä liuku, vähintään 4 m; hämy peittää rungon, runko itse ei muutu läpinäkyväksi).
+   Hämyssä saa olla hyvin pehmeitä, suuria tummempia tihentymiä (latvuston aavistus), ja vedoksen 7 ohuet vaaleat
+   reunaviivat kaukaisilla rungoilla himmenevät hämyn alle. Sävy: sama tumma kylmä kuin metsän varjoissa, hieman vaaleampi
+   kauempana.
+4. Lähirungot (alle noin 10 m), polku, valo, sykkeet, pilkat, ylöskatse 3:02 alkaen ja nousu: ruudulleen vedos 7.
+   Latvojen liike 0,6-kertainen säilyy siellä, missä latvoja on.
+Hyväksymisehto täysikokoisista ruuduista 2:30, 2:44, 2:58: ei katkeavia eikä läpinäkyviä runkoja, ei laatikoita, ei lunta,
+ei kovia reunoja; kaukainen metsä on runkoja, jotka nousevat pehmeään tummaan hämyyn, eikä rivi tolppia kuvan yläreunaan.
+

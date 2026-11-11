@@ -928,3 +928,6 @@ puut elävät kuten oikea puu, aavistuksen ja hieman; ne eivät heilu paljon eiv
 Ohjaajan vastaus: lumi oli ohjaajan oma lisäys (havusto oli ilman sitä niin musta, että rungot näyttivät kannoilta). Käyttäjä
 pyysi kasvustoa, ei lunta. Lumi poistetaan.
 
+> Sen lisäksi puun rungot katkeilee nyt ja ovat läpinäkyviä? mitä oikein kokkailet? Voisiko tuota miettiä että sen korjaisi
+> jollain usvalla tai pehmennyksellä?
+
