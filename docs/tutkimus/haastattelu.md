@@ -945,3 +945,16 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Nyt metsä näyttää hyvältä. Lumet vähän bugittavat vielä, ne heiluvat häiritsevästi, kuten bugit. Ne ei ole sidottu oikein.
 > Vieläkin näkyvät nuo paljaat rungot? mmitä ne on? jotain tolppia? korjaatko oikeaa asiaa?
 
+## 11.11.2026: työskentelytavoista (ei pyyntö muuttaa videota)
+
+> Aah, klassinen ongelma: olen koko ajan valittanut noista jättiläishongista, ne minusta oli huonot. Ei niissä puissa ollut
+> aikaisemmin mitään vikaa siis, ollaan korjattu väärää asiaa monta tuntia. Miten me parannettais kommunikaatiota niin että tämä
+> ei pääse toistumaan? Voitko miettiä, ja sitten laittaa tuonne "opit" kohtaan että käyttäjä puhuu välillä epäselvästi, kysy mitä
+> tarkoitetaan tai vastaavaa ennenkuin lähdet korjaamaan.
+>
+> Sitten olemme monta kertaa menneet edes takaisin sen suhteen saako puut heilua vai ei. Annan palautteen, ja ajattelet "voi ei"
+> korjaan sen -- ja asia menee 180 astetta pieleen. Miten korjaukset voisi olla niin että otat huomioon aikaisemman palautteen
+> ennen kuin menet korjaamaan kaiken, taas väärin?
+>
+> Tämä oli siis palautetta vain työskentelytavoista, ei pyyntö muuttaa jotain videossa.
+

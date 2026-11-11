@@ -563,6 +563,44 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
 
+## 11.11.2026 – Osoita ensin, korjaa sitten; ja korjaa askel, älä ääripää
+
+**Mitä tapahtui.** Käyttäjä sanoi vedoksesta 7: kaukana näkyvät puut "näyttävät vain rungoilta ... Ne mitä vasten noustaan
+taivaalle". Hän tarkoitti polun jättiläishonkia. Ohjaaja päätteli, että kyse on tavallisten kuusten rungoista, ja niille
+rakennettiin havusto ja lumi neljällä kierroksella usean tunnin ajan. Puissa, joita korjattiin, ei ollut vikaa; puu, josta
+käyttäjä puhui, pysyi ennallaan, vaikka hän sanoi sen kolmesti ("Korjaatko nyt oikeaa koodia?"). Toinen toistuva kuvio:
+puiden liike. "Ei kumipuita" → ohjaaja salli liikaa → "kumiset puut tuli takaisin" → ohjaaja kirjoitti "puu ei taivu lainkaan"
+→ "NIIDEN PUIDEN PITÄÄ ELÄÄ". Sama lumesta: "miksi lisäsit lunta" → ohjaaja poisti lumen → "ei se lumi ollut huono ratkaisu".
+
+**Miksi.** (1) Käyttäjä puhuu kuvasta sanoilla ("ne rungot", "puut kaukana"), ja kuvassa on usein monta asiaa, joihin sanat
+sopivat. Käyttäjä itse: puhun välillä epäselvästi. Ohjaaja valitsi yhden tulkinnan sanomatta sitä ja lähti rakentamaan.
+(2) Ohjaaja luki jokaisen palautteen uutena sääntönä, joka kumoaa edellisen, eikä säätönä nykyiseen tilaan. Säikähdys
+("voi ei") tuotti vastakkaisen ääripään. (3) Ohjaaja hyväksyi rakentajan raportin katsomatta itse sitä kohtaa kuvasta, jota
+käyttäjä katsoo. (4) Aiempi ohje "älä kysy" koski laadun tarkistusta ja makuasioita; ohjaaja laajensi sen koskemaan myös
+sitä, mistä asiasta puhutaan. Se oli väärä laajennus.
+
+**Säännöt tästä eteenpäin.**
+1. **Osoita ensin.** Kun palaute nimeää asian kuvassa ja siihen sopii useampi kuin yksi kohde, ohjaaja lähettää käyttäjälle
+   ennen yhtään korjausta yhden ruudun, johon kohde on merkitty (rajaus tai ympyrä), ja yhden lauseen: "Tarkoitatko näitä?"
+   Kysymys saa olla vain tämä: mistä puhutaan. Se maksaa minuutin; väärä tulkinta maksoi puoli päivää. Jos kohde on
+   yksiselitteinen, ei kysytä.
+2. **Sano tulkinta ääneen.** Jokaisen korjauksen alussa kolme riviä käyttäjälle: *ymmärsin näin* (kohde ja vika), *muutan
+   tämän* (yksi asia, suunta ja määrä), *en koske näihin*. Työ alkaa heti; käyttäjä voi pysäyttää, jos tulkinta on väärä.
+3. **Lue aiheen historia ennen korjausta.** Ennen briefiä ohjaaja hakee palautelistasta ja haastattelusta kaikki saman aiheen
+   rivit (esim. "heilu", "kumi", "lumi", "runko") ja kirjoittaa briefiin aiheen molemmat rajat käyttäjän omin sanoin: mitä
+   hän ei halua *ja* mitä hän haluaa säilyvän. Uusi palaute on säätö tämän haarukan sisällä, ei uusi sääntö.
+4. **Korjaa askel, älä ääripää.** Muutos on pienin askel palautteen suuntaan nykyisestä tilasta, ja sillä on luku
+   ("liike 0,6-kertaiseksi"), ei "pois" tai "kokonaan". Mitään, minkä käyttäjä on hyväksynyt tai mistä hän ei ole puhunut,
+   ei poisteta eikä lisätä. Jos ohjaaja huomaa kirjoittavansa "ei lainkaan", "aina" tai "kokonaan", se on merkki
+   ylikorjauksesta: pysähdy ja lue kohta 3.
+5. **Kun sama asia tulee takaisin toisen kerran, vika on tulkinnassa, ei toteutuksessa.** Älä hio lisää: palaa kohtaan 1 ja
+   näytä kuvasta, mitä luulit korjaavasi.
+6. **Ohjaaja katsoo itse sen kohdan, josta käyttäjä puhuu,** täysikokoisena ja liikkeestä, ennen kuin mitään kootaan.
+   Rakentajan "ei näy enää" ei riitä. Syy etsitään koodista itse, kun korjaus ei pure (tässä kaksi riviä: latvus vain
+   ylöskatseessa; lumen kohina maailman koordinaateissa).
+7. **Briefissä on yksi voimassa oleva määräys aihetta kohti.** Kumottu määräys poistetaan tiedostosta, ei jätetä alle
+   ("ei lunta" jäi näkyviin, vaikka uudempi sanoi toisin, ja käyttäjä luki sen).
+
 ## 9.11.2026 – Vedos 2: kuvatapa joka tunnelmalle
 
 - **Käyttäjän palaute vedoksesta 1:** metsä runkorivinä syvyydessä on "äärimmäisen tylsä", ääni ei näkynyt, ja ajo paikallaan
