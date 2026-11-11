@@ -1,0 +1,46 @@
+{
+  "nimi": "vedos_v7b",
+  "tehty": "2026-11-11",
+  "levytys": "rattle2022 (työäänitys; ei julkaisuun, ei gittiin)",
+  "lahtokohta": "vedos 7 + käyttäjän palaute riveillä 96-98 (brief runs/vedos_v7/brief.md, luku Vedos 7b)",
+  "moduulit": {
+    "01_02": "runs/alku_v4/osa.mp4",
+    "03_04": "runs/maailma_03_04/osa.mp4",
+    "05": "runs/maailma_05/osa.mp4",
+    "06": "runs/maailma_06/osa.mp4",
+    "07_08": "runs/maailma_07_08/osa.mp4",
+    "09": "runs/maailma_09/osa.mp4",
+    "10": "runs/maailma_10/osa.mp4",
+    "11_12": "runs/maailma_11_12/osa.mp4 (ei muutettu)"
+  },
+  "mitattu": {
+    "ruutuja": 32340,
+    "kesto_s": 1078.016,
+    "aani_ero_ms": 0.0,
+    "saumojen_suurin_ero": 0,
+    "loppu_11_12_md5": "790baba21c0c8569ed0ca020d0c83947 (sama kuin vedoksissa 4-6)",
+    "vertailu": "render/kokoa.py vertaa vedos_v7 vedos_v5 ja vedos_v6u: 11_12 0 muuttunutta jaksoa; 07_08 sama kuin vedos 5 kohtaan 10:26 asti; 03_04 sama kuin vedos 5 välillä 1:07-2:51 (mse enintään 5,2)"
+  },
+  "tiedostot": [
+    "runs/vedos_v7b/koko.mp4",
+    "runs/vedos_v7b/tapiola_vedos7b_720p.mp4",
+    "runs/vedos_v7b/tapiola_vedos7b_whatsapp.mp4",
+    "runs/vedos_v7b/kontakti.jpg"
+  ],
+  "kriitikko": "ei ajettu 7b:lle (vedos 7: runs/vedos_v7/kriitikko.md)",
+  "tiedossa_auki": [
+    "03_04: uuden havuston oksakerrokset kulmikkaita (palikkamaisia), lähin havusto 2:44 oikeassa reunassa suuri",
+    "09: lumiryöppy nousee noin viidennekseen (13:03) ja neljännekseen (13:41) kuvan korkeudesta, tavoite oli kolmannes ja puolet",
+    "03_04: heikkoja vinoja viiruja latvuksissa 3:07-3:12; puiden liike vedoksen 4-5 mukainen (rakentajan laskelman mukaan yli 4d.31:n rajan), ei muutettu",
+    "06: osa askelhalkeamista pitkiä ja suoria; askelhalkeaman syntykirkkaus sama kuin muilla (ei rajattu 1,5-kertaiseksi)",
+    "09: vaskisointujen huipussa (13:31-13:33) kuva on hyvin vaalea (keskikirkkaus noin 108/255); yksi kaistan reuna hieman kova",
+    "lumen nopeus ja kulma on mitattu rakentajien malleista, ei kuvasta",
+    "master 2160p tekemättä; lopullinen äänitys on käyttäjän oma (myöhemmin)",
+    "03_04: moduulin alussa 1:02,0-1:02,8 rungon vaalea pilkka ja tumma oksa näyttävät hetken hahmolta (kriitikko P3); ei muutettu, koska käyttäjä kehui kohtausta: käyttäjän päätös",
+    "03_04: 3:02-3:07 rungot menevät suorina kuvan yläreunaan ennen kuin katse nousee (kriitikko: OSITTAIN)",
+    "01_02: hiljaisuuden alussa 0:58,7-0:59,3 kirkkaus nousee 36 -> 49",
+    "06: kohdassa 6:30 valoja 8-12 heijastuksineen (vedoksen 6 mukainen); 6:44-6:49 puhaltimien nuoteilla ei valoja",
+    "07_08: ohi kulkevat lähirungot enimmillään 19 % kuvan leveydestä (vedoksen 5 geometria)",
+    "kriitikko ei mitannut: latvan liike alun metsässä ja moduuleissa 03_04 ja 05; lumen suunta muualla kuin myrskyssä; kameran 20 astetta/s"
+  ]
+}

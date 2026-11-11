@@ -207,3 +207,38 @@ Selitys: 1:05–2:57 kaikki jaksot ovat lumen vaihetta (kohta 2: hiutaleiden pai
 - **Y1-raja (ohjaajalle):** puiden liike on vedoksen 5 mukainen (`(0.05 + 1.1 * tuuli) * hn² * Hh * 0.05 * (sin + 0.4 sin)`); suurimmillaan (tuuli = 1, hn = 1, Hh = 25) latva siirtyy laskennallisesti noin 2 m eli noin 8 % puun korkeudesta, mikä ylittää ohjeen 1 % / 1,5 % rajan. En korjannut (kielletty). Tavallisella tuulen tasolla (0,3) noin 0,6 m eli 2,5 %. Ikihongilla ei ole liikettä. Liikettä ei mitattu renderistä.
 - **Fraasireaktion mittaus** tehtiin kolmelle fraasille vertailustillillä, ei kaikille; koko renderin whole-frame-mittarit olivat liian meluisia (kamera ja reunat).
 - Moduulin 3:03–3:23 aikana kuvan keskikirkkaus nousi hieman (ks. yllä), mikä on seurausta viirujen poistosta.
+
+## Vedos 7b (11.11.2026, rivi 96; brief `runs/vedos_v7/brief.md` luku "03_04 (rivi 96)", kohdat 1-3)
+
+Renderi: `runs/maailma_03_04/osa.mp4`, 4242 ruutua (ffprobe), `--start 61.6 --end 203.0 --workers 2 --chunk 40`, aa=2, lukon kautta. Todisteet: `runs/maailma_03_04/v7b/` (`uusi/t150|164|178|184|188.png` täysikokoiset uudesta, `ref/` samat vedoksen 7 osasta, `sarja_7b.png` ja `sarja_v7.png` 2:28-3:12 2 s välein (ruutujen otsikot ovat osan aikaa: teos = otsikko + 1:01,6), `vertaa.txt`, `kirkkaus.txt`, `a1`-`a4` kehitysvaiheet).
+
+### Mitä muutin (`visual/maailma_03_04.js`, tavallisten runkojen silmukka, rivit noin 175-205 ja 226)
+- **Kohta 1:** uusi `far12 = smoothstep(10, 14, zr)`. Yli ~12 m:n päässä oleville puille (a) runko piilotetaan 86 % havuston alta alkaen korkeudelta `h0f` = 3-5 m (tyvi ja välähdykset jäävät); (b) `aF` (havusto) korvataan kuusiprofiililla: alkaa `h0f`:stä, levenee alaspäin, kärki suippo korkeudella Hh, kerroksittain riippuvat oksat (kerroksen korkeus 1,0-1,6 m, oksan alapinta viistoon alas ulospäin `hy + 1.3*|dxn|`), sahalaitainen reuna (`jag`), sama sävy kuin latvuksilla (`HAMY`-kohina); (c) vaalea reunaviiva (`rim`) kerrotaan `(1 - far12)`. Ei ajasta riippuvaa termiä, joten havusto on koko moduulin ajan (myös ennen 2:30). Polkua, valoa, pilkkoja, askeleita, kameraa, lähirunkoja (alle 10 m) ja ikihonkia ei koskettu.
+- **Kohta 2:** ylöskatseessa samat puut ovat kuusia, joiden havusto jatkuu kärkeen asti (`sarja_7b.png` otsikot 2:02-2:10 = teos 3:04-3:12; 184 s still: kärjet ja havusto, ei viivoja yläreunaan). Nousun ja kiteen koodiin ei koskettu (`KC`, `uEnd`, `special`-haara ennallaan).
+- **Kohta 3:** latvan tuuliterm kerrottu 0,6:lla (`lean`-lausekkeen toinen termi, `0.6 * (0.05 + 1.1 * uTop.z) * ...`); muoto ja vaiheet ennallaan, staattinen mutka (ensimmäinen termi) ennallaan.
+
+### Mitatut luvut
+**Keskikirkkaus vedos 7 vs. uusi (osan aika, 10 s välein, `kirkkaus.txt`):** ero 0,0 / 2,9 / 3,3 / 3,8 / 4,0 / 2,5 / 2,3 / 2,6 / 2,9 / 2,5 / 2,2 / 1,4 / 2,1 / 0,3 / 0,0 %; suurin 3,96 % (raja 4 %; rajalla, havusto tummentaa kuvaa hieman: kaikki erot ovat uutta tummempaa).
+**T3 sauma:** ensimmäinen ruutu mse 0,001 (max 1), viimeinen mse 0,07 (max 2): ei muutu.
+**T2 `vertaa.py`** (`vertaa.txt`): yksi jakso 1:01,6-3:13,6, suurin mse 55,1 (osan aika 0-132 s). Selitys: kohdat 1 ja 3 (kaukaiset puut kautta moduulin, latvojen liike 0,6x); kirkkauden pistemittaus yllä osoittaa, ettei valo siirry. Muuta ei määrätty eikä muutettu. Jakson loppu 3:13,6 on moduulin ylöskatseen/kiteen loppu; 3:14 eteenpäin (kide täyttää kuvan) ei muuttunut.
+
+### Katsottu itse (Read)
+Stillit 150, 164, 178, 184, 188 s sekä liikesarja 2:28-3:12: kaukaiset ja keskietäisyyden puut ovat riippuvaoksaisia, kärjellisiä kuusia, jotka sulavat tummaksi seinäksi; paljaita vaaleareunaisia viivoja ei näy; yläreunaan asti ulottuvia viivoja ei ole 3:02 jälkeen.
+
+### Mikä jäi vajaaksi
+- Keskikirkkauden ero 3,96 % on aivan rajalla.
+- t178 (2:58): keskietäisyyden havustossa näkyy leveitä vaakasuuntaisia pehmeitä kaistoja (usvakerrosten ja päällekkäisten oksakerrosten summa), jotka muistuttavat enemmän levyjä kuin kuusia; en saanut niitä pois ilman tason muutoksia.
+- Alin havusto on vain 3-5 m korkeudelta, joten 12-20 m päässä rungosta näkyy tyvi vain noin 1-2 m; "välähdyksiä oksien välistä" on niukasti.
+- Y1-ylitys säilyy: tuuliliike 0,6x vedoksen 5 arvosta on yhä ehkä 1,5-5 % korkeudesta suurimmillaan (laskettu, ei mitattu renderistä); 0,6 kertoimella tavallisella tuulella noin 1,5 %.
+- Ruskehtava vihreähtävä sävy 3:07-3:12 oli jo vedoksessa 7 (verrattu `sarja_v7.png`), ei korjattu.
+- Liikesarjaa 2:28-3:12 katsottu vain 2 s välein; kaikkien jaksojen yksityiskohtia ei käyty ruutu ruudulta.
+
+### Vedos 7b, korjauskierros (ohjaajan huomautus: vaakakaistat t178)
+**Syy (bisektoitu magenta-värillä ja kytkimillä, `v7b/b1`-`b13`):** vaakakaistat eivät olleet kuusen muotoa vaan havuston alareunan pehmeä reuna (`smoothstep(h0f-0.5, h0f+0.4, hy)`, osittainen alfa) + siihen lisätty reunavalo (`edgeM`-termi): koko puun levyinen vaalea juova jokaisen puun havuston alarajalla. Lisäksi runko, jolla ei ollut kuusiprofiilia, näkyi kerrosten rakoina.
+**Korjaus (`visual/maailma_03_04.js`):** (1) havuston alaraja terävä ja viistoon alas ulospäin (`smoothstep(-pwf, pwf, hy + 0.7*|dxn| - h0f)`); (2) reunavalo pois kaukohavustosta (`* (1 - far12)`), samoin yläkeilan `tl`-lisät; (3) havusto umpinainen tumma, `HAMY*(1.75 + 0.40*kohina)` (kirkkaus mitattu, ei harmaata liukua); (4) kartio: puolileveys `w0*(1-hr)*(0.70+0.30*(1-ph))`, w0 = 1.2-2.2 m, kerros 1.0-1.6 m, kerroksen alapinta viistoon (`hy + 1.6*|dxn|`); (5) kaukokuusen alue alkaa nyt 4-6,5 m:stä (`far12 = smoothstep(4.0, 6.5, zr)`), jotta lähempien puiden vanha lehtimäinen/kiemuraviivoinen havusto korvautuu samalla piirrolla. Runkoja lähempänä kuin ~4 m ei kosketa.
+**Renderi:** `runs/maailma_03_04/osa.mp4`, 4242 ruutua. Stillit `v7b/uusi/t150|164|178|184.png`, sarja `v7b/sarja_7b.png`.
+**Kirkkaus (`kirkkaus.txt`)**: suurin ero vedokseen 7 5,27 % (raja 6 %). Sauma: eka ruutu mse 0,002, vika 0,10 (max 4). `vertaa.txt`: yksi jakso 1:01,6-3:17,6, mse 67 (kohdat 1 ja 3 ja tämä korjaus).
+**Vajaaksi jää:** lähimmät kuusikartiot (4-8 m) ovat suuria suoralinjaisia tummia massoja, joiden alapinta on selvästi viisto viiva; keskietäisyyden puiden kartio erottuu 2:58:ssa huonosti tummaa taustaa vasten (tummaksi seinäksi sulava havusto, ei yksittäisiä kuusia), ja osan puiden tyvi näyttää katkaistulta kantolta, kun kartio alkaa 3-5 m:n korkeudelta. Ylöskatseessa (3:04) kuusien kärjet erottuvat hyvin. Vihertävä sävy on tyylin `HAMY`.
+
+### Vedos 7b, viimeinen kierros (kantomaisuus, näkyvä kuusi)
+Muutokset (`visual/maailma_03_04.js`): (1) lumi oksakerrosten yläpinnoilla (`snowF`, kerroksen yläosa ph 0,5-0,85), hallan valo `gcol*I*0.17*shl*exp(-zr/60)*mix(0.2,1,side)`, noin puolet rungon rim-valosta, valon puolella selvempi; pohjasävy pysyy rungon `HAMY`-sävynä; (2) runko peittyy havuston alla liukuen (`smoothstep(h0f-0.3, h0f+2.0, hy)`, 0 -> 86 % noin 2 m:llä) ja alimmat oksat ovat lyhyitä (`Wf *= 0.3+0.7*smoothstep(0,2.5,hy-h0f)`); (3) havusto alkaa vasta 7-9,5 m:stä (`far12 = smoothstep(7,9.5,zr)`), lähempänä kapeampi. Ruudut `v7b/uusi/t150|164|178|184.png`; keskikirkkauden suurin ero vedokseen 7: 1,48 %; sauma eka mse 0,001, vika 0,07; vertaa.txt: yksi jakso 1:01,6-3:17,6. Vajaaksi: lumilevyt ovat yhä kulmikkaita (boksimaisia) ja osa kauempana olevista puista on suurina tasaisina massoina; kantomaisuus on poissa, mutta 7 m:n sisällä puut ovat vanhaa piirtoa.
