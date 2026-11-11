@@ -177,7 +177,7 @@ vec3 scene(vec2 p) {
       float rw = rr * (1.0 - mix(0.45, 0.88, up) * clamp(hn, 0.0, 1.0)) * (1.0 + 0.6 * exp(-hy * 1.4)) * (0.93 + 0.14 * vnoise(vec2(hy * 0.25, h3 * 40.0)));
       float far12 = smoothstep(7.0, 9.5, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
       float h0f = 3.0 + 2.0 * h4;                                    // havusto alkaa 3-5 m:n korkeudelta
-      float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn)) * (1.0 - 0.86 * far12 * smoothstep(h0f - 0.3, h0f + 2.0, hy));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
+      float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
       // oksamassa: alta harva, päältä tiheä; hulmuavat riippuvat oksat, repaleinen reuna, raot
       float sk = smoothstep(0.20, 0.42, hn) * (1.0 - smoothstep(0.92, 1.02, hn));
       float tier = 0.50 + 0.95 * vnoise(vec2(hy * 0.50 + k * 3.1, k * 1.7 + ci));
@@ -191,14 +191,21 @@ vec3 scene(vec2 p) {
       float snowF = 0.0;
       {  // kaukainen ja keskietäisyyden kuusi: alaspäin riippuva havusto kerroksittain, levenee alaspäin, kärki suippo, reuna sahalaitainen
         float hr = clamp((hy - h0f) / (Hh - h0f), 0.0, 1.0);
-        float tierH = 1.0 + 0.6 * h3;
-        float ph = fract((hy + 0.7 * abs(dxn) - h0f) / tierH + 0.37 * h2);   // oksan kärki on alempana kuin tyvi: alapinta viistoon alas ulospäin
-        float Wf = (1.2 + 1.0 * h3) * (1.0 - hr) * (0.70 + 0.30 * (1.0 - ph)) * (0.30 + 0.70 * smoothstep(0.0, 2.5, hy - h0f)) * mix(0.60, 1.0, smoothstep(4.0, 10.0, zr));   // alimmat oksat lyhyitä; lähellä kapeampi
-        float jag = (vnoise(vec2(wx * 4.0 + k * 1.9, yw * 1.7)) - 0.5) * 0.75 * (1.0 - 0.4 * hr);
-        float pwf = pw * 1.2;
-        float aFf = smoothstep(pwf, -pwf, abs(dxn) - rw - Wf - jag) * smoothstep(-pwf, pwf, hy + 0.7 * abs(dxn) - h0f) * step(hy, Hh) * farF * clearL;
+        // orgaaninen havusto: oksakerrokset eri korkeuksilla ja eri pituisina (kerroskoordinaatti kohinalla vääristetty), alaspäin kaartuvat riippuvat kärjet, repaleinen reuna, pehmeä usvareuna
+        float tierH = 1.1 + 0.7 * h3;
+        float uT = (hy - h0f) / tierH + 1.3 * vnoise(vec2(hy * 0.55 + k * 2.3 + ci * 3.1, 4.0 + h2 * 11.0)) + 0.3 * h2;
+        float ph = fract(uT + 0.55 * abs(dxn) / tierH);                         // kärki alempana kuin tyvi
+        float lenN = 0.55 + 0.9 * vnoise(vec2(floor(uT + 0.55 * abs(dxn) / tierH) * 1.7 + ci * 2.9, k * 0.7 + h3 * 13.0));   // jokaisen oksan pituus eri
+        float Wf = (1.2 + 1.0 * h3) * pow(1.0 - hr, 0.85) * (0.28 + 0.72 * lenN * (0.55 + 0.45 * pow(1.0 - ph, 1.4))) * (0.30 + 0.70 * smoothstep(0.0, 2.5, hy - h0f)) * mix(0.60, 1.0, smoothstep(4.0, 10.0, zr));
+        float jag = (vnoise(vec2(wx * 3.5 + k * 1.9, yw * 2.1)) - 0.5) * 0.95 + (vnoise(vec2(wx * 9.0 + k, yw * 5.0)) - 0.5) * 0.35;
+        float sw = pw * 1.5 + 0.10 * smoothstep(8.0, 60.0, zr);                // reuna pehmenee etäisyyden mukana
+        float bot = h0f + (vnoise(vec2(wx * 2.2 + k, 3.0)) - 0.5) * 1.4;
+        float aFf = smoothstep(sw, -sw, abs(dxn) - rw - Wf - jag * (1.0 - 0.4 * hr)) * smoothstep(-sw, sw, hy + 0.5 * abs(dxn) - bot) * step(hy, Hh) * farF * clearL * (1.0 - 0.30 * smoothstep(40.0, 110.0, zr));
+        // lumi: pehmeä epäsäännöllinen kerros oksan yläpinnalla, paksuus kohinasta, reuna liukuu, paikoin paljas
+        float thick = vnoise(vec2(wx * 2.6 + k * 1.1, yw * 2.0 + 2.0)) * 0.8 + vnoise(vec2(wx * 6.0, yw * 4.5 + k)) * 0.2;
+        float topW = smoothstep(0.30, 0.80, ph) * (1.0 - smoothstep(0.86, 1.0, ph));
+        snowF = far12 * aFf * topW * smoothstep(0.30, 0.85, thick);
         aF = mix(aF, aFf, far12);
-        snowF = far12 * aFf * smoothstep(0.50, 0.85, ph) * (0.55 + 0.45 * vnoise(vec2(wx * 5.0 + k, yw * 3.0)));   // lumi oksakerrosten yläpinnoilla
       }
       if (zr < 9.0) aF *= mix(1.0, smoothstep(0.9, 3.0, length(vec2(wx - ro.x, yw - ro.y))), 1.0 - smoothstep(4.0, 9.0, zr));
       // alarungon kuivat oksantynkät
@@ -218,8 +225,8 @@ vec3 scene(vec2 p) {
       float vt = fract(hy * 0.85 + h2 * 7.0 + 0.25 * vnoise(vec2(wx * 0.7, k)));
       float edgeM = clamp(4.0 * aF * (1.0 - aF), 0.0, 1.0) * (1.0 - 0.9 * up);
       vec3 fol = HAMY * (0.5 + 0.9 * vnoise(vec2(wx * 1.1 + k, yw * 0.8)));
-      fol = mix(fol, HAMY * (1.75 + 0.40 * vnoise(vec2(wx * 3.0 + k, yw * 2.2))), far12);   // kaukohavusto: umpinainen tumma, ei hidasta liukuvaa harmaata
-      fol += gcol * I * 0.17 * snowF * mix(0.2, 1.0, side) * shl * exp(-zr / 60.0);   // hallan valo lumessa: enintään noin puolet rungon valaistun kyljen kirkkaudesta
+      fol = mix(fol, HAMY * (0.70 + 0.25 * vnoise(vec2(wx * 3.0 + k, yw * 2.2))) + AMB * 0.5 * (1.0 - exp(-zr / 35.0)), far12);   // kaukohavusto: umpinainen tumma, ei hidasta liukuvaa harmaata
+      fol += gcol * I * 0.17 * snowF * mix(0.2, 1.0, side) * shl * exp(-zr / 60.0);   // hallan valo lumessa
       fol += gcol * I * 0.09 * edgeM * side * shl * exp(-zr / 55.0) * (1.0 - far12);   // kaukohavustossa ei reunavaloa
       fol += (1.0 - far12) * DLC * tl * (0.08 + 0.45 * edgeM) * mix(smoothstep(0.45, 1.0, vt), 1.0, up) * mix(0.5 + 0.5 * shaftT(wx, yw, zk), 0.75, up) + (1.0 - far12) * DLC * tl * 0.05 * up * 0.7;
       col = mix(col, fol, aF);
