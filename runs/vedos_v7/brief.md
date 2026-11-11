@@ -373,50 +373,13 @@ Todiste: ruutusarjat joka toisesta ruudusta 13:02,5–13:08 ja 13:40,3–13:45; 
 välein molemmista (mallista) ja saman suunnan toteaminen renderistä (hiutaleet nousevat ruudusta toiseen); suurin
 ruutujen välinen nopeuden muutos; `vertaa.py` vedosta 7 vastaan (erot vain 13:01–13:09 ja 13:40–13:46).
 
-### 03_04, KORJAUS (rivi 99): ei lunta, ei laatikoita
+### 03_04, KORJAUS (rivit 99 ja 100): luminen havusto hyvin tehtynä, ei laatikoita
 
-Käyttäjä vedoksesta 7b: "Ei, nuo puut ei nyt kelpaa. lumi näyttää ihan latikkomaiselta. Miksi lisäsit lunta sinne? Älä tee
-asioita mitä en pyydä, jooko". Lumi oksakerroksilla oli ohjaajan lisäys, jota käyttäjä ei pyytänyt. Käyttäjä pyysi vain:
-"Pitäisikö niissä olla joku kasvusto kuten muissa puissa?"
-1. **Poista lumi havustosta kokonaan** (ei vaaleita yläpintoja, ei reunavaloa, ei mitään uutta valoa).
-2. **Havusto on pehmeä ja orgaaninen, ei kerrostettuja laatikoita:** ei suoria reunoja, ei tasaleveitä porrastuksia, ei
-   suorakulmia. Piirrä se samalla tavalla kuin tämän moduulin omat latvukset, jotka näkyvät ylöskatseessa 3:04–3:10 ja
-   jotka käyttäjä hyväksyi ("Se nousu minusta toimii nyt jo hyvin"): tumma, epäsäännöllisesti repaleinen kuusen siluetti,
-   jonka reuna tulee kohinasta (riippuvat oksankärjet eri pituisina), leveämpi alhaalta ja kapeneva ylös.
-3. **Näkyvyys ilman lunta tulee syvyydestä:** havusto on tumma siluetti sen takana olevaa, usvan vaalentamaa kerrosta
-   vasten (kauempi kerros aina hieman vaaleampi ja sinisempi kuin lähempi, kuten rungoilla jo on). Runko liukuu havustoon
-   (ei tasaista katkaisua, ei kantoja). Ei uusia värejä.
-4. Vertaa lopputulosta vedokseen 7 (`runs/vedos_v7/osat/03_04.mp4`): ainoa ero saa olla se, että kaukaisilla ja
-   keskietäisyyden puilla on tumma havusto tolppien tilalla (ja latvojen liike 0,6-kertainen). Valo, sykkeet, polku,
-   lähirungot, ylöskatse ja nousu ruudulleen ennallaan.
-Hyväksymisehto: täysikokoisissa ruuduissa 2:30, 2:44 ja 2:58 ei ole yhtään suoraa vaaka- tai viistoviivaa havustossa, ei
-vaaleita pintoja, ei kantoja; puut tunnistaa kuusiksi siluetista.
-
-### 03_04, KORJAUS 2 (rivi 100; **tämä korvaa edellisen korjauksen kohdat 2 ja 3**): usva ja pehmennys
-
-Käyttäjä: "Sen lisäksi puun rungot katkeilee nyt ja ovat läpinäkyviä? mitä oikein kokkailet? Voisiko tuota miettiä että sen
-korjaisi jollain usvalla tai pehmennyksellä?" Tehdään käyttäjän ehdotuksen mukaan (tyyliohje 4b, kuvatapa 1: "rungot ...
-tulevat usvasta ja häipyvät siihen"). Yksinkertaisin ratkaisu on oikea:
-1. **Rungot ovat aina umpinaisia.** Poista kaikki rungon osittainen läpinäkyvyys, peittokertoimet ja katkaisut, jotka
-   vedos 7b lisäsi. Yksikään runko ei katkea, ohene läpinäkyväksi eikä pääty kantoon. Rungon piirto on vedoksen 7 piirto.
-2. **Poista vedoksen 7b havustogeometria kokonaan** (kartiot, kerrokset, lumi). Ei piirrettyjä oksia.
-3. **Kaukaisten ja keskietäisyyden puiden yläosa pehmenee usvaan ja havuhämyyn:** runkojen edessä ja välissä on pehmeä,
-   tumma, hitaasti ajelehtiva usvan ja havuston hämy (kohinasta, ei reunoja, ei muotoja, joita voisi lukea esineiksi),
-   joka tihenee ylöspäin noin 3–6 m:n korkeudelta alkaen ja etäisyyden mukana. Sen läpi runko näkyy alhaalla selvänä ja
-   sulaa ylempänä tasaisesti hämyyn (pitkä liuku, vähintään 4 m; hämy peittää rungon, runko itse ei muutu läpinäkyväksi).
-   Hämyssä saa olla hyvin pehmeitä, suuria tummempia tihentymiä (latvuston aavistus), ja vedoksen 7 ohuet vaaleat
-   reunaviivat kaukaisilla rungoilla himmenevät hämyn alle. Sävy: sama tumma kylmä kuin metsän varjoissa, hieman vaaleampi
-   kauempana.
-4. Lähirungot (alle noin 10 m), polku, valo, sykkeet, pilkat, ylöskatse 3:02 alkaen ja nousu: ruudulleen vedos 7.
-   Latvojen liike 0,6-kertainen säilyy siellä, missä latvoja on.
-Hyväksymisehto täysikokoisista ruuduista 2:30, 2:44, 2:58: ei katkeavia eikä läpinäkyviä runkoja, ei laatikoita, ei lunta,
-ei kovia reunoja; kaukainen metsä on runkoja, jotka nousevat pehmeään tummaan hämyyn, eikä rivi tolppia kuvan yläreunaan.
-
-### 03_04, KORJAUS 3 (**tämä on voimassa; korvaa korjaukset 1 ja 2 siltä osin kuin ne ovat ristiriidassa**)
-
-Käyttäjä täsmensi: "Ei se lumi ollut huono ratkaisu, se vaan pitää tehdä hyvin". Eli: **luminen havusto säilyy**, mutta se
-tehdään hyvin, ja rungot eivät katkeile eivätkä ole läpinäkyviä, ja usva ja pehmennys auttavat. Viat vedoksessa 7b olivat:
-(a) oksakerrokset tasavärisiä, suorareunaisia laatikoita; (b) rungot häivytetty osittaisella läpinäkyvyydellä ja katkaistu.
+Käyttäjä vedoksesta 7b: "Ei, nuo puut ei nyt kelpaa. lumi näyttää ihan latikkomaiselta." · "Sen lisäksi puun rungot
+katkeilee nyt ja ovat läpinäkyviä? ... Voisiko tuota miettiä että sen korjaisi jollain usvalla tai pehmennyksellä?" ·
+"Ei se lumi ollut huono ratkaisu, se vaan pitää tehdä hyvin" · "Siis voi olla lunta, jos se auttaa. Mutta ei laatikoita".
+**Lunta saa olla. Laatikoita ei.** Viat vedoksessa 7b olivat: (a) oksakerrokset tasavärisiä, suorareunaisia laatikoita;
+(b) rungot häivytetty osittaisella läpinäkyvyydellä ja katkaistu.
 1. **Rungot aina umpinaisia** (vedoksen 7 piirto). Runkoa ei häivytetä alfalla. Se jää piiloon vain siellä, missä
    umpinainen havusto on oikeasti sen edessä; oksien välistä runko näkyy kokonaisena. Ei kantoja.
 2. **Havusto orgaaniseksi:** ei tasavälisiä kerroksia, ei suoria reunoja, ei tasavärisiä pintoja. Oksat ovat eri pituisia
