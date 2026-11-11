@@ -933,3 +933,10 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 
 > Ei se lumi ollut huono ratkaisu, se vaan pitää tehdä hyvin
 
+> Joo siis lumi pitää hioa niin että se ei välky, ja toimii. Olet myös missannut muutamat basson askeleet, silloin kun se alkaa.
+> Kuuntele tarkasti kontrabassokanava, ja koita löytää ne ensimmäiset askeleetkin sinne.
+>
+> Mielestäni et korjannut laisinkaan sitä varsinaista ongelmaa, jotka olivat siellä kaukana näkyvät rungot. Korjaatko nyt oikeaa
+> koodia? Huomasitko että olet nyt hionut pari tuntia tätä, korjaamatta varsinaista ongelmaa. Ne paljaat rungot edelleen ovat
+> näkyvissä.
+

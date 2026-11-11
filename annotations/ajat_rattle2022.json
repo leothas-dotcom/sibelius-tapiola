@@ -386,11 +386,28 @@
       "peruste": "tarkka.py: pitkät sävelet D4, D5, H3, H4 1:15.2–1:21.4 ja uudestaan 1:29.1–1:36.3; aikajana: käyrätorvet, trumpetit ja pasuunat, puupuhaltimet 1:15.2–1:40, sävellajivihje D-duuri (0,83)."
     },
     "askeleet_alkavat": {
-      "t": 100.1,
+      "t": 99.04,
       "t_loppu": 176.0,
       "varmuus": "vahvistettu",
       "luottamus": "hyvä",
-      "peruste": "Käyttäjä 9.11.2026 (korva): 1:40 bassojen eritahtiset iskut alkavat. linjat.py: bassolinja D2 → H1 kohdassa 1:40.1 (H1 0…−5 dB, välin vahvin sävel); matalan kerroksen uusia säveliä/s 1:55–2:11: 4, 2, 5, 0, 3, 2, 2, 0, 0, 5, 1, 6, 0, 2, 0, 7 (epäsäännöllinen). Sitä ennen pitkä D2 pohjana 1:24.8 alkaen."
+      "peruste": "Käyttäjä 9.11.2026 (korva): 1:40 bassojen eritahtiset iskut alkavat. linjat.py: bassolinja D2 → H1 kohdassa 1:40.1 (H1 0…−5 dB, välin vahvin sävel); matalan kerroksen uusia säveliä/s 1:55–2:11: 4, 2, 5, 0, 3, 2, 2, 0, 0, 5, 1, 6, 0, 2, 0, 7 (epäsäännöllinen). Sitä ennen pitkä D2 pohjana 1:24.8 alkaen. | 11.11.: käyttäjä: ensimmäiset askeleet puuttuvat kuvasta. Kontrabassojen kaista 45-115 Hz, hieno vuo (askel 1,5 ms) ja spektrogrammi: basson äänet alkavat 1:39,04 / 1:40,5 / 1:42,3 / 1:51,89 / 1:55,03 / 1:56,71 / 1:58,55 / 2:00,35 / 2:02,42 / 2:05,8 / 2:07,74 / 2:09,53 / 2:11,36 / 2:13,24 / 2:15,24 (iskut-kentässä)",
+      "iskut": [
+        99.04,
+        100.5,
+        102.3,
+        111.89,
+        115.03,
+        116.71,
+        118.55,
+        120.35,
+        122.42,
+        125.8,
+        127.74,
+        129.53,
+        131.36,
+        133.24,
+        135.24
+      ]
     },
     "ylarekisteri_heraa": {
       "t": 203.0,

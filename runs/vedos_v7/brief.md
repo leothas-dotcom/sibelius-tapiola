@@ -399,3 +399,40 @@ Hyväksymisehto täysikokoisista ruuduista 2:30, 2:44, 2:58 ja 3:04: ei yhtään
 lumessa, ei katkeavia tai läpinäkyviä runkoja; puut näyttävät lumisilta kuusilta hämärässä usvassa. Katso jokainen ruutu
 itse täydessä koossa ja lähennä (rajaa 2x) ennen kuin raportoit.
 
+### 03_04, KORJAUS B (rivit 101–103): varsinainen ongelma, välke ja ensimmäiset askeleet
+
+Käyttäjä: "Mielestäni et korjannut laisinkaan sitä varsinaista ongelmaa, jotka olivat siellä kaukana näkyvät rungot. Korjaatko
+nyt oikeaa koodia? ... Ne paljaat rungot edelleen ovat näkyvissä." · "lumi pitää hioa niin että se ei välky, ja toimii" ·
+"Olet myös missannut muutamat basson askeleet, silloin kun se alkaa. Kuuntele tarkasti kontrabassokanava, ja koita löytää ne
+ensimmäiset askeleetkin sinne."
+**Ohjaaja katsoi itse ruudut ja koodin. Käyttäjä on oikeassa:** havusto lisättiin sivujen puihin, mutta ne rungot, joita
+käyttäjä tarkoittaa, ovat kuvan keskellä kaukana valokäytävän reunoilla (ne, joita vasten noustaan). Ne ovat yhä paljaita
+tolppia, joilla on tasainen katkaistu pää (vertaa rajausta kohdasta 2:52: `ffmpeg -ss 172 -i runs/vedos_v7b/koko.mp4
+-frames:v 1 -vf crop=800:700:560:0`). **Syy koodissa:** `visual/maailma_03_04.js` rivi noin 156:
+`float clearL = smoothstep(0.6, 1.9, abs(wx - lane));` ("polku: oksat eivät kasva sen yli") kertoo kaiken havuston
+(rivit noin 189, 190 ja 203) nollaksi polun akselin lähellä **kaikilla etäisyyksillä**, joten kaukana käytävän kohdalla
+näkyvät puut jäävät ilman oksia; lisäksi rungon yläpää katkeaa tasan (`step(hy, Hh)`).
+1. **Kaukaiset käytävän rungot saavat havuston.** Polun raivaus koskee vain lähietäisyyttä: havustolle käytetään
+   `clearFar = mix(clearL, 1.0, smoothstep(14.0, 32.0, zr))` (tai vastaava: lähellä polku pysyy auki, 32 m:stä kauemmas
+   raivausta ei ole), ja sama korjaus myös ylöskatseen latvusytimelle. Valon ydin (kaukainen valo käytävän päässä) ja
+   polun lumi eivät saa peittyä: jos havusto peittäisi valon, kavenna raivaus valon kohdalla, älä poista sitä.
+2. **Yksikään runko ei pääty tasaiseen katkaistuun päähän** millään etäisyydellä: rungon latva on aina oman havustonsa
+   sisällä tai häipyy usvaan pitkällä liu'ulla.
+3. **Lumi ei välky.** Lumilaikkujen ja havuston reunan kohina on kiinni puussa (maailman koordinaatit: puun numero,
+   korkeus puussa, kulma rungon ympäri), ei ruudussa, eikä siinä ole aikaa; reunat suodatetaan pikselin jalanjäljen
+   mukaan (`pw`), niin että kaukana laikut sulavat tasaiseksi sävyksi eivätkä vilku kameran liikkuessa; ei kynnyksiä,
+   jotka vaihtuvat ruudusta toiseen. Jäykät, kivimäiset laikut ja lähes vaakasuorat reunat pehmennetään (lumi myötäilee
+   oksan kaarta ja ohenee kärkeä kohti). Todiste: 60 peräkkäisen ruudun (esim. 2:50–2:52) keskimääräinen ruutuero
+   havustoalueella on enintään 1,5-kertainen samaan mittaan runkoalueella, eikä yksittäinen laikku syty tai sammu
+   kahden ruudun välillä (ruutusarja joka ruudusta, rajaus 2x).
+4. **Ensimmäiset askeleet.** Ohjaaja mittasi kontrabassojen kaistalta (45–115 Hz) äänten alut; ne ovat ankkurin
+   `askeleet_alkavat` kentässä `iskut_t` (15 arvoa, 1:39,04 → 2:15,24; `d.cues.cues.find(c => c.id ===
+   'askeleet_alkavat').iskut_t`). Moduulin oma tunnistus (rivit noin 413–419) ohittaa osan näistä. Korjaa: askellista =
+   `iskut_t`:n arvot + oman tunnistuksen askeleet niiden jälkeen (2:15,5 eteenpäin), ei kaksoiskappaleita (alle 0,5 s
+   toisistaan olevat yhdistetään, `iskut_t` voittaa). Jokainen askel näkyy täsmälleen kuten nykyiset askeleet (sama
+   valo lumessa, usvan väistyminen, pilkka): ei uutta ilmettä. Todiste: lista askelista ennen ja jälkeen, ja liikesarja
+   1:38–2:02 (0,25 s välein), josta jokaisen `iskut_t`-askeleen vastine löytyy.
+5. Kaikki muu ennallaan (valo, sykkeet, polku, lähirungot, kamera, ylöskatse, nousu, sivujen havusto nykyisellään).
+Renderi `--start 61.6 --end 203.0` → `runs/maailma_03_04/osa.mp4` (4242 ruutua). **Hyväksymisehto: keskirajauksessa
+kohdista 2:30, 2:52 ja 3:02 ei ole yhtään paljasta tolppaa eikä katkaistua päätä.** Katso rajaukset itse.
+
