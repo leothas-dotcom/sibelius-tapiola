@@ -412,3 +412,27 @@ tulevat usvasta ja häipyvät siihen"). Yksinkertaisin ratkaisu on oikea:
 Hyväksymisehto täysikokoisista ruuduista 2:30, 2:44, 2:58: ei katkeavia eikä läpinäkyviä runkoja, ei laatikoita, ei lunta,
 ei kovia reunoja; kaukainen metsä on runkoja, jotka nousevat pehmeään tummaan hämyyn, eikä rivi tolppia kuvan yläreunaan.
 
+### 03_04, KORJAUS 3 (**tämä on voimassa; korvaa korjaukset 1 ja 2 siltä osin kuin ne ovat ristiriidassa**)
+
+Käyttäjä täsmensi: "Ei se lumi ollut huono ratkaisu, se vaan pitää tehdä hyvin". Eli: **luminen havusto säilyy**, mutta se
+tehdään hyvin, ja rungot eivät katkeile eivätkä ole läpinäkyviä, ja usva ja pehmennys auttavat. Viat vedoksessa 7b olivat:
+(a) oksakerrokset tasavärisiä, suorareunaisia laatikoita; (b) rungot häivytetty osittaisella läpinäkyvyydellä ja katkaistu.
+1. **Rungot aina umpinaisia** (vedoksen 7 piirto). Runkoa ei häivytetä alfalla. Se jää piiloon vain siellä, missä
+   umpinainen havusto on oikeasti sen edessä; oksien välistä runko näkyy kokonaisena. Ei kantoja.
+2. **Havusto orgaaniseksi:** ei tasavälisiä kerroksia, ei suoria reunoja, ei tasavärisiä pintoja. Oksat ovat eri pituisia
+   ja eri korkeuksilla (satunnaistettu puun ja oksan mukaan), alaspäin kaartuvia ja riippuvia, ja reuna on kohinasta
+   repaleinen (havujen kärjet). Katso mallia lopun metsän kuusista, joista käyttäjä pitää (`visual/maailma_11_12.js`,
+   kuusten piirto; "Metsä oli myös vihdoin sen näköinen kun odotin"): sama luonne sivusta nähtynä.
+3. **Lumi hyvin:** lumi on pehmeä, epäsäännöllinen kerros oksan yläpinnalla: paksuus vaihtelee kohinan mukaan, reuna
+   liukuu pehmeästi tummaan havuun (ei kovaa rajaa, ei suorakulmaista laikkua), ja paikoin oksa on paljas. Valaistus
+   kuten ennen (polun valo, kylmä halla, himmeä: enintään noin puolet rungon valaistun kyljen kirkkaudesta, varjon
+   puolella lähes pois).
+4. **Usva ja pehmennys:** havusto ja rungon yläosa sulavat etäisyyden ja korkeuden mukana usvaan (kauempi ja ylempi on
+   pehmeämpi ja vähäkontrastisempi), niin että vain lähimmät havukerrokset ovat teräviä ja kaukainen metsä on pehmeä
+   tumma, lumen täplittämä seinä. Reunoissa ei aliasoivia portaita.
+5. Lähirungot (alle noin 7–10 m), polku, valo, sykkeet, pilkat, ylöskatse ja nousu: ruudulleen vedos 7. Latvojen liike
+   0,6-kertainen. Ei mitään muuta uutta.
+Hyväksymisehto täysikokoisista ruuduista 2:30, 2:44, 2:58 ja 3:04: ei yhtään suoraa reunaa tai laatikkoa havustossa tai
+lumessa, ei katkeavia tai läpinäkyviä runkoja; puut näyttävät lumisilta kuusilta hämärässä usvassa. Katso jokainen ruutu
+itse täydessä koossa ja lähennä (rajaa 2x) ennen kuin raportoit.
+

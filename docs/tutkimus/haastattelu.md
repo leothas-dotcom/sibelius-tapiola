@@ -931,3 +931,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Sen lisäksi puun rungot katkeilee nyt ja ovat läpinäkyviä? mitä oikein kokkailet? Voisiko tuota miettiä että sen korjaisi
 > jollain usvalla tai pehmennyksellä?
 
+> Ei se lumi ollut huono ratkaisu, se vaan pitää tehdä hyvin
+
