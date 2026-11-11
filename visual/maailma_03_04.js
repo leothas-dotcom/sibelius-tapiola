@@ -168,7 +168,7 @@ vec3 scene(vec2 p) {
     float sgn = sign(uGl.x - dx);
     float farF = smoothstep(ZF, ZF - 20.0, zr) * (1.0 - up * (1.0 - smoothstep(10.0, 24.0, zr)));   // katse ylös: lähimmät rungot häipyvät usvaan
     float clearL = smoothstep(0.6, 1.9, abs(wx - lane));       // polku: oksat eivät kasva sen yli
-    float clearFar = mix(clearL, 1.0, smoothstep(14.0, 32.0, zr));   // korjaus B: raivaus vain lähietäisyydellä; 32 m:stä kauemmas käytävän puut saavat havuston (kapea rako jätti teräviä viipaleita)
+    float clearFar = mix(clearL, 1.0, smoothstep(12.0, 20.0, zr));   // korjaus B: raivaus vain lähietäisyydellä; 32 m:stä kauemmas käytävän puut saavat havuston (kapea rako jätti teräviä viipaleita)
 
     // tavalliset rungot: kuusia, joiden ympärillä on tumma oksamassa
     float cs = 5.4;
@@ -190,7 +190,7 @@ vec3 scene(vec2 p) {
         + 0.6 * (0.05 + 1.1 * uTop.z) * hn * hn * Hh * 0.05 * (sin(wx * 0.03 - uTime * 0.55 + k * 0.35 + h2 * 3.0) + 0.4 * sin(uTime * 1.3 + h3 * 20.0 + hy * 0.2));   // tuuli: latvat taipuvat, tyvi pysyy
       float dxn = wx - tx - lean;
       float rw = rr * (1.0 - mix(0.45, 0.88, up) * clamp(hn, 0.0, 1.0)) * (1.0 + 0.6 * exp(-hy * 1.4)) * (0.93 + 0.14 * vnoise(vec2(hy * 0.25, h3 * 40.0)));
-      float far12 = smoothstep(7.0, 9.5, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
+      float far12 = smoothstep(12.0, 17.0, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
       rw *= mix(1.0, clamp((1.0 - hn) / 0.22, 0.0, 1.0), far12);   // korjaus B: kaukainen runko suipenee piikiksi latvassa, ei tasaista katkaistua päätä
       float h0f = 3.0 + 2.0 * h4;                                    // havusto alkaa 3-5 m:n korkeudelta
       float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
@@ -213,14 +213,15 @@ vec3 scene(vec2 p) {
         float ph = fract(uT + 0.55 * abs(dxn) / tierH);                         // kärki alempana kuin tyvi
         float lenN = 0.55 + 0.9 * vnoise(vec2(floor(uT + 0.55 * abs(dxn) / tierH) * 1.7 + ci * 2.9, k * 0.7 + h3 * 13.0));   // jokaisen oksan pituus eri
         float Wf = (1.2 + 1.0 * h3) * pow(1.0 - hr, 0.85) * (0.28 + 0.72 * lenN * (0.55 + 0.45 * pow(1.0 - ph, 1.4))) * (0.30 + 0.70 * smoothstep(0.0, 2.5, hy - h0f)) * mix(0.60, 1.0, smoothstep(4.0, 10.0, zr));
-        float jag = (vnF(vec2(wx * 3.5 + k * 1.9, yw * 2.1), 3.5, pw) - 0.5) * 0.95 + (vnF(vec2(wx * 9.0 + k, yw * 5.0), 9.0, pw) - 0.5) * 0.35;
+        float lx = dxn + ci * 7.13 + k * 3.1;   // puun oma koordinaatti (sisältää latvan liikkeen): kohina ja lumi pysyvät kiinni oksassa eivätkä liu'u sen päällä
+        float jag = (vnF(vec2(lx * 3.5 + k * 1.9, hy * 2.1), 3.5, pw) - 0.5) * 0.95 + (vnF(vec2(lx * 9.0 + k, hy * 5.0), 9.0, pw) - 0.5) * 0.35;
         jag *= 1.0 - smoothstep(0.80, 1.0, hr);   // kärki suippenee, ei leveää katkaisua
         float sw = pw * 1.5 + 0.10 * smoothstep(8.0, 60.0, zr);                // reuna pehmenee etäisyyden mukana
-        float bot = h0f + (vnF(vec2(wx * 2.2 + k, 3.0), 2.2, pw) - 0.5) * 1.4;
+        float bot = h0f + (vnF(vec2(lx * 2.2 + k, 3.0), 2.2, pw) - 0.5) * 1.4;
         float aFf = smoothstep(sw, -sw, abs(dxn) - rw - Wf - jag * (1.0 - 0.4 * hr)) * smoothstep(-sw, sw, hy + 0.5 * abs(dxn) - bot) * step(hy, Hh) * farF * clearFar * (1.0 - 0.30 * smoothstep(40.0, 110.0, zr));
         // lumi: pehmeä epäsäännöllinen kerros oksan yläpinnalla, paksuus kohinasta, reuna liukuu, paikoin paljas
-        float thick = vnF(vec2(wx * 2.6 + k * 1.1, yw * 2.0 + 2.0), 2.6, pw) * 0.8 + vnF(vec2(wx * 6.0, yw * 4.5 + k), 6.0, pw) * 0.2;
-        float phS = ph + 0.20 * (vnF(vec2(wx * 1.5 + k * 3.7, yw * 1.2), 1.5, pw) - 0.5);   // lumen alareuna myötäilee oksan kaarta, ei suoraa vaakaviivaa
+        float thick = vnF(vec2(lx * 2.6 + k * 1.1, hy * 2.0 + 2.0), 2.6, pw) * 0.8 + vnF(vec2(lx * 6.0, hy * 4.5 + k), 6.0, pw) * 0.2;
+        float phS = ph + 0.20 * (vnF(vec2(lx * 1.5 + k * 3.7, hy * 1.2), 1.5, pw) - 0.5);   // lumen alareuna myötäilee oksan kaarta, ei suoraa vaakaviivaa
         float topW = smoothstep(0.12, 0.70, phS) * (1.0 - smoothstep(0.78, 1.0, phS));
         float tipT = 1.0 - smoothstep(0.35, 1.0, clamp((abs(dxn) - rw) / max(Wf, 0.15), 0.0, 1.0));   // lumi ohenee oksan kärkeä kohti
         snowF = far12 * aFf * topW * tipT * smoothstep(0.25, 0.90, thick);
@@ -244,7 +245,7 @@ vec3 scene(vec2 p) {
       float vt = fract(hy * 0.85 + h2 * 7.0 + 0.25 * vnoise(vec2(wx * 0.7, k)));
       float edgeM = clamp(4.0 * aF * (1.0 - aF), 0.0, 1.0) * (1.0 - 0.9 * up);
       vec3 fol = HAMY * (0.5 + 0.9 * vnoise(vec2(wx * 1.1 + k, yw * 0.8)));
-      fol = mix(fol, HAMY * (0.70 + 0.25 * vnF(vec2(wx * 3.0 + k, yw * 2.2), 3.0, pw)) + AMB * 0.5 * (1.0 - exp(-zr / 35.0)), far12);   // kaukohavusto: umpinainen tumma, ei hidasta liukuvaa harmaata
+      fol = mix(fol, HAMY * (0.70 + 0.25 * vnF(vec2((dxn + ci * 7.13 + k * 3.1) * 3.0 + k, hy * 2.2), 3.0, pw)) + AMB * 0.5 * (1.0 - exp(-zr / 35.0)), far12);   // kaukohavusto: umpinainen tumma, ei hidasta liukuvaa harmaata
       fol += gcol * I * 0.17 * snowF * mix(0.2, 1.0, side) * shl * exp(-zr / 60.0);   // hallan valo lumessa
       fol += gcol * I * 0.09 * edgeM * side * shl * exp(-zr / 55.0) * (1.0 - far12);   // kaukohavustossa ei reunavaloa
       fol += (1.0 - far12) * DLC * tl * (0.08 + 0.45 * edgeM) * mix(smoothstep(0.45, 1.0, vt), 1.0, up) * mix(0.5 + 0.5 * shaftT(wx, yw, zk), 0.75, up) + (1.0 - far12) * DLC * tl * 0.05 * up * 0.7;
@@ -276,7 +277,7 @@ vec3 scene(vec2 p) {
         float rw = rP * (1.0 - 0.30 * clamp(hy / 30.0, 0.0, 1.0)) * (1.0 + 0.5 * exp(-hy * 1.1));
         float Hp = 27.0 + 2.0 * float(js % 3);                                   // ikihongan korkeus: äärellinen, runko päättyy omaan latvukseensa (katse ylös)
         float hnp = hy / Hp;
-        float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(-0.05, hy) * farF * (1.0 - up * smoothstep(0.55, 0.80, hnp));
+        float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(-0.05, hy) * farF * (1.0 - smoothstep(0.55, 0.80, hnp));
         float u = clamp(dxn / rw, -1.0, 1.0);
         float fur = 0.55 * vnoise(vec2(u * 9.0 + float(js) * 3.0, hy * 0.20)) + 0.45 * vnoise(vec2(u * 3.0 + 2.0, hy * 0.9 + float(js)));
         vec3 bark = HAMY * (0.35 + 1.5 * fur);
@@ -295,7 +296,7 @@ vec3 scene(vec2 p) {
         // latvus: alhaalta leveä, ylöspäin kapeneva tumma massa; yötaivas ja lumi näkyvät latvusten välistä
         float skp = smoothstep(0.38, 0.55, hnp) * (1.0 - smoothstep(0.96, 1.02, hnp));
         float Bp = (2.4 + 0.4 * float(js % 3)) * pow(max(1.0 - hnp * 0.97, 0.0), 0.7) * (0.75 + 0.5 * vnoise(vec2(hy * 0.45 + float(js) * 3.0, 1.7)));
-        float aCp = up * skp * farF * smoothstep(0.6, -0.6, abs(dxn) - rw - Bp + (vnoise(vec2(wx * 3.0, yw * 0.8 + float(js))) - 0.5) * 0.8);
+        float aCp = skp * farF * smoothstep(0.6, -0.6, abs(dxn) - rw - Bp + (vnoise(vec2(wx * 3.0, yw * 0.8 + float(js))) - 0.5) * 0.8);
         col = mix(col, HAMY * (0.5 + 0.9 * vnoise(vec2(wx * 1.1 + k, yw * 0.8))), aCp * 0.96);
       }
     }

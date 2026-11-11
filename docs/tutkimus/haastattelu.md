@@ -942,3 +942,6 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 
 > Olet myös missannut jousiston aksentin lumimyrskyn alusta (noin 14:31), se oli aikaisemmin ok, miksi olet poistanut sen?
 
+> Nyt metsä näyttää hyvältä. Lumet vähän bugittavat vielä, ne heiluvat häiritsevästi, kuten bugit. Ne ei ole sidottu oikein.
+> Vieläkin näkyvät nuo paljaat rungot? mmitä ne on? jotain tolppia? korjaatko oikeaa asiaa?
+
