@@ -373,3 +373,22 @@ Todiste: ruutusarjat joka toisesta ruudusta 13:02,5–13:08 ja 13:40,3–13:45; 
 välein molemmista (mallista) ja saman suunnan toteaminen renderistä (hiutaleet nousevat ruudusta toiseen); suurin
 ruutujen välinen nopeuden muutos; `vertaa.py` vedosta 7 vastaan (erot vain 13:01–13:09 ja 13:40–13:46).
 
+### 03_04, KORJAUS (rivi 99): ei lunta, ei laatikoita
+
+Käyttäjä vedoksesta 7b: "Ei, nuo puut ei nyt kelpaa. lumi näyttää ihan latikkomaiselta. Miksi lisäsit lunta sinne? Älä tee
+asioita mitä en pyydä, jooko". Lumi oksakerroksilla oli ohjaajan lisäys, jota käyttäjä ei pyytänyt. Käyttäjä pyysi vain:
+"Pitäisikö niissä olla joku kasvusto kuten muissa puissa?"
+1. **Poista lumi havustosta kokonaan** (ei vaaleita yläpintoja, ei reunavaloa, ei mitään uutta valoa).
+2. **Havusto on pehmeä ja orgaaninen, ei kerrostettuja laatikoita:** ei suoria reunoja, ei tasaleveitä porrastuksia, ei
+   suorakulmia. Piirrä se samalla tavalla kuin tämän moduulin omat latvukset, jotka näkyvät ylöskatseessa 3:04–3:10 ja
+   jotka käyttäjä hyväksyi ("Se nousu minusta toimii nyt jo hyvin"): tumma, epäsäännöllisesti repaleinen kuusen siluetti,
+   jonka reuna tulee kohinasta (riippuvat oksankärjet eri pituisina), leveämpi alhaalta ja kapeneva ylös.
+3. **Näkyvyys ilman lunta tulee syvyydestä:** havusto on tumma siluetti sen takana olevaa, usvan vaalentamaa kerrosta
+   vasten (kauempi kerros aina hieman vaaleampi ja sinisempi kuin lähempi, kuten rungoilla jo on). Runko liukuu havustoon
+   (ei tasaista katkaisua, ei kantoja). Ei uusia värejä.
+4. Vertaa lopputulosta vedokseen 7 (`runs/vedos_v7/osat/03_04.mp4`): ainoa ero saa olla se, että kaukaisilla ja
+   keskietäisyyden puilla on tumma havusto tolppien tilalla (ja latvojen liike 0,6-kertainen). Valo, sykkeet, polku,
+   lähirungot, ylöskatse ja nousu ruudulleen ennallaan.
+Hyväksymisehto: täysikokoisissa ruuduissa 2:30, 2:44 ja 2:58 ei ole yhtään suoraa vaaka- tai viistoviivaa havustossa, ei
+vaaleita pintoja, ei kantoja; puut tunnistaa kuusiksi siluetista.
+

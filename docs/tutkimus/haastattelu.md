@@ -923,3 +923,8 @@ puut elävät kuten oikea puu, aavistuksen ja hieman; ne eivät heilu paljon eiv
 >
 > Samoin ne puhaltajien tuulenpuuskat (noin 13:40) voisi toteuttaa samoin, mutta vähän voimakkaammin?
 
+> Ei, nuo puut ei nyt kelpaa. lumi näyttää ihan latikkomaiselta. Miksi lisäsit lunta sinne? Älä tee asioita mitä en pyydä, jooko
+
+Ohjaajan vastaus: lumi oli ohjaajan oma lisäys (havusto oli ilman sitä niin musta, että rungot näyttivät kannoilta). Käyttäjä
+pyysi kasvustoa, ei lunta. Lumi poistetaan.
+
