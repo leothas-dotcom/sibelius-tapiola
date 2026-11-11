@@ -194,7 +194,7 @@ vec3 scene(vec2 p) {
       float far12 = smoothstep(7.0, 9.5, zr);                     // vedos 7b: yli ~12 m kauempana puut ovat kuusia (havusto, ei paljas runko)
       rw *= mix(1.0, clamp((1.0 - hn) / 0.22, 0.0, 1.0), far12);   // korjaus B: kaukainen runko suipenee piikiksi latvassa, ei tasaista katkaistua päätä
       float h0f = 3.0 + 2.0 * h4;                                    // havusto alkaa 3-5 m:n korkeudelta
-      float kin = 0.10 + 0.28 * vnoise(vec2(dxn * 1.4 + h2 * 30.0, k * 2.3 + ci));   // rivi 111: kinos tyvellä: runko uppoaa lumeen pehmeää, aaltoilevaa rajaa pitkin (10-38 cm), ei suoraa viivaa
+      float kin = 0.04 + 0.12 * vnoise(vec2(dxn * 1.4 + h2 * 30.0, k * 2.3 + ci));   // rivi 111: kinos tyvellä: runko uppoaa lumeen pehmeää, aaltoilevaa rajaa pitkin (10-38 cm), ei suoraa viivaa
       float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(hy, Hh) * farF * (1.0 - up * smoothstep(0.40, 0.65, hn));   // runkoa näkyy tyvi ja välähdyksiä oksien välistä   // katse ylös: rungon yläosa on latvusmassan sisällä, ohut runko ei jatku latvuksen yli
       // oksamassa: alta harva, päältä tiheä; hulmuavat riippuvat oksat, repaleinen reuna, raot
       float sk = smoothstep(0.20, 0.42, hn) * (1.0 - smoothstep(0.92, 1.02, hn));
@@ -259,7 +259,7 @@ vec3 scene(vec2 p) {
       vec3 tcol = HAMY * (0.35 + 1.3 * strk) + gcol * I * rim * shl * 0.34 * exp(-zr / 60.0)
                 + AMB * (0.30 + 0.9 * snowB) * 0.55 * exp(-zr / 40.0) + SNOWC * 0.020 * snowB * exp(-zr / 30.0) * (0.3 + I)
                 + DLC * tl * 0.05 * smoothstep(0.55, 1.0, strk) * (1.0 - abs(u));
-      if (hy < kin + 0.2) tcol = mix(groundCol(vec3(wx, gT, zk), zr, rd, Lw, ang), tcol, smoothstep(kin - 0.06 - pw, kin + 0.10 + pw, hy));   // rivi 114: kinos on lunta rungon edessä (maan väri), ei läpinäkyvä: runko ei leiju
+      if (hy < kin + 0.2) tcol = mix(groundCol(vec3(wx, gT, zk), zr, rd, Lw, ang) * 0.62, tcol, smoothstep(kin - 0.02 - pw, kin + 0.03 + pw, hy));   // rivi 118   // rivi 114: kinos on lunta rungon edessä (maan väri), ei läpinäkyvä: runko ei leiju
       col = mix(col, tcol, aT * (1.0 - mix(0.75, 0.97, up) * aF));
       col = mix(col, HAMY * 1.2, aS);
     }
@@ -280,7 +280,7 @@ vec3 scene(vec2 p) {
         float rw = rP * (1.0 - 0.30 * clamp(hy / 30.0, 0.0, 1.0)) * (1.0 + 0.5 * exp(-hy * 1.1));
         float Hp = 27.0 + 2.0 * float(js % 3);                                   // ikihongan korkeus: äärellinen, runko päättyy omaan latvukseensa (katse ylös)
         float hnp = hy / Hp;
-        float kinP = 0.12 + 0.34 * vnoise(vec2(dxn * 0.9 + float(js) * 7.0, k * 2.3));   // rivi 111: kinos ikihongan tyvellä
+        float kinP = 0.05 + 0.14 * vnoise(vec2(dxn * 0.9 + float(js) * 7.0, k * 2.3));   // rivi 111: kinos ikihongan tyvellä
         float aT = smoothstep(pw, -pw, abs(dxn) - rw) * step(-0.05, hy) * farF * (1.0 - smoothstep(0.55, 0.80, hnp));
         float u = clamp(dxn / rw, -1.0, 1.0);
         float fur = 0.55 * vnoise(vec2(u * 9.0 + float(js) * 3.0, hy * 0.20)) + 0.45 * vnoise(vec2(u * 3.0 + 2.0, hy * 0.9 + float(js)));
@@ -296,7 +296,7 @@ vec3 scene(vec2 p) {
         float bm = smoothstep(0.05, -0.04, abs(dxn + sd * rw * 0.42 + 0.05 * bn) - (0.12 + 0.07 * smoothstep(1.6, 2.2, hy) * (1.0 - 0.8 * smoothstep(2.2, 2.7, hy)) + 0.05 * bn2)) * smoothstep(1.35 + 0.1 * bn, 1.65, hy) * smoothstep(2.85 + 0.12 * bn2, 2.55, hy) * step(abs(u), 0.97);
         bark = mix(bark, HOPEA * bl * (0.45 + 0.9 * vnoise(vec2(dxn * 14.0, hy * 6.0))), bm * 0.85);
         bark += HOPEA * bl * 0.10 * exp(-pow((hy - 2.1) / 1.0, 2.0)) * exp(-pow((dxn + sd * rw * 0.42) / 0.45, 2.0)) * (1.0 - bm);
-        if (hy < kinP + 0.25) bark = mix(groundCol(vec3(wx, gT, zk), zr, rd, Lw, ang), bark, smoothstep(kinP - 0.08 - pw, kinP + 0.12 + pw, hy));   // rivi 114
+        if (hy < kinP + 0.25) bark = mix(groundCol(vec3(wx, gT, zk), zr, rd, Lw, ang) * 0.62, bark, smoothstep(kinP - 0.02 - pw, kinP + 0.03 + pw, hy));   // rivi 118   // rivi 114
         col = mix(col, bark, aT);
         // latvus: alhaalta leveä, ylöspäin kapeneva tumma massa; yötaivas ja lumi näkyvät latvusten välistä
         float skp = smoothstep(0.38, 0.55, hnp) * (1.0 - smoothstep(0.96, 1.02, hnp));
@@ -433,11 +433,11 @@ async function alusta() {
   // alttoviulujen kommenttien alut: ohjaajan mittaamat (`fis_hengittaa.iskut_t`): keskirekisterin paisutukset, kun puhaltimet ovat hiljaa
   const fraasit = [];                                        // rivi 115: erillisten kommenttien lista poistettu (ensimmäinen mitattu kohta oli vaskien sointu); alttojen linja ohjaa hiutaleita jatkuvana
   // rivi 115: pieni ilmavirta alttojen tahtiin. Partituuri s. 7-9 (t. 52-95): alttoviulut div. in 4 soittavat ydinmotiivia kolmen tahdin fraaseina.
-  // Voima = keskirekisterin jouset (jou), kaari = melodian korkeus suhteessa omaan hitaaseen keskiarvoonsa. Hiutale putoaa aina (vähintään 0,12 m/s) eikä sivusuunta käänny (0,01-0,19 m/s).
+  // Voima = keskirekisterin jouset (jou), kaari = melodian korkeus suhteessa omaan hitaaseen keskiarvoonsa. Rivi 117: liike näkyvämmäksi: nosto enintään 0,60 m/s (hiutale leijuu ja nousee huipussa enintään 0,1 m/s), sivulle 0-0,20 m/s.
   const kaari = (t) => clamp((d.melodia(t, 0.9) - d.melodia(t, 5.0)) / 3.0, -1, 1);
   const altIkk = (t) => sstep(TA + 6.0, TA + 9.0, t) * (1 - sstep(T4 - 2.0, T4 + 2.0, t));
-  const kAvX = d.sarja((f) => 0.09 * jou(f / FPS) * kaari(f / FPS) * altIkk(f / FPS) / FPS);
-  const kAvY = d.sarja((f) => 0.38 * clamp(jou(f / FPS) * (0.55 + 0.45 * kaari(f / FPS)), 0, 1) * altIkk(f / FPS) / FPS);
+  const kAvX = d.sarja((f) => 0.10 * jou(f / FPS) * kaari(f / FPS) * altIkk(f / FPS) / FPS);
+  const kAvY = d.sarja((f) => 0.60 * clamp(jou(f / FPS) * (0.55 + 0.45 * kaari(f / FPS)), 0, 1) * altIkk(f / FPS) / FPS);
   // usvan ajautuma: koneen kuulema liike nopeuttaa sitä (kertymä, ei nopeus kertaa aika)
   const lik = new Float32Array(d.NF);
   for (let f = 0; f < d.NF; f++) lik[f] = d.tapahtuu('liike', f / FPS) ? 1 : 0;

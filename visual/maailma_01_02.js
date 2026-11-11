@@ -493,7 +493,7 @@ async function alusta() {
   // rivi 112: tuiverrus = jousten voima (hitaana) ja puuskan kasvu; laajuus enintään 0,5 m, kiemurtelun nopeus enintään noin 0,6 m/s (alle sivutuulen: suunta ei käänny)
   const tuiv = (t) => clamp(0.40 * jouSlow(t) + 0.80 * puuska(t), 0, 1) * (1 - hilj(t));
   const sTuiv = d.sarja((f) => tuiv(f / FPS));
-  const kTuiP = d.sarja((f) => (0.30 + 0.90 * tuiv(f / FPS)) / FPS);
+  const kTuiP = d.sarja((f) => (0.30 + 1.10 * tuiv(f / FPS)) / FPS);
   const kLahe = d.sarja((f) => (V + 5 * puuska(f / FPS)) / FPS);
   const kDrift = d.sarja((f) => (1.0 + 3.0 * paisu(f / FPS) + 6.0 * puuska(f / FPS)) / FPS);
 
@@ -548,7 +548,7 @@ async function alusta() {
       gl.uniform1f(U('uHK'), 1.0); gl.uniform1f(U('uTK'), 0.6); gl.uniform1f(U('uTop'), 8.5 * 0.6 + 42 + 3);
       gl.uniform1f(U('uDrift'), d.kohta(kDrift, t));
       gl.uniform3f(U('uCut'), s.cut[0], s.cut[1], s.cut[2]);
-      gl.uniform2f(U('uTui'), 0.5 * ka(sTuiv, t, 0.8), d.kohta(kTuiP, t));
+      gl.uniform2f(U('uTui'), 0.85 * ka(sTuiv, t, 0.8), d.kohta(kTuiP, t));
       gl.uniform4f(U('uSnow'), 0.13 + 0.30 * clamp(s.pu * 2.5, 0, 1) + 0.10 * s.fg + 0.06 * s.hy + 0.05 * clamp(ener(t), 0, 1), d.kohta(kTuuli, t), d.kohta(kPut, t), d.kohta(kLahe, t));
       gl.uniform1fv(U('uHill'), new Float32Array(kaari1)); gl.uniform4fv(U('uPulse'), pu); gl.uniform1fv(U('uJ'), new Float32Array(s.live));
       gl.uniform4fv(U('uVx'), new Float32Array(s.vx)); gl.uniform4fv(U('uVt'), new Float32Array(s.vt));

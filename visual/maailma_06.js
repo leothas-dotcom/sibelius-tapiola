@@ -377,10 +377,31 @@ export function signaalit(d) {
   const camZ = (t) => ZEND * (d.kohta(sV, clamp(t, T0, T1)) - d.kohta(sV, T0)) / sVkoko;
   const camX = (t) => DRIFT * camZ(t);
   const camV = (t) => ZEND * vauhti(clamp(t, T0, T1)) / sVkoko;          // m/s (ranta)
-  const pitch = (t) => lerp(PHI0, PHI1, smooth(clamp((t - T0) / TIN, 0, 1)));
-  const camH = (t) => lerp(H_0, H_1, smooth(clamp((t - T0) / TIN, 0, 1)));
-  const cam = (t) => ({ x: camX(t), h: camH(t), z: camZ(t), pitch: pitch(t) });
-  const ci = (t) => ({ x: camX(t), h: camH(t), z: ICE_K * camZ(t), pitch: pitch(t) });     // jään koordinaatisto
+  // rivi 119: katsoja kävelee jäällä Tapiona. Jokaisella basson askeleella (`h_urkupiste_vyory.iskut_t`, ohjaajan mittaamat) kamera painuu ja nyökkää pehmeästi:
+  // alas 0,26 s (pohja 0,06 s iskun jälkeen), takaisin noin 1,1 s. Rivi 121: ei saa aiheuttaa pahoinvointia: hyvin hienovarainen mutta huomattava. Voima kasvaa huomaamatta ankkurista h_urkupiste_vyory ja on täysi, kun askeleet kuuluvat selvästi;
+  // loppuu ankkuriin hajoaa_hiljaisuuteen (puhaltimien soolo): Tapio jää kuuntelemaan. Suurin kulma 0,63 astetta, suurin kulmanopeus noin 4 astetta/s (raja 20).
+  const NYOK = (d.cues.cues.find((c) => c.id === 'h_urkupiste_vyory').iskut_t || []).filter((t) => t < tHJ);
+  const NYOK_SELVA = NYOK.find((t, i) => i > 0 && NYOK[i - 1] < tVP && t > tVP + 2) || tVP + 5;          // ensimmäinen selvä askel vaskipulssien jälkeen
+  const nyokVoima = (t) => 0.12 + 0.28 * sstep(tV, tVP, t) + 0.60 * sstep(NYOK_SELVA - 4.0, NYOK_SELVA + 1.5, t);
+  // Jättiläisen hidas askel (käyttäjä 11.11.): ei nykäys iskussa, vaan painon siirto. Vartalo on alimmillaan, kun jalka ottaa painon (0,06 s basson äänen jälkeen),
+  // kohoaa hitaasti askeleen keskelle (55 % välistä, enintään 1,0 s) ja laskeutuu painavammin seuraavaan (45 % välistä, enintään 0,8 s). Pää seuraa 0,10 s jäljessä pienellä
+  // nyökkäyksellä, ja paino siirtyy jalalta toiselle (sivulle 2,5 cm, vuorotellen). Kaikki liike on kosinikaarta: nopeus on nolla jokaisessa käännekohdassa.
+  // Täysi voima: korkeus 4 cm, kulma 0,40 astetta, suurin kulmanopeus alle 1 aste/s (raja 20). Rivi 121: hyvin hienovarainen, ei pahoinvointia.
+  const paino = (t) => { let p = -1, n = -1; for (let i = 0; i < NYOK.length; i++) { if (NYOK[i] + 0.06 <= t) p = i; else { n = i; break; } }
+    const tp = p >= 0 ? NYOK[p] + 0.06 : -1e9, tn = n >= 0 ? NYOK[n] + 0.06 : 1e9, gap = Math.min(tn - tp, 2.6);
+    const Ru = Math.min(0.55 * gap, 1.0), Rd = Math.min(0.45 * gap, 0.8);
+    const ylos = p >= 0 ? nyokVoima(NYOK[p]) * (0.5 + 0.5 * Math.cos(Math.PI * clamp((t - tp) / Ru, 0, 1))) : 0;
+    const alas = n >= 0 ? nyokVoima(NYOK[n]) * (0.5 - 0.5 * Math.cos(Math.PI * clamp((t - (tn - Rd)) / Rd, 0, 1))) : 0;
+    // sivu: paino jalalla p (vuorotellen vasen/oikea), siirtyy seuraavalle; pitkässä välissä palaa keskelle
+    const sp = p >= 0 ? (p % 2 ? 1 : -1) * nyokVoima(NYOK[p]) : 0, sn = n >= 0 ? (n % 2 ? 1 : -1) * nyokVoima(NYOK[n]) : 0;
+    const sivu = tn - tp <= 2.6 ? lerp(sp, sn, smooth(clamp((t - tp) / (tn - tp), 0, 1))) : sp * (1 - smooth(clamp((t - tp) / 1.3, 0, 1))) + sn * smooth(clamp((t - (tn - 1.3)) / 1.3, 0, 1));
+    return { k: ylos + alas, sivu }; };
+  const nyok = (t) => paino(t).k;
+  const pitch = (t) => lerp(PHI0, PHI1, smooth(clamp((t - T0) / TIN, 0, 1))) - 0.0070 * nyok(t - 0.10);
+  const camH = (t) => lerp(H_0, H_1, smooth(clamp((t - T0) / TIN, 0, 1))) - 0.040 * nyok(t);
+  const camXs = (t) => camX(t) + 0.025 * paino(t).sivu;
+  const cam = (t) => ({ x: camXs(t), h: camH(t), z: camZ(t), pitch: pitch(t) });
+  const ci = (t) => ({ x: camXs(t), h: camH(t), z: ICE_K * camZ(t), pitch: pitch(t) });     // jään koordinaatisto
   const proj = (c, X, Y, Z) => { const rx = X - c.x, ry = Y - c.h, rz = Z - c.z, cp = Math.cos(c.pitch), sp = Math.sin(c.pitch);
     const vy = cp * ry - sp * rz, vz = sp * ry + cp * rz; if (vz < 0.4) return null;
     return [ASP / 2 + FOC * rx / vz, 0.5 + FOC * vy / vz, vz]; };
@@ -569,6 +590,15 @@ export function signaalit(d) {
   const gap = (t) => sstep(tHJ + 2, T1 - 5, t);
   const stripeOn = (t) => sstep(tVP, tVP + 3, t) * (1 - sstep(tHJ - 2, tHJ + 5, t));
   const trillOn = (t) => sstep(tVP + 1, tVP + 4, t) * (1 - sstep(tHJ - 2, tHJ + 3, t));
+  // rivi 122: huiluparin valot lähestyvät toisiaan melodian kaaren mukaan. Mitattu (nuotit) ja partituuri s. 31: ylempi huilu laskeutuu kromaattisesti
+  // f3:sta h2:een (midi 89 -> 83) kirjaimesta J alkaen; jokainen askel alas tuo valot askeleen lähemmäs. Väli kapenee 0,195:stä 0,070:een (oli 0,107:ään tasaisesti 14 s:ssa).
+  const HUIP = d.nuotit.filter((n) => n[0] > tJ - 0.5 && n[0] < T1 && n[2] >= 82 && n[1] >= 0.3).map((n) => ({ t: n[0], m: n[2] }));
+  // ylin ääni = korkein viimeisen 1,6 s aikana alkanut pitkä sävel (alempi huilu ei sekoita); linja on laskeva: ei palaa ylös. Laskettu 0,1 s ruudukkoon.
+  const YLA = (() => { const out = []; let prev = 0, alin = 999; for (let t = tJ - 0.5; t < T1; t += 0.1) { let mx = 0; for (const n of HUIP) if (n.t <= t && n.t > t - 1.6) mx = Math.max(mx, n.m);
+      if (mx === 0) mx = prev; prev = mx; if (mx > 0) alin = Math.min(alin, mx); out.push(alin === 999 ? 0 : alin); } return out; })();
+  const HUIP0 = YLA.find((m) => m > 0) || 89;
+  const ylaAani = (t) => YLA[clamp(Math.round((t - (tJ - 0.5)) / 0.1), 0, YLA.length - 1)] || HUIP0;
+  const lahesty = (t) => { let a = 0; for (let k = -4; k <= 4; k++) a += clamp((HUIP0 - ylaAani(t + k * 0.3)) / 6, 0, 1); return a / 9; };                // pehmennys +-1,2 s
   const pairOn = (t) => sstep(tJ, tJ + 3, t) * (1 - sstep(T1 - 12, T1 - 6, t));
   function tila(t) {
     const f = t * FPS, c = cam(t), cI = ci(t), L = d.koko(t, 1.5), Gt = G(t);
@@ -578,7 +608,7 @@ export function signaalit(d) {
     const lights = lightsAt(t, cI, c);
     const po = pairOn(t);
     if (po > 0) { const g = proj(c, camX(T1), 0, ZT_), gx = g ? g[0] : ASP / 2, mel = clamp((d.melodia(t, 1.2) - 64) / 20, 0, 1);
-      const sp = 1 - 0.55 * smooth(clamp((t - tJ) / 14, 0, 1)), ys = 0.60 + 0.12 * mel, I = 0.50 * po * (0.5 + 0.7 * d.keski(t, 0.6));
+      const sp = 1 - 0.78 * lahesty(t), ys = 0.60 + 0.12 * mel, I = 0.50 * po * (0.5 + 0.7 * d.keski(t, 0.6));
       for (const sgn of [-1, 1]) lights.push([gx + sgn * (0.035 + 0.16 * sp) + 0.02 * Math.sin(0.4 * (t - tJ)), ys + 0.015 * sgn, 0, I, pxs(2.2), 0.4, 0]); }
     const top = proj(c, c.x, 15, ZS_), topY = top ? clamp(top[1], 0.2, 0.95) : 0.7;
     const sh = proj(c, c.x, 0, ZS_), shY = sh ? sh[1] : 0.45;

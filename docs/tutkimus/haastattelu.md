@@ -1002,3 +1002,31 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 >
 > Seuraavassa kohtauksessa, kun nymphit tanssivat, jouset tekevät välillä oktaavi ylös alas eleet, voisiko se myös hieman
 > liikuttaa lunta? Hellävaroen, mutta että ne näkyvät?
+
+### 11.11.2026, vedos 7b (6. koonti): lumi näkyvämmäksi, leijuvat rungot, kamera nyökkää jäällä
+
+> Joo, hyvä. Lumisade saisi liikkua vähän enemmän, nyt se on liian huomaamaton efekti. Mutta mielestäni ne osuu nyt oikein.
+>
+> Joissain kohdissa näyttää vielä että puut leijuvat, tai se näyttää peililtä, koska varjo osuu juuri niin että se näyttää
+> tietystä kulmasta leijuvalta. Tarkista vielä kerran.
+>
+> Hei jääkohtaukseen minulle tuli sellainen idea, että voisiko itse kamera nyökätä kuten askeleet? Että katsoja ottaa siinä
+> kohtaa tavallaan tapion roolin, ja "kävelee" jäällä? Se voisi huomaamattomasti kasvaa tämä efekti, kunnes on selvä, basson
+> askeleet kuuluu selvästi 7:20 eteenpäin? Siinä kohtaa katsojalle voisi tulla olo että hetkinen, minähän olen tapio? Ne
+> lakkaavat sitten 7:42, kun puhaltajat alkavat soolonsa. Sitten tapio jää "kuuntelemaan" näitä toisiaan lähestyviä
+> melodioita. Kuten kuulet, ne lähestyvät toisiaan tonaliteetissä.
+>
+> Siitä siirrymme kauniisti Tapion kotiin, kun sellot soittavat. Ai että, taidetta! Ihanaa!!!
+
+### 11.11.2026: nyökkäys ei saa aiheuttaa pahoinvointia
+
+> Huom, ei saa aiheuttaa pahoinvointia. HYVIN HIENOVARAINEN ELE. Mutta huomattava. Pitää osua askeleisiin
+
+> Mieti sellainen hidas, jättiläisen askel, miten se liikuttaisi kameraa
+
+### 11.11.2026: lähestyvät valot (jää, kirjain J)
+
+> Hei ja nuo lähestyvät valot, se on hyvä idea, ja peilaa mitä musiikissa tapahtuu. Tiedätkö mistä kohdasta puhun?
+
+> Tämä kohta juuri, mistä keksit sen että valojen pitää lähestyä? Se oli nerokas? voisiko ne valot vähän selvemmin vielä
+> lähestyä, melodian kaaren mukaan?
