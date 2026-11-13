@@ -1228,3 +1228,7 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > katso tuota mun haastattelua vaikka - sieltä saisi varmaan kaivettua hyvää materiaa siihen.
 >
 > Ja taustatutkimusta, miten kone oppi tulkitsemaan Sibeliusta? Näitä myös tekstityksiin.
+
+> Kaikki yhdeksän
+
+> No ehkä ei tarvitse sanoa joka kerta "Kuuntele: " kyllä varmaan ihmiset osaavat kuunnella ilmankin :D

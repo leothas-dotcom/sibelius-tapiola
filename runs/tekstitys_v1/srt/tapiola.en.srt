@@ -9,31 +9,31 @@ A machine cannot hear. These captions
 tell you what you hear.
 
 3
-00:00:08,767 --> 00:00:11,833
-Listen: the timpani alone,
+00:00:08,767 --> 00:00:11,300
+The timpani alone,
 three quick strokes.
 
 4
-00:00:12,033 --> 00:00:14,700
-Listen: strings. This turn is the seed.
+00:00:11,500 --> 00:00:13,700
+Strings. This turn is the seed.
 
 5
-00:00:14,900 --> 00:00:20,100
-Listen: the horns. The G sharp has been
+00:00:13,900 --> 00:00:18,567
+The horns. The G sharp has been
 sounding all along, and now it appears.
 
 6
-00:00:20,300 --> 00:00:25,567
+00:00:20,200 --> 00:00:25,467
 The machine first read: the horns reply.
 The musician fixed it: they never stop.
 
 7
-00:00:25,767 --> 00:00:30,500
-Listen: flutes, oboes and clarinets
+00:00:25,667 --> 00:00:29,733
+Flutes, oboes and clarinets
 take turns on the same G sharp.
 
 8
-00:00:30,700 --> 00:00:35,567
+00:00:30,051 --> 00:00:34,918
 Here, the G sharp is the horizon's light.
 Each swell reveals another hill.
 
@@ -43,12 +43,12 @@ Timpani charge: the light grows
 until it releases.
 
 10
-00:00:45,027 --> 00:00:48,294
-Listen: the brass tears light
+00:00:45,027 --> 00:00:47,694
+The brass tears light
 through the forest.
 
 11
-00:00:48,494 --> 00:00:52,827
+00:00:47,894 --> 00:00:52,227
 Grimley hears a gust of wind here,
 sweeping the cadence away.
 
@@ -58,8 +58,8 @@ A general pause comes. Only the
 score mentions it.
 
 13
-00:01:01,400 --> 00:01:06,867
-Listen: the strings return. A long F sharp
+00:01:01,400 --> 00:01:06,333
+The strings return. A long F sharp
 holds almost a minute, like the G sharp.
 
 14
@@ -73,22 +73,22 @@ A flash of light: D major, B minor's
 relative major. It belongs in this forest.
 
 16
-00:01:26,420 --> 00:01:31,553
-Listen: double basses and cellos strike
+00:01:26,420 --> 00:01:31,020
+Double basses and cellos strike
 out of step. Something vast is coming.
 
 17
-00:01:31,753 --> 00:01:36,153
+00:01:31,220 --> 00:01:35,620
 In the picture each beat is light on the
 snow: weight with no foot.
 
 18
-00:01:36,353 --> 00:01:40,553
+00:01:35,820 --> 00:01:40,020
 Snow falls from the branches only
 when the violas comment.
 
 19
-00:01:40,753 --> 00:01:44,620
+00:01:40,500 --> 00:01:44,367
 The forest breathes: two chords in turn,
 in and out.
 
@@ -98,8 +98,8 @@ The machine measured sound in 84 bands, 30
 times a second. A musician checked by ear.
 
 21
-00:02:09,370 --> 00:02:13,970
-Listen: the low instruments in their own
+00:02:09,370 --> 00:02:13,437
+The low instruments in their own
 time. Like Tapio's footsteps?
 
 22
@@ -113,8 +113,8 @@ According to Salmenhaara the piece grows
 from four basic motifs and about 30 more.
 
 24
-00:02:55,800 --> 00:03:00,667
-Listen: the low instruments hold a B,
+00:02:55,800 --> 00:03:00,133
+The low instruments hold a B,
 and everything else climbs above it.
 
 25
@@ -123,8 +123,8 @@ The gaze rises up the trunks. Light
 climbs into the treetops.
 
 26
-00:03:22,700 --> 00:03:27,700
-Listen: the bass falls away, violins sink,
+00:03:22,700 --> 00:03:27,167
+The bass falls away, violins sink,
 flutes and clarinets weave above.
 
 27
@@ -133,8 +133,8 @@ Inside the crystal is a new world:
 the same horizon, within the old.
 
 28
-00:03:50,800 --> 00:03:55,600
-Listen: flutes, oboes and clarinets play
+00:03:50,800 --> 00:03:54,933
+Flutes, oboes and clarinets play
 short notes in pairs.
 
 29
@@ -143,8 +143,8 @@ Each short note is a small light: the
 preface's sprites, shimmering.
 
 30
-00:04:04,500 --> 00:04:09,500
-Listen: flutes and piccolo run upward.
+00:04:04,500 --> 00:04:08,833
+Flutes and piccolo run upward.
 In the picture, one gust of wind.
 
 31
@@ -158,8 +158,8 @@ Damrosch proposed the subtitle: the forest
 god and his nymphs. Sibelius agreed.
 
 33
-00:04:40,600 --> 00:04:45,267
-Listen: flutes, oboes and cor anglais
+00:04:40,600 --> 00:04:44,600
+Flutes, oboes and cor anglais
 dance gracefully (grazioso).
 
 34
@@ -182,8 +182,8 @@ The sound swells to fortissimo and snaps
 like a knife. Then black ice opens.
 
 38
-00:05:47,900 --> 00:05:52,833
-Listen: violins, violas and cellos hop at
+00:05:47,900 --> 00:05:52,233
+Violins, violas and cellos hop at
 the bow tip from group to group.
 
 39
@@ -197,33 +197,33 @@ The opening G sharp returns briefly: a
 memory of where it all began.
 
 41
-00:06:30,500 --> 00:06:35,967
-Listen: suddenly all the strings together,
+00:06:30,500 --> 00:06:35,433
+Suddenly all the strings together,
 much louder. The lights move as a crowd.
 
 42
-00:06:36,167 --> 00:06:41,300
+00:06:35,633 --> 00:06:40,767
 The machine measured the jump; the image
 did not answer. The musician noticed.
 
 43
-00:06:49,000 --> 00:06:53,933
-Listen: violins ride onward, timpani
+00:06:49,000 --> 00:06:53,267
+Violins ride onward, timpani
 beat a steady pulse.
 
 44
-00:06:54,133 --> 00:06:59,467
+00:06:53,720 --> 00:06:59,053
 The turning point: play ends, the camera
 speeds up. Snow streams, lights race by.
 
 45
-00:07:00,800 --> 00:07:06,000
-Listen: beneath the fast figure, cellos
+00:07:00,800 --> 00:07:05,467
+Beneath the fast figure, cellos
 and double basses tread heavily: Tapio.
 
 46
-00:07:15,600 --> 00:07:20,333
-Listen: the cor anglais sings alone,
+00:07:15,600 --> 00:07:19,800
+The cor anglais sings alone,
 the flute answers with long trills.
 
 47
@@ -232,8 +232,8 @@ The musician has given over a hundred
 comments. Machines measure, humans hear.
 
 48
-00:07:51,300 --> 00:07:56,767
-Listen: two flutes side by side, the bass
+00:07:51,300 --> 00:07:56,233
+Two flutes side by side, the bass
 fades. Two lights draw nearer each other.
 
 49
@@ -242,8 +242,8 @@ The bassoon's third light lit in the wrong
 place. The lights must draw closer.
 
 50
-00:08:16,000 --> 00:08:21,400
-Listen: the cellos sing muted, mezza voce.
+00:08:16,000 --> 00:08:20,867
+The cellos sing muted, mezza voce.
 The rest of the orchestra falls silent.
 
 51
@@ -252,8 +252,8 @@ The hall's pillars are vast trunks,
 with mist drifting between them.
 
 52
-00:08:38,200 --> 00:08:42,600
-Listen: beneath, the faintest timpani
+00:08:38,200 --> 00:08:42,067
+Beneath, the faintest timpani
 tremolo. The ground trembles.
 
 53
@@ -267,8 +267,8 @@ Tapio's table, as in the folk poems:
 three trunks, a plank laid across.
 
 55
-00:10:13,300 --> 00:10:17,767
-Listen: brass and timpani rise from afar
+00:10:13,300 --> 00:10:17,100
+Brass and timpani rise from afar
 after the stillness.
 
 56
@@ -277,8 +277,8 @@ The tutti blow tears light
 through the pillars.
 
 57
-00:10:26,000 --> 00:10:30,867
-Listen: trumpets and timpani hammer five
+00:10:26,000 --> 00:10:30,200
+Trumpets and timpani hammer five
 blows, the fifth the heaviest.
 
 58
@@ -302,8 +302,8 @@ The forged sun of the Kalevala looks like
 gold but gives no warmth.
 
 62
-00:11:24,830 --> 00:11:29,963
-Listen: the brass thunders. Lightning with
+00:11:24,830 --> 00:11:29,430
+The brass thunders. Lightning with
 no rain: the storm is not here yet.
 
 63
@@ -312,8 +312,8 @@ The light is gone. The forest closes in
 and the footsteps return, loud.
 
 64
-00:11:46,100 --> 00:11:50,500
-Listen: the hammered rhythm returns:
+00:11:46,100 --> 00:11:49,900
+The hammered rhythm returns:
 trumpets, trombones, timpani.
 
 65
@@ -332,8 +332,8 @@ The 1926 New York premiere was lukewarm.
 Kajanus conducted it in Finland in 1927.
 
 68
-00:12:36,200 --> 00:12:40,733
-Listen: horns and trumpets breathe
+00:12:36,200 --> 00:12:40,067
+Horns and trumpets breathe
 in turn, slowly.
 
 69
@@ -347,27 +347,27 @@ Tovey: the work is one long, slow
 crescendo, then a short fall to silence.
 
 71
-00:13:05,100 --> 00:13:10,367
-Listen: a rise from basses to violins,
+00:13:05,100 --> 00:13:09,700
+A rise from basses to violins,
 several octaves, like a gust of wind.
 
 72
-00:13:10,567 --> 00:13:15,567
+00:13:10,276 --> 00:13:15,276
 The machine made the trees rubbery, then
 stiff. The musician: only a hint.
 
 73
-00:13:26,140 --> 00:13:31,407
-Listen: horns, trumpets, trombones swell
+00:13:26,140 --> 00:13:30,740
+Horns, trumpets, trombones swell
 from soft to full force.
 
 74
-00:13:33,300 --> 00:13:38,233
-Listen: the level drops. Flutes, oboes and
+00:13:33,300 --> 00:13:37,567
+The level drops. Flutes, oboes and
 strings sing together, gently.
 
 75
-00:13:38,433 --> 00:13:43,567
+00:13:37,767 --> 00:13:42,900
 The picture turns into another place in
 the same forest: light, colour, space.
 
@@ -387,13 +387,13 @@ The preface mentions no storm:
 that is the listeners' reading.
 
 79
-00:14:34,267 --> 00:14:39,733
-Listen: the winter storm strikes, strings
+00:14:34,267 --> 00:14:39,067
+The winter storm strikes, strings
 alone, fortissimo. All layers collapse.
 
 80
-00:14:50,200 --> 00:14:55,667
-Listen: trumpets, trombones, timpani join
+00:14:50,200 --> 00:14:55,000
+Trumpets, trombones, timpani join
 the storm. Earth and sky are in.
 
 81
@@ -402,8 +402,8 @@ Each cry of trumpets and trombones is a
 cut of light through the storm.
 
 82
-00:15:09,740 --> 00:15:14,273
-Listen: the five-blow rhythm once more,
+00:15:09,740 --> 00:15:13,740
+The five-blow rhythm once more,
 now with the whole orchestra.
 
 83
@@ -417,8 +417,8 @@ The cry: the camera climbs out of the
 storm, above the treetops.
 
 85
-00:15:44,700 --> 00:15:48,433
-Listen: high strings alone, at full force.
+00:15:44,700 --> 00:15:47,767
+High strings alone, at full force.
 The cry.
 
 86
@@ -432,8 +432,8 @@ The sky opens: auroras, a cold green arc,
 seen nowhere else in the film.
 
 88
-00:15:59,883 --> 00:16:04,483
-Listen: clarinet, piccolo, bass clarinet,
+00:15:59,883 --> 00:16:03,817
+Clarinet, piccolo, bass clarinet,
 one at a time.
 
 89
@@ -442,18 +442,18 @@ The aurora's wave follows the winds' line.
 A musician found it in the measurements.
 
 90
-00:16:34,300 --> 00:16:38,833
-Listen: the slow arc of the woodwinds.
+00:16:34,300 --> 00:16:38,167
+The slow arc of the woodwinds.
 The aurora ripples with it.
 
 91
-00:16:52,400 --> 00:16:56,600
-Listen: full orchestra, one last wave.
+00:16:52,400 --> 00:16:55,933
+Full orchestra, one last wave.
 Then comes B major.
 
 92
-00:17:04,350 --> 00:17:09,617
-Listen: strings alone, B major. The only
+00:17:04,350 --> 00:17:08,950
+Strings alone, B major. The only
 move from minor to major in the work.
 
 93

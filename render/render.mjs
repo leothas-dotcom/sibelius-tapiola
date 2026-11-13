@@ -21,8 +21,10 @@ import path from 'node:path';
 import { startServer, ROOT } from './serve.mjs';
 
 const FPS = 30;
-const W = 1920;
-const H = 1080;
+// Kuvan koko: oletus 1920x1080; Shortsit pystyyn: --koko 1080x1920 (13.11.2026). Kohtaus piirtää kankaan koon mukaan (uRes).
+const KOKO = (() => { const i = process.argv.indexOf('--koko'); const m = i > 0 ? /^(\d+)x(\d+)$/.exec(process.argv[i + 1] || '') : null; return m ? [Number(m[1]), Number(m[2])] : [1920, 1080]; })();
+const W = KOKO[0];
+const H = KOKO[1];
 const CLIP = { x: 0, y: 0, width: W, height: H };
 
 function parseArgs() {
@@ -57,6 +59,7 @@ async function openPage(browser, url) {
   await page.waitForFunction('window.sceneReady === true || !!window.sceneError', { timeout: 120000 });
   const err = await page.evaluate(() => window.sceneError);
   if (err) throw new Error(err);
+  if (W !== 1920 || H !== 1080) await page.evaluate((w, h) => { const c = document.getElementById('c'); c.width = w; c.height = h; c.style.width = w + 'px'; c.style.height = h + 'px'; document.body.style.margin = '0'; }, W, H);
   return page;
 }
 

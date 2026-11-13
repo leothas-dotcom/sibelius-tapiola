@@ -1,0 +1,136 @@
+{
+ "_ohje": "Shortsien määrittely (render/shortsit.py). Rajat ovat ankkureita (annotations/cues.json), ei sekunteja: 'a' ja 'b' ovat ankkurin id:t, 'b_lisa' sekunteja ankkurin b jälkeen. 'm' on kohtausmoduuli ja 'taika' sen kytkin. Tekstit (enintään kolme) jaetaan tasaisesti keston yli; rivinvaihto \\n. Tekstit ovat suunnitelmasta runs/julkaisu_v1/suunnitelma.md, ohjaajan tarkistamina (13.11.2026): [tarkista]-merkityt väitteet jätetty pois. Katseluversioissa ääni on työäänitys (Rattle/LSO 2022): ei julkaisuun.",
+ "koko": "1080x1920",
+ "shortsit": [
+  {
+   "id": "S1_siemen",
+   "m": "01_02",
+   "taika": 1,
+   "a": "avaus_patarumpu",
+   "b": "tuulenpuuska",
+   "fi": [
+    "Alussa on yksi sävel: gis.",
+    "Käyrätorvet pitävät sitä koko ajan.\nJouset peittävät sen.",
+    "Suomessa ei ole teräviä vuoria.\nVain vaaroja."
+   ],
+   "lahde": "käyttäjä 9.11. (gis soi koko ajan); käyttäjä (vaarat, jääkauden muokkaamat)"
+  },
+  {
+   "id": "S2_askeleet",
+   "m": "03_04",
+   "taika": 1,
+   "a": "askeleet_alkavat",
+   "b": "askeleet_B",
+   "fi": [
+    "Tapiota ei näe.\nHänet kuulee.",
+    "Matalat jouset askeltavat\nomaan tahtiinsa.",
+    "Alttoviulu on tuuli:\nse tiputtaa lumen oksilta."
+   ],
+   "lahde": "käyttäjä 1.11. ja 9.11. (askeleet); käyttäjä 13.11. (alttoviulu on tuuli)"
+  },
+  {
+   "id": "S3_katsoja_on_tapio",
+   "m": "06",
+   "taika": 1,
+   "a": "vaskipulssit",
+   "b": "hajoaa_hiljaisuuteen",
+   "fi": [
+    "Tässä kamera kävelee.",
+    "Kontrabassot askeltavat.\nKamera askeltaa mukana.",
+    "Katsoja on Tapio."
+   ],
+   "lahde": "käyttäjä 11.11. (kamera nyökkää askelista; katsoja ottaa Tapion roolin)"
+  },
+  {
+   "id": "S4_valot_lahestyvat",
+   "m": "06",
+   "taika": 1,
+   "a": "hajoaa_hiljaisuuteen",
+   "b": "jousijakso_urkupiste_E_alku",
+   "fi": [
+    "Kaksi huilua lähestyy toisiaan.\nNiin tekevät valot.",
+    "Valot syttyvät, kun huilu alkaa,\nja sammuvat, kun se lopettaa.",
+    "Jokainen valo on yksi ääni."
+   ],
+   "lahde": "käyttäjä (huilu 7:44-8:13; valot lähestyvät toisiaan); tyyliohje 4d.42"
+  },
+  {
+   "id": "S5_tapion_poyta",
+   "m": "07_08",
+   "taika": 0,
+   "a": "hitaat_soinnut",
+   "b": "altot_mezza",
+   "fi": [
+    "Kolme runkoa, yksi lauta:\nTapion pöytä.",
+    "Pöydän valot syttyvät,\nkun viulut soittavat korkeat äänensä.",
+    "Tapion talo on tila,\nei hahmo."
+   ],
+   "lahde": "käyttäjä (pöydän valot viulujen korkeissa äänissä); tyyliohje (Tapio on tila, ei hahmo)"
+  },
+  {
+   "id": "S6_vaara_toivo",
+   "m": "07_08",
+   "taika": 0,
+   "a": "c_duuri_valahdykset",
+   "b": "M_ennakko",
+   "b_lisa": 3.0,
+   "fi": [
+    "Hetki valoa.\nSitten myrsky.",
+    "C-duuri ei kuulu h-molliin.",
+    "Toivo on turha:\nsiitä alkaakin myrsky."
+   ],
+   "lahde": "käyttäjä (lempikohta: aurinko valaisee hetken, toivo on turha); tutkimus luku 3"
+  },
+  {
+   "id": "S7_myrsky",
+   "m": "10",
+   "taika": 0,
+   "a": "myrsky_nakyy",
+   "b": "Q_koko_metsa",
+   "fi": [
+    "Ensin se vain näkyy.",
+    "Pelkät jouset.\nVasket tulevat vasta myöhemmin.",
+    "Kuin kaukaa tuleva lumi ja jää."
+   ],
+   "lahde": "käyttäjän partituurihavainto (ppp t. 523, kuin kaukaa tuleva lumi ja jää); kuunteluopas (Q = t. 550)"
+  },
+  {
+   "id": "S8_revontulen_aalto",
+   "m": "11_12",
+   "taika": 0,
+   "a": "S_sempre_mf",
+   "b": "loppuhuipennus",
+   "fi": [
+    "Katso revontulta.",
+    "Tämä aalto on yksi melodia.",
+    "Kone kuuli paisutuksen.\nMuusikko kuuli melodian."
+   ],
+   "lahde": "käyttäjä 13.11. (ei paisutus vaan melodia; c - d - e - fis); palautelista rivi 164",
+   "alut": [
+    null,
+    [
+     "S_puhaltimien_kaari",
+     -0.8
+    ],
+    [
+     "S_puhaltimien_kaari.loppu",
+     0.8
+    ]
+   ]
+  },
+  {
+   "id": "S9_h_duuri",
+   "m": "11_12",
+   "taika": 0,
+   "a": "loppu_Hduuri_alku",
+   "b": "musiikki_loppuu",
+   "b_lisa": 4.0,
+   "fi": [
+    "Sibeliuksen viimeinen suuri\norkesteriteos.",
+    "H-duuri.",
+    "Hellästi."
+   ],
+   "lahde": "tutkimus luku 1 (viimeinen suuri orkesteriteos); käyttäjä (huokaus, pehmeys)"
+  }
+ ]
+}

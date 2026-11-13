@@ -18,7 +18,7 @@ Säännöt, jotka tarkistetaan (rikkeet pysäyttävät):
   - ei tekstiä yleistaukojen aikana (lähteen 'hiljaisuudet': lista ankkuripareja)
   - teksti ei ajaudu yli 4 s irti ankkuristaan
   - kerrokset: jokaisella tekstillä 'kerros' tarina|kuuntele|tausta|kone (kone = miten kone oppi kuulemaan ja tulkitsemaan);
-    kuuntele-teksti alkaa sanalla Kuuntele (kielittäin PREFIX) ja nimeää 'soittimet', jotka ovat teemakartan
+    kuuntele-teksti nimeää 'soittimet', jotka ovat teemakartan
     ankkurin soittimet-listassa; kuuntele <= 40 %, tausta <= 25 % ja kone <= 15 % teksteistä
 Tulokset: srt/<nimi>.<kieli>.srt ja tekstitys.md (tarkistustaulukko).
 --esikatselu <kieli> tekee kontaktiarkit, joissa teksti on ruudun päällä (vain tarkistukseen:
@@ -123,9 +123,7 @@ def main():
         if kerros not in KERROKSET:
             virheet.append(f"{c['id']}: kerros puuttuu tai tuntematon ({kerros})")
         if kerros == 'kuuntele':
-            for k, s in tekstit.items():
-                if k in PREFIX and not s.startswith(PREFIX[k]):
-                    virheet.append(f"{c['id']} [{k}]: kuuntele-teksti ei ala sanalla {PREFIX[k]}: {s}")
+            # 13.11.2026 (käyttäjä: "ei tarvitse sanoa joka kerta 'Kuuntele: '"): kuuntele-teksti ei enää ala sanalla Kuuntele
             for nimi in c.get('soittimet', []):
                 ank = c['a'].split('.')[0]
                 if nimi not in SOITTIMET.get(ank, set()):
