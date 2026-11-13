@@ -1218,3 +1218,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > että ne paisutukset (<>) osuu nyt oikeisiin paikkoihin
 
 > ehkä aavistuksen hienovaraisempi muutos tuohon revontuliin. Ihan vähän tyylikkäämpi
+
+> AH. Tuo revontuli on kuin kirsikka kakun päällä. Ai että. Kaunista. Nyt on hyvä :)
