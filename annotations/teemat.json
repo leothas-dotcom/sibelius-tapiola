@@ -1488,7 +1488,9 @@
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "soitin",
-      "soittimet": [],
+      "soittimet": [
+        "alttoviulut"
+      ],
       "esitysmerkinta": "",
       "id": "fis_hengittaa",
       "nimi": "Sointumatto hengittää: kaksi sointua vuorotellen",

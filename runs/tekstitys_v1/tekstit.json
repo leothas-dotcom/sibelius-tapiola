@@ -1,0 +1,963 @@
+{
+ "_ohje": "Tapiolan selittävät tekstitykset v1 (13.11.2026). Ajat tulevat ankkureista (annotations/cues.json), ei sekunteja. 'b' ja 'osuus' = aika kahden ankkurin välillä. Kerrokset: tarina (kuva), kuuntele (mikä soi; soittimet teemakartan mukaan), tausta (taustatutkimus), kone (miten kone mittasi ja ihminen korjasi). Levytystä ei mainita. lahde: mistä väite on.",
+ "nimi": "tapiola",
+ "kielet": [
+  "fi",
+  "en"
+ ],
+ "hiljaisuudet": [
+  [
+   "hiljaisuus_1_alku",
+   "hiljaisuus_1_loppu"
+  ],
+  [
+   "hiljaisuus_2_alku",
+   "hiljaisuus_2_loppu"
+  ]
+ ],
+ "versio": 1,
+ "tekstit": [
+  {
+   "id": "avaus",
+   "a": "alku",
+   "kerros": "tarina",
+   "lahde": "tutkimus luku 1 (teos); CLAUDE.md: kaikki grafiikka koodilla",
+   "fi": "Sibelius: Tapiola, 1926.\nJokainen ruutu on piirretty koodilla.",
+   "en": "Sibelius: Tapiola, 1926.\nEvery frame is drawn by code."
+  },
+  {
+   "id": "avaus2",
+   "a": "alku",
+   "b": "avaus_patarumpu",
+   "osuus": 0.6,
+   "kerros": "tarina",
+   "lahde": "tutkimus luku 13 (kanavakortti: kone mittaa, ei kuule)",
+   "fi": "Kone ei kuule. Nämä tekstit kertovat,\nmitä sinä kuulet.",
+   "en": "A machine cannot hear. These captions\ntell you what you hear."
+  },
+  {
+   "id": "patarummut",
+   "a": "avaus_patarumpu",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "patarummut"
+   ],
+   "lahde": "opas 0:07 (tututum, partituuri s. 3: patarummut mf heti 1. tahdissa)",
+   "fi": "Kuuntele: patarummut yksin,\nkolme nopeaa iskua.",
+   "en": "Listen: the timpani alone,\nthree quick strokes."
+  },
+  {
+   "id": "jouset",
+   "a": "jouset_tulevat",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "opas 0:08 (ydinmotiivi; Salmenhaara, Europadisc: siemen); käyttäjä 9.11. 'siemen'",
+   "fi": "Kuuntele: jouset. Tämä käänne on siemen.",
+   "en": "Listen: strings. This turn is the seed."
+  },
+  {
+   "id": "gis",
+   "a": "gis_paljastuu",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "käyrätorvet"
+   ],
+   "lahde": "opas 0:12 (kuultu, käyttäjän korva 9.11.): käyrätorvet soivat gis:tä koko ajan",
+   "fi": "Kuuntele: käyrätorvet. Gis soi koko ajan\ntaustalla, ja nyt se paljastuu.",
+   "en": "Listen: the horns. The G sharp has been\nsounding all along, and now it appears."
+  },
+  {
+   "id": "kone_gis",
+   "a": "siemen_toistuu",
+   "kerros": "kone",
+   "lahde": "opas 0:12 (käyttäjän korjaus 9.11.: 'tuo alun käyrätorvet vastaavat ei ole oikein')",
+   "fi": "Kone luki ensin: käyrätorvet vastaavat.\nMuusikko korjasi: ne soivat koko ajan.",
+   "en": "The machine first read: the horns reply.\nThe musician fixed it: they never stop."
+  },
+  {
+   "id": "kuvan_gis",
+   "a": "puhaltimet_tulevat",
+   "b": "puhallinkuviot_loppu",
+   "osuus": 0.3,
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.30 ja kuvakäsikirjoitus maailma 1 (gis horisontin valo, paisutus paljastaa vaaran); opas 0:25 (12 paisutusta)",
+   "fi": "Kuvassa gis on horisontin valo.\nJokainen paisutus paljastaa yhden vaaran.",
+   "en": "Here, the G sharp is the horizon's light.\nEach swell reveals another hill."
+  },
+  {
+   "id": "vuorottelu",
+   "a": "puhallinkuviot_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut",
+    "oboet",
+    "klarinetit"
+   ],
+   "lahde": "opas 0:25 (huilut a 2, mitattu: sama sävel, eri soitin); partituuri s. 4",
+   "fi": "Kuuntele: huilut, oboet ja klarinetit\nvuorottelevat samalla gis-äänellä.",
+   "en": "Listen: flutes, oboes and clarinets\ntake turns on the same G sharp."
+  },
+  {
+   "id": "lataus",
+   "a": "patarumpu_paisuu",
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.39 (patarumpujen crescendo on lataus, horisontin valo kasvaa); opas 0:41",
+   "fi": "Patarumpujen lataus: valo kasvaa,\nkunnes se purkautuu.",
+   "en": "Timpani charge: the light grows\nuntil it releases."
+  },
+  {
+   "id": "vaskien_isku",
+   "a": "vaskien_isku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "vaskipuhaltimet"
+   ],
+   "lahde": "opas 0:45; tyyli luku 7 (vasket = läpi tuleva valo); kuvakäsikirjoitus maailma 2",
+   "fi": "Kuuntele: vaskien isku repäisee\nvalon metsän läpi.",
+   "en": "Listen: the brass tears light\nthrough the forest."
+  },
+  {
+   "id": "grimley",
+   "a": "tuulenpuuska",
+   "b": "tuulenpuuska.loppu",
+   "osuus": 0.3,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 3 (Grimley: oktatoninen tuulenpuuska t. 21-25, harhautettu kadenssi)",
+   "fi": "Grimley kuuli tässä tuulenpuuskan,\njoka pyyhkäisee kadenssin pois.",
+   "en": "Grimley hears a gust of wind here,\nsweeping the cadence away."
+  },
+  {
+   "id": "yleistauko",
+   "a": "fraasi_ennen_taukoa",
+   "kerros": "tausta",
+   "lahde": "opas 0:58 (yleistaukoa ei mainitse yksikään lähde; partituuri on ainoa lähde); tutkimus luku 4",
+   "fi": "Kohta yleistauko. Vain partituuri\nkertoo siitä.",
+   "en": "A general pause comes. Only the\nscore mentions it."
+  },
+  {
+   "id": "fis",
+   "a": "hiljaisuus_1_loppu",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "opas 1:01 (fis1 pitkä ääni lähes minuutin, kuten gis alussa)",
+   "fi": "Kuuntele: jouset palaavat. Pitkä fis jää\nsoimaan lähes minuutin, kuten gis alussa.",
+   "en": "Listen: the strings return. A long F sharp\nholds almost a minute, like the G sharp."
+  },
+  {
+   "id": "tilaus",
+   "a": "hiljaisuus_1_loppu",
+   "b": "valo_D_duuri",
+   "osuus": 0.45,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 1 (Damrosch, New York Symphony Society, sähke 4.1.1926)",
+   "fi": "Walter Damrosch tilasi teoksen New Yorkiin\nsähkeellä 4.1.1926.",
+   "en": "Walter Damrosch commissioned it for New\nYork by telegram, 4 January 1926."
+  },
+  {
+   "id": "d_duuri",
+   "a": "valo_D_duuri",
+   "kerros": "tausta",
+   "lahde": "opas 1:15; tyyli luku 3 (D-duuri h-mollin rinnakkaisduuri)",
+   "fi": "Valon välähdys: D-duuri, h-mollin\nrinnakkaisduuri. Se kuuluu tähän metsään.",
+   "en": "A flash of light: D major, B minor's\nrelative major. It belongs in this forest."
+  },
+  {
+   "id": "askeleet_alkavat",
+   "a": "askeleet_alkavat",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "kontrabassot",
+    "sellot"
+   ],
+   "lahde": "opas 1:26 (käyttäjän korva 9.11.: bassojen eritahtiset iskut)",
+   "fi": "Kuuntele: kontrabassot ja sellot iskevät\neri tahtiin. Jokin suuri on tulossa.",
+   "en": "Listen: double basses and cellos strike\nout of step. Something vast is coming."
+  },
+  {
+   "id": "askeleet_valo",
+   "a": "askeleet_alkavat",
+   "b": "askeleet_B",
+   "osuus": 0.1,
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.42 (pimeässä metsässä basson askeleet ovat valo lumessa)",
+   "fi": "Kuvassa jokainen isku on valo lumessa:\npaino ilman jalkaa.",
+   "en": "In the picture each beat is light on the\nsnow: weight with no foot."
+  },
+  {
+   "id": "hengittaa",
+   "a": "fis_hengittaa",
+   "kerros": "tarina",
+   "lahde": "opas 1:40 (kaksi sointua vuorotellen, käyttäjä: sellot tekevät sointumattoa, metsä)",
+   "fi": "Metsä hengittää: kaksi sointua\nvuorotellen, sisään ja ulos.",
+   "en": "The forest breathes: two chords in turn,\nin and out."
+  },
+  {
+   "id": "kone84",
+   "a": "fis_hengittaa",
+   "b": "askeleet_B",
+   "osuus": 0.5,
+   "kerros": "kone",
+   "lahde": "projekti.md vaihe 4; cues.json ohjaus (fps 30, 84 kaistaa); tutkimus luku 13",
+   "fi": "Kone mittasi äänen 84 kaistalla, 30 kertaa\nsekunnissa. Muusikko tarkisti korvalla.",
+   "en": "The machine measured sound in 84 bands, 30\ntimes a second. A musician checked by ear."
+  },
+  {
+   "id": "askeleet_B",
+   "a": "askeleet_B",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "lahde": "opas 2:09 (käyttäjä: Tapion jättiläisen askeleita; tulkinta)",
+   "fi": "Kuuntele: matalat soittimet omassa\najassaan. Kuin Tapion askeleet?",
+   "en": "Listen: the low instruments in their own\ntime. Like Tapio's footsteps?"
+  },
+  {
+   "id": "esipuhe",
+   "a": "askeleet_B",
+   "b": "urkupiste_H1_alku",
+   "osuus": 0.3,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 2 (kustantaja muotoili nelisäkeen, Sibelius vastasi proosalla Tapiosta)",
+   "fi": "Partituurin runon muotoili kustantaja.\nSibelius kirjoitti vain proosaa Tapiosta.",
+   "en": "The publisher shaped the score's poem.\nSibelius wrote only prose on Tapio."
+  },
+  {
+   "id": "salmenhaara",
+   "a": "askeleet_B",
+   "b": "urkupiste_H1_alku",
+   "osuus": 0.75,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 4 (Salmenhaara: neljä perusmotiivia, noin 30 johdettua)",
+   "fi": "Salmenhaaran mukaan teos kasvaa neljästä\nperusmotiivista ja noin 30 johdetusta.",
+   "en": "According to Salmenhaara the piece grows\nfrom four basic motifs and about 30 more."
+  },
+  {
+   "id": "nousu_alku",
+   "a": "urkupiste_H1_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "matalat soittimet"
+   ],
+   "lahde": "opas 2:56 (käyttäjän korva 9.11.: nousu alkaa 3:00; matala h pysyy 16 s)",
+   "fi": "Kuuntele: matalat soittimet pitävät h:ta,\nja kaikki muu nousee sen päällä.",
+   "en": "Listen: the low instruments hold a B,\nand everything else climbs above it."
+  },
+  {
+   "id": "nousu_kuva",
+   "a": "nousu_tremolo",
+   "kerros": "tarina",
+   "lahde": "tyyli 7b (nousu: valo kohoaa rungoista latvoihin); kuvakäsikirjoitus maailma 4",
+   "fi": "Katse nousee runkoja pitkin. Valo\nkiipeää latvoihin.",
+   "en": "The gaze rises up the trunks. Light\nclimbs into the treetops."
+  },
+  {
+   "id": "pohja_katoaa",
+   "a": "ylarekisteri_heraa",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "viulut",
+    "huilut",
+    "klarinetit"
+   ],
+   "lahde": "opas 3:23 (partituuri s. 10, C = t. 106: bassot tacet, viulut div., huilut ja klarinetit kuvioivat)",
+   "fi": "Kuuntele: pohja katoaa, viulut vajoavat,\nhuilut ja klarinetit kuvioivat.",
+   "en": "Listen: the bass falls away, violins sink,\nflutes and clarinets weave above."
+  },
+  {
+   "id": "kide",
+   "a": "pohja_katoaa",
+   "b": "puhaltimet_staccato",
+   "osuus": 0.2,
+   "kerros": "tarina",
+   "lahde": "kuvakäsikirjoitus maailmat 4-5 (kamera kiteen sisään); tyyli luku 1 (maailma maailman sisällä)",
+   "fi": "Kiteen sisällä on uusi maailma:\nsama horisontti, vanhan sisällä.",
+   "en": "Inside the crystal is a new world:\nthe same horizon, within the old."
+  },
+  {
+   "id": "staccato",
+   "a": "puhaltimet_staccato",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut",
+    "oboet",
+    "klarinetit"
+   ],
+   "lahde": "opas 3:51 (partituuri s. 11: staccato-kuviot rinnakkain, tersseinä)",
+   "fi": "Kuuntele: huilut, oboet ja klarinetit\nsoittavat lyhyitä ääniä pareittain.",
+   "en": "Listen: flutes, oboes and clarinets play\nshort notes in pairs."
+  },
+  {
+   "id": "haltiat",
+   "a": "e_pitka_ja_kuviot",
+   "kerros": "tarina",
+   "lahde": "tyyli luku 6 ja 7 (huilut = väike); tyyli 4d.24; esipuhe 'haltiat väikkyy'",
+   "fi": "Jokainen lyhyt ääni on pieni valo:\nesipuheen haltiat, jotka väikkyvät.",
+   "en": "Each short note is a small light: the\npreface's sprites, shimmering."
+  },
+  {
+   "id": "pikkolo",
+   "a": "D_pikkolo",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut",
+    "pikkolo"
+   ],
+   "lahde": "opas 4:04 (partituuri s. 11-12: huilu ja pikkolo juoksu); palautelista rivi 138 (yksi puuska)",
+   "fi": "Kuuntele: huilut ja pikkolo juoksevat\nylös. Kuvassa se on yksi tuulenpuuska.",
+   "en": "Listen: flutes and piccolo run upward.\nIn the picture, one gust of wind."
+  },
+  {
+   "id": "kone_paisutus",
+   "a": "askeleet_fis",
+   "kerros": "kone",
+   "lahde": "palautelista rivit 137, 149, 152, 158, 163 (paisutukset eivät näkyneet, mitattiin kaistoittain)",
+   "fi": "Paisutukset < > eivät aluksi näkyneet.\nKone mittasi ne: nyt ne ovat tuulta.",
+   "en": "At first the swells < > were invisible.\nThe machine measured them: now, wind."
+  },
+  {
+   "id": "alaotsikko",
+   "a": "e_pitka_ja_kuviot",
+   "b": "nopea_liike_1_alku",
+   "osuus": 0.55,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 2 (alaotsikko Damroschin, Sibelius hyväksyi)",
+   "fi": "Alaotsikon ehdotti Damrosch: metsän jumala\nja hänen nymfinsä. Sibelius hyväksyi.",
+   "en": "Damrosch proposed the subtitle: the forest\ngod and his nymphs. Sibelius agreed."
+  },
+  {
+   "id": "grazioso",
+   "a": "nopea_liike_1_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut",
+    "oboet",
+    "englannintorvi"
+   ],
+   "lahde": "opas 4:40 (partituuri s. 15-17: grazioso, huilut, oboet, englannintorvi)",
+   "fi": "Kuuntele: huilut, oboet ja englannintorvi\ntanssivat sirosti (grazioso).",
+   "en": "Listen: flutes, oboes and cor anglais\ndance gracefully (grazioso)."
+  },
+  {
+   "id": "jalas",
+   "a": "nopea_liike_1_alku",
+   "b": "nopea_liike_1_loppu",
+   "osuus": 0.3,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 2 (Sibelius vävylleen Jalakselle: puupuhallinjaksossa metsänpeikot ja -eläimet ilmestyvät)",
+   "fi": "Sibelius vävylleen: puupuhallinjaksossa\nmetsänpeikot ja -eläimet ilmestyvät.",
+   "en": "Sibelius told his son-in-law: in the wind\npassage, forest trolls and animals appear."
+  },
+  {
+   "id": "jannitesoinnut",
+   "a": "jannitesoinnut",
+   "kerros": "tarina",
+   "lahde": "opas 5:10 (h-dis-a, jännitteinen sointu; 'metsä pidättää hengitystä' on ohjaajan tulkinta)",
+   "fi": "Pitkä H, sen päällä jännitteinen sointu.\nKuin metsä pidättäisi hengitystä.",
+   "en": "A long B, and above it a tense chord.\nAs if the forest held its breath."
+  },
+  {
+   "id": "hayes",
+   "a": "jannitesoinnut",
+   "b": "pohja_vaihtuu_D",
+   "osuus": 0.65,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 1 (Hayes: teos ei koskaan poistu h-mollistaan)",
+   "fi": "Hayes: teos ei koskaan poistu h-mollista.",
+   "en": "Hayes: the work never leaves B minor."
+  },
+  {
+   "id": "jaa",
+   "a": "pohja_vaihtuu_D",
+   "kerros": "tarina",
+   "lahde": "opas 5:36 (paisutus fortissimoon, katkeaa); kuvakäsikirjoitus maailma 6 (musta talvijää)",
+   "fi": "Ääni paisuu fortissimoon ja katkeaa\nkuin veitsellä. Sitten aukeaa musta jää.",
+   "en": "The sound swells to fortissimo and snaps\nlike a knife. Then black ice opens."
+  },
+  {
+   "id": "peikot_G",
+   "a": "peikot_G_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "viulut",
+    "alttoviulut",
+    "sellot"
+   ],
+   "lahde": "opas 5:48 (partituuri s. 19-23: coll' punto, quasi saltato); käyttäjä 10.11.",
+   "fi": "Kuuntele: viulut, alttoviulut ja sellot\nhyppivät kärjellä ryhmästä toiseen.",
+   "en": "Listen: violins, violas and cellos hop at\nthe bow tip from group to group."
+  },
+  {
+   "id": "nymfit_jaa",
+   "a": "peikot_G_alku",
+   "b": "peikot_G_loppu",
+   "osuus": 0.15,
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.24 (nymfit ovat valon pilkahduksia); kuvakäsikirjoitus maailma 6",
+   "fi": "Jäällä jokainen hyppy on valo, joka\npomppaa jään yli kuin heitetty kivi.",
+   "en": "On the ice each hop is a light skipping\nacross it like a thrown stone."
+  },
+  {
+   "id": "gis_palaa",
+   "a": "gis_palaa",
+   "kerros": "tarina",
+   "lahde": "opas 6:06 (alun gis1 palaa hiljaa; 'muisto alusta' on ohjaajan tulkinta)",
+   "fi": "Alun gis palaa hetkeksi: muisto siitä,\nmistä kaikki alkoi.",
+   "en": "The opening G sharp returns briefly: a\nmemory of where it all began."
+  },
+  {
+   "id": "kovempaa",
+   "a": "peikot_G_loppu",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "opas 6:30 (partituuri s. 24: kaikki jouset mf, saltato); käyttäjä 10.11.",
+   "fi": "Kuuntele: äkkiä kaikki jouset yhdessä,\npaljon kovempaa. Valot kulkevat joukkona.",
+   "en": "Listen: suddenly all the strings together,\nmuch louder. The lights move as a crowd."
+  },
+  {
+   "id": "kone_hyppy",
+   "a": "peikot_G_loppu",
+   "b": "H_puhaltimet",
+   "osuus": 0.6,
+   "kerros": "kone",
+   "lahde": "palautelista rivi 27 ja opas 6:30 (käyttäjä: kuvassa ei tapahdu mitään; kone oli mitannut hypyn)",
+   "fi": "Kone mittasi hypyn, kuva ei vastannut.\nMuusikko huomasi: nyt se näkyy.",
+   "en": "The machine measured the jump; the image\ndid not answer. The musician noticed."
+  },
+  {
+   "id": "ratsastus",
+   "a": "I_ratsastus",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "viulut",
+    "patarummut"
+   ],
+   "lahde": "opas 6:49 (partituuri s. 25: kirjain I, 12/8, viulut segue, patarummut marcato)",
+   "fi": "Kuuntele: viulut ratsastavat eteenpäin,\npatarummut lyövät tasaista sykettä.",
+   "en": "Listen: violins ride onward, timpani\nbeat a steady pulse."
+  },
+  {
+   "id": "taite",
+   "a": "I_ratsastus",
+   "b": "h_urkupiste_vyory",
+   "osuus": 0.4,
+   "kerros": "tarina",
+   "lahde": "opas 6:49 (taite); tyyli 4d.27 (taite näkyy); kuvakäsikirjoitus maailma 6 (kamera kiihtyy, ajolumi)",
+   "fi": "Taite: leikki loppuu ja kamera kiihtyy.\nLumi virtaa jään yli, valot kiitävät.",
+   "en": "The turning point: play ends, the camera\nspeeds up. Snow streams, lights race by."
+  },
+  {
+   "id": "tapio",
+   "a": "h_urkupiste_vyory",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "sellot",
+    "kontrabassot"
+   ],
+   "lahde": "opas 7:01 (partituuri s. 26-28); käyttäjä 10.11.: bassot jyrisevät Tapiota",
+   "fi": "Kuuntele: nopean kuvion alla sellot ja\nkontrabassot kulkevat raskaina: Tapio.",
+   "en": "Listen: beneath the fast figure, cellos\nand double basses tread heavily: Tapio."
+  },
+  {
+   "id": "englannintorvi",
+   "a": "vaskipulssit",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "englannintorvi",
+    "huilu"
+   ],
+   "lahde": "opas 7:15 (partituuri s. 29-30: englannintorvi soolo, huilu trillit)",
+   "fi": "Kuuntele: englannintorvi laulaa yksin,\nhuilu vastaa pitkillä trilleillä.",
+   "en": "Listen: the cor anglais sings alone,\nthe flute answers with long trills."
+  },
+  {
+   "id": "kone_sata",
+   "a": "vaskipulssit",
+   "b": "hajoaa_hiljaisuuteen",
+   "osuus": 0.5,
+   "kerros": "kone",
+   "lahde": "palautelista (165 riviä, rivit 1-165)",
+   "fi": "Muusikko on antanut yli sata palautetta.\nKone mittaa, ihminen kuulee.",
+   "en": "The musician has given over a hundred\ncomments. Machines measure, humans hear."
+  },
+  {
+   "id": "huilupari",
+   "a": "J_huilut",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut"
+   ],
+   "lahde": "opas 7:51 (partituuri s. 31); palautelista rivit 123, 150 (kaksi valoa lähestyy)",
+   "fi": "Kuuntele: kaksi huilua rinnakkain, pohja\nhäipyy. Kaksi valoa lähestyy toisiaan.",
+   "en": "Listen: two flutes side by side, the bass\nfades. Two lights draw nearer each other."
+  },
+  {
+   "id": "kone_fagotti",
+   "a": "J_huilut",
+   "b": "jousijakso_urkupiste_E_alku",
+   "osuus": 0.35,
+   "kerros": "kone",
+   "lahde": "palautelista rivit 140, 150 (fagotin kolmas valo syttyi väärään paikkaan)",
+   "fi": "Fagotin kolmas valo syttyi väärin.\nMuusikko: valojen pitää lähestyä toisiaan.",
+   "en": "The bassoon's third light lit in the wrong\nplace. The lights must draw closer."
+  },
+  {
+   "id": "sellot_K",
+   "a": "jousijakso_urkupiste_E_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "sellot"
+   ],
+   "lahde": "opas 8:16 (partituuri s. 32: sellot div. a 4, con sord., mezza; käyttäjä: kaunis)",
+   "fi": "Kuuntele: sellot laulavat sordiinolla,\npuoliäänellä. Muu orkesteri vaikenee.",
+   "en": "Listen: the cellos sing muted, mezza voce.\nThe rest of the orchestra falls silent."
+  },
+  {
+   "id": "sali",
+   "a": "K_viulut",
+   "kerros": "tarina",
+   "lahde": "kuvakäsikirjoitus maailma 7 (Tapion talo sisältä, pylväät, naava); tutkimus luku 8 (halliparta, naavaturkki)",
+   "fi": "Salin pylväät ovat valtavia runkoja,\nja niiden välissä väikkyy usva.",
+   "en": "The hall's pillars are vast trunks,\nwith mist drifting between them."
+  },
+  {
+   "id": "maa_varisee",
+   "a": "patarumpu_ppp",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "patarummut"
+   ],
+   "lahde": "opas 8:38 (partituuri s. 32: patarummut ppp tremolo)",
+   "fi": "Kuuntele: alla patarumpujen tuskin\nkuuluva tremolo. Maa värisee.",
+   "en": "Listen: beneath, the faintest timpani\ntremolo. The ground trembles."
+  },
+  {
+   "id": "lumisade",
+   "a": "hitaat_soinnut",
+   "kerros": "tarina",
+   "lahde": "palautelista rivi 136 (käyttäjä: lumisade alkaa Tapion salissa alttoviulujen soidessa); tyyli 4d.42",
+   "fi": "Alttoviulut soivat, ja salissa alkaa\nlumisade: alttoviulu on kuvan tuuli.",
+   "en": "The violas play and snow begins to fall\nin the hall: the viola is the wind."
+  },
+  {
+   "id": "poyta",
+   "a": "h_palaa_ennen_hiljaisuutta",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 8 (Tapion pöytä: kolme runkoa pystyyn, vaakalauta; SKVR IX3 982)",
+   "fi": "Tapion pöytä, kuten kansanrunoissa:\nkolme runkoa, päällä vaakalauta.",
+   "en": "Tapio's table, as in the folk poems:\nthree trunks, a plank laid across."
+  },
+  {
+   "id": "nousu_vasket",
+   "a": "hiljainen_jakso_loppu",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "vaskipuhaltimet",
+    "patarummut"
+   ],
+   "lahde": "opas 10:13 (partituuri s. 34: L, vasket ja patarummut fp cresc.)",
+   "fi": "Kuuntele: vaskit ja patarummut nousevat\nkaukaa hiljaisuuden jälkeen.",
+   "en": "Listen: brass and timpani rise from afar\nafter the stillness."
+  },
+  {
+   "id": "tutti",
+   "a": "vaski_tutti_620",
+   "kerros": "tarina",
+   "lahde": "kuvakäsikirjoitus maailma 8 (tutti-isku repäisee valon pylväiden läpi)",
+   "fi": "Tutti-isku repäisee valon pylväiden läpi.",
+   "en": "The tutti blow tears light\nthrough the pillars."
+  },
+  {
+   "id": "viisi_iskua",
+   "a": "trumpetit_patarummut_356",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "trumpetit",
+    "patarummut"
+   ],
+   "lahde": "opas 10:26 (partituuri s. 35); palautelista rivi 87 (viisi iskua, viides painotettu)",
+   "fi": "Kuuntele: trumpetit ja patarummut takovat\nviisi iskua, viides painotetuin.",
+   "en": "Listen: trumpets and timpani hammer five\nblows, the fifth the heaviest."
+  },
+  {
+   "id": "grimley2",
+   "a": "allegro_359",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 3 (Grimley: myrsky on vaskimotiivin yhteenvetopaluu)",
+   "fi": "Tämä isku palaa myrskyssä. Grimley:\nmyrsky kokoaa vaskimotiivin.",
+   "en": "This blow returns in the storm. Grimley:\nthe storm gathers the brass motif."
+  },
+  {
+   "id": "valahdykset",
+   "a": "c_duuri_valahdykset",
+   "kerros": "tarina",
+   "lahde": "opas 10:41 (C-duuri välähtää kolmesti); tyyli 4d.28 (välähdykset runkojen raoissa)",
+   "fi": "Väärä valo käy kolmesti runkojen raossa,\nennen kuin se jää.",
+   "en": "The false light visits three times through\ngaps in the trunks, then stays."
+  },
+  {
+   "id": "c_vieras",
+   "a": "c_duuri_valahdykset",
+   "b": "auringonsade",
+   "osuus": 0.4,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 3 (C-duuri tonaalisesti vieras, ei h-mollin rinnakkaisduuri; Kallio, Taylor)",
+   "fi": "C-duuri on h-mollille vieras sointu.\nRinnakkaisduuri olisi D.",
+   "en": "C major is foreign to B minor.\nThe relative major would be D."
+  },
+  {
+   "id": "aurinko",
+   "a": "auringonsade",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 8 (Kalevala 49: taottu aurinko); tyyli luku 3",
+   "fi": "Taottu aurinko näyttää kullalta,\nmutta ei lämmitä (Kalevala).",
+   "en": "The forged sun of the Kalevala looks like\ngold but gives no warmth."
+  },
+  {
+   "id": "M",
+   "a": "M_ennakko",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "vaskipuhaltimet"
+   ],
+   "lahde": "opas 11:25 (partituuri s. 39: kirjain M); käyttäjä: M ei ole vielä talvimyrsky",
+   "fi": "Kuuntele: vaskien jyrinä. Salama ilman\nsadetta: myrsky ei ole vielä tässä.",
+   "en": "Listen: the brass thunders. Lightning with\nno rain: the storm is not here yet."
+  },
+  {
+   "id": "askeleet_M",
+   "a": "M_raskaat_askeleet",
+   "kerros": "tarina",
+   "lahde": "opas 11:31 (matala ais sykkii 18 kertaa; ohjaajan tulkinta: askeleet nyt kovat ja lähellä)",
+   "fi": "Valo sammui. Pimeä metsä sulkeutuu,\nja askeleet palaavat kovina.",
+   "en": "The light is gone. The forest closes in\nand the footsteps return, loud."
+  },
+  {
+   "id": "N_takominen",
+   "a": "N_vasket_takovat",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "trumpetit",
+    "pasuunat",
+    "patarummut"
+   ],
+   "lahde": "opas 11:46 (partituuri s. 41: t. 413-416); käyttäjä 10.11.",
+   "fi": "Kuuntele: sama takova rytmi palaa:\ntrumpetit, pasuunat, patarummut.",
+   "en": "Listen: the hammered rhythm returns:\ntrumpets, trombones, timpani."
+  },
+  {
+   "id": "hermo",
+   "a": "jannitejakso_alku",
+   "kerros": "tarina",
+   "lahde": "opas 11:51 (nopea, dissonoiva kuviointi; ohjaaja: ei myrsky, vaan hermo)",
+   "fi": "Jouset hermostuvat, usva liikkuu.\nEi vielä myrsky, vaan hermo.",
+   "en": "The strings grow nervous, mist stirs.\nNot yet a storm: nerves."
+  },
+  {
+   "id": "syyskuu",
+   "a": "jannitejakso_alku",
+   "b": "O_kirjain",
+   "osuus": 0.45,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 6 (Sibelius pyysi partituurin takaisin korjattavaksi syyskuussa 1926)",
+   "fi": "Syyskuussa 1926 Sibelius pyysi partituurin\ntakaisin korjattavaksi.",
+   "en": "In September 1926 Sibelius asked for the\nscore back to revise it."
+  },
+  {
+   "id": "kantaesitys",
+   "a": "O_kirjain",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 1 (kantaesitys New York 26.12.1926, vastaanotto laimea; Suomen ensiesitys 25.4.1927 Kajanus)",
+   "fi": "New Yorkin kantaesitys 1926 oli laimea.\nSuomessa Kajanus johti sen 1927.",
+   "en": "The 1926 New York premiere was lukewarm.\nKajanus conducted it in Finland in 1927."
+  },
+  {
+   "id": "vuorottelu_vasket",
+   "a": "allegro_moderato_O_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "käyrätorvet",
+    "trumpetit"
+   ],
+   "lahde": "opas 12:36 (partituuri s. 46); käyttäjä: hitaat vuorottelut kornojen ja trumpettien välillä",
+   "fi": "Kuuntele: käyrätorvet ja trumpetit\nhengittävät vuorotellen, hitaasti.",
+   "en": "Listen: horns and trumpets breathe\nin turn, slowly."
+  },
+  {
+   "id": "kahdeksas",
+   "a": "allegro_moderato_O_loppu",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 6 (hän siirtyi Tapiolasta kahdeksanteen sinfoniaan; 8. sinfonia tuhottiin)",
+   "fi": "Sibelius siirtyi Tapiolasta 8. sinfoniaan.\nSe tuhottiin.",
+   "en": "After Tapiola Sibelius turned to the\nEighth Symphony. It was destroyed."
+  },
+  {
+   "id": "tovey",
+   "a": "harva_kuviointi",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 3 (Tovey: koko teos on yksi hidas crescendo huippuun ja lyhyt juhlallinen lasku)",
+   "fi": "Tovey: koko teos on yksi hidas crescendo\nhuippuun ja lyhyt lasku hiljaisuuteen.",
+   "en": "Tovey: the work is one long, slow\ncrescendo, then a short fall to silence."
+  },
+  {
+   "id": "nousu_473",
+   "a": "jousten_nousu_473",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "kontrabassot",
+    "viulut"
+   ],
+   "lahde": "opas 13:03 (partituuri s. 47); käyttäjä 10.11. yöllä: hitaasti nouseva tuulenpuuska",
+   "fi": "Kuuntele: nousu kontrabasseista viuluihin\nusean oktaavin yli. Kuin tuulenpuuska.",
+   "en": "Listen: a rise from basses to violins,\nseveral octaves, like a gust of wind."
+  },
+  {
+   "id": "kone_kumi",
+   "a": "harva_kuviointi",
+   "b": "P_vaskipaisunta",
+   "osuus": 0.4,
+   "kerros": "kone",
+   "lahde": "tyyli 4d.31; palautelista (kumipuut): ohjaaja kirjoitti 'ei taivu lainkaan', muusikko: pitää elää hillitysti",
+   "fi": "Kone teki puut ensin kumisiksi, sitten\njäykiksi. Muusikko: aavistuksen vain.",
+   "en": "The machine made the trees rubbery, then\nstiff. The musician: only a hint."
+  },
+  {
+   "id": "P",
+   "a": "P_vaskipaisunta",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "käyrätorvet",
+    "trumpetit",
+    "pasuunat"
+   ],
+   "lahde": "opas 13:26 (partituuri s. 48: kirjain P, fp cresc. molto > ff)",
+   "fi": "Kuuntele: käyrätorvet, trumpetit, pasuunat\nkasvavat hiljaisesta täyteen voimaan.",
+   "en": "Listen: horns, trumpets, trombones swell\nfrom soft to full force."
+  },
+  {
+   "id": "taite_494",
+   "a": "P_taite_494",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "huilut",
+    "oboet",
+    "jouset"
+   ],
+   "lahde": "opas 13:33 (partituuri s. 48, t. 494); mitattu: taso putoaa 20 dB",
+   "fi": "Kuuntele: taso putoaa. Huilut, oboet ja\njouset laulavat yhdessä, lempeästi.",
+   "en": "Listen: the level drops. Flutes, oboes and\nstrings sing together, gently."
+  },
+  {
+   "id": "taite_kuva",
+   "a": "P_taite_494",
+   "b": "puuska_499",
+   "osuus": 0.6,
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.35 (taite on tunnelman vaihdos: valon väri, suunta ja tila)",
+   "fi": "Kuva vaihtuu toiseksi paikaksi samassa\nmetsässä: valo, väri ja tila muuttuvat.",
+   "en": "The picture turns into another place in\nthe same forest: light, colour, space."
+  },
+  {
+   "id": "paisutus_tuuli",
+   "a": "dim_possibile",
+   "b": "hiljaisuus_2_alku",
+   "osuus": 0.3,
+   "kerros": "tarina",
+   "lahde": "tyyli 4d.38 (paisutus on tuulenvire: lumi kiihtyy ja kevenee); palautelista rivi 130",
+   "fi": "Jousten paisutukset < > näkyvät tuulena:\nlumi kiihtyy ja kevenee.",
+   "en": "The string swells < > show as wind: the\nsnow speeds up, then eases."
+  },
+  {
+   "id": "kone_tauko",
+   "a": "hiljaisuus_2_loppu",
+   "kerros": "kone",
+   "lahde": "opas 14:05 (korjaus 9.11.2026 partituurista: ei yleistauko vaan pp)",
+   "fi": "Kone kuuli tauon. Partituuri: ei tauko,\njouset soivat pianissimo.",
+   "en": "The machine heard a pause. The score: no,\nthe strings play pianissimo."
+  },
+  {
+   "id": "ei_myrskya",
+   "a": "myrsky_kasvu",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 2 (myrskyä ei ole esipuheessa eikä alaotsikossa, se on kuulijoiden tulkinta)",
+   "fi": "Esipuheessa ei ole myrskyä:\nse on kuulijoiden tulkinta.",
+   "en": "The preface mentions no storm:\nthat is the listeners' reading."
+  },
+  {
+   "id": "myrsky",
+   "a": "myrsky_iskee",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "opas 14:33 (partituuri s. 52: t. 540 jouset fff, vain jouset)",
+   "fi": "Kuuntele: talvimyrsky iskee, vain jouset,\nfortissimo. Kerrokset romahtavat yhdeksi.",
+   "en": "Listen: the winter storm strikes, strings\nalone, fortissimo. All layers collapse."
+  },
+  {
+   "id": "Q",
+   "a": "Q_koko_metsa",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "trumpetit",
+    "pasuunat",
+    "patarummut"
+   ],
+   "lahde": "opas 14:50 (partituuri s. 53: Q = t. 550)",
+   "fi": "Kuuntele: trumpetit, pasuunat, patarummut\nliittyvät myrskyyn. Maa ja taivas mukaan.",
+   "en": "Listen: trumpets, trombones, timpani join\nthe storm. Earth and sky are in."
+  },
+  {
+   "id": "huuto_valo",
+   "a": "vasket_myrsky_2",
+   "kerros": "tarina",
+   "lahde": "tyyli luku 7 (trumpetit, pasuunat = läpi tuleva valo); palautelista rivi 69",
+   "fi": "Jokainen trumpettien ja pasuunoiden huuto\non valon leikkaus myrskyn läpi.",
+   "en": "Each cry of trumpets and trombones is a\ncut of light through the storm."
+  },
+  {
+   "id": "viimeinen_takominen",
+   "a": "vasket_takovat_viimeinen",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "koko orkesteri"
+   ],
+   "lahde": "opas 15:10 (partituuri s. 55: t. 569); käyttäjä: viides aksentoitu",
+   "fi": "Kuuntele: viiden iskun rytmi vielä kerran,\nnyt koko orkesterilla.",
+   "en": "Listen: the five-blow rhythm once more,\nnow with the whole orchestra."
+  },
+  {
+   "id": "gray",
+   "a": "R_vasket",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 6 (Gray 1931: teos yksin riittäisi paikkaan suurimpien joukossa)",
+   "fi": "Gray 1931: Tapiola yksin riittäisi\npaikaksi suurimpien joukossa.",
+   "en": "Gray, 1931: Tapiola alone would earn him\na place among the greatest."
+  },
+  {
+   "id": "huuto_kamera",
+   "a": "toinen_paisunta",
+   "kerros": "tarina",
+   "lahde": "kuvakäsikirjoitus maailma 11 (kamera nousee latvojen yläpuolelle); tyyli luku 5",
+   "fi": "Huuto: kamera nousee myrskyn läpi\nlatvojen yläpuolelle.",
+   "en": "The cry: the camera climbs out of the\nstorm, above the treetops."
+  },
+  {
+   "id": "huuto",
+   "a": "huuto",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "opas 15:45 (partituuri s. 57); Grimley, Europadisc",
+   "fi": "Kuuntele: korkeat jouset yksin, täydellä\nvoimalla. Huuto.",
+   "en": "Listen: high strings alone, at full force.\nThe cry."
+  },
+  {
+   "id": "madetoja",
+   "a": "huuto",
+   "b": "yksinaiset_aanet",
+   "osuus": 0.35,
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 5 (Madetoja 1927: yksinäinen vaeltaja); opas 15:45 (ohjaajan tulkinta)",
+   "fi": "Madetoja kuuli teoksessa yksinäisen\nvaeltajan. Ehkä hän on tässä, hetken.",
+   "en": "Madetoja heard a lone wanderer in the\nwork. Perhaps he is here, briefly."
+  },
+  {
+   "id": "revontulet",
+   "a": "huuto.loppu",
+   "kerros": "tarina",
+   "lahde": "tutkimus luku 8 (SKVR XII2 7950: revontulet tulevat alas lumelle); tyyli 4d.12 (vain yhdessä kohdassa)",
+   "fi": "Taivas aukeaa: revontulet, kylmä vihertävä\nkaari. Niitä ei ole muualla.",
+   "en": "The sky opens: auroras, a cold green arc,\nseen nowhere else in the film."
+  },
+  {
+   "id": "yksinaiset",
+   "a": "yksinaiset_aanet",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "klarinetti",
+    "pikkolo",
+    "bassoklarinetti"
+   ],
+   "lahde": "opas 16:00 (partituuri s. 58: pikkolo, klarinetti 1. solo, bassoklarinetti < >)",
+   "fi": "Kuuntele: yksin klarinetti, pikkolo,\nbassoklarinetti, yksi kerrallaan.",
+   "en": "Listen: clarinet, piccolo, bass clarinet,\none at a time."
+  },
+  {
+   "id": "kone_aalto",
+   "a": "S_sempre_mf",
+   "b": "S_puhaltimien_kaari",
+   "osuus": 0.3,
+   "kerros": "kone",
+   "lahde": "palautelista rivi 164; opas 16:34 (käyttäjä korjasi alun mittauskuvasta; linja c-d-e-fis)",
+   "fi": "Revontulen aalto seuraa puhaltimien\nlinjaa. Muusikko löysi sen mittauskuvasta.",
+   "en": "The aurora's wave follows the winds' line.\nA musician found it in the measurements."
+  },
+  {
+   "id": "kaari",
+   "a": "S_puhaltimien_kaari",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "lahde": "opas 16:34; palautelista rivi 164 (käyttäjä: kuin kirsikka kakun päällä)",
+   "fi": "Kuuntele: puupuhaltimien hidas kaari.\nRevontuli aaltoilee sen mukana.",
+   "en": "Listen: the slow arc of the woodwinds.\nThe aurora ripples with it."
+  },
+  {
+   "id": "loppuhuipennus",
+   "a": "loppuhuipennus",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "koko orkesteri"
+   ],
+   "lahde": "opas 16:52 (partituuri s. 60: t. 618 kaikki ff dim. pp)",
+   "fi": "Kuuntele: koko orkesteri, viimeinen aalto.\nSitten tulee H-duuri.",
+   "en": "Listen: full orchestra, one last wave.\nThen comes B major."
+  },
+  {
+   "id": "H_duuri",
+   "a": "loppu_Hduuri_alku",
+   "kerros": "kuuntele",
+   "soittimet": [
+    "jouset"
+   ],
+   "lahde": "tutkimus luku 3 (Kallio: kooda on teoksen ainoa siirtymä mollista duuriin); opas 17:04",
+   "fi": "Kuuntele: jouset yksin, H-duuri. Ainoa\nsiirtymä mollista duuriin koko teoksessa.",
+   "en": "Listen: strings alone, B major. The only\nmove from minor to major in the work."
+  },
+  {
+   "id": "ainola",
+   "a": "musiikki_loppuu",
+   "kerros": "tausta",
+   "lahde": "tutkimus luku 1 (viimeinen suuri orkesteriteos) ja luku 4 (Sibelius 1948); yhteys Tapiolan hiljaisuuteen on tulkinta",
+   "fi": "Viimeinen suuri teos. Sibelius 1948:\n'Täällä Ainolassa hiljaisuus puhuu.'",
+   "en": "His last great work. Sibelius, 1948:\n'Here at Ainola, silence speaks.'"
+  },
+  {
+   "id": "metsa_jatkuu",
+   "a": "musiikki_loppuu.loppu",
+   "kerros": "tarina",
+   "lahde": "tyyli luku 1 ja kuvakäsikirjoitus 'Loppu' (metsä on ollut ennen katsojaa ja on hänen jälkeensä); tulkinta",
+   "fi": "Metsä jatkuu.",
+   "en": "The forest goes on."
+  },
+  {
+   "id": "altot_tuuli",
+   "a": "fis_hengittaa",
+   "b": "askeleet_alkavat",
+   "osuus": 0.35,
+   "kerros": "tarina",
+   "lahde": "käyttäjä 13.11.2026 (palautelista rivit 148, 153; tyyliohje 4d.42): alttoviulu on tuuli, joka tiputtaa lumen",
+   "fi": "Lunta tippuu oksilta vain silloin,\nkun alttoviulut kommentoivat.",
+   "en": "Snow falls from the branches only\nwhen the violas comment."
+  }
+ ]
+}

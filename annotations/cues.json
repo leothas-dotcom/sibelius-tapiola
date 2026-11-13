@@ -840,7 +840,9 @@
    "tahti_loppu": null,
    "tahti_suhde": "kirjaimen B ympärillä",
    "soi": "sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein",
-   "soittimet": [],
+   "soittimet": [
+    "alttoviulut"
+   ],
    "tarina": "Käyttäjä: \"Sellot tekevät sointumattoa (metsä)\"; \"Altot vuorottelevat puhaltimien kanssa\". Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua. Ohjaaja: metsä hengittää: kaksi sointua, sisään ja ulos.",
    "lahde": "analyysi: tarkka.py",
    "varmuus": "analyysi",

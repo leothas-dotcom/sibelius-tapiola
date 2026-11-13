@@ -1220,3 +1220,11 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > ehkä aavistuksen hienovaraisempi muutos tuohon revontuliin. Ihan vähän tyylikkäämpi
 
 > AH. Tuo revontuli on kuin kirsikka kakun päällä. Ai että. Kaunista. Nyt on hyvä :)
+
+> Upeaa. Tehdään vielä tekstitykset tähän, samaan tyyliin kuin heldenlebenissä: Kuunteluoppaan mukaan, tarinaa mukaan taustalta,
+> taustatutkimuksesta mielenkiintosia juttuja, mitä kuvassa näkyy, mikä soi.
+>
+> Sitten mietitään youtube-julkaisua: miten tämän markkinoisi niin että ihmiset jaksaa katsoa? Tehdään shorts-videoita ainakin kuusi kappaletta,
+> katso tuota mun haastattelua vaikka - sieltä saisi varmaan kaivettua hyvää materiaa siihen.
+>
+> Ja taustatutkimusta, miten kone oppi tulkitsemaan Sibeliusta? Näitä myös tekstityksiin.
