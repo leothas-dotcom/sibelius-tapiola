@@ -488,6 +488,9 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Partituurissa:* S = t. 605: viulut I ja II mf, sempre mf; bassot p < > mf; patarummut p trilli; S:n jälkeen koko orkesteri pp cresc. (s. 59).
   - Ohjaaja: koodan mezzoforte alkaa jo tässä, kolmetoista tahtia ennen viimeistä huipennusta. Lopun ääni on läsnä ennen loppua.
 - 16:30 Liike hidastuu: ääniä tulee harvakseltaan.
+- **16:34 Puhaltimien linja nousee ja laskee.** Viulujen pitkän äänen yllä puhaltimien linja nousee hitaasti ylös ja laskee takaisin, kokosävelaskelin.
+  - *Edessä ja takana:* puhaltimien nouseva ja laskeva linja. *Tunnelma:* hidas, kaunis, aaltoileva.
+  - Käyttäjä 13.11.2026: linja heiluttaa revontulta, vain tässä kohdassa.
 - 16:39 Matalat soittimet palaavat: ääni saa pohjan.
 - 16:40 Liike tasaantuu.
 - 16:44 Musiikki nousee: basso ja yläkerros kohoaa ylöspäin noin 7 sekunnin ajan.

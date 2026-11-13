@@ -17,6 +17,7 @@ const FS = FS_ALKU + `
 uniform float uTime, uCamX, uCamZ, uCamH, uHor, uWallK, uGlow, uGlowH, uLint, uLow, uKajoK, uKajoF, uWaveS, uWaveZ;
 uniform float uSway, uAur, uAurLow, uTrem, uCloud, uStarK, uWindow, uPen, uDrift, uFogL, uElev, uSv;
 uniform vec4 uSnow;        // tiheys, sivutuulen matka, putoamisen matka, lähestymisen matka
+uniform vec2 uAurW;        // vedos 8 (rivi 164): revontulen läpi kulkeva aalto: paikka (-1..1 kuvan leveydellä), korkeus (kuvan korkeuksina)
 uniform float uHill[32];   // horisontin kummut: melodian kaari, piirtyy vasemmalta oikealle
 uniform vec4 uPulse[6];    // matalan kaistan paino: ikä, voima, -, -
 const float F = 1.07;
@@ -138,7 +139,8 @@ vec3 world(vec2 p, float asp, float dx, float dy) {
     // revontulet: vain tässä maailmassa; kaari tumman metsän ja vaaran yllä, verho riippuu alas ja laskeutuu kohti lunta
     if (uAur > 0.001) {
       float xn = p.x / asp * 2.0 - 1.0;
-      float arcY = 0.12 + 0.12 * (1.0 - uAurLow) + 0.13 * (1.0 - xn * xn) * (1.0 - 0.35 * uAurLow) + 0.018 * sin(xn * 3.1 + uDrift * 0.012) + 0.012 * sin(xn * 7.3 + 1.0);
+      float arcY = 0.12 + 0.12 * (1.0 - uAurLow) + 0.13 * (1.0 - xn * xn) * (1.0 - 0.35 * uAurLow) + 0.018 * sin(xn * 3.1 + uDrift * 0.012) + 0.012 * sin(xn * 7.3 + 1.0)
+                 + uAurW.y * exp(-(xn - uAurW.x) * (xn - uAurW.x) / 0.32);   // puhaltimien linjan aalto kulkee kaaren läpi
       float dd = dy - arcY;
       float ext = 0.010 + 0.22 * uAurLow;                                  // verho ulottuu alemmas laskeutuessaan
       float ray = pow(vnoise(vec2(p.x * 38.0 + 0.6 * sin(uDrift * 0.006), 3.0)) * 0.6 + vnoise(vec2(p.x * 95.0, 9.0 + uDrift * 0.002)) * 0.4, 1.4);
@@ -149,7 +151,7 @@ vec3 world(vec2 p, float asp, float dx, float dy) {
       col += AURC * amp * vern * fade * (1.0 - 0.7 * cl);
     }
     // ----- vaara: sileä, jääkauden muokkaama; laella Tapion talo, havuhattu -----
-    float hat = (0.010 + 0.012 * smoothstep(0.02, 0.12, house)) * uSv * tips(p.x * 60.0, 9.0, 1.3);
+    float hat = (0.010 + 0.012 * smoothstep(0.02, 0.12, house)) * uSv * 0.45;   // vedos 8 (rivi 165): laki sileä, ei latvojen kärkiä ("Noita piikikkäitä mäkiä ei suomessa ole")
     float edge = above - hat;
     if (edge < 0.0) {
       vec3 body = mix(fogBase * 0.62, fogBase * 1.05 + glowc * G * 0.02, smoothstep(-0.10 * uSv, 0.0, edge));
@@ -268,6 +270,23 @@ async function alusta() {
   const T0 = A.huuto, T1 = A.yksinaiset_aanet, T2 = A.S_sempre_mf, T3 = A.loppuhuipennus, T4 = A.loppu_Hduuri_alku;
   const T5 = A.viimeiset_askeleet, T6 = A.loppu_Hduuri_loppu, T7 = A.musiikki_loppuu, TE = A.tiedoston_loppu;
   const ka = (s, t, w) => d.ka(s, t * FPS, w * FPS);
+  // vedos 8 (rivi 164): puhaltimien linja nousee ja laskee (ankkuri S_puhaltimien_kaari, 16:32,5-16:39,8) ja heiluttaa revontulta, vain tässä kohdassa.
+  // Linja (käyttäjä: "tuo c - d - e - fis linja", kokosävelaskelin ylös ja takaisin) mitataan spektristä: kaistat midi 84-92 (mittauksessa askeleet
+  // osuvat kaistoille 85, 87, 89, 91), joista 8 s:n mediaani (pitkät äänet) on vähennetty; liikkuvan äänen painopiste ruuduittain,
+  // aukot täytetty, 0,5 s:n liukuva keskiarvo kahdesti; 0 = linjan alin, 1 = ylin. Reunoilla 0,8 s:n pehmeä alku ja loppu.
+  const KAARI = (() => { const o = new Float32Array(d.NF), cK = d.cues.cues.find((c) => c.id === 'S_puhaltimien_kaari'); if (!cK || cK.t_end == null) return o;
+    const fa = Math.round(cK.t * FPS), fb = Math.round(cK.t_end * FPS), n = fb - fa + 1, cen = new Float32Array(n).fill(NaN);
+    const res = []; for (let m = 84; m <= 92; m++) { const r = new Float32Array(n); for (let i = 0; i < n; i++) { const f = fa + i; let s5 = 0; for (let j = -2; j <= 2; j++) s5 += d.db(m, f + j);
+        const w = []; for (let j = -120; j <= 120; j += 4) w.push(d.db(m, f + j)); w.sort((p, q) => p - q); r[i] = s5 / 5 - w[w.length >> 1]; } res.push(r); }
+    for (let i = 0; i < n; i++) { let sw = 0, sm = 0; res.forEach((r, k) => { const w = Math.max(r[i] - 6, 0); sw += w; sm += w * (84 + k); }); if (sw > 3) cen[i] = sm / sw; }
+    let last = -1; for (let i = 0; i < n; i++) if (!isNaN(cen[i])) { if (last < 0) for (let j = 0; j < i; j++) cen[j] = cen[i]; else for (let j = last + 1; j < i; j++) cen[j] = cen[last] + (cen[i] - cen[last]) * (j - last) / (i - last); last = i; }
+    if (last < 0) return o; for (let j = last + 1; j < n; j++) cen[j] = cen[last];
+    const box = (x) => { const y = new Float32Array(n); for (let i = 0; i < n; i++) { let s = 0, c = 0; for (let j = Math.max(0, i - 7); j <= Math.min(n - 1, i + 7); j++) { s += x[j]; c++; } y[i] = s / c; } return y; };
+    const sm2 = box(box(cen)); let lo = 1e9, hi = -1e9; for (const v of sm2) { lo = Math.min(lo, v); hi = Math.max(hi, v); }
+    for (let i = 0; i < n; i++) o[fa + i] = (sm2[i] - lo) / Math.max(hi - lo, 1) * sstep(0, 24, i) * (1 - sstep(n - 25, n - 1, i));
+    return o; })();
+  window.kaari = KAARI;
+  const KAARI_T = (() => { const cK = d.cues.cues.find((c) => c.id === 'S_puhaltimien_kaari'); return cK && cK.t_end != null ? [cK.t, cK.t_end] : [0, 1]; })();
 
   // ----- kamera: nousu huudossa (ainoa nousu), tasainen ajo eteen ja viistoon, hidastuu S:stä ja pysähtyy H-duurin alussa -----
   const H0 = 58, H1 = 82;                                                  // kameran korkeus maasta (m): latvusto yltää enintään noin 51 m
@@ -323,13 +342,17 @@ async function alusta() {
     const sway = clamp(0.30 + 1.1 * en + 0.9 * waveS(t) + 0.6 * trem0(t), 0.30, 2.0) * (1 - 0.25 * sstep(T7, T7 + 8, t));
     const trem = clamp(ka(sTrem, t, 1.2), 0, 1);
     const aur = 0.36 * sstep(T0 + 5, T0 + 17, t) * (1 - sstep(T4 - 5, T4 + 15, t)) * (0.8 + 0.2 * clamp(d.korkea(t, 1.5) * 1.4, 0, 1));
-    const aurLow = sstep(T0 + 14, T3 + 4, t);
+    // vedos 8 (rivi 164): puhaltimien linja (KAARI) kulkee aaltona revontulen läpi vasemmalta oikealle; aallon korkeus on linjan korkeus (enintään 7,5 % kuvan
+    // korkeudesta) ja koko kaari nousee aavistuksen. Vain ankkurin S_puhaltimien_kaari aikana.
+    const kaariK = KAARI[clamp(Math.round(t * FPS), 0, d.NF - 1)];
+    const aurLow = clamp(sstep(T0 + 14, T3 + 4, t) - 0.05 * kaariK, 0, 1);
+    const aurW = [-1.25 + 2.5 * clamp((t - KAARI_T[0]) / Math.max(KAARI_T[1] - KAARI_T[0], 1), 0, 1), 0.045 * kaariK];   // käyttäjä 13.11.: "aavistuksen hienovaraisempi ... Ihan vähän tyylikkäämpi": korkeus 7,5 % -> 4,5 %, aalto leveämpi ja loivempi   // aalto vasemmalta oikealle ankkurin aikana; korkeus = linjan korkeus
     const pulssit = PULSSIT.filter((x) => x.t <= t && t - x.t < 4).slice(-6).map((x) => [t - x.t, x.v, 0, 0]);
     const wallK = clamp((t - T0) / 12.5, 0, 1) * 1.45;
     const cloud = lerp(0.95, 0.18, sstep(T0 + 1, T0 + 24, t));
     const reveal = clamp(d.pitka(Math.max(t - 1.0, 0), 0.9) * 1.4, 0, 1);
     const windows = Math.max(0.15 + 0.85 * reveal * (1 - kajo), 0.65 * kajo);
-    return { sway, f, pit, en, glow, glowH, elev, lint, low, trem, aur, aurLow, kajo, pulssit, wallK, cloud, windows, mel };
+    return { sway, f, pit, en, glow, glowH, elev, lint, low, trem, aur, aurLow, aurW, kajo, pulssit, wallK, cloud, windows, mel };
   }
 
   // lumi: tiheys alussa suuri ja harvenee hiljaiseksi; putoaminen ja ajelehtiminen tasaisia ja jatkuvat loppuun asti
@@ -355,7 +378,7 @@ async function alusta() {
       gl.uniform1f(U('uWallK'), s.wallK); gl.uniform1f(U('uGlow'), s.glow); gl.uniform1f(U('uGlowH'), s.glowH); gl.uniform1f(U('uLint'), s.lint);
       gl.uniform1f(U('uLow'), s.low); gl.uniform1f(U('uKajoK'), s.kajo); gl.uniform1f(U('uKajoF'), kajoF(t));
       gl.uniform1f(U('uWaveS'), waveS(t)); gl.uniform1f(U('uWaveZ'), waveZ(t));
-      gl.uniform1f(U('uSway'), s.sway); gl.uniform1f(U('uAur'), s.aur); gl.uniform1f(U('uAurLow'), s.aurLow); gl.uniform1f(U('uTrem'), s.trem);
+      gl.uniform1f(U('uSway'), s.sway); gl.uniform1f(U('uAur'), s.aur); gl.uniform1f(U('uAurLow'), s.aurLow); gl.uniform2f(U('uAurW'), s.aurW[0], s.aurW[1]); gl.uniform1f(U('uTrem'), s.trem);
       gl.uniform1f(U('uCloud'), s.cloud); gl.uniform1f(U('uStarK'), 1 - s.cloud); gl.uniform1f(U('uWindow'), s.windows);
       gl.uniform1f(U('uPen'), clamp((t - K0) / (K1 - K0), -0.2, 1.2)); gl.uniform1f(U('uDrift'), d.kohta(kDrift, t));
       gl.uniform1f(U('uFogL'), 820); gl.uniform1f(U('uElev'), s.elev); gl.uniform1f(U('uSv'), SV);

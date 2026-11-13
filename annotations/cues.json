@@ -583,6 +583,9 @@
    "ankkuri": "tuulenpuuska",
    "t": 45.4,
    "t_end": 52.0,
+   "iskut_t": [
+    52.3
+   ],
    "theme": "tunnelma",
    "luokka": "tunnelma",
    "tyyppi": "hetki",
@@ -598,7 +601,7 @@
    "varmuus": "vahvistettu",
    "lahde_aika": "vahvistettu",
    "luottamus": "hyvä",
-   "peruste": "Käyttäjä 9.11.2026 (korva): tuulenpuuska alkaa heti alun vaski-iskun jälkeen. Vaski-isku aksentit.py 45,327 s (z 32,9); nopea kuviointi liiketiheys 4,0 alkua/s kohdassa 49 s; taso huipussaan noin 52 s. Partituuri: t. 21 Allegro moderato, viulut div. p kuudestoistaosin cresc. molto al, t. 25 kaikki ff (s. 4–5). Alun ja lopun tarkka raja: analyysi.",
+   "peruste": "Käyttäjä 9.11.2026 (korva): tuulenpuuska alkaa heti alun vaski-iskun jälkeen. Vaski-isku aksentit.py 45,327 s (z 32,9); nopea kuviointi liiketiheys 4,0 alkua/s kohdassa 49 s; taso huipussaan noin 52 s. Partituuri: t. 21 Allegro moderato, viulut div. p kuudestoistaosin cresc. molto al, t. 25 kaikki ff (s. 4–5). Alun ja lopun tarkka raja: analyysi. | 13.11.: ff (t. 26: trumpetit ja pasuunat ff, patarummut ff, jouset ff) alkaa 52,30 s (iskut-kentässä): koko kaistan jyrkin nousu 52,29 s ja matalan kaistan vahva alku 52,305 s; yläkaista pysyy ff:nä 53,5 s asti ja katkeaa 53,6 s. Crescendo 47,4 -> 52,8 s +17 dB (koko kaista).",
    "vahvistettu": true,
    "tarkista": true,
    "ehdokkaat": [
@@ -639,6 +642,7 @@
    "id": "fraasi_ennen_taukoa",
    "ankkuri": "fraasi_ennen_taukoa",
    "t": 54.4,
+   "t_end": 57.25,
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
@@ -656,7 +660,7 @@
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "hyvä",
-   "peruste": "kaaret.py: keskirekisterin kerros ja ylälinja 54,4–57,1 s; interpret.py: jouset tulevat sisään 54,7 s; äkillinen hiljeneminen 57,5 s.",
+   "peruste": "kaaret.py: keskirekisterin kerros ja ylälinja 54,4–57,1 s; interpret.py: jouset tulevat sisään 54,7 s; äkillinen hiljeneminen 57,5 s. | 13.11.: viimeinen sointu katkeaa 57,25 s (t_loppu): taso 28,7 dB (57,0) -> 19,1 dB (57,3), sen jälkeen kaiku hiipuu kohinaan 58,3-58,4 s. Käyttäjä 13.11.: 'Tarkista kenraalipaussin ajoitus alussa.' Katko on se, mistä tauko kuuluu alkavan; hiljaisuus_1_alku (58,1) on kaiun loppu.",
    "vahvistettu": false,
    "tarkista": false
   },
@@ -814,6 +818,19 @@
    "ankkuri": "fis_hengittaa",
    "t": 100.8,
    "t_end": 176.0,
+   "iskut_t": [
+    98.81,
+    104.4,
+    113.9,
+    121.4,
+    129.5,
+    135.25,
+    145.5,
+    149.43,
+    161.85,
+    169.49,
+    176.87
+   ],
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
@@ -1080,6 +1097,11 @@
    "id": "D_pikkolo",
    "ankkuri": "D_pikkolo",
    "t": 244.6,
+   "t_end": 247.8,
+   "iskut_t": [
+    246.816,
+    247.374
+   ],
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
@@ -1101,7 +1123,7 @@
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "hyvä",
-   "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +9,7 dB kohdassa 244,57 s; korvat: purske 4:06 (yli 60 uutta säveltä sekunnissa)",
+   "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +9,7 dB kohdassa 244,57 s; korvat: purske 4:06 (yli 60 uutta säveltä sekunnissa) | 13.11.: huilun ja pikkolon juoksu (tarkat nuottialut): alkaa 246,816 s (m80), huippu 247,374 s (m104), viimeinen nuotti 247,641 s; juoksu päättyy 247,80 s (t_loppu); iskut = [alku, huippu]. Käyttäjä 13.11.: 'Kuulen vaan yhden puhaltajien tuulenpuuskan.' Seuraavat äänet 248,5-250,4 s ovat puupuhaltimien kuvioita, eivät juoksua.",
    "vahvistettu": false,
    "tarkista": true
   },
@@ -1514,6 +1536,234 @@
     464.42,
     492.8
    ],
+   "linjat": {
+    "huilu1": [
+     [
+      464.42,
+      91
+     ],
+     [
+      466.15,
+      90
+     ],
+     [
+      467.42,
+      91
+     ],
+     [
+      467.89,
+      90
+     ],
+     [
+      468.25,
+      89
+     ],
+     [
+      473.28,
+      88
+     ],
+     [
+      474.58,
+      89
+     ],
+     [
+      475.29,
+      88
+     ],
+     [
+      475.67,
+      87
+     ],
+     [
+      480.9,
+      86
+     ],
+     [
+      481.93,
+      87
+     ],
+     [
+      482.3,
+      86
+     ],
+     [
+      483.43,
+      85
+     ],
+     [
+      484.59,
+      84
+     ],
+     [
+      486.22,
+      83
+     ],
+     [
+      487.38,
+      82
+     ],
+     [
+      488.31,
+      81
+     ],
+     [
+      489.0,
+      80
+     ],
+     [
+      489.93,
+      79
+     ],
+     [
+      490.86,
+      77
+     ],
+     [
+      491.79,
+      76
+     ],
+     [
+      492.25,
+      75
+     ],
+     [
+      492.8,
+      -1
+     ]
+    ],
+    "huilu3": [
+     [
+      464.42,
+      79
+     ],
+     [
+      466.15,
+      78
+     ],
+     [
+      468.25,
+      81
+     ],
+     [
+      473.95,
+      80
+     ],
+     [
+      474.58,
+      81
+     ],
+     [
+      475.29,
+      80
+     ],
+     [
+      475.65,
+      79
+     ],
+     [
+      481.34,
+      78
+     ],
+     [
+      482.0,
+      79
+     ],
+     [
+      482.71,
+      77
+     ],
+     [
+      484.59,
+      76
+     ],
+     [
+      486.45,
+      75
+     ],
+     [
+      487.15,
+      74
+     ],
+     [
+      488.31,
+      73
+     ],
+     [
+      489.0,
+      72
+     ],
+     [
+      489.93,
+      71
+     ],
+     [
+      490.86,
+      70
+     ],
+     [
+      491.79,
+      68
+     ],
+     [
+      492.8,
+      -1
+     ]
+    ],
+    "fagotti": [
+     [
+      476.7,
+      68
+     ],
+     [
+      483.2,
+      63
+     ],
+     [
+      484.59,
+      64
+     ],
+     [
+      486.22,
+      65
+     ],
+     [
+      487.15,
+      66
+     ],
+     [
+      488.31,
+      67
+     ],
+     [
+      489.93,
+      61
+     ],
+     [
+      490.86,
+      62
+     ],
+     [
+      491.33,
+      63
+     ],
+     [
+      491.79,
+      64
+     ],
+     [
+      492.25,
+      61
+     ],
+     [
+      492.72,
+      62
+     ],
+     [
+      493.1,
+      -1
+     ]
+    ]
+   },
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
@@ -1535,7 +1785,7 @@
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "hyvä",
-   "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +10,6 dB kohdassa 471,57 s; korvat: basso jää h:lle 7:49, vaikenee 8:01; partituuri J = t. 274 | 11.11.: käyttäjä: huilu alkaa soittaa arviolta 7:44 ja lopettaa 8:13. Spektrogrammi 250-2400 Hz: huilun laskeva linja alkaa 7:44,42 (midi 91) ja viimeinen ääni päättyy noin 8:12,8 (iskut-kentässä [alku, loppu]); kirjain J (7:51,6) on linjan keskellä.",
+   "peruste": "spektri.u8: jyrkin tason muutos 0,2 s:ssa haun ympärillä (ohjaajan mittaus 10.11.2026): ylärekisteri +10,6 dB kohdassa 471,57 s; korvat: basso jää h:lle 7:49, vaikenee 8:01; partituuri J = t. 274 | 11.11.: käyttäjä: huilu alkaa soittaa arviolta 7:44 ja lopettaa 8:13. Spektrogrammi 250-2400 Hz: huilun laskeva linja alkaa 7:44,42 (midi 91) ja viimeinen ääni päättyy noin 8:12,8 (iskut-kentässä [alku, loppu]); kirjain J (7:51,6) on linjan keskellä. | 13.11.: kolme ääntä (linjat-kenttä, [alku s, midi], -1 = loppuu): CQT puolisävelkaistoin 0,23 s välein, partituuri s. 31: huilut 1-2 kaksoisäänin ja huilu III (J), fagotit pp t. 280 ja kaksiäänisinä t. 281-290. huilu1 = ylin huilu (g3 -> dis3 -> d3 ... dis2), huilu3 = alin huilu (g2-a2, sitten f2 -> gis1), fagotti = alempi fagottiääni (gis1 7:56,7 alkaen; t. 281- nousee kromaattisesti dis1 -> g1 8:03-8:09, kun huilut laskevat cis3 -> a2: vastaliike; ylin huilu ja fagotti lähestyvät 22 -> 14 puolisävelaskelta, alin huilu ja fagotti 14 -> 4). Käyttäjä 13.11.: 'Pitäisikö sille liittyä myös oma valo, kun se soittaa? ... vielä tarkemmin sen spektrin mukaan?'",
    "vahvistettu": false,
    "tarkista": true
   },
@@ -2862,6 +3112,32 @@
    "peruste": "tarkka.py: Gis4 pitkä 16:18.6–16:25.7 ja 16:46.7–17:00; jännite 0,05–0,2 kohdissa 984–993 s. Paikka arvioitu tahtien 587 (noin 945 s) ja 618 (noin 1008 s) väliltä; ei kuultu.",
    "vahvistettu": false,
    "tarkista": false
+  },
+  {
+   "id": "S_puhaltimien_kaari",
+   "ankkuri": "S_puhaltimien_kaari",
+   "t": 994.6,
+   "t_end": 999.8,
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Puhaltimien linja nousee ja laskee",
+   "kirjain": null,
+   "tahti": null,
+   "tahti_loppu": null,
+   "tahti_suhde": "kirjaimen S jälkeen",
+   "soi": "viulujen pitkän äänen yllä puhaltimien linja nousee hitaasti ylös ja laskee takaisin, kokosävelaskelin",
+   "soittimet": [
+    "puupuhaltimet"
+   ],
+   "tarina": "Käyttäjä 13.11.2026: linja heiluttaa revontulta, vain tässä kohdassa.",
+   "lahde": "käyttäjän palaute 13.11.2026; mittaus (spektri)",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "spektri.u8, kaistat midi 72–97, josta 8 s:n mediaani (pitkät äänet) poistettu: liikkuvan linjan painopiste 74 (16:32,5–16:33,5) → 86–88 (16:35,0–16:37,5) → 78 → 75 (16:38,0–16:39,5). Käyttäjä 13.11.: 'puhaltajilla tulee hieno nousu ja lasku kohdassa 16:34 eteenpäin ... melodia menee ylös alas ylinousevalla skaalalla'. Käyttäjä katsoi mittauskuvan 13.11.: '16:33 ja 16:34 ei ole puhaltajilta. Se on jousten pitkät äänet. Se lähtee vasta tuossa nyppylän kohdalla' -> alku siirretty 992,5 -> 994,6 (nousun alku). Ei kuultu kuuntelukopiosta ankkurina.",
+   "vahvistettu": false,
+   "tarkista": true
   },
   {
    "id": "loppuhuipennus",

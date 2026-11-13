@@ -92,3 +92,15 @@ Viimeinen ruutu (rajakuva PIMEA_MASSA, 61,55 s) vs vedos 6: keskimääräinen er
 - Kohta 2: lähimmän rivin kuusen korkeus <= 22 % on kaava- ja zoomausarvio, ei pikselimitta; laskeutumisen aikana kuuset ovat lähellä (tahallinen).
 - Kohta 4 ja Y1: vain malli/kaava, ei eristettyä kuvamittausta.
 - Kohta 3: horisontin alapuolinen terävyys/kontrasti häipyy lineaarisesti (`smoothstep`); alareunan vaalea kaista 55-56,4 s jäi.
+
+## Vedos 8: bugit ja taika
+Moduuli `visual/maailma_01_02.js`; renderit `osa_v8_pohja.mp4` (taika=0) ja `osa_v8.mp4` (taika=1), 1848 ruutua, aa=2. Kokeet ja mittarit: `v8_koe/`.
+**Bugit:** P8 päätös ei muutu (brief), ei koodimuutosta; S2:n vaihe 1 jätetty pois ohjeen mukaan. Ohjaajan korjaus (uLint/uLow seek-rivillä) on mukana kaikissa lopullisissa renderöinneissä; ennen sitä tehdyt koerenderit hylätty.
+**Taika (kytkin `?taika=1`, `TAIKA`; ilman sitä uniformit 0):**
+- T1 kimallus: aaltojen alut johdettu soitetuista äänistä (nuotit h3+ ja `cues.alut.korkea`, jakso 25,4-39,5; uusi fraasi = 0,65 s hiljaisuus, aaltoja >=1,5 s välein): 25,83 / 29,38 / 34,40 / 36,78 s. Aalto etenee horisontin vaaroista kuvassa alas (screen-y), kukin kimallus 0,3-0,6 s, ydin vähintään 3 px (1080p), kehä, kuvan tummuminen 5 % lineaarisesti aallon ajan; sammuu varjon alla (`quench`).
+- U3 kulkeva varjo: pehmeä ellipsi latvuston päällä, liukuu vasemmalta oikealle 8,93 -> 25,4 s, voima seuraa jousten voimaa (`jouSlow`), vain latvusto (vaarat eivät).
+**Mittaukset (osa_v8_pohja vs osa_v8, 960x540 harmaa, `v8_koe/mitta.py`, `heat.py`):** koko kuvan keskikirkkaus aallon aikana -1,7...-2,2 % (ei nousua; S3 raja +6/10 %). Kirkkaita pikseleitä (>150) lisää 16-69 kuvassa. Varjo 11,0 s: tummin 120x60-lohko -10,4 %, tasoitettu suhde min 0,85 (-15 %) (`heat.png`); 22,5 s vain -3 % (varjo reunassa, jouset hiljaisempia): osittain, 12-15 % täyttyy vain alkupuolella. Liikesarjat: `sarja_t1_final.png` (26,0-26,9 s), `sarja_u3.png` (9-... s).
+**vertaa.py pohja vs taika:** ikkunat 26-28, 30-32, 35-39 s (kaikki T1-aaltoja; varjon mse < 2,0, ei listalla).
+**Auki:** kimallus on hienovarainen (thumbnailissa pienet tähdet); S3-näkyvyys puhelimella arvioitava silmin. Varjo loppupuolella heikko.
+
+Ohjaajan säädöt 13.11. (taika=1, pohja ennallaan): kimalluksen säteet lyhyiksi (vaimeneminen 8 px → 3 px, paino 0,65 → 0,35), ettei tähti ole kimalleklisee; kulkeva varjo lähemmäs (300→200 m) ja säteeltään 170 m, ja se himmentää myös usvan valon (`col *= 1 - 0,55·varjo`), koska ennen se hukkui usvaan (−0,5 % kuvassa 0:12). Uusi `osa_v8.mp4` 1848 ruutua; vertaa.py pohja vs taika: 0:10–0:14 (mse 7,3, varjo), 0:19–0:28 (11,1, varjo ja ensimmäinen aalto), 0:30–0:32 (2,8) ja 0:35–0:39 (3,1) = kimallusaallot.

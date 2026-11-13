@@ -172,3 +172,27 @@ Selitys: 128-136 s = viisi iskua listasta (vanhan tunnistimen seitsemän tilalle
 **T3**: ensimmäinen ruutu mse 0,003 ja viimeinen 0,007 vedokseen 6 verrattuna; sauma ennallaan.
 
 **Avoin**: lähirungot ovat vedoksen 5 geometriaa, ja ohi kulkiessaan yksittäinen runko voi peittää yli 15 % kuvan leveydestä (esim. 2:35 ja 2:37,5 ruuduissa oikean/vasemman reunan runko, arvio 15-25 %, sama kuin vedoksessa 5); brief ei määrännyt niiden kokoa muutettavaksi, joten ei muutettu. Pöydän keskirunko pysähdyksessä 16-17 % (ks. yllä).
+
+
+## Vedos 8: bugit ja taika
+
+**Bugit:** P7 (10:36-11:14) päätös ei muuteta (brief): rungot ohittavat kameran lähikerroksessa (kuvasääntö 6), aurinko näkyy joka sekunti, kohta on käyttäjän lempikohta. Koodia ei muutettu, joten S2:n vaihe 1 (`osa_v8_pohja.mp4`) jää pois.
+
+**Taika** (`visual/maailma_07_08.js`, kytkin `taika=1`, uniform `uTK`; funktio `taika()` piirtää lisäykset ilmakerroksen jälkeen oikeassa syvyydessä, joten rungot peittävät ne; ilman kytkintä uniformit ovat nollia). Lisäyksiä vain ennen 540 s (`T_RAJA`).
+- **T3 lumipölyn juova**: 3,0 s kuvan avautumisen jälkeen (499,3 s) -> fraasin loppu - 1,5 s (503,8 s; `FRASIT[0].b` = `jousijakso_urkupiste_E_loppu`); 40 pölypilveä (rakeinen hopeanhalla), jotka syntyvät kulkijan kohdalla vasemmalta lähelle -> oikealle kauas lattian rajassa, nousevat ja hälvenevät; ei rytmiä. Liikesarja `v8_koe/s_v8_T3.png`.
+- **T1 timanttipöly**: `K_viulut` (508,9 s) -> `K_viulut_mezza` (530,9 s); yksi hopeinen tähtipiste (säde 3-4 px 1080p:llä, ristikeila, hento kehä, ympäristö tummuu enintään 30 % pisteen ympärillä) jokaista nuottialkua kohti (midi >= 68, 31 pistettä, `cues.nuotit`), syttyy alun ruudussa, sammuu 1,3 s:ssa, leijuu hitaasti. Korkeus kuvassa seuraa sävelkorkeutta. Liikesarja `v8_koe/s_v8_T1.png` (taikaton vertailu `s_base_T1.png`).
+- **Kirkkaus** (`v8_koe/kirkkaus.txt`, 480x270 harmaa, keskiarvo): T3 3-9 s +0,39 %; T1 508,9-530 s +0,18 % (tihein 508,9-516,3 s +0,38 %); suurin yksittäinen ruutu +1,14 %. S3:n raja (10 %) ja tyyliohjeen (6 %) alittuvat reilusti.
+
+**S2 vaihe 2** (`vertaa.py osa.mp4 osa_v8.mp4 496.3 1 2.0`; `v8_koe/vertaa.txt`): 5859 ruutua (ffprobe), kaikki jaksot ennen 9:00 (540 s):
+```
+runs/maailma_07_08/osa_v8.mp4 vastaan runs/maailma_07_08/osa.mp4: 977 ruutua, 4 muuttunutta jaksoa (raja mse 2.0)
+  8:20.3 - 8:27.3   suurin mse 3.5   (osan aika 4-11 s)
+  8:29.3 - 8:36.3   suurin mse 7.8   (osan aika 13-20 s)
+  8:42.3 - 8:43.3   suurin mse 3.2   (osan aika 26-27 s)
+  8:44.3 - 8:45.3   suurin mse 2.0   (osan aika 28-29 s)
+```
+Kohdan 9:00 jälkeen ei yhtään jaksoa; PSNR 54-55 dB (pelkkä koodauskohina) mitattuna 9:00 jälkeisistä kohdista.
+
+**Avoin:** silmäpariehto (S5): ahne sijoittelu rajaa pisteet eri korkeuksille/kauas toisistaan, mutta 87 / 1547 samanaikaisten pisteiden ruutuparista (5,6 %) on yhä samalla korkeudella alle 0,8 kuvan leveyden päässä (lähes aina toinen on jo himmeä, ikä > 0,6 s). Ei korjattu (kolmas renderi olisi odottanut lukkojonoa yli tunnin).
+
+Ohjaajan säädöt 13.11. (taika=1): lumipölyn juova pehmeäksi hunnuksi ja harvoiksi kiteiksi (tiheä kynnystetty kohina näytti television lumisateelta): `0,30 + 0,45·fbm + 1,3·harvat kiteet`; timanttien säteet lyhyiksi (4,5 → 1,8 kertaa ytimen säde, paino 1,6 → 1,0). Uusi `osa_v8.mp4` 5859 ruutua; vertaa.py osa vs taika: 8:25,3–8:26,3 (2,3), 8:29,3–8:35,3 (6,7), 8:42,3–8:43,3 (2,7); ei mitään kohdan 9:00 jälkeen.

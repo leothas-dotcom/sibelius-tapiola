@@ -13,7 +13,7 @@ const NDOOR = 9;
 
 const FS = FS_ALKU + `
 uniform float uWind, uTime, uCamS, uCamX, uGlow, uShake, uEnd, uStart, uThin0, uThin1, uFogL, uGround, uLift, uSurge;
-uniform float uNerve, uPh, uReach, uZl, uDense, uOpen, uBandK;
+uniform float uNerve, uPh, uReach, uZl, uDense, uOpen, uBandK, uHill;
 uniform vec4 uThr[2];     // jousten kommentit: yksi hillitty valosäie (sivuasema, voima, -, -)
 uniform vec4 uBand[4];    // P: vaskisoinnun kaistat maailmassa (sivuasema, puolileveys, voima, -)
 uniform vec3 uPuff;      // nostopuuska: pehmeän rungon kirkkaus A:ssa ja B:ssä, hiukkasten kirkkaus
@@ -33,6 +33,9 @@ uniform float uDoorZ[9];  // oven etäisyys kamerasta (m)
 uniform float uDoorX[9];  // oven keskikohdan sivuasema kamerasta (m)
 uniform vec4 uDoorP[9];   // aukon puolileveys, aukon korkeus, kummun korkeus, kummun leveys
 uniform float uProf[16];  // horisontin muoto: melodian kaari
+uniform vec4 uWin[6];     // taika T2 (taika=1): Tapion talon ikkunat: sivuasema (m kamerasta), etäisyys (m), korkeus (m), voima
+uniform vec4 uWinS[6];    // ikkunan puolileveys ja puolikorkeus (m)
+uniform float uU1;        // taika U1: metsänpeitto 0..1 (vain taika=1)
 ` + GLSL_YHTEINEN + `
 const float F = 1.07, CAMH = 1.7, HOR = 0.40;
 const int NS = ${NS};
@@ -99,10 +102,11 @@ float pcell(vec2 q, float sc, float thr, float seed) {
 vec3 puffAt(vec2 p) {
   vec3 a, b; float disp; liftAt(p, a, b, disp);
   if (max(a.y, b.y) <= 0.001) return vec3(0.0);
-  float mA = a.y * (1.0 - smoothstep(0.0, max(0.33 * a.z, 0.01), p.y));      // A: nousee noin kolmannekseen kuvan korkeudesta
-  float mB = b.y * (1.0 - smoothstep(0.0, max(0.50 * b.z, 0.01), p.y));      // B: noin puoleen
+  float mA = a.y * (1.0 - smoothstep(0.0, max(0.55 * a.z, 0.01), p.y));      // A: vedos 8 (rivi 133): nousee lähes puoleen kuvan korkeudesta (oli kolmannes)
+  float mB = b.y * (1.0 - smoothstep(0.0, max(0.80 * b.z, 0.01), p.y));      // B: kahteen kolmannekseen (oli puoli)
   vec2 q = vec2(p.x - uSnow.y * 0.8, p.y + uSnow.x * 0.8 - disp * 0.8);
-  float body = fbm(vec2(q.x * 3.2, q.y * 4.5) + 7.3);
+  vec2 wq = vec2(fbm(vec2(q.x * 2.1 - uSnow.y * 6.0, q.y * 2.6) + 1.7), fbm(vec2(q.x * 2.3 + 4.1, q.y * 2.2 - uSnow.y * 4.0) + 5.2)) - 0.5;   // tuulen pyörteet ryöpyn sisällä
+  float body = fbm(vec2(q.x * 3.2, q.y * 4.5) + 7.3 + 0.9 * wq);
   float bd = smoothstep(0.25, 0.80, body);
   float pa = pcell(q, 48.0, 0.26, 21.0);                                     // hiukkaset: noin hiutaleiden määrä
   float pb = pcell(q + 0.37, 48.0, 0.13, 57.0);                              // lisähiukkaset puhaltimien puuskaan (1,5-kertainen)
@@ -264,11 +268,11 @@ vec4 trunkLayer(float n, float S, float z, float dx, float dy, vec3 fog, float r
     float rr = trunkR(c, n);
     if (abs(xt) < 2.6 + rr) continue;
     float H = 15.0 + 11.0 * hash(vec2(c * 0.61 + 2.0, n + 7.0));
-    if (yw > 0.4 * H && yw < H + 0.8) {
+    if (yw > mix(0.4, 0.28, max(uBandK, uHill)) * H && yw < H + 0.8) {   // vedos 8 (P4): P:stä loppuun latvuspylvään alareuna pehmenee (ei kovaa vaakarajaa 0,4 H:ssa)
       float wm = (1.6 + 2.6 * hash(vec2(c + 8.0, n))) * clamp((H - yw) / (0.6 * H), 0.0, 1.0);
       wm *= (0.72 + 0.5 * vnoise(vec2(yw * 1.3 + c, n * 3.0))) * (0.85 + 0.2 * sin(yw * 2.6 + c));
       float swc = sway(yw, H, S, xt, z);
-      crownCv = max(crownCv, smoothstep(wm, wm * 0.7, abs(rel - xt - swc)));
+      crownCv = max(crownCv, smoothstep(wm, wm * 0.7, abs(rel - xt - swc)) * mix(1.0, smoothstep(0.28 * H, 0.62 * H, yw), max(uBandK, uHill)));
     }
     if (yw > H) continue;
     float lean = (hash(vec2(c + 3.0, n * 0.41)) - 0.5) * 0.03;
@@ -326,6 +330,22 @@ vec3 dotsBetween(vec3 col, float zn, float zf, float dx, float dy) {
   return col;
 }
 
+// T2: Tapion talon ikkunat: kaukaisia, kylmiä, pehmeäreunaisia valoaukkoja runkojen välissä; piirretään syvyysjärjestyksessä, joten lähemmät rungot peittävät ne
+vec3 winBetween(vec3 col, float zn, float zf, float dx, float dy, float dk, float sc) {
+  for (int i = 0; i < 6; i++) {
+    vec4 w = uWin[i];
+    float zw = w.y * dk;
+    if (w.w <= 0.0 || zw <= zn || zw > zf) continue;
+    vec2 c = vec2(w.x * F / w.y, (w.z - CAMH) * F / w.y);
+    vec2 q = (vec2(dx, dy) - c) * w.y / (F * uWinS[i].xy);
+    float rr = pow(pow(abs(q.x), 2.2) + pow(abs(q.y), 2.2), 1.0 / 2.2);    // ohjaaja: pyöreämpi valoaukko, ei mökin ikkunan suorakulmiota
+    float m = 1.0 - smoothstep(0.35, 1.25, rr);
+    float halo = exp(-dot(q, q) * 0.22);
+    col += HOPEA * w.w * sc * (0.26 * m * m + 0.04 * halo);
+  }
+  return col;
+}
+
 vec3 scene(vec2 p) {
   float asp = uRes.x / uRes.y;
   float dx = p.x - asp * 0.5, dy = p.y - HOR;
@@ -340,8 +360,10 @@ vec3 scene(vec2 p) {
     float above = dy - hl;
     col = fog * (1.0 - 0.45 * clamp(uCut.x * 0.4 + uCut.y, 0.0, 1.0)) * (1.0 - 0.35 * (1.0 - uOpen) * smoothstep(0.0, 0.7, dy));   // sama sävy kuin maan etäisin osa: ei kovaa horisonttiviivaa
     col += HALLA * 0.22 * uGlow * exp(-max(above, 0.0) / 0.030) * smoothstep(-0.004, 0.004, above);
-    float hillM = smoothstep(0.004, -0.004, above);
-    col = mix(col, HAMY * 1.2 + fog * 0.16, hillM);
+    // vedos 8 (P4): P:stä loppuun (kaistat, taite, avoin tila) kummut ovat usvaista kaukoilmaa, eivät tummaa laatikkoa kirkasta usvaa vasten: reuna leveä ja pehmeä, sävy lähellä usvaa
+    float hillE = mix(0.004, 0.055, uHill);
+    float hillM = smoothstep(hillE, -hillE, above);
+    col = mix(col, mix(HAMY * 1.2 + fog * 0.16, fog * 0.78, 0.85 * uHill), hillM);
   } else {
     col = groundAt(dx, dy, fog, n0);
   }
@@ -354,6 +376,8 @@ vec3 scene(vec2 p) {
     if (!hazed && z < 16.0) { hazed = true; col = mix(col, fog * (1.0 - 0.45 * clamp(uCut.x * 0.4 + uCut.y, 0.0, 1.0)), (1.0 - uGround) * 0.80 * smoothstep(0.17, -0.03, dy)); }
     if (!puffed && z < 13.0) { puffed = true; col += puffAt(p); }
     col = dotsBetween(col, z, zPrev, dx, dy);
+    col = winBetween(col, z, zPrev, dx, dy, 1.0, 1.0);
+    col = winBetween(col, z, zPrev, dx, dy, 0.5, 0.5);   // ikkunat kuultavat myös keskietäisyyden runkojen läpi himmeämpinä (runkojen väli ei peitä kaikkia kuutta)
     for (int i = NDOOR_M1; i >= 0; i--) {
       float zd = uDoorZ[i];
       if (zd > z && zd <= zPrev && zd > 0.2) { vec4 dl = doorLayer(i, zd, dx, dy, fog, ringAt(zd)); col = mix(col, dl.rgb, dl.a); }
@@ -369,7 +393,15 @@ vec3 scene(vec2 p) {
   }
   if (!puffed) col += puffAt(p);
   col = dotsBetween(col, 0.2, zPrev, dx, dy);
+  col = winBetween(col, 0.2, zPrev, dx, dy, 1.0, 1.0);
+  col = winBetween(col, 0.2, zPrev, dx, dy, 0.5, 0.5);
   if (!hazed) col = mix(col, fog * (1.0 - 0.45 * clamp(uCut.x * 0.4 + uCut.y, 0.0, 1.0)), (1.0 - uGround) * 0.80 * smoothstep(0.17, -0.03, dy));
+  if (uU1 > 0.0) {   // U1 metsänpeitto: aukko edessä täyttyy usvalla ja latvojen väli pimenee ylhäältä alas
+    float gapM = exp(-dx * dx / 0.10) * smoothstep(-0.30, 0.0, dy) * (1.0 - smoothstep(0.22, 0.58, dy));
+    col = mix(col, fog * 0.95, 0.42 * uU1 * gapM);
+    float fr = mix(0.70, 0.08, uU1);
+    col *= 1.0 - 0.20 * smoothstep(0.0, 0.2, uU1) * smoothstep(fr - 0.30, fr + 0.25, dy);
+  }
   col += snowAt(p) * (1.0 - uEnd) * (1.0 - uStart);
   col = mix(col, rajakuva(p, 0, uTime), uEnd);          // loppu: RAJA.PIMEA_MASSA
   col = mix(col, rajakuva(p, 3, uTime), uStart);        // alku: RAJA.PIMEYS
@@ -529,14 +561,43 @@ async function alusta() {
   };
   const riseA = (x) => 0.62 * x * x * (3 - 2 * x) + 0.55 * Math.pow(Math.sin(Math.PI * clamp((x - 0.55) / 0.45, 0, 1)), 2);   // pehmeä nousu + sykäys viimeisellä kolmanneksella
   const riseB = (x) => x * x * (3 - 2 * x);
-  const LFA = mkLift(cR.t, cR.t_end, cR.t_end + 2.5, riseA, 2.2, 1.0);
-  const LFB = mkLift(cG.t, cG.iskut_t[0], cG.t_end + 2.0, riseB, 3.5, 0.6);
+  const LFA = mkLift(cR.t, cR.t_end, cR.t_end + 2.5, riseA, 3.0, 1.0);      // vedos 8 (rivi 133): enemmän ilmaa: netto ylös huipussa 3,0 x putoaminen (oli 2,2)
+  const LFB = mkLift(cG.t, cG.iskut_t[0], cG.t_end + 2.0, riseB, 4.8, 0.6);  // 4,8 x (oli 3,5)
   const lfVel = (L, t, xs) => L.env(t - L.front * xs - L.ts) * L.vpk;       // nostonopeus pisteessä xs (0..1), maan tasolla
   const lfNet = (t, xs) => { const f = vFall[Math.max(0, Math.min(NF, Math.round(t * FPS)))]; return ((lfVel(LFA, t, xs) + lfVel(LFB, t, xs)) - f) / FALL0; };   // netto ylöspäin (+), yksikkönä tavallinen putoamisnopeus
   const lfUnif = (L) => { const a = new Float32Array(L.N * 3); for (let i = 0; i < L.N; i++) { a[3 * i] = L.D[i]; a[3 * i + 1] = L.E[i]; a[3 * i + 2] = L.H[i]; } return a; };
-  const PUFF = new URLSearchParams(location.search).get('puff') === '0' ? [0, 0, 0] : [0.10, 0.40, 0.12];   // pintalumen rungon ja hiukkasten kirkkaus (säädetty mittaamalla alapuoliskon keskikirkkaus)
+  const PUFF = new URLSearchParams(location.search).get('puff') === '0' ? [0, 0, 0] : [0.16, 0.62, 0.18];   // vedos 8 (rivi 133): ryöppy 1,5-kertainen   // pintalumen rungon ja hiukkasten kirkkaus (säädetty mittaamalla alapuoliskon keskikirkkaus)
   const LFA_ARR = lfUnif(LFA), LFB_ARR = lfUnif(LFB);
+  // vedos 8 (rivit 130, 133): puuskissa lumi myös tuivertaa sivulle (puuskan verhokäyrän mukaan), ja jousten espressivo-paisutukset dim_possibilesta
+  // hiljaisuuteen (13:45-14:05, partituuri s. 50) ovat tuulta: mitattu taso 0,7 s:n ikkunassa miinus 6 s:n pohja. Nopeus kiihtyy tau 0,5 s ja hidastuu
+  // tau 1,5 s; sivusuunta on sama kuin lumen (oikealle) eikä käänny; paisutus myös keventää putoamista hieman.
+  // vedos 8 (rivit 158, 163): paisutus mitataan kaistoittain (d.paisut): lumen tuuli seuraa paisutuksen omien kaistojen tasoa ruutu ruudulta
+  const PAISUT9 = d.paisut(A.dim_possibile + 1.0, t1 - 0.8, 4, 6); window.paisut = PAISUT9.tapahtumat;
+  const svell09 = (t) => PAISUT9.env[clamp(Math.round(t * FPS), 0, d.NF - 1)] * ikkuna(t, A.dim_possibile + 1.0, t1 - 0.8, 1.5);
+  const gEnv = (L, t) => (t < L.ts ? 0 : L.env(t - L.ts));
+  const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 1.5)))); o[f] = y; } return o; };
+  const vDriftG = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t) + 0.22 * svell09(t));   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
+  const vLiftS = pehmea9((t) => 0.090 * svell09(t));
+  const svellS9 = pehmea9((t) => svell09(t));
+  const sDriftG = d.sarja((f) => vDriftG[f] / FPS), sLiftS = d.sarja((f) => vLiftS[f] / FPS);
   const ikkunaHarva = (t) => ikkuna(t, A.harva_kuviointi, tPend, 1.5);
+
+  // ---------- vedos 8: taika (kytkin taika=1; ilman sitä voimat ovat nollia) ----------
+  const TAIKA = new URLSearchParams(location.search).get('taika') === '1' ? 1 : 0;
+  // T2 Tapion talon kuusi ikkunaa: kaksi kolmen ryhmää (vasen, oikea), eri korkeuksilla, etäisyyksillä ja kooilla (ei paria samalla korkeudella). Etäisyys on kamerasta
+  // vakio, joten ikkunat pysyvät kaukana kameran edetessä; sivuasema seuraa polun mutkaa.
+  const WIN = [
+    { x: -4.0, z: 96, y: 6.5, hw: 2.8, hh: 3.6 }, { x: -6.5, z: 126, y: 12.1, hw: 3.2, hh: 4.0 }, { x: -2.5, z: 150, y: 3.6, hw: 2.3, hh: 3.3 },
+    { x: 9.5, z: 110, y: 5.0, hw: 3.2, hh: 4.0 }, { x: 13.0, z: 138, y: 10.5, hw: 3.6, hh: 4.4 }, { x: 5.0, z: 90, y: 10.3, hw: 2.2, hh: 3.0 } ];
+  // syttyminen: taitteen jälkeisten korkeiden puupuhaltimien mitatuista aluista (midi >= 74, väh. 1,2 s välein; 6 kpl: 814,85 .. 822,63 s), pehmeästi 1,4 s
+  // vedos 8 (rivi 153): tyyliohje 4d.11: Tapion talon ikkunat kuumottavat, kun käyrätorvet soivat. Taitteessa (t. 494) käyrätorvet pp, t. 505 dim. possibile
+  // (teemat.json). Ikkunat syttyvät taitteesta yksi kerrallaan 0,7 s välein ja sulavasti (2,0 s); ennen ne syttyivät huilujen aluista (väärä soitin).
+  const WON = [0, 1, 2, 3, 4, 5].map((i) => tTaite + 0.3 + 0.7 * i);
+  // U1: sammuminen kaukaisimmasta alkaen yksi kerrallaan dim_possibilesta hiljaisuuteen (ankkureiden välinen osuus), 2,2 s pehmeästi
+  const WRANK = WIN.map((w, i) => WIN.filter((v) => v.z > w.z).length);
+  const WOFF = WIN.map((w, i) => A.dim_possibile + (t1 - A.dim_possibile) * (0.10 + 0.11 * WRANK[i]));
+  const winK = (i, t) => (WON[i] === undefined ? 0 : sstep(0, 2.0, t - WON[i]) * (1 - sstep(0, 2.2, t - WOFF[i])));
+  const u1At = (t) => TAIKA * sstep(A.dim_possibile + 0.5, t1 - 3.0, t);
 
   // ---------- tila hetkellä t ----------
   function tila(t) {
@@ -611,9 +672,12 @@ async function alusta() {
       const zz = b.Sb - camS; const ramp = 0.35 + 0.65 * Math.min(1, ti / 0.1);
       let I = b.g * (0.35 + 0.65 * cm) * ramp; if (i === 0) I += 0.65 * Math.exp(-ti / 0.18);
       return [F * (b.xb - xPath(camS)) / zz, F * b.w / zz, I * offT * BAMP, 0]; });
-    const snow = [d.kohta(sFall, tt), d.kohta(sDrift, tt), (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr]) * (1 + 1.0 * nerve * gustAt(tt))];
+    const snow = [d.kohta(sFall, tt) - d.kohta(sLiftS, tt), d.kohta(sDrift, tt) + d.kohta(sDriftG, tt), (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr] + 0.6 * svellS9[clamp(fr, 0, svellS9.length - 1)]) * (1 + 1.0 * nerve * gustAt(tt))];
     const dense = sstep(t1 - 11, t1 - 2.5, tt);
-    return { thr, band, bandK, opn, hit, surge, vf: vFall[fr], vd: vDrift[fr], snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
+    const win = WIN.map((w, i) => [xPath(camS + w.z) - xPath(camS) + w.x, w.z, w.y, TAIKA * winK(i, tt) * opn * (1 + 0.08 * Math.sin(0.9 * tt + i * 2.1))]);
+    const u1 = u1At(tt);
+    const hill = sstep(tPs, tPs + 3, tt);   // P4: kumpujen reuna pehmeä P:stä moduulin loppuun
+    return { win, u1, hill, thr, band, bandK, opn, hit, surge, vf: vFall[fr], vd: vDrift[fr], snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
       end: smooth(s), start: 1 - sstep(0, 0.9, tt - t0), rate: rate(tt) };
   }
 
@@ -626,7 +690,7 @@ async function alusta() {
       const dz = doorS.map((x) => +(x - s.camS).toFixed(1)).filter((x) => x > 0);
       return { vauhti_m_s: +s.v.toFixed(2), liike_per_s: +s.rate.toFixed(1), matka_m: +s.camS.toFixed(1), kajo: +s.glow.toFixed(2), pystyvalo: s.cut.map((x) => +x.toFixed(2)),
         vare: +s.shake.toFixed(2), tuuli: +s.wind.toFixed(2), kaksi: s.two.map((x) => +x.toFixed(2)), maa: +s.pohja.toFixed(2), renkaita: s.pu.length, pilkkuja: s.dots.length, nostoa: +s.lift.toFixed(3), puuska: +s.surge.toFixed(2), lumi_pudotus: +s.snow[0].toFixed(2), lumi_maara: +s.snow[2].toFixed(2), puuskia_yht: SURGE.length, hermo: +s.nerve.toFixed(2), paisutus: +s.pk.toFixed(2), oboeita: s.obo.length, klar: s.kla.length, tiheys: +s.dense.toFixed(2), askelia: ASKELEET.length, askel_ajat: ASKELEET.map((x) => +(x.t - t0).toFixed(2)), puuskat_s: SURGE.map((f) => +(f / FPS).toFixed(2)),
-        iskuja_N: HITS.length, kommentteja: GEST.length, kaistoja: BAND.length, lumi_v: +s.vf.toFixed(4), nosto_netto: +lfNet(s.t, 0.5).toFixed(3), nosto_netto_x0: +lfNet(s.t, 0.0).toFixed(3), nosto_netto_x1: +lfNet(s.t, 1.0).toFixed(3), lumi_d: +s.vd.toFixed(4), lumi_kulma: +(Math.atan2(s.vd, s.vf) * 180 / Math.PI).toFixed(2), avoin_v: +s.opn.toFixed(2), kaista_v: s.band.map((x) => +x[2].toFixed(2)), seuraava_ovi_m: dz[0] ?? null, ovia_edessa: dz.length, kipinoita_yht: KIPINOITA }; },
+        iskuja_N: HITS.length, kommentteja: GEST.length, kaistoja: BAND.length, lumi_v: +s.vf.toFixed(4), nosto_netto: +lfNet(s.t, 0.5).toFixed(3), nosto_netto_x0: +lfNet(s.t, 0.0).toFixed(3), nosto_netto_x1: +lfNet(s.t, 1.0).toFixed(3), lumi_d: +s.vd.toFixed(4), lumi_kulma: +(Math.atan2(s.vd, s.vf) * 180 / Math.PI).toFixed(2), avoin_v: +s.opn.toFixed(2), kaista_v: s.band.map((x) => +x[2].toFixed(2)), seuraava_ovi_m: dz[0] ?? null, ovia_edessa: dz.length, kipinoita_yht: KIPINOITA, ikkunat: s.win.map((x) => +x[3].toFixed(2)), ikkunoiden_alut: WON.map((x) => +x.toFixed(2)), peitto_u1: +s.u1.toFixed(2) }; },
     seek: (t) => {
       const s = tila(t);
       gl.uniform1f(U('uTime'), s.t); gl.uniform1f(U('uCamS'), s.camS); gl.uniform1f(U('uCamX'), s.camX);
@@ -636,7 +700,7 @@ async function alusta() {
       gl.uniform1f(U('uNerve'), s.nerve); gl.uniform1f(U('uPh'), s.ph); gl.uniform1f(U('uReach'), s.pk); gl.uniform1f(U('uZl'), lerp(170, 6, s.pk));
       gl.uniform1f(U('uFogL'), 85 * (1 - 0.50 * s.opn));
       gl.uniform1f(U('uDense'), s.dense);
-      gl.uniform1f(U('uOpen'), s.opn); gl.uniform1f(U('uBandK'), s.bandK);
+      gl.uniform1f(U('uOpen'), s.opn); gl.uniform1f(U('uBandK'), s.bandK); gl.uniform1f(U('uHill'), s.hill);
       gl.uniform4fv(U('uThr'), new Float32Array(s.thr.flat())); gl.uniform4fv(U('uBand'), new Float32Array(s.band.flat()));
       gl.uniform4f(U('uLfA'), LFA.ts + LFA.u0, 1 / LFA.dt, LFA.front, LFA.N - 1); gl.uniform4f(U('uLfB'), LFB.ts + LFB.u0, 1 / LFB.dt, LFB.front, LFB.N - 1);
       gl.uniform3fv(U('uLsA'), LFA_ARR); gl.uniform3fv(U('uLsB'), LFB_ARR); gl.uniform3f(U('uPuff'), PUFF[0], PUFF[1], PUFF[2]);
@@ -651,6 +715,7 @@ async function alusta() {
       gl.uniform1fv(U('uDoorX'), new Float32Array(doorS.map((x) => xPath(x) - s.camX)));
       gl.uniform4fv(U('uDoorP'), new Float32Array(doorP.flat()));
       gl.uniform1fv(U('uProf'), new Float32Array(s.prof));
+      gl.uniform4fv(U('uWin'), new Float32Array(s.win.flat())); gl.uniform4fv(U('uWinS'), new Float32Array(WIN.flatMap((w) => [w.hw, w.hh, 0, 0]))); gl.uniform1f(U('uU1'), s.u1);
       piirra();
     },
   });

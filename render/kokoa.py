@@ -7,7 +7,7 @@ kokoa:  kopioi osien kuvaraidat kansioon runs/<vedos>/osat, liittää ne, lisä�
         720p- ja WhatsApp-version ja kontaktiarkin, mittaa saumat (viimeisen ja ensimmäisen ruudun keskiväri), lopun (11_12)
         kuvaraidan MD5:n ja äänen totuutta vasten (analysis/kellot.py).
 vertaa: render/vertaa.py jokaiselle osalle vanhaa vedosta vastaan (regressiot).
---osa:  osatiedoston nimi moduulin kansiossa (oletus osa.mp4); moduuli 11_12 käyttää aina osa.mp4:ää (loppuun ei kosketa).
+--osa:  osatiedoston nimi moduulin kansiossa (oletus osa.mp4); 13.11.2026 alkaen myös 11_12 käyttää tätä (loppua muutettiin käyttäjän pyynnöstä, rivit 164-165).
 Äänitystä ei viedä gittiin eikä julkaista: tiedostot ovat vain käyttäjän omaan katseluun (CLAUDE.md)."""
 import json, os, subprocess, sys, time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,7 +30,7 @@ if "--osa" in argv:
 
 def osa(k):
     kansio = "runs/alku_v4" if k == "01_02" else f"runs/maailma_{k}"
-    return f"{kansio}/{'osa.mp4' if k == '11_12' else OSA}"
+    return f"{kansio}/{OSA}"   # 13.11.2026: myös 11_12 käyttää --osa-tiedostoa (käyttäjä pyysi lopun revontuleen aallon ja sileän vaaran, rivit 164-165)
 
 
 def probe(p):

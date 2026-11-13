@@ -99,3 +99,25 @@ Ensimmäinen ruutu: PSNR 68,8 dB (käytännössä identtinen), viimeinen ruutu (
 Renderi uusittu: `runs/maailma_06/osa.mp4`, 4785 ruutua ffprobella. Muutokset (`visual/maailma_06.js`, lohko `ASKEL`): (A) hohteen säde 0,41 → 0,50·L; hohde on pelkkä tasaisesti hiipuva gaussin muoto ilman kohinaa; kirkas möykky/palkki oli askelten välisiä halkeamia lähellä kameraa (leveys on kuvapisteen levyinen), ei hohde. (B) askelhalkeama: leveys 0,015 m, voima 0,65 (muiden halkeamien luokkaa), keskipisteestä taitettu (kaksi janaa, sivuttaispoikkeama 0,30 × pituus), ja se sijoitetaan vähintään 12 m päähän kamerasta. Oma "enintään 1,5× ensimmäisen 0,5 s" -erityiskäsittely puuttuu: halkeaman syntykirkkaus on jaetun `crackAt`-funktion sama kuin muillakin halkeamilla (tämä ei ole rajattu erikseen). (C) Keskikirkkauden nousu askeleen alusta 0,3 s sisään, 15 askelta, **mediaani renderistä 14,1 %** (vaatimus ≥ 10 %).
 `vertaa.py runs/vedos_v6u/osat/06.mp4 runs/maailma_06/osa.mp4 336.8 2 8`: 5:36,8–5:50,8 mse 308 (rivi 93); 5:54,8–6:30,8 mse ≤ 16 (Y2); 6:34,8–6:44,8 mse 33 (Y3); 6:48,8–8:10,8 mse ≤ 27 (Y2). Liikesarja `sarjat_v7/askel_0_13.png` (8 ruudun välein).
 Vajaaksi jäi: hohteen huipun suhdetta ympäröivään jäähän (tavoite ≤ 1,6×) en mitannut numeroina, vain katsoin sarjasta (ei kirkasta ydintä, ei leikkautumista). Halkeama-ajastus: koska halkeamat ovat ≥ 12 m päässä, ensimmäisten askelten (kamera katsoo alas) halkeamat tulevat näkyviin vasta kun jää virtaa ne kuvaan, joten ne eivät näy syntyruudussa. Osa halkeamista on edelleen pitkiä ja melko suoria (esim. 3,7–5,6 s), ja ne ovat näkyvästi leveämpiä kuin ohuimmat vanhat halkeamat.
+
+## Vedos 8: bugit ja taika (13.11.2026; rakentaja ja ohjaaja)
+Vertailukohta `osa.mp4` (vedoksen 8 perusrenderi) renderöitiin ohjaajan virheellä: seek-rivin kommentti oli kytkenyt pois `uStr` ja `uIceD`
+(jään lumi ei ajelehtinut, viirut eivät venyneet). Rakentaja huomasi, ohjaaja korjasi rivin. Pohja `osa_v8_pohja.mp4` (taika=0, 4785 ruutua)
+ja lopullinen `osa_v8.mp4` (taika=1, 4785 ruutua) on renderöity korjatulla koodilla.
+
+**Bugi E3 (6:30,7): KORJATTU.** `nAct` poistettu. Pp-osan kolme hyppijää jatkavat forteen (sigma 1,0 → 1,5 yli 1,5 s); uudet liittyvät yksi
+kerrallaan kaukaa 0,5 s:n häivytyksellä ennen ensimmäistä kosketustaan (ensimmäiset kosketukset 1,10 / 1,67 / 1,93 / 2,23 / 2,53 s ankkurista).
+Ohjaajan liikesarja `osa_v8.mp4`:stä 6:30,4–6:32,7 (0,1 s välein): 1 → 3 (ankkurin ruutu, samat hyppijät) → 4 (6:30,9) → 5–6 (6:31,4–6:31,6)
+→ 8 (6:32,0). Kuvasääntö 11 ja 4d.27.
+
+**Taika (taika=1).** Maahisen varjo (G-jakson matalat pitkät äänet `cues.pitkat`, 5 fraasia 359,9–390,2 s): muodoton fbm-reunainen varjo jään alla,
+paikka kameran suhteen (ohjaaja: ennen kamera ajoi sen yli 2 s:ssa eikä sitä näkynyt), etäisyys 5,5–8,5 m, ydin noin −55 % jään sävystä,
+liukuu sivulle ja vetäytyy syvyyteen. Mitattu (192x108): 383–389 s tummuva alue 1 800–4 600 px, ydin −16…−25 harmaasävyä. U2 pakkanen
+`h_urkupiste_vyory` → `hajoaa_hiljaisuuteen`: rintama halkeamia ja rantaa pitkin juovina, edessä tumma jää. T1 tähdet: 35 korkean äänen alkua,
+ydin noin 3 px, säteet alle 7 px. Leikki: askel valon alla himmentää valot enintään 30 % noin 0,3 s:ksi.
+Keskikirkkaus taika/pohja: suurin ruutu +9,6 % (454,0 s), suurin 1 s +9,3 %, pienin 1 s −5,4 % (varjo).
+
+**vertaa.py** (336.8 1 2.0):
+- `osa.mp4` vs pohja: 5:41,8–5:48,8 (mse 5,9) ja 6:08,8–6:10,8 (4,0) ja 7:19,8–7:20,8 (2,2) = uIceD/uStr-palautus; 6:30,8–6:36,8 (121,5) = E3.
+- `runs/vedos_v7b/osat/06.mp4` vs pohja: 5:37,8–5:46,8 (7,1) = lumi käännöksessä (rivi 135); 5:47,8–8:13,8 = ilman lumen paikat (uSnR), E3, J-valot.
+- pohja vs `osa_v8.mp4`: 5:59,8–6:01,8 (4,8), 6:12,8–6:13,8 (3,2), 6:22,8–6:29,8 (19,5) = maahisen varjo; 7:03,8–7:39,8 (55,9) = pakkanen ja tähdet.

@@ -1049,3 +1049,172 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > se kamera edistyy ja nuo ideat sieltä? Herättää mielenkiinon, vähän niinkuin youtube short
 
 > Tuossa spektrogrammissahan on tarkasti juuri tuo miten valojen pitää mennä? Se näkyy siinä hienosti, eikö niin?
+
+### 13.11.2026, vedos 8: pientä hienosäätöä, vähän taikaa, runs-kansio ja YouTube-tason vedos
+
+> Okei, mielestäni vedokseen kahdeksan tarvitaan aivan pieniä muutoksia vain. Mitä tulee mieleen on esimerkiksi muutama
+> jousten kuviot ei näy. 13:51 eteenpäin, siinä on iso crescendo diminuendo, se pitäisi saada näkyviin myös. Samanlaiset
+> paisumiset pitää aina näkyä jotenkin visuaalisesti.
+>
+> Esim ihan alussa, on kova crescendo, mutta se ei oikein näy. Samoin patarumpujen crescendot pitää saada näkymään
+> latauksena purkausta varten (valo taustalla hieman kasvaa, kunnes purkautuu? - esimerkiksi. Päätä tietysti tyyliohjeen
+> mukaisesti)
+>
+> Tarkista kenraalipaussin ajoitus alussa. Voisiko kameran ajon alas ajoittaa ihan sen alkuun? Kamera vähän niinkuin
+> epäröi, sitten lähtee.
+>
+> Jousten, ja puhaltajien tuulenpuuskat on liian kesyt - lumeen pitää saada tuivertavaa tuulta. Enemmän ilmaa! Enemmän
+> tuulta - musiikin intensiteetin mukaan.
+>
+> lumi menee oudosti edes-takas se ei saa missään vaiheessa nykiä oudosti, vaan sen pitää käyttäytyä kuin lumi, riippuen
+> tuulesta. Kohdassa 5:40, jään alussa, lumen käsittey ei toimi jotenkin oikein.
+>
+> Lisätään vielä tuota taikaa, vaikka juuri lunta voisi kauniisti tipahdella kuusien oksilta alttoviulujen soittaessa,
+> kuin tuuli. Huom, hienovarainen ele, ei mitään massiivista. Mutta kun alttoviulu soi, voisi joku yksi oksa vaikka
+> heilahtaa, tippua lunta. Sieltä täältä.
+>
+> Rakastan sitä kohtaa, kun lumisade alkaa tapion salissa. Siinä se näyttää upealta, kun alttoviulut soi!
+>
+> Katso löydätkö jotain crescendo diminuendo - eleitä, mitä ei huomioida vielä tarpeeksi kuvassa. Ne voisi olla kuin
+> tuuli. Esim jousten isot svellarit kohdassa 3:40, ja vastaavat paikat. Ajat arviot. Kuuntele itse.
+>
+> Miksi tuulenpuuskia on kaksi kohdassa 4:06 ja eteenpäin? Kuulen vaan yhden puhaltajien tuulenpuuskan. Sekin voisi olla
+> tarkemmin ajoitettu musiikkiin, loppuuko ihan vähän liian aikaisin.
+>
+> Jousten kuviot esim 4:15-4:28 ei näy, niissä kaksi svellaria.
+>
+> Jääkohtauksen lopussa,  huomasin partituurista että kun huilut soittavat, fagotti liittyy mukaan. Pitäisikö sille
+> liittyä myös oma valo, kun se soittaa? Se liittyisi mukaan lähestymiseen partituurin mukaan? Aikaisemminkin kuvassa
+> näkyi kolme valoa, joten jos ne lähestyisivät, vielä tarkemmin sen spektrin mukaan? Siitähän sai todella hyvin selvää?
+>
+> Yleisesti siis, toivon aivan pieniä muutoksia nyt, mikään, mitä olemme pitkällä vaivalla nyt korjanneet, ei saa mennä
+> rikki. Eikä puuttua. Tämä toimii, hienosti. Pientä hienosaatöä. Katso kriitikon bugit, onko ne korjattu.
+>
+> Aloita lukemalla tyyliopas, sitten kuunteluopas. Taustatutkimuksesta saa ottaa inspiraatiota myös taikuuteen. Ei siis
+> tosiaan mitään velhoja, tai sellaista taikaa, mutta ihmeellistä, kaunista, sibeliaanista. Mikä saa metsän nousemaan
+> eloon, ja näemme kauneuden?
+
+> Teemme siis vedoksen kahdeksan. Katso samalla myös tuo runs-kansion tila. Sinne on edelliset agentit jättäneet
+> mielestäni vähän paljon jälkiä. Tarkista ovatko kaikki tarpeellisia? Pysytkö itsekään perässä mikä on mikä, kun
+> kansioiden määrä on noin hurja? Tarkista mikä on miltäkin peräisin, ja tarvitseeko säilyttää
+
+> Vedoksesta kahdeksan oli siis ohje jo olemassa. Tee myös youtube-tason vedos, tarvitsemme varsinaiseen julkaisuun
+> tietysti oman äänen, mutta haluan nähdä miltä se näyttäisi tämän äänen kanssa. Ei varsinaiseen julkaisuun.
+
+> No tuota, ei nyt sitä lumen putoamista voi pitää kovin taikuutena. Tuulihan se vaan siinä, joka on sinäänsä oikea veto,
+> koska alttoviulut soittaa kauniisti. Pelkään nyt että sitä taikuutta ei nyt huomaa. Tuo alkuperäinen brief näytti minusta
+> sen osalta paremmalta. Katso vielä mitä pyysin, ja pyri toteuttamaan tuon taustatutkimuksen, visuaalisen tyylin puitteissa
+> lisää taikuutta tähän teokseen. Fable taisi paremmin hoksata mitä tarkoitin kuin sinä.
+
+> Mieti jokaiseen kohtaukseen jotain taikuutta, on se sitten valo siellä, vähän kimallusta, tai sitten tapion askeleet,
+> maahisten varjo. Miten näitä asoita toisi vähän enemmän esiin. Ne on nyt mun pyynnöstä tosi hienovaraisia - mutta mieti
+> miten taiteen keinoilla ne saadaan tyylikkäästi esiin, tuomaan sitä taikaa tähän kappaleeseen.
+
+> Ja huom! Mikään, mikä korjattiin nyt ei saa mennä rikki. Tarkista. Katso myös että bugit on korjattu. Mieti itse, mitkä
+> on oikeat korjaukset niille. Visuaalinen_tyyli ja taustatutkimus antavat sinulle vastaukset, mitkä on oikeita päätöksiä.
+> Se mitä siellä lukee, kertoo sinulle vastauksen.
+
+> Tätä vähän pelkäsin. Pyysin "sieltä täältä" tiputtamaan lunta. Nyt sitä tippuu ihan jatkuvasti, eikä näillä ole tekemistä
+> musiikin kanssa. Ajoita ne tarkemmin alttoviulujen kommentteihin. Niiden tapahtumien pitää olla musiikiin sidottuja. NE EIVÄT
+> SAA TAPAHTUA MUUTEN. Eli lunta tippuu paljon harvemmin.
+>
+> Jousten cresc dim 3:40 alkaen ei näy. Kuuntelitko ne svellarit? <>???
+
+> Kolmas valo syttyy ihan väärään paikkaan, ja tulee töksätäen esiin. Ei näin. Ja ne eivät lähesty edes toisiaan. Se oli huono
+> lisäys. Niiden pitää LÄHESTYÄ TOISIAAN tarkemmin.
+
+> Ajattele niin, että efekti on tehokkaampi, kun sitä ei käytä koko ajan. Jos ne lumet tippuvat koko ajan, ei siitä saa selvää,
+> mitä se tarkoittaa. Kaikki valot, mitkä näkyvät tuolla pitää tulla esiin sulavasti.
+
+> Nuo muutkaan jousten svellarit eli paisutukset eivät näy kunnolla.
+
+> Niitä alttoviulujen kommentteja on enemmän kuin neljä alussa. Kuuntele tarkasti. Se on alttojen "div 4" paikka, eli alttosoolo
+
+> Tahti 53 eteenpäin alkaa
+
+> Ja ne alkavat "poco f" ja pienenevät pois "piano pianissimo" asti. Eli se voisi vähän näkyä mysö
+
+> Niin tarkista vielä että olet noudattanut visuaalista tyyliä. Siellä sanotaan että yksi asia videossa edustaa yhtä asiaa äänessa.
+> Esim tässä kohtaa teit virheen: askeleet ei voi olla ne sykähtävät valot ja lumet. Sitten ne menee sekaisin. Askeleet pitää näkyä
+> niinä valoina, kuten ne nyt näkyy. Ja alttoviulu on se tuuli, joka liikuttaa sitä SATAVAA LUNTA MYÖS, koska se on se mikä tiputtaa
+> sen lumen. Sen satavan lumen pitää myös hellävaroen (dolce) liikuttaa hieman sitä satavaa ja tipuvaa lunta. nyt se on ihan
+> staattinen se satava lumi. Tässä kohtaa se sopii, koska sävy on dolce, mutta se voisi kuitenkin vähän liikkua tuulen mukana
+
+> Jokaisen korjauksen pitää kuitenkin noudattaa visuaalista tyyliä. Se on sitova dokumentti. Tarkista että olet ymmärtänyt sen
+
+> Hei, nyt ei ole mennyt hyvin. Et ole tehnyt niitä <> paisutuksia näkyviksi. Sen lisäksi olet useaan kohtaukseen, jotka toimivat
+> ennen hyvin, lisännyt välkettä ja bugeja. Samoin pallo, joka ennen tuli hienosti esiin nyt ilmestyy "tyhjästä"
+>
+> Tapion sali toimi ennen hyvin. Nyt ne valot välkkyy ja on häiritseviä. Eli selviä bugeja olet luonut sinne. Kaikki valot pitää
+> liikkua musiikin tahtiin, ei saa välkkyä. USEAAN KERTAAN TULEE SELVÄ BUGI NÄKYVIIN, ilmeisesti valon ja tuon sumun rendauksessa. Se
+> toimi ennen hienosti. Älä revertoi tekemääsi työtä, vaan ymmärrä miksi se välkkyy, ja korjaa.
+>
+> Lue visuaalinen_tyyli, niin ymmärrät mitkä rikkeet olet tehnyt.
+>
+> Lisäksi et korjannut isointa valitustani, eli miten lumi käyttäytyy tuossa jääkohtauksen alussa. Se menee edes-takas vasemmalta
+> oikealle. MIKSI? EI NÄIN!!! Pyysin jo korjaamaan sen, mutta olet ilmeistesti korjannut 8 tuntia jotain väärää juttua.
+
+> Lumeenkin on tuossa myrskyn alussa tullut jokin nopea tuulen vauhdin muutos? EI SAA OLLA ÄKILLISTÄ DELTAA, jos musiikissa ei ole
+> aksenttia. Sitten olet lisännyt jotain taikuutta sinne, ilman mitään ankkuria ääneen? EI NÄIN! SIIS JOKAISELLA ASIALLA PITÄÄ OLLA
+> ANKKURI tai CUE mihin ne liitetään. TÄMÄ PITI OLLA TÄYSIN SELVÄÄ SINULLE????
+
+> Kamera bugittaa siirtyessä alun kohtauksesta metsään. Se nykii oudosti. Hei, mikä nyt on sinuun mennyt? Miksi teet tällaisia
+> bugeja, kun homma jo toimi ihan hyvin!
+
+> En ole varma että korjaasit tapion salin välkkeen oikein. Siellä on pölypilvessä tulee välkettä, ja reagoi valoon oudosti. Sinne olisi
+> kyllä hieno jos saisi vähän valoa niin että ne puut luovat varjot valojen mukaan loogisesti ja kauniisti. Mutta niiden pitää tosiaan
+> sopia tyyliin. Katso miltä ne renderit näyttää, ja yritä mitata kirkkauden äkillisiä vaihteluita. huomaat sitten välkkeen
+
+> Mitä jos vain pehmennät tuon efektin? Katsomalla että se sumu käyttäytyy jatkuvasti, eikä bugittele. Luulen että niiden välkkeiden
+> lisäämä valo nyt paljasti vaan siitä sumusta tämän ongelman. Eli aikaisemmin ne eivät olleet valossa --> ei näkynyt. Nyt kun
+> lisättiin valoja --> näkyy
+
+> Oletko muuten tehnyt monta lumisadetta, vai yhden globaalin lumisateen? Vähän noissa taioissa nyt häiritsee se että ne tosiaan ole
+> sidottu mihinkään cue:hen. Luulin että meillä on ymmärrys jo tästä projektista, mikä aiheuttaa visuaalisia juttuja? Ne vähän
+> heitettiin sinne tänne. Miten olisin voinut paremmin ohjata sinua niin, että osaat jatkossa toteuttaa tuollaiset parannukset, sitoen
+> sääntöihin? Pitääkö minun joka kerta erikseen muistuttaa tästä jatkossa?
+
+> Harmi  että et pystynyt ratkaisemaan välkettä. Onko nuo taiat ja valot mahdollista lisätä ilman välkettä? Ne olivat hienot. Osaatko selittää,
+> mikä siinä aiheutti tämän ongelman? Joku ihan minimiaalinen versio? Mutta siis tämä tapion huone toimii mielestäni näikin tosi hyvin, koska se
+> taikaelementti näkyy tuossa pöydässä. Joka on mun mielestä aivan älyttömän hieno. Ja nuo sumut toimii upeasti. Menee ihan kylmät väreet.
+>
+> Tämä on todella lähellä aivan täydellistä, harmi, muutamat asiat ei ihan osu paikalleen. Näen nyt mitä olet ajatelut, mutta tarkkuus ei ilmeisesti
+> ihan riitä havaitsemaan täysin tarkasti vaikka niitä jousten paisutuksia?
+>
+> Mutta siis upeaa työtä, tämä on todella hieno. Useat kohtaukset ovat aivan täydelliset.
+
+> Partituuri ei ole luotettava lähde, koska jokainen tahti kestää vähän eri ajan, riippuen temposta, ja tuleeko rubatoa. Joten parempi olisi jos
+> pystyt tarkemmin vaikka katsomaan millä kaistalla se ääni on, ja katsomaan sen volyymimuutosta ajan yli?
+
+> Koita löytää paremmin tuo ääni ja kuva synkkaan vielä noissa paisutuksissa. Ne on nyt "sinnepäin".
+
+> Vielä yksi toive: puhaltajilla tulee hieno nousu ja lasku kohdassa 16:34 eteenpäin. Hidas, ja kaunis. Voisiko se pikkasen nostaa ja laskea
+> revontulia? Aaltomaisesti, kauniisti ja äänen mukaisesti.
+>
+> Olisiko kaikki nyppylät mahdollista piirtää tasaisina? Noita piikikkäitä mäkiä ei suomessa ole?
+
+> Aah tämä ei ollut paisutus, vaan melodia menee ylös alas ylinousevalla skaalalla, vähän kiinalaiseen tyyliin. Se siis heiluttaa sen
+> revontulen, kuten jossain animessa
+
+> Ja vain siinä kohtaa
+
+> Ei koko ajan
+
+> Mielestäni se laskee alas myös 16:38 asti? Kuuletko lopun?
+
+> Jos tosiaan aalto kulkisi tuon revontulen läpi tuon ajan?
+
+> Jos tosiaan aalto kulkisi tuon revontulen läpi tuon ajan?
+
+> Näytä minulle se mittaus, mielenkiinnosta
+
+> Tuo 16:33 ja 16:34 ei ole puhaltajilta. Se on jousten pitkät äänet. Se lähtee vasta tuossa nyppylän kohdalla
+
+> Eli tuo c - d - e - fis linja
+
+> Hei miksi sitä kidettä nyt säädetään? Se on ihan hyvä. Mikä kritiikki siitä tuli?
+
+> Aah luulin että säädät sitä itse kidettä, mikä näkyy kuvassa, ei kidekohtausta. Ok pidetään muutokset, jos sinun luottamus siihen on hyvä
+> että ne paisutukset (<>) osuu nyt oikeisiin paikkoihin
+
+> ehkä aavistuksen hienovaraisempi muutos tuohon revontuliin. Ihan vähän tyylikkäämpi

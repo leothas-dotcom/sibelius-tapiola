@@ -1,6 +1,6 @@
 # Visuaalinen tyyli: Tapiola
 
-*Versio 2.1, 10.11.2026 (v2.1: käyttäjän palaute vedoksesta 4 luvun 4d kohdiksi 23–30; v2.0: käyttäjä hylkäsi vedoksen 3; **luku 4c on hylätty**, luku 4d kirjaa käyttäjän sanat, ja luvut 1, 2 ja 5 ovat taas peruste; v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
+*Versio 2.2, 13.11.2026 (v2.2: käyttäjän palaute vedoksesta 7b luvun 4d kohdiksi 38–41; v2.1: käyttäjän palaute vedoksesta 4 luvun 4d kohdiksi 23–30; v2.0: käyttäjä hylkäsi vedoksen 3; **luku 4c on hylätty**, luku 4d kirjaa käyttäjän sanat, ja luvut 1, 2 ja 5 ovat taas peruste; v1.6: luvun 4c tarkennukset kriitikkokierrosten 4 ja 5 jälkeen; v1.5: luku 4c kerrosmaisema, kuva on ääni, koepätkän palautteen jälkeen; **luku 4c voittaa, jos se ja jokin vanhempi kohta ovat ristiriidassa**; v1.4: kuvatavat, luku 4b, vedoksen 1 palautteen jälkeen; v1 1.11.2026; v1.2: metsä näkyy, synestesia väriin, luku 7b ääni → kuva; v1.3: ohjeen omat ristiriidat korjattu käsikirjoituksen tarkistuksen jälkeen, `runs/kk_tarkistus_v1/tarkistus.md`). Kirjoitettu käyttäjän ideoista (`docs/tutkimus/haastattelu.md`) ja tutkimuksesta
 (`docs/tapiola_tutkimus.md`). Tämä on kaiken peruste: se voittaa briefin, palautteen ja ohjauksen. Jokainen
 osaistunto, aliagentti ja kriitikko lukee tämän kokonaan (kuvasäännöt ovat luvussa 12) ennen mitään muuta. Käyttäjä
 hyväksyy ennen kuin kuvakäsikirjoitus alkaa. Kohdat, jotka ovat ohjaajan valintoja eivätkä käyttäjän sanoja, on
@@ -393,6 +393,39 @@ taikuutta, ja samalla jotain uhkaavuutta. Niiden kahden leikki. Totellen tietyst
     kerralla, keskikirkkaus enintään +6 %); ääni ohjaa; ei hahmoja, silmiä, esineitä, lämpimiä värejä eikä vihreää; ei
     mitään käyttäjän kehumien kohtien päälle; loppuun (maailmat 11–12) ei kosketa. Lisäykset ovat kytkimen takana
     (`taika=1`), jolloin vedos ilman niitä säilyy ruudulleen (`runs/vedos_v8/brief.md`).
+
+**Käyttäjä 13.11.2026, vedoksen 7b jälkeen** (koko palaute: `docs/tutkimus/haastattelu.md`): "mielestäni vedokseen kahdeksan
+tarvitaan aivan pieniä muutoksia vain ... mikään, mitä olemme pitkällä vaivalla nyt korjanneet, ei saa mennä rikki. Eikä puuttua."
+
+38. **Paisutukset näkyvät aina, kuin tuuli.** Käyttäjä: "Samanlaiset paisumiset pitää aina näkyä jotenkin visuaalisesti." ja "Ne
+    voisi olla kuin tuuli." Selvä paisutus (< >, mitattu taso nousee ja laskee) on ympäristössä tuulenvire: lumi kiihtyy sivulle ja
+    kevenee, maasta irtoaa lunta. Ei valon välähdystä, eikä puiden liike kasva yli kohdan 31.
+39. **Patarumpujen crescendo on lataus, joka purkautuu.** Käyttäjä: "patarumpujen crescendot pitää saada näkymään latauksena
+    purkausta varten (valo taustalla hieman kasvaa, kunnes purkautuu? - esimerkiksi. Päätä tietysti tyyliohjeen mukaisesti)". Valo
+    kertyy lähteeseensä (horisontin valo) crescendon aikana ja purkautuu iskun ruudussa; uutta valonlähdettä ei tuoda.
+40. **Lumi käyttäytyy kuin lumi, tuulen mukaan.** Käyttäjä: "lumi menee oudosti edes-takas se ei saa missään vaiheessa nykiä
+    oudosti, vaan sen pitää käyttäytyä kuin lumi, riippuen tuulesta." Täsmentää kohtaa 32: kiemurtelu ja pyörteet kulkevat tuulen
+    mukana (niiden vaihe on tuulen kertymä, ei kellonaika) eivätkä heilu paikallaan edestakaisin; hiutale ei ole linssissä, vaan
+    liikkuu kameran käännöksen ja etenemisen mukana, ja alas katsottaessa kameran ja maan välissä ei ole lunta. Puuskat tuivertavat:
+    "Enemmän ilmaa! Enemmän tuulta - musiikin intensiteetin mukaan."
+41. **Taika on kauneutta, ei velhoja, ja se näkyy.** Käyttäjä: "Ei siis tosiaan mitään velhoja, tai sellaista taikaa, mutta
+    ihmeellistä, kaunista, sibeliaanista. Mikä saa metsän nousemaan eloon, ja näemme kauneuden?" · "ei nyt sitä lumen putoamista
+    voi pitää kovin taikuutena. Tuulihan se vaan siinä ... Pelkään nyt että sitä taikuutta ei nyt huomaa. Tuo alkuperäinen brief
+    näytti minusta sen osalta paremmalta." · "Mieti jokaiseen kohtaukseen jotain taikuutta, on se sitten valo siellä, vähän
+    kimallusta, tai sitten tapion askeleet, maahisten varjo. ... mieti miten taiteen keinoilla ne saadaan tyylikkäästi esiin".
+    Täydentää kohtaa 37: jokaisessa kohtauksessa (paitsi lopussa) on vähintään yksi taika, jonka katsoja huomaa ensimmäisellä
+    katselulla, myös puhelimella; keinot ovat kontrasti (pieni terävä kimallus, ympäristö tummuu hieman), liike (aalto, joka kulkee),
+    yksi taika kerrallaan musiikin hetkessä, hopea ja halla tummaa vasten. Maahisten varjo on muodoton pehmeä varjo, ei hahmo.
+    Oksalta putoava lumi alttoviulujen aikana on tuulta ("sinäänsä oikea veto"), ei taika. Suunnitelma: `runs/vedos_v8/brief.md`.
+
+42. **Yksi asia kuvassa on yksi asia äänessä.** Käyttäjä: "yksi asia videossa edustaa yhtä asiaa äänessä. ... askeleet ei voi olla
+    ne sykähtävät valot ja lumet. Sitten ne menee sekaisin. Askeleet pitää näkyä niinä valoina, kuten ne nyt näkyy. Ja alttoviulu on se
+    tuuli, joka liikuttaa sitä SATAVAA LUNTA MYÖS, koska se on se mikä tiputtaa sen lumen." · "Jokaisen korjauksen pitää kuitenkin noudattaa
+    visuaalista tyyliä. Se on sitova dokumentti." Täsmentää luvut 7 ja 7b: jokaisen kuvan elementin syy on yksi soitin tai yksi
+    äänen tapahtuma; toinen ääni ei liikuta, himmennä eikä sytytä sitä (ei "leikkiä" soittimien välillä). Pimeässä metsässä (03_04)
+    basson askeleet ovat valo lumessa, ja alttoviulu on tuuli: se tiputtaa lumen oksilta jokaisessa kommentissaan (t. 53 alkaen,
+    poco f → ppp, tipahdus pienenee) ja kuljettaa satavaa ja tippuvaa lunta hellävaroen (dolce) sivulle. Käyttäjä: "efekti on
+    tehokkaampi, kun sitä ei käytä koko ajan" ja "Kaikki valot, mitkä näkyvät tuolla pitää tulla esiin sulavasti."
 
 **Prosessisääntö:** ohjaaja ei kirjoita tähän ohjeeseen uutta kuvakielioppia voittavaksi ilman käyttäjän hyväksyntää.
 Uusi suunta näytetään käyttäjälle ensin lyhyenä pätkänä, ennen kuin koko teos renderöidään.

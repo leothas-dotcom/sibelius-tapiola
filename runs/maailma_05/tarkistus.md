@@ -111,3 +111,58 @@ Moduulin alku (huurre-rajakuva) ja loppu (JAA-rajakuva, pisara) ovat koodissa en
 - Lumi (Y2) ei kuulu moduulin 05 kohtiin; ei tarkistettu eikä muutettu.
 - `holes`-kohinan ajasta riippuva ajelehtiminen (`uTime*0.12`, harjanteen alaosan läpikuultavuus) jätettiin ennalleen, koska se ei ole latvan ääriviivassa.
 - Kriitikkoa ei ajettu.
+
+## Vedos 8: bugit ja taika
+
+Rakentaja: moduuli 05 (`visual/maailma_05.js`), 13.11.2026. Vertailukohta `osa.mp4` (ei ylikirjoitettu), pohja `osa_v8_pohja.mp4` (taika=0, bugit korjattu), lopullinen `osa_v8.mp4` (taika=1). Kokeet ja mittaukset: `runs/maailma_05/v8_koe/`.
+
+### Bugit
+**P5 (4:04-4:49, suorakulmaiset laikut etualalla): KORJATTU.** Syy (todistettu kuvasta, `v8_koe/s0` vs `s1`): harjanteen `holes`- ja `gapT`-peitot käyttivät akselin suuntaista arvokohinaa (`vnoise`) kynnystettynä ja epäyhtenäisellä mittakaavalla (x 0,22, y 0,35), joten rungon läpikuultavat aukot olivat suorakaiteita. Korjaus: uusi `wn()` (hila kierretty ja vääristetty, `smoothstep(0,50..0,88)`), käytössä `uFixP5`-kertoimella, joka on 1 ankkureista johdetussa ikkunassa (`D_pikkolo` - 3 s ... `askeleet_fis.t_end` - 8 s, pehmeät reunat). Ikkunan ulkopuolella vanha laskenta ennallaan (S2). Liikesarjat: `sarja_p5_osa.png` (ennen), `sarja_p5_osa_v8_pohja.png` (jälkeen): laikut ovat nyt kaarevia ja pehmeäreunaisia. Pystysuorien terävien reunojen laskuri ei erottanut (reunat pehmeitä jo ennen), joten todiste on kuva.
+**P6 (5:26,5-5:28, tumma kaista kovalla vaakareunalla): KORJATTU.** Syy (kuva `v8_koe/s2` vs `s3`): ei jään pinnan sävy vaan kerrosten kova katkaisu `if (s > sIce) continue;`: kerros päättyi vakiokorkeudella ruudulla, kun säde osui jäähän ennen kerrosta. Korjaus: kerros hälvenee pehmeästi (`iceCut = 1 - smoothstep(0.30, 1.0, s/sIce)`). Mittaus (alavasen neljännes, 6 rivin ikkuna, rivit 700-1000, kuva 5:27,5): suurin muutos 3,94 harmaasävyä (osa.mp4, rivillä 815) -> 0,60 (osa_v8_pohja.mp4). Lasipallo 5:25-5:33 ennallaan (kuva `v8_koe/s3/t327.5.png`).
+**P2 (kalvo 3:23-3:26): ohjaajan korjaus**, sallittu ikkuna vertaa.py:ssä.
+
+### S2.1: osa.mp4 vs osa_v8_pohja.mp4 (203,0 1 2,0)
+    runs/maailma_05/osa_v8_pohja.mp4 vastaan runs/maailma_05/osa.mp4: 669 ruutua, 6 muuttunutta jaksoa (raja mse 2.0)
+      3:23.0 - 3:26.0   suurin mse 19.6   (osan aika 0-3 s)
+      4:03.0 - 4:15.0   suurin mse 6.4   (osan aika 40-52 s)
+      4:18.0 - 4:20.0   suurin mse 2.1   (osan aika 55-57 s)
+      4:23.0 - 4:26.0   suurin mse 2.6   (osan aika 60-63 s)
+      4:27.0 - 4:29.0   suurin mse 2.1   (osan aika 64-66 s)
+      4:35.0 - 4:46.0   suurin mse 4.7   (osan aika 72-83 s)
+
+Jokainen jakso on joko P2 (3:23-3:26) tai P5-ikkuna (4:03-4:46, ikkunan reunat pehmeät). Muuta muutosta ei ole. P6 jää alle rajan 2,0 (kaista on tumma ja matalakontrastinen), joten sen todiste on yllä oleva rivimittaus.
+
+### Taika (taika=1)
+- **Kimallus keijuvaloihin (T1):** jokaisesta keijuvalosta lähtee 4 pientä hopeista tähtipistettä (säde noin 3 px, ristikuvio), jotka putoavat ja sammuvat 0,6 s:ssa (`fairyAt`, alku valon alun ruudussa); valot 25 % kirkkaampia (`voima` x 1,25). Valojen paikat ja ajoitus ennallaan. Liikesarja: `sarja_fairy_taika.png` vs `sarja_fairy_pohja.png`.
+- **Leikki (askeleet_fis) ja U3:** askeleet = matalat alut (`d.alut`) `askeleet_fis`-jaksossa, vähintään 1,2 s välein. Askel himmentää keijuvalot ja horisontin hohteen 22 % (nousu 0,05 s, palautuu 0,45 s), ja pehmeä varjo (enintään 38 %) kulkee hohteen poikki vasemmalta oikealle 1,6 s:ssa. Mittaus: hohdekaistan (rivit 100-135/270) suhde taika/pohja laskee minimissään 0,90 (10 fps -näyte) ruuduissa 4:24,6, 4:30,7, 4:33,5, 4:35,6, 4:37,6, 4:40,6, 4:48,6, 4:52,2. Liikesarja `sarja_askel_taika.png`.
+- **T1 kiteen ja harjanteen huurre pitkän e:n aikana (`e_pitka_ja_kuviot`, ikkuna sen ankkureista):** hopeisia tähtikimalluksia (säde 2,6 px x ristikuvio) latvan reunan alla aallossa, joka kulkee horisontista katsojaa kohti; paljon kimalluksia kerralla (noin 80 kuvassa 4:37), jokainen välkkyy omalla vaiheellaan. Liikesarja `sarja_kimallus_taika.png` vs `sarja_kimallus_pohja.png`.
+- **Kirkkaus:** koko kuvan keskikirkkaus taika vs pohja 4:37: +0,32 %; suurin muutos koko osassa -6,6 % (4:33,5, askeleen himmennys; ei nousua). S3:n 10 % ei ylity.
+
+### S2.2: osa_v8_pohja.mp4 vs osa_v8.mp4 (203,0 1 2,0)
+    runs/maailma_05/osa_v8.mp4 vastaan runs/maailma_05/osa_v8_pohja.mp4: 669 ruutua, 13 muuttunutta jaksoa (raja mse 2.0)
+      3:53.0 - 3:54.0   suurin mse 2.1   (osan aika 30-31 s)
+      4:03.0 - 4:04.0   suurin mse 4.6   (osan aika 40-41 s)
+      4:05.0 - 4:12.0   suurin mse 8.0   (osan aika 42-49 s)
+      4:13.0 - 4:15.0   suurin mse 4.0   (osan aika 50-52 s)
+      4:16.0 - 4:17.0   suurin mse 4.7   (osan aika 53-54 s)
+      4:18.0 - 4:20.0   suurin mse 3.2   (osan aika 55-57 s)
+      4:21.0 - 4:22.0   suurin mse 2.6   (osan aika 58-59 s)
+      4:24.0 - 4:28.0   suurin mse 12.6   (osan aika 61-65 s)
+      4:29.0 - 4:32.0   suurin mse 10.8   (osan aika 66-69 s)
+      4:33.0 - 4:46.0   suurin mse 18.0   (osan aika 70-83 s)
+      4:47.0 - 4:54.0   suurin mse 16.7   (osan aika 84-91 s)
+      4:55.0 - 4:58.0   suurin mse 5.7   (osan aika 92-95 s)
+      5:00.0 - 5:02.0   suurin mse 4.3   (osan aika 97-99 s)
+
+Jokainen jakso on taikalisäyksen ikkuna: 3:53-3:54 ja 4:03-4:22 ja 5:00-5:02 keijuvalojen kimallusvanat ja kirkastus (sama valon logiikka kuin pohjassa), 4:24-4:58 askelleikki ja pitkän e:n huurre.
+
+### Päätökset (kirjattu perusteluineen)
+- P5 ja `gapT` (latvan reunan valoraot) sama kohina, koska latvan raot olivat samoja suorakaiteita (kuvasääntö 8, 20).
+- P5-korjaus rajattiin ikkunaan (S2), vaikka sama virhe on muuallakin moduulissa; jos ohjaaja haluaa sen koko moduuliin, riittää `uFixP5` = 1 aina.
+- Kimalluksen tiheys (kokeet t2-t5) säädettiin kuvasta: ensin ei näkynyt (virhe: ruudukon siirtymää ei vähennetty tähden paikasta), sitten liikaa (koko etuala), nyt vain harjanteen reunan alla ja kaukaisemmissa kerroksissa.
+- Ei kosketa vedoksen 8 korjauksiin: D_pikkolo-puuska, paisutukset tuulena, lisälumi, keijuvalojen paikat ja ajoitus, lasipallo.
+- Aukot: T2 (ikkunat) ja U1/U2/U3 muut kuin hohteen varjo eivät kuulu moduulin 05 briefiin. Kriitikkoa ei ajettu.
+
+Ohjaajan säädöt 13.11. (taika=1 ja pohja): P5-korjaus koko moduuliin (`uFixP5` = 1; sama suorakaidevika näkyi myös 3:50–4:15 ja 4:57–5:04; kuvasäännöt 8 ja 20); huurrekimallus harvemmaksi (noin neljännes: `step(0,92)`, ennen noin sata kimallusta yhtä aikaa koko pitkän e:n ajan) ja säteet lyhyiksi. Uudet `osa_v8_pohja.mp4` ja `osa_v8.mp4` 4014 ruutua. vertaa.py osa vs pohja: 3:23–3:33 (P2 ja P5), 3:50–4:15, 4:18–4:20, 4:23–4:29, 4:35–4:46, 4:57–5:04 (P5). Pohja vs taika: 3:53–5:02, kymmenen jaksoa, kaikki keijuvalojen, askelten ja huurteen ikkunoita.
+
+Ohjaajan korjaus uusintakriitikon jälkeen 13.11. (P-g): keijuvalon kimallusvana alkaa valon alta (−0,012) eikä sen vierestä, syttyy vasta pudotessaan (0,03–0,12 s) ja säteet ovat lyhyet; ennen ensimmäinen vanan piste näkyi valon vieressä samalla korkeudella (pari kuin silmät, S5). Liikesarja 4:49,0–4:50,1 0,1 s välein: pisteet valon alla, ei pareja. Uusi `osa_v8.mp4` 4014 ruutua. Taian lisäkierros (kriitikko P-b): huurrekimallus `step(0,87)`.

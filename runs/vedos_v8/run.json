@@ -1,0 +1,43 @@
+{
+  "nimi": "vedos_v8",
+  "tehty": "2026-11-13",
+  "levytys": "rattle2022 (työäänitys; ei julkaisuun, ei gittiin)",
+  "lahtokohta": "vedos 7b + käyttäjän palaute riveillä 129-153 (brief runs/vedos_v8/brief.md): korjaukset, kriitikon bugit tyyliohjeen mukaan, taika jokaiseen kohtaukseen (kytkin taika=1), ja käyttäjän katselun jälkeen (rivit 148-153): oksalumi vain alttoviulujen kommentteihin, paisutukset tuulena, kirjaimen J kaksi lähestyvää valoa, yksi asia kuvassa = yksi asia äänessä (tyyliohje 4d.42) Rivit 154–165 (13.11. iltapäivä): jään lumen suunta, kamera, myrskyn tuuli, taikojen välke pois, sali = 7b:n renderi, paisutukset kaistoittain mitattuina, revontulen aalto puhaltimien linjasta, sileät vaarat.",
+  "moduulit": {
+    "01_02": "runs/alku_v4/osa_v8.mp4 (pohja taika=0: osa_v8_pohja.mp4)",
+    "03_04": "runs/maailma_03_04/osa_v8.mp4 (pohja: osa_v8_pohja.mp4)",
+    "05": "runs/maailma_05/osa_v8.mp4 (pohja: osa_v8_pohja.mp4)",
+    "06": "runs/maailma_06/osa_v8.mp4 (pohja: osa_v8_pohja.mp4)",
+    "07_08": "runs/maailma_07_08/osa_v8.mp4 = 7b:n renderi (osa.mp4); välkkyvä taikaversio hylätty (osa_v8_valke_hylatty.mp4)",
+    "09": "runs/maailma_09/osa_v8.mp4 (pohja: osa_v8_pohja.mp4)",
+    "10": "runs/maailma_10/osa_v8.mp4 (pohja: osa_v8_pohja.mp4)",
+    "11_12": "runs/maailma_11_12/osa_v8.mp4 (muutettu käyttäjän pyynnöstä, rivit 164-165; vanha: osa_7b_talteen.mp4)"
+  },
+  "mitattu": {
+    "ruutuja": 32340,
+    "kesto_s": 1078.016,
+    "aani_ero_ms": 0.0,
+    "saumojen_suurin_ero": 0,
+    "loppu_11_12_md5": "c32ce1daea717cdfc6d97705ce580c99 (muuttunut tarkoituksella; vedoksissa 4-7b 790baba2...)",
+    "vertailu_7b": "sali 8:16-11:32 käytännössä identtinen 7b:n kanssa (kriitikko: |ero| alle 0,05); myrsky 14:29-15:45 eroaa, koska lumen paikka kertyy tuulen nopeudesta",
+    "taika_kirkkaus": "keskikirkkaus taika/pohja (30 fps): 01_02 -4,0...+0,2 %; 03_04 suurin ruutu +9,5 %, 1 s +5,9 %; 05 -3,5...+1,5 %; 06 suurin 1 s +9,2 %, pienin -9,1 % (maahisen varjo); 07_08 enintään +1,1 %; 09 +0,5...+0,7 %; 10 -0,2...+0,3 %",
+    "paisutukset": "kide: tuiskun viive ohjaukseen 0 ruutua, korrelaatio 0,93 (renderi tuiskulla miinus ilman)"
+  },
+  "tiedostot": [
+    "runs/vedos_v8/koko.mp4",
+    "runs/vedos_v8/tapiola_vedos8_720p.mp4",
+    "runs/vedos_v8/tapiola_vedos8_whatsapp.mp4",
+    "runs/vedos_v8/tapiola_vedos8_youtube_2160p.mp4 (YouTube-tason resepti, työäänitys: vain käyttäjän omaan katseluun, ei julkaisuun)",
+    "runs/vedos_v8/kontakti.jpg"
+  ],
+  "kriitikko": "runs/vedos_v8/kriitikko.md: 1. kierros ESTÄVIÄ 1 (B1 askelten lumi suorakaiteina, korjattu); 2. kierros ESTÄVIÄ 0; 3. kierros (rivit 148-153, tyyliohje 4d.42) ESTÄVIÄ 1 (paisutus 3:36-3:43 ei näkynyt tuulena, korjattu); 4. kierros: ks. raportin loppu; 6. kierros ESTÄVIÄ 2: E1 jään alun lumi puuttui 5:37-5:41 (korjattu, kuva 5:38,5), E2 paisutus ei näkynyt tuulena kiteessä (uusi kaistoittainen ohjaus renderöity; kriitikko ei ole katsonut uutta koontia)",
+  "tiedossa_auki": [
+    "näytönohjain piirtää saman ruudun ajoittain kahdella tavalla (ks. Opit 13.11.): salin lisätty valo poistettu; nopeaa vahtia ei ole",
+    "rivi 157: pallo, joka ilmestyy tyhjästä: ohjaaja ei löytänyt eroa, käyttäjältä kysytty kohta",
+    "rivi 161: puiden varjot valojen mukaan salissa: tekemättä",
+    "rivi 162: taiat takaisin saliin minimiversiona (pöydän sykkeet viulujen pitkistä äänistä): tekemättä",
+    "paisutukset 4:06-4:20: mittaus epävarma; uusi koonti ilman kriitikon kierrosta",
+    "06: jään valot himmenevät Tapion kummussa (7b:stä)",
+    "lopullinen äänitys on käyttäjän oma (myöhemmin); YouTube-versio tästä vain katseluun"
+  ]
+}

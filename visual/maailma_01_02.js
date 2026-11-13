@@ -25,7 +25,11 @@ uniform vec4 uVP[11];                    // vaaran harjan valon kohdat (viimeise
 uniform vec4 uVW[11];                    // niiden painot
 uniform vec4 uHP, uHW;                   // sama Tapion talolle
 uniform vec3 uCut;          // iskun leikkauksen voima, jälkihohto, nousu (0..1)
-uniform vec2 uTui;          // rivi 112: tuiverrus: aaltoilun laajuus (m), vaihe (kertymä)
+uniform vec2 uTui;          // rivi 112: tuiverrus: aaltoilun laajuus (m), vaihe; vedos 8 (rivit 133, 134): vaihe = tuulen kertymä, joten kiemurtelu on tuulen mukana eikä käänny
+uniform vec2 uLat;          // vedos 8 (rivi 131): lataus (cresc. molto, usvan takavalo 0..1) ja purkaus (ff, välähdys 0..1)
+uniform vec4 uShd;          // vedos 8 taika U3: kulkevan varjon keskipiste (x, z, m), säde (m), voima (0 = ei varjoa)
+uniform float uSpk, uWd;    // vedos 8 taika T1: kimallus päällä (0/1) ja kuvan hienoinen tummuminen aallon aikana
+uniform float uWv[10];      // kimalluksen aaltojen alkuhetket (teoksen aika, s); ei käytössä = -1000
 uniform vec4 uSnow;         // tiheys, sivutuulen matka, putoamisen matka, lähestymisen matka
 uniform float uHill[32];    // horisontin kummut (Tapion talon vaara): melodian kaari, kiinteä
 uniform vec4 uPulse[6];     // matalan kaistan paino: ikä, voima
@@ -41,6 +45,7 @@ const vec3 SNOWA = vec3(0.60, 0.69, 0.82);                // halla: lumi
 const vec3 AMB = vec3(0.050, 0.080, 0.130);               // taivaan valo
 const vec3 SNOWC = vec3(0.55, 0.62, 0.75);
 ` + GLSL_YHTEINEN + `
+float shadowW(vec2 xz) { vec2 dd = (xz - uShd.xy) / vec2(uShd.z, uShd.z * 1.5); return uShd.w * exp(-dot(dd, dd) * 1.1); }
 float prof(float u) { u = clamp(u, 0.0, 31.0); int i = int(floor(u)); return mix(uHill[i], uHill[min(i + 1, 31)], fract(u)); }
 // vaaran laen havuhattu: pienet latvojen kärjet
 float tips(float wx, float k, float cell) {
@@ -101,9 +106,10 @@ float snowAt(int s, float zz, float dx, float dy) {
   vec2 ic = floor(w2), fr = fract(w2);
   float h = hash(ic);
   if (h >= uSnow.x) return 0.0;
+  float fin = clamp((uSnow.x - h) / 0.06, 0.0, 1.0);                         // vedos 8: crescendossa uudet hiutaleet syttyvät pehmeästi
   vec2 c = 0.15 + 0.7 * vec2(hash(ic + 1.7), hash(ic + 5.1));
   float dd = length(fr - c) * 0.9, r = 0.030 + 0.02 * fract(h * 53.0);
-  return 0.50 * smoothstep(r, r * 0.25, dd) * smoothstep(1.5, 4.0, zz) * smoothstep(45.5, 38.0, zz);
+  return 0.50 * fin * smoothstep(r, r * 0.25, dd) * smoothstep(1.5, 4.0, zz) * smoothstep(45.5, 38.0, zz);
 }
 
 // Tapion talon vaara: sama profiili kuin maailmassa 11_12 (siellä pienennettynä uSv:llä): talo ja kummut
@@ -146,7 +152,7 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
     float cx0 = asp * 0.36 - uCamX * 0.00004;
     col += HALLA * G * (0.55 * exp(-max(aB, 0.0) / sH) + 0.08 * exp(-max(aB, 0.0) / (sH * 4.0))) * (0.85 + 0.3 * m2);
     // iskun valo kerääntyy viivalle siihen kohtaan, josta leikkaus nousee
-    col += HALLA * uBuild * exp(-pow((p.x - cx0) / 0.12, 2.0)) * (0.55 * exp(-max(aB, 0.0) / (sH * 1.5)) + 0.10 * exp(-max(aB, 0.0) / (sH * 5.0)));
+    col += HALLA * uBuild * 1.6 * exp(-pow((p.x - cx0) / 0.20, 2.0)) * (0.55 * exp(-max(aB, 0.0) / (sH * 1.5)) + 0.10 * exp(-max(aB, 0.0) / (sH * 5.0)));   // vedos 8 (rivi 131): patarumpujen lataus näkyy: 1,6-kertainen ja leveämpi
     // kaukainen metsämassa horisontin alla: kuusten latvojen hieno rakenne sulaa usvaan; ainoa suora vaakaviiva on valon viiva
     {
       vec3 bodyP = mix(fogBase * 0.62, fogBase * 1.0 + HALLA * G * 0.02, smoothstep(-0.07, 0.0, aB));
@@ -167,7 +173,7 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
     {
       float hxp = p.x - uHSh;                                                  // talo liukuu hitaasti kameran mukana (kaukaisin taso)
       float house; float rH = max(ridgeAt(hxp, asp, house), uHB + 0.004);
-      float hat = (0.010 + 0.012 * smoothstep(0.02, 0.12, house)) * uSv * tips(hxp * 60.0, 9.0, 1.3);
+      float hat = (0.010 + 0.012 * smoothstep(0.02, 0.12, house)) * uSv * 0.45;   // vedos 8 (rivi 165): laki sileä, ei latvojen kärkiä
       float ab = dy - rH, abh = ab - hat;
       float gi = 0.0, hdx = hxp - asp * 0.64, hsg = 0.065;
       for (int k = 0; k < 4; k++) gi = max(gi, uHW[k] * exp(-pow((hdx - uHP[k]) / hsg, 2.0)));
@@ -215,6 +221,9 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
     }
     // puuska peittää vaarat ja valon viivan: lumi ja usva horisontin kohdalla
     col = mix(col, fogBase * 1.15 + SNOWC * 0.05, uVeil * 0.55 * exp(-abs(dy - 0.06) / 0.20));
+    // vedos 8 (rivi 131): lataus ja purkaus: horisontin takainen valo kasvaa usvan takana crescendon mukana ja leimahtaa ff:ssä (lähde: horisontin valo);
+    // häipyy horisonttia kohti (ei vaakarajaa), ja vaarojen ja kaukametsän siluetit jäävät tummemmiksi valoa vasten
+    col += HALLA * (0.085 * uLat.x + 0.20 * uLat.y) * exp(-abs(dy - 0.045) / 0.17) * smoothstep(0.0, 0.035, dy) * (0.55 + 0.45 * hz) * (1.0 - 0.6 * cov);
   }
   // laskeutuminen (vedos 6): kun kamera on latvojen tasolla, myös ylöspäin menevät säteet voivat osua kruunuihin: kruunukentän omat latvat nousevat kameran ohi
   bool upr = dy > -0.0004;
@@ -286,6 +295,7 @@ vec3 world(vec2 p, float asp, float dx, float dy, out float thit, out float cov)
       c += HALLA * 0.70 * uGround * gp * gtw * (0.15 + 0.85 * gr * gr) * gd;
       // avauksen patarumpu: rengas kulkee maassa ulospäin latvojen välissä
       c += HALLA * 0.55 * ring * (0.25 + 0.75 * gr) * smoothstep(20.0, 90.0, t) * (1.0 - smoothstep(500.0, 1100.0, t));
+      c *= 1.0 - shadowW(q.xz);                                              // vedos 8 taika U3: kulkeva varjo (voima 0 ilman taikaa)
       // usva: laikuttaista, ajelehtii; laaksoissa sakeampaa; jousten tullessa se väistyy
       float mistP = vnoise(q.xz * 0.0042 + vec2(uDrift * 0.0014, uDrift * 0.0006));
       float pm = 0.70 + 0.9 * mistP;
@@ -318,6 +328,40 @@ vec3 scene(vec2 p) {
   float dx = p.x - asp * 0.5, dy = p.y - uHor;
   float th, cov;
   vec3 col = world(p, asp, dx, dy, th, cov);
+  // vedos 8 taika T1: latvojen huurre kimaltaa hopeisena aaltona vaarasta katsojaa kohti. Pieni terävä tähti (ydin vähintään 3 px 1080p:ssä) ja hento kehä;
+  // kuva tummuu hieman aallon ajan (kontrasti, ei kirkkautta). Kimallus on soitettujen puhallinfraasien alusta; varjon alla se sammuu.
+  if (uSpk > 0.5) {
+    col *= 1.0 - uWd;
+    float u1 = 1.0 / 1080.0, CS = 64.0 * u1;
+    vec2 cell = floor(p / CS);
+    float onC = max(th < 1e4 ? 1.0 : 0.0, smoothstep(0.35, 0.75, cov));
+    float att = th < 1e4 ? exp(-th / 2600.0) : 0.65;
+    float shn = 0.0;
+    if (th < 1e4 && uShd.w > 0.001) { vec3 rdn = normalize(vec3(dx, dy, F)); shn = shadowW(vec2(uCamX, uCamZ) + rdn.xz * th) / uShd.w; }
+    float quench = 1.0;   // vedos 8 (4d.42): jousten varjo ei sammuta puhaltimien kimallusta (yksi asia kuvassa on yksi asia äänessä)
+    col *= 1.0 - 0.55 * shn * uShd.w;                                    // ohjaaja: pilven varjo peittää myös usvan valon (ennen se hukkui usvaan: -0,5 %); keskellä noin -30 %
+    float sp = 0.0;
+    for (int w = 0; w < 10; w++) {
+      float T0 = uWv[w], a0 = uTime - T0;
+      if (a0 < -0.1 || a0 > 5.2) continue;
+      float fw = float(w);
+      vec2 hc = vec2(hash(cell + fw * 7.31 + 3.1), hash(cell.yx + fw * 5.13 + 8.7));
+      if (hc.x > 0.30) continue;   // ohjaaja (kriitikko P-b): tiheämpi aalto, jotta se luetaan valon pyyhkäisynä latvoilla eikä hiutaleina
+      vec2 h2 = vec2(hash(cell * 1.7 + fw * 3.3 + 11.0), hash(cell * 2.3 + fw * 9.1 + 5.0));
+      vec2 ctr = (cell + 0.30 + 0.40 * vec2(hc.y, h2.x)) * CS;
+      float ws = clamp((0.04 - (ctr.y - uHor)) / 0.54, 0.0, 1.0);          // aalto kulkee horisontin vaaroista kohti katsojaa (alas kuvassa)
+      float ts = T0 + 1.9 * ws + 0.60 * h2.y;
+      float L = 1.30 + 0.60 * hash(cell * 3.1 + fw * 1.9);                   // vedos 8 (rivi 156): kukin elää 1,3-1,9 s ja syttyy pehmeästi (ennen 0,3-0,6 s, syttyi 1-2 ruudussa: välkkyi)
+      float a = (uTime - ts) / L;
+      if (a < 0.0 || a > 1.0) continue;
+      float env = smoothstep(0.0, 0.28, a) * smoothstep(1.0, 0.40, a);
+      vec2 dd = (p - ctr) / u1;
+      float r2 = dot(dd, dd);
+      float arms = exp(-abs(dd.y) / 0.8 - abs(dd.x) / 3.0) + exp(-abs(dd.x) / 0.8 - abs(dd.y) / 3.0);   // ohjaaja: säteet lyhyiksi ja himmeiksi (alle 8 px), ei kimalletähteä
+      sp += env * (1.4 * exp(-r2 / 4.5) + 0.35 * arms + 0.20 * exp(-r2 / 90.0));
+    }
+    col += HOPEA * sp * onC * att * quench * 1.5;
+  }
   // vaskien isku: leikkaus kasvaa horisonttiin kertyneestä hehkusta ylöspäin ja leikkaa metsän ja vaarojen takaa; leveä ja pehmeä, ei kyllästy;
   // lähimmät latvat jäävät sen eteen siluetteina
   {
@@ -350,15 +394,22 @@ async function alusta() {
   const V = 9.0, VXK = 0.25;                                              // vauhti eteen (m/s) ja viistoon (osuus)
   const H0 = 50, HLOW = 7;                                                 // kameran korkeus maasta (m), lasku latvojen väliin: kuten vedoksessa 6
   const HYLA = 100;                                                // vedos 7 (2): ajo latvaston yläpuolella kuten lopussa (11_12: 58-82 m); lähin kuusirivi kauas kamerasta
-  const TDESC = A.hiljaisuus_1_alku, TDEND = TE - 0.15;                    // vedos 6: laskeutuminen koko tauon ajan (hiljaisuus_1_alku -> rajakuva), tasaisesti
+  // vedos 8 (rivi 132): viimeinen sointu katkeaa 57,25 s (fraasi_ennen_taukoa.t_end; mitattu, kaiku hiipuu 58,3 mennessä); hiljaisuus_1_alku (58,1) jää kaiun loppuun,
+  // koska lopun 11_12 kummut lasketaan siitä. Laskeutuminen alkaa katkosta.
+  // vedos 8 (rivi 160): epäröinti (eteenpäin vauhti 30 %:iin ja takaisin) ja levosta kiihtyvä lasku poistettu: ne nykivät kuvassa (pystyliike 0, -1, -3 px/ruutu
+  // vuorotellen). Eteenpäin vauhti on tasainen kuten vedoksessa 7b, ja lasku on vedoksen 7b muotoinen (enimmäkseen tasainen), jonka alku pehmenee 0,6 s:ssa (nopeus jatkuva).
+  const TCUT = (d.cues.cues.find((c) => c.id === 'fraasi_ennen_taukoa') || {}).t_end || A.hiljaisuus_1_alku;
+  const TDESC = TCUT, TDEND = TE - 0.15;                                    // laskeutuminen alkaa katkosta ja päättyy rajakuvaan
   const kZ = d.sarja(() => V / FPS);
   const camZ = (t) => d.kohta(kZ, t), camX = (t) => VXK * camZ(t);
-  const camH = (t) => { const k = clamp((t - TDESC) / (TDEND - TDESC), 0, 1); return lerp(H0, HLOW, 0.6 * k + 0.4 * smooth(k)) + (HYLA - H0) * (1 - sstep(0.0, 0.5, k)); };   // vedoksen 6 laskeutuminen; ylimääräinen korkeus (HYLA - H0) tasoittuu pois laskeutumisen alkupuoliskolla
+  const RA = 0.15, ramppi = (k) => (k < RA ? k * k / (2 * RA) : k - RA / 2) / (1 - RA / 2);   // tasainen lasku, jonka alku kiihtyy pehmeästi (jatkuva nopeus)
+  const camH = (t) => { const k = clamp((t - TDESC) / (TDEND - TDESC), 0, 1); return lerp(H0, HLOW, 0.6 * ramppi(k) + 0.4 * smooth(k)) + (HYLA - H0) * (1 - sstep(0.0, 0.5, k)); };   // vedoksen 6 laskeutuminen; ylimääräinen korkeus (HYLA - H0) tasoittuu pois laskeutumisen alkupuoliskolla
 
   // ----- jouset: ankkureista (käyttäjän kuulemat); voima mitataan äänestä -----
   const sJou = d.sarja((f) => { const pv = f / FPS < A.fis_pitka_aani ? 68 : 66; let mx = 0; for (let mi = 48; mi <= 79; mi++) if (Math.abs(mi - pv) > 1) mx = Math.max(mx, d.taso(mi, f)); return mx; });
-  const JOUSET = [[A.jouset_tulevat, A.gis_paljastuu], [A.siemen_toistuu, A.puhallinkuviot_alku], [A.tuulenpuuska, A.hiljaisuus_1_alku]];
-  const hilj = (t) => sstep(A.hiljaisuus_1_alku, A.hiljaisuus_1_alku + 0.6, t) * (1 - sstep(A.hiljaisuus_1_loppu, A.hiljaisuus_1_loppu + 1.5, t));
+  const JOUSET = [[A.jouset_tulevat, A.gis_paljastuu], [A.siemen_toistuu, A.puhallinkuviot_alku], [A.tuulenpuuska, TCUT + 1.6]];   // vedos 8 (kriitikko P8): metsän tummuus ei vapaudu tauon alussa 0,6 s:ssa vaan 2,5 s:ssa
+  const hilj = (t) => sstep(TCUT, TCUT + 0.6, t) * (1 - sstep(A.hiljaisuus_1_loppu, A.hiljaisuus_1_loppu + 1.5, t));
+  const hiljJ = (t) => sstep(TCUT, TCUT + 2.6, t) * (1 - sstep(A.hiljaisuus_1_loppu, A.hiljaisuus_1_loppu + 1.5, t));   // jousten tummuus hellittää hitaasti (kriitikko P8)
   // jousten voima lähimmässä latvustossa; kaukaisempi (s 0..1) saa tulon viiveellä ja lopun etuajassa: tummuus kulkee lähimmistä kauemmas,
   // usvaan väistyminen alkaa kaukaa
   const VY = 1.6;
@@ -367,7 +418,7 @@ async function alusta() {
   const jouD = (t, dOn, dOff) => { let m = 0;
     JOUSET.forEach(([a, b], k) => { const on = sstep(a - 0.05, a + 0.3, t - dOn), off = 1 - sstep(b - 0.1 + dOff, b + 0.9 + dOff, t);
       m = Math.max(m, on * off * (k === 2 ? fraasi(t) : 1)); });
-    return m * jouInt(t - dOn) * (1 - hilj(t)); };
+    return m * jouInt(t - dOn) * (1 - hiljJ(t)); };
   const jouS = (t, s) => jouD(t, VY * s, VY * (1 - s));                        // lähin: tulo heti, lähtö viiveellä; kaukaisin: tulo viiveellä, lähtö heti
   const jou = (t) => jouD(t, 0, 0);                                           // nimellinen: horisontin valo ja puiden liike seuraavat ankkureita
 
@@ -460,11 +511,21 @@ async function alusta() {
   const sJouSlow = d.sarja((f) => jou(f / FPS));
   // fraasin puuska (0:54): jousten tumma aalto ja sen mukana tuuli: taipuma säännön rajoissa (enintään 4 %), lumi pöllähtää latvoista
   const FR0 = A.fraasi_ennen_taukoa;
-  const frGust = (t) => sstep(FR0 - 0.2, FR0 + 0.6, t) * Math.exp(-Math.max(t - FR0 - 0.6, 0) / 2.2) * (1 - sstep(A.hiljaisuus_1_alku - 0.2, A.hiljaisuus_1_alku + 0.3, t));
-  const frS = (t, s) => sstep(FR0 - 0.6, FR0 + 3.4, t) * (1 - sstep(A.hiljaisuus_1_alku - 0.2, A.hiljaisuus_1_alku + 0.9, t));
+  const frGust = (t) => sstep(FR0 - 0.2, FR0 + 0.6, t) * Math.exp(-Math.max(t - FR0 - 0.6, 0) / 2.2) * (1 - sstep(TCUT - 0.2, TCUT + 0.3, t));
+  const frS = (t, s) => sstep(FR0 - 0.6, FR0 + 3.4, t) * (1 - sstep(TCUT, TCUT + 2.6, t));
   const swayAmp = (t) => clamp(0.30 + 0.25 * jouSlow(t) + 0.20 * ka(sPuuska, t, 1.5), 0.25, 0.80) * (1 - 0.5 * hilj(t));   // vedos 7: ei suoraan puuskasta eikä fraasin puuskasta; latva enintään noin 1,5 % korkeudesta
   const sFrG = d.sarja((f) => frGust(f / FPS));
   const sPuuska = d.sarja((f) => puuska(f / FPS));
+  // vedos 8 (rivi 131): cresc. molto (t. 21-25) on lataus: usvan takavalo kasvaa mitatun kokonaistason mukana tuulenpuuskasta ff:ään
+  // (tuulenpuuska.iskut_t[0] = 52,30 s, patarummut ja vasket ff), jossa se purkautuu: välähdys 0,1 s ja hiipuminen (tau 0,55 s).
+  const TFF = ((d.cues.cues.find((c) => c.id === 'tuulenpuuska') || {}).iskut_t || [PT1 + 0.3])[0];
+  const sTaso = d.sarja((f) => d.koko(f / FPS, 0.6));
+  // lataus kertyy: mitatun tason juokseva maksimi vaskien fp:n jälkeisestä pohjasta (+1,5 s) ff:ään; ei laske crescendon aikana
+  const LAT = (() => { const f0 = Math.round((PT0 + 1.5) * FPS), f1 = Math.round(TFF * FPS); let lo = 1e9, hi = -1e9;
+    for (let f = f0; f <= f1; f++) { const v = ka(sTaso, f / FPS, 0.4); lo = Math.min(lo, v); hi = Math.max(hi, v); }
+    const a = new Float32Array(NF); let m = 0; for (let f = f0; f < NF; f++) { m = Math.max(m, clamp((ka(sTaso, f / FPS, 0.4) - lo) / Math.max(hi - lo, 1e-6), 0, 1)); a[f] = m; } return a; })();
+  const lataus = (t) => t < PT0 || t > TFF + 1.5 ? 0 : LAT[clamp(Math.round(t * FPS), 0, NF - 1)] ** 1.4 * sstep(PT0 + 1.0, PT0 + 2.2, t) * (1 - sstep(TFF, TFF + 0.45, t));
+  const purkaus = (t) => sstep(TFF - 0.05, TFF + 0.06, t) * Math.exp(-Math.max(t - TFF - 0.06, 0) / 0.55);
 
   // ----- äkilliset dynamiikan muutokset (vähintään 8 dB alle 0,3 s): valo ja lumi vastaavat samassa ruudussa -----
   const lev = await (async () => { const buf = new Float32Array(await (await fetch('/' + d.cues.ohjaus.tiedosto)).arrayBuffer()); const nc = d.cues.ohjaus.channels.length;
@@ -489,13 +550,30 @@ async function alusta() {
   const sEner = d.sarja((f) => d.koko(f / FPS, 1.2));
   const ener = (t) => ka(sEner, t, 0.5);
   const kPut = d.sarja((f) => (0.75 + 0.9 * ener(f / FPS)) / FPS);
-  const kTuuli = d.sarja((f) => (0.30 + 1.2 * jouSlow(f / FPS) + 3.0 * puuska(f / FPS) + 2.5 * ka(sFrG, f / FPS, 0.3) + 2.0 * ka(sHyppy, f / FPS, 0.1)) * (1 - hilj(f / FPS)) / FPS);   // tauolla lumi putoaa suoraan alas
-  // rivi 112: tuiverrus = jousten voima (hitaana) ja puuskan kasvu; laajuus enintään 0,5 m, kiemurtelun nopeus enintään noin 0,6 m/s (alle sivutuulen: suunta ei käänny)
-  const tuiv = (t) => clamp(0.40 * jouSlow(t) + 0.80 * puuska(t), 0, 1) * (1 - hilj(t));
-  const sTuiv = d.sarja((f) => tuiv(f / FPS));
-  const kTuiP = d.sarja((f) => (0.30 + 1.10 * tuiv(f / FPS)) / FPS);
+  const kTuuli = d.sarja((f) => (0.30 + 1.2 * jouSlow(f / FPS) + 4.6 * Math.pow(puuska(f / FPS), 1.5) + 2.5 * ka(sFrG, f / FPS, 0.3) + 2.0 * ka(sHyppy, f / FPS, 0.1)) * (1 - hilj(f / FPS)) / FPS);   // tauolla lumi putoaa suoraan alas; vedos 8 (rivi 133): puuskan tuuli kasvaa huippuun 4,6 m/s (oli 3,0)
   const kLahe = d.sarja((f) => (V + 5 * puuska(f / FPS)) / FPS);
   const kDrift = d.sarja((f) => (1.0 + 3.0 * paisu(f / FPS) + 6.0 * puuska(f / FPS)) / FPS);
+
+  // ----- vedos 8: taika (URL ?taika=1; ilman sitä uniformit ovat 0 eikä kuva muutu) -----
+  const TAIKA = new URLSearchParams(location.search).get('taika') === '1' ? 1 : 0;
+  // T1 kimallus: aalto alkaa kunkin puhallinfraasin ensimmäisestä soitetusta äänestä (nuotit >= h3 ja cues.alut.korkea jaksossa puhallinkuviot_alku -> _loppu);
+  // uusi fraasi = vähintään 0,65 s hiljaisuutta äänten alkujen välissä, ja aaltoja vähintään 1,5 s välein (yksi aalto kestää noin 2,5 s)
+  const AALLOT = (() => { const O = [];
+    for (const n of d.nuotit) if (n[2] >= 69 && n[2] <= 95 && n[1] >= 0.12 && n[0] >= A.puhallinkuviot_alku && n[0] <= A.puhallinkuviot_loppu) O.push(n[0]);
+    for (const x of d.cues.alut.korkea) if (x[0] >= A.puhallinkuviot_alku && x[0] <= A.puhallinkuviot_loppu) O.push(x[0]);
+    O.sort((a, b) => a - b);
+    const W = []; let viime = -99, viimeW = -99;
+    for (const o of O) { if (o - viime >= 0.65 && o - viimeW >= 1.5) { W.push(o); viimeW = o; } viime = o; }
+    return W.slice(0, 10); })();
+  const aaltoVoima = (t) => { let m = 0; for (const w of AALLOT) m = Math.max(m, sstep(w - 0.2, w + 0.5, t) * (1 - sstep(w + 2.2, w + 3.4, t))); return m; };
+  const KIMDIM = 0.05;                                                      // kuva tummuu enintään 5 % aallon aikana (brief: enintään 8 %)
+  // U3 kulkeva varjo: suuri pehmeä varjo liukuu metsämaton yli vasemmalta oikealle jousten siemenmotiivin aikana (jouset_tulevat -> siemen_toistuu ja sen toisto
+  // -> puhallinkuviot_alku); voima seuraa jousten voimaa (jouSlow), joten varjo on vain, kun jouset soivat. Tekijää ei näy; vain latvusto tummuu, vaarat eivät.
+  const VARJO = 0.58;                                                       // lineaarinen tummuus keskellä (kuvan harmaasävyssä noin 13 %)
+  const varjo = (t) => { const k = clamp((t - A.jouset_tulevat) / (A.puhallinkuviot_alku - A.jouset_tulevat), 0, 1);
+    const lat = lerp(-230, 240, k), ahead = lerp(300, 200, k);            // ohjaaja: lähemmäs, jotta varjon reuna näkyy metsässä eikä huku usvaan
+    const amt = VARJO * sstep(0.02, 0.12, jouSlow(t)) * sstep(A.jouset_tulevat, A.jouset_tulevat + 1.5, t) * (1 - sstep(A.puhallinkuviot_alku, A.puhallinkuviot_alku + 1.5, t));
+    return [camX(t) + lat, camZ(t) + ahead, 170, amt * TAIKA]; };
 
   function tila(t) {
     const f = t * FPS, hil = hilj(t), j = jou(t), pu = puuska(t), hy = hyppy(t);
@@ -510,7 +588,7 @@ async function alusta() {
     const frk = frS(t, 0.15);                                               // fraasin aikana basson maan valo ja hyppy eivät vaalenna metsää
     const lint = (0.30 + 0.12 * G + 0.10 * hy * (1 - 0.8 * frk) + 0.05 * cut[1]) * (1 - hil) + 0.26 * hil;
     const low = clamp(Math.max(d.matala(t, 0.5) * 1.2, 0.20 * paisu(t)), 0, 1) * (1 - 0.7 * hil) * (1 - 0.6 * frk) * (1 + 0.10 * paisu(t) * Math.sin(t * 5.0));
-    const veil = clamp(pu * 1.15, 0, 1);
+    const veil = sstep(0.12, 0.95, pu);                                      // vedos 8 (rivi 131): usva kasvaa crescendon mukana huippuun asti (ei heti täyteen)
     const sway = swayAmp(t);
     const live = []; for (let k = 0; k < 8; k++) live.push(jouS(t, k / 7));
     const fr = []; for (let k = 0; k < 8; k++) fr.push(frS(t, k / 7));
@@ -540,7 +618,7 @@ async function alusta() {
       const s = tila(t);
       const pu = new Float32Array(24); s.pulssit.forEach((x, i) => pu.set(x, i * 4));
       gl.uniform1f(U('uTime'), t); gl.uniform1f(U('uCamX'), camX(t)); gl.uniform1f(U('uCamZ'), camZ(t)); gl.uniform1f(U('uCamH'), camH(t)); gl.uniform1f(U('uHor'), 0.60);
-      gl.uniform1f(U('uGis'), s.G); gl.uniform1f(U('uVeil'), s.veil); gl.uniform1f(U('uGust'), Math.max(clamp(s.pu * 1.4, 0, 1), 0.35 * s.fg)); gl.uniform1f(U('uLint'), s.lint); gl.uniform1f(U('uLow'), s.low);
+      gl.uniform1f(U('uGis'), s.G); gl.uniform1f(U('uVeil'), s.veil); gl.uniform1f(U('uGust'), Math.max(1.25 * Math.pow(s.pu, 1.3), 0.35 * s.fg)); gl.uniform1f(U('uLint'), s.lint); gl.uniform1f(U('uLow'), s.low);   // vedos 8 (rivi 133): latvoista pöllyää enemmän, kasvaa huippuun (uLint ja uLow palautettu kommentin alta)
       gl.uniform1f(U('uFogL'), 900); gl.uniform1f(U('uElev'), 0.17); gl.uniform1f(U('uSv'), 0.66); gl.uniform1f(U('uHB'), 0.035);
       gl.uniform1f(U('uBuild'), (t < A.vaskien_isku ? Math.pow(sstep(A.patarumpu_paisuu - 0.5, A.vaskien_isku - 0.02, t), 1.5) : Math.exp(-(t - A.vaskien_isku) / 0.15)) * (1 - 0.9 * s.veil));
       gl.uniform1f(U('uSway'), s.sway); gl.uniform1f(U('uEnter'), entry(t)); gl.uniform1f(U('uWin'), s.win);
@@ -548,8 +626,9 @@ async function alusta() {
       gl.uniform1f(U('uHK'), 1.0); gl.uniform1f(U('uTK'), 0.6); gl.uniform1f(U('uTop'), 8.5 * 0.6 + 42 + 3);
       gl.uniform1f(U('uDrift'), d.kohta(kDrift, t));
       gl.uniform3f(U('uCut'), s.cut[0], s.cut[1], s.cut[2]);
-      gl.uniform2f(U('uTui'), 0.85 * ka(sTuiv, t, 0.8), d.kohta(kTuiP, t));
-      gl.uniform4f(U('uSnow'), 0.13 + 0.30 * clamp(s.pu * 2.5, 0, 1) + 0.10 * s.fg + 0.06 * s.hy + 0.05 * clamp(ener(t), 0, 1), d.kohta(kTuuli, t), d.kohta(kPut, t), d.kohta(kLahe, t));
+      gl.uniform2f(U('uTui'), 0.55, 0.55 * d.kohta(kTuuli, t));                // vedos 8 (rivi 134): kiemurtelun vaihe = tuulen kertymä: lumi kiemurtelee tuulen mukana, ei edestakaisin
+      gl.uniform2f(U('uLat'), lataus(t), purkaus(t));
+      gl.uniform4f(U('uSnow'), 0.13 + 0.34 * sstep(0.05, 1.0, s.pu) + 0.10 * s.fg + 0.06 * s.hy + 0.05 * clamp(ener(t), 0, 1), d.kohta(kTuuli, t), d.kohta(kPut, t), d.kohta(kLahe, t));   // vedos 8: lumen määrä kasvaa crescendon mukana
       gl.uniform1fv(U('uHill'), new Float32Array(kaari1)); gl.uniform4fv(U('uPulse'), pu); gl.uniform1fv(U('uJ'), new Float32Array(s.live));
       gl.uniform4fv(U('uVx'), new Float32Array(s.vx)); gl.uniform4fv(U('uVt'), new Float32Array(s.vt));
       gl.uniform4f(U('uHouse'), s.hVis, s.hGl, 0, 0);
@@ -558,12 +637,16 @@ async function alusta() {
       gl.uniform1fv(U('uFr'), new Float32Array(s.fr));
       gl.uniform1f(U('uCamXv'), VXV / V * camZ(t)); gl.uniform1f(U('uVK'), VXV / V); gl.uniform1f(U('uHSh'), -(3 / 1080) * (t - TH));
       gl.uniform1f(U('uEnd'), t > TDESC ? t - TDESC + 1e-3 : 0);
+      gl.uniform4f(U('uShd'), ...varjo(t));
+      gl.uniform1f(U('uSpk'), TAIKA); gl.uniform1f(U('uWd'), KIMDIM * aaltoVoima(t) * TAIKA);
+      gl.uniform1fv(U('uWv'), new Float32Array(Array.from({ length: 10 }, (_, i) => (i < AALLOT.length ? AALLOT[i] : -1000))));
       piirra();
     },
   });
   window.vaaraKuva = (t, i) => { const v = VAARAT[i], Dz = Math.max(v.D - camZ(t), 60), sc = v.D / Dz, sR = v.D / Math.max(v.D - camZ(v.tp), 60);
     const cxs = asp * 0.5 + (v.x - asp * 0.5) * sc / sR - (VXV / V * (camZ(t) - camZ(v.tp))) * 1.07 / Dz; const r = 0.035 + sc * v.A * vprof(0, v.w, fract(v.x * 7.31));
     return { tp: v.tp, vis: vis(v.tp, t), valo: bump(v.tp, t), xKuva: cxs / asp, kasvu: sc, harjaY: 1 - (0.60 + r), D: v.D, w: v.w * sc / asp }; };
+  window.taika = { TAIKA, AALLOT, varjo, aaltoVoima };
   window.vaarat = { TP, VAARAT: VAARAT.map((v) => ({ tp: +v.tp.toFixed(2), x: +v.x.toFixed(2), w: +v.w.toFixed(2), A: +v.A.toFixed(3), taso: v.lv, midi: v.m })), HYPYT: HYPYT.map((h) => +h.t.toFixed(2)), PUHT };
 }
 alusta().catch((e) => { console.error(e); window.sceneError = String(e.message || e); });

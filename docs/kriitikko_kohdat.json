@@ -120,6 +120,26 @@
       "id": "ajoitus_korvalla",
       "sääntö": "yleinen",
       "kysymys": "Kuuntele kohta: osuuko elementin liike musiikin tapahtumaan korvalla, ei vain ruutunumerolla?"
+    },
+    {
+      "id": "paisutus_tuulena",
+      "sääntö": "4d.38",
+      "kysymys": "Näkyykö jokainen selvä paisutus (< >) ympäristössä tuulenvireenä (lumi kiihtyy ja kevenee, maasta irtoaa lunta) ilman välähdystä tai liikaa puiden liikettä?"
+    },
+    {
+      "id": "patarumpu_lataus",
+      "sääntö": "4d.39",
+      "kysymys": "Kertyykö patarumpujen crescendossa valo lähteeseensä ja purkautuuko se iskun ruudussa, ilman uutta valonlähdettä?"
+    },
+    {
+      "id": "lumi_tuulen_mukaan",
+      "sääntö": "4d.40",
+      "kysymys": "Liikkuuko lumi kuin lumi: ei edestakaisin heilumista, ei suunnan hyppyä yhdessä ruudussa, ei lunta 'linssissä' kameran kääntyessä?"
+    },
+    {
+      "id": "taika_kauneutta",
+      "sääntö": "4d.41",
+      "kysymys": "Onko taika (oksalta putoava lumi) hienovarainen ja kaunis, ei velhoja, hahmoja eikä ruutumaisia kuvioita?"
     }
   ]
 }

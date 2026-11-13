@@ -1445,6 +1445,26 @@
       "kirjain": null,
       "tahti": null,
       "tahti_loppu": null,
+      "tarkista": true,
+      "tyyppi": "hetki",
+      "luokka": "soitin",
+      "soittimet": [
+        "puupuhaltimet"
+      ],
+      "id": "S_puhaltimien_kaari",
+      "nimi": "Puhaltimien linja nousee ja laskee",
+      "esitysmerkinta": "",
+      "tahti_suhde": "kirjaimen S jälkeen",
+      "soi": "viulujen pitkän äänen yllä puhaltimien linja nousee hitaasti ylös ja laskee takaisin, kokosävelaskelin",
+      "etuala": "puhaltimien nouseva ja laskeva linja",
+      "tunnelma": "hidas, kaunis, aaltoileva",
+      "tarina": "Käyttäjä 13.11.2026: linja heiluttaa revontulta, vain tässä kohdassa.",
+      "lahde": "käyttäjän palaute 13.11.2026; mittaus (spektri)"
+    },
+    {
+      "kirjain": null,
+      "tahti": null,
+      "tahti_loppu": null,
       "tarkista": false,
       "tyyppi": "hetki",
       "luokka": "soitin",

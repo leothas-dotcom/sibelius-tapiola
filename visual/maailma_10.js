@@ -27,6 +27,7 @@ uniform vec4 uV0, uV1, uV2;   // pyörteet: x (dx), y (dy), säde, voima (etumer
 uniform vec3 uSp;             // pyörteiden kiertymä (rad)
 uniform vec4 uSh;             // iskuaalto: x (dx), y (dy), säde, voima
 uniform vec4 uCut;            // pystyvalo: x (dx), voima, metsän reunan paljastus, -
+uniform vec4 uSil;            // vedos 8 (taika T1): metsänreunan huurteen välähdys: aallon paikka (osuus kuvan leveydestä), voima, -, -
 uniform vec4 uK[6], uL[6];    // vedos 6: vaskien fraasin toistot: uK = x (dx), voima, leveys, laji (0 huuto, 1 seinämä); uL = aika alusta (s)
 uniform float uFlash;         // vedos 6: viimeisen takomisen neljännellä iskulla koko kuva valossa
 const float F = 1.07;
@@ -151,6 +152,7 @@ vec4 veilLayer(vec2 p, int k, float dx, float dy, vec3 rk) {
 // 3D-lumi: soluruudukko maailmassa, kerrokset eri syvyyksillä; kamera etenee, joten lumi virtaa ulospäin. Viiru = suuntaan venytetty piste.
 vec2 gTan = vec2(0.0), gWind = vec2(1.0, 0.0), gTd = vec2(1.0, 0.0);
 float gSw = 0.0, gEye = 0.0, gMix = 0.0;
+float gTr = 1.0;   // vedos 8: metsänreunan läpinäkyvyys (kuinka suuri osa taustasta näkyy verhojen ja seinän läpi), 0..1
 void vortexAccum(vec2 q, vec4 v) {
   if (abs(v.w) < 1e-3) return;
   vec2 r = q - v.xy; float rr = length(r) + 1e-3; float R = max(v.z, 0.02);
@@ -234,6 +236,36 @@ float snowAt(int s, float zz, float dx, float dy, float thr) {
   return b * smoothstep(1.5, 4.0, zz) * smoothstep(45.5, 38.0, zz) * exp(-zz / 70.0);
 }
 
+// vedos 8, taika T1 (hopea oksilla, "kuuna paistoi kuusen oksat", K14): metsänreunan huurre välähtää hopeisena aaltona päästä päähän.
+// Pieniä tähtimäisiä kimalluksia reunan latvoissa (ydin noin 3 px 1080p:ssä) ja ohut huurrereuna; aalto syttyy kimalluksen kohdalla ja laskee
+// sen jälkeen (noin 0,3 s). Puhdas funktio ajasta (uTime ja aallon paikka); kimallusten paikat ovat soluhajautusta, ei satunnaisuutta.
+float frostGlint(vec2 p, float xc, float amp) {
+  float A = asp(), cw = 0.016;
+  float ic = floor(p.x / cw);
+  float tot = 0.0;
+  for (int i = -1; i <= 1; i++) {
+    float c = ic + float(i);
+    float h1 = hash(vec2(c, 7.1)), h2 = hash(vec2(c, 3.3)), h3 = hash(vec2(c, 9.7));
+    if (h1 > 0.66) continue;
+    float xs = (c + 0.15 + 0.70 * h2) * cw;
+    float ys = uHor + ridgeFar(xs) + 0.0006 + 0.0035 * h3;
+    float s = xc * A - xs;
+    float w = smoothstep(0.0, 0.07, s) * exp(-max(s, 0.0) / 0.32);
+    float tw = 0.55 + 0.45 * sin(uTime * 13.0 + h2 * 40.0);
+    vec2 d = p - vec2(xs, ys);
+    float r = length(d);
+    float star = exp(-pow(r / 0.0022, 2.0)) + 0.25 * exp(-pow(r / 0.0090, 2.0))
+               + 0.25 * exp(-pow(d.y / 0.0008, 2.0)) * exp(-abs(d.x) / 0.0035)    // ohjaaja: säteet lyhyiksi (alle 8 px), ei kimalletähteä
+               + 0.25 * exp(-pow(d.x / 0.0008, 2.0)) * exp(-abs(d.y) / 0.0035);
+    tot += star * w * tw * (0.7 + 0.6 * h1 / 0.66);
+  }
+  float dd = (p.y - uHor) - ridgeFar(p.x);
+  float s2 = xc * A - p.x;
+  float wr = smoothstep(0.0, 0.07, s2) * exp(-max(s2, 0.0) / 0.32);
+  tot += 0.34 * exp(-pow(dd / 0.0014, 2.0)) * wr * (0.5 + 0.5 * vnoise(vec2(p.x * 160.0, 3.0)));
+  return tot * amp;
+}
+
 vec3 scene(vec2 p) {
   float A = asp();
   float dx = p.x - A * 0.5, dy = p.y - uHor;
@@ -252,6 +284,10 @@ vec3 scene(vec2 p) {
       col = mix(col, nearc, aN);
       // metsän reunan yläpuolella matala usva
       col += SALO * 0.5 * exp(-max(dy, 0.0) / 0.016) * (1.0 - aF) * 0.5;
+      if (uSil.y > 0.0) {   // vedos 8 (T1): ympäristö tummuu hieman (enintään 6 %), jotta kimallus erottuu; myrskyn seinä nielee kimalluksen (piirtyy tämän päälle)
+        col *= 1.0 - 0.06 * uSil.y * exp(-pow((p.x - uSil.x * A) / 0.40, 2.0));
+        col += HOPEA * frostGlint(p, uSil.x, uSil.y) * 2.4;   // ohjaaja (kriitikko P-b): moduulin ainoa taika näkyväksi
+      }
     } else {
       col = groundAt(dx, dy);
       float rn = ridgeNear(p.x);
@@ -259,6 +295,7 @@ vec3 scene(vec2 p) {
     }
     vec3 base0 = col;
     vec3 colA = col;
+    gTr = 1.0;
     vec2 q0 = vec2(dx, dy);
     // pyörteet ja tuulen suunta: lasketaan kerran per pikseli
     gWind = normalize(vec2(cos(0.40 + uWAng), sin(0.40 + uWAng)));
@@ -293,6 +330,7 @@ vec3 scene(vec2 p) {
         wc = mix(wc, stormBase(max(uDens, 0.45)) * (0.55 + 0.9 * st1) * (0.60 + 0.8 * exp(-abs(dy) / 0.28)), 1.0 - smoothstep(30.0, 900.0, z));
         al *= 1.0 - 0.85 * sstep(0.70, 0.95, uU) - 0.15 * sstep(0.95, 1.0, uU);
         colA = mix(colA, wc, al);
+        gTr *= 1.0 - al;
       }
     }
     // --- lumi kaikissa syvyyksissä: kaukaiset (zz > 14) ja lähimmät erikseen, jotta lähin verho peittää kaukaisen lumen ---
@@ -314,9 +352,11 @@ vec3 scene(vec2 p) {
       vec2 qw = vortexWarp(vortexWarp(vortexWarp(q0, uV0, uSp.x), uV1, uSp.y), uV2, uSp.z);
       float eyeK = 1.0 - 0.75 * min(gEye, 1.0);
       vec3 c = base0;
-      for (int j = 0; j < 2; j++) { vec4 v = curtain(j, qw, dy); c = mix(c, v.rgb, v.a); }
+      float trC = 1.0;
+      for (int j = 0; j < 2; j++) { vec4 v = curtain(j, qw, dy); c = mix(c, v.rgb, v.a); trC *= 1.0 - v.a; }
       c += FLAKE * accF * flakeK * eyeK;
-      for (int j = 2; j < 4; j++) { vec4 v = curtain(j, qw, dy); c = mix(c, v.rgb, v.a); }
+      for (int j = 2; j < 4; j++) { vec4 v = curtain(j, qw, dy); c = mix(c, v.rgb, v.a); trC *= 1.0 - v.a; }
+      gTr = mix(gTr, trC, uWi);
       c += FLAKE * (accN * (0.8 + 0.9 * uInt) + accF * 0.45 * (0.6 + 1.0 * uInt)) * flakeK * eyeK;   // myös kaukaiset hiutaleet näkyvät verhojen läpi; lumen kontrasti kasvaa tason mukana
       // iskuaalto: Q:ssa maata pitkin (litteä rengas), R:ssä koko kuvan yli (jälkiaalto)
       if (uSh.w > 0.001) {
@@ -362,12 +402,18 @@ vec3 scene(vec2 p) {
       if (k.w < 0.5) {
         float jag = (vnoise(vec2(p.y * 6.0 + fi * 3.1, 3.0)) - 0.5) * 0.004;
         float d = abs(dx - k.x - jag), w = k.z;
-        // vedos 7: huudon laaja valo ei peitä metsän reunaa (kaista pysyy tummana); ohut ydin kulkee reunan yli
+        // vedos 8 (kriitikko E2, 15:03,3): metsän reuna ei ilmesty eikä katoa iskussa. Vedoksessa 7 huudon laaja valo ohitti reunan kaistan lähes kokonaan (peit 0,15),
+        // jolloin jo verhojen taakse sulkeutunut reuna piirtyi iskun ruudussa terävänä siluettina takaisin (kaistan kontrasti 7,9 -> 32,6 yhdessä ruudussa). Ilman suojaa
+        // taas kirkas valo hukuttaa vielä näkyvän reunan yhdessä ruudussa. Nyt suoja on pieni (0,50) ja kerrottu reunan omalla läpinäkyvyydellä gTr (verhojen ja seinän
+        // läpi näkyvä osa): reuna näkyy iskun ruudussa täsmälleen niin paljon kuin juuri ennen sitä, ja suoja laskee 0,9 s:ssa pois (reunan oma sulkeutuminen jatkuu).
+        // Horisontin hehkun korkeusriippuvuus alkaa vasta reunan huipulta (dyg), joten hehku ei vaalenna reunaa sen yläpuolta enemmän. Vain valo välähtää, kuten ennenkin.
         float rgm = smoothstep(0.004, -0.001, dy - ridgeFar(p.x)) * smoothstep(-0.040, -0.006, dy);
-        float peit = 1.0 - 0.85 * rgm;
+        float uusi = step(0.0065, w);   // vedos 8: vain kolmas huuto (leveys 0,0080; E2 15:03,3); huudot 1 ja 2 pysyvät vedoksen 7b mukaisina (ei pyytämätöntä muutosta)
+        float peit = mix(1.0 - 0.85 * rgm, 1.0 - 0.85 * rgm * 0.50 * (1.0 - smoothstep(0.0, 0.9, l.x)) * gTr, uusi);
+        float dyg = mix(dy, dy < 0.0 ? dy : max(dy - ridgeFar(p.x), 0.0), uusi);
         float beam = exp(-d * d / (w * w)) * (0.9 + 0.2 * vnoise(vec2(p.y * 14.0 + fi, 1.0))) + peit * (0.30 * exp(-d / (10.0 * w)) + 0.10 * exp(-d / (0.32 + 20.0 * w)));
         col += LEIKKAUS * k.y * beam * 1.7;
-        col += peit * LEIKKAUS * 0.16 * k.y * exp(-d / (0.05 + 9.0 * w)) + HALLA * 0.060 * k.y * (0.25 + 0.25 * exp(-abs(dy) / 0.12)) * (0.6 + 40.0 * w);   // vedos 7: huudon valo ei vaalenna horisontin kaistaa (metsänreuna ei katoa iskussa)
+        col += peit * LEIKKAUS * 0.16 * k.y * exp(-d / (0.05 + 9.0 * w)) + HALLA * 0.060 * k.y * (0.25 + 0.25 * exp(-abs(dyg) / 0.12)) * (0.6 + 40.0 * w);   // vedos 7: huudon valo ei vaalenna horisontin kaistaa (metsänreuna ei katoa iskussa)
         if (dy < 0.0) {
           float rr = 0.50 * l.x, ring = exp(-pow((length(vec2(dx - k.x, dy * 3.2)) - rr) / (0.04 + 0.08 * rr), 2.0));
           col += HALLA * 0.10 * ring * k.y * exp(-l.x / 0.5) + LEIKKAUS * 0.10 * k.y * exp(-d / (0.12 + 10.0 * w)) * smoothstep(0.0, -0.12, dy);
@@ -437,7 +483,9 @@ async function alusta() {
       const r = nousu(t);
       if (r >= 0.06) { if (paras && t - paras.t < 0.8) { if (r > paras.r) { paras.r = r; paras.t = t; } } else { paras = { t, r }; loydetyt.push(paras); } }
     }
-    for (const e of loydetyt) if (Math.abs(e.t - A.myrsky_aksentti_537) > 0.8) aksentit.push({ t: e.t, w: 0.6 });
+    // vedos 8 (rivi 159): koneen löytämät pienet kohoumat (870,2 s: +2,6 dB crescendon sisällä) eivät ole partituurin aksentteja: ne eivät enää anna puuskaa eivätkä askelta.
+    // Ainoa aksentti on t. 537 (myrsky_aksentti_537, jyrkin hyppy +4,9 dB 871,9 s).
+    window.myrskyKohoumat = loydetyt.filter((e) => Math.abs(e.t - A.myrsky_aksentti_537) > 0.8).map((e) => +e.t.toFixed(2));
   }
   const askel = (t) => aksentit.reduce((s, e) => s + e.w * sstep(e.t - 0.05, e.t + 0.35, t), 0);       // kertynyt askel (osuus)
   const AW = aksentit.reduce((s, e) => s + e.w, 0);
@@ -507,7 +555,14 @@ async function alusta() {
   const putoamisTavoite = (t) => (0.06 + sstep(T3, T4 + 2, t) * (0.35 + 0.9 * INT(t))) * (1 - ylos(t)) - (9 + 4 * INT(t)) * ylos(t);
   const aTuuli = alipaasto(tuuliTavoite, 0.30, 0.80), aPutoaa = alipaasto(putoamisTavoite, 0.30, 0.80);
   // vedos 7b (rivi 104): myrskyn alun aksentti (aks, aks2) palautettu vedoksen 6 mukaiseksi: nopea nousu alipäästön ohi (vain nämä; Q ja R eivät)
-  const tuulenNopeus = (t) => lue(aTuuli, t) + sstep(T3 - 1, T4 + 2, t) * (12 * aks(t) + 7 * Math.min(aks2(t), 1.5)) * (1 - ylos(t));
+  const tuuliRaaka = (t) => lue(aTuuli, t) + sstep(T3 - 1, T4 + 2, t) * (12 * aks(t) + 7 * Math.min(aks2(t), 1.5)) * (1 - ylos(t));
+  // vedos 8 (rivi 159): aksentin t. 537 jälkeen tuuli ei notkahda (ennen 15,9 -> 12,2 -> 16 kolmessa sekunnissa, ilman aksenttia): puuskan lisä laskee enintään
+  // 0,8 yksikköä sekunnissa, kunnes pohjatuuli (crescendo) on saavuttanut sen. Muualla tuuli on ennallaan.
+  const aTuuliP = (() => { const a = new Float32Array(d.NF + 2); for (let f = 0; f < d.NF + 2; f++) a[f] = tuuliRaaka(f / FPS);
+    const fa = Math.round(A.myrsky_aksentti_537 * FPS); let pk = -1;
+    for (let f = fa; f < d.NF + 2 && f < fa + 15 * FPS; f++) { if (pk < 0 && f > fa + 1 && a[f] < a[f - 1]) pk = f - 1; if (pk >= 0) { const h = a[f - 1] - 0.8 / FPS; if (a[f] >= h) { if (f > pk + 1) break; } else a[f] = h; } }
+    return a; })();
+  const tuulenNopeus = (t) => lue(aTuuliP, t);
   const kW = d.sarja((f) => tuulenNopeus(f / FPS) / FPS);
   const putoamisNopeus = (t) => lue(aPutoaa, t);
   const kF = d.sarja((f) => putoamisNopeus(f / FPS) / FPS);
@@ -554,12 +609,15 @@ async function alusta() {
       if (ok) lisaa(t, t - 5, 14 + 3 * hash1(t), 0.8);
     }
     tapahtumat.sort((p, q) => p.syntyy - q.syntyy);
-    { const vapaa = [-1e9, -1e9, -1e9]; tapahtumat.forEach((e) => { let k0 = vapaa.findIndex((v) => v <= e.syntyy); if (k0 < 0) k0 = vapaa.indexOf(Math.min(...vapaa)); e.slotti = k0; vapaa[k0] = e.syntyy + e.elin; }); }   // vedos 7: pyörteen paikka (slotti) on kiinteä koko sen eliniän: ei vaihdu envelopen järjestyksen mukana
+    // vedos 8 (kriitikko E1 14:59,0 ja E2 15:03,3): pyörre ei koskaan vaihdu kesken elinikänsä. Ennen: jos kaikki kolme paikkaa olivat varattuja, uusi pyörre otti
+    // vanhan paikan, ja vaihto tapahtui yhdessä ruudussa (lumen suunta ja puuskien raot hyppäsivät). Nyt pyörre, jolle ei ole vapaata paikkaa, jää pois.
+    { const vapaa = [-1e9, -1e9, -1e9]; tapahtumat.forEach((e) => { const k0 = vapaa.findIndex((v) => v <= e.syntyy); e.slotti = k0; if (k0 >= 0) vapaa[k0] = e.syntyy + e.elin; }); }   // vedos 7: pyörteen paikka (slotti) on kiinteä koko sen eliniän: ei vaihdu envelopen järjestyksen mukana
     tapahtumat.forEach((e, i) => { e.merkki = i % 2 ? -1 : 1; e.x0 = -0.15 + 1.0 * hash1(i * 3.1 + 1); e.y0 = 0.00 + 0.30 * hash1(i * 5.3 + 2); e.R0 = 0.26 + 0.16 * hash1(i * 7.7 + 3); e.h = hash1(i * 2.3 + 4); });
   }
   const pyorteet = (t) => {
     const out = [0, 1, 2].map(() => ({ v: [0, 0, 0.1, 0], sp: 0, spF: 0, env: 0 }));
     for (const e of tapahtumat) {
+      if (e.slotti < 0) continue;
       const k = (t - e.syntyy) / e.elin;
       if (k <= 0 || k >= 1) continue;
       const env = Math.pow(Math.sin(Math.PI * k), 2) * (1 - ylos(t));
@@ -591,6 +649,19 @@ async function alusta() {
     return [0, 0, 0, 0, 1];
   };
 
+  // --- vedos 8: taika (URL-kytkin taika=1; ilman sitä kuva on korjattu vedos 8 sellaisenaan) ---
+  const TAIKA = new URLSearchParams(location.search).get('taika') === '1' ? 1 : 0;
+  // T1 hopea oksilla: metsänreunan huurre välähtää kerran päästä päähän (vasemmalta oikealle), kun myrsky tulee näkyviin (ankkuri myrsky_nakyy): noin 2,4 s
+  const SIL_KESTO = 2.4;
+  // vedos 8 (rivi 159): poistettu. Ankkuri myrsky_nakyy on ppp-alku, jossa ei kuulu tapahtumaa; kuvassa aalto näytti tuulen muutokselta ilman syytä äänessä.
+  const SIL_POIS = true;
+  const sil = (t) => {
+    if (!TAIKA || SIL_POIS) return [0, 0];
+    const k = (t - T1) / SIL_KESTO;
+    if (k <= 0 || k >= 1) return [0, 0];
+    return [-0.20 + 1.45 * k, TAIKA * sstep(0, 0.12, k) * (1 - sstep(0.78, 1.0, k))];   // aallon paikka (osuus leveydestä), voima
+  };
+
   const { gl, U, piirra } = luoGL(FS);
 
   const tila = (t) => {
@@ -603,7 +674,7 @@ async function alusta() {
       camZ: kohta(kZ, tc) - kZ0, camX: kohta(kX, tc) - kX0, camH: korkeus(tc), hor: horisontti(tc),
       tuuli: kohta(kW, tc), putoaa: kohta(kF, tc),
       pyorteet: pyorteet(tc), int: INT(tc) * wi + 0.5 * (1 - wi), valk: valkoinen(tc), ylos: ylos(tc), pohja: pohja(tc), aalto: aalto(tc),
-      cut: [cx, ck, cr], fin: sstep(T9 - 2.4, T9, tc), rako: rako(tc), poly: poly(tc), sulaa: sulaa(tc), vW: tuulenNopeus(tc), vF: putoamisNopeus(tc), sway: huojunta(tc), wang: melKaari(tc), hh: huudot(t),
+      cut: [cx, ck, cr], fin: sstep(T9 - 2.4, T9, tc), rako: rako(tc), poly: poly(tc), sulaa: sulaa(tc), vW: tuulenNopeus(tc), vF: putoamisNopeus(tc), sway: huojunta(tc), wang: melKaari(tc), hh: huudot(t), sil: sil(tc),
     };
   };
 
@@ -636,6 +707,7 @@ async function alusta() {
       gl.uniform1f(U('uWindV'), s.vW); gl.uniform1f(U('uFallV'), s.vF); gl.uniform1f(U('uMelt'), s.sulaa); gl.uniform1f(U('uGap'), s.rako); gl.uniform1f(U('uPuff'), s.poly);
       gl.uniform4f(U('uSh'), s.aalto[0], s.aalto[1], s.aalto[2], s.aalto[3]); gl.uniform1f(U('uShF'), s.aalto[4]);
       gl.uniform4f(U('uCut'), s.cut[0], s.cut[1], s.cut[2], 0);
+      gl.uniform4f(U('uSil'), s.sil[0], s.sil[1], 0, 0);
       gl.uniform4fv(U('uK'), s.hh.K); gl.uniform4fv(U('uL'), s.hh.L); gl.uniform1f(U('uFlash'), s.hh.sal);
       piirra();
     },

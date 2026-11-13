@@ -34,7 +34,13 @@ float vnoise(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 *
 float fbm(vec2 p) { float s = 0.0, a = 0.5; for (int i = 0; i < 4; i++) { s += a * vnoise(p); p = p * 2.03 + 11.7; a *= 0.5; } return s; }
 vec3 rajakuva(vec2 p, int tyyppi, float t) {
   if (tyyppi == 0) return HAMY * (1.0 + 1.5 * vnoise(vec2(p.x * 2.0 + t * 0.05, p.y * 3.0))) + SALO * 0.03;          // pimeä massa: metsän reunan sisus
-  if (tyyppi == 1) return vec3(0.30, 0.37, 0.50) * (0.80 + 0.25 * vnoise(p * 9.0 + t * 0.03));                       // huurre: vaalea sininen kide läheltä
+  if (tyyppi == 1) {     // huurre: vaalea sininen kide läheltä. Vedos 8 (kriitikko P2): hieno huurteen syy kahdessa mittakaavassa, kierretty
+                         // ruudukosta (ei näkyviä soluja eikä laikkuja), ja pehmeä valo keskeltä: läpikuultava pinta, ei tasainen ruutu (kuvasääntö 8)
+    vec2 q = mat2(0.80, -0.60, 0.60, 0.80) * p;
+    float n = 0.60 * fbm(q * 13.0 + t * 0.03) + 0.40 * fbm(q * 47.0 - t * 0.02);
+    vec2 dc = (p - vec2(0.8889, 0.5)) * vec2(0.62, 1.0);
+    return vec3(0.30, 0.37, 0.50) * (0.97 + 0.20 * (n - 0.47) - 0.22 * dot(dc, dc));
+  }
   if (tyyppi == 2) return vec3(0.004, 0.009, 0.016) * (1.0 + 0.8 * vnoise(vec2(p.x * 3.0, p.y * 9.0 + t * 0.02)));   // jää: musta pinta
   if (tyyppi == 3) return vec3(0.0016, 0.0022, 0.0030);                                                              // pimeys
   return vec3(0.20, 0.23, 0.29) * (0.80 + 0.30 * vnoise(vec2(p.x * 6.0 + t * 0.9, p.y * 2.0)));                      // lumi: myrskyn vaalea seinä
@@ -94,6 +100,36 @@ export async function lataa() {
   // kaistan taso ruudussa f: 0 (hiljaa, -48 dB) .. 1 (-8 dB); midi 24..107
   const taso = (midi, f) => { const b = Math.round(midi) - sm.midi_alin; if (b < 0 || b >= NB) return 0;
     return clamp((SP[clamp(Math.round(f), 0, NF - 1) * NB + b] / 255 * -sm.db_alin + sm.db_alin + 48) / 40, 0, 1); };
+  // Paisutukset (< >) kaistoittain (vedos 8, rivit 158, 163; käyttäjä: "katsomaan millä kaistalla se ääni on, ja katsomaan sen volyymimuutosta ajan yli").
+  // Kaista (puolisävel) kerrallaan: tason huippu, jota ennen taso nousee ja jonka jälkeen se laskee vähintään D dB (kumpikin vähintään 0,67 s, enintään 8 s).
+  // Samaan aikaan (0,6 s) huipentuvat kaistat ovat yksi paisutus; yksittäinen ääni osuu 2-5 kaistalle, jousiston paisutus vähintään minKaistat kaistalle.
+  // Palauttaa tapahtumat (alku, huippu, loppu, syvyys dB, kaistat) ja verhokäyrän ruuduittain (0..1): paisutuksen omien kaistojen keskitaso
+  // skaalattuna alusta huippuun ja huipusta loppuun. Kuva seuraa siis itse äänen tasoa, ei viivästettyä arviota.
+  const paisut = (ta, tb, D = 4, minKaistat = 8) => {
+    const f0 = clamp(Math.round(ta * FPS) - 150, 0, NF - 1), f1 = clamp(Math.round(tb * FPS) + 150, 0, NF - 1), n = f1 - f0 + 1;
+    const dB = (f, k) => SP[f * NB + k] / 255 * -sm.db_alin + sm.db_alin;
+    const X = []; for (let k = 0; k < NB; k++) { const c = new Float64Array(n + 1); for (let i = 0; i < n; i++) c[i + 1] = c[i] + dB(f0 + i, k);
+      const x = new Float32Array(n); for (let i = 0; i < n; i++) { const lo = Math.max(0, i - 7), hi = Math.min(n, i + 8); x[i] = (c[hi] - c[lo]) / (hi - lo); } X.push(x); }
+    const hu = [];
+    for (let k = 0; k < NB; k++) { const x = X[k];
+      for (let i = 150; i < n - 150; i++) { if (x[i] < sm.db_alin + 14) continue; let mx = true; for (let j = i - 30; j <= i + 30; j++) if (x[j] > x[i] || (x[j] === x[i] && j < i)) { mx = false; break; } if (!mx) continue;
+        const kulje = (st) => { let j = i, m = x[i], jm = i; while (j + st > 0 && j + st < n && Math.abs(j - i) < 240) { j += st; if (x[j] < m) { m = x[j]; jm = j; } else if (x[j] > m + 1.2) break; } return [jm, m]; };
+        const [jl, ml] = kulje(-1), [jr, mr] = kulje(1);
+        if (x[i] - ml >= D && x[i] - mr >= D && i - jl >= 20 && jr - i >= 20) hu.push({ i, jl, jr, k, s: Math.min(x[i] - ml, x[i] - mr) }); } }
+    hu.sort((p, q) => p.i - q.i);
+    const G = []; for (const e of hu) { const g = G[G.length - 1]; if (g && e.i - g[g.length - 1].i < 18) g.push(e); else G.push([e]); }
+    const med = (v) => { const w = [...v].sort((p, q) => p - q); return w[Math.floor(w.length / 2)]; };
+    const env = new Float32Array(NF), tap = [];
+    for (const g of G) { const ks = [...new Set(g.map((e) => e.k))]; if (ks.length < minKaistat) continue;
+      const ip = med(g.map((e) => e.i)), ia = med(g.map((e) => e.jl)), il = med(g.map((e) => e.jr)), syv = g.reduce((q, e) => q + e.s, 0) / g.length;
+      if ((f0 + ip) / FPS < ta || (f0 + ip) / FPS > tb) continue;
+      const L = (i) => { let q = 0; for (const k of ks) q += X[k][i]; return q / ks.length; };
+      const La = L(ia), Lp = L(ip), Ll = L(il), amp = clamp(syv / 12, 0.45, 1);
+      for (let i = ia; i <= il; i++) { const e = i <= ip ? (L(i) - La) / Math.max(Lp - La, 0.5) : (L(i) - Ll) / Math.max(Lp - Ll, 0.5); env[f0 + i] = Math.max(env[f0 + i], amp * clamp(e, 0, 1)); }
+      tap.push({ alku: +((f0 + ia) / FPS).toFixed(2), huippu: +((f0 + ip) / FPS).toFixed(2), loppu: +((f0 + il) / FPS).toFixed(2), syvyys: +syv.toFixed(1), kaistoja: ks.length }); }
+    const out = new Float32Array(NF); for (let f = 2; f < NF - 2; f++) out[f] = (env[f - 2] + env[f - 1] + env[f] + env[f + 1] + env[f + 2]) / 5;
+    return { tapahtumat: tap, env: out };
+  };
   const sarja = (fn) => { const a = new Float32Array(NF + 1); for (let f = 0; f < NF; f++) a[f + 1] = a[f] + fn(f); return a; };   // kertymäsumma ruuduittain
   const ka = (a, f, w) => { const lo = clamp(Math.round(f - w), 0, NF), hi = clamp(Math.round(f + w), 0, NF); return hi > lo ? (a[hi] - a[lo]) / (hi - lo) : 0; };   // keskiarvo f +- w ruutua
   const kohta = (a, t) => { const x = clamp(t * FPS, 0, NF - 1e-3), i = Math.floor(x); return a[i] + (a[i + 1] - a[i]) * (x - i); };            // kertymän arvo hetkellä t
@@ -132,6 +168,8 @@ export async function lataa() {
     iskut,                                                     // [{ t, id }] nimetyt iskut
     aksentit: cues.iskut.map((x) => ({ t: x.t, v: clamp(x.pisteet / 70, 0.15, 1) })),      // koneen kuulemat aksentit (ei leikkauksia)
     nuotit: cues.nuotit,                                       // [alku, kesto, midi]
+    paisut,                                                    // (ta, tb) -> { tapahtumat, env }: jousten paisutukset kaistoittain
+    db: (midi, f) => { const b = Math.round(midi) - sm.midi_alin; return (b < 0 || b >= NB) ? sm.db_alin : SP[clamp(Math.round(f), 0, NF - 1) * NB + b] / 255 * -sm.db_alin + sm.db_alin; },   // kaistan taso desibeleinä (db_alin..0)
     tapahtumat: cues.tapahtumat,                               // [{ tyyppi, alku, loppu, ... }] koneen kuulemat tapahtumat
     tapahtuu: (tyyppi, t) => cues.tapahtumat.some((e) => e.tyyppi === tyyppi && t >= e.alku && t <= (e.loppu ?? e.alku)),
   };
