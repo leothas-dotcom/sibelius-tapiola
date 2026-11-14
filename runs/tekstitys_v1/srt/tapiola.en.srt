@@ -148,9 +148,9 @@ Flutes and piccolo run upward.
 In the picture, one gust of wind.
 
 31
-00:04:12,400 --> 00:04:17,467
-At first the swells < > were invisible.
-The machine measured them: now, wind.
+00:04:12,400 --> 00:04:17,000
+The machine mixed up strings and winds.
+The score showed who swells.
 
 32
 00:04:22,195 --> 00:04:27,462

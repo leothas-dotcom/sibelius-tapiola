@@ -167,6 +167,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* pohja tyhjä; vain ylä- ja keskikerros. *Tunnelma:* pohjaton.
   - Ohjaaja: kahden minuutin ajan basso on kulkenut mukana. Nyt maa on poissa, ja se, mikä jää, leijuu.
 - 3:30 Liike hidastuu: ääniä tulee harvakseltaan.
+- **3:39 Viulujen sointu paisuu ja hiipuu.** Viulujen keinuva sointu vaihtuu ja paisuu hetkeksi esiin, sitten hiipuu; puhaltimien pitkä sointu sen yllä vain hiljenee.
+  - *Edessä ja takana:* viulujen sointu keskellä kasvaa ja vetäytyy. *Tunnelma:* hengitys.
+  - *Partituurissa:* t. 116–117 huilut ja klarinetit cresc.; t. 118–120 puhaltimien pitkä sointu dim.; viulut I ja II div. vaihtavat soinnun t. 118 (s. 10)
+  - Käyttäjä 13.11.2026: "jousten isot svellarit kohdassa 3:40". Käyttäjä 15.11.2026: "Sekoitat puhaltajat ja jouset". Ohjaaja: paisutus kuuluu viuluille; puhaltimien kuviot ennen ja jälkeen eivät ole sitä.
 - **3:51 Puupuhaltimet leikkivät: lyhyet kuviot rinnakkain.** Huilut, oboet ja klarinetit soittavat lyhyitä, irrallisia kuvioita rinnakkain (tersseinä); viulut keinuvat alla pitkin kaarin; alttoviulut tulevat mukaan sordiinolla.
   - *Edessä ja takana:* puhaltimien lyhyet äänet ylhäällä edessä pisteinä; viulujen keinunta keskellä. *Tunnelma:* leikkisä, kevyt, väikkyvä.
   - *Partituurissa:* t. 126–133: huilut, huilu III, oboet ja klarinetit staccato-kuviot rinnakkain; viulut I ja II div. pitkät sidotut parit; alttoviulut con sord. div. mf, poco a poco cresc. (s. 11)
@@ -184,6 +188,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
 - **4:12 Askeleet palaavat fis:llä.** Basson askeleet palaavat, nyt fis:llä, noin 1,7 sekunnin välein, korkeiden kuvioiden alla.
   - *Edessä ja takana:* askeleet pohjalla kuvioiden alla. *Tunnelma:* jokin kulkee mukana.
   - Käyttäjä: askeleet "jatkuvat useissa paikoissa, niitä voi olla vaikea kuulla". Ohjaaja: se, mikä kulkee, ei ole pysähtynyt; se on vain vaihtanut paikkaa.
+- **4:15 Alttoviulut ja sellot: kaksi pitkää paisutusta.** Alttoviulut soittavat painokkaan pitkän äänen, joka kasvaa, kiertyy pieneen kuvioon ja hiipuu; sellot vastaavat samalla eleellä; klarinetit paisuvat mukana.
+  - *Edessä ja takana:* alttoviulujen ja sellojen pitkät äänet keskellä edessä. *Tunnelma:* painokas, kaksi syvää henkäystä.
+  - *Partituurissa:* t. 145–146 alttoviulut f marc., cresc., kuudestoistaosakuvio, t. 147 aksentti ja dim.; t. 149–150 sellot poco f, cresc., kuvio, t. 151 f aksentti; klarinetit poco f < >, f >, mf < (s. 13–14)
+  - Käyttäjä 13.11.2026: "Jousten kuviot esim 4:15-4:28 ei näy, niissä kaksi svellaria." Ohjaaja: kaksi samaa elettä peräkkäin, ensin alttoviulut, sitten sellot.
 - 4:20 Liike tasaantuu.
 - **4:40 Grazioso: puupuhaltimien tanssi alkaa.** Huilut, oboet ja englannintorvi soittavat sirosti (grazioso) lyhyitä, painotettuja tanssikuvioita vuorotellen ja yhdessä; kaikki jouset keinuvat alla pitkin kaarin.
   - *Edessä ja takana:* puupuhaltimien tanssi edessä ja ylhäällä; jousten hidas keinunta alla. *Tunnelma:* siro, leikkisä, väikkyvä.
@@ -197,9 +205,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* tumma, matala puhallinsointu; ei mitään ylhäällä. *Tunnelma:* tummuva, tyhjenevä.
   - *Partituurissa:* F = t. 182: klarinetit, bassoklarinetti, fagotit, kontrafagotti p possibile; käyrätorvet pp possibile; patarummut ppp tremolo; jouset pp ja tauolle (s. 18)
   - Ohjaaja: kuviot katoavat, kun katsoo.
-- **5:10 Jännitteiset pitkät soinnut H:n päällä.** Pitkä H pohjana; sen päällä a ja dis pitkinä kahdesti (h–dis–a: jännitteinen, purkautumaton sointu).
-  - *Edessä ja takana:* pitkät soinnut keskellä, kaikki pysähtyy. *Tunnelma:* uhka, odotus.
-  - Lähteet: Whitman: monoliittiset taustasoinnut; Europadisc: dissonanssia käytetään säästeliäästi mutta jyrkästi. Ohjaaja: metsä pidättää hengitystä kahdesti.
+- **5:10 Jännitteiset pitkät soinnut H:n päällä.** Jouset vaikenevat kokonaan; klarinetit, bassoklarinetti ja fagotit soittavat matalia, jännitteisiä sointuja, jotka paisuvat ja hiipuvat; patarumpu värisee alla; käyrätorvet tulevat hyvin hiljaa mukaan.
+  - *Edessä ja takana:* matalien puupuhaltimien soinnut keskellä; jouset poissa. *Tunnelma:* uhka, odotus.
+  - *Partituurissa:* F = t. 182: klarinetit, bassoklarinetti, fagotit pp < >, kontrafagotti p possibile; patarumpu ppp tremolo < >; käyrätorvet pp possibile; jouset tauolla t. 183–198 (s. 18)
+  - Lähteet: Whitman: monoliittiset taustasoinnut; Europadisc: dissonanssia käytetään säästeliäästi mutta jyrkästi. Ohjaaja: metsä pidättää hengitystä kahdesti. Korjaus 15.11.2026 (partituuri s. 18): paisutukset soittavat matalat puupuhaltimet, eivät jouset; jouset ovat tauolla.
 - 5:26 Musiikki nousee: yläkerros kohoaa ylöspäin noin 6 sekunnin ajan.
 - 5:30 Liike tasaantuu.
 - **5:36 Paisutus: bassot toistavat säveltä, kaikki kasvaa ja katkeaa.** Kontrabassot toistavat matalaa d:tä askelina; klarinetit ja fagotit värisevät niiden päällä; alttoviulut ja sellot tulevat mukaan; kaikki paisuu nopeasti fortissimoon, joka katkeaa kuin veitsellä.
@@ -403,9 +412,9 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
   - *Edessä ja takana:* yksi nopea pyyhkäisy ylhäällä. *Tunnelma:* puuska.
   - *Partituurissa:* t. 499: huilu ja pikkolo nopea nouseva ja laskeva juoksu ff; oboet, klarinetit, fagotit ff dim.; sitten poco f (s. 49)
   - Käyttäjä 10.11.2026: "13:40 tuulenpuuska ei näy."
-- **13:45 Kaikki vaimenee: vasket häipyvät.** Vasket vaimenevat niin hiljaa kuin mahdollista, jouset sanovat vielä jotain ilmeikkäästi ja hiljenevät.
+- **13:45 Kaikki vaimenee: vasket häipyvät.** Vasket vaimenevat niin hiljaa kuin mahdollista; viulut ja sellot soittavat kaksi ilmeikästä fraasia: pitkä ääni kasvaa, kiertyy pieneen kuvioon ja painottuu, sitten kaksi hiipuvaa ääntä.
   - *Edessä ja takana:* jouset edessä, vasket katoavat taakse. *Tunnelma:* tyhjenevä.
-  - *Partituurissa:* t. 505: käyrätorvet, trumpetit, pasuunat dim. possibile; jouset espress. > p (s. 50).
+  - *Partituurissa:* t. 505: käyrätorvet, trumpetit, pasuunat dim. possibile; viulut I, II ja sellot espress.: t. 505–507 pitkä ääni cresc., kuvio, aksentti; t. 507–508 < >; t. 509–511 sama; t. 511–512 > p (s. 50).
   - Ohjaaja: metsä tyhjenee ennen myrskyä. Viimeinen asia, jonka jouset sanovat, on merkitty espressivo.
 - 13:50 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 

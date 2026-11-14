@@ -15,7 +15,7 @@
    "hiljaisuus_2_loppu"
   ]
  ],
- "versio": 2,
+ "versio": 3,
  "tekstit": [
   {
    "id": "avaus",
@@ -315,9 +315,9 @@
    "id": "kone_paisutus",
    "a": "askeleet_fis",
    "kerros": "kone",
-   "lahde": "palautelista rivit 137, 149, 152, 158, 163 (paisutukset eivät näkyneet, mitattiin kaistoittain)",
-   "fi": "Paisutukset < > eivät aluksi näkyneet.\nKone mittasi ne: nyt ne ovat tuulta.",
-   "en": "At first the swells < > were invisible.\nThe machine measured them: now, wind."
+   "lahde": "palautelista rivit 137-163 ja 168 (kone piti puhaltimien kuvioita jousten paisutuksina; käyttäjä 15.11.2026: \"Sekoitat puhaltajat ja jouset\"; ratkaisu partituurista s. 13)",
+   "fi": "Kone sekoitti jouset ja puhaltimet.\nPartituuri kertoi, kuka paisuttaa.",
+   "en": "The machine mixed up strings and winds.\nThe score showed who swells."
   },
   {
    "id": "alaotsikko",

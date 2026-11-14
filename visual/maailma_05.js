@@ -409,8 +409,10 @@ async function alusta() {
   const cDP = d.cues.cues.find((c) => c.id === 'D_pikkolo') || {};
   const RUN = cDP.iskut_t || [TD + 2.2, TD + 2.8], TRUN1 = cDP.t_end || TD + 3.2;          // juoksun alku ja huippu, juoksun loppu (mitattu)
   const puuskaD = (t) => sstep(RUN[0] - 0.10, RUN[1], t) * Math.exp(-Math.max(t - RUN[1], 0) / 1.5);
-  const svell = (t) => { const k = d.keski(t, 0.35) - d.keski(t, 3.0), y = d.korkea(t, 0.35) - d.korkea(t, 3.0);
-    return clamp((Math.max(k, y) - 0.015) / 0.10, 0, 1) * sstep(T0 + 1.0, T0 + 3.0, t) * (1 - sstep(TJ + 12.0, TJ + 13.5, t)); };   // rivi 152: paisutukset myös jännitesoinnuissa 5:04-5:23, ei lasipallon aikana
+  // 15.11.2026 (rivi 168): paisutus on jousten mitattu paisutus ankkurista (d.paisut), ei tason nousu: puhaltimien kuviot ja kirjaimen F
+  // puupuhallinsoinnut (jouset tauolla, partituuri s. 18) eivät enää liikuta jousten tuulta (4d.42: yksi elementti, yksi ääni).
+  const PAISUT = d.paisut(T0, T1); window.paisut = PAISUT.tapahtumat;
+  const svell = (t) => PAISUT.env[clamp(Math.round(t * FPS), 0, NF - 1)];
   const vxT = (t) => 0.30 + 0.5 * jou01(t) + 0.95 * svell(t) + 2.4 * puuskaD(t) + 0.22 * Math.max(okt(t), 0);
   const vyT = (t) => { const o = okt(t); return Math.max(0.15, 0.60 + 0.8 * jou01(t) - 0.30 * svell(t) - 0.35 * puuskaD(t) - 0.45 * Math.max(o, 0) + 0.20 * Math.max(-o, 0)); };
   const pehmea = (fn, tauUp, tauDown) => { const o = new Float32Array(NF); const f0 = Math.max(0, Math.round((T0 - 6) * FPS)), f1 = Math.min(NF - 1, Math.round((T1 + 6) * FPS));
@@ -422,12 +424,9 @@ async function alusta() {
   // vedos 8 (rivit 149, 152): tuisku = paisutuksen ja puuskan verhokäyrä (nousu tau 0,4 s, lasku 1,2 s); tuulen kertymä virtaa nopeammin paisutuksessa
   // rivit 149, 152 ja kriitikko (4. tarkistus): tuiskun oma mittari tunnistaa vain jousten hitaat < > -muodot: 1 s:n taso miinus 4 s:n taso
   // (lyhyet puhallinäänet eivät nosta sitä, 4d.42), ja tuisku nousee vasta, kun paisutus on yli noin 2,4 dB keskitasosta; välissä pöly laskeutuu pois.
-  const svellT = (t) => { const k = d.keski(t, 1.0) - d.keski(t, 4.0), y = d.korkea(t, 1.0) - d.korkea(t, 4.0);
-    return clamp((Math.max(k, y) - 0.045) / 0.085, 0, 1) * sstep(T0 + 1.0, T0 + 3.0, t) * (1 - sstep(TJ + 12.0, TJ + 13.5, t)); };
   const TUISKU_POIS = new URLSearchParams(location.search).get('tuisku') === '0';   // mittausta varten: ?tuisku=0 piirtää ilman tuiskua
   // vedos 8 (rivit 158, 163): tuisku seuraa paisutusten omien kaistojen tasoa ruutu ruudulta (d.paisut), ei viivästettyä koko kaistan arviota:
   // tuisku nousee paisutuksen alusta huippuun ja laskee huipusta loppuun samassa tahdissa äänen kanssa. Pikkolon puuska (D_pikkolo) säilyy.
-  const PAISUT = d.paisut(T0 + 1.0, TJ + 12.0, 4, 6); window.paisut = PAISUT.tapahtumat;
   const tuiskV = new Float32Array(NF); { const pu = pehmea(puuskaD, 0.5, 1.4); for (let f = 0; f < NF; f++) tuiskV[f] = Math.max(PAISUT.env[f], pu[f]); } window.tuiskuV = tuiskV;
   const sTuisk = d.sarja((f) => (0.6 + 4.0 * tuiskV[f]) / FPS);          // puuskassa ilmassa kaksinkertaisesti lunta, paisutuksessa +35 %   // lumen kertymä: nopeus seuraa jousia, paisutuksia ja puuskaa
   const ALUT = d.alut.filter((a) => a.t >= T0 && a.t <= T1);

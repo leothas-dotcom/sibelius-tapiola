@@ -1,6 +1,6 @@
 # Tekstitykset: tarkistustaulukko
 
-Generoitu: `analysis/tekstitys.py`. 94 tekstiä, ruudulla 415 s / 1078 s (39 %). Korjaukset tiedostoon `tekstit.json`.
+Generoitu: `analysis/tekstitys.py`. 94 tekstiä, ruudulla 415 s / 1078 s (38 %). Korjaukset tiedostoon `tekstit.json`.
 
 | # | Aika | Ankkuri | Kerros | Suomi | English | Lähde |
 |---|---|---|---|---|---|---|
@@ -92,9 +92,9 @@ preface's sprites, shimmering. | tyyli luku 6 ja 7 (huilut = väike); tyyli 4d.2
 | 30 | 4:04.5 | `D_pikkolo` | kuuntele | Huilut ja pikkolo juoksevat
 ylös. Kuvassa se on yksi tuulenpuuska. | Flutes and piccolo run upward.
 In the picture, one gust of wind. | opas 4:04 (partituuri s. 11-12: huilu ja pikkolo juoksu); palautelista rivi 138 (yksi puuska) |
-| 31 | 4:12.4 | `askeleet_fis` | kone | Paisutukset < > eivät aluksi näkyneet.
-Kone mittasi ne: nyt ne ovat tuulta. | At first the swells < > were invisible.
-The machine measured them: now, wind. | palautelista rivit 137, 149, 152, 158, 163 (paisutukset eivät näkyneet, mitattiin kaistoittain) |
+| 31 | 4:12.4 | `askeleet_fis` | kone | Kone sekoitti jouset ja puhaltimet.
+Partituuri kertoi, kuka paisuttaa. | The machine mixed up strings and winds.
+The score showed who swells. | palautelista rivit 137-163 ja 168 (kone piti puhaltimien kuvioita jousten paisutuksina; käyttäjä 15.11.2026: "Sekoitat puhaltajat ja jouset"; ratkaisu partituurista s. 13) |
 | 32 | 4:22.2 | `e_pitka_ja_kuviot` | tausta | Alaotsikon ehdotti Damrosch: metsän jumala
 ja hänen nymfinsä. Sibelius hyväksyi. | Damrosch proposed the subtitle: the forest
 god and his nymphs. Sibelius agreed. | tutkimus luku 2 (alaotsikko Damroschin, Sibelius hyväksyi) |

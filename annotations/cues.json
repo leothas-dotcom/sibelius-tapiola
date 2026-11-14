@@ -1043,6 +1043,41 @@
    "tarkista": false
   },
   {
+   "id": "viulut_paisuvat_118",
+   "ankkuri": "viulut_paisuvat_118",
+   "t": 219.2,
+   "t_end": 222.4,
+   "paisutukset": [
+    [
+     219.2,
+     220.2,
+     221.6,
+     222.4,
+     0.8
+    ]
+   ],
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Viulujen sointu paisuu ja hiipuu",
+   "kirjain": null,
+   "tahti": 118,
+   "tahti_loppu": 120,
+   "tahti_suhde": "t. 118, kirjaimen C jälkeen",
+   "soi": "viulujen keinuva sointu vaihtuu ja paisuu hetkeksi esiin, sitten hiipuu; puhaltimien pitkä sointu sen yllä vain hiljenee",
+   "soittimet": [
+    "viulut"
+   ],
+   "tarina": "Käyttäjä 13.11.2026: \"jousten isot svellarit kohdassa 3:40\". Käyttäjä 15.11.2026: \"Sekoitat puhaltajat ja jouset\". Ohjaaja: paisutus kuuluu viuluille; puhaltimien kuviot ennen ja jälkeen eivät ole sitä.",
+   "lahde": "partituuri (ohjaaja luki 15.11.2026); mittaus jousten omista sävelistä; käyttäjän palaute 13.11. ja 15.11.2026",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "kohtalainen",
+   "peruste": "15.11.2026 ohjaaja: jousten omien sävelten taso suoraan äänestä (clean_mono.wav, STFT 8192, kaistat +-35 senttiä), sävelet partituurista. Käyttäjä 15.11.: 'Jousten svellarit ei osu vieläkään oikeisiin kohtiin' ja 'Sekoitat puhaltajat ja jouset'. Paisutus = [alku, huippu alkaa, huippu päättyy, loppu, voima]. Viulujen sointu es-f-b-c (t. 118 alkaen): es1, f1, es2, f2 nousevat 3:39,2 > huippu 3:40,2-3:41,6 > poissa 3:42,4. Samaan aikaan puhaltimien G-duurisointu (g, h, d) vain hiipuu (3:38,6 > 3:42,4).",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
    "id": "puhaltimet_staccato",
    "ankkuri": "puhaltimet_staccato",
    "t": 231.1,
@@ -1157,6 +1192,50 @@
    "tarkista": false
   },
   {
+   "id": "altot_sellot_marcato_145",
+   "ankkuri": "altot_sellot_marcato_145",
+   "t": 255.4,
+   "t_end": 267.0,
+   "paisutukset": [
+    [
+     255.4,
+     257.5,
+     259.3,
+     260.9,
+     1.0
+    ],
+    [
+     261.2,
+     263.4,
+     265.8,
+     267.0,
+     1.0
+    ]
+   ],
+   "theme": "soitin",
+   "luokka": "soitin",
+   "tyyppi": "hetki",
+   "nimi": "Alttoviulut ja sellot: kaksi pitkää paisutusta",
+   "kirjain": null,
+   "tahti": 145,
+   "tahti_loppu": 151,
+   "tahti_suhde": "t. 145–151, kirjaimen D jälkeen",
+   "soi": "alttoviulut soittavat painokkaan pitkän äänen, joka kasvaa, kiertyy pieneen kuvioon ja hiipuu; sellot vastaavat samalla eleellä; klarinetit paisuvat mukana",
+   "soittimet": [
+    "alttoviulut",
+    "sellot",
+    "klarinetit"
+   ],
+   "tarina": "Käyttäjä 13.11.2026: \"Jousten kuviot esim 4:15-4:28 ei näy, niissä kaksi svellaria.\" Ohjaaja: kaksi samaa elettä peräkkäin, ensin alttoviulut, sitten sellot.",
+   "lahde": "partituuri (ohjaaja luki 15.11.2026); mittaus jousten omista sävelistä; käyttäjän palaute 13.11. ja 15.11.2026",
+   "varmuus": "analyysi",
+   "lahde_aika": "analyysi",
+   "luottamus": "hyvä",
+   "peruste": "15.11.2026 ohjaaja: jousten omien sävelten taso suoraan äänestä (clean_mono.wav, STFT 8192, kaistat +-35 senttiä), sävelet partituurista. Käyttäjä 15.11.: 'Jousten svellarit ei osu vieläkään oikeisiin kohtiin' ja 'Sekoitat puhaltajat ja jouset'. Paisutus = [alku, huippu alkaa, huippu päättyy, loppu, voima]. Alttoviulut (a1, cis2): alkaa 4:15,4, kasvaa 4:17,5 asti, kuvio 4:18,0-4:18,8, aksentti 4:19,0, hiipuu 4:20,9. Sellot (fis1, ais1): alkaa 4:21,2, kasvaa 4:23,4 asti, kuvio 4:24,0-4:25,0, aksentti 4:25,6, hiipuu 4:27,0. Käyttäjä 13.11.: 'Jousten kuviot esim 4:15-4:28 ei näy, niissä kaksi svellaria.'",
+   "vahvistettu": false,
+   "tarkista": true
+  },
+  {
    "id": "nopea_liike_1_alku",
    "ankkuri": "nopea_liike_1_alku",
    "t": 280.9,
@@ -1224,14 +1303,20 @@
    "luokka": "tunnelma",
    "tyyppi": "hetki",
    "nimi": "Jännitteiset pitkät soinnut H:n päällä",
-   "kirjain": null,
-   "tahti": null,
+   "kirjain": "F",
+   "tahti": 182,
    "tahti_loppu": null,
    "tahti_suhde": "ennen kirjainta G",
-   "soi": "pitkä H pohjana; sen päällä a ja dis pitkinä kahdesti (h–dis–a: jännitteinen, purkautumaton sointu)",
-   "soittimet": [],
-   "tarina": "Lähteet: Whitman: monoliittiset taustasoinnut; Europadisc: dissonanssia käytetään säästeliäästi mutta jyrkästi. Ohjaaja: metsä pidättää hengitystä kahdesti.",
-   "lahde": "analyysi: tarkka.py",
+   "soi": "jouset vaikenevat kokonaan; klarinetit, bassoklarinetti ja fagotit soittavat matalia, jännitteisiä sointuja, jotka paisuvat ja hiipuvat; patarumpu värisee alla; käyrätorvet tulevat hyvin hiljaa mukaan",
+   "soittimet": [
+    "klarinetit",
+    "bassoklarinetti",
+    "fagotit",
+    "kontrafagotti",
+    "patarummut"
+   ],
+   "tarina": "Lähteet: Whitman: monoliittiset taustasoinnut; Europadisc: dissonanssia käytetään säästeliäästi mutta jyrkästi. Ohjaaja: metsä pidättää hengitystä kahdesti. Korjaus 15.11.2026 (partituuri s. 18): paisutukset soittavat matalat puupuhaltimet, eivät jouset; jouset ovat tauolla.",
+   "lahde": "partituuri s. 18 (ohjaaja luki 15.11.2026); analyysi: tarkka.py",
    "varmuus": "analyysi",
    "lahde_aika": "analyysi",
    "luottamus": "kohtalainen",
@@ -2613,6 +2698,43 @@
    "ankkuri": "dim_possibile",
    "t": 825.0,
    "t_end": 845.6,
+   "paisutukset": [
+    [
+     826.8,
+     828.3,
+     828.8,
+     831.0,
+     1.0
+    ],
+    [
+     831.2,
+     832.1,
+     833.5,
+     833.85,
+     0.9
+    ],
+    [
+     833.9,
+     834.25,
+     834.9,
+     835.8,
+     0.8
+    ],
+    [
+     837.2,
+     838.9,
+     839.9,
+     840.3,
+     0.9
+    ],
+    [
+     840.6,
+     841.1,
+     841.6,
+     842.8,
+     0.7
+    ]
+   ],
    "theme": "tunnelma",
    "luokka": "tunnelma",
    "tyyppi": "hetki",
@@ -2621,8 +2743,14 @@
    "tahti": 505,
    "tahti_loppu": null,
    "tahti_suhde": "noin t. 505",
-   "soi": "vasket vaimenevat niin hiljaa kuin mahdollista, jouset sanovat vielä jotain ilmeikkäästi ja hiljenevät",
-   "soittimet": [],
+   "soi": "vasket vaimenevat niin hiljaa kuin mahdollista; viulut ja sellot soittavat kaksi ilmeikästä fraasia: pitkä ääni kasvaa, kiertyy pieneen kuvioon ja painottuu, sitten kaksi hiipuvaa ääntä",
+   "soittimet": [
+    "viulut",
+    "sellot",
+    "käyrätorvet",
+    "trumpetit",
+    "pasuunat"
+   ],
    "tarina": "Ohjaaja: metsä tyhjenee ennen myrskyä. Viimeinen asia, jonka jouset sanovat, on merkitty espressivo.",
    "lahde": "partituuri s. 50; analyysi: taso",
    "varmuus": "analyysi",

@@ -157,6 +157,8 @@ def build_cues(anchors, times, iskut):
             c["t_end"] = e["t_loppu"]
         if e.get("iskut"):
             c["iskut_t"] = e["iskut"]          # ankkurin sisäiset mitatut iskut (esim. vaskien teeman viisi iskua)
+        if e.get("paisutukset"):
+            c["paisutukset"] = e["paisutukset"]  # jousten mitatut paisutukset (< >): [[alku, huippu alkaa, huippu päättyy, loppu, voima 0..1], ...]
         if e.get("linjat"):
             c["linjat"] = e["linjat"]          # ankkurin mitatut sävellinjat (esim. huilut ja fagotti kirjaimessa J): {nimi: [[alku s, midi], ...]}
         c.update({"theme": a["luokka"], "luokka": a["luokka"], "tyyppi": a["tyyppi"]})

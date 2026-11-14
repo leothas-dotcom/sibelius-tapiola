@@ -100,35 +100,16 @@ export async function lataa() {
   // kaistan taso ruudussa f: 0 (hiljaa, -48 dB) .. 1 (-8 dB); midi 24..107
   const taso = (midi, f) => { const b = Math.round(midi) - sm.midi_alin; if (b < 0 || b >= NB) return 0;
     return clamp((SP[clamp(Math.round(f), 0, NF - 1) * NB + b] / 255 * -sm.db_alin + sm.db_alin + 48) / 40, 0, 1); };
-  // Paisutukset (< >) kaistoittain (vedos 8, rivit 158, 163; käyttäjä: "katsomaan millä kaistalla se ääni on, ja katsomaan sen volyymimuutosta ajan yli").
-  // Kaista (puolisävel) kerrallaan: tason huippu, jota ennen taso nousee ja jonka jälkeen se laskee vähintään D dB (kumpikin vähintään 0,67 s, enintään 8 s).
-  // Samaan aikaan (0,6 s) huipentuvat kaistat ovat yksi paisutus; yksittäinen ääni osuu 2-5 kaistalle, jousiston paisutus vähintään minKaistat kaistalle.
-  // Palauttaa tapahtumat (alku, huippu, loppu, syvyys dB, kaistat) ja verhokäyrän ruuduittain (0..1): paisutuksen omien kaistojen keskitaso
-  // skaalattuna alusta huippuun ja huipusta loppuun. Kuva seuraa siis itse äänen tasoa, ei viivästettyä arviota.
-  const paisut = (ta, tb, D = 4, minKaistat = 8) => {
-    const f0 = clamp(Math.round(ta * FPS) - 150, 0, NF - 1), f1 = clamp(Math.round(tb * FPS) + 150, 0, NF - 1), n = f1 - f0 + 1;
-    const dB = (f, k) => SP[f * NB + k] / 255 * -sm.db_alin + sm.db_alin;
-    const X = []; for (let k = 0; k < NB; k++) { const c = new Float64Array(n + 1); for (let i = 0; i < n; i++) c[i + 1] = c[i] + dB(f0 + i, k);
-      const x = new Float32Array(n); for (let i = 0; i < n; i++) { const lo = Math.max(0, i - 7), hi = Math.min(n, i + 8); x[i] = (c[hi] - c[lo]) / (hi - lo); } X.push(x); }
-    const hu = [];
-    for (let k = 0; k < NB; k++) { const x = X[k];
-      for (let i = 150; i < n - 150; i++) { if (x[i] < sm.db_alin + 14) continue; let mx = true; for (let j = i - 30; j <= i + 30; j++) if (x[j] > x[i] || (x[j] === x[i] && j < i)) { mx = false; break; } if (!mx) continue;
-        const kulje = (st) => { let j = i, m = x[i], jm = i; while (j + st > 0 && j + st < n && Math.abs(j - i) < 240) { j += st; if (x[j] < m) { m = x[j]; jm = j; } else if (x[j] > m + 1.2) break; } return [jm, m]; };
-        const [jl, ml] = kulje(-1), [jr, mr] = kulje(1);
-        if (x[i] - ml >= D && x[i] - mr >= D && i - jl >= 20 && jr - i >= 20) hu.push({ i, jl, jr, k, s: Math.min(x[i] - ml, x[i] - mr) }); } }
-    hu.sort((p, q) => p.i - q.i);
-    const G = []; for (const e of hu) { const g = G[G.length - 1]; if (g && e.i - g[g.length - 1].i < 18) g.push(e); else G.push([e]); }
-    const med = (v) => { const w = [...v].sort((p, q) => p - q); return w[Math.floor(w.length / 2)]; };
-    const env = new Float32Array(NF), tap = [];
-    for (const g of G) { const ks = [...new Set(g.map((e) => e.k))]; if (ks.length < minKaistat) continue;
-      const ip = med(g.map((e) => e.i)), ia = med(g.map((e) => e.jl)), il = med(g.map((e) => e.jr)), syv = g.reduce((q, e) => q + e.s, 0) / g.length;
-      if ((f0 + ip) / FPS < ta || (f0 + ip) / FPS > tb) continue;
-      const L = (i) => { let q = 0; for (const k of ks) q += X[k][i]; return q / ks.length; };
-      const La = L(ia), Lp = L(ip), Ll = L(il), amp = clamp(syv / 12, 0.45, 1);
-      for (let i = ia; i <= il; i++) { const e = i <= ip ? (L(i) - La) / Math.max(Lp - La, 0.5) : (L(i) - Ll) / Math.max(Lp - Ll, 0.5); env[f0 + i] = Math.max(env[f0 + i], amp * clamp(e, 0, 1)); }
-      tap.push({ alku: +((f0 + ia) / FPS).toFixed(2), huippu: +((f0 + ip) / FPS).toFixed(2), loppu: +((f0 + il) / FPS).toFixed(2), syvyys: +syv.toFixed(1), kaistoja: ks.length }); }
-    const out = new Float32Array(NF); for (let f = 2; f < NF - 2; f++) out[f] = (env[f - 2] + env[f - 1] + env[f] + env[f + 1] + env[f + 2]) / 5;
-    return { tapahtumat: tap, env: out };
+  // Jousten paisutukset (< >): ankkureihin kirjatut, jousten omista sävelistä mitatut (ajat_<levytys>.json: paisutukset). Kone ei erota jousen
+  // paisutusta puhaltimen kuviosta tason nousuna (käyttäjä 15.11.2026: "Sekoitat puhaltajat ja jouset"), joten paisutuksia ei arvata kaistoista.
+  // Palauttaa tapahtumat ja verhokäyrän ruuduittain (0..1): pehmeä nousu alusta huippuun, huippu, pehmeä lasku loppuun.
+  const paisut = (ta, tb) => {
+    const env = new Float32Array(NF), tap = [], ss = (x) => { const k = clamp(x, 0, 1); return k * k * (3 - 2 * k); };
+    for (const c of cues.cues) for (const [t0, h0, h1, t1, v] of (c.paisutukset || [])) { if (h0 < ta || h1 > tb) continue;
+      tap.push({ alku: t0, huippu: h0, huippu_loppu: h1, loppu: t1, voima: v, ankkuri: c.id });
+      for (let f = Math.max(0, Math.floor(t0 * FPS)); f <= Math.min(NF - 1, Math.ceil(t1 * FPS)); f++) { const t = f / FPS;
+        env[f] = Math.max(env[f], v * ss((t - t0) / Math.max(h0 - t0, 1e-3)) * (1 - ss((t - h1) / Math.max(t1 - h1, 1e-3)))); } }
+    return { tapahtumat: tap, env };
   };
   const sarja = (fn) => { const a = new Float32Array(NF + 1); for (let f = 0; f < NF; f++) a[f + 1] = a[f] + fn(f); return a; };   // kertymäsumma ruuduittain
   const ka = (a, f, w) => { const lo = clamp(Math.round(f - w), 0, NF), hi = clamp(Math.round(f + w), 0, NF); return hi > lo ? (a[hi] - a[lo]) / (hi - lo) : 0; };   // keskiarvo f +- w ruutua
@@ -168,7 +149,7 @@ export async function lataa() {
     iskut,                                                     // [{ t, id }] nimetyt iskut
     aksentit: cues.iskut.map((x) => ({ t: x.t, v: clamp(x.pisteet / 70, 0.15, 1) })),      // koneen kuulemat aksentit (ei leikkauksia)
     nuotit: cues.nuotit,                                       // [alku, kesto, midi]
-    paisut,                                                    // (ta, tb) -> { tapahtumat, env }: jousten paisutukset kaistoittain
+    paisut,                                                    // (ta, tb) -> { tapahtumat, env }: jousten mitatut paisutukset ankkureista
     db: (midi, f) => { const b = Math.round(midi) - sm.midi_alin; return (b < 0 || b >= NB) ? sm.db_alin : SP[clamp(Math.round(f), 0, NF - 1) * NB + b] / 255 * -sm.db_alin + sm.db_alin; },   // kaistan taso desibeleinä (db_alin..0)
     tapahtumat: cues.tapahtumat,                               // [{ tyyppi, alku, loppu, ... }] koneen kuulemat tapahtumat
     tapahtuu: (tyyppi, t) => cues.tapahtumat.some((e) => e.tyyppi === tyyppi && t >= e.alku && t <= (e.loppu ?? e.alku)),

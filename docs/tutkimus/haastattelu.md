@@ -1232,3 +1232,11 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Kaikki yhdeksän
 
 > No ehkä ei tarvitse sanoa joka kerta "Kuuntele: " kyllä varmaan ihmiset osaavat kuunnella ilmankin :D
+
+### 15.11.2026: jousten paisutukset eivät osu; puhaltimet ja jouset sekaisin
+
+> hei lähetä minulle uusin wa versio kiitos
+
+> Jousten svellarit ei osu vieläkäään oikeisiin kohtiin
+
+> Sekoitat puhaltajat ja jouset

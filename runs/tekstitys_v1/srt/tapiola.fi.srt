@@ -148,9 +148,9 @@ Huilut ja pikkolo juoksevat
 ylös. Kuvassa se on yksi tuulenpuuska.
 
 31
-00:04:12,400 --> 00:04:17,467
-Paisutukset < > eivät aluksi näkyneet.
-Kone mittasi ne: nyt ne ovat tuulta.
+00:04:12,400 --> 00:04:17,000
+Kone sekoitti jouset ja puhaltimet.
+Partituuri kertoi, kuka paisuttaa.
 
 32
 00:04:22,195 --> 00:04:27,462

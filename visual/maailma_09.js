@@ -572,13 +572,13 @@ async function alusta() {
   // hiljaisuuteen (13:45-14:05, partituuri s. 50) ovat tuulta: mitattu taso 0,7 s:n ikkunassa miinus 6 s:n pohja. Nopeus kiihtyy tau 0,5 s ja hidastuu
   // tau 1,5 s; sivusuunta on sama kuin lumen (oikealle) eikä käänny; paisutus myös keventää putoamista hieman.
   // vedos 8 (rivit 158, 163): paisutus mitataan kaistoittain (d.paisut): lumen tuuli seuraa paisutuksen omien kaistojen tasoa ruutu ruudulta
-  const PAISUT9 = d.paisut(A.dim_possibile + 1.0, t1 - 0.8, 4, 6); window.paisut = PAISUT9.tapahtumat;
-  const svell09 = (t) => PAISUT9.env[clamp(Math.round(t * FPS), 0, d.NF - 1)] * ikkuna(t, A.dim_possibile + 1.0, t1 - 0.8, 1.5);
+  const PAISUT9 = d.paisut(A.dim_possibile, t1); window.paisut = PAISUT9.tapahtumat;   // 15.11.2026 (rivi 168): jousten espressivo-fraasit ankkurista dim_possibile, mitattu jousten omista sävelistä
+  const svell09 = (t) => PAISUT9.env[clamp(Math.round(t * FPS), 0, d.NF - 1)];
   const gEnv = (L, t) => (t < L.ts ? 0 : L.env(t - L.ts));
   const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 1.5)))); o[f] = y; } return o; };
-  const vDriftG = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t) + 0.22 * svell09(t));   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
-  const vLiftS = pehmea9((t) => 0.090 * svell09(t));
-  const svellS9 = pehmea9((t) => svell09(t));
+  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += 0.22 * svell09(f / FPS); return g; })();   // 15.11.2026 (rivi 168): paisutuksen verhokäyrä on jo pehmeä (mitattu alku, huippu, loppu): ei 1,5 s:n häntää, joka täytti eleiden välit   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
+  const vLiftS = Float32Array.from({ length: NF + 1 }, (_, f) => 0.090 * svell09(f / FPS));
+  const svellS9 = Float32Array.from({ length: NF + 1 }, (_, f) => svell09(f / FPS));
   const sDriftG = d.sarja((f) => vDriftG[f] / FPS), sLiftS = d.sarja((f) => vLiftS[f] / FPS);
   const ikkunaHarva = (t) => ikkuna(t, A.harva_kuviointi, tPend, 1.5);
 

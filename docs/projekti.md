@@ -422,6 +422,7 @@ kirjataan heti aikakoodeineen (kuuntelukopion aikaa).*
 | 165 | 13.11. | nyppylät tasaisiksi (ei piikikkäitä mäkiä) | "Olisiko kaikki nyppylät mahdollista piirtää tasaisina? Noita piikikkäitä mäkiä ei suomessa ole?" | 🔶 korjattu, mitattu renderistä; käyttäjä ei ole vielä katsonut | vaaran laen latvojen kärjet poistettu alusta (01_02) ja lopusta (11_12); kuvat 0:45 ja 16:34 |
 | 166 | 13.11. | tekstitykset Heldenlebenin tapaan; YouTube-julkaisun suunnitelma ja vähintään kuusi Shortsia; "miten kone oppi tulkitsemaan Sibeliusta" | "Tehdään vielä tekstitykset tähän, samaan tyyliin kuin heldenlebenissä: Kuunteluoppaan mukaan, tarinaa mukaan taustalta, taustatutkimuksesta mielenkiintosia juttuja, mitä kuvassa näkyy, mikä soi." · "miten tämän markkinoisi niin että ihmiset jaksaa katsoa? Tehdään shorts-videoita ainakin kuusi kappaletta" · "miten kone oppi tulkitsemaan Sibeliusta? Näitä myös tekstityksiin." | 🔶 v1 tehty (Sonnet-agentit); käyttäjä ei ole lukenut | `analysis/tekstitys.py` (menetelmä Heldenlebenistä, ajat ankkureista); `runs/tekstitys_v1/`: 94 tekstiä fi ja en, 0 rikettä, ruudulla 41 %, kerrokset tarina 27, kuuntele 37, tausta 21, kone 9; `runs/julkaisu_v1/suunnitelma.md`: yhdeksän Shortsia ankkurirajoin, koukku, kuvaus, avoimet päätökset. Ohjaaja ajoi työkalun itse; tekstien faktoja ei ole tarkistettu rivi riviltä. Auki: sävellyksen tekijänoikeus (suojattu EU:ssa 2027 loppuun) **[tarkista]** |
 | 167 | 13.11. | tekstityksistä "Kuuntele:" pois; yhdeksän Shortsia katseluversioiksi | "No ehkä ei tarvitse sanoa joka kerta \"Kuuntele: \" kyllä varmaan ihmiset osaavat kuunnella ilmankin :D" · "Kaikki yhdeksän" | 🔶 tehty; käyttäjä ei ole vielä katsonut | "Kuuntele:"/"Listen:" poistettu 74 kohdasta ja työkalun vaatimuksesta, 0 rikettä; `render/shortsit.py` + `runs/julkaisu_v1/shortsit.json`: yhdeksän Shortsia renderöity pystyyn 1080x1920 ankkurista ankkuriin (26–50 s), tekstit häivytettyinä; kontaktiarkki `runs/julkaisu_v1/shorts/kontakti_fi.jpg`. Ohjaajan havainnot arkista: S3 metsänraja näyttää pystyssä teräviltä huipuilta; S5 ja S6 teksti osuu pöydän laudan ja auringon päälle. Ääni työäänitys: ei julkaisuun |
+| 168 | 15.11. | jousten paisutukset (< >) väärissä kohdissa; puhaltimet ja jouset sekaisin | "Jousten svellarit ei osu vieläkäään oikeisiin kohtiin" · "Sekoitat puhaltajat ja jouset" | 🔶 korjattu, mitattu äänestä ja partituurista; käyttäjä ei ole vielä katsonut | Syy: `d.paisut` piti paisutuksena jokaista noin 2 s:n tason kohoumaa: 22 tapahtumaa jaksossa 3:24–5:23, niistä valtaosa puhaltimien kuvioita, ja 5:04–5:23 jouset ovat tauolla (partituuri s. 18: klarinetit ja fagotit < >). Korjaus: paisutukset mitattu jousten omista sävelistä (partituuri s. 10, 13, 50) ja kirjattu ankkureihin (`paisutukset`: alku, huippu, loppu): viulut 3:39,2–3:42,4; alttoviulut 4:15,4–4:20,9; sellot 4:21,2–4:27,0; jouset espress. 13:46,8–14:02,8 viitenä eleenä. Tunnistin poistettu; 05 ja 09 lukevat ankkurit. Teemakartta: `jannitesoinnut` korjattu puupuhaltimille. Ei mitattu: t. 139 jousten f (4:08–4:13) |
 
 ### Työn tila palautteen 36 jälkeen (ohjaajan muistilista; päivitetään joka vaiheessa)
 
@@ -624,6 +625,21 @@ kerrallaan, jokaisen jälkeen kriitikko → koko renderi ketjuna.
 # 3. Opit
 
 *Elävä dokumentti. Jokainen kierros kirjaa, mikä toimi ja mikä ei. Uusin ylimpänä.*
+
+## 15.11.2026 – Paisutus ei ole tason kohouma: kuka soittaa, luetaan partituurista
+
+- **Mikä meni pieleen:** kolme kierrosta (rivit 149, 152, 158, 163) paisutuksia (< >) etsittiin tason nousuna ja laskuna, ensin koko
+  kaistasta, sitten puolisävelkaistoittain. Mittari löysi 22 "paisutusta" jaksosta 3:24–5:23. Käyttäjä: "Jousten svellarit ei osu
+  vieläkäään oikeisiin kohtiin" ja "Sekoitat puhaltajat ja jouset". Partituurista: jousilla on tuossa jaksossa kolme merkittyä elettä
+  (viulut t. 118, alttoviulut t. 145, sellot t. 149), ja kirjaimessa F (5:04–5:23) jouset ovat tauolla: paisutukset soittavat klarinetit
+  ja fagotit. Lisäksi jokainen nuotti, joka alkaa ja loppuu, on kaistassaan "nousu ja lasku".
+- **Mikä ei toiminut erotteluun:** spektrihuipun leveys (jousisto leveä, puhallin kapea) erotti liikkuvat äänet pidetyistä, ei soittimia;
+  stereokuvan panorointi oli kaikuisassa äänityksessä kohinaa. Kumpaakaan ei otettu käyttöön.
+- **Mikä toimi:** partituuri kertoo, kuka paisuttaa ja millä sävelillä; ääni kertoo milloin. Jousten omien sävelten taso (kapeat kaistat
+  suoraan äänestä, ei 8-bittisestä spektristä) antaa alun, huipun ja lopun 0,25 s:n tarkkuudella. Ne kirjataan ankkuriin
+  (`ajat_<levytys>.json`: `paisutukset`), ja kuva lukee ankkurin. Tunnistin (`d.paisut` kaistoista) poistettiin.
+- **Sääntö:** kun kuvan elementti kuuluu yhdelle soitinryhmälle, sen ajoitus tulee ankkurista, jonka soittaja on luettu partituurista.
+  Tason muutos yksin ei kerro soittajaa. Ennen kuin "paisutus" piirretään, tarkistetaan partituurista, soittaako ryhmä ylipäätään.
 
 ## 13.11.2026 – Lisäys sidotaan ankkuriin ennen koodia; ja välke mitataan ennen kuin vedos näytetään
 
