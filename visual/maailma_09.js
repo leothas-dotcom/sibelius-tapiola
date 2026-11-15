@@ -23,6 +23,7 @@ uniform vec3 uLsB[48];    // B: sama
 uniform vec4 uHit[4];     // N: ohut leikkaus (sivuasema, leveys, välähdys, jälkihohto)
 uniform vec2 uObo[4];     // oboet: ohut valojuova (sivuasema, voima)
 uniform vec3 uKla[3];     // klarinetit: puoliksi näkyvä liike (sivuasema, korkeus, voima)
+uniform vec2 uTurb;       // tuulen pyörteisyys: voima (lumen vauhti 0..1), vaihe (tuulen kulkema matka)
 uniform vec3 uSnow;       // lumi: pudotus (kertymä), ajautuma (kertymä), määrä
 uniform vec2 uCut;        // pystyvalo: nopea välähdys, hidas jälkihohto (vain nimetyt iskut)
 uniform vec2 uTwo;        // kaksi valon paikkaa: vasen (käyrätorvet), oikea (trumpetit)
@@ -76,6 +77,7 @@ vec3 snowAt(vec2 p) {
     float sc = L == 0 ? 11.0 : (L == 1 ? 21.0 : 38.0);
     float spd = 1.0 - 0.32 * fl;
     vec2 q = vec2(p.x - uSnow.y * spd + 0.01 * sin(uTime * 0.6 + fl * 2.0), p.y + (uSnow.x - disp) * spd);
+    q += uTurb.x * 0.075 * spd * (vec2(vnoise(vec2(p.x * 2.6 - uTurb.y * 2.2, p.y * 2.6 + fl * 5.1 + uTurb.y * 0.7)), vnoise(vec2(p.x * 2.4 + 3.1 - uTurb.y * 1.6, p.y * 2.9 + 7.7 + fl * 3.3 - uTurb.y * 1.1))) - 0.5);   // rivi 170: pyörteet siirtävät hiutaleita eri tahtiin
     vec2 g = q * sc, id = floor(g), f = fract(g) - 0.5;
     float h = hash(id + fl * 37.1);
     if (h > 0.30) continue;
@@ -572,22 +574,26 @@ async function alusta() {
   // hiljaisuuteen (13:45-14:05, partituuri s. 50) ovat tuulta: mitattu taso 0,7 s:n ikkunassa miinus 6 s:n pohja. Nopeus kiihtyy tau 0,5 s ja hidastuu
   // tau 1,5 s; sivusuunta on sama kuin lumen (oikealle) eikä käänny; paisutus myös keventää putoamista hieman.
   // vedos 8 (rivit 158, 163): paisutus mitataan kaistoittain (d.paisut): lumen tuuli seuraa paisutuksen omien kaistojen tasoa ruutu ruudulta
-  const PAISUT9 = d.paisut(A.dim_possibile, t1); window.paisut = PAISUT9.tapahtumat;   // 15.11.2026 (rivi 168): jousten espressivo-fraasit ankkurista dim_possibile, mitattu jousten omista sävelistä
-  // 15.11.2026 (rivi 169): verhokäyrä pehmennetään symmetrisesti (kaksi 0,3 s:n liukuvaa keskiarvoa), jotta tuulen vauhti ei töksähdä eleiden saumoissa
-  const SV9 = (() => { const k = Math.round(0.15 * FPS); let a = PAISUT9.env; for (let r = 0; r < 2; r++) { const o = new Float32Array(a.length); let s = 0; for (let f = 0; f < a.length + k; f++) { if (f < a.length) s += a[f]; if (f - 2 * k - 1 >= 0) s -= a[f - 2 * k - 1]; if (f - k >= 0 && f - k < a.length) o[f - k] = s / (2 * k + 1); } a = o; } return a; })();
-  const svell09 = (t) => SV9[clamp(Math.round(t * FPS), 0, d.NF - 1)];
-  // rivi 169: pitkän äänen päättävä kolmen äänen rypäs (kaksi kuudestoistaosaa ja aksentti, partituuri s. 50) pyöräyttää lumen yhden kierroksen:
-  // kulma kasvaa pehmeästi 0 → 2π rypään alusta aksentin loppuun, joten lumen paikka ja vauhti ovat jatkuvia ja lumi palaa omalle radalleen
-  const RYP9 = (cue('dim_possibile').rypaat || []).map(([a, , b]) => [a - 0.35, b + 0.5]), RYP_R = 0.018;
-  const pyor9 = (t) => { let x = 0, y = 0; for (const [a, b] of RYP9) { if (t <= a || t >= b) continue; const k = (t - a) / (b - a), th = 2 * Math.PI * k * k * k * (k * (6 * k - 15) + 10); x += RYP_R * (1 - Math.cos(th)); y += RYP_R * Math.sin(th); } return [x, y]; };
+  // 15.11.2026 (rivi 170): tuuli on voima, ei vauhti. Käyttäjä: "se jatkaa liikettään tuulen jälkeen, inertian takia. Se ei lopahda. Eli tuuli on
+  // kiihtyvyys, ei vauhti." ja "Mittaa sen jousten voimakkuus". Voima F(t) on jousten mitattu voimakkuus (ankkurin dim_possibile kenttä tuuli:
+  // viulujen omien sävelten taso, partituuri s. 50). Lumen vauhti on voiman kertymä, jota ilmanvastus (kitka) hidastaa: dv/dt = F - v / TAU9.
+  // Lumi lähtee hitaasti, kiihtyy jousten crescendon mukana aksenttiin ja hidastuu kitkasta, kun tuuli lakkaa. Rypään (kaksi kuudestoistaosaa ja
+  // aksentti) aikana tuulen suunta kääntyy ylöspäin ja takaisin: lumi kaartaa ylös ja putoaa kaaressa. Tuuli on pyörteinen (uTurb): hiutaleet
+  // eivät liiku samaan tahtiin; pyörteiden voima seuraa lumen vauhtia ja niiden vaihe tuulen kulkemaa matkaa (ei kelloa).
+  const TAU9 = 2.0, VMAX9 = 0.46, NOSTO9 = 50 * Math.PI / 180;
+  const LUMI9 = (() => { const ss = (x) => { const k = clamp(x, 0, 1); return k * k * (3 - 2 * k); }, c9 = cue('dim_possibile'), ryp = c9.rypaat || [], P = c9.tuuli || [];
+    const F = (t) => { if (!P.length || t <= P[0][0] || t >= P[P.length - 1][0]) return 0; let i = 1; while (P[i][0] < t) i++; const k = (t - P[i - 1][0]) / (P[i][0] - P[i - 1][0]); return P[i - 1][1] + (P[i][1] - P[i - 1][1]) * k; };
+    const kulma = (t) => { let m = 0; for (const [a, ak, b] of ryp) m = Math.max(m, ss((t - a + 0.5) / (ak - a + 0.5)) * (1 - ss((t - ak) / (b - ak + 0.5)))); return NOSTO9 * m; };
+    const vx = new Float32Array(NF + 1), vy = new Float32Array(NF + 1), Fs = new Float32Array(NF + 1); let x = 0, y = 0, mx = 1e-6, w = 0;
+    for (let f = 0; f <= NF; f++) { const t = f / FPS, k = kulma(t); w += (F(t) - w) * (1 - Math.exp(-1 / (FPS * 0.12))); Fs[f] = w;   // voima pehmennetty 0,12 s (mittauspisteiden väli 0,25 s)
+      x += (w * Math.cos(k) - x / TAU9) / FPS; y += (w * Math.sin(k) - y / TAU9) / FPS; vx[f] = x; vy[f] = y; mx = Math.max(mx, Math.hypot(x, y)); }
+    const maara = new Float32Array(NF + 1); for (let f = 0; f <= NF; f++) { vx[f] *= VMAX9 / mx; vy[f] *= VMAX9 / mx; maara[f] = Math.hypot(vx[f], vy[f]) / VMAX9; }
+    return { vx, vy, maara, voima: Fs, matka: d.sarja((f) => Math.hypot(vx[f], vy[f]) / FPS) }; })();
+  window.paisut = LUMI9;
   const gEnv = (L, t) => (t < L.ts ? 0 : L.env(t - L.ts));
   const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 1.5)))); o[f] = y; } return o; };
-  // rivi 169: aksentti (rypään kolmas, painotettu ääni) ryöpsäyttää: nousu rypään ensimmäisestä nuotista aksenttiin, lasku aksentin soidessa ja sen jälkeen
-  const ryop9 = (t) => { let m = 0; const ss = (x) => { const k = clamp(x, 0, 1); return k * k * (3 - 2 * k); };
-    for (const [a, ak, b] of (cue('dim_possibile').rypaat || [])) m = Math.max(m, ss((t - a + 0.1) / (ak - a + 0.15)) * (1 - ss((t - ak - 0.1) / (b - ak + 0.6)))); return m; };
-  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += 0.22 * svell09(f / FPS) + 0.16 * ryop9(f / FPS); return g; })();   // 15.11.2026 (rivi 168): paisutuksen verhokäyrä on jo pehmeä (mitattu alku, huippu, loppu): ei 1,5 s:n häntää, joka täytti eleiden välit   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
-  const vLiftS = Float32Array.from({ length: NF + 1 }, (_, f) => 0.090 * svell09(f / FPS) + 0.06 * ryop9(f / FPS));
-  const svellS9 = Float32Array.from({ length: NF + 1 }, (_, f) => svell09(f / FPS) + 0.8 * ryop9(f / FPS));
+  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += LUMI9.vx[f]; return g; })();
+  const vLiftS = LUMI9.vy, svellS9 = LUMI9.maara;
   const sDriftG = d.sarja((f) => vDriftG[f] / FPS), sLiftS = d.sarja((f) => vLiftS[f] / FPS);
   const ikkunaHarva = (t) => ikkuna(t, A.harva_kuviointi, tPend, 1.5);
 
@@ -681,12 +687,13 @@ async function alusta() {
       const zz = b.Sb - camS; const ramp = 0.35 + 0.65 * Math.min(1, ti / 0.1);
       let I = b.g * (0.35 + 0.65 * cm) * ramp; if (i === 0) I += 0.65 * Math.exp(-ti / 0.18);
       return [F * (b.xb - xPath(camS)) / zz, F * b.w / zz, I * offT * BAMP, 0]; });
-    const py9 = pyor9(tt); const snow = [d.kohta(sFall, tt) - d.kohta(sLiftS, tt) - py9[1], d.kohta(sDrift, tt) + d.kohta(sDriftG, tt) + py9[0], (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr] + 0.6 * svellS9[clamp(fr, 0, svellS9.length - 1)]) * (1 + 1.0 * nerve * gustAt(tt))];
+    const snow = [d.kohta(sFall, tt) - d.kohta(sLiftS, tt), d.kohta(sDrift, tt) + d.kohta(sDriftG, tt), (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr] + 0.6 * svellS9[clamp(fr, 0, svellS9.length - 1)]) * (1 + 1.0 * nerve * gustAt(tt))];
     const dense = sstep(t1 - 11, t1 - 2.5, tt);
     const win = WIN.map((w, i) => [xPath(camS + w.z) - xPath(camS) + w.x, w.z, w.y, TAIKA * winK(i, tt) * opn * (1 + 0.08 * Math.sin(0.9 * tt + i * 2.1))]);
     const u1 = u1At(tt);
     const hill = sstep(tPs, tPs + 3, tt);   // P4: kumpujen reuna pehmeä P:stä moduulin loppuun
-    return { win, u1, hill, thr, band, bandK, opn, hit, surge, vf: vFall[fr], vd: vDrift[fr], snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
+    const turb = [LUMI9.maara[clamp(fr, 0, NF)], d.kohta(LUMI9.matka, tt)];
+    return { turb, win, u1, hill, thr, band, bandK, opn, hit, surge, vf: vFall[fr], vd: vDrift[fr], snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
       end: smooth(s), start: 1 - sstep(0, 0.9, tt - t0), rate: rate(tt) };
   }
 
@@ -716,7 +723,7 @@ async function alusta() {
       gl.uniform4fv(U('uHit'), new Float32Array(Array.from({ length: 4 }, (_, i) => s.hit[i] || [0, 0.01, 0, 0]).flat()));
       const ob = new Float32Array(8); s.obo.forEach((x, i) => ob.set(x, i * 2)); gl.uniform2fv(U('uObo'), ob);
       const kl = new Float32Array(9); s.kla.forEach((x, i) => kl.set(x, i * 3)); gl.uniform3fv(U('uKla'), kl);
-      gl.uniform1f(U('uSurge'), s.surge); gl.uniform3f(U('uSnow'), s.snow[0], s.snow[1], s.snow[2]);
+      gl.uniform1f(U('uSurge'), s.surge); gl.uniform3f(U('uSnow'), s.snow[0], s.snow[1], s.snow[2]); gl.uniform2f(U('uTurb'), s.turb[0], s.turb[1]);
       gl.uniform2f(U('uCut'), s.cut[0], s.cut[1]); gl.uniform2f(U('uTwo'), s.two[0], s.two[1]);
       const pu = new Float32Array(24); s.pu.forEach((x, i) => pu.set(x, i * 4)); gl.uniform4fv(U('uPulse'), pu);
       const dt = new Float32Array(96); s.dots.forEach((x, i) => dt.set(x, i * 4)); gl.uniform4fv(U('uDot'), dt); gl.uniform1i(U('uNDot'), s.dots.length);

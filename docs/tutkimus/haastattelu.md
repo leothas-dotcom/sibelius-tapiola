@@ -1256,3 +1256,15 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Niin siis tuulen pitää voimistua tuon pitkän äänen aikana, sitten ryöpsähtää tuon voimakkaan kohdan aikana? Korjasitko niin?
 
 > Joo ja jatkuva lumi, ei töks töks, eikö niin? Koko ajan.
+
+### 15.11.2026: lumi kökkö, tuuli on kiihtyvyys
+
+> Ei, se lumi näyttää nyt tosi kököltä. Siinä pitää olla enemmän jatkuvuutta, enemmän crescendoa. Jotta se crescendo näkyy, pitää sen aluksi liikkua
+> hitaammin, ja voimistuen huipentua aksenttiin. nyt se näyttää siltä pitkän äänen aikana se pysyy yhtä nopeana, ja sitten jotenkin tökerösti liikkuu oikealle.
+>
+> Mieti miten tuuli liikuttaa lunta: se jatkaa liikettään tuulen jälkeen, inertian takia. Se ei lopahda. Eli tuuli on kiihtyvyys, ei vauhti. Ymmärrätkö?
+
+> hyvä, mutta siis kun tuuli lakkaa, sen pitää alkaa hidastua myös, ajattele että siinä on kitkaa myös mukana
+
+> ja ettei kaikki lumihiutaleet liiku samaan tahtiin, vähän randomia siihen mukaan. Se tuuli tulee vähän sekavasti, pyörteenä vaikka? Mieti miten lumi
+> käyttäytyisi, kun katsot tuota spektriä, ja näet miten ääni voimistuu. Mittaa sen jousten voimakkuus siitä

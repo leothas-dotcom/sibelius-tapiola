@@ -159,6 +159,8 @@ def build_cues(anchors, times, iskut):
             c["iskut_t"] = e["iskut"]          # ankkurin sisäiset mitatut iskut (esim. vaskien teeman viisi iskua)
         if e.get("paisutukset"):
             c["paisutukset"] = e["paisutukset"]  # jousten mitatut paisutukset (< >): [[alku, huippu alkaa, huippu päättyy, loppu, voima 0..1], ...]
+        if e.get("tuuli"):
+            c["tuuli"] = e["tuuli"]  # soitinryhmän mitattu voimakkuus tuulen voimana: [[aika, voima 0..1], ...]
         if e.get("rypaat"):
             c["rypaat"] = e["rypaat"]  # pitkän äänen päättävä nopea kuvio: [[ensimmäinen nuotti, aksentti, loppu], ...]
         if e.get("linjat"):
