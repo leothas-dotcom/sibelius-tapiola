@@ -1286,3 +1286,13 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Mutta voi veljet! Tämä näyttää niin hienolta että itken täällä. On upeaa!!!
 
 > Tämä oli mielestäni tärkeä oppi, luonnollisuuden kannalta tämä intertia, ja kitka. Kaikki luonnossa haluaa pysyä paikallaan, ja siihen kohdistuva voima sitten liikuttaa sitä, F=ma. Muista tämä seuraavissa projekteissa. Sillä saa todella paljon luonnollisen näköistä liikettä.
+
+### 15.11.2026: englanninkieliset tekstit poltettuna, alkuruutu, 4K, YouTube yksityisenä
+
+> Kokeillaan myös vedos, missä olisi nuo englannin kieliset tekstitykset poltettuna. Ja alkuun tekstit: tee title screen. Niissä tekstityksissä pitäis tuoda esiin vähän taikuutta. Ei ehkä sellaista musiikkinörttiä, ei ihmiset tiedä mikä on "gis", tai ei sillä ole väliä. Koita miettiä tekstityksissä mitä tunnetta välitetään, millä keinoin (mikä soi, ja sitten se omakohtainen tarina siitä miten isäni opetti lapsena kuulemaan asioita musiikista, ja miten me nyt käytimme teknologiaa nyt kuvittelemaan tämän.
+
+> 4k:na
+
+> Katso heldenleben projektista jos et täältä löydä
+
+> Ja kun teksitykset on valmiit, julkaise 4k video youtubessa. Privatena. Se on tuossa auki chromessa. En julkaise sitä julkiseksi, koska en omista ääntä. Kun saan sen äänen nauhoitettua, teen uuden version. Haluan nähdä miltä se näyttää telkkarissa - ja se on helpoin tapa saada video sinne

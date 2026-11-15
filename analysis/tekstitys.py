@@ -111,7 +111,7 @@ def main():
             virheet.append(f"{c['id']}: tuntematon ankkuri {c['a']} / {c.get('b')}")
             continue
         t = A[c['a']] + c.get('osuus', 0.0) * (A[c['b']] - A[c['a']]) if 'b' in c else A[c['a']]
-        tekstit = {'fi': c['fi'], 'en': c['en']}
+        tekstit = {k: c[k] for k in ('fi', 'en') if k in c}   # 15.11.2026: yksikielinen lähde sallittu (v2: vain englanti)
         for k, d in kaannos.items():
             if c['id'] in d:
                 tekstit[k] = d[c['id']]
@@ -177,7 +177,7 @@ def main():
                 f"ruudulla {peitto:.0f} s / {loppu:.0f} s ({100 * peitto / loppu:.0f} %). Korjaukset tiedostoon `tekstit.json`.\n\n"
                 "| # | Aika | Ankkuri | Kerros | Suomi | English | Lähde |\n|---|---|---|---|---|---|---|\n")
         for i, c in enumerate(cues, 1):
-            f.write(f"| {i} | {mmss(c['alku'])} | `{c['a']}` | {c.get('kerros', '')} | {c['fi']} | {c['en']} | {c['lahde']} |\n")
+            f.write(f"| {i} | {mmss(c['alku'])} | `{c['a']}` | {c.get('kerros', '')} | {c.get('fi', '')} | {c.get('en', '')} | {c['lahde']} |\n")
     jakauma = {k: sum(1 for c in cues if c.get('kerros') == k) for k in KERROKSET}
     print(f"{len(cues)} tekstiä, ruudulla {peitto:.0f} s / {loppu:.0f} s ({100 * peitto / loppu:.0f} %), kielet {sorted(cues[0]['tekstit'])}, kerrokset {jakauma}")
     aukot = sorted(((cues[i + 1]['alku'] - cues[i]['loppu'], cues[i]['loppu']) for i in range(len(cues) - 1)), reverse=True)[:5]
