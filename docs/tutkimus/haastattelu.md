@@ -1320,3 +1320,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Kyllä se lataus etenee. On vaan hidas.
 
 > Joku äänen aaltomuoto-kuva, joo, sitten sellainen missä "analysoit" jotain tuulen nopeutta, että siitä saa fiiliksen: Ääni --> Kuva  ja isolla Fable 5.2 is Incredible
+
+> Joo aika hyviä, viimeistele vielä nuo pari viimeistä yritystä. Löytyiskö youtube thumbnailien generointiin joku kiva skilli mitä voit käyttää?

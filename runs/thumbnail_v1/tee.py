@@ -132,7 +132,7 @@ def kayra(d, x, y, w, h, data, vari, pak=4, tayte=None):
     if tayte: d.polygon(p + [(x + w, y + h), (x, y + h)], fill=tayte)
     d.line(p, fill=vari, width=pak, joint='curve'); return p
 
-def paneeli(im, x, y, w, h, kohta=0.72, tausta=(8, 12, 20, 225)):
+def paneeli(im, x, y, w, h, kohta=0.72, tausta=(8, 12, 20, 225), fk=None):
     """Mittaripaneeli: AUDIO (aalto), FORCE (voimakkuus), WIND SPEED (kertymä kitkalla); pystyviiva = soittokohta."""
     o = Image.new('RGBA', im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(o); d.rounded_rectangle((x, y, x + w, y + h), radius=18, fill=tausta, outline=(70, 90, 120, 255), width=2)
     m = 22; ix, iw = x + m, w - 2 * m; rh = (h - 2 * m) / 3
@@ -140,10 +140,10 @@ def paneeli(im, x, y, w, h, kohta=0.72, tausta=(8, 12, 20, 225)):
     for r in range(1, 3): d.line((ix, y + m + rh * r, ix + iw, y + m + rh * r), fill=(70, 90, 120, 255), width=1)
     a = aaltokuva(int(iw), int(rh - 34), VALK, 90, 0.6); o.paste(a, (int(ix), int(y + m + 28)), a)
     kayra(d, ix, y + m + rh + 30, iw, rh - 40, A, KELT, 3, KELT + (50,)); p = kayra(d, ix, y + m + 2 * rh + 30, iw, rh - 40, TU, TURK, 5, TURK + (50,))
-    f = CON(max(15, int(h / 20))); d.text((ix, y + m), 'AUDIO  44.1 kHz', font=f, fill=(200, 208, 222, 255)); d.text((ix, y + m + rh + 4), 'STRINGS: LOUDNESS = FORCE', font=f, fill=KELT + (255,))
+    f = CON(fk or max(15, int(h / 20))); d.text((ix, y + m), 'AUDIO  44.1 kHz', font=f, fill=(200, 208, 222, 255)); d.text((ix, y + m + rh + 4), 'LOUDNESS = FORCE', font=f, fill=KELT + (255,))
     d.text((ix, y + m + 2 * rh + 4), 'WIND SPEED  (F = ma)', font=f, fill=TURK + (255,))
     kx = ix + iw * kohta; d.line((kx, y + m, kx, y + h - m), fill=PUN + (255,), width=3); py = p[int(kohta * (len(p) - 1))][1]; d.ellipse((kx - 9, py - 9, kx + 9, py + 9), fill=PUN + (255,), outline=VALK + (255,), width=2)
-    arvo = '%.1f m/s' % (TU[int(kohta * 399)] * 4.2); tw = d.textlength(arvo, font=f); bx = kx + 14 if kx + 24 + tw < x + w else kx - 24 - tw
+    arvo = '%d %%' % round(TU[int(kohta * 399)] * 100); tw = d.textlength(arvo, font=f); bx = kx + 14 if kx + 24 + tw < x + w else kx - 24 - tw
     d.rounded_rectangle((bx, py - 34, bx + tw + 14, py - 6), radius=6, fill=PUN + (255,)); d.text((bx + 7, py - 31), arvo, font=f, fill=MUSTA + (255,))
     im.paste(o, (0, 0), o)
 
@@ -161,18 +161,17 @@ def k10():  # myrsky koko kuvana, paneeli päällä
     teksti(d, (W / 2, 692), "Sibelius · Tapiola", GEO(30), VALK, 4, 'mm'); return im
 
 def k11():  # paneeli ylhäällä koko leveydeltä, neljä kohtausta alla
-    im = Image.new('RGB', (W, H), (9, 12, 19)); kaistat(im, NELJA, 40, 520, 1200, 180, 10); paneeli(im, 40, 140, 1200, 320, 0.66); d = ImageDraw.Draw(im)
+    im = Image.new('RGB', (W, H), (9, 12, 19)); kaistat(im, NELJA, 40, 520, 1200, 180, 10); paneeli(im, 40, 140, 1200, 320, 0.66, fk=24); d = ImageDraw.Draw(im)
     teksti(d, (W / 2, 76), OTS, IMP(118), KELT, 0, 'mm')
-    for i in range(4):
+    for i in (0, 3):
         cx = 40 + 1200 / 8 * (2 * i + 1); d.rectangle((cx - 6, 464, cx + 6, 492), fill=KELT); d.polygon([(cx - 22, 490), (cx + 22, 490), (cx, 516)], fill=KELT)
-    o = Image.new('RGBA', im.size, (0, 0, 0, 0)); do = ImageDraw.Draw(o); im.paste(o, (0, 0), o)
-    return im
+    teksti(d, (500, 490), 'SOUND', BAH(42), VALK, 0, 'mm'); nuoli(d, 580, 690, 490, 10, KELT); teksti(d, (790, 490), 'PICTURE', BAH(42), VALK, 0, 'mm'); return im
 
 def k12():  # revontuli koko kuvana, tuulikäyrä kuvan päällä
     im = tayta(R['revontuli'], W, H, 0.5, 0.35); varjo(im, 0.36, 0.42); o = Image.new('RGBA', im.size, (0, 0, 0, 0)); d = ImageDraw.Draw(o)
-    a = aaltokuva(1180, 150, VALK, 110, 0.55); o.paste(a, (50, 500), a); p = kayra(d, 50, 250, 1180, 220, TU, KELT, 7)
+    a = aaltokuva(1180, 150, VALK, 110, 0.55); o.paste(a, (50, 500), a); g = Image.new('RGBA', im.size, (0, 0, 0, 0)); kayra(ImageDraw.Draw(g), 50, 250, 1180, 220, TU, KELT + (255,), 22); g = g.filter(ImageFilter.GaussianBlur(14)); o.alpha_composite(g); d = ImageDraw.Draw(o); p = kayra(d, 50, 250, 1180, 220, TU, KELT, 8)
     i = int(0.72 * 399); x, y = p[i]; d.ellipse((x - 13, y - 13, x + 13, y + 13), fill=PUN + (255,), outline=VALK + (255,), width=3); im.paste(o, (0, 0), o); d = ImageDraw.Draw(im)
-    teksti(d, (x + 24, y + 44), 'WIND SPEED %.1f m/s' % (TU[i] * 4.2), CON(34), VALK, 5, 'lm'); teksti(d, (W / 2, 90), OTS, IMP(122), KELT, 8, 'mm')
+    teksti(d, (x + 24, y + 44), 'WIND SPEED %d %%' % round(TU[i] * 100), CON(34), VALK, 5, 'lm'); teksti(d, (W / 2, 90), OTS, IMP(122), KELT, 8, 'mm')
     teksti(d, (W / 2, 190), 'It listens. It measures. It draws.', SEG(44), VALK, 5, 'mm'); teksti(d, (60, 680), 'SOUND', BAH(46), VALK, 5, 'lm'); nuoli(d, 220, 1010, 680, 12, KELT)
     tahti(d, 560, 640, 18, KELT); teksti(d, (630, 642), 'MAGIC', BAH(30), KELT, 4, 'mm'); teksti(d, (1220, 680), 'PICTURE', BAH(46), VALK, 5, 'rm'); return im
 
