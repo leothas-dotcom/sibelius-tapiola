@@ -1336,3 +1336,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Onko tuo riittävän vahva otsikko? Saako siitä sellaisen kuvan, että tämä ei ole AI generoitua kuvaa, vaan että koodattiin tuo video?
 
 > No mutta kun nuo sun ehdotukset on niin AI-maisia että oikein oksettaa. Se pitää olla näköjään siis tuollainen lause, mitä joku henkilö tai asia on tehnyt, ja sitten se on INSANE. Ja ehkä voisin korostaa omaa rooliani myös. Minä pyysin sinua TEKEMÄÄN: MAKE, eli ei PIIRTÄÄ DRAW? Olisiko MAKE parempi kuin DRAW?
+
+> Ei siinä tarvitse mitään verbiä, kun teet sen pikkukuvan riittävän selväksi, niin että siitä SELVIÄÄ mitä tapahtuu ilman tekstiä. Osaatko nyt varmasti tuon pikkukuva-gamen? Siinä pitää olla selvä hookki, mitä ihmiset klikkaavat

@@ -95,3 +95,59 @@ for i, im in enumerate(lo): im.save(K + 'lopullinen_%d.jpg' % (i + 1), quality=9
 ark = Image.new('RGB', (W * 3 + 40, H + 200), (40, 40, 40))
 for i, im in enumerate(lo): ark.paste(im, (i * (W + 20), 0)); ark.paste(im.resize((320, 180), Image.LANCZOS), (i * (W + 20), H + 10))
 ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'lopullinen_arkki.jpg', quality=92)
+
+# --- Kierros 3 (käyttäjä 15.11.2026: kuvasta pitää SELVITÄ mitä tapahtuu ilman tekstiä): ääni -> koodi -> kuva yhdessä kuvassa.
+# Vasemmalla aaltomuoto, keskellä sama kuva piirtyy projektin oikeasta koodista (visual/maailma_09.js, myrskyn moduuli), oikealla valmis kuva.
+CONB = lambda s: font('consolab.ttf', s)
+def koodirivit():
+    t = open('visual/maailma_09.js', encoding='utf-8').read(); o = []
+    for r in t.replace('\t', '  ').split('\n'):
+        for p in r.split('; '):
+            p = p.strip()
+            if 12 < len(p) and not p.startswith('//') and not p.startswith('*') and all(ord(c) < 128 for c in p): o.append(p)
+    return o
+KR = koodirivit()
+def ss(a, b, x): t = np.clip((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t)
+
+def kolmivaihe(nimi, cx=0.5, cy=0.5, fs=23, siemen=7, alku=160):
+    kuva = np.asarray(tayta(R[nimi], W, H, cx, cy)).astype('f4') / 255; X = np.linspace(0, 1, W)[None, :, None]
+    # koodi maskina
+    m = Image.new('L', (W, H), 0); d = ImageDraw.Draw(m); f = CONB(fs); lh = fs + 5; rng = np.random.default_rng(siemen)
+    for i in range(H // lh + 1):
+        s = KR[(alku + i) % len(KR)]; d.text((int(W * 0.20) + int(rng.integers(0, 4)) * 26, i * lh), s[:70], font=f, fill=255)
+    M = np.asarray(m).astype('f4')[:, :, None] / 255
+    kirkas = np.clip(kuva * 2.3 + 0.12, 0, 1); kvari = np.array([0.72, 0.90, 1.0])[None, None, :] * (1 - ss(0.30, 0.52, X)) + kirkas * ss(0.30, 0.52, X)
+    ka = M * ss(0.20, 0.27, X) * (1 - ss(0.60, 0.74, X)); ia = ss(0.47, 0.70, X)
+    out = np.zeros((H, W, 3), 'f4') + np.array(MUSTA)[None, None, :] / 255; out = out * (1 - ka) + kvari * ka; out = out * (1 - ia) + kuva * ia
+    im = Image.fromarray((np.clip(out, 0, 1) * 255).astype('u1'))
+    # aaltomuoto vasemmalla
+    d = ImageDraw.Draw(im); n = 15; slot = W * 0.215 / n
+    for i in range(n):
+        x = 26 + (i + 0.5) * slot; k = (0.10 + 0.55 * E[i * 2 + 6]) * H * 0.62; d.rounded_rectangle((x - 6, H * 0.56 - k / 2, x + 6, H * 0.56 + k / 2), radius=6, fill=VALK)
+    return im
+
+def merkit(im, sanat, vari=KELT):
+    """Kolme sanaa alhaalla vyöhykkeiden alla, nuolet välissä."""
+    d = ImageDraw.Draw(im); f = BAH(52); xs = [W * 0.125, W * 0.435, W * 0.82]; y = 668
+    for s, x in zip(sanat, xs): teksti(d, (x, y), s, f, VALK, 7, 'mm')
+    for i in range(2):
+        a = xs[i] + d.textlength(sanat[i], font=f) / 2 + 22; b = xs[i + 1] - d.textlength(sanat[i + 1], font=f) / 2 - 22
+        d.rectangle((a - 3, y - 9, b - 22, y + 9), fill=MUSTA); d.polygon([(b - 34, y - 26), (b + 5, y), (b - 34, y + 26)], fill=MUSTA)
+        d.rectangle((a, y - 6, b - 24, y + 6), fill=vari); d.polygon([(b - 30, y - 20), (b, y), (b - 30, y + 20)], fill=vari)
+
+def m1():
+    im = kolmivaihe('myrsky'); varjo(im, 0.30, 0.24); kipinat(im, 700, 860, 11, KELT, 16); d = ImageDraw.Draw(im)
+    teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 44, 84), 'SIBELIUS', BAH(74), VALK, 7, 'rm'); teksti(d, (W - 44, 164), 'TAPIOLA', BAH(74), VALK, 7, 'rm')
+    merkit(im, ('SOUND', 'CODE', 'SNOWSTORM')); return im
+def m2():
+    im = kolmivaihe('aurinko', 0.62, 0.5, siemen=8); varjo(im, 0.30, 0.24); kipinat(im, 700, 860, 12, KELT, 16); d = ImageDraw.Draw(im)
+    teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 44, 84), 'SIBELIUS', BAH(74), VALK, 7, 'rm'); teksti(d, (W - 44, 164), 'TAPIOLA', BAH(74), VALK, 7, 'rm')
+    merkit(im, ('SOUND', 'CODE', 'FOREST')); return im
+def m3():  # ilman alarivin sanoja: kuva yksin
+    im = kolmivaihe('myrsky'); varjo(im, 0.30, 0.0); kipinat(im, 700, 860, 11, KELT, 16); d = ImageDraw.Draw(im)
+    teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 44, 650), 'SIBELIUS · TAPIOLA', BAH(60), VALK, 7, 'rm'); return im
+mm = [k() for k in (m1, m2, m3)]
+for i, im in enumerate(mm): im.save(K + 'koodi_%d.jpg' % (i + 1), quality=94)
+ark = Image.new('RGB', (W * 3 + 40, H + 200), (40, 40, 40))
+for i, im in enumerate(mm): ark.paste(im, (i * (W + 20), 0)); ark.paste(im.resize((320, 180), Image.LANCZOS), (i * (W + 20), H + 10)); ark.paste(im.resize((168, 94), Image.LANCZOS), (i * (W + 20) + 340, H + 10))
+ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'koodi_arkki.jpg', quality=92)
