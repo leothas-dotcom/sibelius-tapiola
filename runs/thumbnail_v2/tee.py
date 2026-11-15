@@ -151,3 +151,50 @@ for i, im in enumerate(mm): im.save(K + 'koodi_%d.jpg' % (i + 1), quality=94)
 ark = Image.new('RGB', (W * 3 + 40, H + 200), (40, 40, 40))
 for i, im in enumerate(mm): ark.paste(im, (i * (W + 20), 0)); ark.paste(im.resize((320, 180), Image.LANCZOS), (i * (W + 20), H + 10)); ark.paste(im.resize((168, 94), Image.LANCZOS), (i * (W + 20) + 340, H + 10))
 ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'koodi_arkki.jpg', quality=92)
+
+# --- Kierros 4 (käyttäjä valitsi: ääniaalto -> lumimyrsky; "tee monta versiota", "mieti luettavuutta", pari vastaavaa muilla kuvilla) ---
+R['metsa'] = ruutu(97, 2.0, 1.3, 1.35); R['revontuli'] = ruutu(967, 1.8, 1.25, 1.7); R['aurinko'] = ruutu(682, 1.2, 1.15, 1.25)
+def muunnos2(nimi, n=30, pak=18, cx=0.5, cy=0.5, alku=0.22, keski=0.60, kiinni=0.5):
+    """Kuten muunnos, mutta luettavampi: vähemmän ja paksummat pylväät, ja kuva sulkeutuu ehjäksi (ei rakoja) kun q > kiinni."""
+    e = np.array([c.mean() for c in np.array_split(E, n)]); e = e / e.max()
+    kuva = tayta(R[nimi], W, H, cx, cy); im = Image.new('RGB', (W, H), MUSTA); m = Image.new('L', (W, H), 0); dm = ImageDraw.Draw(m); v = Image.new('L', (W, H), 0); dv = ImageDraw.Draw(v); slot = W / n; yk = H * keski
+    for i in range(n):
+        p = i / (n - 1); q = 0 if p < alku else ((p - alku) / (1 - alku)) ** 1.4; x = (i + 0.5) * slot
+        if q > kiinni: dm.rectangle((x - slot / 2 - 1, 0, W, H), fill=255); break
+        lev = pak + (slot + 2 - pak) * min(1, q / kiinni) ** 1.2; kor = (0.08 + 0.50 * e[i]) * H * (1 - q) + H * 2.4 * q / kiinni * 0.6
+        y0, y1 = max(0, yk - kor / 2), min(H, yk + kor / 2); r = lev / 2 * (1 - min(1, q / kiinni * 1.3))
+        dm.rounded_rectangle((x - lev / 2, y0, x + lev / 2, y1), radius=r, fill=255); dv.rounded_rectangle((x - lev / 2, y0, x + lev / 2, y1), radius=r, fill=int(255 * (1 - min(1, q / kiinni * 1.5)) ** 1.1))
+    im.paste(kuva, (0, 0), m); im.paste(Image.new('RGB', (W, H), VALK), (0, 0), v); return im
+def alarivi2(im, vasen, oikea, fs=62, vari=KELT):
+    d = ImageDraw.Draw(im); f = BAH(fs); y = 662; teksti(d, (40, y), vasen, f, VALK, 8, 'lm'); teksti(d, (W - 40, y), oikea, f, VALK, 8, 'rm')
+    x0 = 40 + d.textlength(vasen, font=f) + 28; x1 = W - 40 - d.textlength(oikea, font=f) - 28; d.rectangle((x0 - 4, y - 12, x1 - 30, y + 12), fill=MUSTA); d.polygon([(x1 - 46, y - 32), (x1 + 6, y), (x1 - 46, y + 32)], fill=MUSTA)
+    d.rectangle((x0, y - 8, x1 - 32, y + 8), fill=vari); d.polygon([(x1 - 40, y - 25), (x1, y), (x1 - 40, y + 25)], fill=vari)
+def otsikot(im, tyyli=1):
+    d = ImageDraw.Draw(im)
+    if tyyli == 1: teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 40, 80), 'SIBELIUS', BAH(80), VALK, 8, 'rm'); teksti(d, (W - 40, 166), 'TAPIOLA', BAH(80), VALK, 8, 'rm')
+    if tyyli == 2: teksti(d, (W / 2, 104), 'FABLE 5.2', IMP(200), KELT, 11, 'mm')
+    if tyyli == 3: teksti(d, (40, 104), 'FABLE 5.2', IMP(190), KELT, 11, 'lm'); teksti(d, (44, 232), 'SIBELIUS · TAPIOLA', BAH(66), VALK, 8, 'lm')
+def n1():  # valittu, luettavampi: 30 paksua pylvästä, ehjä kuva, isommat tekstit
+    im = muunnos2('myrsky'); varjo(im, 0.30, 0.26); kipinat(im, 300, 640, 4, KELT, 22); otsikot(im, 1); alarivi2(im, 'SOUND', 'SNOWSTORM'); return im
+def n2():  # ilman tähtiä, isompi kuva-alue
+    im = muunnos2('myrsky', 26, 22, alku=0.16, kiinni=0.42); varjo(im, 0.30, 0.26); otsikot(im, 1); alarivi2(im, 'SOUND', 'SNOWSTORM'); return im
+def n3():  # otsikko keskellä, Sibelius · Tapiola alhaalla, ei nuoliriviä
+    im = muunnos2('myrsky', 26, 22); varjo(im, 0.32, 0.24); kipinat(im, 300, 640, 4, KELT, 22); otsikot(im, 2); teksti(ImageDraw.Draw(im), (W / 2, 660), 'SIBELIUS · TAPIOLA', BAH(72), VALK, 8, 'mm'); return im
+def n4():  # Sibelius · Tapiola otsikon alla vasemmalla
+    im = muunnos2('myrsky', 30, 18, keski=0.64); varjo(im, 0.36, 0.26); kipinat(im, 300, 640, 4, KELT, 22); otsikot(im, 3); alarivi2(im, 'SOUND', 'SNOWSTORM'); return im
+def n5():  # metsä
+    im = muunnos2('metsa', cx=0.42); varjo(im, 0.30, 0.26); kipinat(im, 300, 640, 5, KELT, 22); otsikot(im, 1); alarivi2(im, 'SOUND', 'FOREST'); return im
+def n6():  # punainen aurinko
+    im = muunnos2('aurinko', cx=0.6); varjo(im, 0.30, 0.26); kipinat(im, 300, 640, 6, KELT, 22); otsikot(im, 1); alarivi2(im, 'SOUND', 'RED SUN'); return im
+def n7():  # revontuli
+    im = muunnos2('revontuli', cy=0.3); varjo(im, 0.30, 0.26); kipinat(im, 300, 640, 7, KELT, 22); otsikot(im, 1); alarivi2(im, 'SOUND', 'NORTHERN LIGHTS', 56); return im
+def n8():  # lopun aamu
+    im = muunnos2('aamu', cy=0.45); varjo(im, 0.30, 0.26); kipinat(im, 300, 640, 8, KELT, 22); otsikot(im, 1); alarivi2(im, 'SOUND', 'SUNRISE'); return im
+nn = [k() for k in (n1, n2, n3, n4, n5, n6, n7, n8)]
+for i, im in enumerate(nn): im.save(K + 'v4_%d.jpg' % (i + 1), quality=94)
+ark = Image.new('RGB', (W * 2 + 20, (H + 20) * 4 + 110), (40, 40, 40))
+for i, im in enumerate(nn): ark.paste(im, ((i % 2) * (W + 20), (i // 2) * (H + 20))); ark.paste(im.resize((168, 94), Image.LANCZOS), (i * 180, 4 * (H + 20)))
+ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'v4_arkki.jpg', quality=92)
+pien = Image.new('RGB', (4 * 330 + 10, 2 * 190 + 10), (24, 24, 24))
+for i, im in enumerate(nn): pien.paste(im.resize((320, 180), Image.LANCZOS), (10 + (i % 4) * 330, 10 + (i // 4) * 190))
+pien.save(K + 'v4_listakoko.jpg', quality=93)
