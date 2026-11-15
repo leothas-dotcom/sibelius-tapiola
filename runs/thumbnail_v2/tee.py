@@ -76,3 +76,22 @@ for i, im in enumerate(ims): im.save(K + 'thumb_%s.jpg' % 'ABCDEF'[i], quality=9
 ark = Image.new('RGB', (W * 2 + 20, (H + 20) * 3 + 200), (40, 40, 40))
 for i, im in enumerate(ims): ark.paste(im, ((i % 2) * (W + 20), (i // 2) * (H + 20))); ark.paste(im.resize((320, 180), Image.LANCZOS), (i * 340, 3 * (H + 20)))
 ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'arkki.jpg', quality=90); print('ok')
+
+# --- Lopullinen suunta (käyttäjä 15.11.2026): iso keltainen FABLE 5.2, SOUND -> SNOWSTORM, Sibelius ja Tapiola mainittu ---
+R['myrsky'] = ruutu(877, 1.45, 1.3, 1.35); GEO = lambda s: font('georgiab.ttf', s)
+def l1():  # otsikko vasemmalla ylhäällä, Sibelius · Tapiola sen alla
+    im = muunnos('myrsky', 0.5, 0.5, 0.22, 0.60); varjo(im, 0.30, 0.26); kipinat(im, 330, 700, 4, KELT, 30); d = ImageDraw.Draw(im)
+    teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 44, 84), 'SIBELIUS', BAH(74), VALK, 7, 'rm'); teksti(d, (W - 44, 164), 'TAPIOLA', BAH(74), VALK, 7, 'rm')
+    alarivi(im, 'SOUND', 'SNOWSTORM'); return im
+def l2():  # otsikko keskellä, Sibelius: Tapiola rivinä alla
+    im = muunnos('myrsky', 0.5, 0.5, 0.22, 0.62); varjo(im, 0.34, 0.26); kipinat(im, 330, 700, 4, KELT, 30); d = ImageDraw.Draw(im)
+    teksti(d, (W / 2, 104), 'FABLE 5.2', IMP(196), KELT, 11, 'mm'); teksti(d, (W / 2, 226), "draws Sibelius' Tapiola", GEO(60), VALK, 7, 'mm'); alarivi(im, 'SOUND', 'SNOWSTORM'); return im
+def l3():  # kuten l1, mutta alarivillä Sibelius ja Tapiola
+    im = muunnos('myrsky', 0.5, 0.5, 0.22, 0.58); varjo(im, 0.30, 0.30); kipinat(im, 330, 700, 4, KELT, 30); d = ImageDraw.Draw(im)
+    teksti(d, (40, 112), 'FABLE 5.2', IMP(210), KELT, 11, 'lm'); teksti(d, (W - 44, 100), 'SOUND', BAH(60), VALK, 7, 'rm'); teksti(d, (W - 44, 176), '→ SNOWSTORM', font('segoeuib.ttf', 60), VALK, 7, 'rm')
+    teksti(d, (W / 2, 664), 'SIBELIUS · TAPIOLA', BAH(64), VALK, 7, 'mm'); return im
+lo = [k() for k in (l1, l2, l3)]
+for i, im in enumerate(lo): im.save(K + 'lopullinen_%d.jpg' % (i + 1), quality=94)
+ark = Image.new('RGB', (W * 3 + 40, H + 200), (40, 40, 40))
+for i, im in enumerate(lo): ark.paste(im, (i * (W + 20), 0)); ark.paste(im.resize((320, 180), Image.LANCZOS), (i * (W + 20), H + 10))
+ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'lopullinen_arkki.jpg', quality=92)

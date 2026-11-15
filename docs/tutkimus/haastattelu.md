@@ -1326,3 +1326,9 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Mikä on sinusta paras? Oletko varma tuosta keltaisesta väristä? Pitäiskö mennä meidän tyylioppaan mukaisesti kuitenkin?
 
 > Ei minusta, yritetään nyt tehdä sellainen thumbnail, joka saa ihmiset klikkaamaan tätä videota. Mieti että mikä tässä projektissa oli kaikista hienointa, ja sitten yritetään tiivistää se thumbnailiin. Tuo sound-->picture on mielestäni ihan hyvä idea, ja jotenkin siihen pitää saada tuo että se tuntuu ihan taikuudelta. Käy läpi tuo haastattelu, mitä olen sinulle sanonut. Mitä siitä voisi kaivaa tuohon thumbnailiin?
+
+> Joo nämä on hyviä! Hyvä idea. Mun mielestä tuohon voisi kirjoittaa vaan isolla Fable 5.2 Keltaisella. Nuo kuvat on jo hyviä , ja sitten tuo SOUND --> SNOWSTORM on ehkä vahvin.
+>
+> Tee siitä kuvasta juuri tuollainen, että siinä konkreettisesti ääniaalto muuttuu kuvaksi, tuo on hyvä idea. Ja mun mielestä siinä voisi mainita Sibelus ja Tapiola myös.
+>
+> Haluaisin sitä description tekstiä myös miettiä. Siinä voisi kertoa tuosta menetelmästä tarkemmin, menemättä yksityiskohtiin. Ja otsikoksi "Claude Fable 5.2 draw Sibelius. It is INSANE" tai jotain sellaista
