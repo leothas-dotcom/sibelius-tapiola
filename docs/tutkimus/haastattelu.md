@@ -1332,3 +1332,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Tee siitä kuvasta juuri tuollainen, että siinä konkreettisesti ääniaalto muuttuu kuvaksi, tuo on hyvä idea. Ja mun mielestä siinä voisi mainita Sibelus ja Tapiola myös.
 >
 > Haluaisin sitä description tekstiä myös miettiä. Siinä voisi kertoa tuosta menetelmästä tarkemmin, menemättä yksityiskohtiin. Ja otsikoksi "Claude Fable 5.2 draw Sibelius. It is INSANE" tai jotain sellaista
+
+> Onko tuo riittävän vahva otsikko? Saako siitä sellaisen kuvan, että tämä ei ole AI generoitua kuvaa, vaan että koodattiin tuo video?
