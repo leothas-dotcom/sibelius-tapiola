@@ -1296,3 +1296,9 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Katso heldenleben projektista jos et täältä löydä
 
 > Ja kun teksitykset on valmiit, julkaise 4k video youtubessa. Privatena. Se on tuossa auki chromessa. En julkaise sitä julkiseksi, koska en omista ääntä. Kun saan sen äänen nauhoitettua, teen uuden version. Haluan nähdä miltä se näyttää telkkarissa - ja se on helpoin tapa saada video sinne
+
+> Tarvitsetko remote controllin että voit uploadata? Voin antaa
+
+> No avaanko tähän selaimeen sen, tuohon viereen? Niin sinulla on täysi kontrolli?
+
+> lähetä jooko uusin versio mulle?
