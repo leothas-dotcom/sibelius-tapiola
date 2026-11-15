@@ -1304,3 +1304,11 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > lähetä jooko uusin versio mulle?
 
 > lähetä nyt se koko versio mulle,  whatsappi-versiona
+
+> Siis miksi tuolla on kaksi 2160p versiota?
+
+> Okei, hyvä tieto. Nyt se latausikkuna on auki
+
+> Voitko samalla kun puuhaat tuota, poistaa tuolta runs-kansiosta kaikki ylimääräistet tiedostot. Emme tarvitse muuta kuin tuon viimeisimmän? Jokaisen version voi kuitenkin renderöidä uudelleen, jos haluamme sen.
+
+> Tiedosto on latautumassa
