@@ -1342,3 +1342,7 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Tee monta eri versiota, niin näen parhaan. Eikös tuo koodi ole vähän epäselvä ratkaisu. Tuo missä äänestä tulee kuvaa on paras. Mieti luettavuutta. Valitsin jo tuon, missä tulee äänimuodosta tuo lumimyrsky. Se on hieno. Mutta voit tehdä pari vastaavaa vielä.
 >
 > Mieti vielä tuo kuvaus tämän perusteella
+
+> Mitä näistä sanot?
+
+(Käyttäjä liitti kolme julistemaista pikkukuvaa: rasteripainojälki, tummat kuuset, oranssi ja valkoinen aaltoviiva metsän läpi; tekstit "SIBELIUS: TAPIOLA", "CLAUDE DREW TAPIOLA", "TAPIOLA / OP. 112". Ohjaajan kuvaus; kuvat eivät ole repossa.)
