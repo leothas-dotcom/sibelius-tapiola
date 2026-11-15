@@ -1302,3 +1302,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > No avaanko tähän selaimeen sen, tuohon viereen? Niin sinulla on täysi kontrolli?
 
 > lähetä jooko uusin versio mulle?
+
+> lähetä nyt se koko versio mulle,  whatsappi-versiona
