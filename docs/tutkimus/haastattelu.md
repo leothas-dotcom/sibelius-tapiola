@@ -1324,3 +1324,5 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Joo aika hyviä, viimeistele vielä nuo pari viimeistä yritystä. Löytyiskö youtube thumbnailien generointiin joku kiva skilli mitä voit käyttää?
 
 > Mikä on sinusta paras? Oletko varma tuosta keltaisesta väristä? Pitäiskö mennä meidän tyylioppaan mukaisesti kuitenkin?
+
+> Ei minusta, yritetään nyt tehdä sellainen thumbnail, joka saa ihmiset klikkaamaan tätä videota. Mieti että mikä tässä projektissa oli kaikista hienointa, ja sitten yritetään tiivistää se thumbnailiin. Tuo sound-->picture on mielestäni ihan hyvä idea, ja jotenkin siihen pitää saada tuo että se tuntuu ihan taikuudelta. Käy läpi tuo haastattelu, mitä olen sinulle sanonut. Mitä siitä voisi kaivaa tuohon thumbnailiin?
