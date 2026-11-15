@@ -1346,3 +1346,7 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Mitä näistä sanot?
 
 (Käyttäjä liitti kolme julistemaista pikkukuvaa: rasteripainojälki, tummat kuuset, oranssi ja valkoinen aaltoviiva metsän läpi; tekstit "SIBELIUS: TAPIOLA", "CLAUDE DREW TAPIOLA", "TAPIOLA / OP. 112". Ohjaajan kuvaus; kuvat eivät ole repossa.)
+
+> Tee koodilla
+
+> No jep, minä toivon myös että käytämme sitä ideaa, missä se ääniaalto muuttuu nyt kuvaksi, mutta tuo kuvahan voisi olla tyylitelty, tai monta kuvaa? Meneekö sekavaksi?
