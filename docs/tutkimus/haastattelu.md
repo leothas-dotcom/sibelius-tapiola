@@ -1268,3 +1268,13 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 
 > ja ettei kaikki lumihiutaleet liiku samaan tahtiin, vähän randomia siihen mukaan. Se tuuli tulee vähän sekavasti, pyörteenä vaikka? Mieti miten lumi
 > käyttäytyisi, kun katsot tuota spektriä, ja näet miten ääni voimistuu. Mittaa sen jousten voimakkuus siitä
+
+### 15.11.2026: tuuli hyväksytty; muut puuskat; alttoviulujen kommentit paisutuksina
+
+> Hei nyt hoksasit hyvin miten tuulen pitää vaikuttaa lumeen. Nyt se näyttää hyvältä. Laita opiksi, ja pienet muutokset muihin puuskiin. Ne toimivat minusta jo melko hyvin.
+
+> Hei ja jos vielä muutetaan näitä ajoituksia, tarkista nuo alttovulujen kommentit. Ne ei ihan osu oikein vieläkään tuossa alku metsässä
+
+> Voisiko nekin ajatella "paisutuksina", jotka vaikuttaa tuuleen, sitä kautta myös muihin tippuviin lumihiutaleisiin
+
+> Ei, nyt ei taida olla oikeat alttoviulukommentit. Siitä kohtaa, missä altot aloittavat fortessa ne "div 4", eli neljä alttostemmaa. Alkaen 1:43. Ne on siis melodia siinä kohtaa, sellot, ja puhaltajat ovat taustalla.

@@ -1505,10 +1505,10 @@
       ],
       "esitysmerkinta": "",
       "id": "fis_hengittaa",
-      "nimi": "Sointumatto hengittää: kaksi sointua vuorotellen",
+      "nimi": "Alttoviulujen melodia: neljä stemmaa, fraasi kerrallaan",
       "tahti_suhde": "kirjaimen B ympärillä",
-      "soi": "sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein",
-      "etuala": "sointumatto keskellä hengittää; basso iskee alla; puhaltimet välähtävät ylhäällä ja väistyvät alttoviuluille",
+      "soi": "alttoviulut neljään stemmaan jaettuina soittavat ydinmotiivia kolmen tahdin fraaseina noin seitsemän sekunnin välein: pitkä ääni paisuu, huippu, hiipuu; fraasit alkavat voimakkaina ja hiljenevät kerta kerralta; sellot ja fagotit pitävät sointua taustalla, basson askeleet alla, puhaltimet vastaavat fraasien välissä",
+      "etuala": "alttoviulujen fraasi paisuu ja hiipuu; sellot ja puhaltimet taustalla; basso astuu alla",
       "tunnelma": "odottava, tasainen",
       "tarina": "Käyttäjä: \"Sellot tekevät sointumattoa (metsä)\"; \"Altot vuorottelevat puhaltimien kanssa\". Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua. Ohjaaja: metsä hengittää: kaksi sointua, sisään ja ulos.",
       "lahde": "analyysi: tarkka.py"

@@ -816,30 +816,116 @@
   {
    "id": "fis_hengittaa",
    "ankkuri": "fis_hengittaa",
-   "t": 100.8,
+   "t": 103.4,
    "t_end": 176.0,
    "iskut_t": [
-    98.81,
-    104.4,
-    113.9,
-    121.4,
-    129.5,
-    135.25,
-    145.5,
-    149.43,
-    161.85,
-    169.49,
-    176.87
+    103.4,
+    110.7,
+    117.8,
+    125.1,
+    132.2,
+    140.0,
+    147.6,
+    153.3,
+    162.1,
+    169.6,
+    177.3
+   ],
+   "paisutukset": [
+    [
+     103.4,
+     104.9,
+     105.2,
+     106.6,
+     0.85
+    ],
+    [
+     110.7,
+     112.1,
+     112.4,
+     113.7,
+     0.85
+    ],
+    [
+     117.8,
+     119.3,
+     119.6,
+     120.7,
+     0.85
+    ],
+    [
+     125.1,
+     126.6,
+     126.9,
+     128.4,
+     0.85
+    ],
+    [
+     132.2,
+     134.1,
+     134.4,
+     135.6,
+     0.8
+    ],
+    [
+     135.8,
+     138.3,
+     138.5,
+     139.7,
+     1.0
+    ],
+    [
+     140.0,
+     141.5,
+     141.8,
+     143.5,
+     0.6
+    ],
+    [
+     147.6,
+     149.05,
+     149.35,
+     150.9,
+     0.5
+    ],
+    [
+     153.3,
+     155.0,
+     155.3,
+     157.6,
+     0.5
+    ],
+    [
+     162.1,
+     163.6,
+     163.9,
+     165.7,
+     0.38
+    ],
+    [
+     169.6,
+     171.3,
+     171.6,
+     173.4,
+     0.28
+    ],
+    [
+     177.3,
+     179.1,
+     179.4,
+     181.0,
+     0.2
+    ]
    ],
    "theme": "soitin",
    "luokka": "soitin",
    "tyyppi": "hetki",
-   "nimi": "Sointumatto hengittää: kaksi sointua vuorotellen",
+   "nimi": "Alttoviulujen melodia: neljä stemmaa, fraasi kerrallaan",
    "kirjain": null,
    "tahti": null,
    "tahti_loppu": null,
    "tahti_suhde": "kirjaimen B ympärillä",
-   "soi": "sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein",
+   "soi": "alttoviulut neljään stemmaan jaettuina soittavat ydinmotiivia kolmen tahdin fraaseina noin seitsemän sekunnin välein: pitkä ääni paisuu, huippu, hiipuu; fraasit alkavat voimakkaina ja hiljenevät kerta kerralta; sellot ja fagotit pitävät sointua taustalla, basson askeleet alla, puhaltimet vastaavat fraasien välissä",
    "soittimet": [
     "alttoviulut"
    ],

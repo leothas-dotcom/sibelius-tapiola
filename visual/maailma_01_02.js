@@ -550,7 +550,10 @@ async function alusta() {
   const sEner = d.sarja((f) => d.koko(f / FPS, 1.2));
   const ener = (t) => ka(sEner, t, 0.5);
   const kPut = d.sarja((f) => (0.75 + 0.9 * ener(f / FPS)) / FPS);
-  const kTuuli = d.sarja((f) => (0.30 + 1.2 * jouSlow(f / FPS) + 4.6 * Math.pow(puuska(f / FPS), 1.5) + 2.5 * ka(sFrG, f / FPS, 0.3) + 2.0 * ka(sHyppy, f / FPS, 0.1)) * (1 - hilj(f / FPS)) / FPS);   // tauolla lumi putoaa suoraan alas; vedos 8 (rivi 133): puuskan tuuli kasvaa huippuun 4,6 m/s (oli 3,0)
+  // rivi 171: kitka kuten rivillä 170: tuulen laantuessa lumi liukuu ja hidastuu (tau 2,0 s); kiihtyminen ennallaan (tau 0,15 s)
+  const vTuuli = (() => { const o = new Float32Array(NF); let y = 0.30; for (let f = 0; f < NF; f++) { const x = (0.30 + 1.2 * jouSlow(f / FPS) + 4.6 * Math.pow(puuska(f / FPS), 1.5) + 2.5 * ka(sFrG, f / FPS, 0.3) + 2.0 * ka(sHyppy, f / FPS, 0.1)) * (1 - hilj(f / FPS));
+    y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.15 : 2.0)))); o[f] = y; } return o; })(); window.vTuuli = vTuuli;
+  const kTuuli = d.sarja((f) => vTuuli[f] / FPS);   // tauolla lumi putoaa suoraan alas; vedos 8 (rivi 133): puuskan tuuli kasvaa huippuun 4,6 m/s (oli 3,0)
   const kLahe = d.sarja((f) => (V + 5 * puuska(f / FPS)) / FPS);
   const kDrift = d.sarja((f) => (1.0 + 3.0 * paisu(f / FPS) + 6.0 * puuska(f / FPS)) / FPS);
 

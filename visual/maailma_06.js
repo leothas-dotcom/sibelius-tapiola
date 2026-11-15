@@ -456,7 +456,7 @@ export function signaalit(d, taika = TAIKA) {
   const pehmea = (fn, tauUp, tauDown) => { const o = new Float32Array(d.NF); let y = fn(LUMI_F0 / FPS);
     for (let f = LUMI_F0; f <= LUMI_F1; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? tauUp : tauDown)))); o[f] = y; }
     o.fill(o[LUMI_F0], 0, LUMI_F0); o.fill(o[LUMI_F1], LUMI_F1 + 1); return o; };
-  const vxS = pehmea(vxT, 0.5, 1.5), vyS = pehmea(vyT, 0.5, 1.5);
+  const vxS = pehmea(vxT, 0.5, 2.0), vyS = pehmea(vyT, 0.5, 1.5);   // rivi 171: kitka kuten rivillä 170: lumi liukuu puuskan jälkeen (hidastuu tau 2,0 s, oli 1,5)
   const KULMA_MAX = 9 * Math.PI / 180 / FPS;                                   // kulman muutos ruudussa (9 °/s)
   const thT = new Float32Array(d.NF); for (let f = 0; f < d.NF; f++) thT[f] = Math.atan2(vyS[f], vxS[f]);
   for (let f = 1; f < d.NF; f++) thT[f] = Math.min(thT[f], thT[f - 1] + KULMA_MAX);   // verhokäyrä: eteen- ja taaksepäin

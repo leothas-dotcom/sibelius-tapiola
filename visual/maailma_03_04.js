@@ -530,11 +530,19 @@ async function alusta() {
   const pehmea = (fn, tauUp, tauDown) => { const o = new Float32Array(d.NF); const f0p = Math.max(0, Math.round((T0 - 4) * FPS)), f1p = Math.min(d.NF - 1, Math.round((T1 + 4) * FPS));
     let y = fn(f0p / FPS); for (let f = f0p; f <= f1p; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (Math.abs(x) > Math.abs(y) ? tauUp : tauDown)))); o[f] = y; }
     o.fill(o[f0p], 0, f0p); o.fill(o[f1p], f1p + 1); return o; };
-  const alttoA = (t) => clamp(jou(t) * (0.55 + 0.45 * kaari(t)), 0, 1) * altIkk(t);
+  // 15.11.2026 (rivi 172): käyttäjä: "Siitä kohtaa, missä altot aloittavat fortessa ne div 4 ... Alkaen 1:43. Ne on siis melodia" ja "Voisiko nekin ajatella
+  // paisutuksina, jotka vaikuttaa tuuleen, sitä kautta myös muihin tippuviin lumihiutaleisiin". Alttoviulujen voima on ankkurin fis_hengittaa paisutukset
+  // (partituuri s. 7-9: puolinuotti cresc., tahtiviivalla huippu, dim.; ajat mitattu alttojen omista sävelistä), ei keskirekisterin taso (sellot ja fagotit
+  // pitävät samoja säveliä). Ennen: jou x kaari, ja kommenttien alut tahtiruudukosta 1-4 s sivussa.
+  const PAISUT34 = d.paisut(T0, T1 + 2); window.paisut = PAISUT34.tapahtumat;
+  const alttoA = (t) => PAISUT34.env[clamp(Math.round(t * FPS), 0, d.NF - 1)];
   // vedos 8 (rivi 153): käyttäjä: "alttoviulu on se tuuli, joka liikuttaa sitä SATAVAA LUNTA MYÖS ... hellävaroen (dolce) ... nyt se on ihan staattinen".
   // Ennen nosto 0,46 m/s lähes pysäytti putoamisen (0,5 m/s), ja sivutuuli oli 0,10 m/s: lumi näytti staattiselta. Nyt alttoviulun tuuli kuljettaa lunta
   // sivulle enintään 0,42 m/s aina samaan suuntaan kuin perusajautuma (4d.32) ja keventää hieman (enintään 0,14 m/s), joten lumi putoaa koko ajan.
-  const avX = pehmea((t) => 0.42 * alttoA(t), 0.6, 1.5), avY = pehmea((t) => 0.14 * alttoA(t) * (0.6 + 0.4 * Math.max(kaari(t), 0)), 0.6, 1.5);
+  // Rivi 172: tuuli on voima (rivi 170): paisutus kiihdyttää lunta, kitka hidastaa (dv/dt = F - v / 1,6 s); lumi lähtee hitaasti, on nopeimmillaan
+  // tahtiviivan jälkeen ja liukuu fraasin yli. Suurin vauhti ennallaan (sivulle 0,42 m/s, kevennys 0,14 m/s) voimakkaimmassa kohdassa (fz, t. 72).
+  const avX = (() => { const o = new Float32Array(d.NF); let v = 0, mx = 1e-6; for (let f = 0; f < d.NF; f++) { v += (alttoA(f / FPS) - v / 1.6) / FPS; o[f] = v; mx = Math.max(mx, v); }
+    for (let f = 0; f < d.NF; f++) o[f] *= 0.42 / mx; return o; })(), avY = avX.map((v) => v / 3); window.alttoTuuli = avX;
   const kAvX = d.sarja((f) => avX[f] / FPS);
   const kAvY = d.sarja((f) => avY[f] / FPS);
   // vedos 8 (rivi 135, taika): oksa heilahtaa ja lumi putoaa alttoviulujen ilmavirran huipuissa (sama mitattu ajuri kuin yllä), vähintään 9 s välein,

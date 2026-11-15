@@ -591,8 +591,12 @@ async function alusta() {
     return { vx, vy, maara, voima: Fs, matka: d.sarja((f) => Math.hypot(vx[f], vy[f]) / FPS) }; })();
   window.paisut = LUMI9;
   const gEnv = (L, t) => (t < L.ts ? 0 : L.env(t - L.ts));
-  const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 1.5)))); o[f] = y; } return o; };
-  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += LUMI9.vx[f]; return g; })();
+  const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 2.0)))); o[f] = y; } return o; };   // rivi 171: hidastuu tau 2,0 s (oli 1,5)
+  const vGust9 = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t));
+  const vDriftG = (() => { const g = Float32Array.from(vGust9); for (let f = 0; f <= NF; f++) g[f] += LUMI9.vx[f]; return g; })();
+  // rivi 171: myös nostopuuskissa (jousten nousu, puhaltimien puuska) tuuli on pyörteinen: hiutaleet eivät liiku samaan tahtiin. Voima = puuskan sivuvauhti
+  // (huippu 0,16 -> 0,6), vaihe = puuskan kulkema matka; puuskien jälkeen vaihe on vakio, joten rivin 170 jakso (13:47-14:05) ei muutu.
+  const turbG9 = vGust9.map((v) => Math.min(v / 0.16, 1) * 0.6), sGust9 = d.sarja((f) => 2.2 * vGust9[f] / FPS), gust9End = d.kohta(sGust9, NF / FPS);
   const vLiftS = LUMI9.vy, svellS9 = LUMI9.maara;
   const sDriftG = d.sarja((f) => vDriftG[f] / FPS), sLiftS = d.sarja((f) => vLiftS[f] / FPS);
   const ikkunaHarva = (t) => ikkuna(t, A.harva_kuviointi, tPend, 1.5);
@@ -692,7 +696,7 @@ async function alusta() {
     const win = WIN.map((w, i) => [xPath(camS + w.z) - xPath(camS) + w.x, w.z, w.y, TAIKA * winK(i, tt) * opn * (1 + 0.08 * Math.sin(0.9 * tt + i * 2.1))]);
     const u1 = u1At(tt);
     const hill = sstep(tPs, tPs + 3, tt);   // P4: kumpujen reuna pehmeä P:stä moduulin loppuun
-    const turb = [LUMI9.maara[clamp(fr, 0, NF)], d.kohta(LUMI9.matka, tt)];
+    const turb = [Math.max(LUMI9.maara[clamp(fr, 0, NF)], turbG9[clamp(fr, 0, NF)]), d.kohta(LUMI9.matka, tt) + d.kohta(sGust9, tt) - gust9End];
     return { turb, win, u1, hill, thr, band, bandK, opn, hit, surge, vf: vFall[fr], vd: vDrift[fr], snow, nerve, ph: d.kohta(sPh, tt), pk, dense, obo: obo.slice(0, 4), kla: kla.slice(0, 3), t: tt, camS, camX: xPath(camS), v: vauhti(tt), wind, glow, lift, cut: [cx, cy], shake, two, pohja, pu, dots: dots.slice(0, 24), prof,
       end: smooth(s), start: 1 - sstep(0, 0.9, tt - t0), rate: rate(tt) };
   }

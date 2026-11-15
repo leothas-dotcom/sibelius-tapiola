@@ -132,10 +132,10 @@ askeleet (2:09) ja jyrinä nopean kuvion alla (7:01), jossa molemmat kuuluvat yh
 - **1:26 Basson eritahtiset iskut alkavat.** *(kuultu)* Basso putoaa matalalle h:lle ja alkaa iskeä eri tahtiin kuin muut; iskut jatkuvat alttoviulujen alla.
   - *Edessä ja takana:* basson iskut pohjalla omassa ajassaan; sellojen sointumatto niiden päällä; alttoviulut ja puhaltimet vuorottelevat ylempänä. *Tunnelma:* jokin suuri on tulossa.
   - Käyttäjä 9.11.2026 (korva, 1:40): "bassojen eritahtiset iskut alkavat, jatkuvat alttoviulujen alla. Altot vuorottelevat puhaltimien kanssa, sellot tekevät sointumattoa (metsä)." Ja: "Basson huokaavat askeleet ... jo sillä luodaan tunnelmaa jostain suuresta, tulevasta." Ohjaaja: askeleet alkavat valon alla, eivät pimeässä.
-- **1:40 Sointumatto hengittää: kaksi sointua vuorotellen.** Sellojen rekisterissä kaksi sointua vuorottelee noin kahden sekunnin välein (d–fis ja e–gis), jokainen paisuu ja hiipuu; basson iskut alla; puhaltimien korkeat purskeet noin seitsemän sekunnin välein.
-  - *Edessä ja takana:* sointumatto keskellä hengittää; basso iskee alla; puhaltimet välähtävät ylhäällä ja väistyvät alttoviuluille. *Tunnelma:* odottava, tasainen.
+- 1:37 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 6 sekunnin ajan.
+- **1:43 Alttoviulujen melodia: neljä stemmaa, fraasi kerrallaan.** Alttoviulut neljään stemmaan jaettuina soittavat ydinmotiivia kolmen tahdin fraaseina noin seitsemän sekunnin välein: pitkä ääni paisuu, huippu, hiipuu; fraasit alkavat voimakkaina ja hiljenevät kerta kerralta; sellot ja fagotit pitävät sointua taustalla, basson askeleet alla, puhaltimet vastaavat fraasien välissä.
+  - *Edessä ja takana:* alttoviulujen fraasi paisuu ja hiipuu; sellot ja puhaltimet taustalla; basso astuu alla. *Tunnelma:* odottava, tasainen.
   - Käyttäjä: "Sellot tekevät sointumattoa (metsä)"; "Altot vuorottelevat puhaltimien kanssa". Lähteet: Salmenhaara: siemenestä kasvaa neljä perusmotiivia ja noin kolmekymmentä johdettua. Ohjaaja: metsä hengittää: kaksi sointua, sisään ja ulos.
-- 1:49 Musiikki laskeutuu: basso ja yläkerros painuu alaspäin noin 6 sekunnin ajan.
 - 1:55 Yläkerros soittaa lyhyitä, irrallisia ääniä (staccato).
 
 ##### 2:00–3:00

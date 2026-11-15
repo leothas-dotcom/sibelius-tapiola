@@ -418,7 +418,7 @@ async function alusta() {
   const pehmea = (fn, tauUp, tauDown) => { const o = new Float32Array(NF); const f0 = Math.max(0, Math.round((T0 - 6) * FPS)), f1 = Math.min(NF - 1, Math.round((T1 + 6) * FPS));
     let y = fn(f0 / FPS); for (let f = f0; f <= f1; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? tauUp : tauDown)))); o[f] = y; }
     o.fill(o[f0], 0, f0); o.fill(o[f1], f1 + 1); return o; };
-  const vxS = pehmea(vxT, 0.5, 1.5), vyS = pehmea(vyT, 0.6, 1.2);
+  const vxS = pehmea(vxT, 0.5, 2.0), vyS = pehmea(vyT, 0.6, 1.2);   // rivi 171: kitka kuten rivillä 170: lumi liukuu tuulen jälkeen (hidastuu tau 2,0 s, oli 1,5)
   const sSnX = d.sarja((f) => vxS[f] / FPS), sSnY = d.sarja((f) => vyS[f] / FPS);
   const lisaLumi = pehmea((t) => 1.0 * puuskaD(t) + 0.35 * svell(t), 0.5, 1.5);
   // vedos 8 (rivit 149, 152): tuisku = paisutuksen ja puuskan verhokäyrä (nousu tau 0,4 s, lasku 1,2 s); tuulen kertymä virtaa nopeammin paisutuksessa
