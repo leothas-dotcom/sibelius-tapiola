@@ -1312,3 +1312,11 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Voitko samalla kun puuhaat tuota, poistaa tuolta runs-kansiosta kaikki ylimääräistet tiedostot. Emme tarvitse muuta kuin tuon viimeisimmän? Jokaisen version voi kuitenkin renderöidä uudelleen, jos haluamme sen.
 
 > Tiedosto on latautumassa
+
+### 15.11.2026: pikkukuvaehdokkaat
+
+> Generoi myös 8 thumbnail-ehdokasta. Siinä pitää olla näkyvissä myös tuo musiikki --> video (--> = magic) putki. Voitko laitttaa siihen Fable 5.2 on älytön, tai jotain sellaista, sitten siinä pitäisi olla vaikka vierekkäin neljä kohtausta, ja Otsikoksi Fable 5.2 AI: An incredible visualization for Sibelius' Tapiola.
+>
+> Kyllä se lataus etenee. On vaan hidas.
+
+> Joku äänen aaltomuoto-kuva, joo, sitten sellainen missä "analysoit" jotain tuulen nopeutta, että siitä saa fiiliksen: Ääni --> Kuva  ja isolla Fable 5.2 is Incredible
