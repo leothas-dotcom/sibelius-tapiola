@@ -573,12 +573,21 @@ async function alusta() {
   // tau 1,5 s; sivusuunta on sama kuin lumen (oikealle) eikä käänny; paisutus myös keventää putoamista hieman.
   // vedos 8 (rivit 158, 163): paisutus mitataan kaistoittain (d.paisut): lumen tuuli seuraa paisutuksen omien kaistojen tasoa ruutu ruudulta
   const PAISUT9 = d.paisut(A.dim_possibile, t1); window.paisut = PAISUT9.tapahtumat;   // 15.11.2026 (rivi 168): jousten espressivo-fraasit ankkurista dim_possibile, mitattu jousten omista sävelistä
-  const svell09 = (t) => PAISUT9.env[clamp(Math.round(t * FPS), 0, d.NF - 1)];
+  // 15.11.2026 (rivi 169): verhokäyrä pehmennetään symmetrisesti (kaksi 0,3 s:n liukuvaa keskiarvoa), jotta tuulen vauhti ei töksähdä eleiden saumoissa
+  const SV9 = (() => { const k = Math.round(0.15 * FPS); let a = PAISUT9.env; for (let r = 0; r < 2; r++) { const o = new Float32Array(a.length); let s = 0; for (let f = 0; f < a.length + k; f++) { if (f < a.length) s += a[f]; if (f - 2 * k - 1 >= 0) s -= a[f - 2 * k - 1]; if (f - k >= 0 && f - k < a.length) o[f - k] = s / (2 * k + 1); } a = o; } return a; })();
+  const svell09 = (t) => SV9[clamp(Math.round(t * FPS), 0, d.NF - 1)];
+  // rivi 169: pitkän äänen päättävä kolmen äänen rypäs (kaksi kuudestoistaosaa ja aksentti, partituuri s. 50) pyöräyttää lumen yhden kierroksen:
+  // kulma kasvaa pehmeästi 0 → 2π rypään alusta aksentin loppuun, joten lumen paikka ja vauhti ovat jatkuvia ja lumi palaa omalle radalleen
+  const RYP9 = (cue('dim_possibile').rypaat || []).map(([a, , b]) => [a - 0.35, b + 0.5]), RYP_R = 0.018;
+  const pyor9 = (t) => { let x = 0, y = 0; for (const [a, b] of RYP9) { if (t <= a || t >= b) continue; const k = (t - a) / (b - a), th = 2 * Math.PI * k * k * k * (k * (6 * k - 15) + 10); x += RYP_R * (1 - Math.cos(th)); y += RYP_R * Math.sin(th); } return [x, y]; };
   const gEnv = (L, t) => (t < L.ts ? 0 : L.env(t - L.ts));
   const pehmea9 = (fn) => { const o = new Float32Array(NF + 1); let y = 0; for (let f = 0; f <= NF; f++) { const x = fn(f / FPS); y += (x - y) * (1 - Math.exp(-1 / (FPS * (x > y ? 0.5 : 1.5)))); o[f] = y; } return o; };
-  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += 0.22 * svell09(f / FPS); return g; })();   // 15.11.2026 (rivi 168): paisutuksen verhokäyrä on jo pehmeä (mitattu alku, huippu, loppu): ei 1,5 s:n häntää, joka täytti eleiden välit   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
-  const vLiftS = Float32Array.from({ length: NF + 1 }, (_, f) => 0.090 * svell09(f / FPS));
-  const svellS9 = Float32Array.from({ length: NF + 1 }, (_, f) => svell09(f / FPS));
+  // rivi 169: aksentti (rypään kolmas, painotettu ääni) ryöpsäyttää: nousu rypään ensimmäisestä nuotista aksenttiin, lasku aksentin soidessa ja sen jälkeen
+  const ryop9 = (t) => { let m = 0; const ss = (x) => { const k = clamp(x, 0, 1); return k * k * (3 - 2 * k); };
+    for (const [a, ak, b] of (cue('dim_possibile').rypaat || [])) m = Math.max(m, ss((t - a + 0.1) / (ak - a + 0.15)) * (1 - ss((t - ak - 0.1) / (b - ak + 0.6)))); return m; };
+  const vDriftG = (() => { const g = pehmea9((t) => 0.09 * gEnv(LFA, t) + 0.16 * gEnv(LFB, t)); for (let f = 0; f <= NF; f++) g[f] += 0.22 * svell09(f / FPS) + 0.16 * ryop9(f / FPS); return g; })();   // 15.11.2026 (rivi 168): paisutuksen verhokäyrä on jo pehmeä (mitattu alku, huippu, loppu): ei 1,5 s:n häntää, joka täytti eleiden välit   // rivi 152: paisutus näkyväksi (0,07 → 0,22)
+  const vLiftS = Float32Array.from({ length: NF + 1 }, (_, f) => 0.090 * svell09(f / FPS) + 0.06 * ryop9(f / FPS));
+  const svellS9 = Float32Array.from({ length: NF + 1 }, (_, f) => svell09(f / FPS) + 0.8 * ryop9(f / FPS));
   const sDriftG = d.sarja((f) => vDriftG[f] / FPS), sLiftS = d.sarja((f) => vLiftS[f] / FPS);
   const ikkunaHarva = (t) => ikkuna(t, A.harva_kuviointi, tPend, 1.5);
 
@@ -672,7 +681,7 @@ async function alusta() {
       const zz = b.Sb - camS; const ramp = 0.35 + 0.65 * Math.min(1, ti / 0.1);
       let I = b.g * (0.35 + 0.65 * cm) * ramp; if (i === 0) I += 0.65 * Math.exp(-ti / 0.18);
       return [F * (b.xb - xPath(camS)) / zz, F * b.w / zz, I * offT * BAMP, 0]; });
-    const snow = [d.kohta(sFall, tt) - d.kohta(sLiftS, tt), d.kohta(sDrift, tt) + d.kohta(sDriftG, tt), (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr] + 0.6 * svellS9[clamp(fr, 0, svellS9.length - 1)]) * (1 + 1.0 * nerve * gustAt(tt))];
+    const py9 = pyor9(tt); const snow = [d.kohta(sFall, tt) - d.kohta(sLiftS, tt) - py9[1], d.kohta(sDrift, tt) + d.kohta(sDriftG, tt) + py9[0], (0.45 + 0.7 * Math.min(glow, 1) + 0.5 * surgeSm[fr] + 0.6 * svellS9[clamp(fr, 0, svellS9.length - 1)]) * (1 + 1.0 * nerve * gustAt(tt))];
     const dense = sstep(t1 - 11, t1 - 2.5, tt);
     const win = WIN.map((w, i) => [xPath(camS + w.z) - xPath(camS) + w.x, w.z, w.y, TAIKA * winK(i, tt) * opn * (1 + 0.08 * Math.sin(0.9 * tt + i * 2.1))]);
     const u1 = u1At(tt);
@@ -689,7 +698,7 @@ async function alusta() {
     kuvaus: (t) => { const s = tila(t);
       const dz = doorS.map((x) => +(x - s.camS).toFixed(1)).filter((x) => x > 0);
       return { vauhti_m_s: +s.v.toFixed(2), liike_per_s: +s.rate.toFixed(1), matka_m: +s.camS.toFixed(1), kajo: +s.glow.toFixed(2), pystyvalo: s.cut.map((x) => +x.toFixed(2)),
-        vare: +s.shake.toFixed(2), tuuli: +s.wind.toFixed(2), kaksi: s.two.map((x) => +x.toFixed(2)), maa: +s.pohja.toFixed(2), renkaita: s.pu.length, pilkkuja: s.dots.length, nostoa: +s.lift.toFixed(3), puuska: +s.surge.toFixed(2), lumi_pudotus: +s.snow[0].toFixed(2), lumi_maara: +s.snow[2].toFixed(2), puuskia_yht: SURGE.length, hermo: +s.nerve.toFixed(2), paisutus: +s.pk.toFixed(2), oboeita: s.obo.length, klar: s.kla.length, tiheys: +s.dense.toFixed(2), askelia: ASKELEET.length, askel_ajat: ASKELEET.map((x) => +(x.t - t0).toFixed(2)), puuskat_s: SURGE.map((f) => +(f / FPS).toFixed(2)),
+        vare: +s.shake.toFixed(2), tuuli: +s.wind.toFixed(2), kaksi: s.two.map((x) => +x.toFixed(2)), maa: +s.pohja.toFixed(2), renkaita: s.pu.length, pilkkuja: s.dots.length, nostoa: +s.lift.toFixed(3), puuska: +s.surge.toFixed(2), lumi_pudotus: +s.snow[0].toFixed(2), lumi_xy: [s.snow[1], s.snow[0]], lumi_maara: +s.snow[2].toFixed(2), puuskia_yht: SURGE.length, hermo: +s.nerve.toFixed(2), paisutus: +s.pk.toFixed(2), oboeita: s.obo.length, klar: s.kla.length, tiheys: +s.dense.toFixed(2), askelia: ASKELEET.length, askel_ajat: ASKELEET.map((x) => +(x.t - t0).toFixed(2)), puuskat_s: SURGE.map((f) => +(f / FPS).toFixed(2)),
         iskuja_N: HITS.length, kommentteja: GEST.length, kaistoja: BAND.length, lumi_v: +s.vf.toFixed(4), nosto_netto: +lfNet(s.t, 0.5).toFixed(3), nosto_netto_x0: +lfNet(s.t, 0.0).toFixed(3), nosto_netto_x1: +lfNet(s.t, 1.0).toFixed(3), lumi_d: +s.vd.toFixed(4), lumi_kulma: +(Math.atan2(s.vd, s.vf) * 180 / Math.PI).toFixed(2), avoin_v: +s.opn.toFixed(2), kaista_v: s.band.map((x) => +x[2].toFixed(2)), seuraava_ovi_m: dz[0] ?? null, ovia_edessa: dz.length, kipinoita_yht: KIPINOITA, ikkunat: s.win.map((x) => +x[3].toFixed(2)), ikkunoiden_alut: WON.map((x) => +x.toFixed(2)), peitto_u1: +s.u1.toFixed(2) }; },
     seek: (t) => {
       const s = tila(t);

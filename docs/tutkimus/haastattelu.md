@@ -1240,3 +1240,19 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Jousten svellarit ei osu vieläkäään oikeisiin kohtiin
 
 > Sekoitat puhaltajat ja jouset
+
+### 15.11.2026: jousten paisutukset ennen lumimyrskyä; lumen liike töksähtelee
+
+> Okei, mikä muuttui vedoksen 7b ja 8 välillä? Anna lyhyt lista.
+
+> Jousten paisutukset ennen lumimyrskyä ei osu ihan oikein. Lumen pitää myös liikkua sulavammin, ei töksähdellen. Pitää olla enemmän jatkuvuutta
+> lumen liikkeessä. Ja osua tarkemmin jousten eleisiin.
+
+> siinä on niinkuin pitkä ääni, ja sitten nopea kolmen äänen rypäs, joka tekee tavallaan spiraalin.
+
+> Eli siihen sopisi vähän sellainen pyörähtävä liike myös, mutta jatkuvasti. intensiteetti nousee pitkän äänen aikana.
+
+> Niin siis miksi et oikeasti ole tähän mennessä kuunnellut noita? arvannut vaan? Miten on mahdollista päästä tänne asti ilman että mittaat nuo tarkasti?
+> Niin siis tuulen pitää voimistua tuon pitkän äänen aikana, sitten ryöpsähtää tuon voimakkaan kohdan aikana? Korjasitko niin?
+
+> Joo ja jatkuva lumi, ei töks töks, eikö niin? Koko ajan.
