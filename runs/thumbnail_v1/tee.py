@@ -185,3 +185,16 @@ for i, im in enumerate(ims): im.save(K + 'thumb_%d.jpg' % (i + 1), quality=93)
 ark = Image.new('RGB', (W * 2 + 20, (H + 20) * 4 - 20), (40, 40, 40))
 for i, im in enumerate(ims): ark.paste(im, ((i % 2) * (W + 20), (i // 2) * (H + 20)))
 ark.resize((ark.width // 2, ark.height // 2), Image.LANCZOS).save(K + 'arkki.jpg', quality=90); print('ok')
+
+# --- Tyyliohjeen mukaiset versiot (luku 3: hämy, salo, halla, kajo; ei kirkkaita puhtaita värejä, ei keltaista, punainen vain taotussa auringossa) ---
+HALLA, KAJO, SALO = (222, 234, 246), (240, 232, 218), (120, 160, 212)
+KELT, TURK, PUN = KAJO, SALO, HALLA; VALK = HALLA; OTS = 'Fable 5.2 is incredible'; IMP = lambda s: GEO(int(s * 0.76))
+R = {'metsa': ruutu(97, 1.5, 1.15, 1.0), 'horisontti': ruutu(232, 1.3, 1.1, 1.0), 'jaa': ruutu(397, 1.5, 1.15, 1.0), 'aurinko': ruutu(682, 1.0, 1.0, 1.0),
+     'myrsky': ruutu(877, 1.1, 1.05, 1.0), 'revontuli': ruutu(967, 1.35, 1.1, 1.0), 'aamu': ruutu(1042, 1.15, 1.0, 1.0)}
+ty = [k() for k in (k9, k10, k11, k12)]
+for i, im in enumerate(ty): im.save(K + 'thumb_%d_tyyli.jpg' % (i + 9), quality=93)
+v = Image.new('RGB', (W * 2 + 20, (H + 20) * 2 + 200), (40, 40, 40))
+for i, n in enumerate((11, 12)):
+    a = Image.open(K + 'thumb_%d.jpg' % n); b = ty[i + 2]; v.paste(a, (0, i * (H + 20))); v.paste(b, (W + 20, i * (H + 20)))
+    v.paste(a.resize((320, 180), Image.LANCZOS), (i * 700, 2 * (H + 20))); v.paste(b.resize((320, 180), Image.LANCZOS), (i * 700 + 340, 2 * (H + 20)))
+v.resize((v.width // 2, v.height // 2), Image.LANCZOS).save(K + 'vertailu_tyyli.jpg', quality=92)
