@@ -287,6 +287,14 @@ async function alusta() {
     return o; })();
   window.kaari = KAARI;
   const KAARI_T = (() => { const cK = d.cues.cues.find((c) => c.id === 'S_puhaltimien_kaari'); return cK && cK.t_end != null ? [cK.t, cK.t_end] : [0, 1]; })();
+  // 15.11.2026 (rivi 173): käyttäjä: "Voisiko revontuleen vielä laittaa samat opit? Eli se lähtisi vähän hitaammin liikkeelle, ja kantaisi momentumin siitä yli?"
+  // Puhaltimien linja on voima (rivi 170), ei suoraan paikka: aallon korkeus seuraa linjaa hitaudella (tau 0,7 s: lähtee hitaammin, jatkaa linjan loputtua ja
+  // laskeutuu pehmeästi), ja aallon kulku vasemmalta oikealle on vauhdin kertymä (vauhti kiihtyy ankkurin alussa tau 1,2 s ja liukuu ankkurin lopun yli).
+  // Suurin korkeus ja kuljettu matka ennallaan.
+  const KAARI_I = (() => { const h = new Float32Array(d.NF), pk = new Float32Array(d.NF); let v = 0, mx = 1e-6, w = 0, acc = 0; const kh = 1 - Math.exp(-1 / (FPS * 0.7)), kp = 1 - Math.exp(-1 / (FPS * 1.2));
+    for (let f = 0; f < d.NF; f++) { const t = f / FPS; v += (KAARI[f] - v) * kh; h[f] = v; mx = Math.max(mx, v); w += ((t >= KAARI_T[0] && t <= KAARI_T[1] ? 1 : 0) - w) * kp; acc += w; pk[f] = acc; }
+    for (let f = 0; f < d.NF; f++) { h[f] /= mx; pk[f] /= Math.max(acc, 1e-6); } return { h, p: pk }; })();
+  window.kaariI = KAARI_I;
 
   // ----- kamera: nousu huudossa (ainoa nousu), tasainen ajo eteen ja viistoon, hidastuu S:stä ja pysähtyy H-duurin alussa -----
   const H0 = 58, H1 = 82;                                                  // kameran korkeus maasta (m): latvusto yltää enintään noin 51 m
@@ -344,9 +352,9 @@ async function alusta() {
     const aur = 0.36 * sstep(T0 + 5, T0 + 17, t) * (1 - sstep(T4 - 5, T4 + 15, t)) * (0.8 + 0.2 * clamp(d.korkea(t, 1.5) * 1.4, 0, 1));
     // vedos 8 (rivi 164): puhaltimien linja (KAARI) kulkee aaltona revontulen läpi vasemmalta oikealle; aallon korkeus on linjan korkeus (enintään 7,5 % kuvan
     // korkeudesta) ja koko kaari nousee aavistuksen. Vain ankkurin S_puhaltimien_kaari aikana.
-    const kaariK = KAARI[clamp(Math.round(t * FPS), 0, d.NF - 1)];
+    const fK = clamp(Math.round(t * FPS), 0, d.NF - 1), kaariK = KAARI_I.h[fK];
     const aurLow = clamp(sstep(T0 + 14, T3 + 4, t) - 0.05 * kaariK, 0, 1);
-    const aurW = [-1.25 + 2.5 * clamp((t - KAARI_T[0]) / Math.max(KAARI_T[1] - KAARI_T[0], 1), 0, 1), 0.045 * kaariK];   // käyttäjä 13.11.: "aavistuksen hienovaraisempi ... Ihan vähän tyylikkäämpi": korkeus 7,5 % -> 4,5 %, aalto leveämpi ja loivempi   // aalto vasemmalta oikealle ankkurin aikana; korkeus = linjan korkeus
+    const aurW = [-1.25 + 2.5 * KAARI_I.p[fK], 0.045 * kaariK];   // käyttäjä 13.11.: "aavistuksen hienovaraisempi ... Ihan vähän tyylikkäämpi": korkeus 7,5 % -> 4,5 %, aalto leveämpi ja loivempi   // aalto vasemmalta oikealle ankkurin aikana; korkeus = linjan korkeus
     const pulssit = PULSSIT.filter((x) => x.t <= t && t - x.t < 4).slice(-6).map((x) => [t - x.t, x.v, 0, 0]);
     const wallK = clamp((t - T0) / 12.5, 0, 1) * 1.45;
     const cloud = lerp(0.95, 0.18, sstep(T0 + 1, T0 + 24, t));

@@ -1278,3 +1278,11 @@ pyysi kasvustoa, ei lunta. Lumi poistetaan.
 > Voisiko nekin ajatella "paisutuksina", jotka vaikuttaa tuuleen, sitä kautta myös muihin tippuviin lumihiutaleisiin
 
 > Ei, nyt ei taida olla oikeat alttoviulukommentit. Siitä kohtaa, missä altot aloittavat fortessa ne "div 4", eli neljä alttostemmaa. Alkaen 1:43. Ne on siis melodia siinä kohtaa, sellot, ja puhaltajat ovat taustalla.
+
+### 15.11.2026: revontuleen samat opit
+
+> Voisiko revontuleen vielä laittaa samat opit? Eli se lähtisi vähän hitaammin liikkeelle, ja kantaisi momentumin siitä yli?
+>
+> Mutta voi veljet! Tämä näyttää niin hienolta että itken täällä. On upeaa!!!
+
+> Tämä oli mielestäni tärkeä oppi, luonnollisuuden kannalta tämä intertia, ja kitka. Kaikki luonnossa haluaa pysyä paikallaan, ja siihen kohdistuva voima sitten liikuttaa sitä, F=ma. Muista tämä seuraavissa projekteissa. Sillä saa todella paljon luonnollisen näköistä liikettä.

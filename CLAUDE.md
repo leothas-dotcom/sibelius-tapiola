@@ -89,6 +89,8 @@ on edellisen projektin tyyliä, pysähdy ja sano se ääneen.
 - **Palautelista (`docs/projekti.md`, luku 2):** jokainen käyttäjän palaute yhdeksi riviksi, tila
   ✅ todennettu / 🔶 korjattu, ei todennettu / ❌ auki, ja todennus riville. Mobiilipalaute kirjataan heti
   aikakoodeineen.
+- **Liike syntyy voimasta (F = ma, 15.11.2026):** ääni on voima, ei paikka eikä vauhti. Voima kiihdyttää, kitka hidastaa, paikka on vauhdin
+  kertymä: liike lähtee hitaasti ja kantaa äänen lopun yli. Koskee lunta, tuulta, valoa ja kaikkea, mikä liikkuu äänestä.
 - Hahmot ja elementit eivät ilmesty, katoa eivätkä loikkaa iskussa. **Iskun elementti on ympäristössä.**
   Liikkeen suunnanvaihdot ovat jatkuvia.
 - **Kamera ei pyöri eikä ylitä 20 °/s.**
